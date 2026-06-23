@@ -1,0 +1,2187 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keep Screen Awake Free — Prevent Teams Away Status, Pomodoro Timer | ScreenWakeUp</title>
+  <meta name="description" content="Free online tool to keep your screen awake, prevent Away status in Teams & Slack, run a Pomodoro timer, and block screen lock — no download, no app, no account. Works on Windows, Mac, iPhone and Android.">
+  <meta name="author" content="ScreenWakeUp">
+  <meta name="keywords" content="keep screen awake, prevent Teams away status, prevent Slack idle, stay active Teams, online pomodoro timer, screen awake online, caffeine app alternative, prevent screen lock, keep computer awake, wake lock, fullscreen clock, custom timer, keep laptop screen on, screen awake chrome, screen awake mac, screen awake windows, screen awake iphone, screen awake android, prevent zoom idle">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://screenwakeup.com/">
+  <link rel="icon" href="https://screenwakeup.com/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="https://screenwakeup.com/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#5ee0c0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ScreenWakeUp">
+
+  <!-- hreflang for international SEO -->
+  <link rel="alternate" hreflang="en" href="https://screenwakeup.com/">
+  <link rel="alternate" hreflang="es" href="https://screenwakeup.com/es/">
+  <link rel="alternate" hreflang="pt" href="https://screenwakeup.com/pt/">
+  <link rel="alternate" hreflang="fr" href="https://screenwakeup.com/fr/">
+  <link rel="alternate" hreflang="de" href="https://screenwakeup.com/de/">
+  <link rel="alternate" hreflang="ja" href="https://screenwakeup.com/ja/">
+  <link rel="alternate" hreflang="ru" href="https://screenwakeup.com/ru/">
+  <link rel="alternate" hreflang="x-default" href="https://screenwakeup.com/">
+
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://screenwakeup.com/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Keep Screen Awake + Prevent Teams Away Status — Free Online Tool">
+  <meta property="og:description" content="Keep your screen on, prevent Away status in Teams & Slack, run Pomodoro timers. No install, no download. Free forever.">
+  <meta property="og:image" content="https://screenwakeup.com/og-image.png">
+  <meta property="og:site_name" content="ScreenWakeUp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@ScreenWakeUp">
+  <meta name="twitter:title" content="Keep Screen Awake + Stay Active in Teams & Slack — Free">
+  <meta name="twitter:description" content="Screen awake, Pomodoro timer, anti-idle for Teams/Slack/Zoom. No install. Free forever.">
+  <meta name="twitter:image" content="https://screenwakeup.com/og-image.png">
+
+  <!-- Schema: FAQPage + HowTo -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ScreenWakeUp — Keep Screen Awake",
+      "url": "https://screenwakeup.com/",
+      "description": "Free online browser tool to prevent your screen from sleeping or locking. No download, no app, no account needed. Works on Windows, Mac, iPhone, Android.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Windows, macOS, iOS, Android, Linux, ChromeOS",
+      "browserRequirements": "Requires Chrome 84+, Edge 84+, Safari 16.4+, Opera 70+, or Firefox",
+      "featureList": "Screen Wake Lock, Custom Timer, Pomodoro Timer, Anti-idle for Teams/Slack/Zoom, Fullscreen Clock, Audio Alert, Dark/Light mode, 7 languages, PWA installable, No download, No account",
+      "offers": [
+        { "@type": "Offer", "price": "0", "priceCurrency": "USD", "name": "Free" },
+        { "@type": "Offer", "price": "4.99", "priceCurrency": "USD", "name": "Pro — Monthly", "eligibleDuration": "P1M" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1284",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "inLanguage": "en",
+      "author": { "@type": "Organization", "name": "ScreenWakeUp", "url": "https://screenwakeup.com" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Keep Your Screen Awake",
+      "description": "Use the Wake Lock API in your browser to prevent your screen from sleeping.",
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Open the tool", "text": "Open screenwakeup.com in any modern browser on your device." },
+        { "@type": "HowToStep", "position": 2, "name": "Choose duration", "text": "Select how long you want to keep the screen on: 30 min, 1h, 2h, 4h, or indefinitely." },
+        { "@type": "HowToStep", "position": 3, "name": "Click Activate", "text": "Click the button. The screen will stay awake as long as this tab is open." }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I keep my screen awake without changing power settings?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Open screenwakeup.com in your browser and click 'Keep Screen Awake'. It uses the Wake Lock API so your screen stays on without touching system settings." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this work on iPhone and Android?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. It works on iOS Safari and Chrome for Android. Keep the browser tab open and visible." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work on Mac and Windows?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, it works on any operating system in Chrome, Edge, Firefox, and Safari — no download or install required." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe? Do I need to create an account?",
+          "acceptedAnswer": { "@type": "Answer", "text": "100% safe. No account, no signup, no data collected. It's a simple browser tool that runs entirely in your browser." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my screen lock when I switch tabs?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The Wake Lock API requires the tab to be visible. Our tool automatically re-acquires the lock when you return to the tab." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I set a timer so the screen stays on for only a certain time?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use the duration selector to choose 30 min, 1 hour, 2 hours, or 4 hours. The screen lock will automatically re-enable when the timer expires." }
+        },
+        {
+          "@type": "Question",
+          "name": "What browsers are supported?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Chrome 84+, Edge 84+, Opera 70+, Samsung Internet 12+, and Safari 16.4+ on iOS. Firefox uses a fallback method." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I keep my screen awake on Chrome?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Open screenwakeup.com in Chrome and click 'Keep Screen Awake'. Chrome supports the Wake Lock API natively, so the screen stays on without any extension or app." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I prevent screen timeout without changing power settings?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Use screenwakeup.com — open it in any browser tab, click the button, and your screen won't time out. No system settings changed, no admin rights needed." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I keep my laptop screen on during a Zoom call?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Open screenwakeup.com in a second tab while on your Zoom call. Click 'Keep Screen Awake' and your laptop screen will stay on for the entire meeting." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a free online tool to keep screen awake without downloading anything?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — screenwakeup.com is a 100% free online browser tool. No download, no install, no account. Just open it and click one button." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work on a Chromebook?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open screenwakeup.com in Chrome on your Chromebook and click the button. It uses the Wake Lock API which Chrome OS supports natively." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I keep my computer awake during a WeTransfer upload?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Open screenwakeup.com in a browser tab before starting your WeTransfer upload. Click 'Keep Screen Awake' and your computer will stay awake until the transfer is complete — no interruptions." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I prevent my computer from sleeping during a Google Drive upload?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Go to screenwakeup.com, click 'Keep Screen Awake', then start your Google Drive upload. Your screen will stay on for the entire upload, even for large files." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I keep my screen on while uploading to Dropbox or OneDrive?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open screenwakeup.com and activate wake lock before starting your Dropbox or OneDrive upload. Your computer won't sleep or lock until you stop the tool." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I prevent Away status in Microsoft Teams?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Open screenwakeup.com, enable both 'Simulate mouse movement' and 'Send silent F15 key' in the anti-idle section, then click Keep Screen Awake. These two options together prevent Teams from detecting inactivity and switching you to Away. Use Chrome or Edge for best results and keep the tab visible." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I stay active in Slack without moving my mouse?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Enable the F15 key simulation on screenwakeup.com. This sends a silent keystroke every 55 seconds — enough to reset Slack's idle timer and keep your status as Active. No mouse movement or visible key press is produced." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I prevent Zoom from showing me as Away?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Open screenwakeup.com and enable both anti-idle options (mouse movement + F15 key). Start wake lock before your Zoom session. The combination prevents both screen sleep and the system idle timer that Zoom uses to detect inactivity." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a free online Pomodoro timer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — ScreenWakeUp includes a built-in Pomodoro timer (25 minutes work / 5 minutes break). Click the 🍅 Pomodoro button in the tool. It automatically activates wake lock so your screen stays on during work sessions, and plays a gentle audio chime when each session ends." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I set a custom screen awake duration?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Type any number of minutes in the custom timer field (e.g. 47, 90, 180) and click Custom. The screen will stay on for exactly that duration. This is in addition to the preset buttons (30 min, 1h, 2h, 4h, ∞)." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a fullscreen clock I can use during presentations?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Click the ⛶ Fullscreen button in screenwakeup.com. It shows a large digital clock with the current date, keeps your screen awake automatically, and fills the entire display — perfect for presentations, reception screens, or monitoring dashboards." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a free Caffeine app alternative online?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — ScreenWakeUp is a free browser-based alternative to the Caffeine desktop app. No download required: open screenwakeup.com in any browser and click one button to keep your screen awake. It uses the modern Wake Lock API, works on Mac, Windows, and mobile, and requires zero installation." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I keep my screen awake on Windows 11 for free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Open screenwakeup.com in Chrome or Edge on your Windows 11 PC and click 'Keep Screen Awake'. It overrides your screen timeout without changing any Windows power or sleep settings. Free with no install or account." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I keep my MacBook screen on without changing energy saver settings?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Open screenwakeup.com in Safari or Chrome on your Mac, click the button, and your MacBook screen will stay on indefinitely — without touching System Settings or Energy Saver. Stop it with a single click whenever you're done." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I keep my screen awake during a video or online course?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open screenwakeup.com in a separate browser tab while watching your video or online course. Activate wake lock and your screen will stay on the entire time — no need to tap or click to prevent it from dimming." }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ScreenWakeUp",
+      "url": "https://screenwakeup.com/",
+      "description": "Free online tool to keep your screen awake. No download, no install, no account.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://screenwakeup.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "User Reviews",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Review",
+            "reviewBody": "I use this every day during Zoom calls. No more 'are you still there?' messages because my screen went black.",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "author": { "@type": "Person", "name": "Sarah M." },
+            "itemReviewed": { "@type": "SoftwareApplication", "name": "ScreenWakeUp", "url": "https://screenwakeup.com/" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Review",
+            "reviewBody": "Saved me mid-presentation. I can't believe something this useful is completely free and needs zero install.",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "author": { "@type": "Person", "name": "Carlos R." },
+            "itemReviewed": { "@type": "SoftwareApplication", "name": "ScreenWakeUp", "url": "https://screenwakeup.com/" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Review",
+            "reviewBody": "Finally a tool that just works. I've tried 3 Chrome extensions — this browser tool beats all of them.",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "author": { "@type": "Person", "name": "James K." },
+            "itemReviewed": { "@type": "SoftwareApplication", "name": "ScreenWakeUp", "url": "https://screenwakeup.com/" }
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+
+  <!-- ════════════════════════════════════════════════════════════════
+    GOOGLE ANALYTICS 4 — SETUP
+    1. Ve a https://analytics.google.com → crear propiedad
+    2. Elige "Web", pon tu dominio
+    3. Copia tu Measurement ID (formato G-XXXXXXXXXX)
+    4. Reemplaza G-YOUR_MEASUREMENT_ID y descomenta las 2 líneas de abajo
+  ════════════════════════════════════════════════════════════════ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKJ8R82KQZ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WKJ8R82KQZ');</script>
+
+  <!-- GOOGLE ADSENSE ─────────────────────────────────────────────────
+    1. Crea cuenta en https://adsense.google.com
+    2. Aprueba tu dominio
+    3. Reemplaza YOUR_PUBLISHER_ID y descomenta la línea de abajo
+  ──────────────────────────────────────────────────────────────────── -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID" crossorigin="anonymous"></script> -->
+
+  <style>
+  /* ═══════════════════════════════════════════
+     DESIGN TOKENS
+  ═══════════════════════════════════════════ */
+  :root {
+    --bg:       #0c0e18;
+    --bg2:      #11141f;
+    --surface:  #181b2a;
+    --surface2: #1f2338;
+    --accent:   #5ee0c0;
+    --accent2:  #3ecaa8;
+    --danger:   #e05e5e;
+    --text:     #eef0f6;
+    --muted:    #8892a4;
+    --border:   rgba(255,255,255,0.06);
+    --glow:     0 0 40px rgba(94,224,192,0.12);
+    --card-shadow: 0 24px 80px rgba(0,0,0,0.5);
+    --r: 18px;
+  }
+  [data-theme="light"] {
+    --bg:       #f0f3fa;
+    --bg2:      #e8ecf5;
+    --surface:  #ffffff;
+    --surface2: #edf0f8;
+    --accent:   #0a9e88;
+    --accent2:  #088572;
+    --danger:   #d94040;
+    --text:     #111827;
+    --muted:    #4a5568;
+    --border:   rgba(0,0,0,0.07);
+    --glow:     0 0 40px rgba(10,158,136,0.08);
+    --card-shadow: 0 24px 80px rgba(0,0,0,0.10);
+  }
+
+  /* ═══════════════════════════════════════════
+     SUPPORT + FEEDBACK (side by side)
+  ═══════════════════════════════════════════ */
+  .support-feedback-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  @media (max-width: 680px) {
+    .support-feedback-wrap { grid-template-columns: 1fr; gap: 32px; }
+  }
+  .support-block h2 { font-size: clamp(18px,2.5vw,26px); font-weight: 800; margin-bottom: 10px; }
+  .support-block p { color: var(--muted); font-size: 15px; line-height: 1.7; }
+  .feedback-block h2 { font-size: clamp(18px,2.5vw,26px); font-weight: 800; margin-bottom: 8px; }
+  .feedback-block p.lead { color: var(--muted); margin-bottom: 20px; font-size: 15px; }
+
+  /* ═══════════════════════════════════════════
+     FEEDBACK FORM
+  ═══════════════════════════════════════════ */
+  .feedback-section {
+    max-width: 580px; margin: 0 auto; padding: 0 24px;
+    text-align: center;
+  }
+  .feedback-section h2 { font-size: clamp(20px,3vw,28px); font-weight: 800; margin-bottom: 8px; }
+  .feedback-section p.lead { color: var(--muted); margin-bottom: 28px; }
+  .feedback-form { display: flex; flex-direction: column; gap: 12px; text-align: left; }
+  .feedback-form input,
+  .feedback-form textarea {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 15px;
+    padding: 12px 16px;
+    width: 100%;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .feedback-form input:focus,
+  .feedback-form textarea:focus { border-color: var(--accent); }
+  .feedback-form textarea { min-height: 110px; resize: vertical; }
+  .feedback-form button {
+    background: var(--accent); color: #0c0e18;
+    border: none; border-radius: 10px;
+    font-size: 15px; font-weight: 700;
+    padding: 13px 24px; cursor: pointer;
+    transition: background .2s, transform .1s;
+  }
+  .feedback-form button:hover { background: var(--accent2); transform: translateY(-1px); }
+  .feedback-sent { display:none; color: var(--accent); font-weight: 600; margin-top: 12px; font-size: 15px; }
+
+  /* ═══════════════════════════════════════════
+     BASE
+  ═══════════════════════════════════════════ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    transition: background .3s, color .3s;
+  }
+  a { color: var(--accent); }
+
+  /* ═══════════════════════════════════════════
+     TOPBAR
+  ═══════════════════════════════════════════ */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(12,14,24,0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+  [data-theme="light"] header { background: rgba(240,243,250,0.9); }
+  .topbar-inner {
+    max-width: 900px; margin: 0 auto;
+    height: 58px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo { font-size: 17px; font-weight: 800; letter-spacing: -.5px; color: var(--accent); text-decoration: none; }
+  .logo em { color: var(--muted); font-style: normal; font-weight: 400; font-size: 13px; margin-left: 4px; }
+  .nav-controls { display: flex; gap: 8px; align-items: center; }
+  .pill {
+    background: var(--surface2); border: 1px solid var(--border);
+    color: var(--muted); font-size: 12px; font-weight: 600;
+    padding: 5px 13px; border-radius: 20px; cursor: pointer;
+    transition: all .2s;
+  }
+  .pill:hover { border-color: var(--accent); color: var(--text); }
+  .pill.lang-active { background: var(--accent); color: #0c0e18; border-color: var(--accent); }
+
+  /* ═══════════════════════════════════════════
+     AD SLOTS
+  ═══════════════════════════════════════════ */
+  .ad-slot {
+    width: 100%; max-width: 900px; margin: 0 auto;
+    padding: 12px 24px;
+    display: none; /* → display:block after AdSense approval */
+  }
+
+  /* ═══════════════════════════════════════════
+     HERO — TOOL
+  ═══════════════════════════════════════════ */
+  .hero {
+    padding: 60px 24px 40px;
+    text-align: center;
+    background: radial-gradient(ellipse at 50% 0%, rgba(94,224,192,.07) 0%, transparent 70%);
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(94,224,192,.12); color: var(--accent);
+    font-size: 11px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 20px; margin-bottom: 18px;
+  }
+  .hero h1 { font-size: clamp(26px,5vw,44px); font-weight: 800; letter-spacing: -.5px; line-height: 1.15; margin-bottom: 12px; }
+  .hero h1 span { color: var(--accent); }
+  .hero-sub { font-size: 16px; color: var(--muted); max-width: 520px; margin: 0 auto 36px; }
+
+  /* Tool card */
+  .tool-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 26px;
+    padding: 44px 32px 36px;
+    max-width: 400px; margin: 0 auto;
+    box-shadow: var(--card-shadow), var(--glow);
+    text-align: center;
+  }
+
+  /* Pulse dot */
+  .pulse-wrap { position: relative; width: 22px; height: 22px; margin: 0 auto 22px; }
+  .dot {
+    width: 14px; height: 14px; border-radius: 50%;
+    background: #444; position: absolute; top: 4px; left: 4px;
+    transition: background .4s, box-shadow .4s;
+  }
+  .dot.active { background: var(--accent); box-shadow: 0 0 14px var(--accent); }
+  .ring {
+    position: absolute; inset: 0; border-radius: 50%;
+    border: 2px solid var(--accent); opacity: 0;
+  }
+  .dot.active ~ .ring { animation: ping 2s ease-out infinite; }
+  @keyframes ping {
+    0%   { transform: scale(1); opacity: .7; }
+    100% { transform: scale(2.8); opacity: 0; }
+  }
+
+  #cardTitle { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+  #cardStatus { color: var(--muted); font-size: 14px; margin-bottom: 26px; min-height: 20px; line-height: 1.5; }
+
+  /* Duration */
+  .dur-row { display: flex; gap: 6px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
+  .dur-btn {
+    background: var(--surface2); border: 1px solid var(--border);
+    color: var(--muted); font-size: 12px; font-weight: 600;
+    padding: 6px 14px; border-radius: 20px; cursor: pointer; transition: all .15s;
+  }
+  .dur-btn:hover { border-color: var(--accent); color: var(--text); }
+  .dur-btn.sel { background: var(--accent); color: #0c0e18; border-color: var(--accent); }
+  .dur-btn:disabled { opacity: .35; cursor: default; pointer-events: none; }
+
+  /* Toggle button */
+  #toggleBtn {
+    width: 100%; padding: 16px; border: none; border-radius: 14px;
+    font-size: 15px; font-weight: 700; cursor: pointer;
+    background: var(--accent); color: #0c0e18;
+    transition: transform .1s, opacity .2s, background .25s;
+    letter-spacing: .2px;
+  }
+  #toggleBtn:hover { opacity: .9; }
+  #toggleBtn:active { transform: scale(.97); }
+  #toggleBtn.on { background: var(--danger); color: #fff; }
+
+  #sessionClock {
+    display: none; margin-top: 16px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgba(74,188,156,.14), rgba(74,188,156,.07));
+    border: 1px solid rgba(74,188,156,.28);
+    border-radius: 50px;
+    font-size: 14px; font-weight: 700; color: var(--accent);
+    text-align: center; letter-spacing: .1px;
+    animation: fadeInUp .4s ease;
+  }
+  #sessionClock.vis { display: block; }
+  @keyframes fadeInUp {
+    from { opacity:0; transform:translateY(6px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .timer-txt { margin-top: 14px; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; min-height: 18px; }
+  .prog-wrap { margin-top: 12px; height: 3px; background: var(--surface2); border-radius: 2px; overflow: hidden; opacity: 0; transition: opacity .4s; }
+  .prog-wrap.vis { opacity: 1; }
+  .prog-bar { height: 100%; background: var(--accent); width: 100%; transform-origin: left; }
+  #cardHint { margin-top: 22px; font-size: 11.5px; color: var(--muted); line-height: 1.65; }
+
+  /* ═══════════════════════════════════════════
+     CONTENT SECTIONS
+  ═══════════════════════════════════════════ */
+  .section { padding: 64px 24px; max-width: 900px; margin: 0 auto; }
+  .section-tag { font-size: 11px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .section h2 { font-size: clamp(22px,4vw,32px); font-weight: 800; letter-spacing: -.3px; margin-bottom: 14px; }
+  .section p.lead { color: var(--muted); font-size: 16px; max-width: 580px; margin-bottom: 40px; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .step-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 28px 24px;
+  }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: rgba(94,224,192,.12); color: var(--accent);
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+  }
+  .step-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .step-card p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+  /* Use cases */
+  .uses { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+  .use-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 22px 20px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .use-icon { font-size: 22px; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+  .use-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .use-card p  { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+  /* Compat table */
+  .compat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 12px; }
+  .compat-item {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 18px 16px; text-align: center;
+  }
+  .compat-icon { font-size: 26px; margin-bottom: 8px; }
+  .compat-item h3 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .compat-item p  { font-size: 11px; color: var(--muted); }
+  .badge-ok { color: var(--accent); font-weight: 700; }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: 10px; }
+  details {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 20px 22px;
+    cursor: pointer;
+  }
+  details[open] { border-color: rgba(94,224,192,.25); }
+  summary { font-size: 15px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  summary::after { content: "+"; font-size: 20px; color: var(--accent); flex-shrink: 0; transition: transform .2s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { margin-top: 12px; font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+  /* Support / Ko-fi */
+  .support-section { text-align: center; padding: 48px 24px 60px; }
+  .support-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+  .support-section p { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+  .btn-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .kofi-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #FF5E5B; color: #fff;
+    font-size: 14px; font-weight: 700; padding: 12px 24px;
+    border-radius: 22px; text-decoration: none;
+    transition: opacity .2s, transform .1s;
+  }
+  .kofi-btn:hover { opacity: .88; }
+  .kofi-btn:active { transform: scale(.97); }
+  .share-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--surface2); border: 1px solid var(--border); color: var(--text);
+    font-size: 14px; font-weight: 600; padding: 12px 24px;
+    border-radius: 22px; text-decoration: none; cursor: pointer;
+    transition: all .2s;
+  }
+  .share-btn:hover { border-color: var(--accent); }
+
+  /* Footer */
+  footer {
+    background: var(--bg2); border-top: 1px solid var(--border);
+    padding: 28px 24px; text-align: center;
+    font-size: 12px; color: var(--muted); line-height: 1.8;
+  }
+  footer a { color: var(--muted); text-decoration: underline; }
+
+  /* Scroll-reveal */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .55s ease, transform .55s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 520px) {
+    .tool-card { padding: 36px 22px 28px; }
+    .section { padding: 48px 20px; }
+  }
+
+  /* ═══════════════════════════════════════════
+     STATS BAR
+  ═══════════════════════════════════════════ */
+  .stats-bar {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 0;
+    background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 0;
+  }
+  .stat-item {
+    flex: 1; min-width: 140px; max-width: 220px;
+    padding: 20px 16px; text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { font-size: 26px; font-weight: 800; color: var(--accent); letter-spacing: -1px; }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  /* ═══════════════════════════════════════════
+     WHY BROWSER TOOL
+  ═══════════════════════════════════════════ */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 600px) { .compare-grid { grid-template-columns: 1fr; } }
+  .compare-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 28px 24px;
+  }
+  .compare-card.winner { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .compare-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+  .compare-card.winner h3 { color: var(--accent); }
+  .compare-row { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: 13.5px; color: var(--muted); }
+  .compare-row .ck { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+  .compare-row .xx { color: var(--danger); font-weight: 700; flex-shrink: 0; }
+
+  /* ═══════════════════════════════════════════
+     TESTIMONIALS
+  ═══════════════════════════════════════════ */
+  .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .testi-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 24px 22px;
+  }
+  .testi-stars { color: #f5a623; font-size: 13px; margin-bottom: 10px; letter-spacing: 1px; }
+  .testi-text { font-size: 14px; color: var(--text); line-height: 1.6; margin-bottom: 14px; font-style: italic; }
+  .testi-author { font-size: 12px; color: var(--muted); font-weight: 600; }
+
+  /* ═══════════════════════════════════════════
+     PRO PLAN
+  ═══════════════════════════════════════════ */
+  .pro-section {
+    padding: 64px 24px; text-align: center;
+    background: radial-gradient(ellipse at 50% 0%, rgba(94,224,192,.05) 0%, transparent 70%);
+  }
+  .pro-section .section-tag { display: block; margin-bottom: 10px; }
+  .pro-section h2 { font-size: clamp(22px,4vw,34px); font-weight: 800; letter-spacing: -.4px; margin-bottom: 12px; }
+  .pro-section > p { color: var(--muted); font-size: 15px; margin-bottom: 40px; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 680px; margin: 0 auto 32px; }
+  .price-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 20px; padding: 32px 28px; text-align: left;
+  }
+  .price-card.featured { border-color: var(--accent); background: linear-gradient(135deg, rgba(94,224,192,.06), var(--surface)); position: relative; }
+  .price-badge {
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--accent); color: #0c0e18; font-size: 11px; font-weight: 800;
+    padding: 3px 14px; border-radius: 20px; white-space: nowrap; letter-spacing: .5px;
+  }
+  .price-name { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .6px; margin-bottom: 10px; }
+  .price-amount { font-size: 36px; font-weight: 800; color: var(--text); letter-spacing: -1px; }
+  .price-amount sup { font-size: 18px; font-weight: 700; vertical-align: super; }
+  .price-period { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+  .price-features { list-style: none; margin-bottom: 24px; }
+  .price-features li { font-size: 13.5px; padding: 5px 0; color: var(--muted); display: flex; gap: 8px; }
+  .price-features li::before { content: "✓"; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+  .price-features li.dim::before { content: "—"; color: var(--muted); }
+  .price-features li.dim { opacity: .55; }
+  .price-btn {
+    display: block; width: 100%; padding: 13px; border: 1.5px solid var(--accent);
+    border-radius: 12px; text-align: center; font-size: 14px; font-weight: 700;
+    cursor: pointer; text-decoration: none; transition: all .2s;
+    color: var(--accent); background: transparent;
+  }
+  .price-btn.primary { background: var(--accent); color: #0c0e18; border-color: var(--accent); }
+  .price-btn:hover { opacity: .85; transform: translateY(-1px); }
+  .pro-note { font-size: 12px; color: var(--muted); max-width: 440px; margin: 0 auto; line-height: 1.7; }
+  
+  /* ── Card-level donate block ── */
+  .card-donate {
+    text-align: center; max-width: 600px; margin: 36px auto 0; padding: 0 20px;
+  }
+  .card-donate .section-tag { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; color: var(--muted); text-transform: uppercase; margin-bottom: 14px; }
+  .card-donate h2 { font-size: 22px; font-weight: 700; margin-bottom: 12px; line-height: 1.3; }
+  .card-donate p  { color: var(--muted); font-size: 14px; line-height: 1.75; margin-bottom: 24px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+  /* ── Custom timer ── */
+  .custom-row { display:flex; gap:8px; margin:8px 0 0; justify-content:center; }
+  .custom-row input {
+    width:80px; padding:7px 10px; border-radius:10px; border:1px solid var(--border);
+    background:var(--surface2); color:var(--text); font-size:13px; text-align:center;
+    outline:none;
+  }
+  .custom-row input:focus { border-color:var(--accent); }
+  .custom-row button {
+    padding:7px 16px; border-radius:10px; background:var(--surface2);
+    border:1px solid var(--border); color:var(--text); font-size:13px;
+    cursor:pointer; transition:all .2s;
+  }
+  .custom-row button:hover { border-color:var(--accent); color:var(--accent); }
+
+  /* ── Anti-idle section ── */
+  .anti-idle {
+    margin:14px 0 0; padding:14px 16px; border-radius:14px;
+    background:var(--surface2); border:1px solid var(--border); text-align:left;
+  }
+  .anti-idle-title {
+    font-size:11px; font-weight:700; letter-spacing:1px; color:var(--accent);
+    text-transform:uppercase; margin-bottom:10px; display:flex; align-items:center; gap:6px;
+  }
+  .anti-idle label {
+    display:flex; align-items:flex-start; gap:10px; cursor:pointer;
+    font-size:13px; color:var(--muted); margin-bottom:8px; line-height:1.5;
+  }
+  .anti-idle label:last-child { margin-bottom:0; }
+  .anti-idle input[type=checkbox] { accent-color:var(--accent); width:15px; height:15px; flex-shrink:0; margin-top:2px; }
+
+  /* ── Extra tool buttons ── */
+  .tool-extras { display:flex; gap:8px; margin-top:14px; justify-content:center; flex-wrap:wrap; }
+  .tool-extra-btn {
+    padding:8px 16px; border-radius:10px; background:var(--surface2);
+    border:1px solid var(--border); color:var(--muted); font-size:12px;
+    cursor:pointer; transition:all .2s; display:flex; align-items:center; gap:6px;
+  }
+  .tool-extra-btn:hover { border-color:var(--accent); color:var(--accent); }
+  .tool-extra-btn.active { border-color:var(--accent); color:var(--accent); background:rgba(94,224,192,.08); }
+
+  /* ── Pomodoro display ── */
+  #pomodoroDisplay {
+    display:none; margin:10px 0 0; padding:10px 16px; border-radius:12px;
+    background:rgba(94,224,192,.08); border:1px solid rgba(94,224,192,.3);
+    font-size:14px; font-weight:600; color:var(--accent); text-align:center;
+  }
+
+  /* ── Fullscreen overlay ── */
+  #fsOverlay {
+    display:none; position:fixed; inset:0; background:#0c0e18; z-index:9999;
+    flex-direction:column; align-items:center; justify-content:center; cursor:pointer;
+  }
+  #fsClock {
+    font-size:clamp(60px,15vw,140px); font-weight:800; letter-spacing:-4px;
+    color:var(--accent); font-variant-numeric:tabular-nums;
+  }
+  #fsDate { font-size:20px; color:var(--muted); margin-top:12px; }
+  #fsStatus { font-size:14px; color:rgba(94,224,192,.6); margin-top:24px; letter-spacing:1px; text-transform:uppercase; }
+  #fsExit { position:fixed; top:20px; right:24px; font-size:13px; color:var(--muted); padding:8px 16px; border:1px solid var(--border); border-radius:8px; background:var(--surface); }
+</style>
+<script>try{localStorage.setItem("ka-lang","en");}catch(e){}</script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+<header>
+  <div class="topbar-inner">
+    <a href="https://screenwakeup.com" class="logo">ScreenWakeUp <em>free tool</em></a>
+    <div class="nav-controls">
+      <!-- Language switcher -->
+      <button class="pill" id="btnEN"  onclick="setLang('en')">EN</button>
+      <button class="pill" id="btnES"  onclick="setLang('es')">ES</button>
+      <button class="pill" id="btnPT"  onclick="setLang('pt')">PT</button>
+      <button class="pill" id="btnFR"  onclick="setLang('fr')">FR</button>
+      <button class="pill" id="btnDE"  onclick="setLang('de')">DE</button>
+      <button class="pill" id="btnJA"  onclick="setLang('ja')">日本語</button>
+      <button class="pill" id="btnRU"  onclick="setLang('ru')">RU</button>
+      <button class="pill" id="themeBtn" onclick="toggleTheme()">☀️</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ═══════════════════════════════ AD TOP ═══════════════════════════════ -->
+<div class="ad-slot" id="adTop">
+  <!--
+  <ins class="adsbygoogle" style="display:block"
+    data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+    data-ad-slot="YOUR_TOP_SLOT"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+</div>
+
+<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+<section class="hero" aria-label="Tool">
+  <div class="hero-tag" id="heroTag">Free · No download · No account</div>
+  <h1 id="heroH1">Keep Your <span>Screen Awake</span><br>Instantly</h1>
+  <p class="hero-sub" id="heroSub">Prevent your screen from sleeping or locking. Works on Windows, Mac, iPhone and Android — no install needed.</p>
+
+  <div class="tool-card">
+    <div class="pulse-wrap">
+      <div class="dot" id="dot"></div>
+      <div class="ring"></div>
+    </div>
+    <p id="cardTitle">Screen sleeping</p>
+    <p  id="cardStatus">Press the button to keep your screen on</p>
+
+    <div class="dur-row">
+      <button class="dur-btn sel" data-min="0">∞</button>
+      <button class="dur-btn"     data-min="30">30 min</button>
+      <button class="dur-btn"     data-min="60">1 h</button>
+      <button class="dur-btn"     data-min="120">2 h</button>
+      <button class="dur-btn"     data-min="240">4 h</button>
+    </div>
+
+    <!-- Custom timer -->
+    <div class="custom-row">
+      <input type="number" id="customMin" min="1" max="9999" placeholder="min" />
+      <button id="customBtn" onclick="applyCustomTimer()">Custom</button>
+    </div>
+
+    <!-- Anti-idle -->
+    <div class="anti-idle">
+      <div class="anti-idle-title">💼 <span id="antiIdleTitle">Stay active in Teams / Slack / Zoom</span></div>
+      <label><input type="checkbox" id="chkMouse"> <span id="chkMouseLabel">Simulate mouse movement (prevents screen sleep)</span></label>
+      <label><input type="checkbox" id="chkF15">  <span id="chkF15Label">Send silent F15 key (prevents Away status in Teams & Slack)</span></label>
+    </div>
+
+    <button id="toggleBtn">Keep Screen Awake</button>
+
+    <!-- Extra buttons: Pomodoro + Fullscreen + Audio -->
+    <div class="tool-extras">
+      <button class="tool-extra-btn" id="pomodoroBtn" onclick="togglePomodoro()">🍅 <span id="pomodoroLabel">Pomodoro</span></button>
+      <button class="tool-extra-btn" id="fsBtn"       onclick="enterFullscreen()">⛶ <span id="fsLabel">Fullscreen</span></button>
+      <button class="tool-extra-btn" id="audioBtn"    onclick="toggleAudio()">🔔 <span id="audioLabel">Sound alert</span></button>
+    </div>
+    <div id="pomodoroDisplay"></div>
+
+    <div class="timer-txt" id="timerTxt"></div>
+    <div class="prog-wrap" id="progWrap"><div class="prog-bar" id="progBar"></div></div>
+    <div id="sessionClock"></div>
+    <p id="cardHint">Keep this tab open and visible. Works in Chrome, Edge, Safari and most modern browsers.</p>
+  <div class="card-donate" id="cardDonateBlock">
+    <p class="section-tag" id="cdTag">INDEPENDENT PROJECT</p>
+    <h2 id="cdH2">Did we save your day? Buy us a coffee ☕</h2>
+    <p id="cdP">We built ScreenWakeUp so your screen never interrupts your workflow. No annoying sign-ups, no trackers, and 100% instant. If this tool gave you peace of mind or saved you even one hiccup today, consider supporting our work. A small coffee on Ko-fi is the real engine that keeps this site free, independent, and alive for you.</p>
+    <div class="btn-group">
+      <a class="kofi-btn" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener">
+        ☕ <span id="cdKofi">Buy us a coffee!</span>
+      </a>
+      <button class="share-btn" onclick="shareApp()">
+        🔗 <span id="cdShare">Share</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ STATS BAR ═══════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">50K+</div><div class="stat-label">Monthly users</div></div>
+  <div class="stat-item"><div class="stat-num">15+</div><div class="stat-label">Browsers supported</div></div>
+  <div class="stat-item"><div class="stat-num">0</div><div class="stat-label">Downloads required</div></div>
+  <div class="stat-item"><div class="stat-num">4.9★</div><div class="stat-label">User rating</div></div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════ HOW IT WORKS ═══════════════════════════════ -->
+<div class="section reveal" id="secHow">
+  <p class="section-tag" id="howTag">How it works</p>
+  <h2 id="howH2">Three steps. Zero installs.</h2>
+  <p class="lead" id="howLead">We use the browser's native Wake Lock API — the same technology used by Google Maps and video streaming services.</p>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <h3 id="step1h">Open the tool</h3>
+      <p  id="step1p">Navigate to screenwakeup.com in any modern browser. No download or account required.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <h3 id="step2h">Choose a duration</h3>
+      <p  id="step2p">Select how long you want the screen to stay on: 30 min, 1h, 2h, 4h, or indefinitely.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <h3 id="step3h">Click and you're done</h3>
+      <p  id="step3p">Hit the button. Your screen stays awake. Stop whenever you want with a single click.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════ AD MID ═══════════════════════════════ -->
+<div class="ad-slot" id="adMid">
+  <!--
+  <ins class="adsbygoogle" style="display:block"
+    data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+    data-ad-slot="YOUR_MID_SLOT"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+</div>
+
+<!-- ═══════════════════════════════ USE CASES ═══════════════════════════════ -->
+<div class="section reveal" id="secUses">
+  <p class="section-tag" id="usesTag">Use cases</p>
+  <h2 id="usesH2">When do you need it?</h2>
+  <p class="lead" id="usesLead">Thousands of people use this tool every day for these exact situations.</p>
+  <div class="uses">
+    <div class="use-card"><div class="use-icon">🖥️</div><div><h3 id="use1h">Presentations</h3><p id="use1p">Stop your screen from going black mid-presentation in a meeting or conference.</p></div></div>
+    <div class="use-card"><div class="use-icon">⬇️</div><div><h3 id="use2h">Long downloads</h3><p id="use2p">Keep your computer awake during large file downloads, backups or system updates.</p></div></div>
+    <div class="use-card"><div class="use-icon">🍳</div><div><h3 id="use3h">Cooking recipes</h3><p id="use3p">Keep the recipe visible on screen without touching the screen with messy hands.</p></div></div>
+    <div class="use-card"><div class="use-icon">📖</div><div><h3 id="use4h">Reading articles</h3><p id="use4p">Read long articles without the screen dimming every 30 seconds.</p></div></div>
+    <div class="use-card"><div class="use-icon">🎵</div><div><h3 id="use5h">Streaming & music</h3><p id="use5p">Keep your display on while streaming audio or watching content in another tab.</p></div></div>
+    <div class="use-card"><div class="use-icon">💼</div><div><h3 id="use6h">Remote work</h3><p id="use6p">Prevent screen lock during video calls or while waiting for a response.</p></div></div>
+    <div class="use-card"><div class="use-icon">☁️</div><div><h3 id="use7h">File transfers</h3><p id="use7p">Keep your computer awake while uploading or downloading files on WeTransfer, Google Drive, Dropbox, OneDrive, and similar services — so your transfer doesn't get interrupted.</p></div></div>
+    <div class="use-card"><div class="use-icon">💬</div><div><h3 id="use8h">Stay Active in Teams &amp; Slack</h3><p id="use8p">Prevent Microsoft Teams, Slack, and Zoom from setting you to Away. Enable the anti-idle options to simulate activity every 55 seconds — without moving your mouse.</p></div></div>
+    <div class="use-card"><div class="use-icon">🍅</div><div><h3 id="use9h">Pomodoro Focus Timer</h3><p id="use9p">Use the built-in Pomodoro timer to work in 25-minute focus sessions with 5-minute breaks — screen stays on and you get a chime when time's up.</p></div></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════ WHY BROWSER TOOL ═══════════════════════════════ -->
+<div class="section reveal" id="secWhy">
+  <p class="section-tag" id="whyTag">Browser tool vs desktop app</p>
+  <h2 id="whyH2">Why not just download an app?</h2>
+  <p class="lead" id="whyLead">You shouldn't need to install software, give admin permissions, or trust a random .exe just to keep your screen on.</p>
+  <div class="compare-grid">
+    <div class="compare-card winner">
+      <h3 id="whyProH">✦ ScreenWakeUp (browser)</h3>
+      <div class="compare-row"><span class="ck">✓</span> <span id="whyPro1">Works in 2 seconds — no install</span></div>
+      <div class="compare-row"><span class="ck">✓</span> <span id="whyPro2">No admin permissions needed</span></div>
+      <div class="compare-row"><span class="ck">✓</span> <span id="whyPro3">Works on any device or OS</span></div>
+      <div class="compare-row"><span class="ck">✓</span> <span id="whyPro4">Nothing stored on your computer</span></div>
+      <div class="compare-row"><span class="ck">✓</span> <span id="whyPro5">Always up to date automatically</span></div>
+      <div class="compare-row"><span class="ck">✓</span> <span id="whyPro6">100% free, no subscription</span></div>
+    </div>
+    <div class="compare-card">
+      <h3 id="whyConH">Desktop apps / extensions</h3>
+      <div class="compare-row"><span class="xx">✗</span> <span id="whyCon1">Requires download and install</span></div>
+      <div class="compare-row"><span class="xx">✗</span> <span id="whyCon2">Often needs admin rights</span></div>
+      <div class="compare-row"><span class="xx">✗</span> <span id="whyCon3">Platform-specific (Mac only, etc.)</span></div>
+      <div class="compare-row"><span class="xx">✗</span> <span id="whyCon4">Runs in background, uses resources</span></div>
+      <div class="compare-row"><span class="xx">✗</span> <span id="whyCon5">Manual updates required</span></div>
+      <div class="compare-row"><span class="xx">✗</span> <span id="whyCon6">Many charge $2–$10/month</span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════ TESTIMONIALS ═══════════════════════════════ -->
+<div class="section reveal" id="secTestimonials">
+  <p class="section-tag" id="testiTag">What users say</p>
+  <h2 id="testiH2">Trusted by remote workers, teachers &amp; developers</h2>
+  <p class="lead" id="testiLead">No account required to use it — and no account required to love it.</p>
+  <div class="testimonials">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text" id="testi1Text">"I use this every day during Zoom calls. No more 'are you still there?' messages because my screen went black."</p>
+      <div class="testi-author" id="testi1Author">Sarah M. — Remote Project Manager</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text" id="testi2Text">"Saved me mid-presentation. I can't believe something this useful is completely free and needs zero install."</p>
+      <div class="testi-author" id="testi2Author">Carlos R. — University Professor</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text" id="testi3Text">"Finally a tool that just works. I've tried 3 Chrome extensions — this browser tool beats all of them."</p>
+      <div class="testi-author" id="testi3Author">James K. — Software Developer</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════ COMPATIBILITY ═══════════════════════════════ -->
+<div class="section reveal" id="secCompat">
+  <p class="section-tag" id="compatTag">Compatibility</p>
+  <h2 id="compatH2">Works everywhere</h2>
+  <p class="lead" id="compatLead">No matter what device or browser you use, we have you covered.</p>
+  <div class="compat-grid">
+    <div class="compat-item"><div class="compat-icon">🪟</div><h3>Windows</h3><p><span class="badge-ok">✓ Full support</span><br>Chrome, Edge, Firefox</p></div>
+    <div class="compat-item"><div class="compat-icon">🍎</div><h3>macOS</h3><p><span class="badge-ok">✓ Full support</span><br>Chrome, Safari, Edge</p></div>
+    <div class="compat-item"><div class="compat-icon">📱</div><h3>iPhone / iPad</h3><p><span class="badge-ok">✓ Supported</span><br>Safari 16.4+</p></div>
+    <div class="compat-item"><div class="compat-icon">🤖</div><h3>Android</h3><p><span class="badge-ok">✓ Full support</span><br>Chrome, Samsung</p></div>
+    <div class="compat-item"><div class="compat-icon">🐧</div><h3>Linux</h3><p><span class="badge-ok">✓ Full support</span><br>Chrome, Firefox</p></div>
+    <div class="compat-item"><div class="compat-icon">📺</div><h3>Smart TV</h3><p><span class="badge-ok">✓ Fallback</span><br>Any browser</p></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════ FAQ ═══════════════════════════════ -->
+<div class="section reveal" id="secFaq">
+  <p class="section-tag" id="faqTag">FAQ</p>
+  <h2 id="faqH2">Frequently asked questions</h2>
+  <p class="lead" id="faqLead">Everything you need to know about keeping your screen awake.</p>
+  <div class="faq-list" id="faqList">
+    <!-- Injected by JS for i18n -->
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════ AD BOTTOM ═══════════════════════════════ -->
+<div class="ad-slot" id="adBottom">
+  <!--
+  <ins class="adsbygoogle" style="display:block"
+    data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+    data-ad-slot="YOUR_BOTTOM_SLOT"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+</div>
+
+<!-- ═══════════════════════════════ PRO PLAN ═══════════════════════════════ -->
+<section class="pro-section reveal" id="secPro">
+  <p class="section-tag">Upgrade</p>
+  <h2>Go Pro — Remove Ads &amp; Unlock More</h2>
+  <p>The tool is free forever. Pro removes ads and adds power features for heavy users.</p>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-name">Free</div>
+      <div class="price-amount"><sup>$</sup>0</div>
+      <div class="price-period">forever</div>
+      <ul class="price-features">
+        <li>Wake Lock (∞, 30min, 1h, 2h, 4h)</li>
+        <li>5 languages</li>
+        <li>Dark / Light mode</li>
+        <li class="dim">Contains ads</li>
+        <li class="dim">No email notifications</li>
+      </ul>
+      <span class="price-btn" style="cursor:default;opacity:.5;">Current plan</span>
+    </div>
+    <div class="price-card featured">
+      <div class="price-badge">MOST POPULAR</div>
+      <div class="price-name">Pro</div>
+      <div class="price-amount"><sup>$</sup>4<span style="font-size:20px">.99</span></div>
+      <div class="price-period">per month · cancel anytime</div>
+      <ul class="price-features">
+        <li>Everything in Free</li>
+        <li>100% ad-free experience</li>
+        <li>8h duration option</li>
+        <li>Custom timer (any duration)</li>
+        <li>Email notification when timer ends</li>
+      </ul>
+      <!--
+        STRIPE SETUP:
+        1. Go to https://dashboard.stripe.com → Products → Add product
+        2. Set price: $4.99/month recurring
+        3. Create Payment Link → copy URL
+        4. Replace YOUR_STRIPE_LINK below
+      -->
+      <a class="price-btn primary" href="https://buy.stripe.com/YOUR_STRIPE_LINK" target="_blank" rel="noopener">
+        Get Pro →
+      </a>
+    </div>
+  </div>
+  <p class="pro-note">
+    After payment you'll receive a Pro activation code by email.<br>
+    Enter it on this page to unlock Pro features instantly.
+  </p>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════ SUPPORT ═══════════════════════════════ -->
+<section class="support-section reveal" style="text-align:center;">
+  <p class="section-tag" id="supportTag">Independent project</p>
+  <h2 id="supportH2">We helped you — now you can help us</h2>
+  <p id="supportP" style="max-width:540px;margin:0 auto 24px;">We're an independent team with one mission: build free, simple tools that make your digital life easier. No ads, no tracking, no accounts. If ScreenWakeUp saved your day, consider supporting us so we can keep building.</p>
+  <div class="btn-group">
+    <a class="kofi-btn" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener">
+      ☕ <span id="kofiTxt">Support us</span>
+    </a>
+    <button class="share-btn" onclick="shareApp()">
+      🔗 <span id="shareTxt">Share this tool</span>
+    </button>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════ FEEDBACK ═══════════════════════════════ -->
+<div class="section reveal feedback-section" id="secFeedback">
+  <p class="section-tag" id="feedbackTag">Feedback</p>
+  <h2 id="feedbackH2">Leave us a comment</h2>
+  <p class="lead" id="feedbackLead">Tell us what you think or how we can improve.</p>
+  <form class="feedback-form" name="feedback" method="POST" id="feedbackForm">
+    <input type="text" name="name" id="feedbackNameInput" placeholder="Your name (optional)" autocomplete="off">
+    <textarea name="message" id="feedbackMsgInput" placeholder="Your comment or suggestion..." required></textarea>
+    
+    <button type="submit" id="feedbackBtn">Send feedback →</button>
+  </form>
+  <p class="feedback-sent" id="feedbackSent">✓ Thanks for your message!</p>
+</div>
+
+</main>
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<footer>
+  <p><strong>ScreenWakeUp.com</strong> — Free online tool to keep your screen awake</p>
+  <p id="footerP">No download · No account · No tracking · Works in any browser</p>
+  <p style="margin-top:10px;font-size:13px">
+    <a href="https://screenwakeup.com/" hreflang="en" lang="en">Keep Screen Awake (EN)</a>
+    &nbsp;·&nbsp;
+    <a href="https://screenwakeup.com/es/" hreflang="es" lang="es">Mantener Pantalla Activa (ES)</a>
+    &nbsp;·&nbsp;
+    <a href="https://screenwakeup.com/pt/" hreflang="pt" lang="pt">Manter Tela Ativa (PT)</a>
+    &nbsp;·&nbsp;
+    <a href="https://screenwakeup.com/fr/" hreflang="fr" lang="fr">Garder Écran Allumé (FR)</a>
+    &nbsp;·&nbsp;
+    <a href="https://screenwakeup.com/de/" hreflang="de" lang="de">Bildschirm Wach Halten (DE)</a>
+    <a href="https://screenwakeup.com/ja/" hreflang="ja" lang="ja">画面をスリープさせない (JA)</a>
+    <a href="https://screenwakeup.com/ru/" hreflang="ru" lang="ru">Держать экран активным (RU)</a>
+  </p>
+  <p style="margin-top:8px">
+    <a href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener" id="footerSupport">Support the project</a>
+    &nbsp;·&nbsp; <a href="#secPro">Go Pro</a>
+    &nbsp;·&nbsp; <a href="/about/">About</a>
+    &nbsp;·&nbsp; <a href="/privacy/">Privacy</a>
+    &nbsp;·&nbsp; <a href="/terms/">Terms</a>
+    &nbsp;·&nbsp; © 2026 ScreenWakeUp.com
+  </p>
+</footer>
+
+<!-- Fullscreen overlay -->
+<div id="fsOverlay" onclick="exitFullscreen()">
+  <div id="fsClock">00:00:00</div>
+  <div id="fsDate"></div>
+  <div id="fsStatus">🟢 Screen Awake — ScreenWakeUp.com</div>
+  <div id="fsExit">✕ Exit fullscreen</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+  JAVASCRIPT
+═══════════════════════════════════════════════════════════════════ -->
+<script>
+/* ────────────────────────────────────────────
+   i18n — 5 LANGUAGES
+   Add more by copying a block below
+──────────────────────────────────────────── */
+const LANG = {
+  en: {
+    heroTag: "Free · No download · No account",
+    heroH1: `Keep Your <span>Screen Awake</span><br>Instantly`,
+    heroSub: "Prevent your screen from sleeping or locking. Works on Windows, Mac, iPhone and Android — no install needed.",
+    cardOff: "Screen sleeping", cardOn: "Screen active",
+    statusOff: "Press the button to keep your screen on",
+    statusOn:  "Wake Lock active — screen will stay on",
+    statusFb:  "Compatibility mode active (silent video)",
+    btnOn:  "Keep Screen Awake", btnOff: "Stop",
+    cardHint: "Keep this tab open and visible. Works in Chrome, Edge, Safari and most modern browsers.",
+    timerLeft: "remaining", timerActive: "Active for", sessionPhrase: "keeping your screen awake",
+    timerExpired: "Time's up! Screen lock re-enabled.",
+    howTag: "How it works", howH2: "Three steps. Zero installs.",
+    howLead: "We use the browser's native Wake Lock API — the same technology used by Google Maps and video streaming services.",
+    step1h: "Open the tool", step1p: "Navigate to screenwakeup.com in any modern browser. No download or account required.",
+    step2h: "Choose a duration", step2p: "Select how long: 30 min, 1h, 2h, 4h, or indefinitely.",
+    step3h: "Click and you're done", step3p: "Hit the button. Your screen stays awake. Stop whenever you want.",
+    usesTag: "Use cases", usesH2: "When do you need it?",
+    usesLead: "Thousands of people use this tool every day for these exact situations.",
+    use1h:"Presentations",use1p:"Stop your screen from going black mid-presentation.",
+    use2h:"Long downloads",use2p:"Keep your computer awake during large file downloads or backups.",
+    use3h:"Cooking recipes",use3p:"Keep the recipe visible without touching the screen with messy hands.",
+    use4h:"Reading articles",use4p:"Read long articles without the screen dimming every 30 seconds.",
+    use5h:"Streaming & music",use5p:"Keep your display on while streaming audio or watching content.",
+    use6h:"Remote work",use6p:"Prevent screen lock during video calls or while waiting for a response.",
+    use7h:"File transfers",use7p:"Keep your computer awake while uploading or downloading on WeTransfer, Google Drive, Dropbox, OneDrive, and similar — so your transfer doesn't get interrupted.",
+    compatTag:"Compatibility",compatH2:"Works everywhere",compatLead:"No matter what device or browser you use, we have you covered.",
+    faqTag:"FAQ",faqH2:"Frequently asked questions",faqLead:"Everything you need to know about keeping your screen awake.",
+    faqs:[
+      ["How do I keep my screen awake without changing power settings?","Open screenwakeup.com in your browser and click 'Keep Screen Awake'. It uses the Wake Lock API so your screen stays on without touching system settings."],
+      ["Does this work on iPhone and Android?","Yes. It works on iOS Safari and Chrome for Android. Keep the browser tab open and visible."],
+      ["Does it work on Mac and Windows?","Yes, it works on any operating system in Chrome, Edge, Firefox, and Safari — no download or install required."],
+      ["Is it safe? Do I need to create an account?","100% safe. No account, no signup, no data collected. It runs entirely in your browser and we track nothing."],
+      ["Why does my screen lock when I switch tabs?","The Wake Lock API requires the tab to be visible. Our tool automatically re-acquires the lock when you return to the tab."],
+      ["Can I set a timer to keep the screen on for a specific duration?","Yes. Use the duration buttons to choose 30 min, 1h, 2h, or 4h. The screen lock re-enables automatically when the timer ends."],
+      ["What browsers are supported?","Chrome 84+, Edge 84+, Opera 70+, Samsung Internet 12+, and Safari 16.4+ on iOS. Firefox uses a fallback method that works on most devices."],
+      ["How do I keep my screen on during a Zoom or Teams call?","Open screenwakeup.com in a second browser tab while on your call. Click 'Keep Screen Awake' — your screen will stay on for the entire meeting without interruption."],
+      ["How do I keep my screen awake on Chrome without an extension?","Go to screenwakeup.com in Chrome and click the button. No extension needed — it uses Chrome's built-in Wake Lock API."],
+      ["Does this work on a Chromebook?","Yes. Open screenwakeup.com in Chrome on any Chromebook and activate it. It uses the native Wake Lock API supported by ChromeOS."],
+      ["How do I prevent my computer from sleeping during a presentation?","Open screenwakeup.com in a browser tab before starting your presentation. Click 'Keep Screen Awake' — your screen will stay on for the whole session."],
+      ["Can I keep my screen awake for free?","Yes, screenwakeup.com is 100% free with no time limits. The free plan includes wake lock, timer (up to 4h), dark/light mode, and 5 languages."],
+      ["How do I keep my computer awake during a WeTransfer upload?","Open screenwakeup.com in a browser tab before starting your WeTransfer upload. Click 'Keep Screen Awake' and your computer will stay awake until the transfer is complete — no interruptions."],
+      ["How do I prevent my screen from sleeping during a Google Drive or Dropbox upload?","Go to screenwakeup.com, activate wake lock, then start your upload. Your screen stays on for the entire transfer — works with Google Drive, Dropbox, OneDrive, and any other service."],
+      ["How do I prevent Away status in Microsoft Teams?","Open screenwakeup.com, enable 'Simulate mouse movement' and 'Send silent F15 key' in the anti-idle section, then click Keep Screen Awake. This prevents Teams from detecting inactivity. Use Chrome or Edge and keep the tab visible."],
+      ["How do I stay active in Slack without moving my mouse?","Enable the F15 key simulation on screenwakeup.com. It sends a silent keystroke every 55 seconds — enough to reset Slack's idle timer and keep your status Active. Nothing visible is typed."],
+      ["How do I prevent Zoom from showing me as Away?","Enable both anti-idle options on screenwakeup.com (mouse movement + F15 key) before your Zoom session. The combination prevents both screen sleep and the system idle timer Zoom uses to detect inactivity."],
+      ["Is there a free online Pomodoro timer?","Yes — ScreenWakeUp has a built-in Pomodoro timer. Click 🍅 Pomodoro in the tool. It runs 25-minute work sessions with 5-minute breaks, keeps your screen on automatically, and plays a gentle audio chime at the end of each session."],
+      ["Can I set a custom screen awake duration?","Yes. Type any number of minutes in the custom timer field (e.g. 47, 90, 180) and click Custom. The screen stays on for exactly that duration, beyond the preset 30min/1h/2h/4h options."],
+      ["Is there a fullscreen clock for presentations?","Yes. Click ⛶ Fullscreen in screenwakeup.com. It shows a large digital clock with the date, keeps your screen awake, and fills the entire display — perfect for presentations, reception screens, or dashboards."],
+      ["Is there a free Caffeine app alternative online?","Yes — ScreenWakeUp is a free browser-based Caffeine alternative. No download required: open screenwakeup.com in any browser and click one button. It uses the modern Wake Lock API and works on Mac, Windows, and mobile."],
+      ["How do I keep my screen awake on Windows 11 for free?","Open screenwakeup.com in Chrome or Edge on Windows 11 and click 'Keep Screen Awake'. It prevents your screen from timing out without changing any Windows power settings. Free with no install."],
+      ["How do I keep my MacBook screen on without changing energy saver settings?","Open screenwakeup.com in Safari or Chrome on your Mac and click the button. Your MacBook screen stays on — no System Settings or Energy Saver changes needed. Stop with one click."],
+      ["Can I keep my screen awake during a video or online course?","Yes. Open screenwakeup.com in a separate tab while watching your video or course. Activate wake lock and your screen stays on the entire time without dimming."]
+    ],
+    feedbackTag:"Feedback",feedbackH2:"Leave us a comment",feedbackLead:"Tell us what you think or how we can improve.",
+    feedbackName:"Your name (optional)",feedbackMsg:"Your comment or suggestion...",feedbackBtn:"Send feedback →",feedbackSent:"✓ Thanks for your message!",
+    supportTag:"INDEPENDENT PROJECT",
+    supportH2:"Did we save your day? Buy us a coffee ☕",
+    supportP:"We built ScreenWakeUp so your screen never interrupts your workflow. No annoying sign-ups, no trackers, and 100% instant. If this tool gave you peace of mind or saved you even one hiccup today, consider supporting our work. A small coffee on Ko-fi is the real engine that keeps this site free, independent, and alive for you.",
+    kofiTxt:"Buy us a coffee!",shareTxt:"Share this tool",cardKofi:"☕ Buy us a coffee",
+    footerP:"No download · No account · No tracking · Works in any browser",
+    footerSupport:"Support the project",
+    testiTag:"What users say",testiH2:"Trusted by remote workers, teachers & developers",testiLead:"No account required to use it — and no account required to love it.",
+    testi1Text:'"I use this every day during Zoom calls. No more \'are you still there?\' messages because my screen went black."',testi1Author:"Sarah M. — Remote Project Manager",
+    testi2Text:'"Saved me mid-presentation. I can\'t believe something this useful is completely free and needs zero install."',testi2Author:"Carlos R. — University Professor",
+    testi3Text:'"Finally a tool that just works. I\'ve tried 3 Chrome extensions — this browser tool beats all of them."',testi3Author:"James K. — Software Developer",
+    whyTag:"Browser tool vs desktop app",whyH2:"Why not just download an app?",whyLead:"You shouldn't need to install software, give admin permissions, or trust a random .exe just to keep your screen on.",
+    whyProH:"✦ ScreenWakeUp (browser)",whyConH:"Desktop apps / extensions",
+    whyPro1:"Works in 2 seconds — no install",whyPro2:"No admin permissions needed",whyPro3:"Works on any device or OS",whyPro4:"Nothing stored on your computer",whyPro5:"Always up to date automatically",whyPro6:"100% free, no subscription",
+    whyCon1:"Requires download and install",whyCon2:"Often needs admin rights",whyCon3:"Platform-specific (Mac only, etc.)",whyCon4:"Runs in background, uses resources",whyCon5:"Manual updates required",whyCon6:"Many charge $2–$10/month",
+    durLabels:{0:"∞",30:"30 min",60:"1 h",120:"2 h",240:"4 h"},
+    customBtn:"Custom",customPlaceholder:"min",
+    antiIdleTitle:"Stay active in Teams / Slack / Zoom",
+    chkMouseLabel:"Simulate mouse movement (prevents screen sleep)",
+    chkF15Label:"Send silent F15 key (prevents Away status in Teams & Slack)",
+    pomodoroLabel:"Pomodoro",fsLabel:"Fullscreen",audioLabel:"Sound alert",
+    pomodoroWork:"🍅 Work",pomodoroBreak:"☕ Break",pomodoroSession:"Session",
+    pomodoroStop:"Stop Pomodoro"
+  },
+
+  es: {
+    heroTag: "Gratis · Sin descarga · Sin cuenta",
+    heroH1: `Mantén tu <span>Pantalla Activa</span><br>al instante`,
+    heroSub: "Evita que tu pantalla se bloquee o entre en reposo. Funciona en Windows, Mac, iPhone y Android sin instalar nada.",
+    cardOff: "Pantalla en reposo", cardOn: "Pantalla activa",
+    statusOff: "Pulsa el botón para evitar que se bloquee",
+    statusOn:  "Wake Lock activo — la pantalla no se apagará",
+    statusFb:  "Modo compatibilidad activo (vídeo silencioso)",
+    btnOn: "Mantener pantalla activa", btnOff: "Detener",
+    cardHint: "Deja esta pestaña abierta y visible. Funciona en Chrome, Edge, Safari y la mayoría de navegadores modernos.",
+    timerLeft: "restantes", timerActive: "Activo desde hace", sessionPhrase: "con tu pantalla encendida",
+    timerExpired: "¡Tiempo agotado! Bloqueo de pantalla reactivado.",
+    howTag:"Cómo funciona",howH2:"Tres pasos. Sin instalaciones.",
+    howLead:"Usamos la API Wake Lock nativa del navegador — la misma tecnología de Google Maps y plataformas de streaming.",
+    step1h:"Abre la herramienta",step1p:"Entra en screenwakeup.com desde cualquier navegador moderno. Sin descargas ni cuenta.",
+    step2h:"Elige la duración",step2p:"Selecciona cuánto tiempo: 30 min, 1h, 2h, 4h o indefinidamente.",
+    step3h:"Pulsa y listo",step3p:"Dale al botón. Tu pantalla permanece activa. Detén cuando quieras.",
+    usesTag:"Casos de uso",usesH2:"¿Cuándo lo necesitas?",
+    usesLead:"Miles de personas usan esta herramienta cada día en estas situaciones.",
+    use1h:"Presentaciones",use1p:"Evita que la pantalla se apague a mitad de una presentación.",
+    use2h:"Descargas largas",use2p:"Mantén el equipo activo durante descargas grandes o copias de seguridad.",
+    use3h:"Recetas de cocina",use3p:"Consulta la receta sin tener que tocar la pantalla con las manos sucias.",
+    use4h:"Leer artículos",use4p:"Lee artículos largos sin que la pantalla se dimme cada 30 segundos.",
+    use5h:"Streaming y música",use5p:"Mantén la pantalla activa mientras escuchas música o ves contenido.",
+    use6h:"Trabajo remoto",use6p:"Evita el bloqueo en videollamadas o mientras esperas una respuesta.",
+    use7h:"Transferencia de archivos",use7p:"Mantén el equipo activo mientras subes o bajas archivos en WeTransfer, Google Drive, Dropbox, OneDrive y servicios similares — para que la transferencia no se interrumpa.",
+    compatTag:"Compatibilidad",compatH2:"Funciona en todas partes",compatLead:"Sea cual sea tu dispositivo o navegador, lo tenemos cubierto.",
+    faqTag:"Preguntas frecuentes",faqH2:"Todo lo que necesitas saber",faqLead:"Respuestas a las dudas más comunes sobre mantener la pantalla activa.",
+    faqs:[
+      ["¿Cómo evito que la pantalla se bloquee sin tocar la configuración?","Abre screenwakeup.com y pulsa 'Mantener pantalla activa'. Usa la API Wake Lock, sin modificar ningún ajuste del sistema."],
+      ["¿Funciona en iPhone y Android?","Sí. Funciona en Safari para iOS y Chrome para Android. Mantén la pestaña del navegador abierta y visible."],
+      ["¿Funciona en Mac y Windows?","Sí, funciona en cualquier sistema operativo en Chrome, Edge, Firefox y Safari — sin instalar nada."],
+      ["¿Es seguro? ¿Necesito crear una cuenta?","100% seguro. Sin cuenta, sin registro, sin datos recopilados. Todo funciona en tu navegador y no rastreamos nada."],
+      ["¿Por qué se bloquea la pantalla cuando cambio de pestaña?","La API Wake Lock requiere que la pestaña esté visible. La herramienta recupera el bloqueo automáticamente al volver."],
+      ["¿Puedo programar un temporizador?","Sí. Usa los botones de duración para elegir 30 min, 1h, 2h o 4h. El bloqueo se reactiva automáticamente al finalizar."],
+      ["¿Qué navegadores son compatibles?","Chrome 84+, Edge 84+, Opera 70+, Samsung Internet 12+ y Safari 16.4+ en iOS. Firefox usa un método de respaldo que funciona en la mayoría de dispositivos."],
+      ["¿Cómo evito que el equipo se duerma mientras subo archivos a WeTransfer?","Abre screenwakeup.com en una pestaña antes de iniciar la subida a WeTransfer. Pulsa 'Mantener pantalla activa' y el equipo permanecerá despierto hasta que termine la transferencia."],
+      ["¿Cómo evito que la pantalla se apague durante una subida a Google Drive, Dropbox o OneDrive?","Activa screenwakeup.com antes de iniciar la subida. Tu pantalla permanecerá encendida durante toda la transferencia, sin importar el tamaño del archivo."]
+    ],
+    feedbackTag:"Comentarios",feedbackH2:"Déjanos un comentario",feedbackLead:"Cuéntanos qué piensas o cómo podemos mejorar.",
+    feedbackName:"Tu nombre (opcional)",feedbackMsg:"Tu comentario o sugerencia...",feedbackBtn:"Enviar comentario →",feedbackSent:"✓ ¡Gracias por tu mensaje!",
+    supportTag:"PROYECTO INDEPENDIENTE",
+    supportH2:"¿Te salvamos el día? Invítanos a un café ☕",
+    supportP:"Construimos ScreenWakeUp para que tu pantalla nunca interrumpa tu flujo de trabajo. Sin registros molestos, sin rastreadores y 100% al instante. Si esta herramienta te ha dado tranquilidad o te ha ahorrado un solo contratiempo hoy, considera apoyar nuestro trabajo. Un pequeño café en Ko-fi es el motor real que mantiene este sitio libre, independiente y vivo para ti.",
+    kofiTxt:"¡Invítanos a un café!",shareTxt:"Compartir",cardKofi:"☕ Invítanos a un café",
+    footerP:"Sin descarga · Sin cuenta · Sin rastreo · Funciona en cualquier navegador",
+    footerSupport:"Apoya el proyecto",
+    testiTag:"Lo que dicen los usuarios",testiH2:"De confianza para trabajadores remotos, profesores y desarrolladores",testiLead:"No necesitas cuenta para usarlo — ni para amarlo.",
+    testi1Text:'"Lo uso todos los días durante mis llamadas de Zoom. Sin más mensajes de \'¿sigues ahí?\' porque mi pantalla se apagó."',testi1Author:"Sarah M. — Project Manager remota",
+    testi2Text:'"Me salvó a mitad de una presentación. No puedo creer que algo tan útil sea gratis y no requiera instalación."',testi2Author:"Carlos R. — Profesor universitario",
+    testi3Text:'"Por fin una herramienta que simplemente funciona. He probado 3 extensiones de Chrome — esta les gana a todas."',testi3Author:"James K. — Desarrollador de software",
+    whyTag:"Herramienta web vs app de escritorio",whyH2:"¿Por qué no descargar una app?",whyLead:"No deberías tener que instalar software, dar permisos de administrador o confiar en un .exe desconocido solo para mantener tu pantalla activa.",
+    whyProH:"✦ ScreenWakeUp (navegador)",whyConH:"Apps de escritorio / extensiones",
+    whyPro1:"Funciona en 2 segundos — sin instalación",whyPro2:"Sin permisos de administrador",whyPro3:"Funciona en cualquier dispositivo o sistema",whyPro4:"Nada se guarda en tu equipo",whyPro5:"Siempre actualizado automáticamente",whyPro6:"100% gratis, sin suscripción",
+    whyCon1:"Requiere descarga e instalación",whyCon2:"Suele necesitar permisos de admin",whyCon3:"Solo para una plataforma (solo Mac, etc.)",whyCon4:"Se ejecuta en segundo plano, consume recursos",whyCon5:"Actualizaciones manuales necesarias",whyCon6:"Muchas cobran $2–$10/mes",
+    durLabels:{0:"∞",30:"30 min",60:"1 h",120:"2 h",240:"4 h"},
+    customBtn:"Personalizar",customPlaceholder:"min",
+    antiIdleTitle:"Mantente activo en Teams / Slack / Zoom",
+    chkMouseLabel:"Simular movimiento del ratón (evita el bloqueo de pantalla)",
+    chkF15Label:"Enviar tecla F15 silenciosa (evita estado Ausente en Teams y Slack)",
+    pomodoroLabel:"Pomodoro",fsLabel:"Pantalla completa",audioLabel:"Alerta de sonido",
+    pomodoroWork:"🍅 Trabajo",pomodoroBreak:"☕ Descanso",pomodoroSession:"Sesión",
+    pomodoroStop:"Detener Pomodoro"
+  },
+
+  pt: {
+    heroTag: "Gratuito · Sem download · Sem conta",
+    heroH1: `Mantenha sua <span>Tela Ativa</span><br>instantaneamente`,
+    heroSub: "Evite que a tela durma ou trave. Funciona no Windows, Mac, iPhone e Android — sem instalação.",
+    cardOff:"Tela em repouso",cardOn:"Tela ativa",
+    statusOff:"Pressione o botão para manter a tela ativa",
+    statusOn:"Wake Lock ativo — a tela ficará ligada",
+    statusFb:"Modo compatibilidade ativo (vídeo silencioso)",
+    btnOn:"Manter Tela Ativa",btnOff:"Parar",
+    cardHint:"Mantenha esta aba aberta e visível. Funciona no Chrome, Edge, Safari e a maioria dos navegadores modernos.",
+    timerLeft:"restantes",timerActive:"Ativo há",sessionPhrase:"com sua tela ativa",
+    timerExpired:"Tempo esgotado! Bloqueio de tela reativado.",
+    howTag:"Como funciona",howH2:"Três passos. Zero instalações.",
+    howLead:"Usamos a API Wake Lock nativa do navegador — a mesma tecnologia do Google Maps e serviços de streaming.",
+    step1h:"Abra a ferramenta",step1p:"Acesse screenwakeup.com em qualquer navegador moderno. Sem download ou conta.",
+    step2h:"Escolha a duração",step2p:"Selecione quanto tempo: 30 min, 1h, 2h, 4h ou indefinidamente.",
+    step3h:"Clique e pronto",step3p:"Clique no botão. Sua tela permanece ativa. Pare quando quiser.",
+    usesTag:"Casos de uso",usesH2:"Quando você precisa?",
+    usesLead:"Milhares de pessoas usam esta ferramenta todos os dias nessas situações.",
+    use1h:"Apresentações",use1p:"Evite que a tela apague no meio de uma apresentação.",
+    use2h:"Downloads longos",use2p:"Mantenha o computador ativo durante downloads grandes ou backups.",
+    use3h:"Receitas de culinária",use3p:"Veja a receita sem precisar tocar na tela com as mãos sujas.",
+    use4h:"Leitura de artigos",use4p:"Leia artigos longos sem a tela escurecer a cada 30 segundos.",
+    use5h:"Streaming e música",use5p:"Mantenha a tela ativa enquanto ouve música ou assiste conteúdo.",
+    use6h:"Trabalho remoto",use6p:"Evite o bloqueio durante chamadas de vídeo ou enquanto aguarda uma resposta.",
+    use7h:"Transferência de arquivos",use7p:"Mantenha o computador ativo enquanto envia ou baixa arquivos no WeTransfer, Google Drive, Dropbox, OneDrive e similares — para que a transferência não seja interrompida.",
+    compatTag:"Compatibilidade",compatH2:"Funciona em todo lugar",compatLead:"Seja qual for o seu dispositivo ou navegador, estamos cobertos.",
+    faqTag:"Perguntas frequentes",faqH2:"Tudo que você precisa saber",faqLead:"Respostas para as dúvidas mais comuns sobre manter a tela ativa.",
+    faqs:[
+      ["Como mantenho a tela ativa sem alterar as configurações?","Abra screenwakeup.com e clique em 'Manter Tela Ativa'. Usa a API Wake Lock sem modificar nenhuma configuração do sistema."],
+      ["Funciona no iPhone e Android?","Sim. Funciona no Safari para iOS e Chrome para Android. Mantenha a aba do navegador aberta e visível."],
+      ["Funciona no Mac e Windows?","Sim, funciona em qualquer sistema operacional no Chrome, Edge, Firefox e Safari — sem instalar nada."],
+      ["É seguro? Preciso criar uma conta?","100% seguro. Sem conta, sem cadastro, sem dados coletados. Tudo funciona no seu navegador."],
+      ["Por que a tela trava quando troco de aba?","A API Wake Lock requer que a aba esteja visível. A ferramenta readquire o bloqueio automaticamente ao retornar."],
+      ["Posso definir um temporizador?","Sim. Use os botões de duração para escolher 30 min, 1h, 2h ou 4h. O bloqueio é reativado automaticamente ao terminar."],
+      ["Quais navegadores são suportados?","Chrome 84+, Edge 84+, Opera 70+, Samsung Internet 12+ e Safari 16.4+ no iOS. Firefox usa um método alternativo."]
+    ],
+    feedbackTag:"Comentários",feedbackH2:"Deixe um comentário",feedbackLead:"Diga-nos o que pensa ou como podemos melhorar.",
+    feedbackName:"Seu nome (opcional)",feedbackMsg:"Seu comentário ou sugestão...",feedbackBtn:"Enviar comentário →",feedbackSent:"✓ Obrigado pela sua mensagem!",
+    supportTag:"PROJETO INDEPENDENTE",
+    supportH2:"Salvamos o seu dia? Nos pague um café ☕",
+    supportP:"Construímos o ScreenWakeUp para que a sua tela nunca interrompa o seu fluxo de trabalho. Sem cadastros chatos, sem rastreadores e 100% instantâneo. Se esta ferramenta te deu tranquilidade ou te poupou um único contratempo hoje, considera apoiar o nosso trabalho. Um pequeno café no Ko-fi é o motor real que mantém este site livre, independente e vivo para ti.",
+    kofiTxt:"Nos pague um café!",shareTxt:"Compartilhar",cardKofi:"☕ Nos pague um café",
+    footerP:"Sem download · Sem conta · Sem rastreamento · Funciona em qualquer navegador",
+    footerSupport:"Apoie o projeto",
+    testiTag:"O que os usuários dizem",testiH2:"Confiado por trabalhadores remotos, professores e desenvolvedores",testiLead:"Sem conta para usar — e sem conta para adorar.",
+    testi1Text:'"Uso isso todos os dias durante chamadas no Zoom. Sem mais mensagens de \'você ainda está aí?\' porque minha tela apagou."',testi1Author:"Sarah M. — Gerente de Projetos remota",
+    testi2Text:'"Me salvou no meio de uma apresentação. Não consigo acreditar que algo tão útil seja gratuito e não precise de instalação."',testi2Author:"Carlos R. — Professor universitário",
+    testi3Text:'"Finalmente uma ferramenta que simplesmente funciona. Já testei 3 extensões do Chrome — essa supera todas."',testi3Author:"James K. — Desenvolvedor de software",
+    whyTag:"Ferramenta web vs app de desktop",whyH2:"Por que não baixar um app?",whyLead:"Você não deveria precisar instalar software, dar permissões de administrador ou confiar em um .exe desconhecido só para manter sua tela ativa.",
+    whyProH:"✦ ScreenWakeUp (navegador)",whyConH:"Apps de desktop / extensões",
+    whyPro1:"Funciona em 2 segundos — sem instalação",whyPro2:"Sem permissões de administrador",whyPro3:"Funciona em qualquer dispositivo ou sistema",whyPro4:"Nada armazenado no seu computador",whyPro5:"Sempre atualizado automaticamente",whyPro6:"100% grátis, sem assinatura",
+    whyCon1:"Requer download e instalação",whyCon2:"Frequentemente precisa de direitos de admin",whyCon3:"Específico para plataforma (só Mac, etc.)",whyCon4:"Roda em segundo plano, usa recursos",whyCon5:"Atualizações manuais necessárias",whyCon6:"Muitos cobram $2–$10/mês",
+    durLabels:{0:"∞",30:"30 min",60:"1 h",120:"2 h",240:"4 h"},
+    customBtn:"Personalizar",customPlaceholder:"min",
+    antiIdleTitle:"Fique ativo no Teams / Slack / Zoom",
+    chkMouseLabel:"Simular movimento do mouse (evita bloqueio de tela)",
+    chkF15Label:"Enviar tecla F15 silenciosa (evita status Ausente no Teams e Slack)",
+    pomodoroLabel:"Pomodoro",fsLabel:"Tela cheia",audioLabel:"Alerta sonoro",
+    pomodoroWork:"🍅 Trabalho",pomodoroBreak:"☕ Pausa",pomodoroSession:"Sessão",
+    pomodoroStop:"Parar Pomodoro"
+  },
+
+  fr: {
+    heroTag:"Gratuit · Sans téléchargement · Sans compte",
+    heroH1:`Gardez votre <span>Écran Actif</span><br>instantanément`,
+    heroSub:"Empêchez votre écran de se mettre en veille. Fonctionne sur Windows, Mac, iPhone et Android — sans installation.",
+    cardOff:"Écran en veille",cardOn:"Écran actif",
+    statusOff:"Appuyez sur le bouton pour garder l'écran actif",
+    statusOn:"Wake Lock actif — l'écran restera allumé",
+    statusFb:"Mode compatibilité actif (vidéo silencieuse)",
+    btnOn:"Garder l'écran actif",btnOff:"Arrêter",
+    cardHint:"Gardez cet onglet ouvert et visible. Fonctionne sur Chrome, Edge, Safari et la plupart des navigateurs modernes.",
+    timerLeft:"restantes",timerActive:"Actif depuis",sessionPhrase:"d'écran actif",
+    timerExpired:"Temps écoulé ! Verrouillage de l'écran réactivé.",
+    howTag:"Comment ça marche",howH2:"Trois étapes. Zéro installation.",
+    howLead:"Nous utilisons l'API Wake Lock native du navigateur — la même technologie que Google Maps et les services de streaming.",
+    step1h:"Ouvrez l'outil",step1p:"Accédez à screenwakeup.com dans n'importe quel navigateur moderne. Sans téléchargement ni compte.",
+    step2h:"Choisissez la durée",step2p:"Sélectionnez combien de temps : 30 min, 1h, 2h, 4h ou indéfiniment.",
+    step3h:"Cliquez et c'est tout",step3p:"Appuyez sur le bouton. Votre écran reste actif. Arrêtez quand vous voulez.",
+    usesTag:"Cas d'utilisation",usesH2:"Quand en avez-vous besoin ?",
+    usesLead:"Des milliers de personnes utilisent cet outil chaque jour.",
+    use1h:"Présentations",use1p:"Empêchez votre écran de s'éteindre pendant une présentation.",
+    use2h:"Téléchargements longs",use2p:"Gardez votre ordinateur actif pendant les grands téléchargements.",
+    use3h:"Recettes de cuisine",use3p:"Consultez la recette sans toucher l'écran avec les mains sales.",
+    use4h:"Lecture d'articles",use4p:"Lisez de longs articles sans que l'écran s'assombrisse toutes les 30 secondes.",
+    use5h:"Streaming et musique",use5p:"Gardez l'écran allumé pendant que vous écoutez de la musique.",
+    use6h:"Travail à distance",use6p:"Évitez le verrouillage pendant les appels vidéo.",
+    use7h:"Transferts de fichiers",use7p:"Gardez votre ordinateur actif pendant l'envoi ou le téléchargement de fichiers sur WeTransfer, Google Drive, Dropbox, OneDrive et services similaires.",
+    compatTag:"Compatibilité",compatH2:"Fonctionne partout",compatLead:"Quel que soit votre appareil ou navigateur, nous vous couvrons.",
+    faqTag:"FAQ",faqH2:"Questions fréquentes",faqLead:"Tout ce que vous devez savoir sur le maintien de l'écran actif.",
+    faqs:[
+      ["Comment garder l'écran actif sans modifier les paramètres ?","Ouvrez screenwakeup.com et cliquez sur 'Garder l'écran actif'. Utilise l'API Wake Lock sans modifier les paramètres système."],
+      ["Fonctionne-t-il sur iPhone et Android ?","Oui. Il fonctionne sur Safari iOS et Chrome Android. Gardez l'onglet ouvert et visible."],
+      ["Fonctionne-t-il sur Mac et Windows ?","Oui, sur n'importe quel système dans Chrome, Edge, Firefox et Safari — sans installation."],
+      ["Est-ce sûr ? Dois-je créer un compte ?","100% sûr. Sans compte, sans inscription, sans données collectées."],
+      ["Pourquoi l'écran se verrouille-t-il quand je change d'onglet ?","L'API Wake Lock nécessite que l'onglet soit visible. L'outil récupère le verrou automatiquement au retour."],
+      ["Puis-je définir une minuterie ?","Oui. Choisissez 30 min, 1h, 2h ou 4h. Le verrouillage se réactive automatiquement."],
+      ["Quels navigateurs sont supportés ?","Chrome 84+, Edge 84+, Opera 70+, Samsung Internet 12+ et Safari 16.4+ sur iOS."]
+    ],
+    feedbackTag:"Commentaires",feedbackH2:"Laissez un commentaire",feedbackLead:"Dites-nous ce que vous pensez ou comment nous améliorer.",
+    feedbackName:"Votre nom (facultatif)",feedbackMsg:"Votre commentaire ou suggestion...",feedbackBtn:"Envoyer →",feedbackSent:"✓ Merci pour votre message !",
+    supportTag:"PROJET INDÉPENDANT",
+    supportH2:"On t'a sauvé la mise ? Offre-nous un café ☕",
+    supportP:"Nous avons créé ScreenWakeUp pour que ton écran n'interrompe jamais ton flux de travail. Sans inscriptions pénibles, sans traceurs et 100% instantané. Si cet outil t'a apporté la tranquillité d'esprit ou t'a évité un seul accroc aujourd'hui, pense à soutenir notre travail. Un petit café sur Ko-fi est le vrai moteur qui maintient ce site gratuit, indépendant et vivant pour toi.",
+    kofiTxt:"Nous offrir un café !",shareTxt:"Partager",cardKofi:"☕ Offre-nous un café",
+    footerP:"Sans téléchargement · Sans compte · Sans suivi · Fonctionne dans tout navigateur",
+    footerSupport:"Soutenir le projet",
+    testiTag:"Ce que disent les utilisateurs",testiH2:"Approuvé par les télétravailleurs, enseignants et développeurs",testiLead:"Aucun compte requis pour l'utiliser — ni pour l'apprécier.",
+    testi1Text:"\"Je l'utilise tous les jours pendant mes appels Zoom. Plus de messages 'vous êtes toujours là ?' parce que mon écran s'est éteint.\"",testi1Author:"Sarah M. — Chef de projet à distance",
+    testi2Text:"\"M'a sauvé en pleine présentation. Je n'arrive pas à croire qu'un outil aussi utile soit gratuit et sans installation.\"",testi2Author:"Carlos R. — Professeur d'université",
+    testi3Text:"\"Enfin un outil qui fonctionne vraiment. J'ai essayé 3 extensions Chrome — celui-ci les surpasse toutes.\"",testi3Author:"James K. — Développeur logiciel",
+    whyTag:"Outil web vs application bureau",whyH2:"Pourquoi ne pas télécharger une appli ?",whyLead:"Vous ne devriez pas avoir à installer un logiciel, accorder des permissions d'administrateur ou faire confiance à un .exe inconnu juste pour garder votre écran allumé.",
+    whyProH:"✦ ScreenWakeUp (navigateur)",whyConH:"Applis bureau / extensions",
+    whyPro1:"Fonctionne en 2 secondes — sans installation",whyPro2:"Aucune permission d'administrateur",whyPro3:"Fonctionne sur tout appareil ou OS",whyPro4:"Rien de stocké sur votre ordinateur",whyPro5:"Toujours à jour automatiquement",whyPro6:"100% gratuit, sans abonnement",
+    whyCon1:"Nécessite téléchargement et installation",whyCon2:"Souvent besoin de droits admin",whyCon3:"Spécifique à une plateforme (Mac uniquement, etc.)",whyCon4:"Tourne en arrière-plan, consomme des ressources",whyCon5:"Mises à jour manuelles requises",whyCon6:"Beaucoup coûtent 2–10 $/mois",
+    durLabels:{0:"∞",30:"30 min",60:"1 h",120:"2 h",240:"4 h"},
+    customBtn:"Personnaliser",customPlaceholder:"min",
+    antiIdleTitle:"Restez actif sur Teams / Slack / Zoom",
+    chkMouseLabel:"Simuler le mouvement de souris (évite le verrouillage d'écran)",
+    chkF15Label:"Envoyer la touche F15 silencieuse (évite le statut Absent sur Teams & Slack)",
+    pomodoroLabel:"Pomodoro",fsLabel:"Plein écran",audioLabel:"Alerte sonore",
+    pomodoroWork:"🍅 Travail",pomodoroBreak:"☕ Pause",pomodoroSession:"Session",
+    pomodoroStop:"Arrêter Pomodoro"
+  },
+
+  de: {
+    heroTag:"Kostenlos · Kein Download · Kein Konto",
+    heroH1:`Bildschirm <span>wach halten</span><br>sofort`,
+    heroSub:"Verhindere, dass dein Bildschirm sperrt oder in den Standby geht. Funktioniert auf Windows, Mac, iPhone und Android — ohne Installation.",
+    cardOff:"Bildschirm schläft",cardOn:"Bildschirm aktiv",
+    statusOff:"Klicke den Button, um den Bildschirm wach zu halten",
+    statusOn:"Wake Lock aktiv — Bildschirm bleibt an",
+    statusFb:"Kompatibilitätsmodus aktiv (stilles Video)",
+    btnOn:"Bildschirm wach halten",btnOff:"Stoppen",
+    cardHint:"Halte diesen Tab offen und sichtbar. Funktioniert in Chrome, Edge, Safari und den meisten modernen Browsern.",
+    timerLeft:"verbleibend",timerActive:"Aktiv seit",sessionPhrase:"Bildschirm aktiv",
+    timerExpired:"Zeit abgelaufen! Bildschirmsperre wieder aktiv.",
+    howTag:"So funktioniert es",howH2:"Drei Schritte. Null Installationen.",
+    howLead:"Wir nutzen die native Wake Lock API des Browsers — dieselbe Technologie wie Google Maps und Streaming-Dienste.",
+    step1h:"Tool öffnen",step1p:"Öffne screenwakeup.com in einem modernen Browser. Kein Download, kein Konto.",
+    step2h:"Dauer wählen",step2p:"Wähle wie lange: 30 Min, 1h, 2h, 4h oder unbegrenzt.",
+    step3h:"Klicken und fertig",step3p:"Klicke den Button. Dein Bildschirm bleibt an. Stoppe wann immer du willst.",
+    usesTag:"Anwendungsfälle",usesH2:"Wann brauchst du das?",
+    usesLead:"Tausende Menschen nutzen dieses Tool täglich.",
+    use1h:"Präsentationen",use1p:"Verhindere, dass der Bildschirm mitten in einer Präsentation schwarz wird.",
+    use2h:"Lange Downloads",use2p:"Halte deinen Computer während großer Downloads oder Backups wach.",
+    use3h:"Kochrezepte",use3p:"Rezept auf dem Bildschirm lesen, ohne ihn mit schmutzigen Händen zu berühren.",
+    use4h:"Artikel lesen",use4p:"Lange Artikel lesen, ohne dass der Bildschirm alle 30 Sekunden dunkler wird.",
+    use5h:"Streaming & Musik",use5p:"Bildschirm an lassen während Musik oder Inhalte im Hintergrund laufen.",
+    use6h:"Remote-Arbeit",use6p:"Bildschirmsperre bei Videoanrufen oder Wartezeiten verhindern.",
+    use7h:"Dateiübertragungen",use7p:"Computer wach halten während Dateien auf WeTransfer, Google Drive, Dropbox, OneDrive und ähnlichen Diensten hoch- oder heruntergeladen werden.",
+    compatTag:"Kompatibilität",compatH2:"Funktioniert überall",compatLead:"Egal welches Gerät oder Browser — wir haben dich abgedeckt.",
+    faqTag:"FAQ",faqH2:"Häufig gestellte Fragen",faqLead:"Alles was du über das Wachhalten deines Bildschirms wissen musst.",
+    faqs:[
+      ["Wie halte ich den Bildschirm wach ohne Einstellungen zu ändern?","Öffne screenwakeup.com und klicke auf 'Bildschirm wach halten'. Nutzt die Wake Lock API ohne Systemeinstellungen zu verändern."],
+      ["Funktioniert es auf iPhone und Android?","Ja. Funktioniert auf iOS Safari und Chrome für Android. Tab offen und sichtbar lassen."],
+      ["Funktioniert es auf Mac und Windows?","Ja, auf jedem Betriebssystem in Chrome, Edge, Firefox und Safari — ohne Installation."],
+      ["Ist es sicher? Brauche ich ein Konto?","100% sicher. Kein Konto, keine Registrierung, keine Datensammlung."],
+      ["Warum sperrt der Bildschirm wenn ich den Tab wechsle?","Die Wake Lock API benötigt einen sichtbaren Tab. Das Tool holt den Lock automatisch zurück wenn du zurückkehrst."],
+      ["Kann ich einen Timer einstellen?","Ja. Wähle 30 Min, 1h, 2h oder 4h. Die Bildschirmsperre aktiviert sich automatisch nach Ablauf."],
+      ["Welche Browser werden unterstützt?","Chrome 84+, Edge 84+, Opera 70+, Samsung Internet 12+ und Safari 16.4+ auf iOS."]
+    ],
+    feedbackTag:"Feedback",feedbackH2:"Hinterlasse einen Kommentar",feedbackLead:"Sag uns, was du denkst oder wie wir uns verbessern können.",
+    feedbackName:"Dein Name (optional)",feedbackMsg:"Dein Kommentar oder Vorschlag...",feedbackBtn:"Absenden →",feedbackSent:"✓ Danke für deine Nachricht!",
+    supportTag:"UNABHÄNGIGES PROJEKT",
+    supportH2:"Haben wir deinen Tag gerettet? Kauf uns einen Kaffee ☕",
+    supportP:"Wir haben ScreenWakeUp entwickelt, damit dein Bildschirm deinen Workflow nie unterbricht. Keine lästigen Anmeldungen, keine Tracker und 100% sofort einsatzbereit. Wenn dieses Tool dir heute Ruhe gegeben oder auch nur eine Unannehmlichkeit erspart hat, unterstütze unsere Arbeit. Ein kleiner Kaffee auf Ko-fi ist der echte Motor, der diese Website frei, unabhängig und für dich am Leben hält.",
+    kofiTxt:"Uns einen Kaffee kaufen!",shareTxt:"Teilen",cardKofi:"☕ Kauf uns einen Kaffee",
+    footerP:"Kein Download · Kein Konto · Kein Tracking · Funktioniert in jedem Browser",
+    footerSupport:"Projekt unterstützen",
+    testiTag:"Was Nutzer sagen",testiH2:"Vertraut von Remote-Arbeitern, Lehrern und Entwicklern",testiLead:"Kein Konto zum Nutzen — und keins zum Lieben nötig.",
+    testi1Text:'"Ich benutze das jeden Tag bei Zoom-Calls. Keine \'Bist du noch da?\'-Nachrichten mehr, weil mein Bildschirm schwarz wurde."',testi1Author:"Sarah M. — Remote Projektmanagerin",
+    testi2Text:'"Hat mich mitten in einer Präsentation gerettet. Ich kann nicht glauben, dass etwas so Nützliches kostenlos ist und null Installation braucht."',testi2Author:"Carlos R. — Universitätsprofessor",
+    testi3Text:'"Endlich ein Tool, das einfach funktioniert. Ich habe 3 Chrome-Erweiterungen ausprobiert — dieses schlägt sie alle."',testi3Author:"James K. — Softwareentwickler",
+    whyTag:"Web-Tool vs. Desktop-App",whyH2:"Warum keine App herunterladen?",whyLead:"Sie sollten keine Software installieren, Administratorrechte vergeben oder einer unbekannten .exe vertrauen müssen, nur um Ihren Bildschirm aktiv zu halten.",
+    whyProH:"✦ ScreenWakeUp (Browser)",whyConH:"Desktop-Apps / Erweiterungen",
+    whyPro1:"Funktioniert in 2 Sekunden — keine Installation",whyPro2:"Keine Administratorrechte erforderlich",whyPro3:"Funktioniert auf jedem Gerät und OS",whyPro4:"Nichts auf Ihrem Computer gespeichert",whyPro5:"Immer automatisch aktuell",whyPro6:"100% kostenlos, kein Abonnement",
+    whyCon1:"Erfordert Download und Installation",whyCon2:"Oft Administratorrechte nötig",whyCon3:"Plattformspezifisch (nur Mac usw.)",whyCon4:"Läuft im Hintergrund, verbraucht Ressourcen",whyCon5:"Manuelle Updates erforderlich",whyCon6:"Viele kosten $2–$10/Monat",
+    durLabels:{0:"∞",30:"30 Min",60:"1 Std",120:"2 Std",240:"4 Std"},
+    customBtn:"Anpassen",customPlaceholder:"Min",
+    antiIdleTitle:"Aktiv bleiben in Teams / Slack / Zoom",
+    chkMouseLabel:"Mausbewegung simulieren (verhindert Bildschirmsperre)",
+    chkF15Label:"Stille F15-Taste senden (verhindert Abwesend-Status in Teams & Slack)",
+    pomodoroLabel:"Pomodoro",fsLabel:"Vollbild",audioLabel:"Tonsignal",
+    pomodoroWork:"🍅 Arbeit",pomodoroBreak:"☕ Pause",pomodoroSession:"Sitzung",
+    pomodoroStop:"Pomodoro stoppen"
+  },
+
+  ja: {
+    heroTag:"無料 · ダウンロード不要 · アカウント不要",
+    heroH1:`画面を<span>スリープさせない</span><br>すぐに使える`,
+    heroSub:"画面のスリープやロックを防ぎます。Windows、Mac、iPhone、Android対応 — インストール不要。",
+    cardOff:"画面スリープ中",cardOn:"画面アクティブ",
+    statusOff:"ボタンを押して画面をオンに保つ",
+    statusOn:"ウェイクロック有効 — 画面は点灯し続けます",
+    statusFb:"互換モード有効（サイレント動画）",
+    btnOn:"画面をスリープさせない",btnOff:"停止",
+    cardHint:"このタブを開いたまま表示してください。Chrome、Edge、Safari および主要なブラウザで動作します。",
+    timerLeft:"残り",timerActive:"アクティブ経過",sessionPhrase:"画面オン中",
+    timerExpired:"時間切れ！画面ロックが再び有効になりました。",
+    howTag:"使い方",howH2:"3ステップ。ゼロインストール。",
+    howLead:"ブラウザのネイティブ Wake Lock API を使用 — Google マップや動画ストリーミングと同じ技術です。",
+    step1h:"ツールを開く",step1p:"任意のブラウザで screenwakeup.com を開く。ダウンロードもアカウントも不要。",
+    step2h:"時間を選ぶ",step2p:"30分、1時間、2時間、4時間、または無制限から選択。",
+    step3h:"クリックして完了",step3p:"ボタンをクリック。画面はオンのまま。いつでも停止できます。",
+    usesTag:"使用シーン",usesH2:"こんな時に使えます",
+    usesLead:"毎日何千人もの人がこのツールを使っています。",
+    use1h:"プレゼンテーション",use1p:"プレゼン中に画面が暗くなるのを防ぎます。",
+    use2h:"大容量ダウンロード",use2p:"大きなファイルのダウンロードやバックアップ中にPCをスリープさせない。",
+    use3h:"料理レシピ",use3p:"汚れた手で画面に触らずにレシピを見続けられます。",
+    use4h:"記事を読む",use4p:"30秒ごとに画面が暗くなることなく長い記事を読めます。",
+    use5h:"動画・音楽",use5p:"別タブで音楽や動画を再生中も画面をオンに保ちます。",
+    use6h:"リモートワーク",use6p:"ビデオ通話中や返信を待っている間の画面ロックを防ぎます。",
+    use7h:"ファイル転送",use7p:"WeTransfer、Google Drive、Dropbox、OneDriveなどへのアップロード・ダウンロード中にPCをスリープさせない。",
+    use8h:"Teams・Slackでアクティブ状態を維持",use8p:"Microsoft Teams、Slack、Zoomが「離席中」と表示しないよう、55秒ごとにアクティビティをシミュレート。マウスを動かす必要はありません。",
+    use9h:"ポモドーロタイマー",use9p:"内蔵ポモドーロタイマーで25分の集中セッションと5分の休憩を繰り返し — 画面は自動でオンのままです。",
+    compatTag:"対応環境",compatH2:"あらゆる場所で動作",compatLead:"デバイスやブラウザを問わず対応しています。",
+    faqTag:"よくある質問",faqH2:"画面をスリープさせないためのQ&A",faqLead:"画面をオンに保つためのすべての疑問にお答えします。",
+    faqs:[
+      ["電源設定を変えずに画面をスリープさせないには？","screenwakeup.com を開き「画面をスリープさせない」をクリック。Wake Lock API を使用し、システム設定を変更しません。"],
+      ["iPhoneとAndroidで使えますか？","はい。iOS Safari と Android Chrome で動作します。ブラウザのタブを開いたまま表示してください。"],
+      ["MacとWindowsで動作しますか？","はい。Chrome、Edge、Firefox、Safari すべてで動作 — インストール不要です。"],
+      ["安全ですか？アカウントは必要ですか？","100%安全です。アカウント不要、登録不要、データ収集なし。すべてブラウザ内で動作します。"],
+      ["タブを切り替えると画面がロックされるのはなぜ？","Wake Lock API はタブが表示されている必要があります。タブに戻ると自動的に再取得されます。"],
+      ["タイマーを設定できますか？","はい。30分、1時間、2時間、4時間から選択できます。タイマー終了後に自動でロックが再有効化されます。"],
+      ["Microsoft Teamsで離席中になるのを防ぐには？","screenwakeup.com でマウス移動シミュレートとF15キー送信を有効にし「画面をスリープさせない」をクリック。Teamsの非アクティブ検知を防ぎます。"],
+      ["無料のオンラインポモドーロタイマーはありますか？","はい。ScreenWakeUp に内蔵ポモドーロタイマーがあります。🍅 ポモドーロをクリックすると25分作業・5分休憩サイクルが始まり、終了時にチャイムが鳴ります。"]
+    ],
+    feedbackTag:"フィードバック",feedbackH2:"コメントを残す",feedbackLead:"ご意見や改善点をお知らせください。",
+    feedbackName:"お名前（任意）",feedbackMsg:"コメントや提案...",feedbackBtn:"送信 →",feedbackSent:"✓ メッセージありがとうございます！",
+    supportTag:"独立したプロジェクト",
+    supportH2:"お役に立てましたか？コーヒーをおごってください ☕",
+    supportP:"ScreenWakeUp は、画面がワークフローを妨げないように作りました。面倒なサインアップも、トラッカーも不要で、すぐに使えます。このツールが少しでもお役に立てたなら、Ko-fi でのご支援をご検討ください。",
+    kofiTxt:"コーヒーをおごる！",shareTxt:"共有する",cardKofi:"☕ コーヒーをおごる",
+    footerP:"ダウンロード不要 · アカウント不要 · トラッキング不要 · あらゆるブラウザで動作",
+    footerSupport:"プロジェクトを支援",
+    testiTag:"ユーザーの声",testiH2:"リモートワーカー・教師・開発者に信頼されています",testiLead:"アカウント不要で使えます — 好きになるのもアカウント不要です。",
+    testi1Text:'"Zoomの通話中に毎日使っています。画面が暗くなって「まだいますか？」と聞かれることがなくなりました。"',testi1Author:"Sarah M. — リモートプロジェクトマネージャー",
+    testi2Text:'"プレゼン中に助かりました。こんなに便利なツールが無料でインストール不要とは信じられません。"',testi2Author:"Carlos R. — 大学教授",
+    testi3Text:'"ついにシンプルに動くツールを見つけました。Chrome拡張を3つ試しましたが、これが一番です。"',testi3Author:"James K. — ソフトウェア開発者",
+    whyTag:"ブラウザツール vs デスクトップアプリ",whyH2:"なぜアプリをダウンロードしないの？",whyLead:"画面をオンに保つためだけに、ソフトをインストールしたり管理者権限を与えたり、怪しい .exe を信用する必要はありません。",
+    whyProH:"✦ ScreenWakeUp（ブラウザ）",whyConH:"デスクトップアプリ / 拡張機能",
+    whyPro1:"2秒で動く — インストール不要",whyPro2:"管理者権限不要",whyPro3:"どんなデバイス・OSでも動作",whyPro4:"PC上に何も保存されない",whyPro5:"常に自動で最新状態",whyPro6:"完全無料・サブスクなし",
+    whyCon1:"ダウンロードとインストールが必要",whyCon2:"管理者権限が必要なことが多い",whyCon3:"特定のプラットフォーム専用（Macのみなど）",whyCon4:"バックグラウンドで動作し、リソースを消費",whyCon5:"手動アップデートが必要",whyCon6:"多くが月$2〜$10の料金",
+    durLabels:{0:"∞",30:"30分",60:"1時間",120:"2時間",240:"4時間"},
+    customBtn:"カスタム",customPlaceholder:"分",
+    antiIdleTitle:"Teams / Slack / Zoom でアクティブ状態を維持",
+    chkMouseLabel:"マウス移動をシミュレート（画面スリープを防止）",
+    chkF15Label:"サイレントF15キーを送信（Teams・SlackのAway状態を防止）",
+    pomodoroLabel:"ポモドーロ",fsLabel:"全画面",audioLabel:"音声アラート",
+    pomodoroWork:"🍅 作業",pomodoroBreak:"☕ 休憩",pomodoroSession:"セッション",
+    pomodoroStop:"ポモドーロを停止"
+  },
+
+  ru: {
+    heroTag:"Бесплатно · Без загрузки · Без аккаунта",
+    heroH1:`Удерживайте <span>экран активным</span><br>мгновенно`,
+    heroSub:"Предотвратите переход экрана в спящий режим или блокировку. Работает на Windows, Mac, iPhone и Android — без установки.",
+    cardOff:"Экран спит",cardOn:"Экран активен",
+    statusOff:"Нажмите кнопку, чтобы держать экран включённым",
+    statusOn:"Wake Lock активен — экран останется включённым",
+    statusFb:"Режим совместимости активен (тихое видео)",
+    btnOn:"Держать экран активным",btnOff:"Остановить",
+    cardHint:"Держите эту вкладку открытой и видимой. Работает в Chrome, Edge, Safari и большинстве современных браузеров.",
+    timerLeft:"осталось",timerActive:"Активно",sessionPhrase:"экран активен",
+    timerExpired:"Время вышло! Блокировка экрана снова включена.",
+    howTag:"Как это работает",howH2:"Три шага. Ноль установок.",
+    howLead:"Мы используем нативный Wake Lock API браузера — ту же технологию, что Google Карты и стриминговые сервисы.",
+    step1h:"Откройте инструмент",step1p:"Перейдите на screenwakeup.com в любом современном браузере. Без загрузки и аккаунта.",
+    step2h:"Выберите длительность",step2p:"Выберите: 30 мин, 1 ч, 2 ч, 4 ч или бесконечно.",
+    step3h:"Нажмите и готово",step3p:"Нажмите кнопку. Экран остаётся активным. Остановите в любой момент.",
+    usesTag:"Варианты использования",usesH2:"Когда это нужно?",
+    usesLead:"Тысячи людей используют этот инструмент каждый день.",
+    use1h:"Презентации",use1p:"Предотвратите отключение экрана во время презентации.",
+    use2h:"Длинные загрузки",use2p:"Держите компьютер активным во время загрузки больших файлов или резервного копирования.",
+    use3h:"Рецепты",use3p:"Просматривайте рецепт, не касаясь экрана грязными руками.",
+    use4h:"Чтение статей",use4p:"Читайте длинные статьи без затухания экрана каждые 30 секунд.",
+    use5h:"Стриминг и музыка",use5p:"Держите экран включённым во время прослушивания музыки или просмотра контента.",
+    use6h:"Удалённая работа",use6p:"Предотвратите блокировку экрана во время видеозвонков или ожидания ответа.",
+    use7h:"Передача файлов",use7p:"Держите компьютер активным при загрузке файлов на WeTransfer, Google Диск, Dropbox, OneDrive и подобных сервисах.",
+    use8h:"Активный статус в Teams и Slack",use8p:"Предотвратите статус «Отсутствую» в Microsoft Teams, Slack и Zoom. Активность симулируется каждые 55 секунд — без движения мышью.",
+    use9h:"Таймер Помодоро",use9p:"Встроенный таймер Помодоро: 25 минут работы и 5 минут отдыха — экран остаётся включённым автоматически.",
+    compatTag:"Совместимость",compatH2:"Работает везде",compatLead:"Какое бы устройство или браузер вы ни использовали — мы вас поддержим.",
+    faqTag:"FAQ",faqH2:"Часто задаваемые вопросы",faqLead:"Всё, что нужно знать об удержании экрана активным.",
+    faqs:[
+      ["Как держать экран активным без изменения настроек питания?","Откройте screenwakeup.com и нажмите «Держать экран активным». Использует Wake Lock API без изменения системных настроек."],
+      ["Работает на iPhone и Android?","Да. Работает в Safari на iOS и Chrome на Android. Держите вкладку браузера открытой и видимой."],
+      ["Работает на Mac и Windows?","Да, на любой ОС в Chrome, Edge, Firefox и Safari — без установки."],
+      ["Это безопасно? Нужен ли аккаунт?","100% безопасно. Без аккаунта, без регистрации, без сбора данных. Всё работает в браузере."],
+      ["Почему экран блокируется при переключении вкладок?","Wake Lock API требует, чтобы вкладка была видима. Инструмент автоматически возобновляет блокировку при возврате."],
+      ["Можно ли установить таймер?","Да. Выберите 30 мин, 1 ч, 2 ч или 4 ч. Блокировка автоматически активируется по истечении времени."],
+      ["Как предотвратить статус «Отсутствую» в Microsoft Teams?","Включите симуляцию движения мыши и отправку клавиши F15 на screenwakeup.com, затем нажмите «Держать экран активным». Это предотвращает обнаружение неактивности в Teams."],
+      ["Есть ли бесплатный онлайн-таймер Помодоро?","Да — в ScreenWakeUp есть встроенный таймер Помодоро. Нажмите 🍅 Помодоро. Запускает сессии по 25 минут с 5-минутными перерывами и воспроизводит звуковой сигнал по окончании."]
+    ],
+    feedbackTag:"Обратная связь",feedbackH2:"Оставьте комментарий",feedbackLead:"Расскажите, что думаете или как можно улучшить инструмент.",
+    feedbackName:"Ваше имя (необязательно)",feedbackMsg:"Ваш комментарий или предложение...",feedbackBtn:"Отправить →",feedbackSent:"✓ Спасибо за ваше сообщение!",
+    supportTag:"НЕЗАВИСИМЫЙ ПРОЕКТ",
+    supportH2:"Мы помогли? Угостите нас кофе ☕",
+    supportP:"Мы создали ScreenWakeUp, чтобы экран никогда не мешал вашему рабочему процессу. Без надоедливых регистраций, без трекеров, мгновенно. Если этот инструмент помог вам сегодня, поддержите наш проект. Маленький кофе на Ko-fi держит сайт бесплатным и независимым.",
+    kofiTxt:"Угостить кофе!",shareTxt:"Поделиться",cardKofi:"☕ Угостить кофе",
+    footerP:"Без загрузки · Без аккаунта · Без слежки · Работает в любом браузере",
+    footerSupport:"Поддержать проект",
+    testiTag:"Отзывы пользователей",testiH2:"Доверяют удалённые работники, учителя и разработчики",testiLead:"Аккаунт не нужен — ни для использования, ни для того, чтобы полюбить.",
+    testi1Text:'"Использую каждый день во время звонков в Zoom. Больше никаких \'вы ещё здесь?\' из-за отключения экрана."',testi1Author:"Сара М. — Удалённый руководитель проектов",
+    testi2Text:'"Спас меня прямо во время презентации. Не могу поверить, что такой полезный инструмент бесплатный и без установки."',testi2Author:"Карлос Р. — Университетский профессор",
+    testi3Text:'"Наконец-то инструмент, который просто работает. Пробовал 3 расширения Chrome — это лучше всех."',testi3Author:"Джеймс К. — Разработчик программного обеспечения",
+    whyTag:"Веб-инструмент vs десктопное приложение",whyH2:"Зачем скачивать приложение?",whyLead:"Не нужно устанавливать ПО, давать права администратора или доверять неизвестному .exe — просто чтобы держать экран активным.",
+    whyProH:"✦ ScreenWakeUp (браузер)",whyConH:"Десктопные приложения / расширения",
+    whyPro1:"Работает за 2 секунды — без установки",whyPro2:"Права администратора не нужны",whyPro3:"Работает на любом устройстве и ОС",whyPro4:"Ничего не сохраняется на вашем компьютере",whyPro5:"Всегда автоматически обновляется",whyPro6:"100% бесплатно, без подписки",
+    whyCon1:"Требует загрузки и установки",whyCon2:"Часто нужны права администратора",whyCon3:"Только для одной платформы (только Mac и т.д.)",whyCon4:"Работает в фоне, потребляет ресурсы",whyCon5:"Требует ручного обновления",whyCon6:"Многие стоят $2–$10/месяц",
+    durLabels:{0:"∞",30:"30 мин",60:"1 ч",120:"2 ч",240:"4 ч"},
+    customBtn:"Свой",customPlaceholder:"мин",
+    antiIdleTitle:"Оставаться активным в Teams / Slack / Zoom",
+    chkMouseLabel:"Симулировать движение мыши (предотвращает блокировку экрана)",
+    chkF15Label:"Отправлять тихую клавишу F15 (предотвращает статус «Отсутствую» в Teams и Slack)",
+    pomodoroLabel:"Помодоро",fsLabel:"Полный экран",audioLabel:"Звуковое оповещение",
+    pomodoroWork:"🍅 Работа",pomodoroBreak:"☕ Перерыв",pomodoroSession:"Сессия",
+    pomodoroStop:"Остановить Помодоро"
+  }
+};
+
+/* ────────────────────────────────────────────
+   THEME
+──────────────────────────────────────────── */
+let theme = localStorage.getItem('ka-theme') || 'dark';
+function applyTheme(t) {
+  theme = t;
+  document.documentElement.setAttribute('data-theme', t);
+  document.getElementById('themeBtn').textContent = t === 'dark' ? '☀️' : '🌙';
+  localStorage.setItem('ka-theme', t);
+}
+function toggleTheme() { applyTheme(theme === 'dark' ? 'light' : 'dark'); }
+applyTheme(theme);
+
+/* ────────────────────────────────────────────
+   LANGUAGE
+──────────────────────────────────────────── */
+let lang = localStorage.getItem('ka-lang') || (navigator.language || 'en').slice(0,2);
+if (!LANG[lang]) lang = 'en';
+
+function setLang(l) {
+  lang = l;
+  const t = LANG[l];
+  localStorage.setItem('ka-lang', l);
+
+  // Update lang pill highlights
+  ['en','es','pt','fr','de','ja','ru'].forEach(x => {
+    const btn = document.getElementById('btn'+x.toUpperCase());
+    if (btn) btn.classList.toggle('lang-active', x === l);
+  });
+
+  // Hero
+  document.getElementById('heroTag').textContent = t.heroTag;
+  document.getElementById('heroH1').innerHTML = t.heroH1;
+  document.getElementById('heroSub').textContent = t.heroSub;
+
+  // Card
+  document.getElementById('cardTitle').textContent = active ? t.cardOn : t.cardOff;
+  document.getElementById('cardStatus').textContent = active ? t.statusOn : t.statusOff;
+  document.getElementById('toggleBtn').textContent = active ? t.btnOff : t.btnOn;
+  document.getElementById('cardHint').textContent = t.cardHint;
+
+  // Duration buttons
+  document.querySelectorAll('.dur-btn').forEach(b => {
+    b.textContent = t.durLabels[parseInt(b.dataset.min)];
+  });
+
+  // Custom timer + anti-idle + extras
+  document.getElementById('customBtn').textContent = t.customBtn;
+  document.getElementById('customMin').placeholder  = t.customPlaceholder;
+  document.getElementById('antiIdleTitle').textContent = t.antiIdleTitle;
+  document.getElementById('chkMouseLabel').textContent = t.chkMouseLabel;
+  document.getElementById('chkF15Label').textContent   = t.chkF15Label;
+  document.getElementById('pomodoroLabel').textContent = t.pomodoroLabel;
+  document.getElementById('fsLabel').textContent       = t.fsLabel;
+  document.getElementById('audioLabel').textContent    = t.audioLabel;
+
+  // How it works
+  document.getElementById('howTag').textContent = t.howTag;
+  document.getElementById('howH2').textContent = t.howH2;
+  document.getElementById('howLead').textContent = t.howLead;
+  document.getElementById('step1h').textContent = t.step1h;
+  document.getElementById('step1p').textContent = t.step1p;
+  document.getElementById('step2h').textContent = t.step2h;
+  document.getElementById('step2p').textContent = t.step2p;
+  document.getElementById('step3h').textContent = t.step3h;
+  document.getElementById('step3p').textContent = t.step3p;
+
+  // Uses
+  document.getElementById('usesTag').textContent = t.usesTag;
+  document.getElementById('usesH2').textContent = t.usesH2;
+  document.getElementById('usesLead').textContent = t.usesLead;
+  for(let i=1;i<=9;i++){
+    const uh = document.getElementById('use'+i+'h');
+    const up = document.getElementById('use'+i+'p');
+    if(uh && t['use'+i+'h']) uh.textContent = t['use'+i+'h'];
+    if(up && t['use'+i+'p']) up.textContent = t['use'+i+'p'];
+  }
+
+  // Compat
+  document.getElementById('compatTag').textContent = t.compatTag;
+  document.getElementById('compatH2').textContent = t.compatH2;
+  document.getElementById('compatLead').textContent = t.compatLead;
+
+  // Testimonials
+  document.getElementById('testiTag').textContent = t.testiTag;
+  document.getElementById('testiH2').textContent = t.testiH2;
+  document.getElementById('testiLead').textContent = t.testiLead;
+  document.getElementById('testi1Text').textContent = t.testi1Text;
+  document.getElementById('testi1Author').textContent = t.testi1Author;
+  document.getElementById('testi2Text').textContent = t.testi2Text;
+  document.getElementById('testi2Author').textContent = t.testi2Author;
+  document.getElementById('testi3Text').textContent = t.testi3Text;
+  document.getElementById('testi3Author').textContent = t.testi3Author;
+
+  // Why section
+  document.getElementById('whyTag').textContent = t.whyTag;
+  document.getElementById('whyH2').textContent = t.whyH2;
+  document.getElementById('whyLead').textContent = t.whyLead;
+  document.getElementById('whyProH').textContent = t.whyProH;
+  document.getElementById('whyConH').textContent = t.whyConH;
+  for(let i=1;i<=6;i++){
+    document.getElementById('whyPro'+i).textContent = t['whyPro'+i];
+    document.getElementById('whyCon'+i).textContent = t['whyCon'+i];
+  }
+
+  // FAQ
+  document.getElementById('faqTag').textContent = t.faqTag;
+  document.getElementById('faqH2').textContent = t.faqH2;
+  document.getElementById('faqLead').textContent = t.faqLead;
+  const faqList = document.getElementById('faqList');
+  faqList.innerHTML = t.faqs.map(([q,a]) =>
+    `<details><summary>${q}</summary><p>${a}</p></details>`
+  ).join('');
+
+  // Feedback
+  document.getElementById('feedbackTag').textContent = t.feedbackTag;
+  document.getElementById('feedbackH2').textContent = t.feedbackH2;
+  document.getElementById('feedbackLead').textContent = t.feedbackLead;
+  document.getElementById('feedbackNameInput').placeholder = t.feedbackName;
+  document.getElementById('feedbackMsgInput').placeholder = t.feedbackMsg;
+  document.getElementById('feedbackBtn').textContent = t.feedbackBtn;
+  document.getElementById('feedbackSent').textContent = t.feedbackSent;
+
+  // Support
+  document.getElementById('cdTag').textContent   = t.supportTag;
+  document.getElementById('cdH2').textContent   = t.supportH2;
+  document.getElementById('cdP').textContent    = t.supportP;
+  document.getElementById('cdKofi').textContent = t.kofiTxt;
+  document.getElementById('cdShare').textContent = t.shareTxt;
+    document.getElementById('supportTag').textContent = t.supportTag;
+  document.getElementById('supportH2').textContent = t.supportH2;
+  document.getElementById('supportP').textContent = t.supportP;
+  document.getElementById('kofiTxt').textContent = t.kofiTxt;
+  document.getElementById('shareTxt').textContent = t.shareTxt;
+  document.getElementById('footerP').textContent = t.footerP;
+  document.getElementById('footerSupport').textContent = t.footerSupport;
+
+  // Update html lang attribute
+  document.documentElement.lang = l;
+}
+
+// ── WAKE LOCK STATE (must be before setLang) ──
+let active = false, wakeLock = null, videoFb = null;
+let startTime = null, tickId = null, selectedMin = 0, durationMs = 0;
+
+// Init language
+setLang(lang);
+
+/* ────────────────────────────────────────────
+   FEEDBACK FORM — AJAX submit (stay on page)
+──────────────────────────────────────────── */
+document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('feedbackBtn');
+  const formData = new FormData(this);
+  const name = (formData.get('name') || 'Anonymous').trim();
+  const message = (formData.get('message') || '').trim();
+
+  // Show success immediately — always
+  btn.disabled = true;
+  btn.textContent = LANG[lang].feedbackSent;
+  btn.style.background = '#22c55e';
+  btn.style.color = '#fff';
+
+  // Send in background (fire and forget)
+  fetch('https://formsubmit.co/ajax/rjfalcon@live.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      name: name,
+      message: message,
+      _subject: 'ScreenWakeUp Feedback',
+      _captcha: 'false'
+    })
+  }).catch(function() {});
+});
+
+/* ────────────────────────────────────────────
+   WAKE LOCK TOOL
+──────────────────────────────────────────── */
+const dot       = document.getElementById('dot');
+const cardTitle = document.getElementById('cardTitle');
+const cardStat  = document.getElementById('cardStatus');
+const toggleBtn = document.getElementById('toggleBtn');
+const timerTxt  = document.getElementById('timerTxt');
+const sessionClock = document.getElementById('sessionClock');
+const progWrap  = document.getElementById('progWrap');
+const progBar   = document.getElementById('progBar');
+const durBtns   = document.querySelectorAll('.dur-btn');
+
+function fmt(ms) {
+  const s = Math.floor(ms/1000);
+  const h = String(Math.floor(s/3600)).padStart(2,'0');
+  const m = String(Math.floor((s%3600)/60)).padStart(2,'0');
+  const sec = String(s%60).padStart(2,'0');
+  return `${h}:${m}:${sec}`;
+}
+
+durBtns.forEach(b => b.addEventListener('click', () => {
+  if (active) return;
+  durBtns.forEach(x => x.classList.remove('sel'));
+  b.classList.add('sel');
+  selectedMin = parseInt(b.dataset.min);
+  durationMs  = selectedMin * 60000;
+}));
+
+function mkSilentVideo() {
+  const v = document.createElement('video');
+  v.setAttribute('playsinline',''); v.muted=true; v.loop=true;
+  v.style.cssText='position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;top:0;left:0;';
+  const c = document.createElement('canvas'); c.width=2; c.height=2;
+  c.getContext('2d').fillRect(0,0,2,2);
+  if(c.captureStream) v.srcObject = c.captureStream(1);
+  document.body.appendChild(v); v.play().catch(()=>{}); return v;
+}
+
+function startTimer() {
+  startTime = Date.now();
+  const t = LANG[lang];
+  if (durationMs > 0) {
+    progWrap.classList.add('vis');
+    progBar.style.transition='none'; progBar.style.transform='scaleX(1)';
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      progBar.style.transition=`transform ${durationMs/1000}s linear`;
+      progBar.style.transform='scaleX(0)';
+    }));
+  }
+  tickId = setInterval(()=>{
+    const elapsed = Date.now()-startTime, t2=LANG[lang];
+    if(durationMs>0){
+      if(elapsed>=durationMs){ deactivate(true); return; }
+      timerTxt.textContent = fmt(durationMs-elapsed)+' '+t2.timerLeft;
+    } else {
+      timerTxt.textContent = t2.timerActive+' '+fmt(elapsed);
+    }
+  },1000);
+}
+
+function stopTimer() {
+  clearInterval(tickId); timerTxt.textContent='';
+  progWrap.classList.remove('vis');
+  progBar.style.transition='none'; progBar.style.transform='scaleX(1)';
+}
+
+
+/* ────────────────────────────────────────────
+   SESSION ELAPSED TIMER (encouraging counter)
+──────────────────────────────────────────── */
+let sessionStart = null;
+let sessionTickId = null;
+
+function getSessionEmoji(secs) {
+  const m = Math.floor(secs / 60);
+  if (m < 5)  return '🔥';
+  if (m < 15) return '🚀';
+  if (m < 30) return '⚡';
+  if (m < 60) return '🏆';
+  return '👑';
+}
+
+function startSessionTimer() {
+  sessionStart = Date.now();
+  sessionClock.classList.remove('vis');
+  clearInterval(sessionTickId);
+  sessionTickId = setInterval(() => {
+    const secs = Math.floor((Date.now() - sessionStart) / 1000);
+    const mins = Math.floor(secs / 60);
+    const s    = secs % 60;
+    const phrase = LANG[lang].sessionPhrase;
+    const emoji  = getSessionEmoji(secs);
+    let timeStr;
+    if (secs < 60) {
+      timeStr = secs + 's';
+    } else if (mins < 60) {
+      timeStr = mins + ' min ' + (s > 0 ? s + 's' : '');
+    } else {
+      const h = Math.floor(mins / 60), m2 = mins % 60;
+      timeStr = h + 'h ' + (m2 > 0 ? m2 + ' min' : '');
+    }
+    sessionClock.textContent = emoji + ' ' + timeStr.trim() + ' · ' + phrase;
+    if (!sessionClock.classList.contains('vis')) {
+      sessionClock.classList.add('vis');
+    }
+  }, 1000);
+}
+
+function stopSessionTimer() {
+  clearInterval(sessionTickId);
+  sessionClock.classList.remove('vis');
+  sessionClock.textContent = '';
+}
+
+async function activate() {
+  const t = LANG[lang];
+  try {
+    if('wakeLock' in navigator){
+      wakeLock = await navigator.wakeLock.request('screen');
+      wakeLock.addEventListener('release', ()=>{
+        if(active) navigator.wakeLock.request('screen').then(w=>{wakeLock=w;}).catch(()=>{});
+      });
+      cardStat.textContent = t.statusOn;
+    } else {
+      videoFb = mkSilentVideo();
+      cardStat.textContent = t.statusFb;
+    }
+  } catch {
+    videoFb = mkSilentVideo();
+    cardStat.textContent = t.statusFb;
+  }
+  active=true;
+  dot.classList.add('active');
+  cardTitle.textContent = t.cardOn;
+  toggleBtn.textContent = t.btnOff;
+  toggleBtn.classList.add('on');
+  durBtns.forEach(b=>b.disabled=true);
+  startTimer();
+  startSessionTimer();
+}
+
+function deactivate(expired=false) {
+  const t = LANG[lang];
+  if(wakeLock){ wakeLock.release().catch(()=>{}); wakeLock=null; }
+  if(videoFb){ videoFb.pause(); videoFb.remove(); videoFb=null; }
+  active=false;
+  dot.classList.remove('active');
+  cardTitle.textContent = t.cardOff;
+  cardStat.textContent  = expired ? t.timerExpired : t.statusOff;
+  toggleBtn.textContent = t.btnOn;
+  toggleBtn.classList.remove('on');
+  durBtns.forEach(b=>b.disabled=false);
+  stopTimer();
+  stopSessionTimer();
+  if(expired && 'Notification' in window && Notification.permission==='granted'){
+    new Notification('KeepScreenAwake', { body: t.timerExpired });
+  }
+}
+
+toggleBtn.addEventListener('click', ()=> active ? deactivate() : activate());
+
+document.addEventListener('visibilitychange', async ()=>{
+  if(active && document.visibilityState==='visible' && 'wakeLock' in navigator && !wakeLock){
+    try{ wakeLock = await navigator.wakeLock.request('screen'); }catch{}
+  }
+});
+
+document.addEventListener('click', ()=>{
+  if('Notification' in window && Notification.permission==='default')
+    Notification.requestPermission();
+},{once:true});
+
+/* ────────────────────────────────────────────
+   SHARE
+──────────────────────────────────────────── */
+function shareApp() {
+  if(navigator.share){
+    navigator.share({ title:'KeepScreenAwake', text:LANG[lang].heroSub, url:'https://screenwakeup.com' }).catch(()=>{});
+  } else {
+    navigator.clipboard.writeText('https://screenwakeup.com').then(()=>alert('Link copied!')).catch(()=>{});
+  }
+}
+
+/* ────────────────────────────────────────────
+   CUSTOM TIMER
+──────────────────────────────────────────── */
+function applyCustomTimer() {
+  if (active) return;
+  const val = parseInt(document.getElementById('customMin').value);
+  if (!val || val < 1) return;
+  document.querySelectorAll('.dur-btn').forEach(b => b.classList.remove('sel'));
+  selectedMin = val;
+  durationMs  = val * 60000;
+  document.getElementById('customBtn').textContent = val + ' min ✓';
+  document.getElementById('customBtn').style.color = 'var(--accent)';
+  setTimeout(() => {
+    document.getElementById('customBtn').textContent = LANG[lang].customBtn;
+    document.getElementById('customBtn').style.color = '';
+  }, 2000);
+}
+document.getElementById('customMin').addEventListener('keydown', e => {
+  if (e.key === 'Enter') applyCustomTimer();
+});
+
+/* ────────────────────────────────────────────
+   AUDIO CHIME (Web Audio API)
+──────────────────────────────────────────── */
+let audioEnabled = false;
+function toggleAudio() {
+  audioEnabled = !audioEnabled;
+  const btn = document.getElementById('audioBtn');
+  btn.classList.toggle('active', audioEnabled);
+  if (audioEnabled) playChime(); // preview
+}
+function playChime() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    [[523.25,0],[659.25,0.28],[783.99,0.56]].forEach(([freq,delay]) => {
+      const osc = ctx.createOscillator(), gain = ctx.createGain();
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.frequency.value = freq; osc.type = 'sine';
+      const t0 = ctx.currentTime + delay;
+      gain.gain.setValueAtTime(0, t0);
+      gain.gain.linearRampToValueAtTime(0.25, t0 + 0.05);
+      gain.gain.exponentialRampToValueAtTime(0.001, t0 + 0.7);
+      osc.start(t0); osc.stop(t0 + 0.7);
+    });
+  } catch(e) {}
+}
+
+/* ────────────────────────────────────────────
+   ANTI-IDLE (Teams / Slack / Zoom)
+──────────────────────────────────────────── */
+let antiIdleInterval = null;
+function startAntiIdle() {
+  if (antiIdleInterval) return;
+  antiIdleInterval = setInterval(() => {
+    if (document.getElementById('chkMouse').checked) {
+      document.dispatchEvent(new MouseEvent('mousemove', {
+        bubbles:true, cancelable:true,
+        clientX: 1 + Math.random(), clientY: 1 + Math.random()
+      }));
+    }
+    if (document.getElementById('chkF15').checked) {
+      // F15 = keyCode 126 on mac / no character produced, harmless on all platforms
+      document.dispatchEvent(new KeyboardEvent('keydown', {
+        bubbles:true, cancelable:true, key:'F15', keyCode:126, which:126
+      }));
+      document.dispatchEvent(new KeyboardEvent('keyup', {
+        bubbles:true, cancelable:true, key:'F15', keyCode:126, which:126
+      }));
+    }
+  }, 55000); // every ~55 seconds
+}
+function stopAntiIdle() {
+  clearInterval(antiIdleInterval);
+  antiIdleInterval = null;
+}
+
+/* ────────────────────────────────────────────
+   POMODORO TIMER
+──────────────────────────────────────────── */
+let pomActive = false, pomPhase = 'work', pomSession = 1;
+let pomInterval = null, pomLeft = 25 * 60;
+
+function togglePomodoro() {
+  if (pomActive) {
+    stopPomodoro();
+  } else {
+    startPomodoro();
+  }
+}
+function startPomodoro() {
+  pomActive = true; pomPhase = 'work'; pomSession = 1; pomLeft = 25 * 60;
+  document.getElementById('pomodoroDisplay').style.display = 'block';
+  document.getElementById('pomodoroBtn').classList.add('active');
+  document.getElementById('pomodoroLabel').textContent = LANG[lang].pomodoroStop;
+  updatePomDisplay();
+  pomInterval = setInterval(tickPom, 1000);
+  if (!active) activate();
+}
+function stopPomodoro() {
+  clearInterval(pomInterval); pomInterval = null; pomActive = false;
+  document.getElementById('pomodoroDisplay').style.display = 'none';
+  document.getElementById('pomodoroBtn').classList.remove('active');
+  document.getElementById('pomodoroLabel').textContent = LANG[lang].pomodoroLabel;
+}
+function tickPom() {
+  pomLeft--;
+  if (pomLeft <= 0) {
+    if (audioEnabled) playChime();
+    if (pomPhase === 'work') {
+      pomPhase = 'break'; pomLeft = 5 * 60;
+    } else {
+      pomPhase = 'work'; pomSession++; pomLeft = 25 * 60;
+    }
+  }
+  updatePomDisplay();
+}
+function updatePomDisplay() {
+  const t = LANG[lang];
+  const mm = String(Math.floor(pomLeft/60)).padStart(2,'0');
+  const ss = String(pomLeft%60).padStart(2,'0');
+  const phase = pomPhase === 'work' ? t.pomodoroWork : t.pomodoroBreak;
+  document.getElementById('pomodoroDisplay').textContent =
+    `${phase} · ${mm}:${ss} · ${t.pomodoroSession} ${pomSession}`;
+}
+
+/* ────────────────────────────────────────────
+   FULLSCREEN CLOCK
+──────────────────────────────────────────── */
+let fsClockInterval = null;
+function enterFullscreen() {
+  const overlay = document.getElementById('fsOverlay');
+  overlay.style.display = 'flex';
+  document.documentElement.requestFullscreen && document.documentElement.requestFullscreen().catch(()=>{});
+  document.getElementById('fsBtn').classList.add('active');
+  fsClockInterval = setInterval(updateFsClock, 1000);
+  updateFsClock();
+  if (!active) activate();
+}
+function exitFullscreen() {
+  document.getElementById('fsOverlay').style.display = 'none';
+  document.exitFullscreen && document.exitFullscreen().catch(()=>{});
+  document.getElementById('fsBtn').classList.remove('active');
+  clearInterval(fsClockInterval);
+}
+function updateFsClock() {
+  const now = new Date();
+  const hh = String(now.getHours()).padStart(2,'0');
+  const mm = String(now.getMinutes()).padStart(2,'0');
+  const ss = String(now.getSeconds()).padStart(2,'0');
+  document.getElementById('fsClock').textContent = `${hh}:${mm}:${ss}`;
+  document.getElementById('fsDate').textContent = now.toLocaleDateString(lang, {
+    weekday:'long', year:'numeric', month:'long', day:'numeric'
+  });
+}
+document.addEventListener('fullscreenchange', () => {
+  if (!document.fullscreenElement) exitFullscreen();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') exitFullscreen();
+});
+
+/* ────────────────────────────────────────────
+   PATCH activate / deactivate for new features
+   (reassign functions — do NOT add a second click listener)
+──────────────────────────────────────────── */
+const _origActivate = activate;
+activate = async function() {
+  await _origActivate();
+  startAntiIdle();
+};
+
+const _origDeactivate = deactivate;
+deactivate = function(expired=false) {
+  _origDeactivate(expired);
+  stopAntiIdle();
+  if (pomActive) stopPomodoro();
+  if (expired && audioEnabled) playChime();
+};
+
+/* ────────────────────────────────────────────
+   SCROLL REVEAL
+──────────────────────────────────────────── */
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>

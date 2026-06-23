@@ -1,0 +1,16 @@
+{
+  "name": "ScreenWakeUp — Keep Screen Awake",
+  "short_name": "ScreenWakeUp",
+  "description": "Free browser tool to keep your screen awake. No download, no account.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0e18",
+  "theme_color": "#5ee0c0",
+  "orientation": "any",
+  "icons": [
+    { "src": "/favicon.ico", "sizes": "48x48", "type": "image/x-icon" },
+    { "src": "/og-image.png", "sizes": "1200x630", "type": "image/png", "purpose": "any" }
+  ],
+  "categories": ["utilities", "productivity"],
+  "lang": "en"
+}

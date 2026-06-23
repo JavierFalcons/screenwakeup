@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Не дать экрану заснуть бесплатно — ScreenWakeUp</title>
+  <meta name="description" content="Бесплатный браузерный инструмент для предотвращения блокировки и перехода экрана в спящий режим. Без загрузки, без аккаунта. Работает на Windows, Mac, iPhone, Android. Предотвращает статус «Отсутствую» в Teams, Slack и Zoom.">
+  <meta name="keywords" content="не дать экрану заснуть, предотвратить блокировку экрана, Teams отсутствую, Slack активный, онлайн таймер помодоро, Wake Lock, без загрузки">
+  <link rel="canonical" href="https://screenwakeup.com/ru/">
+  <link rel="alternate" hreflang="en" href="https://screenwakeup.com/">
+  <link rel="alternate" hreflang="es" href="https://screenwakeup.com/es/">
+  <link rel="alternate" hreflang="pt" href="https://screenwakeup.com/pt/">
+  <link rel="alternate" hreflang="fr" href="https://screenwakeup.com/fr/">
+  <link rel="alternate" hreflang="de" href="https://screenwakeup.com/de/">
+  <link rel="alternate" hreflang="ja" href="https://screenwakeup.com/ja/">
+  <link rel="alternate" hreflang="ru" href="https://screenwakeup.com/ru/">
+  <link rel="alternate" hreflang="x-default" href="https://screenwakeup.com/">
+  <link rel="icon" href="https://screenwakeup.com/favicon.ico" type="image/x-icon">
+  <meta property="og:title" content="Держать экран активным бесплатно — ScreenWakeUp">
+  <meta property="og:description" content="Бесплатный инструмент для предотвращения блокировки экрана. Без загрузки, без аккаунта. Предотвращает статус «Отсутствую» в Teams и Slack.">
+  <meta property="og:url" content="https://screenwakeup.com/ru/">
+  <meta property="og:image" content="https://screenwakeup.com/og-image.png">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ScreenWakeUp",
+    "url": "https://screenwakeup.com/ru/",
+    "description": "Бесплатный браузерный инструмент для предотвращения блокировки экрана и перехода в спящий режим.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Windows, macOS, iOS, Android, ChromeOS",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+    "inLanguage": "ru"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Как держать экран активным без изменения настроек питания?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Откройте screenwakeup.com и нажмите «Держать экран активным». Использует Wake Lock API без изменения системных настроек." }
+      },
+      {
+        "@type": "Question",
+        "name": "Как предотвратить статус «Отсутствую» в Microsoft Teams?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Включите симуляцию движения мыши и отправку клавиши F15 на screenwakeup.com, затем нажмите «Держать экран активным». Это предотвращает обнаружение неактивности в Teams." }
+      },
+      {
+        "@type": "Question",
+        "name": "Есть ли бесплатный онлайн-таймер Помодоро?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Да — в ScreenWakeUp есть встроенный таймер Помодоро. Нажмите 🍅 Помодоро. Запускает сессии по 25 минут с 5-минутными перерывами и воспроизводит звуковой сигнал по окончании." }
+      }
+    ]
+  }
+  </script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0c0e18;--bg2:#11141f;--surface:#181b2a;--accent:#5ee0c0;--text:#eef0f6;--muted:#8892a4;--border:rgba(255,255,255,0.06)}
+    body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',sans-serif;line-height:1.7}
+    header{background:var(--bg2);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .logo{text-decoration:none;color:var(--text);font-weight:800;font-size:17px}
+    .logo em{color:var(--accent);font-style:normal;font-size:11px;font-weight:600;margin-left:6px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-size:14px}
+    nav a:hover{color:var(--accent)}
+    .hero{max-width:860px;margin:0 auto;padding:72px 24px 48px;text-align:center}
+    .hero-tag{display:inline-block;background:rgba(94,224,192,.12);color:var(--accent);border:1px solid rgba(94,224,192,.25);border-radius:20px;padding:4px 14px;font-size:12px;font-weight:600;letter-spacing:.05em;margin-bottom:20px}
+    h1{font-size:clamp(32px,6vw,56px);font-weight:800;line-height:1.1;letter-spacing:-.5px;margin-bottom:20px}
+    h1 span{color:var(--accent)}
+    .lead{font-size:clamp(15px,2.5vw,18px);color:var(--muted);max-width:600px;margin:0 auto 36px}
+    .cta-btn{display:inline-block;background:var(--accent);color:#0c0e18;font-weight:800;font-size:18px;padding:16px 40px;border-radius:12px;text-decoration:none;transition:opacity .2s}
+    .cta-btn:hover{opacity:.85}
+    .section{max-width:900px;margin:0 auto;padding:60px 24px}
+    h2{font-size:clamp(24px,4vw,36px);font-weight:800;margin-bottom:12px;letter-spacing:-.3px}
+    .section-tag{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:32px}
+    .feature-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px}
+    .feature-card .icon{font-size:28px;margin-bottom:12px}
+    .feature-card h3{font-size:15px;font-weight:700;margin-bottom:6px}
+    .feature-card p{font-size:13px;color:var(--muted);line-height:1.6}
+    .faq details{border-bottom:1px solid var(--border);padding:16px 0}
+    .faq summary{font-weight:600;cursor:pointer;list-style:none;font-size:15px}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq p{color:var(--muted);font-size:14px;margin-top:10px;line-height:1.7}
+    footer{text-align:center;padding:40px 24px;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}
+    footer a{color:var(--muted);text-decoration:none;margin:0 8px}
+    footer a:hover{color:var(--accent)}
+  </style>
+</head>
+<body>
+<header>
+  <a href="https://screenwakeup.com" class="logo">ScreenWakeUp <em>бесплатно</em></a>
+  <nav>
+    <a href="https://screenwakeup.com">EN</a>
+    <a href="/es/">ES</a>
+    <a href="/pt/">PT</a>
+    <a href="/fr/">FR</a>
+    <a href="/de/">DE</a>
+    <a href="/ja/">日本語</a>
+    <a href="/ru/" style="color:var(--accent)">RU</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-tag">Бесплатно · Без загрузки · Без аккаунта</div>
+  <h1>Удерживайте <span>экран активным</span><br>мгновенно</h1>
+  <p class="lead">Предотвратите переход экрана в спящий режим или блокировку. Работает на Windows, Mac, iPhone и Android — без установки. Teams, Slack и Zoom не покажут статус «Отсутствую».</p>
+  <a href="https://screenwakeup.com" class="cta-btn">Держать экран активным →</a>
+</div>
+
+<div class="section">
+  <p class="section-tag">Возможности</p>
+  <h2>Что умеет ScreenWakeUp</h2>
+  <div class="features">
+    <div class="feature-card">
+      <div class="icon">🖥️</div>
+      <h3>Предотвращение сна экрана</h3>
+      <p>Использует Wake Lock API браузера — без изменения настроек питания системы.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">💬</div>
+      <h3>Активный статус в Teams и Slack</h3>
+      <p>Симулирует движение мыши и нажатие F15 каждые 55 секунд — статус «Отсутствую» не появится.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🍅</div>
+      <h3>Таймер Помодоро</h3>
+      <p>25 минут работы и 5 минут отдыха. Звуковой сигнал по окончании. Экран остаётся включённым автоматически.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">⛶</div>
+      <h3>Полноэкранные часы</h3>
+      <p>Большие цифровые часы на весь экран. Идеально для презентаций и информационных дисплеев.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">⏱️</div>
+      <h3>Свой таймер</h3>
+      <p>Задайте любое количество минут (например, 47, 90, 180) для удержания экрана.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🔔</div>
+      <h3>Звуковое оповещение</h3>
+      <p>Мягкий звуковой сигнал по истечении времени — не пропустите момент.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <p class="section-tag">FAQ</p>
+  <h2>Часто задаваемые вопросы</h2>
+  <div class="faq" style="margin-top:24px">
+    <details>
+      <summary>Как держать экран активным без изменения настроек питания?</summary>
+      <p>Откройте screenwakeup.com и нажмите «Держать экран активным». Использует Wake Lock API без изменения системных настроек.</p>
+    </details>
+    <details>
+      <summary>Работает на iPhone и Android?</summary>
+      <p>Да. Работает в Safari на iOS и Chrome на Android. Держите вкладку браузера открытой и видимой.</p>
+    </details>
+    <details>
+      <summary>Работает на Mac и Windows?</summary>
+      <p>Да, на любой ОС в Chrome, Edge, Firefox и Safari — без установки.</p>
+    </details>
+    <details>
+      <summary>Как предотвратить статус «Отсутствую» в Microsoft Teams?</summary>
+      <p>Включите симуляцию движения мыши и отправку клавиши F15 на screenwakeup.com, затем нажмите «Держать экран активным». Это предотвращает обнаружение неактивности в Teams.</p>
+    </details>
+    <details>
+      <summary>Как оставаться активным в Slack без движения мышью?</summary>
+      <p>Включите отправку клавиши F15. Каждые 55 секунд отправляется тихое нажатие — достаточно для сброса таймера неактивности Slack.</p>
+    </details>
+    <details>
+      <summary>Есть ли бесплатный онлайн-таймер Помодоро?</summary>
+      <p>Да — в ScreenWakeUp встроен таймер Помодоро. Нажмите 🍅 Помодоро. Запускает 25-минутные рабочие сессии с 5-минутными перерывами и звуковым сигналом.</p>
+    </details>
+    <details>
+      <summary>Можно ли установить произвольный таймер?</summary>
+      <p>Да. Введите любое количество минут в поле кастомного таймера и нажмите «Свой». Экран останется включённым ровно столько времени.</p>
+    </details>
+    <details>
+      <summary>Это безопасно? Нужен ли аккаунт?</summary>
+      <p>100% безопасно. Без аккаунта, без регистрации, без сбора данных. Всё работает прямо в браузере.</p>
+    </details>
+  </div>
+</div>
+
+<footer>
+  <p>
+    <a href="https://screenwakeup.com">Home (EN)</a>
+    <a href="/es/">Español</a>
+    <a href="/pt/">Português</a>
+    <a href="/fr/">Français</a>
+    <a href="/de/">Deutsch</a>
+    <a href="/ja/">日本語</a>
+    <a href="/ru/">Русский</a>
+  </p>
+  <p style="margin-top:12px">
+    <a href="/about/">О сайте</a>
+    <a href="/privacy/">Конфиденциальность</a>
+    <a href="/terms/">Условия</a>
+  </p>
+  <p style="margin-top:12px">© 2026 ScreenWakeUp.com · Без загрузки · Без аккаунта · Без слежки</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>画面をスリープさせない 無料オンラインツール — ScreenWakeUp</title>
+  <meta name="description" content="画面のスリープやロックを無料で防ぐブラウザツール。ダウンロード不要・アカウント不要。Windows、Mac、iPhone、Android対応。Teams・Slack・Zoomでも離席中にならない。">
+  <meta name="keywords" content="画面スリープ防止, スクリーンセーバー無効, 画面ロック防止, Teams 離席中 防止, Slack アクティブ, ポモドーロタイマー, Wake Lock">
+  <link rel="canonical" href="https://screenwakeup.com/ja/">
+  <link rel="alternate" hreflang="en" href="https://screenwakeup.com/">
+  <link rel="alternate" hreflang="es" href="https://screenwakeup.com/es/">
+  <link rel="alternate" hreflang="pt" href="https://screenwakeup.com/pt/">
+  <link rel="alternate" hreflang="fr" href="https://screenwakeup.com/fr/">
+  <link rel="alternate" hreflang="de" href="https://screenwakeup.com/de/">
+  <link rel="alternate" hreflang="ja" href="https://screenwakeup.com/ja/">
+  <link rel="alternate" hreflang="ru" href="https://screenwakeup.com/ru/">
+  <link rel="alternate" hreflang="x-default" href="https://screenwakeup.com/">
+  <link rel="icon" href="https://screenwakeup.com/favicon.ico" type="image/x-icon">
+  <meta property="og:title" content="画面をスリープさせない 無料ツール — ScreenWakeUp">
+  <meta property="og:description" content="ダウンロード不要・アカウント不要で画面スリープを防ぐ無料ブラウザツール。Teams/Slack/Zoomでの離席中表示も防止。">
+  <meta property="og:url" content="https://screenwakeup.com/ja/">
+  <meta property="og:image" content="https://screenwakeup.com/og-image.png">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ScreenWakeUp",
+    "url": "https://screenwakeup.com/ja/",
+    "description": "画面のスリープやロックを無料で防ぐブラウザツール。ダウンロード不要・アカウント不要。",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Windows, macOS, iOS, Android, ChromeOS",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "inLanguage": "ja"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "電源設定を変えずに画面をスリープさせないには？",
+        "acceptedAnswer": { "@type": "Answer", "text": "screenwakeup.com を開き「画面をスリープさせない」をクリック。Wake Lock API を使用し、システム設定を変更しません。" }
+      },
+      {
+        "@type": "Question",
+        "name": "Microsoft Teamsで離席中になるのを防ぐには？",
+        "acceptedAnswer": { "@type": "Answer", "text": "screenwakeup.com でマウス移動シミュレートとF15キー送信を有効にし「画面をスリープさせない」をクリック。Teamsの非アクティブ検知を防ぎます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "無料のオンラインポモドーロタイマーはありますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "はい。ScreenWakeUp に内蔵ポモドーロタイマーがあります。🍅 ポモドーロをクリックすると25分作業・5分休憩サイクルが始まり、終了時にチャイムが鳴ります。" }
+      }
+    ]
+  }
+  </script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0c0e18;--bg2:#11141f;--surface:#181b2a;--accent:#5ee0c0;--text:#eef0f6;--muted:#8892a4;--border:rgba(255,255,255,0.06)}
+    body{background:var(--bg);color:var(--text);font-family:-apple-system,'Hiragino Sans','Noto Sans JP','Yu Gothic',BlinkMacSystemFont,sans-serif;line-height:1.7}
+    header{background:var(--bg2);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .logo{text-decoration:none;color:var(--text);font-weight:800;font-size:17px}
+    .logo em{color:var(--accent);font-style:normal;font-size:11px;font-weight:600;margin-left:6px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-size:14px}
+    nav a:hover{color:var(--accent)}
+    .hero{max-width:860px;margin:0 auto;padding:72px 24px 48px;text-align:center}
+    .hero-tag{display:inline-block;background:rgba(94,224,192,.12);color:var(--accent);border:1px solid rgba(94,224,192,.25);border-radius:20px;padding:4px 14px;font-size:12px;font-weight:600;letter-spacing:.05em;margin-bottom:20px}
+    h1{font-size:clamp(32px,6vw,56px);font-weight:800;line-height:1.1;letter-spacing:-.5px;margin-bottom:20px}
+    h1 span{color:var(--accent)}
+    .lead{font-size:clamp(15px,2.5vw,18px);color:var(--muted);max-width:600px;margin:0 auto 36px}
+    .cta-btn{display:inline-block;background:var(--accent);color:#0c0e18;font-weight:800;font-size:18px;padding:16px 40px;border-radius:12px;text-decoration:none;transition:opacity .2s}
+    .cta-btn:hover{opacity:.85}
+    .section{max-width:900px;margin:0 auto;padding:60px 24px}
+    h2{font-size:clamp(24px,4vw,36px);font-weight:800;margin-bottom:12px;letter-spacing:-.3px}
+    .section-tag{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:32px}
+    .feature-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px}
+    .feature-card .icon{font-size:28px;margin-bottom:12px}
+    .feature-card h3{font-size:15px;font-weight:700;margin-bottom:6px}
+    .feature-card p{font-size:13px;color:var(--muted);line-height:1.6}
+    .faq details{border-bottom:1px solid var(--border);padding:16px 0}
+    .faq summary{font-weight:600;cursor:pointer;list-style:none;font-size:15px}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq p{color:var(--muted);font-size:14px;margin-top:10px;line-height:1.7}
+    footer{text-align:center;padding:40px 24px;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}
+    footer a{color:var(--muted);text-decoration:none;margin:0 8px}
+    footer a:hover{color:var(--accent)}
+    .lang-links{margin-top:16px;font-size:12px}
+  </style>
+</head>
+<body>
+<header>
+  <a href="https://screenwakeup.com" class="logo">ScreenWakeUp <em>無料ツール</em></a>
+  <nav>
+    <a href="https://screenwakeup.com">EN</a>
+    <a href="/es/">ES</a>
+    <a href="/pt/">PT</a>
+    <a href="/fr/">FR</a>
+    <a href="/de/">DE</a>
+    <a href="/ja/" style="color:var(--accent)">日本語</a>
+    <a href="/ru/">RU</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-tag">無料 · ダウンロード不要 · アカウント不要</div>
+  <h1>画面を<span>スリープさせない</span><br>すぐに使える</h1>
+  <p class="lead">画面のスリープやロックを防ぎます。Windows、Mac、iPhone、Android対応 — インストール不要。Teams・Slack・Zoomでも離席中になりません。</p>
+  <a href="https://screenwakeup.com" class="cta-btn">今すぐ画面をスリープさせない →</a>
+</div>
+
+<div class="section">
+  <p class="section-tag">主な機能</p>
+  <h2>ScreenWakeUp でできること</h2>
+  <div class="features">
+    <div class="feature-card">
+      <div class="icon">🖥️</div>
+      <h3>画面スリープ防止</h3>
+      <p>Wake Lock API を使用し、システム設定を変更せずに画面をオンに保ちます。</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">💬</div>
+      <h3>Teams・Slack・Zoom でアクティブ維持</h3>
+      <p>マウス移動とF15キー送信をシミュレートして55秒ごとにアクティビティを更新。離席中表示を防ぎます。</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🍅</div>
+      <h3>ポモドーロタイマー</h3>
+      <p>25分作業・5分休憩のサイクル。終了時にチャイムが鳴り、画面は自動でオンのままです。</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">⛶</div>
+      <h3>全画面デジタル時計</h3>
+      <p>大きなデジタル時計とともに全画面表示。プレゼンや受付モニターに最適です。</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">⏱️</div>
+      <h3>カスタムタイマー</h3>
+      <p>任意の分数（例：47分、90分）を設定して画面をオンに保ちます。</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🔔</div>
+      <h3>音声アラート</h3>
+      <p>タイマー終了時に優しいチャイムでお知らせ。</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <p class="section-tag">よくある質問</p>
+  <h2>画面をスリープさせないためのQ&A</h2>
+  <div class="faq" style="margin-top:24px">
+    <details>
+      <summary>電源設定を変えずに画面をスリープさせないには？</summary>
+      <p>screenwakeup.com を開き「画面をスリープさせない」をクリック。Wake Lock API を使用し、システム設定を変更しません。</p>
+    </details>
+    <details>
+      <summary>iPhoneとAndroidで使えますか？</summary>
+      <p>はい。iOS Safari と Android Chrome で動作します。ブラウザのタブを開いたまま表示してください。</p>
+    </details>
+    <details>
+      <summary>MacとWindowsで動作しますか？</summary>
+      <p>はい。Chrome、Edge、Firefox、Safari すべてで動作 — インストール不要です。</p>
+    </details>
+    <details>
+      <summary>Microsoft Teamsで離席中になるのを防ぐには？</summary>
+      <p>screenwakeup.com でマウス移動シミュレートとF15キー送信を有効にし「画面をスリープさせない」をクリック。Teamsの非アクティブ検知を防ぎます。</p>
+    </details>
+    <details>
+      <summary>Slackでアクティブ状態を維持するには？</summary>
+      <p>F15キー送信を有効にしてください。55秒ごとにサイレントキーストロークを送り、Slackのアイドルタイマーをリセットします。</p>
+    </details>
+    <details>
+      <summary>無料のオンラインポモドーロタイマーはありますか？</summary>
+      <p>はい。ScreenWakeUp に内蔵ポモドーロタイマーがあります。🍅 ポモドーロをクリックすると25分作業・5分休憩サイクルが始まり、終了時にチャイムが鳴ります。</p>
+    </details>
+    <details>
+      <summary>タイマーを設定できますか？</summary>
+      <p>はい。30分、1時間、2時間、4時間から選択できます。またカスタムタイマーで任意の分数も設定可能です。</p>
+    </details>
+    <details>
+      <summary>安全ですか？アカウントは必要ですか？</summary>
+      <p>100%安全です。アカウント不要、登録不要、データ収集なし。すべてブラウザ内で動作します。</p>
+    </details>
+  </div>
+</div>
+
+<footer>
+  <p>
+    <a href="https://screenwakeup.com">Home (EN)</a>
+    <a href="/es/">Español</a>
+    <a href="/pt/">Português</a>
+    <a href="/fr/">Français</a>
+    <a href="/de/">Deutsch</a>
+    <a href="/ja/">日本語</a>
+    <a href="/ru/">Русский</a>
+  </p>
+  <p style="margin-top:12px">
+    <a href="/about/">About</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+  </p>
+  <p style="margin-top:12px">© 2026 ScreenWakeUp.com · ダウンロード不要 · アカウント不要 · トラッキング不要</p>
+</footer>
+</body>
+</html>
