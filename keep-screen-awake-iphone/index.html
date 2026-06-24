@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Keep Your iPhone Screen Awake — Free, No App (iOS & iPad) | ScreenWakeUp</title>
+  <meta name="description" content="Stop your iPhone or iPad screen from turning off — without changing Auto-Lock or installing an app. Free browser tool that works in Safari and Chrome on iOS 16.4+.">
+  <meta name="keywords" content="keep iphone screen awake, keep iphone screen on, stop iphone screen turning off, ipad screen awake, prevent iphone auto lock, keep screen on ios, iphone screen stay on, keep screen awake safari">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://screenwakeup.com/keep-screen-awake-iphone/">
+  <link rel="icon" href="https://screenwakeup.com/favicon.ico" type="image/x-icon">
+  <meta name="theme-color" content="#5ee0c0">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://screenwakeup.com/keep-screen-awake-iphone/">
+  <meta property="og:title" content="How to Keep Your iPhone Screen Awake — Free, No App">
+  <meta property="og:description" content="Keep your iPhone or iPad screen on from Safari. No app, no Auto-Lock change. Free.">
+  <meta property="og:image" content="https://screenwakeup.com/og-image.png">
+  <meta property="og:site_name" content="ScreenWakeUp">
+
+  <!-- Schema: HowTo + FAQ + Breadcrumb -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Keep Your iPhone Screen Awake",
+      "description": "Keep your iPhone or iPad screen on without changing Auto-Lock or installing an app.",
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Open in Safari", "text": "Open screenwakeup.com in Safari on your iPhone or iPad (iOS 16.4 or later)." },
+        { "@type": "HowToStep", "position": 2, "name": "Choose a duration", "text": "Pick how long you want the screen to stay on, or choose indefinitely." },
+        { "@type": "HowToStep", "position": 3, "name": "Tap Keep Screen Awake", "text": "Tap the button and keep the Safari tab open and visible. Your screen stays on." }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I keep my iPhone screen on without changing Auto-Lock?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Open screenwakeup.com in Safari and tap 'Keep Screen Awake'. It uses the Screen Wake Lock API (iOS 16.4+) to hold the screen on while the tab is open, so you don't have to change Settings > Display & Brightness > Auto-Lock." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work on iPad too?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. It works the same way on iPadOS in Safari or Chrome. Keep the browser tab open and on screen." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which iOS version do I need?",
+          "acceptedAnswer": { "@type": "Answer", "text": "iOS and iPadOS 16.4 or later support the Screen Wake Lock API in Safari. On older versions the tool uses a fallback method, though keeping the screen fully awake is most reliable on 16.4+." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the screen still dim when I lock the phone or switch apps?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The wake lock only works while the browser tab is open and visible. If you switch to another app or lock the phone, iOS releases it. Return to the tab and it re-activates automatically." }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://screenwakeup.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Keep iPhone Screen Awake", "item": "https://screenwakeup.com/keep-screen-awake-iphone/" }
+      ]
+    }
+  ]
+  </script>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKJ8R82KQZ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WKJ8R82KQZ');</script>
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0c0e18;--bg2:#11141f;--surface:#181b2a;--accent:#5ee0c0;--text:#eef0f6;--muted:#8892a4;--border:rgba(255,255,255,0.06)}
+    body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.7}
+    header{background:var(--bg2);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+    .logo{text-decoration:none;color:var(--text);font-weight:800;font-size:17px}
+    .logo em{color:var(--accent);font-style:normal;font-size:11px;font-weight:600;margin-left:6px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:20px;font-size:14px}
+    nav a:hover{color:var(--accent)}
+    main{max-width:760px;margin:0 auto;padding:60px 24px}
+    h1{font-size:clamp(28px,5vw,42px);font-weight:800;margin-bottom:16px;letter-spacing:-.5px}
+    h1 span{color:var(--accent)}
+    h2{font-size:22px;font-weight:700;margin:40px 0 12px;color:var(--text)}
+    h3{font-size:17px;font-weight:700;margin:24px 0 8px;color:var(--text)}
+    p{color:var(--muted);margin-bottom:16px;font-size:15px}
+    ol,ul{color:var(--muted);margin:0 0 16px 22px;font-size:15px}
+    li{margin-bottom:8px}
+    strong{color:var(--text)}
+    .tag{font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--accent);text-transform:uppercase;margin-bottom:16px}
+    .lead{font-size:18px;color:var(--text);margin-bottom:24px}
+    .cta{display:inline-block;margin-top:24px;padding:14px 28px;background:var(--accent);color:#0c0e18;border-radius:12px;font-weight:700;text-decoration:none;font-size:15px}
+    .box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin:24px 0}
+    .related{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+    .related a{display:inline-block;padding:10px 16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;color:var(--accent);text-decoration:none;font-size:14px;font-weight:600}
+    .related a:hover{border-color:var(--accent)}
+    a.inline{color:var(--accent)}
+    footer{text-align:center;padding:40px 24px;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}
+    footer a{color:var(--muted);text-decoration:none;margin:0 8px}
+    footer a:hover{color:var(--accent)}
+  </style>
+</head>
+<body>
+<header>
+  <a href="https://screenwakeup.com" class="logo">ScreenWakeUp <em>free tool</em></a>
+  <nav>
+    <a href="https://screenwakeup.com">Tool</a>
+    <a href="/prevent-teams-away/">Teams Away</a>
+    <a href="/caffeine-alternative/">Caffeine Alternative</a>
+    <a href="/about/">About</a>
+  </nav>
+</header>
+
+<main>
+  <p class="tag">iPhone &amp; iPad</p>
+  <h1>How to keep your <span>iPhone screen awake</span></h1>
+  <p class="lead">Stop your iPhone or iPad screen from turning off — without changing Auto-Lock and without installing any app. It runs right in Safari, free.</p>
+
+  <p>Reading a recipe, following sheet music, scanning a QR menu, or watching a doc on your phone? iOS dims and locks the screen after your <strong>Auto-Lock</strong> timeout. You could dig into Settings every time — or just open ScreenWakeUp, which uses the <strong>Screen Wake Lock API</strong> (iOS 16.4+) to hold the screen on while the tab is open.</p>
+
+  <div class="box">
+    <strong>Quick version:</strong> open <a class="inline" href="https://screenwakeup.com">screenwakeup.com</a> in Safari → tap <strong>Keep Screen Awake</strong> → keep the tab visible. Done.
+  </div>
+
+  <h2>Keep your iPhone screen on in 3 steps</h2>
+  <ol>
+    <li>Open <a class="inline" href="https://screenwakeup.com">screenwakeup.com</a> in <strong>Safari</strong> on your iPhone or iPad.</li>
+    <li>Choose a duration — 30 min, 1h, 2h, 4h, or ∞.</li>
+    <li>Tap <strong>Keep Screen Awake</strong> and keep the Safari tab open and on screen.</li>
+  </ol>
+  <p>Tip: add it to your Home Screen (Share → Add to Home Screen) so it opens like an app.</p>
+
+  <h2>Why not just change Auto-Lock?</h2>
+  <p>You can set <em>Settings &gt; Display &amp; Brightness &gt; Auto-Lock &gt; Never</em> — but then your screen <strong>never</strong> locks, draining the battery and leaving the phone unlocked all day. ScreenWakeUp keeps the screen on only while you need it, then everything goes back to normal the moment you close the tab. No settings to remember to undo.</p>
+
+  <h2>What you need</h2>
+  <ul>
+    <li><strong>iOS / iPadOS 16.4 or later</strong> for the native Wake Lock API in Safari.</li>
+    <li>The browser tab must stay <strong>open and visible</strong> — if you switch apps or lock the phone, iOS releases the lock and re-acquires it when you return.</li>
+  </ul>
+
+  <h2>Frequently asked questions</h2>
+  <h3>Does it work on iPad?</h3>
+  <p>Yes, identically — Safari or Chrome on iPadOS. Great for recipes, presentations and kiosk-style displays.</p>
+  <h3>Will it drain my battery?</h3>
+  <p>Keeping any screen on uses power, but only while the tab is active. Close it and normal Auto-Lock resumes immediately, so it's far safer than setting Auto-Lock to Never.</p>
+
+  <a href="https://screenwakeup.com" class="cta">Keep your iPhone awake → open the tool</a>
+
+  <h2>Related guides</h2>
+  <div class="related">
+    <a href="/prevent-teams-away/">Prevent Teams Away status</a>
+    <a href="/caffeine-alternative/">Free Caffeine alternative</a>
+    <a href="https://screenwakeup.com">All features →</a>
+  </div>
+</main>
+
+<footer>
+  <p>
+    <a href="https://screenwakeup.com">Home</a>
+    <a href="/about/">About</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+    <a href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener">Support</a>
+  </p>
+  <p style="margin-top:12px">© 2026 ScreenWakeUp.com · Free forever · No tracking</p>
+</footer>
+</body>
+</html>
