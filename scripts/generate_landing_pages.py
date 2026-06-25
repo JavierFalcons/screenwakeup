@@ -53,6 +53,23 @@ STYLE = """    *{box-sizing:border-box;margin:0;padding:0}
     footer a{color:var(--muted);text-decoration:none;margin:0 8px}
     footer a:hover{color:var(--accent)}"""
 
+# Donation buttons (B header + C floating) injected into every landing page
+DONATE_CSS = """    .nav-kofi{display:inline-flex;align-items:center;gap:6px;background:#FF5E5B;color:#fff;font-size:13px;font-weight:700;padding:7px 14px;border-radius:18px;text-decoration:none;margin-left:0;margin-right:6px}
+    .nav-kofi:hover{opacity:.88}
+    .float-kofi-wrap{position:fixed;right:18px;bottom:18px;z-index:9998}
+    .float-kofi{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:50%;background:#FF5E5B;color:#fff;font-size:24px;text-decoration:none;box-shadow:0 10px 28px rgba(0,0,0,.4);transition:transform .15s,opacity .2s}
+    .float-kofi:hover{transform:scale(1.07)}
+    .fk-close{position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;border:none;background:var(--surface2,#1f2338);color:var(--muted,#8892a4);font-size:13px;line-height:1;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.4)}
+    .fk-close:hover{color:var(--text,#eef0f6)}
+    @media (max-width:560px){.float-kofi-wrap{right:14px;bottom:14px}.float-kofi{width:48px;height:48px;font-size:21px}}"""
+
+# Floating support button block (literal braces — kept out of the f-string template)
+FLOAT_TEMPLATE = '''<div class="float-kofi-wrap" id="floatKofi">
+  <a class="float-kofi" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener" aria-label="{SUP}">☕</a>
+  <button class="fk-close" id="floatKofiClose" aria-label="Hide">&times;</button>
+</div>
+<script>(function(){var w=document.getElementById("floatKofi");if(!w)return;if(+(localStorage.getItem("ka-float-hide")||0)>Date.now()){w.style.display="none";return;}var c=document.getElementById("floatKofiClose");if(c)c.addEventListener("click",function(e){e.preventDefault();w.style.display="none";localStorage.setItem("ka-float-hide",String(Date.now()+7*864e5));});})();</script>'''
+
 UI = {
  "es": {"free":"herramienta gratis","tool":"Herramienta","home":"Inicio","about":"Acerca de","privacy":"Privacidad","terms":"Términos","support":"Apoyar","tagline":"Gratis para siempre · Sin rastreo","related":"Guías relacionadas","allfeatures":"Todas las funciones →","faqh":"Preguntas frecuentes"},
  "pt": {"free":"ferramenta grátis","tool":"Ferramenta","home":"Início","about":"Sobre","privacy":"Privacidade","terms":"Termos","support":"Apoiar","tagline":"Grátis para sempre · Sem rastreamento","related":"Guias relacionados","allfeatures":"Todos os recursos →","faqh":"Perguntas frequentes"},
@@ -130,6 +147,8 @@ def render(slug, lang):
     related = "".join(f'    <a href="/{lang}/{rs}/">{rl}</a>\n' for rl, rs in c["related"])
     related += f'    <a href="{home}">{ui["allfeatures"]}</a>'
 
+    float_html = FLOAT_TEMPLATE.replace("{SUP}", ui["support"])
+
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -160,12 +179,14 @@ def render(slug, lang):
 
   <style>
 {STYLE}
+{DONATE_CSS}
   </style>
 </head>
 <body>
 <header>
   <a href="{home}" class="logo">ScreenWakeUp <em>{ui['free']}</em></a>
   <nav>
+    <a class="nav-kofi" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener">☕ {ui['support']}</a>
 {nav}  </nav>
 </header>
 
@@ -194,6 +215,8 @@ def render(slug, lang):
   </p>
   <p style="margin-top:12px">© 2026 ScreenWakeUp.com · {ui['tagline']}</p>
 </footer>
+
+{float_html}
 </body>
 </html>
 """

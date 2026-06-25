@@ -149,12 +149,21 @@
     footer{text-align:center;padding:40px 24px;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}
     footer a{color:var(--muted);text-decoration:none;margin:0 8px}
     footer a:hover{color:var(--accent)}
+    .nav-kofi{display:inline-flex;align-items:center;gap:6px;background:#FF5E5B;color:#fff;font-size:13px;font-weight:700;padding:7px 14px;border-radius:18px;text-decoration:none;margin-left:0;margin-right:6px}
+    .nav-kofi:hover{opacity:.88}
+    .float-kofi-wrap{position:fixed;right:18px;bottom:18px;z-index:9998}
+    .float-kofi{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:50%;background:#FF5E5B;color:#fff;font-size:24px;text-decoration:none;box-shadow:0 10px 28px rgba(0,0,0,.4);transition:transform .15s,opacity .2s}
+    .float-kofi:hover{transform:scale(1.07)}
+    .fk-close{position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;border:none;background:var(--surface2,#1f2338);color:var(--muted,#8892a4);font-size:13px;line-height:1;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.4)}
+    .fk-close:hover{color:var(--text,#eef0f6)}
+    @media (max-width:560px){.float-kofi-wrap{right:14px;bottom:14px}.float-kofi{width:48px;height:48px;font-size:21px}}
   </style>
 </head>
 <body>
 <header>
   <a href="https://screenwakeup.com/ru/" class="logo">ScreenWakeUp <em>бесплатный инструмент</em></a>
   <nav>
+    <a class="nav-kofi" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener">☕ Поддержать</a>
     <a href="https://screenwakeup.com/ru/">Инструмент</a>
     <a href="/ru/caffeine-alternative/">Замена Caffeine</a>
     <a href="/ru/keep-screen-awake-iphone/">iPhone</a>
@@ -211,5 +220,11 @@
   </p>
   <p style="margin-top:12px">© 2026 ScreenWakeUp.com · Бесплатно навсегда · Без отслеживания</p>
 </footer>
+
+<div class="float-kofi-wrap" id="floatKofi">
+  <a class="float-kofi" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener" aria-label="Поддержать">☕</a>
+  <button class="fk-close" id="floatKofiClose" aria-label="Hide">&times;</button>
+</div>
+<script>(function(){var w=document.getElementById("floatKofi");if(!w)return;if(+(localStorage.getItem("ka-float-hide")||0)>Date.now()){w.style.display="none";return;}var c=document.getElementById("floatKofiClose");if(c)c.addEventListener("click",function(e){e.preventDefault();w.style.display="none";localStorage.setItem("ka-float-hide",String(Date.now()+7*864e5));});})();</script>
 </body>
 </html>
