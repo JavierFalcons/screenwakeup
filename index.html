@@ -599,6 +599,22 @@
   }
   .kofi-btn:hover { opacity: .88; }
   .kofi-btn:active { transform: scale(.97); }
+  /* Header support button (B) */
+  .nav-kofi { display:inline-flex; align-items:center; gap:6px; background:#FF5E5B; color:#fff; font-size:13px; font-weight:700; padding:7px 14px; border-radius:18px; text-decoration:none; margin-right:8px; transition:opacity .2s, transform .1s; white-space:nowrap; }
+  .nav-kofi:hover { opacity:.88; }
+  .nav-kofi:active { transform:scale(.96); }
+  @media (max-width:560px){ .nav-kofi span{ display:none; } .nav-kofi{ padding:7px 11px; margin-right:4px; } }
+  /* Social-proof line under the donate block (D) */
+  .donate-social { color:var(--muted); font-size:13px; margin-top:14px; }
+  .donate-social b { color:var(--text); }
+  /* Contextual donate toast shown after a wake session (A) */
+  .donate-toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(150%); z-index:9999; max-width:440px; width:calc(100% - 32px); background:var(--surface2); border:1px solid var(--border); border-radius:16px; box-shadow:0 18px 50px rgba(0,0,0,.45); padding:15px 18px; display:flex; align-items:center; gap:14px; opacity:0; transition:transform .45s cubic-bezier(.2,.8,.2,1), opacity .3s; }
+  .donate-toast.show { transform:translateX(-50%) translateY(0); opacity:1; }
+  .donate-toast .dt-txt { flex:1; font-size:14px; color:var(--text); line-height:1.5; }
+  .donate-toast .dt-cta { display:inline-flex; align-items:center; gap:6px; background:#FF5E5B; color:#fff; font-size:13px; font-weight:700; padding:9px 16px; border-radius:18px; text-decoration:none; white-space:nowrap; }
+  .donate-toast .dt-cta:hover { opacity:.9; }
+  .donate-toast .dt-close { background:none; border:none; color:var(--muted); font-size:22px; line-height:1; cursor:pointer; padding:0 2px; }
+  .donate-toast .dt-close:hover { color:var(--text); }
   .share-btn {
     display: inline-flex; align-items: center; gap: 8px;
     background: var(--surface2); border: 1px solid var(--border); color: var(--text);
@@ -788,6 +804,7 @@
   <div class="topbar-inner">
     <a href="https://screenwakeup.com" class="logo">ScreenWakeUp <em>free tool</em></a>
     <div class="nav-controls">
+      <a class="nav-kofi" id="navKofi" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener">☕ <span id="navKofiTxt">Support</span></a>
       <!-- Language switcher -->
       <button class="pill" id="btnEN"  onclick="setLang('en')">EN</button>
       <button class="pill" id="btnES"  onclick="setLang('es')">ES</button>
@@ -800,6 +817,13 @@
     </div>
   </div>
 </header>
+
+<!-- Contextual donation toast (shown after a wake session ends) -->
+<div class="donate-toast" id="donateToast" role="status" aria-live="polite">
+  <div class="dt-txt" id="donateToastTxt"></div>
+  <a class="dt-cta" id="donateToastCta" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener"></a>
+  <button class="dt-close" id="donateToastClose" aria-label="Close">&times;</button>
+</div>
 
 <main>
 <!-- ═══════════════════════════════ AD TOP ═══════════════════════════════ -->
@@ -864,16 +888,17 @@
     <p id="cardHint">Keep this tab open and visible. Works in Chrome, Edge, Safari and most modern browsers.</p>
   <div class="card-donate" id="cardDonateBlock">
     <p class="section-tag" id="cdTag">INDEPENDENT PROJECT</p>
-    <h2 id="cdH2">Did we save your day? Buy us a coffee ☕</h2>
-    <p id="cdP">We built ScreenWakeUp so your screen never interrupts your workflow. No annoying sign-ups, no trackers, and 100% instant. If this tool gave you peace of mind or saved you even one hiccup today, consider supporting our work. A small coffee on Ko-fi is the real engine that keeps this site free, independent, and alive for you.</p>
+    <h2 id="cdH2">Enjoying ScreenWakeUp? Keep it free ☕</h2>
+    <p id="cdP">No ads, no sign-up, no tracking — just one button that works. If it saved your screen today, a $3 coffee keeps the site free and independent.</p>
     <div class="btn-group">
       <a class="kofi-btn" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener">
-        ☕ <span id="cdKofi">Buy us a coffee!</span>
+        ☕ <span id="cdKofi">Buy us a coffee · $3</span>
       </a>
       <button class="share-btn" onclick="shareApp()">
         🔗 <span id="cdShare">Share</span>
       </button>
     </div>
+    <p class="donate-social" id="cdSocial">Reader-funded — every coffee keeps ScreenWakeUp free &amp; ad-free.</p>
   </div>
 </section>
 
@@ -1778,9 +1803,70 @@ function setLang(l) {
   document.getElementById('footerP').textContent = t.footerP;
   document.getElementById('footerSupport').textContent = t.footerSupport;
 
+  // Donation strings (header button + improved donate block)
+  applyDonateStrings(l);
+
   // Update html lang attribute
   document.documentElement.lang = l;
 }
+
+/* ────────────────────────────────────────────
+   DONATIONS — header button (B), improved block (D) & contextual toast (A)
+──────────────────────────────────────────── */
+const DONATE_I18N = {
+  en: { nav:"Support", h2:"Enjoying ScreenWakeUp? Keep it free ☕", p:"No ads, no sign-up, no tracking — just one button that works. If it saved your screen today, a $3 coffee keeps the site free and independent.", btn:"Buy us a coffee · $3", social:"Reader-funded — every coffee keeps ScreenWakeUp free & ad-free.", toast:"Your screen stayed on {t} 🎉 Enjoyed it? Buy us a coffee.", toastBtn:"Buy a coffee" },
+  es: { nav:"Apóyanos", h2:"¿Te sirve ScreenWakeUp? Mantenlo gratis ☕", p:"Sin anuncios, sin registro, sin rastreo — solo un botón que funciona. Si hoy te salvó la pantalla, un café de 3 $ mantiene el sitio gratis e independiente.", btn:"Invítanos un café · 3 $", social:"Financiado por usuarios — cada café mantiene ScreenWakeUp gratis y sin anuncios.", toast:"Tu pantalla estuvo activa {t} 🎉 ¿Te sirvió? Invítanos un café.", toastBtn:"Invitar un café" },
+  pt: { nav:"Apoiar", h2:"Curtindo o ScreenWakeUp? Mantenha grátis ☕", p:"Sem anúncios, sem cadastro, sem rastreamento — só um botão que funciona. Se hoje salvou sua tela, um café de $3 mantém o site grátis e independente.", btn:"Pague um café · $3", social:"Financiado pelos usuários — cada café mantém o ScreenWakeUp grátis e sem anúncios.", toast:"Sua tela ficou ativa {t} 🎉 Gostou? Pague um café.", toastBtn:"Pagar um café" },
+  fr: { nav:"Soutenir", h2:"ScreenWakeUp vous plaît ? Gardez-le gratuit ☕", p:"Sans pub, sans inscription, sans suivi — juste un bouton qui marche. S'il a sauvé votre écran aujourd'hui, un café à 3 $ garde le site gratuit et indépendant.", btn:"Offrir un café · 3 $", social:"Financé par les lecteurs — chaque café garde ScreenWakeUp gratuit et sans pub.", toast:"Votre écran est resté allumé {t} 🎉 Ça vous a plu ? Offrez un café.", toastBtn:"Offrir un café" },
+  de: { nav:"Unterstützen", h2:"Gefällt dir ScreenWakeUp? Halt es kostenlos ☕", p:"Keine Werbung, keine Anmeldung, kein Tracking — nur ein Knopf, der funktioniert. Wenn es heute deinen Bildschirm gerettet hat, hält ein 3-$-Kaffee die Seite frei und unabhängig.", btn:"Spendier einen Kaffee · 3 $", social:"Nutzerfinanziert — jeder Kaffee hält ScreenWakeUp kostenlos und werbefrei.", toast:"Dein Bildschirm blieb {t} an 🎉 Gefallen? Spendier einen Kaffee.", toastBtn:"Kaffee spendieren" },
+  ja: { nav:"支援", h2:"ScreenWakeUp は役に立ってますか？無料を維持 ☕", p:"広告なし・登録なし・トラッキングなし、押すだけ。今日あなたの画面を救えたなら、$3 のコーヒーがこのサイトを無料で独立に保ちます。", btn:"コーヒーを贈る · $3", social:"ユーザーの支援で運営 — コーヒー一杯が ScreenWakeUp を無料・広告なしに保ちます。", toast:"画面を {t} 点けたままにできました 🎉 役に立ったら、コーヒーを一杯。", toastBtn:"コーヒーを贈る" },
+  ru: { nav:"Поддержать", h2:"Нравится ScreenWakeUp? Сохраним бесплатным ☕", p:"Без рекламы, без регистрации, без слежки — просто кнопка, которая работает. Если сегодня он спас ваш экран, кофе за $3 сохранит сайт бесплатным и независимым.", btn:"Купить кофе · $3", social:"На средства пользователей — каждый кофе сохраняет ScreenWakeUp бесплатным и без рекламы.", toast:"Ваш экран был включён {t} 🎉 Понравилось? Купите нам кофе.", toastBtn:"Купить кофе" },
+};
+
+function applyDonateStrings(l){
+  const d = DONATE_I18N[l] || DONATE_I18N.en;
+  const set = (id, txt) => { const e = document.getElementById(id); if (e) e.textContent = txt; };
+  set('navKofiTxt', d.nav);
+  set('cdH2', d.h2);
+  set('cdP', d.p);
+  set('cdKofi', d.btn);
+  set('cdSocial', d.social);
+}
+
+function fmtDur(secs){
+  const m = Math.floor(secs/60);
+  if (m < 1)  return secs + 's';
+  if (m < 60) return m + ' min';
+  const h = Math.floor(m/60), mm = m % 60;
+  return h + 'h' + (mm ? ' ' + mm + 'm' : '');
+}
+
+function hideDonateToast(){
+  const el = document.getElementById('donateToast');
+  if (el) el.classList.remove('show');
+}
+
+function maybeShowDonateToast(secs){
+  if (secs < 60) return;                                   // skip trivial test sessions
+  const last = +(localStorage.getItem('ka-donate-toast') || 0);
+  if (Date.now() - last < 6*3600*1000) return;             // at most once per 6h
+  const d  = DONATE_I18N[lang] || DONATE_I18N.en;
+  const el = document.getElementById('donateToast');
+  if (!el) return;
+  document.getElementById('donateToastTxt').innerHTML = d.toast.replace('{t}', '<b>' + fmtDur(secs) + '</b>');
+  document.getElementById('donateToastCta').textContent = '☕ ' + d.toastBtn;
+  el.classList.add('show');
+  localStorage.setItem('ka-donate-toast', String(Date.now()));
+  clearTimeout(window._dtTimer);
+  window._dtTimer = setTimeout(hideDonateToast, 13000);
+}
+
+(function wireDonateToast(){
+  const close = document.getElementById('donateToastClose');
+  const cta   = document.getElementById('donateToastCta');
+  if (close) close.addEventListener('click', hideDonateToast);
+  if (cta)   cta.addEventListener('click', hideDonateToast);
+})();
 
 // ── WAKE LOCK STATE (must be before setLang) ──
 let active = false, wakeLock = null, videoFb = null;
@@ -1972,6 +2058,7 @@ function deactivate(expired=false) {
   toggleBtn.classList.remove('on');
   durBtns.forEach(b=>b.disabled=false);
   stopTimer();
+  maybeShowDonateToast(sessionStart ? Math.floor((Date.now()-sessionStart)/1000) : 0);
   stopSessionTimer();
   if(expired && 'Notification' in window && Notification.permission==='granted'){
     new Notification('KeepScreenAwake', { body: t.timerExpired });
