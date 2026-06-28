@@ -2088,7 +2088,11 @@ document.addEventListener('click', ()=>{
 /* ────────────────────────────────────────────
    SHARE
 ──────────────────────────────────────────── */
+/* GA4 custom event helper — tracks in-app actions GA4 can't auto-detect */
+function track(name, params){ try{ if(window.gtag) gtag('event', name, params || {}); }catch(e){} }
+
 function shareApp() {
+  track('share');
   if(navigator.share){
     navigator.share({ title:'KeepScreenAwake', text:LANG[lang].heroSub, url:'https://screenwakeup.com' }).catch(()=>{});
   } else {
@@ -2106,6 +2110,7 @@ function applyCustomTimer() {
   document.querySelectorAll('.dur-btn').forEach(b => b.classList.remove('sel'));
   selectedMin = val;
   durationMs  = val * 60000;
+  track('custom_timer', { minutes: val });
   document.getElementById('customBtn').textContent = val + ' min ✓';
   document.getElementById('customBtn').style.color = 'var(--accent)';
   setTimeout(() => {
@@ -2186,6 +2191,7 @@ function togglePomodoro() {
   }
 }
 function startPomodoro() {
+  track('pomodoro_start');
   pomActive = true; pomPhase = 'work'; pomSession = 1; pomLeft = 25 * 60;
   document.getElementById('pomodoroDisplay').style.display = 'block';
   document.getElementById('pomodoroBtn').classList.add('active');
@@ -2226,6 +2232,7 @@ function updatePomDisplay() {
 ──────────────────────────────────────────── */
 let fsClockInterval = null;
 function enterFullscreen() {
+  track('fullscreen_enter');
   const overlay = document.getElementById('fsOverlay');
   overlay.style.display = 'flex';
   document.documentElement.requestFullscreen && document.documentElement.requestFullscreen().catch(()=>{});
@@ -2265,6 +2272,7 @@ const _origActivate = activate;
 activate = async function() {
   await _origActivate();
   startAntiIdle();
+  track('activate_wakelock', { duration_min: selectedMin || 0 });
 };
 
 const _origDeactivate = deactivate;
@@ -2274,6 +2282,15 @@ deactivate = function(expired=false) {
   if (pomActive) stopPomodoro();
   if (expired && audioEnabled) playChime();
 };
+
+/* GA4 custom event: donation clicks (placement tells which CTA converts) */
+['navKofi','donateToastCta'].forEach(function(id){
+  var el = document.getElementById(id);
+  if (el) el.addEventListener('click', function(){ track('donate_click', { placement: id === 'navKofi' ? 'header' : 'toast' }); });
+});
+document.querySelectorAll('#cardDonateBlock .kofi-btn').forEach(function(el){
+  el.addEventListener('click', function(){ track('donate_click', { placement: 'block' }); });
+});
 
 /* ────────────────────────────────────────────
    SCROLL REVEAL
@@ -2289,6 +2306,6 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
   <a class="float-kofi" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener" aria-label="Support">☕</a>
   <button class="fk-close" id="floatKofiClose" aria-label="Hide">&times;</button>
 </div>
-<script>(function(){var w=document.getElementById("floatKofi");if(!w)return;if(+(localStorage.getItem("ka-float-hide")||0)>Date.now()){w.style.display="none";return;}var c=document.getElementById("floatKofiClose");if(c)c.addEventListener("click",function(e){e.preventDefault();w.style.display="none";localStorage.setItem("ka-float-hide",String(Date.now()+7*864e5));});})();</script>
+<script>(function(){var w=document.getElementById("floatKofi");if(!w)return;var a=w.querySelector(".float-kofi");if(a)a.addEventListener("click",function(){if(window.gtag)gtag("event","donate_click",{placement:"float"});});if(+(localStorage.getItem("ka-float-hide")||0)>Date.now()){w.style.display="none";return;}var c=document.getElementById("floatKofiClose");if(c)c.addEventListener("click",function(e){e.preventDefault();w.style.display="none";localStorage.setItem("ka-float-hide",String(Date.now()+7*864e5));});})();</script>
 </body>
 </html>

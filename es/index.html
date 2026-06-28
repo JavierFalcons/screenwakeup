@@ -1461,6 +1461,7 @@ async function activate() {
   durBtns.forEach(b=>b.disabled=true);
   startTimer();
   startSessionTimer();
+  track('activate_wakelock', { duration_min: selectedMin || 0 });
 }
 
 function deactivate(expired=false) {
@@ -1498,7 +1499,15 @@ document.addEventListener('click', ()=>{
 /* ────────────────────────────────────────────
    SHARE
 ──────────────────────────────────────────── */
+/* GA4 custom event helper — tracks in-app actions GA4 can't auto-detect */
+function track(name, params){ try{ if(window.gtag) gtag('event', name, params || {}); }catch(e){} }
+
+/* GA4 custom event: donation clicks */
+['navKofi','donateToastCta'].forEach(function(id){ var el=document.getElementById(id); if(el) el.addEventListener('click', function(){ track('donate_click', { placement: id==='navKofi'?'header':'toast' }); }); });
+document.querySelectorAll('#cardDonateBlock .kofi-btn').forEach(function(el){ el.addEventListener('click', function(){ track('donate_click', { placement: 'block' }); }); });
+
 function shareApp() {
+  track('share');
   if(navigator.share){
     navigator.share({ title:'KeepScreenAwake', text:LANG[lang].heroSub, url:'https://screenwakeup.com' }).catch(()=>{});
   } else {
@@ -1550,6 +1559,6 @@ document.getElementById('feedbackForm').addEventListener('submit', async functio
   <a class="float-kofi" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener" aria-label="Apóyanos">☕</a>
   <button class="fk-close" id="floatKofiClose" aria-label="Hide">&times;</button>
 </div>
-<script>(function(){var w=document.getElementById("floatKofi");if(!w)return;if(+(localStorage.getItem("ka-float-hide")||0)>Date.now()){w.style.display="none";return;}var c=document.getElementById("floatKofiClose");if(c)c.addEventListener("click",function(e){e.preventDefault();w.style.display="none";localStorage.setItem("ka-float-hide",String(Date.now()+7*864e5));});})();</script>
+<script>(function(){var w=document.getElementById("floatKofi");if(!w)return;var a=w.querySelector(".float-kofi");if(a)a.addEventListener("click",function(){if(window.gtag)gtag("event","donate_click",{placement:"float"});});if(+(localStorage.getItem("ka-float-hide")||0)>Date.now()){w.style.display="none";return;}var c=document.getElementById("floatKofiClose");if(c)c.addEventListener("click",function(e){e.preventDefault();w.style.display="none";localStorage.setItem("ka-float-hide",String(Date.now()+7*864e5));});})();</script>
 </body>
 </html>
