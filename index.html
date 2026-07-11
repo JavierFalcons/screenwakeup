@@ -955,6 +955,35 @@
 
 <hr class="divider">
 
+<!-- ═══════════════════════════════ COMPATIBILITY ═══════════════════════════════ -->
+<div class="section reveal" id="secCompat">
+  <p class="section-tag" id="compatTag">Compatibility</p>
+  <h2 id="compatH2">Works everywhere</h2>
+  <p class="lead" id="compatLead">No matter what device or browser you use, we have you covered.</p>
+  <div class="compat-grid">
+    <div class="compat-item"><div class="compat-icon">🪟</div><h3>Windows</h3><p><span class="badge-ok">✓ Full support</span><br>Chrome, Edge, Firefox</p></div>
+    <div class="compat-item"><div class="compat-icon">🍎</div><h3>macOS</h3><p><span class="badge-ok">✓ Full support</span><br>Chrome, Safari, Edge</p></div>
+    <div class="compat-item"><div class="compat-icon">📱</div><h3>iPhone / iPad</h3><p><span class="badge-ok">✓ Supported</span><br>Safari 16.4+</p></div>
+    <div class="compat-item"><div class="compat-icon">🤖</div><h3>Android</h3><p><span class="badge-ok">✓ Full support</span><br>Chrome, Samsung</p></div>
+    <div class="compat-item"><div class="compat-icon">🐧</div><h3>Linux</h3><p><span class="badge-ok">✓ Full support</span><br>Chrome, Firefox</p></div>
+    <div class="compat-item"><div class="compat-icon">📺</div><h3>Smart TV</h3><p><span class="badge-ok">✓ Fallback</span><br>Any browser</p></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════ FAQ ═══════════════════════════════ -->
+<div class="section reveal" id="secFaq">
+  <p class="section-tag" id="faqTag">FAQ</p>
+  <h2 id="faqH2">Frequently asked questions</h2>
+  <p class="lead" id="faqLead">Everything you need to know about keeping your screen awake.</p>
+  <div class="faq-list" id="faqList">
+    <!-- Injected by JS for i18n -->
+  </div>
+</div>
+
+<hr class="divider">
+
 <!-- ═══════════════════════════════ FEEDBACK ═══════════════════════════════ -->
 <div class="section reveal feedback-section" id="secFeedback">
   <p class="section-tag" id="feedbackTag">Feedback</p>
@@ -1490,6 +1519,7 @@ function setLang(l) {
     if (btn) btn.classList.toggle('lang-active', x === l);
   });
 
+  try {
   // Hero
   document.getElementById('heroTag').textContent = t.heroTag;
   document.getElementById('heroH1').innerHTML = t.heroH1;
@@ -1580,16 +1610,15 @@ function setLang(l) {
   document.getElementById('cdP').textContent    = t.supportP;
   document.getElementById('cdKofi').textContent = t.kofiTxt;
   document.getElementById('cdShare').textContent = t.shareTxt;
-    document.getElementById('supportTag').textContent = t.supportTag;
-  document.getElementById('supportH2').textContent = t.supportH2;
-  document.getElementById('supportP').textContent = t.supportP;
-  document.getElementById('kofiTxt').textContent = t.kofiTxt;
-  document.getElementById('shareTxt').textContent = t.shareTxt;
   document.getElementById('footerP').textContent = t.footerP;
   document.getElementById('footerSupport').textContent = t.footerSupport;
 
   // Donation strings (header button + improved donate block)
   applyDonateStrings(l);
+  } catch (err) {
+    // Never let a single missing/renamed element break the whole page init
+    console.warn('setLang: skipped an element —', err && err.message);
+  }
 
   // Update html lang attribute
   document.documentElement.lang = l;
