@@ -16,7 +16,7 @@ import re
 GA4 = "G-WKJ8R82KQZ"
 BASE = "https://screenwakeup.com"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SLUGS = ["prevent-teams-away", "caffeine-alternative", "keep-screen-awake-iphone"]
+SLUGS = ["prevent-teams-away", "caffeine-alternative", "keep-screen-awake-iphone", "prevent-zoom-idle"]
 ALL_LANGS = ["en", "es", "pt", "fr", "de", "ja", "ru"]
 GEN_LANGS = ["es", "pt", "fr", "de", "ja", "ru"]
 
@@ -84,6 +84,7 @@ NAVLABEL = {
  "prevent-teams-away":      {"es":"Teams Ausente","pt":"Teams Ausente","fr":"Teams Absent","de":"Teams Abwesend","ja":"Teams 退席中","ru":"Teams «Нет на месте»"},
  "caffeine-alternative":    {"es":"Alternativa a Caffeine","pt":"Alternativa ao Caffeine","fr":"Alternative à Caffeine","de":"Caffeine-Alternative","ja":"Caffeine 代替","ru":"Замена Caffeine"},
  "keep-screen-awake-iphone":{"es":"iPhone","pt":"iPhone","fr":"iPhone","de":"iPhone","ja":"iPhone","ru":"iPhone"},
+ "prevent-zoom-idle":       {"es":"Zoom Activo","pt":"Zoom Ativo","fr":"Zoom Actif","de":"Zoom Aktiv","ja":"Zoom アクティブ","ru":"Активность в Zoom"},
 }
 
 CONTENT = {s: {} for s in SLUGS}

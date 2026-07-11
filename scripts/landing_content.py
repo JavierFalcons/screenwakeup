@@ -6,7 +6,7 @@ body (raw HTML, may contain {HOME}), cta, related [(label, sibling_slug)],
 bc_self, howto {name,desc,steps:[(name,text)]} (optional), faq [(q,a)].
 """
 
-CONTENT = {"prevent-teams-away": {}, "caffeine-alternative": {}, "keep-screen-awake-iphone": {}}
+CONTENT = {"prevent-teams-away": {}, "caffeine-alternative": {}, "keep-screen-awake-iphone": {}, "prevent-zoom-idle": {}}
 
 # ============================ prevent-teams-away ============================
 CONTENT["prevent-teams-away"]["es"] = dict(
@@ -768,4 +768,282 @@ CONTENT["keep-screen-awake-iphone"]["ru"] = dict(
       ("Работает ли на iPad?", "Да. Работает так же на iPadOS в Safari или Chrome. Держите вкладку открытой и на экране."),
       ("Какая версия iOS нужна?", "iOS и iPadOS 16.4 или новее поддерживают Screen Wake Lock API в Safari. На старых версиях используется запасной метод, но надёжнее всего на 16.4+."),
       ("Почему экран всё равно гаснет, когда я блокирую телефон или переключаю приложение?", "Блокировка экрана действует, только пока вкладка открыта и видима. Если переключиться на другое приложение или заблокировать телефон, iOS освобождает её. Вернитесь на вкладку — она активируется снова.")],
+)
+
+
+# ============================ prevent-zoom-idle ============================
+CONTENT["prevent-zoom-idle"]["es"] = dict(
+ title="Cómo mantener Zoom activo y evitar el estado inactivo — Gratis, sin instalar | ScreenWakeUp",
+ desc="Evita que Zoom te marque como inactivo o ausente. Mantén tu presencia en Zoom activa sin mover el ratón — herramienta web gratis, sin descargas ni permisos de administrador. Funciona en Windows, Mac y Chromebook.",
+ keywords="mantener zoom activo, evitar inactivo zoom, zoom me marca ausente, seguir activo en zoom, estado zoom, presencia zoom activa, mover raton automatico",
+ ogtitle="Cómo mantener Zoom activo — sin mover el ratón",
+ ogdesc="Herramienta web gratis que mantiene tu presencia en Zoom activa. Sin descargas ni permisos de administrador.",
+ tag="Zoom", h1='Cómo mantener <span>Zoom activo</span> y evitar el estado inactivo',
+ lead="Mantén tu presencia en Zoom activa y evita el indicador de inactividad — sin mover el ratón, sin instalar nada y sin pedir permisos de administrador a TI.",
+ body="""<p>Si Zoom te pasa a <strong>inactivo</strong> (el reloj o el punto de ausencia) en cuanto te alejas para leer, tomar notas o concentrarte en otra ventana, no eres el único. Zoom lee el <strong>temporizador de inactividad</strong> de tu sistema: tras unos minutos sin ratón ni teclado —o cuando la pantalla se bloquea o se suspende— marca tu presencia como ausente. Dejar la ventana de Zoom abierta no basta, porque el sistema no ve actividad.</p>
+  <div class="box"><strong>La solución en una línea:</strong> mantén reiniciado el temporizador de inactividad del sistema (y la pantalla despierta) desde una pestaña del navegador. Eso es justo lo que hace ScreenWakeUp: gratis, en tu navegador, sin instalar nada.</div>
+  <h2>Mantén Zoom activo en 3 pasos</h2>
+  <ol>
+    <li><strong>Abre la herramienta.</strong> Ve a <a class="inline" href="{HOME}">screenwakeup.com</a> en Chrome o Edge, en una pestaña aparte.</li>
+    <li><strong>Activa el anti-inactividad.</strong> Activa <strong>Simular movimiento del ratón</strong> y <strong>Enviar tecla F15 silenciosa</strong>.</li>
+    <li><strong>Pulsa Mantener pantalla activa.</strong> Deja la pestaña abierta y visible. Tu presencia en Zoom seguirá activa mientras la pestaña esté en marcha.</li>
+  </ol>
+  <h2>¿Por qué Zoom me marca como inactivo?</h2>
+  <p>Zoom deduce tu presencia a partir del <strong>tiempo de inactividad del sistema</strong> y del <strong>estado de la pantalla</strong>. ScreenWakeUp resuelve ambas a la vez: mantiene un bloqueo de pantalla <em>y</em> envía una tecla <strong>F15</strong> silenciosa más un pequeño movimiento del puntero cada 55 segundos.</p>
+  <h2>¿Por qué no una app de escritorio que mueve el ratón?</h2>
+  <ul>
+    <li><strong>Sin instalación ni permisos de administrador</strong> — funciona en portátiles corporativos.</li>
+    <li><strong>No guarda nada en tu equipo</strong> — se ejecuta en una pestaña.</li>
+    <li><strong>Multiplataforma</strong> — Windows, macOS y Chromebook.</li>
+    <li><strong>Gratis, sin cuenta</strong> — y además es temporizador Pomodoro y reloj a pantalla completa.</li>
+  </ul>
+  <h2>Preguntas frecuentes</h2>
+  <h3>¿Va contra las normas de Zoom?</h3>
+  <p>ScreenWakeUp nunca toca Zoom, tu cuenta ni datos de la reunión: solo evita que la pantalla se suspenda y que salte el temporizador de inactividad. Sigue siempre las políticas de tu organización.</p>
+  <h3>¿Funciona sin permisos de administrador?</h3>
+  <p>Sí. Es solo una página web, no hay nada que instalar.</p>
+  <h3>¿También funciona con Teams y Slack?</h3>
+  <p>Sí. El mismo método mantiene Microsoft Teams y Slack como Activo.</p>""",
+ cta="Sigue activo en Zoom → abre la herramienta gratis",
+ related=[("Evitar estado Ausente en Teams", "prevent-teams-away"), ("Alternativa gratis a Caffeine", "caffeine-alternative")],
+ bc_self="Mantener Zoom activo",
+ howto=dict(name="Cómo mantener Zoom activo y evitar el estado inactivo",
+            desc="Mantén tu presencia en Zoom activa sin cambiar el ratón ni los ajustes del sistema.",
+            steps=[("Abre la herramienta", "Abre screenwakeup.com en Chrome o Edge en una pestaña aparte."),
+                   ("Activa el anti-inactividad", "Activa 'Simular movimiento del ratón' y 'Enviar tecla F15 silenciosa'."),
+                   ("Activa", "Pulsa Mantener pantalla activa y deja la pestaña abierta.")]),
+ faq=[("¿Por qué Zoom me marca como inactivo o ausente?", "Zoom te marca como inactivo tras varios minutos sin actividad de teclado o ratón, o cuando el equipo se bloquea o se suspende. Lee el temporizador de inactividad del sistema operativo."),
+      ("¿Cómo mantengo mi estado de Zoom activo sin mover el ratón?", "Abre screenwakeup.com, activa 'Simular movimiento del ratón' y 'Enviar tecla F15 silenciosa', y pulsa Mantener pantalla activa. Esto reinicia el temporizador de inactividad cada 55 segundos."),
+      ("¿Va contra las normas de Zoom?", "ScreenWakeUp solo evita que la pantalla se suspenda y detiene el temporizador de inactividad. No accede a Zoom, a tu cuenta ni a datos de la reunión. Sigue las políticas de tu organización."),
+      ("¿Funciona sin permisos de administrador?", "Sí. Se ejecuta en la pestaña del navegador, sin instalación ni permisos de administrador.")],
+)
+
+CONTENT["prevent-zoom-idle"]["pt"] = dict(
+ title="Como manter o Zoom ativo e evitar o status inativo — Grátis, sem instalar | ScreenWakeUp",
+ desc="Impeça que o Zoom mostre você como inativo ou ausente. Mantenha sua presença no Zoom ativa sem mexer o mouse — ferramenta web grátis, sem download nem direitos de administrador. Funciona no Windows, Mac e Chromebook.",
+ keywords="manter zoom ativo, evitar inativo zoom, zoom me mostra ausente, ficar ativo no zoom, status zoom, presenca zoom ativa, mexer mouse automatico",
+ ogtitle="Como manter o Zoom ativo — sem mexer o mouse",
+ ogdesc="Ferramenta web grátis que mantém sua presença no Zoom ativa. Sem download nem direitos de administrador.",
+ tag="Zoom", h1='Como manter o <span>Zoom ativo</span> e evitar o status inativo',
+ lead="Mantenha sua presença no Zoom ativa e evite o indicador de inatividade — sem mexer o mouse, sem instalar nada e sem pedir direitos de administrador à TI.",
+ body="""<p>Se o Zoom te muda para <strong>inativo</strong> (o relógio ou o ponto de ausência) assim que você se afasta para ler, anotar ou focar em outra janela, você não está sozinho. O Zoom lê o <strong>temporizador de inatividade</strong> do sistema: após alguns minutos sem mouse nem teclado — ou quando a tela trava ou suspende — ele marca sua presença como ausente. Deixar a janela do Zoom aberta não adianta, porque o sistema não vê atividade.</p>
+  <div class="box"><strong>A solução em uma linha:</strong> mantenha o temporizador de inatividade do sistema reiniciado (e a tela ativa) a partir de uma aba do navegador. É exatamente o que o ScreenWakeUp faz — grátis, no navegador, sem instalar nada.</div>
+  <h2>Mantenha o Zoom ativo em 3 passos</h2>
+  <ol>
+    <li><strong>Abra a ferramenta.</strong> Vá para <a class="inline" href="{HOME}">screenwakeup.com</a> no Chrome ou Edge, em uma aba separada.</li>
+    <li><strong>Ative o anti-inatividade.</strong> Ative <strong>Simular movimento do mouse</strong> e <strong>Enviar tecla F15 silenciosa</strong>.</li>
+    <li><strong>Clique em Manter tela ativa.</strong> Deixe a aba aberta e visível. Sua presença no Zoom fica ativa enquanto a aba estiver rodando.</li>
+  </ol>
+  <h2>Por que o Zoom me mostra como inativo?</h2>
+  <p>O Zoom deduz sua presença a partir do <strong>tempo de inatividade do sistema</strong> e do <strong>estado da tela</strong>. O ScreenWakeUp resolve os dois ao mesmo tempo: mantém um bloqueio de tela <em>e</em> envia uma tecla <strong>F15</strong> silenciosa mais um pequeno movimento do ponteiro a cada 55 segundos.</p>
+  <h2>Por que não um app de desktop que mexe o mouse?</h2>
+  <ul>
+    <li><strong>Sem instalação nem direitos de administrador</strong> — funciona em notebooks corporativos.</li>
+    <li><strong>Não guarda nada no seu computador</strong> — roda em uma aba.</li>
+    <li><strong>Multiplataforma</strong> — Windows, macOS e Chromebook.</li>
+    <li><strong>Grátis, sem conta</strong> — e ainda é temporizador Pomodoro e relógio em tela cheia.</li>
+  </ul>
+  <h2>Perguntas frequentes</h2>
+  <h3>Isso vai contra as regras do Zoom?</h3>
+  <p>O ScreenWakeUp nunca toca no Zoom, na sua conta ou em dados da reunião: só evita que a tela suspenda e que o temporizador de inatividade dispare. Siga sempre as políticas da sua organização.</p>
+  <h3>Funciona sem direitos de administrador?</h3>
+  <p>Sim. É apenas uma página web, não há nada para instalar.</p>
+  <h3>Funciona com Teams e Slack também?</h3>
+  <p>Sim. O mesmo método mantém o Microsoft Teams e o Slack como Ativo.</p>""",
+ cta="Fique ativo no Zoom → abra a ferramenta grátis",
+ related=[("Evitar status Ausente no Teams", "prevent-teams-away"), ("Alternativa grátis ao Caffeine", "caffeine-alternative")],
+ bc_self="Manter o Zoom ativo",
+ howto=dict(name="Como manter o Zoom ativo e evitar o status inativo",
+            desc="Mantenha sua presença no Zoom ativa sem mudar o mouse nem as configurações do sistema.",
+            steps=[("Abra a ferramenta", "Abra screenwakeup.com no Chrome ou Edge em uma aba separada."),
+                   ("Ative o anti-inatividade", "Ative 'Simular movimento do mouse' e 'Enviar tecla F15 silenciosa'."),
+                   ("Ative", "Clique em Manter tela ativa e deixe a aba aberta.")]),
+ faq=[("Por que o Zoom me mostra como inativo ou ausente?", "O Zoom marca você como inativo após alguns minutos sem atividade de teclado ou mouse, ou quando o computador trava ou suspende. Ele lê o temporizador de inatividade do sistema operacional."),
+      ("Como mantenho meu status do Zoom ativo sem mexer o mouse?", "Abra screenwakeup.com, ative 'Simular movimento do mouse' e 'Enviar tecla F15 silenciosa', e clique em Manter tela ativa. Isso reinicia o temporizador de inatividade a cada 55 segundos."),
+      ("Isso vai contra as regras do Zoom?", "O ScreenWakeUp só evita que a tela suspenda e para o temporizador de inatividade. Não acessa o Zoom, sua conta ou dados da reunião. Siga as políticas da sua organização."),
+      ("Funciona sem direitos de administrador?", "Sim. Roda na aba do navegador, sem instalação nem direitos de administrador.")],
+)
+
+CONTENT["prevent-zoom-idle"]["fr"] = dict(
+ title="Comment garder Zoom actif et éviter le statut inactif — Gratuit, sans installation | ScreenWakeUp",
+ desc="Empêchez Zoom de vous afficher comme inactif ou absent. Gardez votre présence Zoom active sans bouger la souris — outil web gratuit, sans téléchargement ni droits d'administrateur. Fonctionne sur Windows, Mac et Chromebook.",
+ keywords="garder zoom actif, eviter inactif zoom, zoom m'affiche absent, rester actif sur zoom, statut zoom, presence zoom active, bouger souris automatique",
+ ogtitle="Comment garder Zoom actif — sans bouger la souris",
+ ogdesc="Outil web gratuit qui garde votre présence Zoom active. Sans téléchargement ni droits d'administrateur.",
+ tag="Zoom", h1='Comment garder <span>Zoom actif</span> et éviter le statut inactif',
+ lead="Gardez votre présence Zoom active et évitez l'indicateur d'inactivité — sans bouger la souris, sans rien installer et sans demander de droits d'administrateur à l'informatique.",
+ body="""<p>Si Zoom vous fait passer en <strong>inactif</strong> (l'horloge ou le point d'absence) dès que vous vous éloignez pour lire, prendre des notes ou vous concentrer sur une autre fenêtre, vous n'êtes pas seul. Zoom lit le <strong>minuteur d'inactivité</strong> de votre système : après quelques minutes sans souris ni clavier — ou quand l'écran se verrouille ou se met en veille — il marque votre présence comme absente. Laisser la fenêtre Zoom ouverte ne suffit pas, car le système ne voit aucune activité.</p>
+  <div class="box"><strong>La solution en une ligne :</strong> gardez le minuteur d'inactivité du système réinitialisé (et l'écran allumé) depuis un onglet du navigateur. C'est exactement ce que fait ScreenWakeUp — gratuit, dans votre navigateur, sans installation.</div>
+  <h2>Gardez Zoom actif en 3 étapes</h2>
+  <ol>
+    <li><strong>Ouvrez l'outil.</strong> Allez sur <a class="inline" href="{HOME}">screenwakeup.com</a> dans Chrome ou Edge, dans un onglet séparé.</li>
+    <li><strong>Activez l'anti-inactivité.</strong> Activez <strong>Simuler le mouvement de la souris</strong> et <strong>Envoyer la touche F15 silencieuse</strong>.</li>
+    <li><strong>Cliquez sur Garder l'écran allumé.</strong> Laissez l'onglet ouvert et visible. Votre présence Zoom reste active tant que l'onglet tourne.</li>
+  </ol>
+  <h2>Pourquoi Zoom m'affiche-t-il comme inactif ?</h2>
+  <p>Zoom déduit votre présence à partir du <strong>temps d'inactivité du système</strong> et de l'<strong>état de l'écran</strong>. ScreenWakeUp traite les deux à la fois : il maintient un verrou d'écran <em>et</em> envoie une touche <strong>F15</strong> silencieuse plus un léger mouvement du pointeur toutes les 55 secondes.</p>
+  <h2>Pourquoi pas une appli de bureau qui bouge la souris ?</h2>
+  <ul>
+    <li><strong>Sans installation ni droits d'administrateur</strong> — fonctionne sur les ordinateurs d'entreprise verrouillés.</li>
+    <li><strong>Rien de stocké sur votre machine</strong> — s'exécute dans un onglet.</li>
+    <li><strong>Multiplateforme</strong> — Windows, macOS et Chromebook.</li>
+    <li><strong>Gratuit, sans compte</strong> — et il sert aussi de minuteur Pomodoro et d'horloge plein écran.</li>
+  </ul>
+  <h2>Questions fréquentes</h2>
+  <h3>Est-ce contraire aux règles de Zoom ?</h3>
+  <p>ScreenWakeUp ne touche jamais à Zoom, à votre compte ni aux données de réunion : il empêche seulement l'écran de se mettre en veille et le minuteur d'inactivité de se déclencher. Suivez toujours les politiques de votre organisation.</p>
+  <h3>Fonctionne-t-il sans droits d'administrateur ?</h3>
+  <p>Oui. C'est juste une page web, il n'y a rien à installer.</p>
+  <h3>Fonctionne-t-il aussi avec Teams et Slack ?</h3>
+  <p>Oui. La même méthode garde Microsoft Teams et Slack comme Actif.</p>""",
+ cta="Restez actif sur Zoom → ouvrez l'outil gratuit",
+ related=[("Éviter le statut Absent dans Teams", "prevent-teams-away"), ("Alternative gratuite à Caffeine", "caffeine-alternative")],
+ bc_self="Garder Zoom actif",
+ howto=dict(name="Comment garder Zoom actif et éviter le statut inactif",
+            desc="Gardez votre présence Zoom active sans changer la souris ni les réglages du système.",
+            steps=[("Ouvrez l'outil", "Ouvrez screenwakeup.com dans Chrome ou Edge dans un onglet séparé."),
+                   ("Activez l'anti-inactivité", "Activez 'Simuler le mouvement de la souris' et 'Envoyer la touche F15 silencieuse'."),
+                   ("Activez", "Cliquez sur Garder l'écran allumé et laissez l'onglet ouvert.")]),
+ faq=[("Pourquoi Zoom m'affiche-t-il comme inactif ou absent ?", "Zoom vous marque comme inactif après quelques minutes sans activité clavier ou souris, ou quand l'ordinateur se verrouille ou se met en veille. Il lit le minuteur d'inactivité du système d'exploitation."),
+      ("Comment garder mon statut Zoom actif sans bouger la souris ?", "Ouvrez screenwakeup.com, activez 'Simuler le mouvement de la souris' et 'Envoyer la touche F15 silencieuse', puis cliquez sur Garder l'écran allumé. Cela réinitialise le minuteur d'inactivité toutes les 55 secondes."),
+      ("Est-ce contraire aux règles de Zoom ?", "ScreenWakeUp empêche seulement l'écran de se mettre en veille et arrête le minuteur d'inactivité. Il n'accède pas à Zoom, à votre compte ni aux données de réunion. Suivez les politiques de votre organisation."),
+      ("Fonctionne-t-il sans droits d'administrateur ?", "Oui. Il s'exécute dans l'onglet du navigateur, sans installation ni droits d'administrateur.")],
+)
+
+CONTENT["prevent-zoom-idle"]["de"] = dict(
+ title="So bleibt Zoom aktiv und der Inaktiv-Status verschwindet — Kostenlos, ohne Installation | ScreenWakeUp",
+ desc="Verhindere, dass Zoom dich als inaktiv oder abwesend anzeigt. Halte deine Zoom-Präsenz aktiv, ohne die Maus zu bewegen — kostenloses Web-Tool, ohne Download und ohne Adminrechte. Funktioniert unter Windows, Mac und Chromebook.",
+ keywords="zoom aktiv halten, zoom inaktiv verhindern, zoom zeigt mich abwesend, in zoom aktiv bleiben, zoom status, zoom praesenz aktiv, maus automatisch bewegen",
+ ogtitle="So bleibt Zoom aktiv — ohne die Maus zu bewegen",
+ ogdesc="Kostenloses Web-Tool, das deine Zoom-Präsenz aktiv hält. Ohne Download und ohne Adminrechte.",
+ tag="Zoom", h1='So bleibt <span>Zoom aktiv</span> und der Inaktiv-Status verschwindet',
+ lead="Halte deine Zoom-Präsenz aktiv und vermeide die Inaktivitätsanzeige — ohne die Maus zu bewegen, ohne Installation und ohne die IT um Adminrechte zu bitten.",
+ body="""<p>Wenn Zoom dich auf <strong>inaktiv</strong> setzt (die kleine Uhr oder der Abwesend-Punkt), sobald du dich zum Lesen, Notieren oder Konzentrieren auf ein anderes Fenster abwendest, bist du nicht allein. Zoom liest den <strong>Inaktivitäts-Timer</strong> deines Systems: nach ein paar Minuten ohne Maus oder Tastatur — oder wenn der Bildschirm sperrt oder in den Ruhezustand geht — markiert es deine Präsenz als abwesend. Das Zoom-Fenster offen zu lassen reicht nicht, weil das System keine Aktivität sieht.</p>
+  <div class="box"><strong>Die Lösung in einem Satz:</strong> halte den Inaktivitäts-Timer des Systems zurückgesetzt (und den Bildschirm wach) über einen Browser-Tab. Genau das macht ScreenWakeUp — kostenlos, im Browser, ohne Installation.</div>
+  <h2>Zoom in 3 Schritten aktiv halten</h2>
+  <ol>
+    <li><strong>Öffne das Tool.</strong> Gehe zu <a class="inline" href="{HOME}">screenwakeup.com</a> in Chrome oder Edge, in einem separaten Tab.</li>
+    <li><strong>Aktiviere Anti-Leerlauf.</strong> Aktiviere <strong>Mausbewegung simulieren</strong> und <strong>Stille F15-Taste senden</strong>.</li>
+    <li><strong>Klicke auf Bildschirm wach halten.</strong> Lass den Tab offen und sichtbar. Deine Zoom-Präsenz bleibt aktiv, solange der Tab läuft.</li>
+  </ol>
+  <h2>Warum zeigt Zoom mich als inaktiv?</h2>
+  <p>Zoom leitet deine Präsenz aus der <strong>System-Leerlaufzeit</strong> und dem <strong>Bildschirmzustand</strong> ab. ScreenWakeUp löst beides gleichzeitig: es hält eine Bildschirmsperre <em>und</em> sendet alle 55 Sekunden eine stille <strong>F15</strong>-Taste plus eine kleine Zeigerbewegung.</p>
+  <h2>Warum keine Desktop-App, die die Maus bewegt?</h2>
+  <ul>
+    <li><strong>Ohne Installation und Adminrechte</strong> — funktioniert auf gesperrten Firmen-Laptops.</li>
+    <li><strong>Nichts wird auf deinem Rechner gespeichert</strong> — läuft in einem Tab.</li>
+    <li><strong>Plattformübergreifend</strong> — Windows, macOS und Chromebook.</li>
+    <li><strong>Kostenlos, ohne Konto</strong> — und zugleich Pomodoro-Timer und Vollbild-Uhr.</li>
+  </ul>
+  <h2>Häufige Fragen</h2>
+  <h3>Verstößt das gegen die Zoom-Regeln?</h3>
+  <p>ScreenWakeUp berührt nie Zoom, dein Konto oder Meeting-Daten: es verhindert nur den Ruhezustand des Bildschirms und das Auslösen des Inaktivitäts-Timers. Halte dich stets an die Richtlinien deiner Organisation.</p>
+  <h3>Funktioniert es ohne Adminrechte?</h3>
+  <p>Ja. Es ist nur eine Webseite, es gibt nichts zu installieren.</p>
+  <h3>Funktioniert es auch mit Teams und Slack?</h3>
+  <p>Ja. Dieselbe Methode hält Microsoft Teams und Slack auf Aktiv.</p>""",
+ cta="Bleib aktiv in Zoom → öffne das kostenlose Tool",
+ related=[("Teams Abwesend-Status vermeiden", "prevent-teams-away"), ("Kostenlose Caffeine-Alternative", "caffeine-alternative")],
+ bc_self="Zoom aktiv halten",
+ howto=dict(name="So bleibt Zoom aktiv und der Inaktiv-Status verschwindet",
+            desc="Halte deine Zoom-Präsenz aktiv, ohne Maus oder Systemeinstellungen zu ändern.",
+            steps=[("Öffne das Tool", "Öffne screenwakeup.com in Chrome oder Edge in einem separaten Tab."),
+                   ("Aktiviere Anti-Leerlauf", "Aktiviere 'Mausbewegung simulieren' und 'Stille F15-Taste senden'."),
+                   ("Aktivieren", "Klicke auf Bildschirm wach halten und lass den Tab offen.")]),
+ faq=[("Warum zeigt Zoom mich als inaktiv oder abwesend?", "Zoom markiert dich nach einigen Minuten ohne Tastatur- oder Mausaktivität als inaktiv, oder wenn der Computer sperrt oder in den Ruhezustand geht. Es liest den Inaktivitäts-Timer des Betriebssystems."),
+      ("Wie halte ich meinen Zoom-Status aktiv, ohne die Maus zu bewegen?", "Öffne screenwakeup.com, aktiviere 'Mausbewegung simulieren' und 'Stille F15-Taste senden' und klicke auf Bildschirm wach halten. Das setzt den Inaktivitäts-Timer alle 55 Sekunden zurück."),
+      ("Verstößt das gegen die Zoom-Regeln?", "ScreenWakeUp verhindert nur den Ruhezustand des Bildschirms und stoppt den Inaktivitäts-Timer. Es greift nicht auf Zoom, dein Konto oder Meeting-Daten zu. Halte dich an die Richtlinien deiner Organisation."),
+      ("Funktioniert es ohne Adminrechte?", "Ja. Es läuft im Browser-Tab, ohne Installation und ohne Adminrechte.")],
+)
+
+CONTENT["prevent-zoom-idle"]["ja"] = dict(
+ title="Zoom をアクティブに保ち「退席中」を防ぐ方法 — 無料・インストール不要 | ScreenWakeUp",
+ desc="Zoom に非アクティブ・退席中と表示されるのを防ぎます。マウスを動かさずに Zoom の在席状態をアクティブに保つ無料のブラウザツール。ダウンロード不要・管理者権限不要。Windows・Mac・Chromebook で動作します。",
+ keywords="zoom アクティブ, zoom 退席中 防ぐ, zoom 非アクティブ, zoom 在席 維持, マウス 自動 動かす, zoom ステータス",
+ ogtitle="Zoom をアクティブに保つ方法 — マウスを動かさずに",
+ ogdesc="Zoom の在席状態をアクティブに保つ無料ブラウザツール。ダウンロード不要・管理者権限不要。",
+ tag="Zoom", h1='<span>Zoom をアクティブ</span>に保ち「退席中」を防ぐ方法',
+ lead="マウスを動かさず、何もインストールせず、IT に管理者権限を求めずに、Zoom の在席状態をアクティブに保ちます。",
+ body="""<p>読み物やメモ、別ウィンドウでの作業のために少し離れた途端に Zoom が<strong>非アクティブ</strong>（時計や退席中の点）になってしまうのは、あなただけではありません。Zoom は OS の<strong>アイドルタイマー</strong>を読み取り、数分間マウスもキーボードも操作がない、または画面がロック・スリープすると、在席状態を退席中にします。Zoom のウィンドウを開いたままにしても、システムが操作を検知しないため意味がありません。</p>
+  <div class="box"><strong>解決策は一言で:</strong> ブラウザのタブからシステムのアイドルタイマーをリセットし続け、画面を起きたままにします。まさに ScreenWakeUp がすること——無料、ブラウザ内、インストール不要です。</div>
+  <h2>3ステップで Zoom をアクティブに保つ</h2>
+  <ol>
+    <li><strong>ツールを開く。</strong> Chrome または Edge で別タブに <a class="inline" href="{HOME}">screenwakeup.com</a> を開きます。</li>
+    <li><strong>アイドル防止をオンにする。</strong> <strong>マウス移動をシミュレート</strong>と<strong>無音の F15 キーを送信</strong>を有効にします。</li>
+    <li><strong>「画面を起きたままにする」を押す。</strong> タブを開いたまま表示しておきます。タブが動いている間、Zoom の在席状態はアクティブのままです。</li>
+  </ol>
+  <h2>なぜ Zoom は非アクティブと表示するの?</h2>
+  <p>Zoom は<strong>システムのアイドル時間</strong>と<strong>画面の状態</strong>から在席を推定します。ScreenWakeUp はその両方を同時に解決し、画面のウェイクロックを維持し、55秒ごとに無音の <strong>F15</strong> キーと小さなポインタ移動を送信します。</p>
+  <h2>なぜデスクトップのマウス揺らしアプリではないの?</h2>
+  <ul>
+    <li><strong>インストール・管理者権限不要</strong> — 制限された社用ノートでも動作。</li>
+    <li><strong>端末に何も保存しない</strong> — タブ内で動作。</li>
+    <li><strong>マルチプラットフォーム</strong> — Windows・macOS・Chromebook。</li>
+    <li><strong>無料・アカウント不要</strong> — ポモドーロタイマーや全画面時計にもなります。</li>
+  </ul>
+  <h2>よくある質問</h2>
+  <h3>Zoom の規約に違反しますか?</h3>
+  <p>ScreenWakeUp は Zoom・アカウント・会議データに一切アクセスせず、画面のスリープとアイドルタイマーの発動を防ぐだけです。所属組織のポリシーには必ず従ってください。</p>
+  <h3>管理者権限なしで動きますか?</h3>
+  <p>はい。ただのウェブページなので、インストールするものはありません。</p>
+  <h3>Teams や Slack でも使えますか?</h3>
+  <p>はい。同じ方法で Microsoft Teams と Slack もアクティブに保てます。</p>""",
+ cta="Zoom でアクティブを保つ → 無料ツールを開く",
+ related=[("Teams の退席中を防ぐ", "prevent-teams-away"), ("無料の Caffeine 代替", "caffeine-alternative")],
+ bc_self="Zoom をアクティブに保つ",
+ howto=dict(name="Zoom をアクティブに保ち「退席中」を防ぐ方法",
+            desc="マウスやシステム設定を変えずに Zoom の在席状態をアクティブに保ちます。",
+            steps=[("ツールを開く", "Chrome または Edge で別タブに screenwakeup.com を開きます。"),
+                   ("アイドル防止をオンにする", "「マウス移動をシミュレート」と「無音の F15 キーを送信」を有効にします。"),
+                   ("開始する", "「画面を起きたままにする」を押し、タブを開いたままにします。")]),
+ faq=[("なぜ Zoom は私を非アクティブ・退席中と表示するの?", "Zoom は数分間キーボードやマウスの操作がない、またはPCがロック・スリープすると非アクティブと表示します。OS のアイドルタイマーを読み取っています。"),
+      ("マウスを動かさずに Zoom のステータスをアクティブに保つには?", "screenwakeup.com を開き、「マウス移動をシミュレート」と「無音の F15 キーを送信」を有効にして「画面を起きたままにする」を押します。これで55秒ごとにアイドルタイマーがリセットされます。"),
+      ("Zoom の規約に違反しますか?", "ScreenWakeUp は画面のスリープを防ぎアイドルタイマーを止めるだけです。Zoom・アカウント・会議データにはアクセスしません。所属組織のポリシーに従ってください。"),
+      ("管理者権限なしで動きますか?", "はい。ブラウザのタブ内で動作し、インストールも管理者権限も不要です。")],
+)
+
+CONTENT["prevent-zoom-idle"]["ru"] = dict(
+ title="Как оставаться активным в Zoom и убрать статус «Неактивен» — Бесплатно, без установки | ScreenWakeUp",
+ desc="Не дайте Zoom показывать вас как неактивного или отошедшего. Держите присутствие в Zoom активным, не двигая мышь — бесплатный веб-инструмент, без загрузки и прав администратора. Работает в Windows, Mac и Chromebook.",
+ keywords="zoom активность, zoom неактивен убрать, zoom показывает отошёл, оставаться активным в zoom, статус zoom, автодвижение мыши",
+ ogtitle="Как оставаться активным в Zoom — не двигая мышь",
+ ogdesc="Бесплатный веб-инструмент, который держит присутствие в Zoom активным. Без загрузки и прав администратора.",
+ tag="Zoom", h1='Как оставаться <span>активным в Zoom</span> и убрать статус «Неактивен»',
+ lead="Держите присутствие в Zoom активным и убирайте индикатор неактивности — не двигая мышь, ничего не устанавливая и не прося у ИТ права администратора.",
+ body="""<p>Если Zoom переводит вас в <strong>неактивны</strong> (часики или точка «отошёл»), как только вы отходите почитать, сделать заметки или сосредоточиться в другом окне — вы не одиноки. Zoom считывает <strong>таймер простоя</strong> вашей системы: через несколько минут без мыши и клавиатуры — или когда экран блокируется или засыпает — он помечает ваше присутствие как отошёл. Оставить окно Zoom открытым недостаточно, ведь система не видит активности.</p>
+  <div class="box"><strong>Решение в одну строку:</strong> держите таймер простоя системы сброшенным (а экран — активным) из вкладки браузера. Именно это и делает ScreenWakeUp — бесплатно, в браузере, без установки.</div>
+  <h2>Держите Zoom активным в 3 шага</h2>
+  <ol>
+    <li><strong>Откройте инструмент.</strong> Перейдите на <a class="inline" href="{HOME}">screenwakeup.com</a> в Chrome или Edge, в отдельной вкладке.</li>
+    <li><strong>Включите защиту от простоя.</strong> Включите <strong>Имитировать движение мыши</strong> и <strong>Отправлять тихую клавишу F15</strong>.</li>
+    <li><strong>Нажмите «Держать экран активным».</strong> Оставьте вкладку открытой и на экране. Присутствие в Zoom остаётся активным, пока вкладка работает.</li>
+  </ol>
+  <h2>Почему Zoom показывает меня неактивным?</h2>
+  <p>Zoom определяет присутствие по <strong>времени простоя системы</strong> и <strong>состоянию экрана</strong>. ScreenWakeUp решает обе задачи сразу: удерживает блокировку сна экрана <em>и</em> отправляет тихую клавишу <strong>F15</strong> плюс небольшое движение указателя каждые 55 секунд.</p>
+  <h2>Почему не настольная программа-«шевелилка мыши»?</h2>
+  <ul>
+    <li><strong>Без установки и прав администратора</strong> — работает на корпоративных ноутбуках.</li>
+    <li><strong>Ничего не хранит на компьютере</strong> — работает во вкладке.</li>
+    <li><strong>Кроссплатформенно</strong> — Windows, macOS и Chromebook.</li>
+    <li><strong>Бесплатно, без аккаунта</strong> — и это ещё таймер Pomodoro и полноэкранные часы.</li>
+  </ul>
+  <h2>Частые вопросы</h2>
+  <h3>Это нарушает правила Zoom?</h3>
+  <p>ScreenWakeUp никогда не трогает Zoom, ваш аккаунт или данные встречи: он лишь не даёт экрану заснуть и таймеру простоя сработать. Всегда следуйте политикам вашей организации.</p>
+  <h3>Работает без прав администратора?</h3>
+  <p>Да. Это просто веб-страница, устанавливать нечего.</p>
+  <h3>Работает ли с Teams и Slack?</h3>
+  <p>Да. Тот же метод держит Microsoft Teams и Slack в статусе «Активен».</p>""",
+ cta="Оставайтесь активным в Zoom → откройте бесплатный инструмент",
+ related=[("Убрать статус «Нет на месте» в Teams", "prevent-teams-away"), ("Бесплатная замена Caffeine", "caffeine-alternative")],
+ bc_self="Оставаться активным в Zoom",
+ howto=dict(name="Как оставаться активным в Zoom и убрать статус «Неактивен»",
+            desc="Держите присутствие в Zoom активным без изменения мыши и системных настроек.",
+            steps=[("Откройте инструмент", "Откройте screenwakeup.com в Chrome или Edge в отдельной вкладке."),
+                   ("Включите защиту от простоя", "Включите «Имитировать движение мыши» и «Отправлять тихую клавишу F15»."),
+                   ("Запустите", "Нажмите «Держать экран активным» и оставьте вкладку открытой.")]),
+ faq=[("Почему Zoom показывает меня неактивным или отошедшим?", "Zoom помечает вас как неактивного через несколько минут без активности клавиатуры или мыши, либо когда компьютер блокируется или засыпает. Он считывает таймер простоя операционной системы."),
+      ("Как держать статус в Zoom активным, не двигая мышь?", "Откройте screenwakeup.com, включите «Имитировать движение мыши» и «Отправлять тихую клавишу F15», затем нажмите «Держать экран активным». Это сбрасывает таймер простоя каждые 55 секунд."),
+      ("Это нарушает правила Zoom?", "ScreenWakeUp лишь не даёт экрану заснуть и останавливает таймер простоя. Он не обращается к Zoom, вашему аккаунту или данным встречи. Следуйте политикам вашей организации."),
+      ("Работает без прав администратора?", "Да. Работает во вкладке браузера, без установки и прав администратора.")],
 )

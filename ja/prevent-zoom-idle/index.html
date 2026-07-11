@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teams の「退席中」を防ぐ方法（オンライン表示を維持）— 無料・インストール不要 | ScreenWakeUp</title>
-  <meta name="description" content="Microsoft Teams に「退席中」と表示されないようにします。マウスを動かさずにステータスを緑のまま維持 — 無料のウェブツール、ダウンロードや管理者権限は不要。Windows・Mac・Chromebook で動作。">
-  <meta name="keywords" content="teams 退席中 防ぐ, teams アクティブ 維持, teams 緑 ステータス, teams 5分 退席中, teams アクティブのまま, マウス 自動 動かす">
+  <title>Zoom をアクティブに保ち「退席中」を防ぐ方法 — 無料・インストール不要 | ScreenWakeUp</title>
+  <meta name="description" content="Zoom に非アクティブ・退席中と表示されるのを防ぎます。マウスを動かさずに Zoom の在席状態をアクティブに保つ無料のブラウザツール。ダウンロード不要・管理者権限不要。Windows・Mac・Chromebook で動作します。">
+  <meta name="keywords" content="zoom アクティブ, zoom 退席中 防ぐ, zoom 非アクティブ, zoom 在席 維持, マウス 自動 動かす, zoom ステータス">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://screenwakeup.com/ja/prevent-teams-away/">
-  <link rel="alternate" hreflang="en" href="https://screenwakeup.com/prevent-teams-away/">
-  <link rel="alternate" hreflang="es" href="https://screenwakeup.com/es/prevent-teams-away/">
-  <link rel="alternate" hreflang="pt" href="https://screenwakeup.com/pt/prevent-teams-away/">
-  <link rel="alternate" hreflang="fr" href="https://screenwakeup.com/fr/prevent-teams-away/">
-  <link rel="alternate" hreflang="de" href="https://screenwakeup.com/de/prevent-teams-away/">
-  <link rel="alternate" hreflang="ja" href="https://screenwakeup.com/ja/prevent-teams-away/">
-  <link rel="alternate" hreflang="ru" href="https://screenwakeup.com/ru/prevent-teams-away/">
-  <link rel="alternate" hreflang="x-default" href="https://screenwakeup.com/prevent-teams-away/">
+  <link rel="canonical" href="https://screenwakeup.com/ja/prevent-zoom-idle/">
+  <link rel="alternate" hreflang="en" href="https://screenwakeup.com/prevent-zoom-idle/">
+  <link rel="alternate" hreflang="es" href="https://screenwakeup.com/es/prevent-zoom-idle/">
+  <link rel="alternate" hreflang="pt" href="https://screenwakeup.com/pt/prevent-zoom-idle/">
+  <link rel="alternate" hreflang="fr" href="https://screenwakeup.com/fr/prevent-zoom-idle/">
+  <link rel="alternate" hreflang="de" href="https://screenwakeup.com/de/prevent-zoom-idle/">
+  <link rel="alternate" hreflang="ja" href="https://screenwakeup.com/ja/prevent-zoom-idle/">
+  <link rel="alternate" hreflang="ru" href="https://screenwakeup.com/ru/prevent-zoom-idle/">
+  <link rel="alternate" hreflang="x-default" href="https://screenwakeup.com/prevent-zoom-idle/">
   <link rel="icon" href="https://screenwakeup.com/favicon.ico" type="image/x-icon">
   <meta name="theme-color" content="#5ee0c0">
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://screenwakeup.com/ja/prevent-teams-away/">
-  <meta property="og:title" content="Teams の「退席中」を防ぐ方法 — マウスを動かさずに緑を維持">
-  <meta property="og:description" content="Microsoft Teams のステータスをアクティブに保つ無料ウェブツール。ダウンロードや管理者権限は不要。">
+  <meta property="og:url" content="https://screenwakeup.com/ja/prevent-zoom-idle/">
+  <meta property="og:title" content="Zoom をアクティブに保つ方法 — マウスを動かさずに">
+  <meta property="og:description" content="Zoom の在席状態をアクティブに保つ無料ブラウザツール。ダウンロード不要・管理者権限不要。">
   <meta property="og:image" content="https://screenwakeup.com/og-image.png">
   <meta property="og:site_name" content="ScreenWakeUp">
 
@@ -31,8 +31,8 @@
   {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "Microsoft Teams の「退席中」を防ぐ方法",
-    "description": "マウスやシステム設定を変えずに、Microsoft Teams のステータスを緑（アクティブ）のまま維持します。",
+    "name": "Zoom をアクティブに保ち「退席中」を防ぐ方法",
+    "description": "マウスやシステム設定を変えずに Zoom の在席状態をアクティブに保ちます。",
     "step": [
       {
         "@type": "HowToStep",
@@ -43,14 +43,14 @@
       {
         "@type": "HowToStep",
         "position": 2,
-        "name": "アイドル防止を有効化",
-        "text": "「マウス移動をシミュレート」と「無音の F15 キーを送信」をオンにします。"
+        "name": "アイドル防止をオンにする",
+        "text": "「マウス移動をシミュレート」と「無音の F15 キーを送信」を有効にします。"
       },
       {
         "@type": "HowToStep",
         "position": 3,
-        "name": "有効化",
-        "text": "「画面をスリープさせない」をクリックし、タブを開いたままにします。"
+        "name": "開始する",
+        "text": "「画面を起きたままにする」を押し、タブを開いたままにします。"
       }
     ]
   },
@@ -60,34 +60,34 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "なぜ Teams は私を「退席中」と表示するのですか？",
+        "name": "なぜ Zoom は私を非アクティブ・退席中と表示するの?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Microsoft Teams は、キーボードやマウスの操作が約5分間ない場合、またはコンピュータがロック・スリープした場合に「退席中」と表示します。OS のアイドルタイマーを読み取っています。"
+          "text": "Zoom は数分間キーボードやマウスの操作がない、またはPCがロック・スリープすると非アクティブと表示します。OS のアイドルタイマーを読み取っています。"
         }
       },
       {
         "@type": "Question",
-        "name": "マウスを動かさずに Teams のステータスを緑に保つには？",
+        "name": "マウスを動かさずに Zoom のステータスをアクティブに保つには?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "screenwakeup.com を開き、「マウス移動をシミュレート」と「無音の F15 キーを送信」をオンにして、「画面をスリープさせない」をクリックします。55秒ごとにアイドルタイマーがリセットされます。"
+          "text": "screenwakeup.com を開き、「マウス移動をシミュレート」と「無音の F15 キーを送信」を有効にして「画面を起きたままにする」を押します。これで55秒ごとにアイドルタイマーがリセットされます。"
         }
       },
       {
         "@type": "Question",
-        "name": "Microsoft Teams の規約に違反しますか？",
+        "name": "Zoom の規約に違反しますか?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ScreenWakeUp は画面のスリープを防ぎ、アイドルタイマーを止めるだけです。Teams・アカウント・社内データにはアクセスしません。所属組織のポリシーに従ってください。"
+          "text": "ScreenWakeUp は画面のスリープを防ぎアイドルタイマーを止めるだけです。Zoom・アカウント・会議データにはアクセスしません。所属組織のポリシーに従ってください。"
         }
       },
       {
         "@type": "Question",
-        "name": "管理者権限なしで動きますか？",
+        "name": "管理者権限なしで動きますか?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい。ブラウザのタブ内で動作し、インストールや管理者権限は不要です。"
+          "text": "はい。ブラウザのタブ内で動作し、インストールも管理者権限も不要です。"
         }
       }
     ]
@@ -105,8 +105,8 @@
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Teams の退席中を防ぐ",
-        "item": "https://screenwakeup.com/ja/prevent-teams-away/"
+        "name": "Zoom をアクティブに保つ",
+        "item": "https://screenwakeup.com/ja/prevent-zoom-idle/"
       }
     ]
   }
@@ -165,48 +165,48 @@
   <nav>
     <a class="nav-kofi" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener">☕ 支援する</a>
     <a href="https://screenwakeup.com/ja/">ツール</a>
+    <a href="/ja/prevent-teams-away/">Teams 退席中</a>
     <a href="/ja/caffeine-alternative/">Caffeine 代替</a>
     <a href="/ja/keep-screen-awake-iphone/">iPhone</a>
-    <a href="/ja/prevent-zoom-idle/">Zoom アクティブ</a>
   </nav>
 </header>
 
 <main>
-  <p class="tag">Microsoft Teams</p>
-  <h1>Teams の<span>「退席中」を防ぐ</span>方法</h1>
-  <p class="lead">マウスを動かさず、何もインストールせず、管理者権限も求めずに — Microsoft Teams のステータスを緑（アクティブ）のまま維持します。</p>
+  <p class="tag">Zoom</p>
+  <h1><span>Zoom をアクティブ</span>に保ち「退席中」を防ぐ方法</h1>
+  <p class="lead">マウスを動かさず、何もインストールせず、IT に管理者権限を求めずに、Zoom の在席状態をアクティブに保ちます。</p>
 
-  <p>読み物や電話、別ウィンドウへの集中などで少し離れた途端に Teams が<strong>「退席中」</strong>に切り替わる——よくあることです。Teams は OS の<strong>アイドルタイマー</strong>を読み取り、マウスやキーボードの操作が約5分ない場合、または画面がロック・スリープした場合に、プレゼンスを「退席中」に変更します。</p>
-  <div class="box"><strong>解決策はひとつ:</strong> ブラウザのタブからシステムのアイドルタイマーをリセットし続け（かつ画面を起こしたまま）にします。それがまさに ScreenWakeUp の機能です。無料・ブラウザ内・インストール不要。</div>
-  <h2>3ステップで Teams をアクティブに保つ</h2>
+  <p>読み物やメモ、別ウィンドウでの作業のために少し離れた途端に Zoom が<strong>非アクティブ</strong>（時計や退席中の点）になってしまうのは、あなただけではありません。Zoom は OS の<strong>アイドルタイマー</strong>を読み取り、数分間マウスもキーボードも操作がない、または画面がロック・スリープすると、在席状態を退席中にします。Zoom のウィンドウを開いたままにしても、システムが操作を検知しないため意味がありません。</p>
+  <div class="box"><strong>解決策は一言で:</strong> ブラウザのタブからシステムのアイドルタイマーをリセットし続け、画面を起きたままにします。まさに ScreenWakeUp がすること——無料、ブラウザ内、インストール不要です。</div>
+  <h2>3ステップで Zoom をアクティブに保つ</h2>
   <ol>
     <li><strong>ツールを開く。</strong> Chrome または Edge で別タブに <a class="inline" href="https://screenwakeup.com/ja/">screenwakeup.com</a> を開きます。</li>
-    <li><strong>アイドル防止を有効化。</strong> <strong>マウス移動をシミュレート</strong>と<strong>無音の F15 キーを送信</strong>をオンにします。</li>
-    <li><strong>「画面をスリープさせない」をクリック。</strong> タブを開いたまま表示しておきます。タブが動いている間、ステータスは緑のままです。</li>
+    <li><strong>アイドル防止をオンにする。</strong> <strong>マウス移動をシミュレート</strong>と<strong>無音の F15 キーを送信</strong>を有効にします。</li>
+    <li><strong>「画面を起きたままにする」を押す。</strong> タブを開いたまま表示しておきます。タブが動いている間、Zoom の在席状態はアクティブのままです。</li>
   </ol>
-  <h2>なぜ Teams は「退席中」と表示するのか</h2>
-  <p>Teams はプレゼンスを<strong>システムのアイドル時間</strong>と<strong>画面の状態</strong>から判定します。ScreenWakeUp は両方に同時に対応します。画面のウェイクロックを保持し、<em>かつ</em>55秒ごとに無音の <strong>F15</strong> キーと小さなポインタ移動を送信します。</p>
-  <h2>デスクトップの「マウス揺らし」アプリではダメ？</h2>
+  <h2>なぜ Zoom は非アクティブと表示するの?</h2>
+  <p>Zoom は<strong>システムのアイドル時間</strong>と<strong>画面の状態</strong>から在席を推定します。ScreenWakeUp はその両方を同時に解決し、画面のウェイクロックを維持し、55秒ごとに無音の <strong>F15</strong> キーと小さなポインタ移動を送信します。</p>
+  <h2>なぜデスクトップのマウス揺らしアプリではないの?</h2>
   <ul>
-    <li><strong>インストール・管理者権限が不要</strong> — ソフトを入れられない社用 PC でも動作。</li>
+    <li><strong>インストール・管理者権限不要</strong> — 制限された社用ノートでも動作。</li>
     <li><strong>端末に何も保存しない</strong> — タブ内で動作。</li>
-    <li><strong>クロスプラットフォーム</strong> — Windows・macOS・Chromebook。</li>
+    <li><strong>マルチプラットフォーム</strong> — Windows・macOS・Chromebook。</li>
     <li><strong>無料・アカウント不要</strong> — ポモドーロタイマーや全画面時計にもなります。</li>
   </ul>
   <h2>よくある質問</h2>
-  <h3>Microsoft Teams の規約に違反しますか？</h3>
-  <p>ScreenWakeUp は Teams・アカウント・社内データには一切触れません。画面のスリープとアイドルタイマーの作動を防ぐだけです。必ず所属組織のポリシーに従ってください。</p>
-  <h3>管理者権限なしで動きますか？</h3>
+  <h3>Zoom の規約に違反しますか?</h3>
+  <p>ScreenWakeUp は Zoom・アカウント・会議データに一切アクセスせず、画面のスリープとアイドルタイマーの発動を防ぐだけです。所属組織のポリシーには必ず従ってください。</p>
+  <h3>管理者権限なしで動きますか?</h3>
   <p>はい。ただのウェブページなので、インストールするものはありません。</p>
-  <h3>Slack や Zoom でも使えますか？</h3>
-  <p>はい。同じ方法で Slack をアクティブに保ち、Zoom にアイドルと判定されるのを防ぎます。</p>
+  <h3>Teams や Slack でも使えますか?</h3>
+  <p>はい。同じ方法で Microsoft Teams と Slack もアクティブに保てます。</p>
 
-  <a href="https://screenwakeup.com/ja/" class="cta">Teams で緑を維持 → 無料ツールを開く</a>
+  <a href="https://screenwakeup.com/ja/" class="cta">Zoom でアクティブを保つ → 無料ツールを開く</a>
 
   <h2>関連ガイド</h2>
   <div class="related">
+    <a href="/ja/prevent-teams-away/">Teams の退席中を防ぐ</a>
     <a href="/ja/caffeine-alternative/">無料の Caffeine 代替</a>
-    <a href="/ja/keep-screen-awake-iphone/">iPhone の画面をスリープさせない</a>
     <a href="https://screenwakeup.com/ja/">すべての機能 →</a>
   </div>
 </main>
