@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zoom をアクティブに保ち「退席中」を防ぐ方法 — 無料・インストール不要 | ScreenWakeUp</title>
-  <meta name="description" content="Zoom に非アクティブ・退席中と表示されるのを防ぎます。マウスを動かさずに Zoom の在席状態をアクティブに保つ無料のブラウザツール。ダウンロード不要・管理者権限不要。Windows・Mac・Chromebook で動作します。">
+  <meta name="description" content="Zoom が非アクティブにする本当の理由と、実際に効く対策 — 正直なガイド。無料のブラウザツールで画面を点けたまま、ロックを防止。ダウンロード不要・管理者権限不要。Windows・Mac・Chromebook で動作します。">
   <meta name="keywords" content="zoom アクティブ, zoom 退席中 防ぐ, zoom 非アクティブ, zoom 在席 維持, マウス 自動 動かす, zoom ステータス">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://screenwakeup.com/ja/prevent-zoom-idle/">
@@ -21,8 +21,8 @@
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://screenwakeup.com/ja/prevent-zoom-idle/">
-  <meta property="og:title" content="Zoom をアクティブに保つ方法 — マウスを動かさずに">
-  <meta property="og:description" content="Zoom の在席状態をアクティブに保つ無料ブラウザツール。ダウンロード不要・管理者権限不要。">
+  <meta property="og:title" content="Zoom をアクティブに保つ方法 — 正直なガイド">
+  <meta property="og:description" content="Zoom が非アクティブにする理由と、本当に効く対策：画面を点けたまま、PCをロックさせない。無料ブラウザツール、ダウンロード不要。">
   <meta property="og:image" content="https://screenwakeup.com/og-image.png">
   <meta property="og:site_name" content="ScreenWakeUp">
 
@@ -43,8 +43,8 @@
       {
         "@type": "HowToStep",
         "position": 2,
-        "name": "アイドル防止をオンにする",
-        "text": "「マウス移動をシミュレート」と「無音の F15 キーを送信」を有効にします。"
+        "name": "有効化する",
+        "text": "「画面をスリープさせない」をクリック。画面が点いたまま、PCはロックもスリープもしません — 離席中と判定される最大の原因を防ぎます。"
       },
       {
         "@type": "HowToStep",
@@ -71,7 +71,7 @@
         "name": "マウスを動かさずに Zoom のステータスをアクティブに保つには?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "screenwakeup.com を開き、「マウス移動をシミュレート」と「無音の F15 キーを送信」を有効にして「画面を起きたままにする」を押します。これで55秒ごとにアイドルタイマーがリセットされます。"
+          "text": "screenwakeup.com を開いて「画面をスリープさせない」をクリックします。PCがロック・スリープしなくなり、最も一般的な原因を防げます。正直な注意点：ウェブサイトはOSのアイドルタイマーをリセットできません（ブラウザが合成入力をブロックするため）。完全な無操作が数分続くと、アプリ側で退席中と表示される場合があります。"
         }
       },
       {
@@ -79,7 +79,7 @@
         "name": "Zoom の規約に違反しますか?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ScreenWakeUp は画面のスリープを防ぎアイドルタイマーを止めるだけです。Zoom・アカウント・会議データにはアクセスしません。所属組織のポリシーに従ってください。"
+          "text": "ScreenWakeUp は画面のスリープとロックを防ぐだけです（動画を見ているのと同じ効果）。偽の入力は一切送りません。Zoom・アカウント・会議データにはアクセスしません。所属組織のポリシーに従ってください。"
         }
       },
       {
@@ -173,18 +173,18 @@
 <main>
   <p class="tag">Zoom</p>
   <h1><span>Zoom をアクティブ</span>に保ち「退席中」を防ぐ方法</h1>
-  <p class="lead">マウスを動かさず、何もインストールせず、IT に管理者権限を求めずに、Zoom の在席状態をアクティブに保ちます。</p>
+  <p class="lead">正直なガイド：Zoom が非アクティブになる本当の理由、ブラウザツールにできること・できないこと、そして画面を点けたままにする方法 — ダウンロードも管理者権限も不要。</p>
 
   <p>読み物やメモ、別ウィンドウでの作業のために少し離れた途端に Zoom が<strong>非アクティブ</strong>（時計や退席中の点）になってしまうのは、あなただけではありません。Zoom は OS の<strong>アイドルタイマー</strong>を読み取り、数分間マウスもキーボードも操作がない、または画面がロック・スリープすると、在席状態を退席中にします。Zoom のウィンドウを開いたままにしても、システムが操作を検知しないため意味がありません。</p>
-  <div class="box"><strong>解決策は一言で:</strong> ブラウザのタブからシステムのアイドルタイマーをリセットし続け、画面を起きたままにします。まさに ScreenWakeUp がすること——無料、ブラウザ内、インストール不要です。</div>
+  <div class="box"><strong>正直な結論:</strong> ブラウザにできるのは、画面を点けたままにしてPCのロックとスリープを防ぐこと（非アクティブの最大の原因を排除）。本物のマウスやキーボード入力を偽装できるウェブサイトは存在しません。ScreenWakeUp は本当に効く部分だけを提供します——無料、ブラウザ内、インストール不要です。</div>
   <h2>3ステップで Zoom をアクティブに保つ</h2>
   <ol>
     <li><strong>ツールを開く。</strong> Chrome または Edge で別タブに <a class="inline" href="https://screenwakeup.com/ja/">screenwakeup.com</a> を開きます。</li>
-    <li><strong>アイドル防止をオンにする。</strong> <strong>マウス移動をシミュレート</strong>と<strong>無音の F15 キーを送信</strong>を有効にします。</li>
+    <li><strong>設定は不要。</strong> 「アイドル防止」のチェックボックスはありません — ウェブサイトは本物のシステム入力をシミュレートできないからです。別のアプリで作業するなら<strong>フローティング・ミニウィンドウ</strong>（ピクチャ・イン・ピクチャ）をどうぞ。</li>
     <li><strong>「画面を起きたままにする」を押す。</strong> タブを開いたまま表示しておきます。タブが動いている間、Zoom の在席状態はアクティブのままです。</li>
   </ol>
   <h2>なぜ Zoom は非アクティブと表示するの?</h2>
-  <p>Zoom は<strong>システムのアイドル時間</strong>と<strong>画面の状態</strong>から在席を推定します。ScreenWakeUp はその両方を同時に解決し、画面のウェイクロックを維持し、55秒ごとに無音の <strong>F15</strong> キーと小さなポインタ移動を送信します。</p>
+  <p>Zoom は<strong>システムのアイドル時間</strong>と<strong>画面の状態</strong>から在席を推定します。ScreenWakeUp は後者を完全に解決します：動作中は画面がロックもスリープもしません。前者はどんなウェブサイトにも手が届きません。ブラウザはページが本物のシステム入力を生成するのを意図的に防いでいるため、JavaScript の「マウスシミュレーター」は自分のページ内で仮想ポインタを動かすだけです。</p>
   <h2>なぜデスクトップのマウス揺らしアプリではないの?</h2>
   <ul>
     <li><strong>インストール・管理者権限不要</strong> — 制限された社用ノートでも動作。</li>
@@ -194,11 +194,11 @@
   </ul>
   <h2>よくある質問</h2>
   <h3>Zoom の規約に違反しますか?</h3>
-  <p>ScreenWakeUp は Zoom・アカウント・会議データに一切アクセスせず、画面のスリープとアイドルタイマーの発動を防ぐだけです。所属組織のポリシーには必ず従ってください。</p>
+  <p>ScreenWakeUp は Zoom・アカウント・会議データに一切アクセスせず、画面のスリープとロックを防ぐだけで（動画を見ているのと同じ効果）、偽の入力は一切送りません。所属組織のポリシーには必ず従ってください。</p>
   <h3>管理者権限なしで動きますか?</h3>
   <p>はい。ただのウェブページなので、インストールするものはありません。</p>
   <h3>Teams や Slack でも使えますか?</h3>
-  <p>はい。同じ方法で Microsoft Teams と Slack もアクティブに保てます。</p>
+  <p>はい — 同じ原理です。Teams や Slack もPCのスリープやロックで退席中になります。ScreenWakeUp はまさにそれを防ぎます。</p>
 
   <a href="https://screenwakeup.com/ja/" class="cta">Zoom でアクティブを保つ → 無料ツールを開く</a>
 
@@ -218,7 +218,7 @@
     <a href="/terms/">利用規約</a>
     <a href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener">支援する</a>
   </p>
-  <p style="margin-top:12px">© 2026 ScreenWakeUp.com · ずっと無料 · トラッキングなし</p>
+  <p style="margin-top:12px">© 2026 ScreenWakeUp.com · ずっと無料 · アカウント不要</p>
 </footer>
 
 <div class="float-kofi-wrap" id="floatKofi">

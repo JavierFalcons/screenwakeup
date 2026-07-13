@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Keep Screen Awake Free — Prevent Teams Away Status, Pomodoro Timer | ScreenWakeUp</title>
-  <meta name="description" content="Free online tool to keep your screen awake, prevent Away status in Teams & Slack, run a Pomodoro timer, and block screen lock — no download, no app, no account. Works on Windows, Mac, iPhone and Android.">
+  <title>Keep Screen Awake Free — Online, No Download | ScreenWakeUp</title>
+  <meta name="description" content="Free online tool to keep your screen awake and stop screen lock & sleep — the most common cause of Away status in Teams & Slack. Pomodoro timer included. No download, no app, no account.">
   <meta name="author" content="ScreenWakeUp">
   <meta name="keywords" content="keep screen awake, prevent Teams away status, prevent Slack idle, stay active Teams, online pomodoro timer, screen awake online, caffeine app alternative, prevent screen lock, keep computer awake, wake lock, fullscreen clock, custom timer, keep laptop screen on, screen awake chrome, screen awake mac, screen awake windows, screen awake iphone, screen awake android, prevent zoom idle">
   <meta name="robots" content="index, follow">
@@ -35,16 +35,15 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://screenwakeup.com/">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Keep Screen Awake + Prevent Teams Away Status — Free Online Tool">
-  <meta property="og:description" content="Keep your screen on, prevent Away status in Teams & Slack, run Pomodoro timers. No install, no download. Free forever.">
+  <meta property="og:title" content="Keep Screen Awake — Free Online Tool, No Download">
+  <meta property="og:description" content="Keep your screen on and stop screen lock & sleep. Pomodoro timer, fullscreen clock, floating mini-window. No install. Free forever.">
   <meta property="og:image" content="https://screenwakeup.com/og-image.png">
   <meta property="og:site_name" content="ScreenWakeUp">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@ScreenWakeUp">
-  <meta name="twitter:title" content="Keep Screen Awake + Stay Active in Teams & Slack — Free">
-  <meta name="twitter:description" content="Screen awake, Pomodoro timer, anti-idle for Teams/Slack/Zoom. No install. Free forever.">
+  <meta name="twitter:title" content="Keep Screen Awake — Free Online Tool, No Download">
+  <meta name="twitter:description" content="Screen awake with one click. Pomodoro timer, fullscreen clock, floating mini-window. No install. Free forever.">
   <meta name="twitter:image" content="https://screenwakeup.com/og-image.png">
 
   <!-- Schema: FAQPage + HowTo -->
@@ -59,7 +58,7 @@
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Windows, macOS, iOS, Android, Linux, ChromeOS",
       "browserRequirements": "Requires Chrome 84+, Edge 84+, Safari 16.4+, Opera 70+, or Firefox",
-      "featureList": "Screen Wake Lock, Custom Timer, Pomodoro Timer, Anti-idle for Teams/Slack/Zoom, Fullscreen Clock, Audio Alert, Dark/Light mode, 7 languages, PWA installable, No download, No account",
+      "featureList": "Screen Wake Lock, Custom Timer, Pomodoro Timer, Floating mini-window (Picture-in-Picture), Fullscreen Clock, Audio Alert, Dark/Light mode, 7 languages, PWA installable, No download, No account",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "name": "Free" },
       "inLanguage": "en",
       "author": { "@type": "Organization", "name": "ScreenWakeUp", "url": "https://screenwakeup.com" }
@@ -157,17 +156,17 @@
         {
           "@type": "Question",
           "name": "How do I prevent Away status in Microsoft Teams?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Open screenwakeup.com, enable both 'Simulate mouse movement' and 'Send silent F15 key' in the anti-idle section, then click Keep Screen Awake. These two options together prevent Teams from detecting inactivity and switching you to Away. Use Chrome or Edge for best results and keep the tab visible." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Open screenwakeup.com and click Keep Screen Awake. It keeps your screen on and your computer unlocked — and a locked or sleeping computer is the most common reason Teams switches you to Away. Honest limitation: no website can simulate real mouse or keyboard input (browsers block that for security), so after long full inactivity Teams' own idle timer can still change your status." }
         },
         {
           "@type": "Question",
           "name": "How do I stay active in Slack without moving my mouse?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Enable the F15 key simulation on screenwakeup.com. This sends a silent keystroke every 55 seconds — enough to reset Slack's idle timer and keep your status as Active. No mouse movement or visible key press is produced." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Keep your computer awake with screenwakeup.com. Slack shows you as Active while your machine is awake with Slack open — it's sleep and screen lock that flip you to Away. Note: no browser tool can fake real keyboard or mouse input; anything claiming to press keys system-wide from a web page is overpromising." }
         },
         {
           "@type": "Question",
           "name": "How do I prevent Zoom from showing me as Away?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Open screenwakeup.com and enable both anti-idle options (mouse movement + F15 key). Start wake lock before your Zoom session. The combination prevents both screen sleep and the system idle timer that Zoom uses to detect inactivity." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Activate screenwakeup.com before your session. It prevents the screen sleep and system lock that usually trigger Zoom's inactive status. Browser pages cannot simulate real user activity at the OS level, so during very long full inactivity the app may still mark you Away." }
         },
         {
           "@type": "Question",
@@ -703,22 +702,6 @@
   }
   .custom-row button:hover { border-color:var(--accent); color:var(--accent); }
 
-  /* ── Anti-idle section ── */
-  .anti-idle {
-    margin:14px 0 0; padding:14px 16px; border-radius:14px;
-    background:var(--surface2); border:1px solid var(--border); text-align:left;
-  }
-  .anti-idle-title {
-    font-size:11px; font-weight:700; letter-spacing:1px; color:var(--accent);
-    text-transform:uppercase; margin-bottom:10px; display:flex; align-items:center; gap:6px;
-  }
-  .anti-idle label {
-    display:flex; align-items:flex-start; gap:10px; cursor:pointer;
-    font-size:13px; color:var(--muted); margin-bottom:8px; line-height:1.5;
-  }
-  .anti-idle label:last-child { margin-bottom:0; }
-  .anti-idle input[type=checkbox] { accent-color:var(--accent); width:15px; height:15px; flex-shrink:0; margin-top:2px; }
-
   /* ── Extra tool buttons ── */
   .tool-extras { display:flex; gap:8px; margin-top:14px; justify-content:center; flex-wrap:wrap; }
   .tool-extra-btn {
@@ -819,13 +802,6 @@
       <button id="customBtn" onclick="applyCustomTimer()">Custom</button>
     </div>
 
-    <!-- Anti-idle -->
-    <div class="anti-idle">
-      <div class="anti-idle-title">💼 <span id="antiIdleTitle">Stay active in Teams / Slack / Zoom</span></div>
-      <label><input type="checkbox" id="chkMouse"> <span id="chkMouseLabel">Simulate mouse movement (prevents screen sleep)</span></label>
-      <label><input type="checkbox" id="chkF15">  <span id="chkF15Label">Send silent F15 key (prevents Away status in Teams & Slack)</span></label>
-    </div>
-
     <button id="toggleBtn">Keep Screen Awake</button>
 
     <!-- Extra buttons: Pomodoro + Fullscreen + Audio -->
@@ -844,7 +820,7 @@
   <div class="card-donate" id="cardDonateBlock">
     <p class="section-tag" id="cdTag">INDEPENDENT PROJECT</p>
     <h2 id="cdH2">Enjoying ScreenWakeUp? Keep it free ☕</h2>
-    <p id="cdP">No ads, no sign-up, no tracking — just one button that works. If it saved your screen today, a $3 coffee keeps the site free and independent.</p>
+    <p id="cdP">No ads, no sign-up — just one button that works. If it saved your screen today, a $3 coffee keeps the site free and independent.</p>
     <div class="btn-group">
       <a class="kofi-btn" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener">
         ☕ <span id="cdKofi">Buy us a coffee · $3</span>
@@ -917,7 +893,7 @@
     <div class="use-card"><div class="use-icon">🎵</div><div><h3 id="use5h">Streaming & music</h3><p id="use5p">Keep your display on while streaming audio or watching content in another tab.</p></div></div>
     <div class="use-card"><div class="use-icon">💼</div><div><h3 id="use6h">Remote work</h3><p id="use6p">Prevent screen lock during video calls or while waiting for a response.</p></div></div>
     <div class="use-card"><div class="use-icon">☁️</div><div><h3 id="use7h">File transfers</h3><p id="use7p">Keep your computer awake while uploading or downloading files on WeTransfer, Google Drive, Dropbox, OneDrive, and similar services — so your transfer doesn't get interrupted.</p></div></div>
-    <div class="use-card"><div class="use-icon">💬</div><div><h3 id="use8h">Stay Active in Teams &amp; Slack</h3><p id="use8p">Prevent Microsoft Teams, Slack, and Zoom from setting you to Away. Enable the anti-idle options to simulate activity every 55 seconds — without moving your mouse.</p></div></div>
+    <div class="use-card"><div class="use-icon">💬</div><div><h3 id="use8h">Avoid Away status in Teams &amp; Slack</h3><p id="use8p">A locked or sleeping computer is what flips Teams, Slack, and Zoom to Away. ScreenWakeUp keeps your screen on and unlocked during calls and long reads — no fake input tricks, just a screen that never locks.</p></div></div>
     <div class="use-card"><div class="use-icon">🍅</div><div><h3 id="use9h">Pomodoro Focus Timer</h3><p id="use9p">Use the built-in Pomodoro timer to work in 25-minute focus sessions with 5-minute breaks — screen stays on and you get a chime when time's up.</p></div></div>
   </div>
 </div>
@@ -1001,7 +977,7 @@
 <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
 <footer>
   <p><strong>ScreenWakeUp.com</strong> — Free online tool to keep your screen awake</p>
-  <p id="footerP">No download · No account · No tracking · Works in any browser</p>
+  <p id="footerP">No download · No account · Free forever · Works in any browser</p>
   <p style="margin-top:10px;font-size:13px">
     <a href="https://screenwakeup.com/" hreflang="en" lang="en">Keep Screen Awake (EN)</a>
     &nbsp;·&nbsp;
@@ -1094,9 +1070,9 @@ const LANG = {
       ["Can I keep my screen awake for free?","Yes, screenwakeup.com is 100% free with no time limits. The free plan includes wake lock, timer (up to 4h), dark/light mode, and 5 languages."],
       ["How do I keep my computer awake during a WeTransfer upload?","Open screenwakeup.com in a browser tab before starting your WeTransfer upload. Click 'Keep Screen Awake' and your computer will stay awake until the transfer is complete — no interruptions."],
       ["How do I prevent my screen from sleeping during a Google Drive or Dropbox upload?","Go to screenwakeup.com, activate wake lock, then start your upload. Your screen stays on for the entire transfer — works with Google Drive, Dropbox, OneDrive, and any other service."],
-      ["How do I prevent Away status in Microsoft Teams?","Open screenwakeup.com, enable 'Simulate mouse movement' and 'Send silent F15 key' in the anti-idle section, then click Keep Screen Awake. This prevents Teams from detecting inactivity. Use Chrome or Edge and keep the tab visible."],
-      ["How do I stay active in Slack without moving my mouse?","Enable the F15 key simulation on screenwakeup.com. It sends a silent keystroke every 55 seconds — enough to reset Slack's idle timer and keep your status Active. Nothing visible is typed."],
-      ["How do I prevent Zoom from showing me as Away?","Enable both anti-idle options on screenwakeup.com (mouse movement + F15 key) before your Zoom session. The combination prevents both screen sleep and the system idle timer Zoom uses to detect inactivity."],
+      ["How do I prevent Away status in Microsoft Teams?","Open screenwakeup.com and click Keep Screen Awake. It keeps your screen on and your computer unlocked — and a locked or sleeping computer is the most common reason Teams switches you to Away. Honest limitation: no website can simulate real mouse or keyboard input (browsers block that for security), so after long full inactivity Teams' own idle timer can still change your status."],
+      ["How do I stay active in Slack without moving my mouse?","Keep your computer awake with screenwakeup.com. Slack shows you as Active while your machine is awake with Slack open — it's sleep and screen lock that flip you to Away. Note: no browser tool can fake real keyboard or mouse input; anything claiming to press keys system-wide from a web page is overpromising."],
+      ["How do I prevent Zoom from showing me as Away?","Activate screenwakeup.com before your session. It prevents the screen sleep and system lock that usually trigger Zoom's inactive status. Browser pages cannot simulate real user activity at the OS level, so during very long full inactivity the app may still mark you Away."],
       ["Is there a free online Pomodoro timer?","Yes — ScreenWakeUp has a built-in Pomodoro timer. Click 🍅 Pomodoro in the tool. It runs 25-minute work sessions with 5-minute breaks, keeps your screen on automatically, and plays a gentle audio chime at the end of each session."],
       ["Can I set a custom screen awake duration?","Yes. Type any number of minutes in the custom timer field (e.g. 47, 90, 180) and click Custom. The screen stays on for exactly that duration, beyond the preset 30min/1h/2h/4h options."],
       ["Is there a fullscreen clock for presentations?","Yes. Click ⛶ Fullscreen in screenwakeup.com. It shows a large digital clock with the date, keeps your screen awake, and fills the entire display — perfect for presentations, reception screens, or dashboards."],
@@ -1109,9 +1085,9 @@ const LANG = {
     feedbackName:"Your name (optional)",feedbackMsg:"Your comment or suggestion...",feedbackBtn:"Send feedback →",feedbackSent:"✓ Thanks for your message!",
     supportTag:"INDEPENDENT PROJECT",
     supportH2:"Did we save your day? Buy us a coffee ☕",
-    supportP:"We built ScreenWakeUp so your screen never interrupts your workflow. No annoying sign-ups, no trackers, and 100% instant. If this tool gave you peace of mind or saved you even one hiccup today, consider supporting our work. A small coffee on Ko-fi is the real engine that keeps this site free, independent, and alive for you.",
+    supportP:"We built ScreenWakeUp so your screen never interrupts your workflow. No annoying sign-ups, no paywalls, and 100% instant. If this tool gave you peace of mind or saved you even one hiccup today, consider supporting our work. A small coffee on Ko-fi is the real engine that keeps this site free, independent, and alive for you.",
     kofiTxt:"Buy us a coffee!",shareTxt:"Share this tool",cardKofi:"☕ Buy us a coffee",
-    footerP:"No download · No account · No tracking · Works in any browser",
+    footerP:"No download · No account · Free forever · Works in any browser",
     footerSupport:"Support the project",
     whyTag:"Browser tool vs desktop app",whyH2:"Why not just download an app?",whyLead:"You shouldn't need to install software, give admin permissions, or trust a random .exe just to keep your screen on.",
     whyProH:"✦ ScreenWakeUp (browser)",whyConH:"Desktop apps / extensions",
@@ -1119,9 +1095,6 @@ const LANG = {
     whyCon1:"Requires download and install",whyCon2:"Often needs admin rights",whyCon3:"Platform-specific (Mac only, etc.)",whyCon4:"Runs in background, uses resources",whyCon5:"Manual updates required",whyCon6:"Many charge $2–$10/month",
     durLabels:{0:"∞",30:"30 min",60:"1 h",120:"2 h",240:"4 h"},
     customBtn:"Custom",customPlaceholder:"min",
-    antiIdleTitle:"Stay active in Teams / Slack / Zoom",
-    chkMouseLabel:"Simulate mouse movement (prevents screen sleep)",
-    chkF15Label:"Send silent F15 key (prevents Away status in Teams & Slack)",
     pomodoroLabel:"Pomodoro",fsLabel:"Fullscreen",audioLabel:"Sound alert",
     pomodoroWork:"🍅 Work",pomodoroBreak:"☕ Break",pomodoroSession:"Session",
     pomodoroStop:"Stop Pomodoro"
@@ -1168,9 +1141,9 @@ const LANG = {
       ["¿Cómo evito que la pantalla se apague durante una subida a Google Drive, Dropbox o OneDrive?","Activa screenwakeup.com antes de iniciar la subida. Tu pantalla permanecerá encendida durante toda la transferencia, sin importar el tamaño del archivo."]
     ,
       ["¿Cómo mantengo la pantalla encendida durante una llamada de Zoom o Teams?","Abre ScreenWakeUp en una pestaña y pulsa Mantener pantalla activa antes de la llamada. La pantalla sigue encendida toda la reunión sin tocar el ratón."],
-      ["¿Cómo evito el estado Ausente en Microsoft Teams?","Activa Enviar tecla F15 silenciosa y Simular movimiento del ratón, y pulsa Mantener pantalla activa. Teams te mantiene como Disponible en lugar de pasar a Ausente."],
-      ["¿Cómo sigo activo en Slack sin mover el ratón?","Activa las opciones anti-inactividad (tecla F15 y movimiento del ratón) e inicia la herramienta. Slack detecta actividad continua y mantiene tu estado en verde."],
-      ["¿Cómo evito que Zoom me muestre como Ausente?","Inicia ScreenWakeUp con las opciones anti-inactividad activadas. Tu presencia en Zoom se mantiene activa porque la página simula actividad suave mientras la pestaña está abierta."],
+      ["¿Cómo evito el estado Ausente en Microsoft Teams?","Abre screenwakeup.com y pulsa Mantener pantalla activa. Mantiene tu pantalla encendida y el equipo desbloqueado — y un equipo bloqueado o en reposo es la causa más común de que Teams te ponga en Ausente. Limitación honesta: ninguna web puede simular movimientos reales de ratón o teclado (el navegador lo bloquea por seguridad), así que tras una inactividad total prolongada Teams aún puede cambiar tu estado."],
+      ["¿Cómo sigo activo en Slack sin mover el ratón?","Mantén tu equipo despierto con screenwakeup.com. Slack te muestra Activo mientras la máquina está encendida con Slack abierto — lo que te pone Ausente es el reposo o el bloqueo de pantalla. Ninguna herramienta de navegador puede falsificar actividad real del sistema; quien prometa lo contrario, exagera."],
+      ["¿Cómo evito que Zoom me muestre como Ausente?","Activa screenwakeup.com antes de tu sesión. Evita el reposo y el bloqueo del sistema, que es lo que suele disparar el estado inactivo de Zoom. Una página web no puede simular actividad real a nivel del sistema, así que tras una inactividad total muy larga la app puede marcarte Ausente igualmente."],
       ["¿Hay un temporizador Pomodoro gratis en línea?","Sí. Pulsa Pomodoro para un temporizador gratuito de 25/5 (trabajo y descanso) directamente en tu navegador, sin instalar ni registrarte."],
       ["¿Existe una alternativa gratuita a Caffeine en línea?","Sí: ScreenWakeUp hace lo mismo que Caffeine, Amphetamine o Caffeinate, pero en tu navegador y sin descargar nada."],
       ["¿Cómo mantengo la pantalla activa en Chrome sin una extensión?","Solo abre screenwakeup.com y pulsa el botón. Usa la Wake Lock API integrada de Chrome, así que no necesitas ninguna extensión ni descarga."],
@@ -1179,9 +1152,9 @@ const LANG = {
     feedbackName:"Tu nombre (opcional)",feedbackMsg:"Tu comentario o sugerencia...",feedbackBtn:"Enviar comentario →",feedbackSent:"✓ ¡Gracias por tu mensaje!",
     supportTag:"PROYECTO INDEPENDIENTE",
     supportH2:"¿Te salvamos el día? Invítanos a un café ☕",
-    supportP:"Construimos ScreenWakeUp para que tu pantalla nunca interrumpa tu flujo de trabajo. Sin registros molestos, sin rastreadores y 100% al instante. Si esta herramienta te ha dado tranquilidad o te ha ahorrado un solo contratiempo hoy, considera apoyar nuestro trabajo. Un pequeño café en Ko-fi es el motor real que mantiene este sitio libre, independiente y vivo para ti.",
+    supportP:"Construimos ScreenWakeUp para que tu pantalla nunca interrumpa tu flujo de trabajo. Sin registros molestos, sin muros de pago y 100% al instante. Si esta herramienta te ha dado tranquilidad o te ha ahorrado un solo contratiempo hoy, considera apoyar nuestro trabajo. Un pequeño café en Ko-fi es el motor real que mantiene este sitio libre, independiente y vivo para ti.",
     kofiTxt:"¡Invítanos a un café!",shareTxt:"Compartir",cardKofi:"☕ Invítanos a un café",
-    footerP:"Sin descarga · Sin cuenta · Sin rastreo · Funciona en cualquier navegador",
+    footerP:"Sin descarga · Sin cuenta · Gratis para siempre · Funciona en cualquier navegador",
     footerSupport:"Apoya el proyecto",
     whyTag:"Herramienta web vs app de escritorio",whyH2:"¿Por qué no descargar una app?",whyLead:"No deberías tener que instalar software, dar permisos de administrador o confiar en un .exe desconocido solo para mantener tu pantalla activa.",
     whyProH:"✦ ScreenWakeUp (navegador)",whyConH:"Apps de escritorio / extensiones",
@@ -1189,9 +1162,6 @@ const LANG = {
     whyCon1:"Requiere descarga e instalación",whyCon2:"Suele necesitar permisos de admin",whyCon3:"Solo para una plataforma (solo Mac, etc.)",whyCon4:"Se ejecuta en segundo plano, consume recursos",whyCon5:"Actualizaciones manuales necesarias",whyCon6:"Muchas cobran $2–$10/mes",
     durLabels:{0:"∞",30:"30 min",60:"1 h",120:"2 h",240:"4 h"},
     customBtn:"Personalizar",customPlaceholder:"min",
-    antiIdleTitle:"Mantente activo en Teams / Slack / Zoom",
-    chkMouseLabel:"Simular movimiento del ratón (evita el bloqueo de pantalla)",
-    chkF15Label:"Enviar tecla F15 silenciosa (evita estado Ausente en Teams y Slack)",
     pomodoroLabel:"Pomodoro",fsLabel:"Pantalla completa",audioLabel:"Alerta de sonido",
     pomodoroWork:"🍅 Trabajo",pomodoroBreak:"☕ Descanso",pomodoroSession:"Sesión",
     pomodoroStop:"Detener Pomodoro"
@@ -1236,9 +1206,9 @@ const LANG = {
       ["Quais navegadores são suportados?","Chrome 84+, Edge 84+, Opera 70+, Samsung Internet 12+ e Safari 16.4+ no iOS. Firefox usa um método alternativo."]
     ,
       ["Como mantenho a tela ligada durante uma chamada de Zoom ou Teams?","Abra o ScreenWakeUp em uma aba e clique em Manter tela ativa antes da chamada. A tela fica ligada durante toda a reunião sem precisar mexer no mouse."],
-      ["Como evito o status Ausente no Microsoft Teams?","Ative Enviar tecla F15 silenciosa e Simular movimento do mouse e clique em Manter tela ativa. O Teams mantém você como Disponível em vez de mudar para Ausente."],
-      ["Como continuo ativo no Slack sem mexer o mouse?","Ative as opções anti-inatividade (tecla F15 e movimento do mouse) e inicie a ferramenta. O Slack detecta atividade contínua e mantém seu status verde."],
-      ["Como evito que o Zoom me mostre como Ausente?","Inicie o ScreenWakeUp com as opções anti-inatividade ativadas. Sua presença no Zoom continua ativa porque a página simula atividade leve enquanto a aba está aberta."],
+      ["Como evito o status Ausente no Microsoft Teams?","Abra screenwakeup.com e clique em Manter tela ativa. Ele mantém sua tela ligada e o computador desbloqueado — e um computador bloqueado ou em repouso é a causa mais comum de o Teams marcar você como Ausente. Limitação honesta: nenhum site pode simular mouse ou teclado de verdade (o navegador bloqueia isso por segurança), então após longa inatividade total o Teams ainda pode mudar seu status."],
+      ["Como continuo ativo no Slack sem mexer o mouse?","Mantenha o computador acordado com screenwakeup.com. O Slack mostra você como Ativo enquanto a máquina está ligada com o Slack aberto — é o repouso ou o bloqueio de tela que muda seu status. Nenhuma ferramenta de navegador consegue falsificar atividade real do sistema; quem promete isso está exagerando."],
+      ["Como evito que o Zoom me mostre como Ausente?","Ative screenwakeup.com antes da sua sessão. Ele evita o repouso e o bloqueio do sistema — o que costuma disparar o status inativo do Zoom. Uma página web não pode simular atividade real no nível do sistema, então após inatividade total muito longa o app ainda pode marcar você como Ausente."],
       ["Existe um temporizador Pomodoro grátis online?","Sim. Clique em Pomodoro para um temporizador gratuito de 25/5 (trabalho e pausa) direto no navegador, sem instalar nem criar conta."],
       ["Existe uma alternativa gratuita ao Caffeine online?","Sim: o ScreenWakeUp faz o mesmo que Caffeine, Amphetamine ou Caffeinate, mas no navegador e sem baixar nada."],
       ["Como mantenho a tela ativa no Chrome sem uma extensão?","Basta abrir screenwakeup.com e clicar no botão. Ele usa a Wake Lock API nativa do Chrome, então não precisa de extensão nem download."],
@@ -1247,9 +1217,9 @@ const LANG = {
     feedbackName:"Seu nome (opcional)",feedbackMsg:"Seu comentário ou sugestão...",feedbackBtn:"Enviar comentário →",feedbackSent:"✓ Obrigado pela sua mensagem!",
     supportTag:"PROJETO INDEPENDENTE",
     supportH2:"Salvamos o seu dia? Nos pague um café ☕",
-    supportP:"Construímos o ScreenWakeUp para que a sua tela nunca interrompa o seu fluxo de trabalho. Sem cadastros chatos, sem rastreadores e 100% instantâneo. Se esta ferramenta te deu tranquilidade ou te poupou um único contratempo hoje, considera apoiar o nosso trabalho. Um pequeno café no Ko-fi é o motor real que mantém este site livre, independente e vivo para ti.",
+    supportP:"Construímos o ScreenWakeUp para que a sua tela nunca interrompa o seu fluxo de trabalho. Sem cadastros chatos, sem paywall e 100% instantâneo. Se esta ferramenta te deu tranquilidade ou te poupou um único contratempo hoje, considera apoiar o nosso trabalho. Um pequeno café no Ko-fi é o motor real que mantém este site livre, independente e vivo para ti.",
     kofiTxt:"Nos pague um café!",shareTxt:"Compartilhar",cardKofi:"☕ Nos pague um café",
-    footerP:"Sem download · Sem conta · Sem rastreamento · Funciona em qualquer navegador",
+    footerP:"Sem download · Sem conta · Grátis para sempre · Funciona em qualquer navegador",
     footerSupport:"Apoie o projeto",
     whyTag:"Ferramenta web vs app de desktop",whyH2:"Por que não baixar um app?",whyLead:"Você não deveria precisar instalar software, dar permissões de administrador ou confiar em um .exe desconhecido só para manter sua tela ativa.",
     whyProH:"✦ ScreenWakeUp (navegador)",whyConH:"Apps de desktop / extensões",
@@ -1257,9 +1227,6 @@ const LANG = {
     whyCon1:"Requer download e instalação",whyCon2:"Frequentemente precisa de direitos de admin",whyCon3:"Específico para plataforma (só Mac, etc.)",whyCon4:"Roda em segundo plano, usa recursos",whyCon5:"Atualizações manuais necessárias",whyCon6:"Muitos cobram $2–$10/mês",
     durLabels:{0:"∞",30:"30 min",60:"1 h",120:"2 h",240:"4 h"},
     customBtn:"Personalizar",customPlaceholder:"min",
-    antiIdleTitle:"Fique ativo no Teams / Slack / Zoom",
-    chkMouseLabel:"Simular movimento do mouse (evita bloqueio de tela)",
-    chkF15Label:"Enviar tecla F15 silenciosa (evita status Ausente no Teams e Slack)",
     pomodoroLabel:"Pomodoro",fsLabel:"Tela cheia",audioLabel:"Alerta sonoro",
     pomodoroWork:"🍅 Trabalho",pomodoroBreak:"☕ Pausa",pomodoroSession:"Sessão",
     pomodoroStop:"Parar Pomodoro"
@@ -1304,9 +1271,9 @@ const LANG = {
       ["Quels navigateurs sont supportés ?","Chrome 84+, Edge 84+, Opera 70+, Samsung Internet 12+ et Safari 16.4+ sur iOS."]
     ,
       ["Comment garder l'écran allumé pendant un appel Zoom ou Teams ?","Ouvrez ScreenWakeUp dans un onglet et cliquez sur Garder l'écran allumé avant l'appel. L'écran reste allumé pendant toute la réunion sans toucher la souris."],
-      ["Comment éviter le statut Absent dans Microsoft Teams ?","Activez Envoyer la touche F15 silencieuse et Simuler le mouvement de la souris, puis cliquez sur Garder l'écran allumé. Teams vous garde Disponible au lieu de passer à Absent."],
-      ["Comment rester actif sur Slack sans bouger la souris ?","Activez les options anti-inactivité (touche F15 et mouvement de la souris) et lancez l'outil. Slack détecte une activité continue et garde votre statut au vert."],
-      ["Comment éviter que Zoom m'affiche comme Absent ?","Lancez ScreenWakeUp avec les options anti-inactivité activées. Votre présence Zoom reste active car la page simule une légère activité tant que l'onglet est ouvert."],
+      ["Comment éviter le statut Absent dans Microsoft Teams ?","Ouvrez screenwakeup.com et cliquez sur Garder l'écran allumé. Votre écran reste allumé et votre ordinateur déverrouillé — or un ordinateur verrouillé ou en veille est la cause la plus fréquente du statut Absent dans Teams. Limite honnête : aucun site web ne peut simuler de vrais mouvements de souris ou de clavier (le navigateur le bloque par sécurité), donc après une longue inactivité totale, Teams peut quand même changer votre statut."],
+      ["Comment rester actif sur Slack sans bouger la souris ?","Gardez votre ordinateur éveillé avec screenwakeup.com. Slack vous affiche Actif tant que la machine est allumée avec Slack ouvert — c'est la veille ou le verrouillage de l'écran qui vous passe en Absent. Aucun outil de navigateur ne peut simuler une vraie activité système ; méfiez-vous des promesses contraires."],
+      ["Comment éviter que Zoom m'affiche comme Absent ?","Activez screenwakeup.com avant votre session. Il empêche la veille et le verrouillage du système — ce qui déclenche généralement le statut inactif de Zoom. Une page web ne peut pas simuler une activité réelle au niveau du système : après une très longue inactivité totale, l'application peut donc vous marquer Absent."],
       ["Existe-t-il un minuteur Pomodoro gratuit en ligne ?","Oui. Cliquez sur Pomodoro pour un minuteur gratuit 25/5 (travail et pause) directement dans votre navigateur, sans installation ni compte."],
       ["Existe-t-il une alternative gratuite à Caffeine en ligne ?","Oui : ScreenWakeUp fait la même chose que Caffeine, Amphetamine ou Caffeinate, mais dans votre navigateur et sans rien télécharger."],
       ["Comment garder l'écran actif sur Chrome sans extension ?","Ouvrez simplement screenwakeup.com et cliquez sur le bouton. Il utilise l'API Wake Lock intégrée à Chrome, donc aucune extension ni téléchargement n'est nécessaire."],
@@ -1315,9 +1282,9 @@ const LANG = {
     feedbackName:"Votre nom (facultatif)",feedbackMsg:"Votre commentaire ou suggestion...",feedbackBtn:"Envoyer →",feedbackSent:"✓ Merci pour votre message !",
     supportTag:"PROJET INDÉPENDANT",
     supportH2:"On t'a sauvé la mise ? Offre-nous un café ☕",
-    supportP:"Nous avons créé ScreenWakeUp pour que ton écran n'interrompe jamais ton flux de travail. Sans inscriptions pénibles, sans traceurs et 100% instantané. Si cet outil t'a apporté la tranquillité d'esprit ou t'a évité un seul accroc aujourd'hui, pense à soutenir notre travail. Un petit café sur Ko-fi est le vrai moteur qui maintient ce site gratuit, indépendant et vivant pour toi.",
+    supportP:"Nous avons créé ScreenWakeUp pour que ton écran n'interrompe jamais ton flux de travail. Sans inscriptions pénibles, sans paywall et 100% instantané. Si cet outil t'a apporté la tranquillité d'esprit ou t'a évité un seul accroc aujourd'hui, pense à soutenir notre travail. Un petit café sur Ko-fi est le vrai moteur qui maintient ce site gratuit, indépendant et vivant pour toi.",
     kofiTxt:"Nous offrir un café !",shareTxt:"Partager",cardKofi:"☕ Offre-nous un café",
-    footerP:"Sans téléchargement · Sans compte · Sans suivi · Fonctionne dans tout navigateur",
+    footerP:"Sans téléchargement · Sans compte · Gratuit pour toujours · Fonctionne dans tout navigateur",
     footerSupport:"Soutenir le projet",
     whyTag:"Outil web vs application bureau",whyH2:"Pourquoi ne pas télécharger une appli ?",whyLead:"Vous ne devriez pas avoir à installer un logiciel, accorder des permissions d'administrateur ou faire confiance à un .exe inconnu juste pour garder votre écran allumé.",
     whyProH:"✦ ScreenWakeUp (navigateur)",whyConH:"Applis bureau / extensions",
@@ -1325,9 +1292,6 @@ const LANG = {
     whyCon1:"Nécessite téléchargement et installation",whyCon2:"Souvent besoin de droits admin",whyCon3:"Spécifique à une plateforme (Mac uniquement, etc.)",whyCon4:"Tourne en arrière-plan, consomme des ressources",whyCon5:"Mises à jour manuelles requises",whyCon6:"Beaucoup coûtent 2–10 $/mois",
     durLabels:{0:"∞",30:"30 min",60:"1 h",120:"2 h",240:"4 h"},
     customBtn:"Personnaliser",customPlaceholder:"min",
-    antiIdleTitle:"Restez actif sur Teams / Slack / Zoom",
-    chkMouseLabel:"Simuler le mouvement de souris (évite le verrouillage d'écran)",
-    chkF15Label:"Envoyer la touche F15 silencieuse (évite le statut Absent sur Teams & Slack)",
     pomodoroLabel:"Pomodoro",fsLabel:"Plein écran",audioLabel:"Alerte sonore",
     pomodoroWork:"🍅 Travail",pomodoroBreak:"☕ Pause",pomodoroSession:"Session",
     pomodoroStop:"Arrêter Pomodoro"
@@ -1372,9 +1336,9 @@ const LANG = {
       ["Welche Browser werden unterstützt?","Chrome 84+, Edge 84+, Opera 70+, Samsung Internet 12+ und Safari 16.4+ auf iOS."]
     ,
       ["Wie halte ich den Bildschirm während eines Zoom- oder Teams-Anrufs an?","Öffne ScreenWakeUp in einem Tab und klicke vor dem Anruf auf Bildschirm wach halten. Der Bildschirm bleibt das ganze Meeting an, ohne die Maus zu bewegen."],
-      ["Wie verhindere ich den Abwesend-Status in Microsoft Teams?","Aktiviere Stille F15-Taste senden und Mausbewegung simulieren und klicke auf Bildschirm wach halten. Teams hält dich auf Verfügbar, statt auf Abwesend zu wechseln."],
-      ["Wie bleibe ich in Slack aktiv, ohne die Maus zu bewegen?","Aktiviere die Anti-Leerlauf-Optionen (F15-Taste und Mausbewegung) und starte das Tool. Slack erkennt durchgehende Aktivität und hält deinen Status grün."],
-      ["Wie verhindere ich, dass Zoom mich als Abwesend anzeigt?","Starte ScreenWakeUp mit aktivierten Anti-Leerlauf-Optionen. Deine Zoom-Präsenz bleibt aktiv, weil die Seite bei geöffnetem Tab leichte Aktivität simuliert."],
+      ["Wie verhindere ich den Abwesend-Status in Microsoft Teams?","Öffne screenwakeup.com und klicke auf Bildschirm wach halten. Dein Bildschirm bleibt an und der Computer entsperrt — ein gesperrter oder schlafender Computer ist der häufigste Grund, warum Teams dich auf Abwesend setzt. Ehrliche Einschränkung: Keine Website kann echte Maus- oder Tastatureingaben simulieren (der Browser blockiert das aus Sicherheitsgründen), daher kann Teams bei langer völliger Inaktivität deinen Status trotzdem ändern."],
+      ["Wie bleibe ich in Slack aktiv, ohne die Maus zu bewegen?","Halte deinen Computer mit screenwakeup.com wach. Slack zeigt dich als Aktiv, solange der Rechner an ist und Slack offen — erst Ruhezustand oder Bildschirmsperre setzen dich auf Abwesend. Kein Browser-Tool kann echte Systemeingaben vortäuschen; Versprechen des Gegenteils sind übertrieben."],
+      ["Wie verhindere ich, dass Zoom mich als Abwesend anzeigt?","Aktiviere screenwakeup.com vor deiner Sitzung. Es verhindert Ruhezustand und Systemsperre — das ist es, was Zooms Inaktiv-Status normalerweise auslöst. Eine Webseite kann keine echte Systemaktivität simulieren, daher kann die App dich nach sehr langer völliger Inaktivität trotzdem als Abwesend markieren."],
       ["Gibt es einen kostenlosen Pomodoro-Timer online?","Ja. Klicke auf Pomodoro für einen kostenlosen 25/5-Timer (Arbeit und Pause) direkt im Browser, ohne Installation und ohne Konto."],
       ["Gibt es eine kostenlose Caffeine-Alternative online?","Ja: ScreenWakeUp macht dasselbe wie Caffeine, Amphetamine oder Caffeinate, aber im Browser und ohne Download."],
       ["Wie halte ich den Bildschirm in Chrome ohne Erweiterung wach?","Öffne einfach screenwakeup.com und klicke auf den Button. Es nutzt die in Chrome integrierte Wake-Lock-API, also sind keine Erweiterung und kein Download nötig."],
@@ -1383,9 +1347,9 @@ const LANG = {
     feedbackName:"Dein Name (optional)",feedbackMsg:"Dein Kommentar oder Vorschlag...",feedbackBtn:"Absenden →",feedbackSent:"✓ Danke für deine Nachricht!",
     supportTag:"UNABHÄNGIGES PROJEKT",
     supportH2:"Haben wir deinen Tag gerettet? Kauf uns einen Kaffee ☕",
-    supportP:"Wir haben ScreenWakeUp entwickelt, damit dein Bildschirm deinen Workflow nie unterbricht. Keine lästigen Anmeldungen, keine Tracker und 100% sofort einsatzbereit. Wenn dieses Tool dir heute Ruhe gegeben oder auch nur eine Unannehmlichkeit erspart hat, unterstütze unsere Arbeit. Ein kleiner Kaffee auf Ko-fi ist der echte Motor, der diese Website frei, unabhängig und für dich am Leben hält.",
+    supportP:"Wir haben ScreenWakeUp entwickelt, damit dein Bildschirm deinen Workflow nie unterbricht. Keine lästigen Anmeldungen, keine Paywall und 100% sofort einsatzbereit. Wenn dieses Tool dir heute Ruhe gegeben oder auch nur eine Unannehmlichkeit erspart hat, unterstütze unsere Arbeit. Ein kleiner Kaffee auf Ko-fi ist der echte Motor, der diese Website frei, unabhängig und für dich am Leben hält.",
     kofiTxt:"Uns einen Kaffee kaufen!",shareTxt:"Teilen",cardKofi:"☕ Kauf uns einen Kaffee",
-    footerP:"Kein Download · Kein Konto · Kein Tracking · Funktioniert in jedem Browser",
+    footerP:"Kein Download · Kein Konto · Für immer kostenlos · Funktioniert in jedem Browser",
     footerSupport:"Projekt unterstützen",
     whyTag:"Web-Tool vs. Desktop-App",whyH2:"Warum keine App herunterladen?",whyLead:"Sie sollten keine Software installieren, Administratorrechte vergeben oder einer unbekannten .exe vertrauen müssen, nur um Ihren Bildschirm aktiv zu halten.",
     whyProH:"✦ ScreenWakeUp (Browser)",whyConH:"Desktop-Apps / Erweiterungen",
@@ -1393,9 +1357,6 @@ const LANG = {
     whyCon1:"Erfordert Download und Installation",whyCon2:"Oft Administratorrechte nötig",whyCon3:"Plattformspezifisch (nur Mac usw.)",whyCon4:"Läuft im Hintergrund, verbraucht Ressourcen",whyCon5:"Manuelle Updates erforderlich",whyCon6:"Viele kosten $2–$10/Monat",
     durLabels:{0:"∞",30:"30 Min",60:"1 Std",120:"2 Std",240:"4 Std"},
     customBtn:"Anpassen",customPlaceholder:"Min",
-    antiIdleTitle:"Aktiv bleiben in Teams / Slack / Zoom",
-    chkMouseLabel:"Mausbewegung simulieren (verhindert Bildschirmsperre)",
-    chkF15Label:"Stille F15-Taste senden (verhindert Abwesend-Status in Teams & Slack)",
     pomodoroLabel:"Pomodoro",fsLabel:"Vollbild",audioLabel:"Tonsignal",
     pomodoroWork:"🍅 Arbeit",pomodoroBreak:"☕ Pause",pomodoroSession:"Sitzung",
     pomodoroStop:"Pomodoro stoppen"
@@ -1428,7 +1389,7 @@ const LANG = {
     use5h:"動画・音楽",use5p:"別タブで音楽や動画を再生中も画面をオンに保ちます。",
     use6h:"リモートワーク",use6p:"ビデオ通話中や返信を待っている間の画面ロックを防ぎます。",
     use7h:"ファイル転送",use7p:"WeTransfer、Google Drive、Dropbox、OneDriveなどへのアップロード・ダウンロード中にPCをスリープさせない。",
-    use8h:"Teams・Slackでアクティブ状態を維持",use8p:"Microsoft Teams、Slack、Zoomが「離席中」と表示しないよう、55秒ごとにアクティビティをシミュレート。マウスを動かす必要はありません。",
+    use8h:"Teams・SlackのAway対策",use8p:"Teams・Slack・Zoomが「離席中」になる最大の原因はPCのロックとスリープ。ScreenWakeUpは通話中や長時間の閲覧中も画面を点けたまま、ロックを防ぎます。偽の入力シミュレーションではなく、確実な仕組みで。",
     use9h:"ポモドーロタイマー",use9p:"内蔵ポモドーロタイマーで25分の集中セッションと5分の休憩を繰り返し — 画面は自動でオンのままです。",
     compatTag:"対応環境",compatH2:"あらゆる場所で動作",compatLead:"デバイスやブラウザを問わず対応しています。",
     faqTag:"よくある質問",faqH2:"画面をスリープさせないためのQ&A",faqLead:"画面をオンに保つためのすべての疑問にお答えします。",
@@ -1439,16 +1400,16 @@ const LANG = {
       ["安全ですか？アカウントは必要ですか？","100%安全です。アカウント不要、登録不要、データ収集なし。すべてブラウザ内で動作します。"],
       ["タブを切り替えると画面がロックされるのはなぜ？","Wake Lock API はタブが表示されている必要があります。タブに戻ると自動的に再取得されます。"],
       ["タイマーを設定できますか？","はい。30分、1時間、2時間、4時間から選択できます。タイマー終了後に自動でロックが再有効化されます。"],
-      ["Microsoft Teamsで離席中になるのを防ぐには？","screenwakeup.com でマウス移動シミュレートとF15キー送信を有効にし「画面をスリープさせない」をクリック。Teamsの非アクティブ検知を防ぎます。"],
+      ["Microsoft Teamsで離席中になるのを防ぐには？","screenwakeup.com で「画面をスリープさせない」をクリック。画面が点いたままになり、Teamsが離席中と判定する最大の原因であるロックやスリープを防ぎます。正直な注意点：ウェブサイトは本物のマウスやキーボード入力をシミュレートできないため（ブラウザがセキュリティ上ブロック）、完全な無操作が長く続くとTeams側の判定でステータスが変わる場合があります。"],
       ["無料のオンラインポモドーロタイマーはありますか？","はい。ScreenWakeUp に内蔵ポモドーロタイマーがあります。🍅 ポモドーロをクリックすると25分作業・5分休憩サイクルが始まり、終了時にチャイムが鳴ります。"]
     ],
     feedbackTag:"フィードバック",feedbackH2:"コメントを残す",feedbackLead:"ご意見や改善点をお知らせください。",
     feedbackName:"お名前（任意）",feedbackMsg:"コメントや提案...",feedbackBtn:"送信 →",feedbackSent:"✓ メッセージありがとうございます！",
     supportTag:"独立したプロジェクト",
     supportH2:"お役に立てましたか？コーヒーをおごってください ☕",
-    supportP:"ScreenWakeUp は、画面がワークフローを妨げないように作りました。面倒なサインアップも、トラッカーも不要で、すぐに使えます。このツールが少しでもお役に立てたなら、Ko-fi でのご支援をご検討ください。",
+    supportP:"ScreenWakeUp は、画面がワークフローを妨げないように作りました。面倒なサインアップは不要で、すぐに使えます。このツールが少しでもお役に立てたなら、Ko-fi でのご支援をご検討ください。",
     kofiTxt:"コーヒーをおごる！",shareTxt:"共有する",cardKofi:"☕ コーヒーをおごる",
-    footerP:"ダウンロード不要 · アカウント不要 · トラッキング不要 · あらゆるブラウザで動作",
+    footerP:"ダウンロード不要 · アカウント不要 · ずっと無料 · あらゆるブラウザで動作",
     footerSupport:"プロジェクトを支援",
     whyTag:"ブラウザツール vs デスクトップアプリ",whyH2:"なぜアプリをダウンロードしないの？",whyLead:"画面をオンに保つためだけに、ソフトをインストールしたり管理者権限を与えたり、怪しい .exe を信用する必要はありません。",
     whyProH:"✦ ScreenWakeUp（ブラウザ）",whyConH:"デスクトップアプリ / 拡張機能",
@@ -1456,9 +1417,6 @@ const LANG = {
     whyCon1:"ダウンロードとインストールが必要",whyCon2:"管理者権限が必要なことが多い",whyCon3:"特定のプラットフォーム専用（Macのみなど）",whyCon4:"バックグラウンドで動作し、リソースを消費",whyCon5:"手動アップデートが必要",whyCon6:"多くが月$2〜$10の料金",
     durLabels:{0:"∞",30:"30分",60:"1時間",120:"2時間",240:"4時間"},
     customBtn:"カスタム",customPlaceholder:"分",
-    antiIdleTitle:"Teams / Slack / Zoom でアクティブ状態を維持",
-    chkMouseLabel:"マウス移動をシミュレート（画面スリープを防止）",
-    chkF15Label:"サイレントF15キーを送信（Teams・SlackのAway状態を防止）",
     pomodoroLabel:"ポモドーロ",fsLabel:"全画面",audioLabel:"音声アラート",
     pomodoroWork:"🍅 作業",pomodoroBreak:"☕ 休憩",pomodoroSession:"セッション",
     pomodoroStop:"ポモドーロを停止"
@@ -1491,7 +1449,7 @@ const LANG = {
     use5h:"Стриминг и музыка",use5p:"Держите экран включённым во время прослушивания музыки или просмотра контента.",
     use6h:"Удалённая работа",use6p:"Предотвратите блокировку экрана во время видеозвонков или ожидания ответа.",
     use7h:"Передача файлов",use7p:"Держите компьютер активным при загрузке файлов на WeTransfer, Google Диск, Dropbox, OneDrive и подобных сервисах.",
-    use8h:"Активный статус в Teams и Slack",use8p:"Предотвратите статус «Отсутствую» в Microsoft Teams, Slack и Zoom. Активность симулируется каждые 55 секунд — без движения мышью.",
+    use8h:"Против статуса «Отсутствую» в Teams и Slack",use8p:"Именно блокировка и сон компьютера переводят Teams, Slack и Zoom в «Отсутствую». ScreenWakeUp держит экран включённым и разблокированным во время звонков и долгого чтения — без имитации ввода, просто экран не блокируется.",
     use9h:"Таймер Помодоро",use9p:"Встроенный таймер Помодоро: 25 минут работы и 5 минут отдыха — экран остаётся включённым автоматически.",
     compatTag:"Совместимость",compatH2:"Работает везде",compatLead:"Какое бы устройство или браузер вы ни использовали — мы вас поддержим.",
     faqTag:"FAQ",faqH2:"Часто задаваемые вопросы",faqLead:"Всё, что нужно знать об удержании экрана активным.",
@@ -1502,16 +1460,16 @@ const LANG = {
       ["Это безопасно? Нужен ли аккаунт?","100% безопасно. Без аккаунта, без регистрации, без сбора данных. Всё работает в браузере."],
       ["Почему экран блокируется при переключении вкладок?","Wake Lock API требует, чтобы вкладка была видима. Инструмент автоматически возобновляет блокировку при возврате."],
       ["Можно ли установить таймер?","Да. Выберите 30 мин, 1 ч, 2 ч или 4 ч. Блокировка автоматически активируется по истечении времени."],
-      ["Как предотвратить статус «Отсутствую» в Microsoft Teams?","Включите симуляцию движения мыши и отправку клавиши F15 на screenwakeup.com, затем нажмите «Держать экран активным». Это предотвращает обнаружение неактивности в Teams."],
+      ["Как предотвратить статус «Отсутствую» в Microsoft Teams?","Откройте screenwakeup.com и нажмите «Держать экран активным». Экран останется включённым, а компьютер — разблокированным; именно блокировка и сон компьютера чаще всего переводят вас в «Отсутствую». Честное ограничение: ни один сайт не может имитировать настоящие движения мыши или клавиатуры (браузер блокирует это из соображений безопасности), поэтому при долгом полном бездействии Teams всё же может изменить статус."],
       ["Есть ли бесплатный онлайн-таймер Помодоро?","Да — в ScreenWakeUp есть встроенный таймер Помодоро. Нажмите 🍅 Помодоро. Запускает сессии по 25 минут с 5-минутными перерывами и воспроизводит звуковой сигнал по окончании."]
     ],
     feedbackTag:"Обратная связь",feedbackH2:"Оставьте комментарий",feedbackLead:"Расскажите, что думаете или как можно улучшить инструмент.",
     feedbackName:"Ваше имя (необязательно)",feedbackMsg:"Ваш комментарий или предложение...",feedbackBtn:"Отправить →",feedbackSent:"✓ Спасибо за ваше сообщение!",
     supportTag:"НЕЗАВИСИМЫЙ ПРОЕКТ",
     supportH2:"Мы помогли? Угостите нас кофе ☕",
-    supportP:"Мы создали ScreenWakeUp, чтобы экран никогда не мешал вашему рабочему процессу. Без надоедливых регистраций, без трекеров, мгновенно. Если этот инструмент помог вам сегодня, поддержите наш проект. Маленький кофе на Ko-fi держит сайт бесплатным и независимым.",
+    supportP:"Мы создали ScreenWakeUp, чтобы экран никогда не мешал вашему рабочему процессу. Без надоедливых регистраций, без платного доступа, мгновенно. Если этот инструмент помог вам сегодня, поддержите наш проект. Маленький кофе на Ko-fi держит сайт бесплатным и независимым.",
     kofiTxt:"Угостить кофе!",shareTxt:"Поделиться",cardKofi:"☕ Угостить кофе",
-    footerP:"Без загрузки · Без аккаунта · Без слежки · Работает в любом браузере",
+    footerP:"Без загрузки · Без аккаунта · Бесплатно навсегда · Работает в любом браузере",
     footerSupport:"Поддержать проект",
     whyTag:"Веб-инструмент vs десктопное приложение",whyH2:"Зачем скачивать приложение?",whyLead:"Не нужно устанавливать ПО, давать права администратора или доверять неизвестному .exe — просто чтобы держать экран активным.",
     whyProH:"✦ ScreenWakeUp (браузер)",whyConH:"Десктопные приложения / расширения",
@@ -1519,9 +1477,6 @@ const LANG = {
     whyCon1:"Требует загрузки и установки",whyCon2:"Часто нужны права администратора",whyCon3:"Только для одной платформы (только Mac и т.д.)",whyCon4:"Работает в фоне, потребляет ресурсы",whyCon5:"Требует ручного обновления",whyCon6:"Многие стоят $2–$10/месяц",
     durLabels:{0:"∞",30:"30 мин",60:"1 ч",120:"2 ч",240:"4 ч"},
     customBtn:"Свой",customPlaceholder:"мин",
-    antiIdleTitle:"Оставаться активным в Teams / Slack / Zoom",
-    chkMouseLabel:"Симулировать движение мыши (предотвращает блокировку экрана)",
-    chkF15Label:"Отправлять тихую клавишу F15 (предотвращает статус «Отсутствую» в Teams и Slack)",
     pomodoroLabel:"Помодоро",fsLabel:"Полный экран",audioLabel:"Звуковое оповещение",
     pomodoroWork:"🍅 Работа",pomodoroBreak:"☕ Перерыв",pomodoroSession:"Сессия",
     pomodoroStop:"Остановить Помодоро"
@@ -1576,12 +1531,9 @@ function setLang(l) {
     b.textContent = t.durLabels[parseInt(b.dataset.min)];
   });
 
-  // Custom timer + anti-idle + extras
+  // Custom timer + extras
   document.getElementById('customBtn').textContent = t.customBtn;
   document.getElementById('customMin').placeholder  = t.customPlaceholder;
-  document.getElementById('antiIdleTitle').textContent = t.antiIdleTitle;
-  document.getElementById('chkMouseLabel').textContent = t.chkMouseLabel;
-  document.getElementById('chkF15Label').textContent   = t.chkF15Label;
   document.getElementById('pomodoroLabel').textContent = t.pomodoroLabel;
   document.getElementById('fsLabel').textContent       = t.fsLabel;
   document.getElementById('audioLabel').textContent    = t.audioLabel;
@@ -1668,13 +1620,13 @@ function setLang(l) {
    DONATIONS — header button (B), improved block (D) & contextual toast (A)
 ──────────────────────────────────────────── */
 const DONATE_I18N = {
-  en: { nav:"Support", h2:"Enjoying ScreenWakeUp? Keep it free ☕", p:"No ads, no sign-up, no tracking — just one button that works. If it saved your screen today, a $3 coffee keeps the site free and independent.", btn:"Buy us a coffee · $3", social:"Reader-funded — every coffee keeps ScreenWakeUp free & ad-free.", toast:"Your screen stayed on {t} 🎉 Enjoyed it? Buy us a coffee.", toastBtn:"Buy a coffee" },
-  es: { nav:"Apóyanos", h2:"¿Te sirve ScreenWakeUp? Mantenlo gratis ☕", p:"Sin anuncios, sin registro, sin rastreo — solo un botón que funciona. Si hoy te salvó la pantalla, un café de 3 $ mantiene el sitio gratis e independiente.", btn:"Invítanos un café · 3 $", social:"Financiado por usuarios — cada café mantiene ScreenWakeUp gratis y sin anuncios.", toast:"Tu pantalla estuvo activa {t} 🎉 ¿Te sirvió? Invítanos un café.", toastBtn:"Invitar un café" },
-  pt: { nav:"Apoiar", h2:"Curtindo o ScreenWakeUp? Mantenha grátis ☕", p:"Sem anúncios, sem cadastro, sem rastreamento — só um botão que funciona. Se hoje salvou sua tela, um café de $3 mantém o site grátis e independente.", btn:"Pague um café · $3", social:"Financiado pelos usuários — cada café mantém o ScreenWakeUp grátis e sem anúncios.", toast:"Sua tela ficou ativa {t} 🎉 Gostou? Pague um café.", toastBtn:"Pagar um café" },
-  fr: { nav:"Soutenir", h2:"ScreenWakeUp vous plaît ? Gardez-le gratuit ☕", p:"Sans pub, sans inscription, sans suivi — juste un bouton qui marche. S'il a sauvé votre écran aujourd'hui, un café à 3 $ garde le site gratuit et indépendant.", btn:"Offrir un café · 3 $", social:"Financé par les lecteurs — chaque café garde ScreenWakeUp gratuit et sans pub.", toast:"Votre écran est resté allumé {t} 🎉 Ça vous a plu ? Offrez un café.", toastBtn:"Offrir un café" },
-  de: { nav:"Unterstützen", h2:"Gefällt dir ScreenWakeUp? Halt es kostenlos ☕", p:"Keine Werbung, keine Anmeldung, kein Tracking — nur ein Knopf, der funktioniert. Wenn es heute deinen Bildschirm gerettet hat, hält ein 3-$-Kaffee die Seite frei und unabhängig.", btn:"Spendier einen Kaffee · 3 $", social:"Nutzerfinanziert — jeder Kaffee hält ScreenWakeUp kostenlos und werbefrei.", toast:"Dein Bildschirm blieb {t} an 🎉 Gefallen? Spendier einen Kaffee.", toastBtn:"Kaffee spendieren" },
-  ja: { nav:"支援", h2:"ScreenWakeUp は役に立ってますか？無料を維持 ☕", p:"広告なし・登録なし・トラッキングなし、押すだけ。今日あなたの画面を救えたなら、$3 のコーヒーがこのサイトを無料で独立に保ちます。", btn:"コーヒーを贈る · $3", social:"ユーザーの支援で運営 — コーヒー一杯が ScreenWakeUp を無料・広告なしに保ちます。", toast:"画面を {t} 点けたままにできました 🎉 役に立ったら、コーヒーを一杯。", toastBtn:"コーヒーを贈る" },
-  ru: { nav:"Поддержать", h2:"Нравится ScreenWakeUp? Сохраним бесплатным ☕", p:"Без рекламы, без регистрации, без слежки — просто кнопка, которая работает. Если сегодня он спас ваш экран, кофе за $3 сохранит сайт бесплатным и независимым.", btn:"Купить кофе · $3", social:"На средства пользователей — каждый кофе сохраняет ScreenWakeUp бесплатным и без рекламы.", toast:"Ваш экран был включён {t} 🎉 Понравилось? Купите нам кофе.", toastBtn:"Купить кофе" },
+  en: { nav:"Support", h2:"Enjoying ScreenWakeUp? Keep it free ☕", p:"No ads, no sign-up — just one button that works. If it saved your screen today, a $3 coffee keeps the site free and independent.", btn:"Buy us a coffee · $3", social:"Reader-funded — every coffee keeps ScreenWakeUp free & ad-free.", toast:"Your screen stayed on {t} 🎉 Enjoyed it? Buy us a coffee.", toastBtn:"Buy a coffee" },
+  es: { nav:"Apóyanos", h2:"¿Te sirve ScreenWakeUp? Mantenlo gratis ☕", p:"Sin anuncios, sin registro — solo un botón que funciona. Si hoy te salvó la pantalla, un café de 3 $ mantiene el sitio gratis e independiente.", btn:"Invítanos un café · 3 $", social:"Financiado por usuarios — cada café mantiene ScreenWakeUp gratis y sin anuncios.", toast:"Tu pantalla estuvo activa {t} 🎉 ¿Te sirvió? Invítanos un café.", toastBtn:"Invitar un café" },
+  pt: { nav:"Apoiar", h2:"Curtindo o ScreenWakeUp? Mantenha grátis ☕", p:"Sem anúncios, sem cadastro — só um botão que funciona. Se hoje salvou sua tela, um café de $3 mantém o site grátis e independente.", btn:"Pague um café · $3", social:"Financiado pelos usuários — cada café mantém o ScreenWakeUp grátis e sem anúncios.", toast:"Sua tela ficou ativa {t} 🎉 Gostou? Pague um café.", toastBtn:"Pagar um café" },
+  fr: { nav:"Soutenir", h2:"ScreenWakeUp vous plaît ? Gardez-le gratuit ☕", p:"Sans pub, sans inscription — juste un bouton qui marche. S'il a sauvé votre écran aujourd'hui, un café à 3 $ garde le site gratuit et indépendant.", btn:"Offrir un café · 3 $", social:"Financé par les lecteurs — chaque café garde ScreenWakeUp gratuit et sans pub.", toast:"Votre écran est resté allumé {t} 🎉 Ça vous a plu ? Offrez un café.", toastBtn:"Offrir un café" },
+  de: { nav:"Unterstützen", h2:"Gefällt dir ScreenWakeUp? Halt es kostenlos ☕", p:"Keine Werbung, keine Anmeldung — nur ein Knopf, der funktioniert. Wenn es heute deinen Bildschirm gerettet hat, hält ein 3-$-Kaffee die Seite frei und unabhängig.", btn:"Spendier einen Kaffee · 3 $", social:"Nutzerfinanziert — jeder Kaffee hält ScreenWakeUp kostenlos und werbefrei.", toast:"Dein Bildschirm blieb {t} an 🎉 Gefallen? Spendier einen Kaffee.", toastBtn:"Kaffee spendieren" },
+  ja: { nav:"支援", h2:"ScreenWakeUp は役に立ってますか？無料を維持 ☕", p:"広告なし・登録なし、押すだけ。今日あなたの画面を救えたなら、$3 のコーヒーがこのサイトを無料で独立に保ちます。", btn:"コーヒーを贈る · $3", social:"ユーザーの支援で運営 — コーヒー一杯が ScreenWakeUp を無料・広告なしに保ちます。", toast:"画面を {t} 点けたままにできました 🎉 役に立ったら、コーヒーを一杯。", toastBtn:"コーヒーを贈る" },
+  ru: { nav:"Поддержать", h2:"Нравится ScreenWakeUp? Сохраним бесплатным ☕", p:"Без рекламы, без регистрации — просто кнопка, которая работает. Если сегодня он спас ваш экран, кофе за $3 сохранит сайт бесплатным и независимым.", btn:"Купить кофе · $3", social:"На средства пользователей — каждый кофе сохраняет ScreenWakeUp бесплатным и без рекламы.", toast:"Ваш экран был включён {t} 🎉 Понравилось? Купите нам кофе.", toastBtn:"Купить кофе" },
 };
 
 function applyDonateStrings(l){
@@ -2055,35 +2007,6 @@ function playChime() {
 }
 
 /* ────────────────────────────────────────────
-   ANTI-IDLE (Teams / Slack / Zoom)
-──────────────────────────────────────────── */
-let antiIdleInterval = null;
-function startAntiIdle() {
-  if (antiIdleInterval) return;
-  antiIdleInterval = setInterval(() => {
-    if (document.getElementById('chkMouse').checked) {
-      document.dispatchEvent(new MouseEvent('mousemove', {
-        bubbles:true, cancelable:true,
-        clientX: 1 + Math.random(), clientY: 1 + Math.random()
-      }));
-    }
-    if (document.getElementById('chkF15').checked) {
-      // F15 = keyCode 126 on mac / no character produced, harmless on all platforms
-      document.dispatchEvent(new KeyboardEvent('keydown', {
-        bubbles:true, cancelable:true, key:'F15', keyCode:126, which:126
-      }));
-      document.dispatchEvent(new KeyboardEvent('keyup', {
-        bubbles:true, cancelable:true, key:'F15', keyCode:126, which:126
-      }));
-    }
-  }, 55000); // every ~55 seconds
-}
-function stopAntiIdle() {
-  clearInterval(antiIdleInterval);
-  antiIdleInterval = null;
-}
-
-/* ────────────────────────────────────────────
    POMODORO TIMER
 ──────────────────────────────────────────── */
 let pomActive = false, pomPhase = 'work', pomSession = 1;
@@ -2177,14 +2100,12 @@ document.addEventListener('keydown', e => {
 const _origActivate = activate;
 activate = async function() {
   await _origActivate();
-  startAntiIdle();
   track('activate_wakelock', { duration_min: selectedMin || 0 });
 };
 
 const _origDeactivate = deactivate;
 deactivate = function(expired=false) {
   _origDeactivate(expired);
-  stopAntiIdle();
   if (pomActive) stopPomodoro();
   if (expired && audioEnabled) playChime();
 };
