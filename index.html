@@ -1903,6 +1903,7 @@ function deactivate(expired=false) {
   toggleBtn.classList.remove('on');
   durBtns.forEach(b=>b.disabled=false);
   stopTimer();
+  track('deactivate_wakelock', { session_sec: sessionStart ? Math.floor((Date.now()-sessionStart)/1000) : 0, expired: !!expired });
   maybeShowDonateToast(sessionStart ? Math.floor((Date.now()-sessionStart)/1000) : 0);
   stopSessionTimer();
   if(expired && 'Notification' in window && Notification.permission==='granted'){
@@ -1916,6 +1917,10 @@ document.addEventListener('visibilitychange', async ()=>{
   if(active && document.visibilityState==='visible' && 'wakeLock' in navigator && !wakeLock){
     try{ wakeLock = await navigator.wakeLock.request('screen'); }catch{}
   }
+});
+
+addEventListener('pagehide', ()=>{
+  if(active) track('deactivate_wakelock', { session_sec: sessionStart ? Math.floor((Date.now()-sessionStart)/1000) : 0, expired: false, closed_tab: true });
 });
 
 document.addEventListener('click', ()=>{
