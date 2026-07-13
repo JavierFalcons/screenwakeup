@@ -832,6 +832,7 @@
     <div class="tool-extras">
       <button class="tool-extra-btn" id="pomodoroBtn" onclick="togglePomodoro()">🍅 <span id="pomodoroLabel">Pomodoro</span></button>
       <button class="tool-extra-btn" id="fsBtn"       onclick="enterFullscreen()">⛶ <span id="fsLabel">Fullscreen</span></button>
+      <button class="tool-extra-btn" id="pipBtn" onclick="togglePiP()">🪟 <span id="pipLabel">Floating mini-window</span></button>
       <button class="tool-extra-btn" id="audioBtn"    onclick="toggleAudio()">🔔 <span id="audioLabel">Sound alert</span></button>
     </div>
     <div id="pomodoroDisplay"></div>
@@ -839,7 +840,7 @@
     <div class="timer-txt" id="timerTxt"></div>
     <div class="prog-wrap" id="progWrap"><div class="prog-bar" id="progBar"></div></div>
     <div id="sessionClock"></div>
-    <p id="cardHint">Keep this tab open and visible. Works in Chrome, Edge, Safari and most modern browsers.</p>
+    <p id="cardHint">Keep this tab visible — if you minimize the window or another app fully covers it, the browser releases the lock. Working in another app? Use the floating mini-window or Fullscreen.</p>
   <div class="card-donate" id="cardDonateBlock">
     <p class="section-tag" id="cdTag">INDEPENDENT PROJECT</p>
     <h2 id="cdH2">Enjoying ScreenWakeUp? Keep it free ☕</h2>
@@ -1058,7 +1059,8 @@ const LANG = {
     statusOn:  "Wake Lock active — screen will stay on",
     statusFb:  "Compatibility mode active (silent video)",
     btnOn:  "Keep Screen Awake", btnOff: "Stop",
-    cardHint: "Keep this tab open and visible. Works in Chrome, Edge, Safari and most modern browsers.",
+    cardHint: "Keep this tab visible — if you minimize the window or another app fully covers it, the browser releases the lock. Working in another app? Use the floating mini-window or Fullscreen.",
+    pipLabel:"Floating mini-window",lockLost:"⚠️ The lock switched off while this tab was hidden. Use the floating mini-window or Fullscreen when you work in other apps.",
     timerLeft: "remaining", timerActive: "Active for", sessionPhrase: "keeping your screen awake",
     timerExpired: "Time's up! Screen lock re-enabled.",
     howTag: "How it works", howH2: "Three steps. Zero installs.",
@@ -1134,7 +1136,8 @@ const LANG = {
     statusOn:  "Wake Lock activo — la pantalla no se apagará",
     statusFb:  "Modo compatibilidad activo (vídeo silencioso)",
     btnOn: "Mantener pantalla activa", btnOff: "Detener",
-    cardHint: "Deja esta pestaña abierta y visible. Funciona en Chrome, Edge, Safari y la mayoría de navegadores modernos.",
+    cardHint: "Mantén esta pestaña visible: si minimizas la ventana o otra app la tapa por completo, el navegador libera el bloqueo. ¿Trabajas en otra app? Usa la mini ventana flotante o Pantalla completa.",
+    pipLabel:"Mini ventana flotante",lockLost:"⚠️ El bloqueo se desactivó mientras esta pestaña estaba oculta. Usa la mini ventana flotante o Pantalla completa cuando trabajes en otras apps.",
     timerLeft: "restantes", timerActive: "Activo desde hace", sessionPhrase: "con tu pantalla encendida",
     timerExpired: "¡Tiempo agotado! Bloqueo de pantalla reactivado.",
     howTag:"Cómo funciona",howH2:"Tres pasos. Sin instalaciones.",
@@ -1203,7 +1206,8 @@ const LANG = {
     statusOn:"Wake Lock ativo — a tela ficará ligada",
     statusFb:"Modo compatibilidade ativo (vídeo silencioso)",
     btnOn:"Manter Tela Ativa",btnOff:"Parar",
-    cardHint:"Mantenha esta aba aberta e visível. Funciona no Chrome, Edge, Safari e a maioria dos navegadores modernos.",
+    cardHint:"Mantenha esta aba visível: se você minimizar a janela ou outro app cobri-la por completo, o navegador libera o bloqueio. Trabalhando em outro app? Use a mini janela flutuante ou Tela cheia.",
+    pipLabel:"Mini janela flutuante",lockLost:"⚠️ O bloqueio foi desativado enquanto esta aba estava oculta. Use a mini janela flutuante ou Tela cheia quando trabalhar em outros apps.",
     timerLeft:"restantes",timerActive:"Ativo há",sessionPhrase:"com sua tela ativa",
     timerExpired:"Tempo esgotado! Bloqueio de tela reativado.",
     howTag:"Como funciona",howH2:"Três passos. Zero instalações.",
@@ -1270,7 +1274,8 @@ const LANG = {
     statusOn:"Wake Lock actif — l'écran restera allumé",
     statusFb:"Mode compatibilité actif (vidéo silencieuse)",
     btnOn:"Garder l'écran actif",btnOff:"Arrêter",
-    cardHint:"Gardez cet onglet ouvert et visible. Fonctionne sur Chrome, Edge, Safari et la plupart des navigateurs modernes.",
+    cardHint:"Gardez cet onglet visible : si vous réduisez la fenêtre ou qu'une autre app la recouvre entièrement, le navigateur libère le verrou. Vous travaillez ailleurs ? Utilisez la mini-fenêtre flottante ou le Plein écran.",
+    pipLabel:"Mini-fenêtre flottante",lockLost:"⚠️ Le verrou s'est désactivé pendant que cet onglet était masqué. Utilisez la mini-fenêtre flottante ou le Plein écran quand vous travaillez dans d'autres apps.",
     timerLeft:"restantes",timerActive:"Actif depuis",sessionPhrase:"d'écran actif",
     timerExpired:"Temps écoulé ! Verrouillage de l'écran réactivé.",
     howTag:"Comment ça marche",howH2:"Trois étapes. Zéro installation.",
@@ -1337,7 +1342,8 @@ const LANG = {
     statusOn:"Wake Lock aktiv — Bildschirm bleibt an",
     statusFb:"Kompatibilitätsmodus aktiv (stilles Video)",
     btnOn:"Bildschirm wach halten",btnOff:"Stoppen",
-    cardHint:"Halte diesen Tab offen und sichtbar. Funktioniert in Chrome, Edge, Safari und den meisten modernen Browsern.",
+    cardHint:"Halte diesen Tab sichtbar: Wird das Fenster minimiert oder komplett verdeckt, gibt der Browser die Sperre frei. Du arbeitest in einer anderen App? Nutze das schwebende Mini-Fenster oder Vollbild.",
+    pipLabel:"Schwebendes Mini-Fenster",lockLost:"⚠️ Die Sperre wurde aufgehoben, während dieser Tab verdeckt war. Nutze das schwebende Mini-Fenster oder Vollbild, wenn du in anderen Apps arbeitest.",
     timerLeft:"verbleibend",timerActive:"Aktiv seit",sessionPhrase:"Bildschirm aktiv",
     timerExpired:"Zeit abgelaufen! Bildschirmsperre wieder aktiv.",
     howTag:"So funktioniert es",howH2:"Drei Schritte. Null Installationen.",
@@ -1404,7 +1410,8 @@ const LANG = {
     statusOn:"ウェイクロック有効 — 画面は点灯し続けます",
     statusFb:"互換モード有効（サイレント動画）",
     btnOn:"画面をスリープさせない",btnOff:"停止",
-    cardHint:"このタブを開いたまま表示してください。Chrome、Edge、Safari および主要なブラウザで動作します。",
+    cardHint:"このタブを見える状態に保ってください。ウィンドウを最小化したり他のアプリで完全に隠すと、ブラウザがロックを解除します。他のアプリで作業する場合はフローティングミニウィンドウか全画面をご利用ください。",
+    pipLabel:"フローティングミニウィンドウ",lockLost:"⚠️ タブが隠れている間にロックが解除されました。他のアプリで作業するときはフローティングミニウィンドウか全画面を使ってください。",
     timerLeft:"残り",timerActive:"アクティブ経過",sessionPhrase:"画面オン中",
     timerExpired:"時間切れ！画面ロックが再び有効になりました。",
     howTag:"使い方",howH2:"3ステップ。ゼロインストール。",
@@ -1466,7 +1473,8 @@ const LANG = {
     statusOn:"Wake Lock активен — экран останется включённым",
     statusFb:"Режим совместимости активен (тихое видео)",
     btnOn:"Держать экран активным",btnOff:"Остановить",
-    cardHint:"Держите эту вкладку открытой и видимой. Работает в Chrome, Edge, Safari и большинстве современных браузеров.",
+    cardHint:"Держите эту вкладку видимой: если свернуть окно или полностью перекрыть его другим приложением, браузер снимет блокировку. Работаете в другом приложении? Используйте плавающее мини-окно или полноэкранный режим.",
+    pipLabel:"Плавающее мини-окно",lockLost:"⚠️ Блокировка снялась, пока вкладка была скрыта. Используйте плавающее мини-окно или полноэкранный режим, когда работаете в других приложениях.",
     timerLeft:"осталось",timerActive:"Активно",sessionPhrase:"экран активен",
     timerExpired:"Время вышло! Блокировка экрана снова включена.",
     howTag:"Как это работает",howH2:"Три шага. Ноль установок.",
@@ -1561,6 +1569,7 @@ function setLang(l) {
   document.getElementById('cardStatus').textContent = active ? t.statusOn : t.statusOff;
   document.getElementById('toggleBtn').textContent = active ? t.btnOff : t.btnOn;
   document.getElementById('cardHint').textContent = t.cardHint;
+  var pipL = document.getElementById('pipLabel'); if (pipL) pipL.textContent = t.pipLabel;
 
   // Duration buttons
   document.querySelectorAll('.dur-btn').forEach(b => {
@@ -1913,11 +1922,65 @@ function deactivate(expired=false) {
 
 toggleBtn.addEventListener('click', ()=> active ? deactivate() : activate());
 
+let hiddenWhileActive = false;
 document.addEventListener('visibilitychange', async ()=>{
+  if(active && document.visibilityState==='hidden') hiddenWhileActive = true;
   if(active && document.visibilityState==='visible' && 'wakeLock' in navigator && !wakeLock){
     try{ wakeLock = await navigator.wakeLock.request('screen'); }catch{}
+    if(hiddenWhileActive){
+      hiddenWhileActive = false;
+      cardStat.textContent = LANG[lang].lockLost;
+      track('lock_lost_hidden');
+      setTimeout(()=>{ if(active) cardStat.textContent = LANG[lang].statusOn; }, 8000);
+    }
   }
 });
+
+
+/* ── Floating mini-window (Picture-in-Picture keep-awake) ──
+   A tiny always-on-top clock backed by a playing video: while it is on
+   screen the browser keeps the display awake even when this tab is
+   covered by other apps — the case a bare wake lock cannot handle. */
+let pipVideo = null, pipTick = null;
+function pipSupported(){
+  return !!(document.pictureInPictureEnabled && HTMLCanvasElement.prototype.captureStream);
+}
+async function togglePiP(){
+  try{
+    if(document.pictureInPictureElement){ await document.exitPictureInPicture(); return; }
+    const c = document.createElement('canvas'); c.width = 480; c.height = 270;
+    const x = c.getContext('2d');
+    const draw = () => {
+      x.fillStyle = '#11141f'; x.fillRect(0, 0, 480, 270);
+      x.textAlign = 'center';
+      x.fillStyle = '#5ee0c0';
+      x.font = '700 84px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+      x.fillText(new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', second:'2-digit'}), 240, 132);
+      x.fillStyle = '#8892a4';
+      x.font = '600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+      x.fillText('screenwakeup.com', 240, 208);
+    };
+    draw();
+    pipVideo = document.createElement('video');
+    pipVideo.muted = true; pipVideo.setAttribute('playsinline', '');
+    pipVideo.srcObject = c.captureStream(1);
+    pipVideo.style.cssText = 'position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;top:0;left:0;';
+    document.body.appendChild(pipVideo);
+    await pipVideo.play();
+    pipTick = setInterval(draw, 1000);
+    pipVideo.addEventListener('leavepictureinpicture', () => {
+      clearInterval(pipTick);
+      if(pipVideo){ pipVideo.pause(); pipVideo.srcObject = null; pipVideo.remove(); pipVideo = null; }
+    });
+    await pipVideo.requestPictureInPicture();
+    track('pip_enter');
+  }catch(e){
+    clearInterval(pipTick);
+    if(pipVideo){ pipVideo.pause(); pipVideo.srcObject = null; pipVideo.remove(); pipVideo = null; }
+    track('pip_error');
+  }
+}
+if(!pipSupported()){ var _pb = document.getElementById('pipBtn'); if(_pb) _pb.style.display = 'none'; }
 
 addEventListener('pagehide', ()=>{
   if(active) track('deactivate_wakelock', { session_sec: sessionStart ? Math.floor((Date.now()-sessionStart)/1000) : 0, expired: false, closed_tab: true });
