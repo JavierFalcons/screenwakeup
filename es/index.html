@@ -330,6 +330,9 @@
   .prog-wrap.vis { opacity: 1; }
   .prog-bar { height: 100%; background: var(--accent); width: 100%; transform-origin: left; }
   #cardHint { margin-top: 22px; font-size: 11.5px; color: var(--muted); line-height: 1.65; }
+  .tool-extras { display:flex; gap:8px; margin-top:14px; justify-content:center; flex-wrap:wrap; }
+  .tool-extra-btn { background:var(--surface2); color:var(--text); border:1px solid var(--border); border-radius:10px; padding:10px 14px; font-size:13px; font-weight:600; cursor:pointer; transition:border-color .2s,color .2s; }
+  .tool-extra-btn:hover { border-color:var(--accent); color:var(--accent); }
 
   /* ═══════════════════════════════════════════
      CONTENT SECTIONS
@@ -611,10 +614,14 @@
 
     <button id="toggleBtn">Mantener pantalla activa</button>
 
+    <div class="tool-extras">
+      <button class="tool-extra-btn" id="pipBtn" onclick="togglePiP()">🪟 <span id="pipLabel">Mini ventana flotante</span></button>
+    </div>
+
     <div class="timer-txt" id="timerTxt"></div>
     <div class="prog-wrap" id="progWrap"><div class="prog-bar" id="progBar"></div></div>
     <div id="sessionClock"></div>
-    <p id="cardHint">Deja esta pestaña abierta y visible. Funciona en Chrome, Edge, Safari y la mayoría de navegadores modernos.</p>
+    <p id="cardHint">Mantén esta pestaña visible: si minimizas la ventana o otra app la tapa por completo, el navegador libera el bloqueo. ¿Trabajas en otra app? Usa la mini ventana flotante.</p>
   <div class="card-donate" id="cardDonateBlock">
     <p class="section-tag" id="cdTag">PROYECTO INDEPENDIENTE</p>
     <h2 id="cdH2">¿Te salvamos el día? Invítanos a un café ☕</h2>
@@ -799,7 +806,9 @@ const LANG = {
     statusOn:  "Wake Lock active — screen will stay on",
     statusFb:  "Compatibility mode active (silent video)",
     btnOn:  "Keep Screen Awake", btnOff: "Stop",
-    cardHint: "Keep this tab open and visible. Works in Chrome, Edge, Safari and most modern browsers.",
+    cardHint: "Keep this tab visible — if you minimize the window or another app fully covers it, the browser releases the lock. Working in another app? Use the floating mini-window.",
+    pipLabel: "Floating mini-window",
+    lockLost: "⚠️ The lock switched off while this tab was hidden. Use the floating mini-window when you work in other apps.",
     timerLeft: "remaining", timerActive: "Active for", sessionPhrase: "keeping your screen awake",
     timerExpired: "Time's up! Screen lock re-enabled.",
     howTag: "How it works", howH2: "Three steps. Zero installs.",
@@ -850,9 +859,11 @@ const LANG = {
     cardOff: "Pantalla en reposo", cardOn: "Pantalla activa",
     statusOff: "Pulsa el botón para evitar que se bloquee",
     statusOn:  "Wake Lock activo — la pantalla no se apagará",
+    cardHint: "Mantén esta pestaña visible: si minimizas la ventana o otra app la tapa por completo, el navegador libera el bloqueo. ¿Trabajas en otra app? Usa la mini ventana flotante.",
+    pipLabel: "Mini ventana flotante",
+    lockLost: "⚠️ El bloqueo se desactivó mientras esta pestaña estaba oculta. Usa la mini ventana flotante cuando trabajes en otras apps.",
     statusFb:  "Modo compatibilidad activo (vídeo silencioso)",
     btnOn: "Mantener pantalla activa", btnOff: "Detener",
-    cardHint: "Deja esta pestaña abierta y visible. Funciona en Chrome, Edge, Safari y la mayoría de navegadores modernos.",
     timerLeft: "restantes", timerActive: "Activo desde hace", sessionPhrase: "con tu pantalla encendida",
     timerExpired: "¡Tiempo agotado! Bloqueo de pantalla reactivado.",
     howTag:"Cómo funciona",howH2:"Tres pasos. Sin instalaciones.",
@@ -908,9 +919,11 @@ const LANG = {
     cardOff:"Tela em repouso",cardOn:"Tela ativa",
     statusOff:"Pressione o botão para manter a tela ativa",
     statusOn:"Wake Lock ativo — a tela ficará ligada",
+    cardHint:"Mantenha esta aba visível: se você minimizar a janela ou outro app cobri-la por completo, o navegador libera o bloqueio. Trabalhando em outro app? Use a mini janela flutuante.",
+    pipLabel:"Mini janela flutuante",
+    lockLost:"⚠️ O bloqueio foi desativado enquanto esta aba estava oculta. Use a mini janela flutuante quando trabalhar em outros apps.",
     statusFb:"Modo compatibilidade ativo (vídeo silencioso)",
     btnOn:"Manter Tela Ativa",btnOff:"Parar",
-    cardHint:"Mantenha esta aba aberta e visível. Funciona no Chrome, Edge, Safari e a maioria dos navegadores modernos.",
     timerLeft:"restantes",timerActive:"Ativo há",sessionPhrase:"com sua tela ativa",
     timerExpired:"Tempo esgotado! Bloqueio de tela reativado.",
     howTag:"Como funciona",howH2:"Três passos. Zero instalações.",
@@ -956,9 +969,11 @@ const LANG = {
     cardOff:"Écran en veille",cardOn:"Écran actif",
     statusOff:"Appuyez sur le bouton pour garder l'écran actif",
     statusOn:"Wake Lock actif — l'écran restera allumé",
+    cardHint:"Gardez cet onglet visible : si vous réduisez la fenêtre ou qu'une autre app la recouvre entièrement, le navigateur libère le verrou. Vous travaillez ailleurs ? Utilisez la mini-fenêtre flottante.",
+    pipLabel:"Mini-fenêtre flottante",
+    lockLost:"⚠️ Le verrou s'est désactivé pendant que cet onglet était masqué. Utilisez la mini-fenêtre flottante quand vous travaillez dans d'autres apps.",
     statusFb:"Mode compatibilité actif (vidéo silencieuse)",
     btnOn:"Garder l'écran actif",btnOff:"Arrêter",
-    cardHint:"Gardez cet onglet ouvert et visible. Fonctionne sur Chrome, Edge, Safari et la plupart des navigateurs modernes.",
     timerLeft:"restantes",timerActive:"Actif depuis",sessionPhrase:"d'écran actif",
     timerExpired:"Temps écoulé ! Verrouillage de l'écran réactivé.",
     howTag:"Comment ça marche",howH2:"Trois étapes. Zéro installation.",
@@ -1004,9 +1019,11 @@ const LANG = {
     cardOff:"Bildschirm schläft",cardOn:"Bildschirm aktiv",
     statusOff:"Klicke den Button, um den Bildschirm wach zu halten",
     statusOn:"Wake Lock aktiv — Bildschirm bleibt an",
+    cardHint:"Halte diesen Tab sichtbar: Wird das Fenster minimiert oder komplett verdeckt, gibt der Browser die Sperre frei. Du arbeitest in einer anderen App? Nutze das schwebende Mini-Fenster.",
+    pipLabel:"Schwebendes Mini-Fenster",
+    lockLost:"⚠️ Die Sperre wurde aufgehoben, während dieser Tab verdeckt war. Nutze das schwebende Mini-Fenster, wenn du in anderen Apps arbeitest.",
     statusFb:"Kompatibilitätsmodus aktiv (stilles Video)",
     btnOn:"Bildschirm wach halten",btnOff:"Stoppen",
-    cardHint:"Halte diesen Tab offen und sichtbar. Funktioniert in Chrome, Edge, Safari und den meisten modernen Browsern.",
     timerLeft:"verbleibend",timerActive:"Aktiv seit",sessionPhrase:"Bildschirm aktiv",
     timerExpired:"Zeit abgelaufen! Bildschirmsperre wieder aktiv.",
     howTag:"So funktioniert es",howH2:"Drei Schritte. Null Installationen.",
@@ -1086,6 +1103,7 @@ function setLang(l) {
   document.getElementById('cardStatus').textContent = active ? t.statusOn : t.statusOff;
   document.getElementById('toggleBtn').textContent = active ? t.btnOff : t.btnOn;
   document.getElementById('cardHint').textContent = t.cardHint;
+  var pipL = document.getElementById('pipLabel'); if (pipL) pipL.textContent = t.pipLabel;
 
   // Duration buttons
   document.querySelectorAll('.dur-btn').forEach(b => {
@@ -1381,11 +1399,61 @@ function deactivate(expired=false) {
 
 toggleBtn.addEventListener('click', ()=> active ? deactivate() : activate());
 
+let hiddenWhileActive = false;
 document.addEventListener('visibilitychange', async ()=>{
+  if(active && document.visibilityState==='hidden') hiddenWhileActive = true;
   if(active && document.visibilityState==='visible' && 'wakeLock' in navigator && !wakeLock){
     try{ wakeLock = await navigator.wakeLock.request('screen'); }catch{}
+    if(hiddenWhileActive){
+      hiddenWhileActive = false;
+      cardStat.textContent = LANG[lang].lockLost;
+      track('lock_lost_hidden');
+      setTimeout(()=>{ if(active) cardStat.textContent = LANG[lang].statusOn; }, 8000);
+    }
   }
 });
+
+/* ── Floating mini-window (Picture-in-Picture keep-awake) ── */
+let pipVideo = null, pipTick = null;
+function pipSupported(){
+  return !!(document.pictureInPictureEnabled && HTMLCanvasElement.prototype.captureStream);
+}
+async function togglePiP(){
+  try{
+    if(document.pictureInPictureElement){ await document.exitPictureInPicture(); return; }
+    const c = document.createElement('canvas'); c.width = 480; c.height = 270;
+    const x = c.getContext('2d');
+    const draw = () => {
+      x.fillStyle = '#11141f'; x.fillRect(0, 0, 480, 270);
+      x.textAlign = 'center';
+      x.fillStyle = '#5ee0c0';
+      x.font = '700 84px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+      x.fillText(new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', second:'2-digit'}), 240, 132);
+      x.fillStyle = '#8892a4';
+      x.font = '600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+      x.fillText('screenwakeup.com', 240, 208);
+    };
+    draw();
+    pipVideo = document.createElement('video');
+    pipVideo.muted = true; pipVideo.setAttribute('playsinline', '');
+    pipVideo.srcObject = c.captureStream(1);
+    pipVideo.style.cssText = 'position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;top:0;left:0;';
+    document.body.appendChild(pipVideo);
+    await pipVideo.play();
+    pipTick = setInterval(draw, 1000);
+    pipVideo.addEventListener('leavepictureinpicture', () => {
+      clearInterval(pipTick);
+      if(pipVideo){ pipVideo.pause(); pipVideo.srcObject = null; pipVideo.remove(); pipVideo = null; }
+    });
+    await pipVideo.requestPictureInPicture();
+    track('pip_enter');
+  }catch(e){
+    clearInterval(pipTick);
+    if(pipVideo){ pipVideo.pause(); pipVideo.srcObject = null; pipVideo.remove(); pipVideo = null; }
+    track('pip_error');
+  }
+}
+if(!pipSupported()){ var _pb = document.getElementById('pipBtn'); if(_pb) _pb.style.display = 'none'; }
 
 addEventListener('pagehide', ()=>{
   if(active) track('deactivate_wakelock', { session_sec: sessionStart ? Math.floor((Date.now()-sessionStart)/1000) : 0, expired: false, closed_tab: true });

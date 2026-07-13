@@ -123,6 +123,8 @@
     #cardHint{margin-top:16px;font-size:12px;color:var(--muted);line-height:1.6}
     .full-link{display:inline-block;margin-top:12px;font-size:13px;color:var(--accent);text-decoration:none}
     .full-link:hover{text-decoration:underline}
+    #pipBtn{width:100%;margin-top:10px;background:var(--bg2,#11141f);color:var(--text,#eef0f6);border:1px solid var(--border);border-radius:12px;padding:12px;font-size:14px;font-weight:600;cursor:pointer;transition:border-color .2s,color .2s}
+    #pipBtn:hover{border-color:var(--accent);color:var(--accent)}
 </style>
 
   <!-- Google Analytics 4 -->
@@ -159,11 +161,12 @@
       <button class="dur-btn" data-min="240">4時間</button>
     </div>
     <button id="toggleBtn">画面をスリープさせない</button>
+    <button id="pipBtn">🪟 フローティングミニウィンドウ</button>
     <div class="timer-txt" id="timerTxt"></div>
     <div class="prog-wrap" id="progWrap"><div class="prog-bar" id="progBar"></div></div>
     <div id="sessionClock"></div>
-    <p id="cardHint">このタブを開いたまま表示してください。Chrome、Edge、Safari および主要なブラウザで動作します。</p>
-    <a class="full-link" href="https://screenwakeup.com">全機能版（ポモドーロ・全画面時計・アンチアイドル）→</a>
+    <p id="cardHint">このタブを見える状態に保ってください。ウィンドウを最小化したり他のアプリで完全に隠すと、ブラウザがロックを解除します。他のアプリで作業する場合はフローティングミニウィンドウをご利用ください。</p>
+    <a class="full-link" href="https://screenwakeup.com">全機能版（ポモドーロ・全画面時計・カスタムタイマー）→</a>
   </div>
 </div>
 
@@ -281,7 +284,31 @@ function activate(){var p;if('wakeLock'in navigator){p=navigator.wakeLock.reques
 active=true;dot.classList.add('active');cardTitle.textContent=T.cardOn;toggleBtn.textContent=T.btnOff;toggleBtn.classList.add('on');durBtns.forEach(function(b){b.disabled=true;});startTimer();startSessionTimer();track('activate_wakelock',{duration_min:selectedMin||0,page:'/ja/'});}
 function deactivate(expired){if(wakeLock){wakeLock.release().catch(function(){});wakeLock=null;}if(videoFb){videoFb.pause();videoFb.remove();videoFb=null;}active=false;dot.classList.remove('active');cardTitle.textContent=T.cardOff;cardStat.textContent=expired?T.timerExpired:T.statusOff;toggleBtn.textContent=T.btnOn;toggleBtn.classList.remove('on');durBtns.forEach(function(b){b.disabled=false;});track('deactivate_wakelock',{session_sec:sessionStart?Math.floor((Date.now()-sessionStart)/1000):0,expired:!!expired,page:'/ja/'});stopTimer();stopSessionTimer();}
 toggleBtn.addEventListener('click',function(){active?deactivate(false):activate();});
-document.addEventListener('visibilitychange',function(){if(active&&document.visibilityState==='visible'&&'wakeLock'in navigator&&!wakeLock){navigator.wakeLock.request('screen').then(function(w){wakeLock=w;}).catch(function(){});}});
+var hiddenWhileActive=false;
+var LOCK_LOST='⚠️ タブが隠れている間にロックが解除されました。他のアプリで作業するときはフローティングミニウィンドウを使ってください。';
+document.addEventListener('visibilitychange',function(){
+if(active&&document.visibilityState==='hidden')hiddenWhileActive=true;
+if(active&&document.visibilityState==='visible'&&'wakeLock'in navigator&&!wakeLock){
+navigator.wakeLock.request('screen').then(function(w){wakeLock=w;}).catch(function(){});
+if(hiddenWhileActive){hiddenWhileActive=false;cardStat.textContent=LOCK_LOST;track('lock_lost_hidden',{page:'/ja/'});setTimeout(function(){if(active)cardStat.textContent=T.statusOn;},8000);}
+}
+});
+var pipVideo=null,pipTick=null;
+function pipSupported(){return !!(document.pictureInPictureEnabled&&HTMLCanvasElement.prototype.captureStream);}
+function pipCleanup(){clearInterval(pipTick);if(pipVideo){pipVideo.pause();pipVideo.srcObject=null;pipVideo.remove();pipVideo=null;}}
+function togglePiP(){
+if(document.pictureInPictureElement){document.exitPictureInPicture().catch(function(){});return;}
+try{
+var c=document.createElement('canvas');c.width=480;c.height=270;var x=c.getContext('2d');
+var draw=function(){x.fillStyle='#11141f';x.fillRect(0,0,480,270);x.textAlign='center';x.fillStyle='#5ee0c0';x.font='700 84px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';x.fillText(new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',second:'2-digit'}),240,132);x.fillStyle='#8892a4';x.font='600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';x.fillText('screenwakeup.com',240,208);};
+draw();
+pipVideo=document.createElement('video');pipVideo.muted=true;pipVideo.setAttribute('playsinline','');pipVideo.srcObject=c.captureStream(1);pipVideo.style.cssText='position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;top:0;left:0;';
+document.body.appendChild(pipVideo);
+pipVideo.play().then(function(){pipTick=setInterval(draw,1000);pipVideo.addEventListener('leavepictureinpicture',pipCleanup);return pipVideo.requestPictureInPicture();}).then(function(){track('pip_enter',{page:'/ja/'});}).catch(function(){pipCleanup();track('pip_error',{page:'/ja/'});});
+}catch(e){pipCleanup();track('pip_error',{page:'/ja/'});}
+}
+var pipBtn=document.getElementById('pipBtn');
+if(pipBtn){if(pipSupported()){pipBtn.addEventListener('click',togglePiP);}else{pipBtn.style.display='none';}}
 addEventListener('pagehide',function(){if(active)track('deactivate_wakelock',{session_sec:sessionStart?Math.floor((Date.now()-sessionStart)/1000):0,expired:false,closed_tab:true,page:'/ja/'});});
 })();
 </script>
