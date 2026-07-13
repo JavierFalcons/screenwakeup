@@ -98,6 +98,31 @@
   .fk-close{position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;border:none;background:var(--surface2,#1f2338);color:var(--muted,#8892a4);font-size:13px;line-height:1;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.4);}
   .fk-close:hover{color:var(--text,#eef0f6);}
   @media (max-width:560px){ .float-kofi-wrap{right:14px;bottom:14px;} .float-kofi{width:48px;height:48px;font-size:21px;} }
+    /* Embedded wake-lock tool */
+    .tool-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:32px 28px;max-width:480px;margin:0 auto;box-shadow:0 18px 48px rgba(0,0,0,.35);text-align:center}
+    .pulse-wrap{position:relative;width:14px;height:14px;margin:0 auto 14px}
+    .dot{position:absolute;inset:0;border-radius:50%;background:var(--muted);transition:background .3s}
+    .dot.active{background:var(--accent)}
+    .dot.active+.ring{position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--accent);opacity:0;animation:swupulse 1.8s ease-out infinite}
+    @keyframes swupulse{0%{transform:scale(.6);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+    #cardTitle{font-weight:800;font-size:20px;margin-bottom:4px}
+    #cardStatus{color:var(--muted);font-size:14px;margin-bottom:18px}
+    .dur-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+    .dur-btn{background:var(--bg2);color:var(--muted);border:1px solid var(--border);border-radius:18px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer}
+    .dur-btn.sel{background:var(--accent);color:#0c0e18;border-color:var(--accent)}
+    .dur-btn:disabled{opacity:.5;cursor:default}
+    #toggleBtn{width:100%;background:var(--accent);color:#0c0e18;border:none;border-radius:12px;padding:16px;font-size:17px;font-weight:800;cursor:pointer;transition:opacity .2s}
+    #toggleBtn:hover{opacity:.88}
+    #toggleBtn.on{background:#e0655e;color:#fff}
+    .timer-txt{margin-top:12px;font-size:14px;color:var(--muted);min-height:18px}
+    .prog-wrap{height:4px;background:var(--bg2);border-radius:2px;margin-top:10px;overflow:hidden;opacity:0;transition:opacity .3s}
+    .prog-wrap.vis{opacity:1}
+    .prog-bar{height:100%;background:var(--accent);transform-origin:left;transform:scaleX(1)}
+    #sessionClock{margin-top:10px;font-size:13px;color:var(--accent);opacity:0;transition:opacity .3s;min-height:16px}
+    #sessionClock.vis{opacity:1}
+    #cardHint{margin-top:16px;font-size:12px;color:var(--muted);line-height:1.6}
+    .full-link{display:inline-block;margin-top:12px;font-size:13px;color:var(--accent);text-decoration:none}
+    .full-link:hover{text-decoration:underline}
 </style>
 
   <!-- Google Analytics 4 -->
@@ -122,7 +147,24 @@
   <div class="hero-tag">無料 · ダウンロード不要 · アカウント不要</div>
   <h1>画面を<span>スリープさせない</span><br>すぐに使える</h1>
   <p class="lead">画面のスリープやロックを防ぎます。Windows、Mac、iPhone、Android対応 — インストール不要。Teams・Slack・Zoomでも離席中になりません。</p>
-  <a href="https://screenwakeup.com" class="cta-btn">今すぐ画面をスリープさせない →</a>
+  <div class="tool-card">
+    <div class="pulse-wrap"><div class="dot" id="dot"></div><div class="ring"></div></div>
+    <p id="cardTitle">画面スリープ中</p>
+    <p id="cardStatus">ボタンを押して画面をオンに保つ</p>
+    <div class="dur-row">
+      <button class="dur-btn sel" data-min="0">&#8734;</button>
+      <button class="dur-btn" data-min="30">30分</button>
+      <button class="dur-btn" data-min="60">1時間</button>
+      <button class="dur-btn" data-min="120">2時間</button>
+      <button class="dur-btn" data-min="240">4時間</button>
+    </div>
+    <button id="toggleBtn">画面をスリープさせない</button>
+    <div class="timer-txt" id="timerTxt"></div>
+    <div class="prog-wrap" id="progWrap"><div class="prog-bar" id="progBar"></div></div>
+    <div id="sessionClock"></div>
+    <p id="cardHint">このタブを開いたまま表示してください。Chrome、Edge、Safari および主要なブラウザで動作します。</p>
+    <a class="full-link" href="https://screenwakeup.com">全機能版（ポモドーロ・全画面時計・アンチアイドル）→</a>
+  </div>
 </div>
 
 <div class="section">
@@ -219,6 +261,29 @@
   <p style="margin-top:12px">© 2026 ScreenWakeUp.com · ダウンロード不要 · アカウント不要 · トラッキング不要</p>
 </footer>
 <!-- Floating support button (C) -->
+<script>
+(function(){
+var T={"cardOn": "画面アクティブ", "cardOff": "画面スリープ中", "statusOn": "ウェイクロック有効 — 画面は点灯し続けます", "statusOff": "ボタンを押して画面をオンに保つ", "statusFb": "互換モード有効（サイレント動画）", "btnOn": "画面をスリープさせない", "btnOff": "停止", "timerLeft": "残り", "timerActive": "アクティブ経過", "timerExpired": "時間切れ！画面ロックが再び有効になりました。", "sessionPhrase": "画面オン中"};
+function track(n,p){try{if(window.gtag)gtag('event',n,p||{});}catch(e){}}
+var active=false,wakeLock=null,videoFb=null,startTime=null,tickId=null,selectedMin=0,durationMs=0,sessionStart=null,sessionTickId=null;
+var dot=document.getElementById('dot'),cardTitle=document.getElementById('cardTitle'),cardStat=document.getElementById('cardStatus'),toggleBtn=document.getElementById('toggleBtn'),timerTxt=document.getElementById('timerTxt'),sessionClock=document.getElementById('sessionClock'),progWrap=document.getElementById('progWrap'),progBar=document.getElementById('progBar'),durBtns=document.querySelectorAll('.dur-btn');
+function fmt(ms){var s=Math.floor(ms/1000);var h=String(Math.floor(s/3600)).padStart(2,'0');var m=String(Math.floor((s%3600)/60)).padStart(2,'0');var sec=String(s%60).padStart(2,'0');return h+':'+m+':'+sec;}
+durBtns.forEach(function(b){b.addEventListener('click',function(){if(active)return;durBtns.forEach(function(x){x.classList.remove('sel');});b.classList.add('sel');selectedMin=parseInt(b.dataset.min);durationMs=selectedMin*60000;});});
+function mkSilentVideo(){var v=document.createElement('video');v.setAttribute('playsinline','');v.muted=true;v.loop=true;v.style.cssText='position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;top:0;left:0;';var c=document.createElement('canvas');c.width=2;c.height=2;c.getContext('2d').fillRect(0,0,2,2);if(c.captureStream)v.srcObject=c.captureStream(1);document.body.appendChild(v);v.play().catch(function(){});return v;}
+function startTimer(){startTime=Date.now();if(durationMs>0){progWrap.classList.add('vis');progBar.style.transition='none';progBar.style.transform='scaleX(1)';requestAnimationFrame(function(){requestAnimationFrame(function(){progBar.style.transition='transform '+(durationMs/1000)+'s linear';progBar.style.transform='scaleX(0)';});});}
+tickId=setInterval(function(){var elapsed=Date.now()-startTime;if(durationMs>0){if(elapsed>=durationMs){deactivate(true);return;}timerTxt.textContent=fmt(durationMs-elapsed)+' '+T.timerLeft;}else{timerTxt.textContent=T.timerActive+' '+fmt(elapsed);}},1000);}
+function stopTimer(){clearInterval(tickId);timerTxt.textContent='';progWrap.classList.remove('vis');progBar.style.transition='none';progBar.style.transform='scaleX(1)';}
+function sessionEmoji(secs){var m=Math.floor(secs/60);if(m<5)return'\uD83D\uDD25';if(m<15)return'\uD83D\uDE80';if(m<30)return'\u26A1';if(m<60)return'\uD83C\uDFC6';return'\uD83D\uDC51';}
+function startSessionTimer(){sessionStart=Date.now();sessionClock.classList.remove('vis');clearInterval(sessionTickId);sessionTickId=setInterval(function(){var secs=Math.floor((Date.now()-sessionStart)/1000);var mins=Math.floor(secs/60);var s=secs%60;var timeStr;if(secs<60){timeStr=secs+'s';}else if(mins<60){timeStr=mins+' min '+(s>0?s+'s':'');}else{var h=Math.floor(mins/60),m2=mins%60;timeStr=h+'h '+(m2>0?m2+' min':'');}
+sessionClock.textContent=sessionEmoji(secs)+' '+timeStr.trim()+' \u00B7 '+T.sessionPhrase;if(!sessionClock.classList.contains('vis'))sessionClock.classList.add('vis');},1000);}
+function stopSessionTimer(){clearInterval(sessionTickId);sessionClock.classList.remove('vis');sessionClock.textContent='';}
+function activate(){var p;if('wakeLock'in navigator){p=navigator.wakeLock.request('screen').then(function(w){wakeLock=w;wakeLock.addEventListener('release',function(){if(active)navigator.wakeLock.request('screen').then(function(w2){wakeLock=w2;}).catch(function(){});});cardStat.textContent=T.statusOn;}).catch(function(){videoFb=mkSilentVideo();cardStat.textContent=T.statusFb;});}else{videoFb=mkSilentVideo();cardStat.textContent=T.statusFb;p=Promise.resolve();}
+active=true;dot.classList.add('active');cardTitle.textContent=T.cardOn;toggleBtn.textContent=T.btnOff;toggleBtn.classList.add('on');durBtns.forEach(function(b){b.disabled=true;});startTimer();startSessionTimer();track('activate_wakelock',{duration_min:selectedMin||0,page:'/ja/'});}
+function deactivate(expired){if(wakeLock){wakeLock.release().catch(function(){});wakeLock=null;}if(videoFb){videoFb.pause();videoFb.remove();videoFb=null;}active=false;dot.classList.remove('active');cardTitle.textContent=T.cardOff;cardStat.textContent=expired?T.timerExpired:T.statusOff;toggleBtn.textContent=T.btnOn;toggleBtn.classList.remove('on');durBtns.forEach(function(b){b.disabled=false;});stopTimer();stopSessionTimer();}
+toggleBtn.addEventListener('click',function(){active?deactivate(false):activate();});
+document.addEventListener('visibilitychange',function(){if(active&&document.visibilityState==='visible'&&'wakeLock'in navigator&&!wakeLock){navigator.wakeLock.request('screen').then(function(w){wakeLock=w;}).catch(function(){});}});
+})();
+</script>
 <div class="float-kofi-wrap" id="floatKofi">
   <a class="float-kofi" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener" aria-label="支援">☕</a>
   <button class="fk-close" id="floatKofiClose" aria-label="Hide">&times;</button>
