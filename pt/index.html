@@ -218,12 +218,14 @@
   }
   .logo { font-size: 17px; font-weight: 800; letter-spacing: -.5px; color: var(--accent); text-decoration: none; }
   .logo em { color: var(--muted); font-style: normal; font-weight: 400; font-size: 13px; margin-left: 4px; }
-  .nav-controls { display: flex; gap: 8px; align-items: center; }
+  .nav-controls { display: flex; gap: 8px; align-items: center; min-width: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .nav-controls::-webkit-scrollbar { display: none; }
   .pill {
     background: var(--surface2); border: 1px solid var(--border);
     color: var(--muted); font-size: 12px; font-weight: 600;
     padding: 5px 13px; border-radius: 20px; cursor: pointer;
     transition: all .2s;
+    white-space: nowrap; flex-shrink: 0;
   }
   .pill:hover { border-color: var(--accent); color: var(--text); }
   .pill.lang-active { background: var(--accent); color: #0c0e18; border-color: var(--accent); }
@@ -413,6 +415,9 @@
   .nav-kofi:hover { opacity:.88; }
   .nav-kofi:active { transform:scale(.96); }
   @media (max-width:560px){ .nav-kofi span{ display:none; } .nav-kofi{ padding:7px 11px; margin-right:4px; } }
+  .nav-kofi { flex-shrink: 0; }
+  .logo { white-space: nowrap; }
+  @media (max-width:700px){ .logo em{ display:none; } .pill{ font-size:11px; padding:5px 10px; } .topbar-inner{ gap:10px; } }
   /* Social-proof line under the donate block (D) */
   .donate-social { color:var(--muted); font-size:13px; margin-top:14px; }
   .donate-social b { color:var(--text); }
