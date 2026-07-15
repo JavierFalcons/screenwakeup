@@ -615,7 +615,7 @@
     <button id="toggleBtn">Manter Tela Ativa</button>
 
     <div class="tool-extras">
-      <button class="tool-extra-btn" id="pipBtn" onclick="togglePiP()">🪟 <span id="pipLabel">Mini janela flutuante</span></button>
+      <button class="tool-extra-btn" id="pipBtn" onclick="togglePiP()" title="Abre um pequeno relógio sempre visível que mantém a tela ativa enquanto você trabalha em outros apps">🪟 <span id="pipLabel">Mini janela flutuante</span></button>
     </div>
 
     <div class="timer-txt" id="timerTxt"></div>
@@ -807,7 +807,7 @@ const LANG = {
     statusFb:  "Compatibility mode active (silent video)",
     btnOn:  "Keep Screen Awake", btnOff: "Stop",
     cardHint: "Keep this tab visible — if you minimize the window or another app fully covers it, the browser releases the lock. Working in another app? Use the floating mini-window.",
-    pipLabel: "Floating mini-window",
+    pipLabel: "Floating mini-window",pipTitle:"Opens a small always-on-top clock that keeps your screen awake while you work in other apps",
     lockLost: "⚠️ The lock switched off while this tab was hidden. Use the floating mini-window when you work in other apps.",
     timerLeft: "remaining", timerActive: "Active for", sessionPhrase: "keeping your screen awake",
     timerExpired: "Time's up! Screen lock re-enabled.",
@@ -860,7 +860,7 @@ const LANG = {
     statusOff: "Pulsa el botón para evitar que se bloquee",
     statusOn:  "Wake Lock activo — la pantalla no se apagará",
     cardHint: "Mantén esta pestaña visible: si minimizas la ventana o otra app la tapa por completo, el navegador libera el bloqueo. ¿Trabajas en otra app? Usa la mini ventana flotante.",
-    pipLabel: "Mini ventana flotante",
+    pipLabel: "Mini ventana flotante",pipTitle:"Abre un pequeño reloj siempre visible que mantiene la pantalla activa mientras trabajas en otras apps",
     lockLost: "⚠️ El bloqueo se desactivó mientras esta pestaña estaba oculta. Usa la mini ventana flotante cuando trabajes en otras apps.",
     statusFb:  "Modo compatibilidad activo (vídeo silencioso)",
     btnOn: "Mantener pantalla activa", btnOff: "Detener",
@@ -910,7 +910,7 @@ const LANG = {
     statusOff:"Pressione o botão para manter a tela ativa",
     statusOn:"Wake Lock ativo — a tela ficará ligada",
     cardHint:"Mantenha esta aba visível: se você minimizar a janela ou outro app cobri-la por completo, o navegador libera o bloqueio. Trabalhando em outro app? Use a mini janela flutuante.",
-    pipLabel:"Mini janela flutuante",
+    pipLabel:"Mini janela flutuante",pipTitle:"Abre um pequeno relógio sempre visível que mantém a tela ativa enquanto você trabalha em outros apps",
     lockLost:"⚠️ O bloqueio foi desativado enquanto esta aba estava oculta. Use a mini janela flutuante quando trabalhar em outros apps.",
     statusFb:"Modo compatibilidade ativo (vídeo silencioso)",
     btnOn:"Manter Tela Ativa",btnOff:"Parar",
@@ -970,7 +970,7 @@ const LANG = {
     statusOff:"Appuyez sur le bouton pour garder l'écran actif",
     statusOn:"Wake Lock actif — l'écran restera allumé",
     cardHint:"Gardez cet onglet visible : si vous réduisez la fenêtre ou qu'une autre app la recouvre entièrement, le navigateur libère le verrou. Vous travaillez ailleurs ? Utilisez la mini-fenêtre flottante.",
-    pipLabel:"Mini-fenêtre flottante",
+    pipLabel:"Mini-fenêtre flottante",pipTitle:"Ouvre une petite horloge toujours visible qui garde l'écran allumé pendant que vous travaillez dans d'autres apps",
     lockLost:"⚠️ Le verrou s'est désactivé pendant que cet onglet était masqué. Utilisez la mini-fenêtre flottante quand vous travaillez dans d'autres apps.",
     statusFb:"Mode compatibilité actif (vidéo silencieuse)",
     btnOn:"Garder l'écran actif",btnOff:"Arrêter",
@@ -1020,7 +1020,7 @@ const LANG = {
     statusOff:"Klicke den Button, um den Bildschirm wach zu halten",
     statusOn:"Wake Lock aktiv — Bildschirm bleibt an",
     cardHint:"Halte diesen Tab sichtbar: Wird das Fenster minimiert oder komplett verdeckt, gibt der Browser die Sperre frei. Du arbeitest in einer anderen App? Nutze das schwebende Mini-Fenster.",
-    pipLabel:"Schwebendes Mini-Fenster",
+    pipLabel:"Schwebendes Mini-Fenster",pipTitle:"Öffnet eine kleine, immer sichtbare Uhr, die den Bildschirm wach hält, während du in anderen Apps arbeitest",
     lockLost:"⚠️ Die Sperre wurde aufgehoben, während dieser Tab verdeckt war. Nutze das schwebende Mini-Fenster, wenn du in anderen Apps arbeitest.",
     statusFb:"Kompatibilitätsmodus aktiv (stilles Video)",
     btnOn:"Bildschirm wach halten",btnOff:"Stoppen",
@@ -1104,6 +1104,7 @@ function setLang(l) {
   document.getElementById('toggleBtn').textContent = active ? t.btnOff : t.btnOn;
   document.getElementById('cardHint').textContent = t.cardHint;
   var pipL = document.getElementById('pipLabel'); if (pipL) pipL.textContent = t.pipLabel;
+  var pipB = document.getElementById('pipBtn'); if (pipB && t.pipTitle) pipB.title = t.pipTitle;
 
   // Duration buttons
   document.querySelectorAll('.dur-btn').forEach(b => {

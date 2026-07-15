@@ -808,7 +808,7 @@
     <div class="tool-extras">
       <button class="tool-extra-btn" id="pomodoroBtn" onclick="togglePomodoro()">🍅 <span id="pomodoroLabel">Pomodoro</span></button>
       <button class="tool-extra-btn" id="fsBtn"       onclick="enterFullscreen()">⛶ <span id="fsLabel">Fullscreen</span></button>
-      <button class="tool-extra-btn" id="pipBtn" onclick="togglePiP()">🪟 <span id="pipLabel">Floating mini-window</span></button>
+      <button class="tool-extra-btn" id="pipBtn" onclick="togglePiP()" title="Opens a small always-on-top clock that keeps your screen awake while you work in other apps">🪟 <span id="pipLabel">Floating mini-window</span></button>
       <button class="tool-extra-btn" id="audioBtn"    onclick="toggleAudio()">🔔 <span id="audioLabel">Sound alert</span></button>
     </div>
     <div id="pomodoroDisplay"></div>
@@ -1036,7 +1036,7 @@ const LANG = {
     statusFb:  "Compatibility mode active (silent video)",
     btnOn:  "Keep Screen Awake", btnOff: "Stop",
     cardHint: "Keep this tab visible — if you minimize the window or another app fully covers it, the browser releases the lock. Working in another app? Use the floating mini-window or Fullscreen.",
-    pipLabel:"Floating mini-window",lockLost:"⚠️ The lock switched off while this tab was hidden. Use the floating mini-window or Fullscreen when you work in other apps.",
+    pipLabel:"Floating mini-window",pipTitle:"Opens a small always-on-top clock that keeps your screen awake while you work in other apps",lockLost:"⚠️ The lock switched off while this tab was hidden. Use the floating mini-window or Fullscreen when you work in other apps.",
     timerLeft: "remaining", timerActive: "Active for", sessionPhrase: "keeping your screen awake",
     timerExpired: "Time's up! Screen lock re-enabled.",
     howTag: "How it works", howH2: "Three steps. Zero installs.",
@@ -1110,7 +1110,7 @@ const LANG = {
     statusFb:  "Modo compatibilidad activo (vídeo silencioso)",
     btnOn: "Mantener pantalla activa", btnOff: "Detener",
     cardHint: "Mantén esta pestaña visible: si minimizas la ventana o otra app la tapa por completo, el navegador libera el bloqueo. ¿Trabajas en otra app? Usa la mini ventana flotante o Pantalla completa.",
-    pipLabel:"Mini ventana flotante",lockLost:"⚠️ El bloqueo se desactivó mientras esta pestaña estaba oculta. Usa la mini ventana flotante o Pantalla completa cuando trabajes en otras apps.",
+    pipLabel:"Mini ventana flotante",pipTitle:"Abre un pequeño reloj siempre visible que mantiene la pantalla activa mientras trabajas en otras apps",lockLost:"⚠️ El bloqueo se desactivó mientras esta pestaña estaba oculta. Usa la mini ventana flotante o Pantalla completa cuando trabajes en otras apps.",
     timerLeft: "restantes", timerActive: "Activo desde hace", sessionPhrase: "con tu pantalla encendida",
     timerExpired: "¡Tiempo agotado! Bloqueo de pantalla reactivado.",
     howTag:"Cómo funciona",howH2:"Tres pasos. Sin instalaciones.",
@@ -1177,7 +1177,7 @@ const LANG = {
     statusFb:"Modo compatibilidade ativo (vídeo silencioso)",
     btnOn:"Manter Tela Ativa",btnOff:"Parar",
     cardHint:"Mantenha esta aba visível: se você minimizar a janela ou outro app cobri-la por completo, o navegador libera o bloqueio. Trabalhando em outro app? Use a mini janela flutuante ou Tela cheia.",
-    pipLabel:"Mini janela flutuante",lockLost:"⚠️ O bloqueio foi desativado enquanto esta aba estava oculta. Use a mini janela flutuante ou Tela cheia quando trabalhar em outros apps.",
+    pipLabel:"Mini janela flutuante",pipTitle:"Abre um pequeno relógio sempre visível que mantém a tela ativa enquanto você trabalha em outros apps",lockLost:"⚠️ O bloqueio foi desativado enquanto esta aba estava oculta. Use a mini janela flutuante ou Tela cheia quando trabalhar em outros apps.",
     timerLeft:"restantes",timerActive:"Ativo há",sessionPhrase:"com sua tela ativa",
     timerExpired:"Tempo esgotado! Bloqueio de tela reativado.",
     howTag:"Como funciona",howH2:"Três passos. Zero instalações.",
@@ -1242,7 +1242,7 @@ const LANG = {
     statusFb:"Mode compatibilité actif (vidéo silencieuse)",
     btnOn:"Garder l'écran actif",btnOff:"Arrêter",
     cardHint:"Gardez cet onglet visible : si vous réduisez la fenêtre ou qu'une autre app la recouvre entièrement, le navigateur libère le verrou. Vous travaillez ailleurs ? Utilisez la mini-fenêtre flottante ou le Plein écran.",
-    pipLabel:"Mini-fenêtre flottante",lockLost:"⚠️ Le verrou s'est désactivé pendant que cet onglet était masqué. Utilisez la mini-fenêtre flottante ou le Plein écran quand vous travaillez dans d'autres apps.",
+    pipLabel:"Mini-fenêtre flottante",pipTitle:"Ouvre une petite horloge toujours visible qui garde l'écran allumé pendant que vous travaillez dans d'autres apps",lockLost:"⚠️ Le verrou s'est désactivé pendant que cet onglet était masqué. Utilisez la mini-fenêtre flottante ou le Plein écran quand vous travaillez dans d'autres apps.",
     timerLeft:"restantes",timerActive:"Actif depuis",sessionPhrase:"d'écran actif",
     timerExpired:"Temps écoulé ! Verrouillage de l'écran réactivé.",
     howTag:"Comment ça marche",howH2:"Trois étapes. Zéro installation.",
@@ -1307,7 +1307,7 @@ const LANG = {
     statusFb:"Kompatibilitätsmodus aktiv (stilles Video)",
     btnOn:"Bildschirm wach halten",btnOff:"Stoppen",
     cardHint:"Halte diesen Tab sichtbar: Wird das Fenster minimiert oder komplett verdeckt, gibt der Browser die Sperre frei. Du arbeitest in einer anderen App? Nutze das schwebende Mini-Fenster oder Vollbild.",
-    pipLabel:"Schwebendes Mini-Fenster",lockLost:"⚠️ Die Sperre wurde aufgehoben, während dieser Tab verdeckt war. Nutze das schwebende Mini-Fenster oder Vollbild, wenn du in anderen Apps arbeitest.",
+    pipLabel:"Schwebendes Mini-Fenster",pipTitle:"Öffnet eine kleine, immer sichtbare Uhr, die den Bildschirm wach hält, während du in anderen Apps arbeitest",lockLost:"⚠️ Die Sperre wurde aufgehoben, während dieser Tab verdeckt war. Nutze das schwebende Mini-Fenster oder Vollbild, wenn du in anderen Apps arbeitest.",
     timerLeft:"verbleibend",timerActive:"Aktiv seit",sessionPhrase:"Bildschirm aktiv",
     timerExpired:"Zeit abgelaufen! Bildschirmsperre wieder aktiv.",
     howTag:"So funktioniert es",howH2:"Drei Schritte. Null Installationen.",
@@ -1372,7 +1372,7 @@ const LANG = {
     statusFb:"互換モード有効（サイレント動画）",
     btnOn:"画面をスリープさせない",btnOff:"停止",
     cardHint:"このタブを見える状態に保ってください。ウィンドウを最小化したり他のアプリで完全に隠すと、ブラウザがロックを解除します。他のアプリで作業する場合はフローティングミニウィンドウか全画面をご利用ください。",
-    pipLabel:"フローティングミニウィンドウ",lockLost:"⚠️ タブが隠れている間にロックが解除されました。他のアプリで作業するときはフローティングミニウィンドウか全画面を使ってください。",
+    pipLabel:"フローティングミニウィンドウ",pipTitle:"常に前面に表示される小さな時計を開き、他のアプリで作業中も画面をオンに保ちます",lockLost:"⚠️ タブが隠れている間にロックが解除されました。他のアプリで作業するときはフローティングミニウィンドウか全画面を使ってください。",
     timerLeft:"残り",timerActive:"アクティブ経過",sessionPhrase:"画面オン中",
     timerExpired:"時間切れ！画面ロックが再び有効になりました。",
     howTag:"使い方",howH2:"3ステップ。ゼロインストール。",
@@ -1432,7 +1432,7 @@ const LANG = {
     statusFb:"Режим совместимости активен (тихое видео)",
     btnOn:"Держать экран активным",btnOff:"Остановить",
     cardHint:"Держите эту вкладку видимой: если свернуть окно или полностью перекрыть его другим приложением, браузер снимет блокировку. Работаете в другом приложении? Используйте плавающее мини-окно или полноэкранный режим.",
-    pipLabel:"Плавающее мини-окно",lockLost:"⚠️ Блокировка снялась, пока вкладка была скрыта. Используйте плавающее мини-окно или полноэкранный режим, когда работаете в других приложениях.",
+    pipLabel:"Плавающее мини-окно",pipTitle:"Открывает небольшие часы поверх всех окон, которые не дают экрану погаснуть, пока вы работаете в других приложениях",lockLost:"⚠️ Блокировка снялась, пока вкладка была скрыта. Используйте плавающее мини-окно или полноэкранный режим, когда работаете в других приложениях.",
     timerLeft:"осталось",timerActive:"Активно",sessionPhrase:"экран активен",
     timerExpired:"Время вышло! Блокировка экрана снова включена.",
     howTag:"Как это работает",howH2:"Три шага. Ноль установок.",
@@ -1525,6 +1525,7 @@ function setLang(l) {
   document.getElementById('toggleBtn').textContent = active ? t.btnOff : t.btnOn;
   document.getElementById('cardHint').textContent = t.cardHint;
   var pipL = document.getElementById('pipLabel'); if (pipL) pipL.textContent = t.pipLabel;
+  var pipB = document.getElementById('pipBtn'); if (pipB && t.pipTitle) pipB.title = t.pipTitle;
 
   // Duration buttons
   document.querySelectorAll('.dur-btn').forEach(b => {
