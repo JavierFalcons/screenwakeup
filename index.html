@@ -483,29 +483,6 @@
   .section p.lead { color: var(--muted); font-size: 16px; max-width: 580px; margin-bottom: 40px; }
   .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
 
-  /* ─── Rolling signature (GSAP SplitText) ─── */
-  .sig-roll-section { padding: 56px 0 72px; overflow: hidden; }
-  .sig-roll { display: flex; align-items: center; justify-content: center; width: 100%; visibility: hidden; }
-  .sig-tube { position: relative; width: 100%; height: min(17vw, 210px); }
-  .sig-line {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    line-height: 1;
-    margin: 0;
-    letter-spacing: -0.04em;
-    font-size: min(12vw, 150px);
-    font-weight: 800;
-    white-space: nowrap;
-    text-align: center;
-    color: var(--text);
-  }
-  .sig-line div { backface-visibility: hidden; }
-  /* Fallback: no GSAP / reduced motion — show one static line */
-  .sig-roll.static { visibility: visible; }
-  .sig-roll.static .sig-line { display: none; }
-  .sig-roll.static .sig-line:first-child { display: block; }
-
   /* Steps */
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
   .step-card {
@@ -1001,20 +978,6 @@
     <button type="submit" id="feedbackBtn">Send feedback →</button>
   </form>
   <p class="feedback-sent" id="feedbackSent">✓ Thanks for your message!</p>
-</div>
-
-<hr class="divider">
-
-<!-- ═══════════════════════════════ SIGNATURE (Rolling text) ═══════════════════════════════ -->
-<div class="sig-roll-section">
-  <div class="sig-roll" id="sigRoll" role="img" aria-label="Javier Falcon">
-    <div class="sig-tube" aria-hidden="true">
-      <div class="sig-line">Javier Falcon</div>
-      <div class="sig-line">Javier Falcon</div>
-      <div class="sig-line">Javier Falcon</div>
-      <div class="sig-line">Javier Falcon</div>
-    </div>
-  </div>
 </div>
 
 </main>
@@ -2228,35 +2191,5 @@ document.querySelectorAll('#cardDonateBlock .kofi-btn').forEach(function(el){
 </div>
 <script>(function(){var w=document.getElementById("floatKofi");if(!w)return;var a=w.querySelector(".float-kofi");if(a)a.addEventListener("click",function(){if(window.gtag)gtag("event","donate_click",{placement:"float"});});if(+(localStorage.getItem("ka-float-hide")||0)>Date.now()){w.style.display="none";return;}var c=document.getElementById("floatKofiClose");if(c)c.addEventListener("click",function(e){e.preventDefault();w.style.display="none";localStorage.setItem("ka-float-hide",String(Date.now()+7*864e5));});})();</script>
 
-<!-- Rolling signature — GSAP SplitText (based on https://codepen.io/GreenSock/pen/dPMjJWv) -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
-<script>
-window.addEventListener('load', function(){
-  var roll = document.getElementById('sigRoll');
-  if (!roll) return;
-  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduced || !window.gsap || !window.SplitText) { roll.classList.add('static'); return; }
-  try {
-    gsap.registerPlugin(SplitText);
-    var lines = roll.querySelectorAll('.sig-line');
-    var splitLines = Array.prototype.map.call(lines, function(line){
-      return new SplitText(line, { type: 'chars', charsClass: 'char' });
-    });
-    gsap.set(lines, { perspective: 700, transformStyle: 'preserve-3d' });
-    gsap.set(roll, { visibility: 'visible' });
-    var transformOrigin = '50% 50% ' + (-window.innerWidth / 8);
-    var tl = gsap.timeline({ repeat: -1 });
-    splitLines.forEach(function(split, index){
-      tl.fromTo(
-        split.chars,
-        { rotationX: -90 },
-        { rotationX: 90, stagger: 0.08, duration: 0.9, ease: 'none', transformOrigin: transformOrigin },
-        index * 0.45
-      );
-    });
-  } catch (e) { roll.classList.add('static'); }
-});
-</script>
 </body>
 </html>
