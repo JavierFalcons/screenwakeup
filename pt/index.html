@@ -1430,8 +1430,11 @@ async function togglePiP(){
       x.fillStyle = '#11141f'; x.fillRect(0, 0, 480, 270);
       x.textAlign = 'center';
       x.fillStyle = '#5ee0c0';
+      const t = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', second:'2-digit'});
       x.font = '700 84px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
-      x.fillText(new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', second:'2-digit'}), 240, 132);
+      const tw = x.measureText(t).width;
+      if(tw > 440) x.font = '700 ' + Math.max(28, Math.floor(84 * 440 / tw)) + 'px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+      x.fillText(t, 240, 132);
       x.fillStyle = '#8892a4';
       x.font = '600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
       x.fillText('screenwakeup.com', 240, 208);
