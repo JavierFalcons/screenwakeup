@@ -766,7 +766,7 @@
   <p class="section-tag" id="feedbackTag">Feedback</p>
   <h2 id="feedbackH2">Déjanos un comentario</h2>
   <p class="lead" id="feedbackLead">Cuéntanos qué te parece o cómo podemos mejorar.</p>
-  <form class="feedback-form" name="feedback" method="POST" data-netlify="true" id="feedbackForm">
+  <form class="feedback-form" name="feedback" method="POST" id="feedbackForm">
       <input type="hidden" name="form-name" value="feedback">
     <input type="text" name="name" id="feedbackNameInput" placeholder="Tu nombre (opcional)" autocomplete="off">
     <textarea name="message" id="feedbackMsgInput" placeholder="Tu comentario o sugerencia..." required></textarea>
@@ -842,7 +842,7 @@ const LANG = {
       ["Can I keep my screen awake for free?","Yes, screenwakeup.com is 100% free with no time limits. The free plan includes wake lock, timer (up to 4h), dark/light mode, and 5 languages."]
     ],
     feedbackTag:"Feedback",feedbackH2:"Leave us a comment",feedbackLead:"Tell us what you think or how we can improve.",
-    feedbackName:"Your name (optional)",feedbackMsg:"Your comment or suggestion...",feedbackBtn:"Send feedback →",feedbackSent:"✓ Thanks for your message!",
+    feedbackName:"Your name (optional)",feedbackMsg:"Your comment or suggestion...",feedbackBtn:"Send feedback →",feedbackSent:"✓ Thanks for your message!",feedbackErr:"✗ Couldn't send — please try again later",
     supportTag:"INDEPENDENT PROJECT",
     supportH2:"Did we save your day? Buy us a coffee ☕",
     supportP:"We built ScreenWakeUp so your screen never interrupts your workflow. No annoying sign-ups, no paywalls, and 100% instant. If this tool gave you peace of mind or saved you even one hiccup today, consider supporting our work. A small coffee on Ko-fi is the real engine that keeps this site free, independent, and alive for you.",
@@ -902,7 +902,7 @@ const LANG = {
       ["¿Cómo mantengo la pantalla activa en Chrome sin una extensión?","Solo abre screenwakeup.com y pulsa el botón. Usa la Wake Lock API integrada de Chrome, así que no necesitas ninguna extensión ni descarga."],
       ["¿Puedo mantener la pantalla encendida durante un vídeo o un curso en línea?","Sí. Inicia la herramienta antes de darle a reproducir y tu pantalla no se atenuará ni se bloqueará mientras miras, aunque no toques el teclado."]],
     feedbackTag:"Comentarios",feedbackH2:"Déjanos un comentario",feedbackLead:"Cuéntanos qué piensas o cómo podemos mejorar.",
-    feedbackName:"Tu nombre (opcional)",feedbackMsg:"Tu comentario o sugerencia...",feedbackBtn:"Enviar comentario →",feedbackSent:"✓ ¡Gracias por tu mensaje!",
+    feedbackName:"Tu nombre (opcional)",feedbackMsg:"Tu comentario o sugerencia...",feedbackBtn:"Enviar comentario →",feedbackSent:"✓ ¡Gracias por tu mensaje!",feedbackErr:"✗ No se pudo enviar — inténtalo más tarde",
     supportTag:"PROYECTO INDEPENDIENTE",
     supportH2:"¿Te salvamos el día? Invítanos a un café ☕",
     supportP:"Construimos ScreenWakeUp para que tu pantalla nunca interrumpa tu flujo de trabajo. Sin registros molestos, sin muros de pago y 100% al instante. Si esta herramienta te ha dado tranquilidad o te ha ahorrado un solo contratiempo hoy, considera apoyar nuestro trabajo. Un pequeño café en Ko-fi es el motor real que mantiene este sitio libre, independiente y vivo para ti.",
@@ -952,7 +952,7 @@ const LANG = {
       ["Quais navegadores são suportados?","Chrome 84+, Edge 84+, Opera 70+, Samsung Internet 12+ e Safari 16.4+ no iOS. Firefox usa um método alternativo."]
     ],
     feedbackTag:"Comentários",feedbackH2:"Deixe um comentário",feedbackLead:"Diga-nos o que pensa ou como podemos melhorar.",
-    feedbackName:"Seu nome (opcional)",feedbackMsg:"Seu comentário ou sugestão...",feedbackBtn:"Enviar comentário →",feedbackSent:"✓ Obrigado pela sua mensagem!",
+    feedbackName:"Seu nome (opcional)",feedbackMsg:"Seu comentário ou sugestão...",feedbackBtn:"Enviar comentário →",feedbackSent:"✓ Obrigado pela sua mensagem!",feedbackErr:"✗ Não foi possível enviar — tente novamente mais tarde",
     supportTag:"PROJETO INDEPENDENTE",
     supportH2:"Salvamos o seu dia? Nos pague um café ☕",
     supportP:"Construímos o ScreenWakeUp para que a sua tela nunca interrompa o seu fluxo de trabalho. Sem cadastros chatos, sem paywall e 100% instantâneo. Se esta ferramenta te deu tranquilidade ou te poupou um único contratempo hoje, considera apoiar o nosso trabalho. Um pequeno café no Ko-fi é o motor real que mantém este site livre, independente e vivo para ti.",
@@ -1002,7 +1002,7 @@ const LANG = {
       ["Quels navigateurs sont supportés ?","Chrome 84+, Edge 84+, Opera 70+, Samsung Internet 12+ et Safari 16.4+ sur iOS."]
     ],
     feedbackTag:"Commentaires",feedbackH2:"Laissez un commentaire",feedbackLead:"Dites-nous ce que vous pensez ou comment nous améliorer.",
-    feedbackName:"Votre nom (facultatif)",feedbackMsg:"Votre commentaire ou suggestion...",feedbackBtn:"Envoyer →",feedbackSent:"✓ Merci pour votre message !",
+    feedbackName:"Votre nom (facultatif)",feedbackMsg:"Votre commentaire ou suggestion...",feedbackBtn:"Envoyer →",feedbackSent:"✓ Merci pour votre message !",feedbackErr:"✗ Échec de l'envoi — réessayez plus tard",
     supportTag:"PROJET INDÉPENDANT",
     supportH2:"On t'a sauvé la mise ? Offre-nous un café ☕",
     supportP:"Nous avons créé ScreenWakeUp pour que ton écran n'interrompe jamais ton flux de travail. Sans inscriptions pénibles, sans paywall et 100% instantané. Si cet outil t'a apporté la tranquillité d'esprit ou t'a évité un seul accroc aujourd'hui, pense à soutenir notre travail. Un petit café sur Ko-fi est le vrai moteur qui maintient ce site gratuit, indépendant et vivant pour toi.",
@@ -1052,7 +1052,7 @@ const LANG = {
       ["Welche Browser werden unterstützt?","Chrome 84+, Edge 84+, Opera 70+, Samsung Internet 12+ und Safari 16.4+ auf iOS."]
     ],
     feedbackTag:"Feedback",feedbackH2:"Hinterlasse einen Kommentar",feedbackLead:"Sag uns, was du denkst oder wie wir uns verbessern können.",
-    feedbackName:"Dein Name (optional)",feedbackMsg:"Dein Kommentar oder Vorschlag...",feedbackBtn:"Absenden →",feedbackSent:"✓ Danke für deine Nachricht!",
+    feedbackName:"Dein Name (optional)",feedbackMsg:"Dein Kommentar oder Vorschlag...",feedbackBtn:"Absenden →",feedbackSent:"✓ Danke für deine Nachricht!",feedbackErr:"✗ Senden fehlgeschlagen — bitte später versuchen",
     supportTag:"UNABHÄNGIGES PROJEKT",
     supportH2:"Haben wir deinen Tag gerettet? Kauf uns einen Kaffee ☕",
     supportP:"Wir haben ScreenWakeUp entwickelt, damit dein Bildschirm deinen Workflow nie unterbricht. Keine lästigen Anmeldungen, keine Paywall und 100% sofort einsatzbereit. Wenn dieses Tool dir heute Ruhe gegeben oder auch nur eine Unannehmlichkeit erspart hat, unterstütze unsere Arbeit. Ein kleiner Kaffee auf Ko-fi ist der echte Motor, der diese Website frei, unabhängig und für dich am Leben hält.",
@@ -1516,26 +1516,26 @@ function shareApp() {
 document.getElementById('feedbackForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   const btn = document.getElementById('feedbackBtn');
+  const formData = new FormData(this);
+  const name = (formData.get('name') || 'Anonymous').trim();
+  const message = (formData.get('message') || '').trim();
   btn.disabled = true;
   btn.textContent = '...';
   try {
-    const formData = new FormData(this);
-    const res = await fetch('/', {
+    const res = await fetch('https://formsubmit.co/ajax/rjfalcon@live.com', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString()
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name: name, message: message, _subject: 'ScreenWakeUp Feedback', _captcha: 'false' })
     });
-    if (res.ok) {
-      btn.textContent = LANG[lang].feedbackSent;
-      btn.style.background = '#22c55e';
-      btn.style.color = '#fff';
-    } else {
-      btn.disabled = false;
-      btn.textContent = LANG[lang].feedbackBtn;
-    }
+    const data = await res.json().catch(function(){ return {}; });
+    if (!res.ok || String(data.success) === 'false') throw new Error('send failed');
+    btn.textContent = LANG[lang].feedbackSent;
+    btn.style.background = '#22c55e';
+    btn.style.color = '#fff';
   } catch(_) {
     btn.disabled = false;
-    btn.textContent = LANG[lang].feedbackBtn;
+    btn.textContent = LANG[lang].feedbackErr;
+    setTimeout(function(){ btn.textContent = LANG[lang].feedbackBtn; }, 4000);
   }
 });
 

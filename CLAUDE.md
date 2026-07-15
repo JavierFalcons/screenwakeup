@@ -26,7 +26,7 @@ ScreenWakeUp is a static HTML website — no build system, no package manager, n
 
 **Analytics:** Google Analytics 4 (`G-WKJ8R82KQZ`) is active. Google AdSense is commented out pending publisher ID.
 
-**Feedback form:** Posts to a Formspree endpoint (look for the `fetch` in the `feedbackForm` submit handler).
+**Feedback form:** Posts to formsubmit.co via AJAX (`fetch` in the `feedbackForm` submit handler, present on the main page and es/pt/fr/de — not ja/ru). Success is only shown when the server confirms; failures show a localized `feedbackErr` message. NOTE: as of 2026-07-14 formsubmit.co returns HTTP 500 for this endpoint — pending replacement with a provider the owner registers (e.g. Formspree/Web3Forms).
 
 ## Editing Translations
 
