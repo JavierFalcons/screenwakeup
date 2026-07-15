@@ -124,6 +124,7 @@
     .full-link{display:inline-block;margin-top:12px;font-size:13px;color:var(--accent);text-decoration:none}
     .full-link:hover{text-decoration:underline}
     #pipBtn{width:100%;margin-top:10px;background:var(--bg2,#11141f);color:var(--text,#eef0f6);border:1px solid var(--border);border-radius:12px;padding:12px;font-size:14px;font-weight:600;cursor:pointer;transition:border-color .2s,color .2s}
+    #pipBtn.pip-on{border-color:var(--accent);color:var(--accent)}
     #pipBtn:hover{border-color:var(--accent);color:var(--accent)}
     .feedback-form{display:flex;flex-direction:column;gap:12px;max-width:560px;margin:24px auto 0}
     .feedback-form input,.feedback-form textarea{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px 14px;color:var(--text);font-size:15px;font-family:inherit}
@@ -310,7 +311,7 @@ if(hiddenWhileActive){hiddenWhileActive=false;cardStat.textContent=LOCK_LOST;tra
 });
 var pipVideo=null,pipTick=null;
 function pipSupported(){if(!HTMLCanvasElement.prototype.captureStream)return false;var v=HTMLVideoElement.prototype;return !!(document.pictureInPictureEnabled&&v.requestPictureInPicture)||typeof v.webkitSetPresentationMode==='function';}
-function pipCleanup(){clearInterval(pipTick);if(pipVideo){pipVideo.pause();pipVideo.srcObject=null;pipVideo.remove();pipVideo=null;}}
+function pipCleanup(){clearInterval(pipTick);if(pipVideo){pipVideo.pause();pipVideo.srcObject=null;pipVideo.remove();pipVideo=null;}if(pipBtn){pipBtn.classList.remove('pip-on');pipBtn.textContent='🪟 フローティングミニウィンドウ';}}
 function togglePiP(){
 if(document.pictureInPictureElement){document.exitPictureInPicture().catch(function(){});return;}
 if(pipVideo&&pipVideo.webkitPresentationMode==='picture-in-picture'){pipVideo.webkitSetPresentationMode('inline');return;}
@@ -320,7 +321,7 @@ var draw=function(){x.fillStyle='#11141f';x.fillRect(0,0,480,270);x.textAlign='c
 draw();
 pipVideo=document.createElement('video');pipVideo.muted=true;pipVideo.setAttribute('playsinline','');pipVideo.srcObject=c.captureStream(1);pipVideo.style.cssText='position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;top:0;left:0;';
 document.body.appendChild(pipVideo);
-pipVideo.play().then(function(){pipTick=setInterval(draw,1000);pipVideo.addEventListener('leavepictureinpicture',pipCleanup);if(pipVideo.requestPictureInPicture){return pipVideo.requestPictureInPicture();}if(typeof pipVideo.webkitSetPresentationMode==='function'){pipVideo.webkitSetPresentationMode('picture-in-picture');pipVideo.addEventListener('webkitpresentationmodechanged',function(){if(pipVideo&&pipVideo.webkitPresentationMode==='inline')pipCleanup();});return;}throw new Error('NoPiPAPI');}).then(function(){track('pip_enter',{page:'/ja/'});}).catch(function(err){pipCleanup();track('pip_error',{page:'/ja/',reason:((err&&err.name)||'unknown')+((err&&err.message)?': '+String(err.message).slice(0,60):'')});});
+pipVideo.play().then(function(){pipTick=setInterval(draw,1000);pipVideo.addEventListener('leavepictureinpicture',pipCleanup);if(pipVideo.requestPictureInPicture){return pipVideo.requestPictureInPicture();}if(typeof pipVideo.webkitSetPresentationMode==='function'){pipVideo.webkitSetPresentationMode('picture-in-picture');pipVideo.addEventListener('webkitpresentationmodechanged',function(){if(pipVideo&&pipVideo.webkitPresentationMode==='inline')pipCleanup();});return;}throw new Error('NoPiPAPI');}).then(function(){track('pip_enter',{page:'/ja/'});if(pipBtn){pipBtn.classList.add('pip-on');pipBtn.textContent='✕ ミニウィンドウを閉じる';}}).catch(function(err){pipCleanup();track('pip_error',{page:'/ja/',reason:((err&&err.name)||'unknown')+((err&&err.message)?': '+String(err.message).slice(0,60):'')});});
 }catch(e){pipCleanup();track('pip_error',{page:'/ja/',reason:((e&&e.name)||'unknown')+((e&&e.message)?': '+String(e.message).slice(0,60):'')});}
 }
 var pipBtn=document.getElementById('pipBtn');
