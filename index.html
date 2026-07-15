@@ -1894,11 +1894,14 @@ document.addEventListener('visibilitychange', async ()=>{
    covered by other apps — the case a bare wake lock cannot handle. */
 let pipVideo = null, pipTick = null;
 function pipSupported(){
-  return !!(document.pictureInPictureEnabled && HTMLCanvasElement.prototype.captureStream);
+  if(!HTMLCanvasElement.prototype.captureStream) return false;
+  const v = HTMLVideoElement.prototype;
+  return !!(document.pictureInPictureEnabled && v.requestPictureInPicture) || typeof v.webkitSetPresentationMode === 'function';
 }
 async function togglePiP(){
   try{
     if(document.pictureInPictureElement){ await document.exitPictureInPicture(); return; }
+    if(pipVideo && pipVideo.webkitPresentationMode === 'picture-in-picture'){ pipVideo.webkitSetPresentationMode('inline'); return; }
     const c = document.createElement('canvas'); c.width = 480; c.height = 270;
     const x = c.getContext('2d');
     const draw = () => {
@@ -1923,12 +1926,24 @@ async function togglePiP(){
       clearInterval(pipTick);
       if(pipVideo){ pipVideo.pause(); pipVideo.srcObject = null; pipVideo.remove(); pipVideo = null; }
     });
-    await pipVideo.requestPictureInPicture();
+    if(pipVideo.requestPictureInPicture){
+      await pipVideo.requestPictureInPicture();
+    }else if(typeof pipVideo.webkitSetPresentationMode === 'function'){
+      pipVideo.webkitSetPresentationMode('picture-in-picture');
+      pipVideo.addEventListener('webkitpresentationmodechanged', () => {
+        if(pipVideo && pipVideo.webkitPresentationMode === 'inline'){
+          clearInterval(pipTick);
+          pipVideo.pause(); pipVideo.srcObject = null; pipVideo.remove(); pipVideo = null;
+        }
+      });
+    }else{
+      throw new Error('NoPiPAPI');
+    }
     track('pip_enter');
   }catch(e){
     clearInterval(pipTick);
     if(pipVideo){ pipVideo.pause(); pipVideo.srcObject = null; pipVideo.remove(); pipVideo = null; }
-    track('pip_error');
+    track('pip_error', { reason: ((e && e.name) || 'unknown') + ((e && e.message) ? ': ' + String(e.message).slice(0, 60) : '') });
   }
 }
 if(!pipSupported()){ var _pb = document.getElementById('pipBtn'); if(_pb) _pb.style.display = 'none'; }
