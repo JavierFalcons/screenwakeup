@@ -1522,13 +1522,12 @@ document.getElementById('feedbackForm').addEventListener('submit', async functio
   btn.disabled = true;
   btn.textContent = '...';
   try {
-    const res = await fetch('https://formsubmit.co/ajax/rjfalcon@live.com', {
+    const res = await fetch('https://formspree.io/f/xlgqdzqj', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ name: name, message: message, _subject: 'ScreenWakeUp Feedback', _captcha: 'false' })
+      body: JSON.stringify({ name: name, message: message, _subject: 'ScreenWakeUp Feedback' })
     });
-    const data = await res.json().catch(function(){ return {}; });
-    if (!res.ok || String(data.success) === 'false') throw new Error('send failed');
+    if (!res.ok) throw new Error('send failed');
     btn.textContent = LANG[lang].feedbackSent;
     btn.style.background = '#22c55e';
     btn.style.color = '#fff';
