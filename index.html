@@ -1949,7 +1949,28 @@ async function togglePiP(){
     if(pipVideo.requestPictureInPicture){
       await pipVideo.requestPictureInPicture();
     }else if(typeof pipVideo.webkitSetPresentationMode === 'function'){
+      // Safari can't enter PiP until the video has a decoded frame, and the
+      // canvas stream only emits one when the canvas repaints after capture
+      // starts — repaint, wait for data, then confirm the window really opened.
+      draw();
+      if(pipVideo.readyState < 2){
+        await new Promise(res => {
+          pipVideo.addEventListener('loadeddata', res, { once: true });
+          setTimeout(res, 1200);
+        });
+        draw();
+      }
+      if(!pipVideo) throw new DOMException('closed while entering PiP', 'AbortError');
       pipVideo.webkitSetPresentationMode('picture-in-picture');
+      await new Promise((res, rej) => {
+        let n = 0;
+        (function chk(){
+          if(!pipVideo) return rej(new DOMException('closed while entering PiP', 'AbortError'));
+          if(pipVideo.webkitPresentationMode === 'picture-in-picture') return res();
+          if(++n > 20) return rej(new DOMException('Safari did not open the PiP window', 'TimeoutError'));
+          setTimeout(chk, 100);
+        })();
+      });
       pipVideo.addEventListener('webkitpresentationmodechanged', () => {
         if(pipVideo && pipVideo.webkitPresentationMode === 'inline'){
           clearInterval(pipTick);
@@ -2020,16 +2041,20 @@ document.getElementById('customMin').addEventListener('keydown', e => {
 /* ────────────────────────────────────────────
    AUDIO CHIME (Web Audio API)
 ──────────────────────────────────────────── */
-let audioEnabled = false;
+let audioEnabled = false, chimeCtx = null;
 function toggleAudio() {
   audioEnabled = !audioEnabled;
   const btn = document.getElementById('audioBtn');
   btn.classList.toggle('active', audioEnabled);
-  if (audioEnabled) playChime(); // preview
+  if (audioEnabled) playChime(); // preview — also unlocks the AudioContext while we have the click gesture
 }
 function playChime() {
   try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    // One persistent context, unlocked during the preview click: a context
+    // created at timer expiry (no gesture) starts suspended in Safari and is silent.
+    if (!chimeCtx) chimeCtx = new (window.AudioContext || window.webkitAudioContext)();
+    if (chimeCtx.state === 'suspended') chimeCtx.resume();
+    const ctx = chimeCtx;
     [[523.25,0],[659.25,0.28],[783.99,0.56]].forEach(([freq,delay]) => {
       const osc = ctx.createOscillator(), gain = ctx.createGain();
       osc.connect(gain); gain.connect(ctx.destination);
