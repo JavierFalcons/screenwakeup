@@ -1430,57 +1430,70 @@ function setPipUi(on){
   b.classList.toggle('pip-on', on);
   if(l && LANG[lang]) l.textContent = on ? (LANG[lang].pipLabelOn || LANG[lang].pipLabel) : LANG[lang].pipLabel;
 }
-let pipVideo = null, pipTick = null;
+let pipVideo = null, pipTick = null, pipDraw = null;
 function pipSupported(){
   if(!HTMLCanvasElement.prototype.captureStream) return false;
   const v = HTMLVideoElement.prototype;
   return !!(document.pictureInPictureEnabled && v.requestPictureInPicture) || typeof v.webkitSetPresentationMode === 'function';
 }
+/* Safari spends the click's user activation on video.play(), so the clock
+   video must already be playing BEFORE the click: warm it up on pointerdown/
+   hover/focus and let the click do nothing but request the PiP window. */
+function pipWarmup(){
+  if(pipVideo) return;
+  const c = document.createElement('canvas'); c.width = 480; c.height = 270;
+  const x = c.getContext('2d');
+  pipDraw = () => {
+    x.fillStyle = '#11141f'; x.fillRect(0, 0, 480, 270);
+    x.textAlign = 'center';
+    x.fillStyle = '#5ee0c0';
+    const t = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', second:'2-digit'});
+    x.font = '700 84px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+    const tw = x.measureText(t).width;
+    if(tw > 440) x.font = '700 ' + Math.max(28, Math.floor(84 * 440 / tw)) + 'px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+    x.fillText(t, 240, 132);
+    x.fillStyle = '#8892a4';
+    x.font = '600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+    x.fillText('screenwakeup.com', 240, 208);
+  };
+  pipDraw();
+  pipVideo = document.createElement('video');
+  pipVideo.muted = true; pipVideo.setAttribute('playsinline', '');
+  pipVideo.srcObject = c.captureStream(1);
+  // Real 480x270 box (Safari sizes the PiP window from the element); hidden by opacity only.
+  pipVideo.style.cssText = 'position:fixed;right:0;bottom:0;width:480px;height:270px;opacity:0;pointer-events:none;z-index:-1;';
+  document.body.appendChild(pipVideo);
+  pipVideo.play().catch(()=>{});
+  pipTick = setInterval(pipDraw, 1000);
+  pipVideo.addEventListener('leavepictureinpicture', pipTeardown);
+}
+function pipTeardown(){
+  clearInterval(pipTick);
+  if(pipVideo){ pipVideo.pause(); pipVideo.srcObject = null; pipVideo.remove(); pipVideo = null; }
+  setPipUi(false);
+}
 async function togglePiP(){
   try{
     if(document.pictureInPictureElement){ await document.exitPictureInPicture(); return; }
     if(pipVideo && pipVideo.webkitPresentationMode === 'picture-in-picture'){ pipVideo.webkitSetPresentationMode('inline'); return; }
-    const c = document.createElement('canvas'); c.width = 480; c.height = 270;
-    const x = c.getContext('2d');
-    const draw = () => {
-      x.fillStyle = '#11141f'; x.fillRect(0, 0, 480, 270);
-      x.textAlign = 'center';
-      x.fillStyle = '#5ee0c0';
-      const t = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', second:'2-digit'});
-      x.font = '700 84px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
-      const tw = x.measureText(t).width;
-      if(tw > 440) x.font = '700 ' + Math.max(28, Math.floor(84 * 440 / tw)) + 'px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
-      x.fillText(t, 240, 132);
-      x.fillStyle = '#8892a4';
-      x.font = '600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
-      x.fillText('screenwakeup.com', 240, 208);
-    };
-    draw();
-    pipVideo = document.createElement('video');
-    pipVideo.muted = true; pipVideo.setAttribute('playsinline', '');
-    pipVideo.srcObject = c.captureStream(1);
-    pipVideo.style.cssText = 'position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;top:0;left:0;';
-    document.body.appendChild(pipVideo);
-    await pipVideo.play();
-    pipTick = setInterval(draw, 1000);
-    pipVideo.addEventListener('leavepictureinpicture', () => {
-      clearInterval(pipTick);
-      if(pipVideo){ pipVideo.pause(); pipVideo.srcObject = null; pipVideo.remove(); pipVideo = null; }
-      setPipUi(false);
-    });
+    pipWarmup();
     if(pipVideo.requestPictureInPicture){
+      // No awaits before the request: Safari rejects it once the click's
+      // activation is spent (a warmed-up canvas video is ready immediately).
+      if(pipVideo.readyState < 1){
+        await new Promise(res => { pipVideo.addEventListener('loadedmetadata', res, { once: true }); setTimeout(res, 1200); });
+        if(!pipVideo) throw new DOMException('closed while entering PiP', 'AbortError');
+      }
       await pipVideo.requestPictureInPicture();
     }else if(typeof pipVideo.webkitSetPresentationMode === 'function'){
-      // Safari can't enter PiP until the video has a decoded frame, and the
-      // canvas stream only emits one when the canvas repaints after capture
-      // starts — repaint, wait for data, then confirm the window really opened.
-      draw();
+      // Legacy Safari (no standard API): needs a decoded frame before entering.
+      pipDraw();
       if(pipVideo.readyState < 2){
         await new Promise(res => {
           pipVideo.addEventListener('loadeddata', res, { once: true });
           setTimeout(res, 1200);
         });
-        draw();
+        pipDraw();
       }
       if(!pipVideo) throw new DOMException('closed while entering PiP', 'AbortError');
       pipVideo.webkitSetPresentationMode('picture-in-picture');
@@ -1494,11 +1507,7 @@ async function togglePiP(){
         })();
       });
       pipVideo.addEventListener('webkitpresentationmodechanged', () => {
-        if(pipVideo && pipVideo.webkitPresentationMode === 'inline'){
-          clearInterval(pipTick);
-          pipVideo.pause(); pipVideo.srcObject = null; pipVideo.remove(); pipVideo = null;
-          setPipUi(false);
-        }
+        if(pipVideo && pipVideo.webkitPresentationMode === 'inline') pipTeardown();
       });
     }else{
       throw new Error('NoPiPAPI');
@@ -1506,13 +1515,18 @@ async function togglePiP(){
     track('pip_enter');
     setPipUi(true);
   }catch(e){
-    clearInterval(pipTick);
-    if(pipVideo){ pipVideo.pause(); pipVideo.srcObject = null; pipVideo.remove(); pipVideo = null; }
+    pipTeardown();
     track('pip_error', { reason: ((e && e.name) || 'unknown') + ((e && e.message) ? ': ' + String(e.message).slice(0, 60) : '') });
-    setPipUi(false);
   }
 }
-if(!pipSupported()){ var _pb = document.getElementById('pipBtn'); if(_pb) _pb.style.display = 'none'; }
+var _pb = document.getElementById('pipBtn');
+if(_pb){
+  if(pipSupported()){
+    ['pointerdown','mouseenter','focus','touchstart'].forEach(ev => _pb.addEventListener(ev, pipWarmup, { passive: true }));
+  }else{
+    _pb.style.display = 'none';
+  }
+}
 
 addEventListener('pagehide', ()=>{
   if(active) track('deactivate_wakelock', { session_sec: sessionStart ? Math.floor((Date.now()-sessionStart)/1000) : 0, expired: false, closed_tab: true });
