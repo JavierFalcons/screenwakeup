@@ -71,12 +71,12 @@ FLOAT_TEMPLATE = '''<div class="float-kofi-wrap" id="floatKofi">
 <script>(function(){var w=document.getElementById("floatKofi");if(!w)return;if(+(localStorage.getItem("ka-float-hide")||0)>Date.now()){w.style.display="none";return;}var c=document.getElementById("floatKofiClose");if(c)c.addEventListener("click",function(e){e.preventDefault();w.style.display="none";localStorage.setItem("ka-float-hide",String(Date.now()+7*864e5));});})();</script>'''
 
 UI = {
- "es": {"free":"herramienta gratis","tool":"Herramienta","home":"Inicio","about":"Acerca de","privacy":"Privacidad","terms":"Términos","support":"Apoyar","tagline":"Gratis para siempre · Sin rastreo","related":"Guías relacionadas","allfeatures":"Todas las funciones →","faqh":"Preguntas frecuentes"},
- "pt": {"free":"ferramenta grátis","tool":"Ferramenta","home":"Início","about":"Sobre","privacy":"Privacidade","terms":"Termos","support":"Apoiar","tagline":"Grátis para sempre · Sem rastreamento","related":"Guias relacionados","allfeatures":"Todos os recursos →","faqh":"Perguntas frequentes"},
- "fr": {"free":"outil gratuit","tool":"Outil","home":"Accueil","about":"À propos","privacy":"Confidentialité","terms":"Conditions","support":"Soutenir","tagline":"Gratuit pour toujours · Sans suivi","related":"Guides associés","allfeatures":"Toutes les fonctions →","faqh":"Questions fréquentes"},
- "de": {"free":"kostenloses Tool","tool":"Tool","home":"Startseite","about":"Über uns","privacy":"Datenschutz","terms":"AGB","support":"Unterstützen","tagline":"Für immer kostenlos · Kein Tracking","related":"Verwandte Anleitungen","allfeatures":"Alle Funktionen →","faqh":"Häufige Fragen"},
- "ja": {"free":"無料ツール","tool":"ツール","home":"ホーム","about":"概要","privacy":"プライバシー","terms":"利用規約","support":"支援する","tagline":"ずっと無料 · トラッキングなし","related":"関連ガイド","allfeatures":"すべての機能 →","faqh":"よくある質問"},
- "ru": {"free":"бесплатный инструмент","tool":"Инструмент","home":"Главная","about":"О нас","privacy":"Конфиденциальность","terms":"Условия","support":"Поддержать","tagline":"Бесплатно навсегда · Без отслеживания","related":"Похожие руководства","allfeatures":"Все функции →","faqh":"Частые вопросы"},
+ "es": {"free":"herramienta gratis","tool":"Herramienta","home":"Inicio","about":"Acerca de","privacy":"Privacidad","terms":"Términos","support":"Apoyar","tagline":"Gratis para siempre · Sin cuenta","related":"Guías relacionadas","allfeatures":"Todas las funciones →","faqh":"Preguntas frecuentes"},
+ "pt": {"free":"ferramenta grátis","tool":"Ferramenta","home":"Início","about":"Sobre","privacy":"Privacidade","terms":"Termos","support":"Apoiar","tagline":"Grátis para sempre · Sem conta","related":"Guias relacionados","allfeatures":"Todos os recursos →","faqh":"Perguntas frequentes"},
+ "fr": {"free":"outil gratuit","tool":"Outil","home":"Accueil","about":"À propos","privacy":"Confidentialité","terms":"Conditions","support":"Soutenir","tagline":"Gratuit pour toujours · Sans compte","related":"Guides associés","allfeatures":"Toutes les fonctions →","faqh":"Questions fréquentes"},
+ "de": {"free":"kostenloses Tool","tool":"Tool","home":"Startseite","about":"Über uns","privacy":"Datenschutz","terms":"AGB","support":"Unterstützen","tagline":"Für immer kostenlos · Kein Konto","related":"Verwandte Anleitungen","allfeatures":"Alle Funktionen →","faqh":"Häufige Fragen"},
+ "ja": {"free":"無料ツール","tool":"ツール","home":"ホーム","about":"概要","privacy":"プライバシー","terms":"利用規約","support":"支援する","tagline":"ずっと無料 · アカウント不要","related":"関連ガイド","allfeatures":"すべての機能 →","faqh":"よくある質問"},
+ "ru": {"free":"бесплатный инструмент","tool":"Инструмент","home":"Главная","about":"О нас","privacy":"Конфиденциальность","terms":"Условия","support":"Поддержать","tagline":"Бесплатно навсегда · Без аккаунта","related":"Похожие руководства","allfeatures":"Все функции →","faqh":"Частые вопросы"},
 }
 
 # Localized nav label for each slug (used to build the header nav linking sibling guides)
@@ -175,8 +175,7 @@ def render(slug, lang):
 {schema}
   </script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id={GA4}"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{GA4}');</script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{GA4}');(function(){{var d=0;function l(){{if(d)return;d=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id={GA4}';document.head.appendChild(s);}}if(document.readyState==='complete'){{setTimeout(l,0);}}else{{addEventListener('load',function(){{setTimeout(l,0);}});}}setTimeout(l,3500);}})();</script>
 
   <style>
 {STYLE}
