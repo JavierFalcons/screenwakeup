@@ -53,7 +53,8 @@ CONTENT["prevent-teams-away"]["es"] = dict(
  faq=[('¿Por qué Teams me marca como Ausente?', 'Microsoft Teams te marca como Ausente tras unos 5 minutos sin actividad de teclado o ratón, o cuando el equipo se bloquea o se suspende. Lee el temporizador de inactividad del sistema operativo.'),
       ('¿Cómo mantengo el estado de Teams en verde sin mover el ratón?', 'Abre screenwakeup.com y pulsa Mantener pantalla activa: tu equipo no se bloquea ni se suspende, que es el desencadenante más común. Honestamente: ninguna web puede reiniciar el temporizador de inactividad del sistema — el navegador bloquea la entrada sintética por seguridad — así que tras varios minutos sin ninguna actividad real la app puede marcarte ausente igualmente.'),
       ('¿Va contra las normas de Microsoft Teams?', 'ScreenWakeUp solo evita que la pantalla se suspenda o se bloquee — el mismo efecto que ver un vídeo — y no envía ninguna entrada falsa. No accede a Teams, a tu cuenta ni a datos de la empresa. Sigue las políticas de tu organización.'),
-      ('¿Funciona sin permisos de administrador?', 'Sí. Se ejecuta en la pestaña del navegador, sin instalación ni permisos de administrador.')],
+      ('¿Funciona sin permisos de administrador?', 'Sí. Se ejecuta en la pestaña del navegador, sin instalación ni permisos de administrador.'),
+      ('¿ScreenWakeUp falsea el tiempo de inactividad o simula actividad?', 'No. Un navegador no puede mover el ratón ni pulsar teclas — cualquier web que prometa lo contrario te está engañando. ScreenWakeUp solo mantiene tu pantalla despierta, lo que evita el desencadenante más común del estado Ausente: el bloqueo del equipo.')],
 )
 CONTENT["prevent-teams-away"]["pt"] = dict(
  title='Como evitar o status Ausente no Teams (ficar verde) — Grátis, sem instalar | ScreenWakeUp',
@@ -99,7 +100,8 @@ CONTENT["prevent-teams-away"]["pt"] = dict(
  faq=[('Por que o Teams me mostra como Ausente?', 'O Microsoft Teams te marca como Ausente após cerca de 5 minutos sem atividade de teclado ou mouse, ou quando o computador bloqueia ou suspende. Ele lê o temporizador de inatividade do sistema.'),
       ('Como mantenho o status do Teams verde sem mexer o mouse?', 'Abra screenwakeup.com e clique em Manter tela ativa: seu computador não bloqueia nem suspende — o gatilho mais comum. Honestamente: nenhum site pode reiniciar o temporizador de inatividade do sistema (o navegador bloqueia entrada sintética por segurança), então após vários minutos sem nenhuma atividade real o app ainda pode marcar você como ausente.'),
       ('Vai contra as regras do Microsoft Teams?', 'O ScreenWakeUp só impede a tela de suspender ou bloquear — o mesmo efeito de assistir a um vídeo — e não envia nenhuma entrada falsa. Não acessa o Teams, sua conta nem dados da empresa. Siga as políticas da sua organização.'),
-      ('Funciona sem direitos de administrador?', 'Sim. Roda na aba do navegador, sem instalação nem permissões de administrador.')],
+      ('Funciona sem direitos de administrador?', 'Sim. Roda na aba do navegador, sem instalação nem permissões de administrador.'),
+      ('O ScreenWakeUp falsifica o tempo de inatividade ou simula atividade?', 'Não. Um navegador não pode mover o mouse nem pressionar teclas — qualquer site que prometa o contrário está te enganando. O ScreenWakeUp só mantém sua tela acordada, o que evita o gatilho mais comum do status Ausente: o bloqueio do computador.')],
 )
 CONTENT["prevent-teams-away"]["fr"] = dict(
  title='Comment éviter le statut Absent sur Teams (rester vert) — Gratuit, sans installation | ScreenWakeUp',
@@ -145,7 +147,8 @@ CONTENT["prevent-teams-away"]["fr"] = dict(
  faq=[("Pourquoi Teams m'affiche-t-il comme Absent ?", "Microsoft Teams vous marque Absent après environ 5 minutes sans activité clavier ou souris, ou quand l'ordinateur se verrouille ou se met en veille. Il lit le minuteur d'inactivité du système."),
       ('Comment garder mon statut Teams vert sans bouger la souris ?', "Ouvrez screenwakeup.com et cliquez sur Garder l'écran allumé : votre machine ne se verrouille plus et ne se met plus en veille — le déclencheur le plus courant. Honnêtement : aucun site ne peut réinitialiser le minuteur d'inactivité du système (le navigateur bloque les saisies synthétiques par sécurité), donc après plusieurs minutes sans aucune activité réelle, l'application peut quand même vous marquer absent."),
       ('Est-ce contraire aux règles de Microsoft Teams ?', "ScreenWakeUp empêche seulement l'écran de se mettre en veille ou de se verrouiller — le même effet que regarder une vidéo — et n'envoie aucune saisie factice. Il n'accède pas à Teams, à votre compte ni aux données de l'entreprise. Suivez les règles de votre organisation."),
-      ('Fonctionne-t-il sans droits administrateur ?', "Oui. Il tourne dans l'onglet du navigateur, sans installation ni permissions administrateur.")],
+      ('Fonctionne-t-il sans droits administrateur ?', "Oui. Il tourne dans l'onglet du navigateur, sans installation ni permissions administrateur."),
+      ("ScreenWakeUp falsifie-t-il le temps d'inactivité ou simule-t-il une activité ?", "Non. Un navigateur ne peut ni bouger la souris ni frapper de touches — tout site qui promet le contraire vous trompe. ScreenWakeUp garde seulement votre écran éveillé, ce qui évite le déclencheur le plus courant du statut Absent : le verrouillage de la machine.")],
 )
 CONTENT["prevent-teams-away"]["de"] = dict(
  title='Teams-Status Abwesend verhindern (grün bleiben) — Kostenlos, ohne Installation | ScreenWakeUp',
@@ -191,7 +194,8 @@ CONTENT["prevent-teams-away"]["de"] = dict(
  faq=[('Warum zeigt Teams mich als Abwesend?', 'Microsoft Teams markiert Sie nach etwa 5 Minuten ohne Tastatur- oder Mausaktivität als Abwesend, oder wenn der Computer sperrt oder schläft. Es liest den Inaktivitäts-Timer des Systems.'),
       ('Wie halte ich meinen Teams-Status grün, ohne die Maus zu bewegen?', 'Öffnen Sie screenwakeup.com und klicken Sie auf Bildschirm wach halten: Ihr Rechner sperrt sich nicht mehr und geht nicht in den Ruhezustand — der häufigste Auslöser. Ehrlich gesagt: Keine Website kann den System-Inaktivitätstimer zurücksetzen (der Browser blockiert synthetische Eingaben aus Sicherheitsgründen), daher kann die App Sie nach mehreren Minuten völlig ohne echte Aktivität trotzdem als abwesend anzeigen.'),
       ('Verstößt das gegen die Regeln von Microsoft Teams?', 'ScreenWakeUp verhindert nur, dass der Bildschirm schläft oder sperrt — derselbe Effekt wie beim Ansehen eines Videos — und sendet keinerlei falsche Eingaben. Es greift nicht auf Teams, Ihr Konto oder Firmendaten zu. Befolgen Sie die Richtlinien Ihrer Organisation.'),
-      ('Funktioniert es ohne Administratorrechte?', 'Ja. Es läuft im Browser-Tab, ohne Installation oder Administratorrechte.')],
+      ('Funktioniert es ohne Administratorrechte?', 'Ja. Es läuft im Browser-Tab, ohne Installation oder Administratorrechte.'),
+      ('Täuscht ScreenWakeUp Inaktivitätszeit vor oder simuliert es Aktivität?', 'Nein. Ein Browser kann weder die Maus bewegen noch Tasten drücken — jede Website, die das verspricht, täuscht Sie. ScreenWakeUp hält nur Ihren Bildschirm wach und verhindert so den häufigsten Auslöser des Abwesend-Status: die Sperrung des Rechners.')],
 )
 CONTENT["prevent-teams-away"]["ja"] = dict(
  title='Teams の「退席中」を防ぐ方法（オンライン表示を維持）— 無料・インストール不要 | ScreenWakeUp',
@@ -237,7 +241,8 @@ CONTENT["prevent-teams-away"]["ja"] = dict(
  faq=[('なぜ Teams は私を「退席中」と表示するのですか？', 'Microsoft Teams は、キーボードやマウスの操作が約5分間ない場合、またはコンピュータがロック・スリープした場合に「退席中」と表示します。OS のアイドルタイマーを読み取っています。'),
       ('マウスを動かさずに Teams のステータスを緑に保つには？', 'screenwakeup.com を開いて「画面をスリープさせない」をクリックします。PCがロック・スリープしなくなり、最も一般的な原因を防げます。正直な注意点：ウェブサイトはOSのアイドルタイマーをリセットできません（ブラウザが合成入力をブロックするため）。完全な無操作が数分続くと、アプリ側で退席中と表示される場合があります。'),
       ('Microsoft Teams の規約に違反しますか？', 'ScreenWakeUp は画面のスリープとロックを防ぐだけです（動画を見ているのと同じ効果）。偽の入力は一切送りません。Teams・アカウント・社内データにはアクセスしません。所属組織のポリシーに従ってください。'),
-      ('管理者権限なしで動きますか？', 'はい。ブラウザのタブ内で動作し、インストールや管理者権限は不要です。')],
+      ('管理者権限なしで動きますか？', 'はい。ブラウザのタブ内で動作し、インストールや管理者権限は不要です。'),
+      ('ScreenWakeUp はアイドル時間を偽装したり操作をシミュレートしますか？', 'いいえ。ブラウザはマウスを動かすこともキーを押すこともできません — それができると謳うサイトはあなたを欺いています。ScreenWakeUp は画面を点けたままにするだけで、「退席中」の最も一般的な原因である PC のロックを防ぎます。')],
 )
 CONTENT["prevent-teams-away"]["ru"] = dict(
  title='Как сделать, чтобы Teams всегда был зелёным — Бесплатно, без установки | ScreenWakeUp',
@@ -284,7 +289,8 @@ CONTENT["prevent-teams-away"]["ru"] = dict(
       ('Почему Teams показывает меня как «Нет на месте»?', 'Microsoft Teams помечает вас как «Нет на месте» примерно через 5 минут без активности клавиатуры или мыши, либо когда компьютер блокируется или засыпает. Он считывает таймер бездействия системы.'),
       ('Как сохранить статус Teams зелёным, не двигая мышью?', 'Откройте screenwakeup.com и нажмите «Держать экран активным»: компьютер не заблокируется и не заснёт — это самый частый триггер. Честно: ни один сайт не может сбросить системный таймер бездействия (браузер блокирует синтетический ввод из соображений безопасности), поэтому после нескольких минут полного бездействия приложение всё же может показать вас как отсутствующего.'),
       ('Это нарушает правила Microsoft Teams?', 'ScreenWakeUp лишь не даёт экрану заснуть или заблокироваться — тот же эффект, что и просмотр видео — и не отправляет никакого поддельного ввода. Он не обращается к Teams, вашему аккаунту или данным компании. Соблюдайте политику вашей организации.'),
-      ('Работает ли без прав администратора?', 'Да. Он работает во вкладке браузера, без установки и прав администратора.')],
+      ('Работает ли без прав администратора?', 'Да. Он работает во вкладке браузера, без установки и прав администратора.'),
+      ('ScreenWakeUp подделывает время бездействия или имитирует активность?', 'Нет. Браузер не может двигать мышью или нажимать клавиши — любой сайт, обещающий обратное, вас обманывает. ScreenWakeUp лишь держит экран включённым, что устраняет самый частый триггер статуса «Нет на месте» — блокировку компьютера.')],
 )
 # ============================ caffeine-alternative ============================
 CONTENT["caffeine-alternative"]["es"] = dict(
@@ -317,6 +323,8 @@ CONTENT["caffeine-alternative"]["es"] = dict(
   </ol>
   <h2>Funciona en Mac y Windows</h2>
   <p>En <strong>macOS</strong>, ábrelo en Safari o Chrome — la pantalla sigue encendida sin tocar Ajustes del Sistema ni el Ahorro de energía. En <strong>Windows 10/11</strong>, ábrelo en Chrome o Edge — anula el tiempo de espera sin cambiar la configuración de energía.</p>
+  <h2>El equivalente de caffeinate para Windows</h2>
+  <p>En macOS existe el comando <code>caffeinate</code> de la Terminal; Windows no trae ningún equivalente integrado. Las opciones habituales son instalar <strong>PowerToys Awake</strong> de Microsoft (muy bueno, pero requiere instalación) o cambiar el plan de energía a mano. ScreenWakeUp es el equivalente sin instalar nada: abre la página, un clic, y la pantalla de tu Windows no se apaga — ideal en equipos de empresa donde no puedes instalar software.</p>
   <h2>Más que "caffeine"</h2>
   <p>Como es un kit completo, también tienes un <a class="inline" href="{HOME}">temporizador personalizado, modo Pomodoro 25/5 y reloj a pantalla completa</a>, y una <a class="inline" href="/es/prevent-teams-away/">guía para evitar el estado Ausente en Teams y Slack</a> — todo en la misma página gratis.</p>""",
  cta='Abre la alternativa gratis a Caffeine →',
@@ -325,7 +333,8 @@ CONTENT["caffeine-alternative"]["es"] = dict(
  faq=[('¿Hay una alternativa online gratis a la app Caffeine?', 'Sí. ScreenWakeUp es una alternativa gratuita y basada en navegador a la app de escritorio Caffeine. No hay nada que descargar ni instalar: abre screenwakeup.com y pulsa un botón. Usa la moderna Screen Wake Lock API y funciona en Mac, Windows, Linux y móvil.'),
       ('¿En qué se diferencia de la app de escritorio Caffeine?', 'Caffeine es una app que instalas en macOS o Windows. ScreenWakeUp hace lo mismo desde una pestaña — sin instalación, sin permisos de administrador, y funciona en todos los sistemas, incluidos Chromebook y teléfonos. Además añade temporizador personalizado, Pomodoro, reloj a pantalla completa y una mini ventana flotante (Picture-in-Picture).'),
       ('¿La alternativa online a Caffeine funciona en Mac?', 'Sí. Abre screenwakeup.com en Safari o Chrome en tu Mac y pulsa el botón. La pantalla sigue encendida sin tocar Ajustes del Sistema ni el Ahorro de energía, y la paras cuando quieras con un clic.'),
-      ('¿Es realmente gratis y sin cuenta?', 'Sí — totalmente gratis, sin registro, sin cuenta. Se ejecuta por completo en tu navegador.')],
+      ('¿Es realmente gratis y sin cuenta?', 'Sí — totalmente gratis, sin registro, sin cuenta. Se ejecuta por completo en tu navegador.'),
+      ('¿Cuál es el equivalente de caffeinate en Windows?', 'Windows no incluye un comando como el caffeinate de macOS. Puedes instalar PowerToys Awake de Microsoft o, sin instalar nada, abrir screenwakeup.com: un clic en el navegador y la pantalla no se apaga, sin permisos de administrador.')],
 )
 CONTENT["caffeine-alternative"]["pt"] = dict(
  title='Alternativa grátis ao Caffeine — Online, sem download (Mac e Windows) | ScreenWakeUp',
@@ -357,6 +366,8 @@ CONTENT["caffeine-alternative"]["pt"] = dict(
   </ol>
   <h2>Funciona em Mac e Windows</h2>
   <p>No <strong>macOS</strong>, abra no Safari ou Chrome — a tela fica acesa sem mexer nas Configurações do Sistema nem no Economizador de energia. No <strong>Windows 10/11</strong>, abra no Chrome ou Edge — ignora o tempo limite sem mudar as configurações de energia.</p>
+  <h2>O equivalente do caffeinate para Windows</h2>
+  <p>No macOS existe o comando <code>caffeinate</code> do Terminal; o Windows não traz equivalente embutido. As opções habituais são instalar o <strong>PowerToys Awake</strong> da Microsoft (ótimo, mas exige instalação) ou mudar o plano de energia à mão. O ScreenWakeUp é o equivalente sem instalar nada: abra a página, um clique, e a tela do seu Windows não apaga — ideal em computadores corporativos onde você não pode instalar software.</p>
   <h2>Mais que "caffeine"</h2>
   <p>Por ser um kit completo, você também tem um <a class="inline" href="{HOME}">timer personalizado, modo Pomodoro 25/5 e relógio em tela cheia</a>, e um <a class="inline" href="/pt/prevent-teams-away/">guia para evitar o status Ausente no Teams e Slack</a> — tudo na mesma página grátis.</p>""",
  cta='Abra a alternativa grátis ao Caffeine →',
@@ -365,7 +376,8 @@ CONTENT["caffeine-alternative"]["pt"] = dict(
  faq=[('Existe uma alternativa online grátis ao app Caffeine?', 'Sim. O ScreenWakeUp é uma alternativa gratuita baseada em navegador ao app de desktop Caffeine. Não há nada para baixar nem instalar: abra screenwakeup.com e clique em um botão. Usa a moderna Screen Wake Lock API e funciona em Mac, Windows, Linux e celular.'),
       ('Qual a diferença para o app de desktop Caffeine?', 'O Caffeine é um app que você instala no macOS ou Windows. O ScreenWakeUp faz o mesmo a partir de uma aba — sem instalação, sem direitos de administrador, e funciona em todos os sistemas, incluindo Chromebook e telefones. Ainda adiciona timer personalizado, Pomodoro, relógio em tela cheia e uma mini janela flutuante (Picture-in-Picture).'),
       ('A alternativa online ao Caffeine funciona no Mac?', 'Sim. Abra screenwakeup.com no Safari ou Chrome no seu Mac e clique no botão. A tela fica acesa sem mexer nas Configurações do Sistema nem no Economizador de energia, e você para quando quiser com um clique.'),
-      ('É realmente grátis e sem conta?', 'Sim — totalmente grátis, sem cadastro, sem conta. Roda inteiramente no seu navegador.')],
+      ('É realmente grátis e sem conta?', 'Sim — totalmente grátis, sem cadastro, sem conta. Roda inteiramente no seu navegador.'),
+      ('Qual é o equivalente do caffeinate no Windows?', 'O Windows não inclui um comando como o caffeinate do macOS. Você pode instalar o PowerToys Awake da Microsoft ou, sem instalar nada, abrir screenwakeup.com: um clique no navegador e a tela não apaga, sem direitos de administrador.')],
 )
 CONTENT["caffeine-alternative"]["fr"] = dict(
  title='Alternative gratuite à Caffeine — En ligne, sans téléchargement (Mac et Windows) | ScreenWakeUp',
@@ -397,6 +409,8 @@ CONTENT["caffeine-alternative"]["fr"] = dict(
   </ol>
   <h2>Fonctionne sur Mac et Windows</h2>
   <p>Sur <strong>macOS</strong>, ouvrez-le dans Safari ou Chrome — l'écran reste allumé sans toucher aux Réglages Système ni à l'économiseur d'énergie. Sur <strong>Windows 10/11</strong>, ouvrez-le dans Chrome ou Edge — il ignore la mise en veille sans changer les options d'alimentation.</p>
+  <h2>L'équivalent de caffeinate pour Windows</h2>
+  <p>Sur macOS il existe la commande <code>caffeinate</code> du Terminal ; Windows n'a pas d'équivalent intégré. Les options habituelles : installer <strong>PowerToys Awake</strong> de Microsoft (très bien, mais il faut l'installer) ou modifier le mode d'alimentation à la main. ScreenWakeUp est l'équivalent sans rien installer : ouvrez la page, un clic, et l'écran de votre PC Windows ne s'éteint plus — idéal sur les postes d'entreprise où l'installation est interdite.</p>
   <h2>Plus qu'un « caffeine »</h2>
   <p>Comme c'est une boîte à outils complète, vous avez aussi un <a class="inline" href="{HOME}">minuteur personnalisé, un mode Pomodoro 25/5 et une horloge plein écran</a>, ainsi qu'un <a class="inline" href="/fr/prevent-teams-away/">guide pour éviter le statut Absent sur Teams et Slack</a> — le tout sur la même page gratuite.</p>""",
  cta="Ouvrir l'alternative gratuite à Caffeine →",
@@ -405,7 +419,8 @@ CONTENT["caffeine-alternative"]["fr"] = dict(
  faq=[("Existe-t-il une alternative en ligne gratuite à l'appli Caffeine ?", "Oui. ScreenWakeUp est une alternative gratuite, dans le navigateur, à l'appli de bureau Caffeine. Rien à télécharger ni installer : ouvrez screenwakeup.com et cliquez sur un bouton. Il utilise la Screen Wake Lock API moderne et fonctionne sur Mac, Windows, Linux et mobile."),
       ("Quelle différence avec l'appli de bureau Caffeine ?", 'Caffeine est une appli que vous installez sur macOS ou Windows. ScreenWakeUp fait pareil depuis un onglet — sans installation, sans droits administrateur, et sur tous les systèmes y compris Chromebook et téléphones. Il ajoute aussi un minuteur personnalisé, Pomodoro, une horloge plein écran et une mini-fenêtre flottante (Picture-in-Picture).'),
       ("L'alternative en ligne à Caffeine fonctionne-t-elle sur Mac ?", "Oui. Ouvrez screenwakeup.com dans Safari ou Chrome sur votre Mac et cliquez sur le bouton. L'écran reste allumé sans toucher aux Réglages Système ni à l'économiseur d'énergie, et vous l'arrêtez quand vous voulez d'un clic."),
-      ('Est-ce vraiment gratuit et sans compte ?', "Oui — entièrement gratuit, sans inscription, sans compte. Tout s'exécute dans votre navigateur.")],
+      ('Est-ce vraiment gratuit et sans compte ?', "Oui — entièrement gratuit, sans inscription, sans compte. Tout s'exécute dans votre navigateur."),
+      ("Quel est l'équivalent de caffeinate sous Windows ?", "Windows n'inclut pas de commande comme le caffeinate de macOS. Vous pouvez installer PowerToys Awake de Microsoft ou, sans rien installer, ouvrir screenwakeup.com : un clic dans le navigateur et l'écran ne s'éteint plus, sans droits administrateur.")],
 )
 CONTENT["caffeine-alternative"]["de"] = dict(
  title='Kostenlose Caffeine-Alternative — Online, ohne Download (Mac & Windows) | ScreenWakeUp',
@@ -437,6 +452,8 @@ CONTENT["caffeine-alternative"]["de"] = dict(
   </ol>
   <h2>Funktioniert auf Mac und Windows</h2>
   <p>Unter <strong>macOS</strong> öffnen Sie es in Safari oder Chrome — der Bildschirm bleibt an, ohne die Systemeinstellungen oder den Energiesparmodus anzufassen. Unter <strong>Windows 10/11</strong> öffnen Sie es in Chrome oder Edge — es überschreibt das Bildschirm-Timeout, ohne die Energieoptionen zu ändern.</p>
+  <h2>Das caffeinate-Äquivalent für Windows</h2>
+  <p>Auf macOS gibt es den Terminal-Befehl <code>caffeinate</code>; Windows bringt kein eingebautes Gegenstück mit. Üblich sind <strong>PowerToys Awake</strong> von Microsoft (sehr gut, muss aber installiert werden) oder das manuelle Ändern des Energieplans. ScreenWakeUp ist das Äquivalent ganz ohne Installation: Seite öffnen, ein Klick, und der Windows-Bildschirm bleibt an — ideal auf Firmenrechnern, auf denen Sie nichts installieren dürfen.</p>
   <h2>Mehr als nur "Caffeine"</h2>
   <p>Da es ein komplettes Toolkit ist, erhalten Sie auch einen <a class="inline" href="{HOME}">eigenen Timer, einen 25/5-Pomodoro-Modus und eine Vollbild-Uhr</a> sowie einen <a class="inline" href="/de/prevent-teams-away/">Guide, wie Sie den Abwesend-Status in Teams und Slack vermeiden</a> — alles auf derselben kostenlosen Seite.</p>""",
  cta='Kostenlose Caffeine-Alternative öffnen →',
@@ -445,7 +462,8 @@ CONTENT["caffeine-alternative"]["de"] = dict(
  faq=[('Gibt es eine kostenlose Online-Alternative zur Caffeine-App?', 'Ja. ScreenWakeUp ist eine kostenlose, browserbasierte Alternative zur Caffeine-Desktop-App. Es gibt nichts herunterzuladen oder zu installieren: Öffnen Sie screenwakeup.com und klicken Sie auf eine Schaltfläche. Es nutzt die moderne Screen Wake Lock API und funktioniert auf Mac, Windows, Linux und Mobilgeräten.'),
       ('Was ist der Unterschied zur Caffeine-Desktop-App?', 'Caffeine ist eine App, die Sie auf macOS oder Windows installieren. ScreenWakeUp macht dasselbe aus einem Tab — ohne Installation, ohne Administratorrechte, und auf jedem System inklusive Chromebook und Handys. Es bietet zusätzlich einen eigenen Timer, Pomodoro, eine Vollbild-Uhr und ein schwebendes Mini-Fenster (Bild-in-Bild).'),
       ('Funktioniert die Online-Caffeine-Alternative auf dem Mac?', 'Ja. Öffnen Sie screenwakeup.com in Safari oder Chrome auf Ihrem Mac und klicken Sie auf die Schaltfläche. Der Bildschirm bleibt an, ohne die Systemeinstellungen oder den Energiesparmodus zu berühren, und Sie stoppen ihn jederzeit mit einem Klick.'),
-      ('Ist es wirklich kostenlos und ohne Konto?', 'Ja — völlig kostenlos, ohne Anmeldung, ohne Konto. Es läuft vollständig in Ihrem Browser.')],
+      ('Ist es wirklich kostenlos und ohne Konto?', 'Ja — völlig kostenlos, ohne Anmeldung, ohne Konto. Es läuft vollständig in Ihrem Browser.'),
+      ('Was ist das caffeinate-Äquivalent für Windows?', 'Windows hat keinen Befehl wie das caffeinate von macOS. Sie können Microsofts PowerToys Awake installieren oder — ganz ohne Installation — screenwakeup.com öffnen: ein Klick im Browser und der Bildschirm bleibt an, ohne Administratorrechte.')],
 )
 CONTENT["caffeine-alternative"]["ja"] = dict(
  title='無料の Caffeine 代替ツール — オンライン・ダウンロード不要（Mac・Windows）| ScreenWakeUp',
@@ -477,6 +495,8 @@ CONTENT["caffeine-alternative"]["ja"] = dict(
   </ol>
   <h2>Mac と Windows で動作</h2>
   <p><strong>macOS</strong> では Safari か Chrome で開くと、システム設定や省エネ設定を触らずに画面が点いたままになります。<strong>Windows 10/11</strong> では Chrome か Edge で開くと、電源設定を変えずに画面のタイムアウトを上書きします。</p>
+  <h2>Windows での caffeinate 相当</h2>
+  <p>macOS にはターミナルの <code>caffeinate</code> コマンドがありますが、Windows には標準の同等機能がありません。よくある選択肢は Microsoft の <strong>PowerToys Awake</strong>（優秀ですがインストールが必要）か、電源プランを手で変えること。ScreenWakeUp は何もインストールしない同等手段です：ページを開いてワンクリックで Windows の画面が消えなくなります — ソフトを入れられない会社の PC に最適。</p>
   <h2>単なる「caffeine」以上</h2>
   <p>総合ツールなので、<a class="inline" href="{HOME}">カスタムタイマー・25/5 ポモドーロ・全画面時計</a>に加え、<a class="inline" href="/ja/prevent-teams-away/">Teams・Slack の「退席中」を防ぐガイド</a>も同じ無料ページから使えます。</p>""",
  cta='無料の Caffeine 代替を開く →',
@@ -485,7 +505,8 @@ CONTENT["caffeine-alternative"]["ja"] = dict(
  faq=[('Caffeine アプリの無料オンライン代替はありますか？', 'はい。ScreenWakeUp は Caffeine デスクトップアプリの無料・ブラウザベースの代替です。ダウンロードやインストールは不要で、screenwakeup.com を開いてボタンを押すだけ。最新の Screen Wake Lock API を使い、Mac・Windows・Linux・モバイルで動作します。'),
       ('Caffeine デスクトップアプリとの違いは？', 'Caffeine は macOS や Windows にインストールするアプリです。ScreenWakeUp はタブから同じことを行い、インストール不要・管理者権限不要で、Chromebook やスマホを含むあらゆる OS で動作します。さらにカスタムタイマー、ポモドーロ、全画面時計、フローティング・ミニウィンドウ（ピクチャ・イン・ピクチャ）も備えます。'),
       ('オンラインの Caffeine 代替は Mac で動きますか？', 'はい。Mac の Safari か Chrome で screenwakeup.com を開いてボタンを押すだけ。システム設定や省エネ設定を触らずに画面が点いたままになり、ワンクリックでいつでも停止できます。'),
-      ('本当に無料・アカウント不要ですか？', 'はい — 完全無料、登録不要、アカウント不要。すべてブラウザ内で動作します。')],
+      ('本当に無料・アカウント不要ですか？', 'はい — 完全無料、登録不要、アカウント不要。すべてブラウザ内で動作します。'),
+      ('Windows で caffeinate に相当するものは？', 'Windows には macOS の caffeinate のようなコマンドはありません。Microsoft の PowerToys Awake をインストールするか、何も入れずに screenwakeup.com を開くだけ：ブラウザでワンクリック、管理者権限も不要で画面が消えなくなります。')],
 )
 CONTENT["caffeine-alternative"]["ru"] = dict(
  title='Бесплатная замена Caffeine — Онлайн, без загрузки (Mac и Windows) | ScreenWakeUp',
@@ -517,6 +538,8 @@ CONTENT["caffeine-alternative"]["ru"] = dict(
   </ol>
   <h2>Работает на Mac и Windows</h2>
   <p>На <strong>macOS</strong> откройте в Safari или Chrome — экран остаётся включённым, не трогая Системные настройки или Экономию энергии. На <strong>Windows 10/11</strong> откройте в Chrome или Edge — переопределяет тайм-аут экрана, не меняя настройки электропитания.</p>
+  <h2>Аналог caffeinate для Windows</h2>
+  <p>На macOS есть команда Терминала <code>caffeinate</code>; во Windows встроенного аналога нет. Обычные варианты — установить <strong>PowerToys Awake</strong> от Microsoft (отличный, но требует установки) или вручную менять план электропитания. ScreenWakeUp — это аналог без установки: откройте страницу, один клик — и экран Windows не гаснет. Идеально для корпоративных компьютеров, где нельзя ставить программы.</p>
   <h2>Больше, чем просто «caffeine»</h2>
   <p>Это полноценный набор инструментов, поэтому вы также получаете <a class="inline" href="{HOME}">свой таймер, режим Pomodoro 25/5 и полноэкранные часы</a>, а ещё <a class="inline" href="/ru/prevent-teams-away/">руководство, как избежать статуса «Нет на месте» в Teams и Slack</a> — всё на одной бесплатной странице.</p>""",
  cta='Открыть бесплатную замену Caffeine →',
@@ -525,12 +548,13 @@ CONTENT["caffeine-alternative"]["ru"] = dict(
  faq=[('Есть ли бесплатная онлайн-замена приложению Caffeine?', 'Да. ScreenWakeUp — бесплатная браузерная замена настольному приложению Caffeine. Ничего скачивать и устанавливать не нужно: откройте screenwakeup.com и нажмите кнопку. Он использует современный Screen Wake Lock API и работает на Mac, Windows, Linux и мобильных.'),
       ('Чем он отличается от настольного приложения Caffeine?', 'Caffeine — приложение, которое вы устанавливаете на macOS или Windows. ScreenWakeUp делает то же из вкладки — без установки, без прав администратора, и на любой системе, включая Chromebook и телефоны. Также добавляет свой таймер, Pomodoro, полноэкранные часы и плавающее мини-окно (картинка-в-картинке).'),
       ('Работает ли онлайн-замена Caffeine на Mac?', 'Да. Откройте screenwakeup.com в Safari или Chrome на Mac и нажмите кнопку. Экран остаётся включённым, не трогая Системные настройки или Экономию энергии, и вы останавливаете его одним кликом в любой момент.'),
-      ('Это действительно бесплатно и без аккаунта?', 'Да — полностью бесплатно, без регистрации, без аккаунта. Всё работает в вашем браузере.')],
+      ('Это действительно бесплатно и без аккаунта?', 'Да — полностью бесплатно, без регистрации, без аккаунта. Всё работает в вашем браузере.'),
+      ('Какой аналог caffeinate есть для Windows?', 'Во Windows нет команды вроде caffeinate из macOS. Можно установить PowerToys Awake от Microsoft или — ничего не устанавливая — открыть screenwakeup.com: один клик в браузере, и экран не гаснет, без прав администратора.')],
 )
 # ============================ keep-screen-awake-iphone ============================
 CONTENT["keep-screen-awake-iphone"]["es"] = dict(
  title='Cómo mantener la pantalla del iPhone encendida — Gratis, sin app (iOS y iPad) | ScreenWakeUp',
- desc='¿Cómo hacer que tu pantalla no se apague en el iPhone? Abre una página web gratis, toca una vez y listo — sin cambiar el Bloqueo automático ni instalar apps. Safari y Chrome, iOS 16.4+. Ideal para recetas, lectura y juegos.',
+ desc='¿La pantalla del iPhone se apaga sola? Manténla encendida con un toque: página web gratis, sin app y sin cambiar el Bloqueo automático. Safari y Chrome, iOS 16.4+. Para recetas, partituras, juegos y mapas.',
  keywords='mantener pantalla iphone encendida, pantalla iphone no se apaga, evitar bloqueo automatico iphone, ipad pantalla activa, mantener pantalla ios, pantalla iphone siempre encendida, como hacer que mi pantalla no se apague iphone, pantalla encendida para un juego iphone',
  ogtitle='Cómo mantener la pantalla del iPhone encendida — Gratis, sin app',
  ogdesc='Mantén encendida la pantalla de tu iPhone o iPad desde Safari. Sin app, sin tocar el Bloqueo automático. Gratis.',
@@ -553,6 +577,8 @@ CONTENT["keep-screen-awake-iphone"]["es"] = dict(
     <li><strong>iOS / iPadOS 16.4 o posterior</strong> para la Wake Lock API nativa en Safari.</li>
     <li>La pestaña debe permanecer <strong>abierta y visible</strong> — si cambias de app o bloqueas el teléfono, iOS libera el bloqueo y lo recupera al volver.</li>
   </ul>
+  <h2>¿Y dentro de apps y juegos? Usa Acceso Guiado</h2>
+  <p>Honesto: una página web solo puede mantener la pantalla encendida <strong>mientras la ves en el navegador</strong>. Si necesitas la pantalla siempre encendida dentro de otra app o un juego, usa la función nativa de Apple: <em>Ajustes &gt; Accesibilidad &gt; Acceso Guiado</em>, actívala y pulsa tres veces el botón lateral dentro de la app. Para todo lo que pasa en Safari o Chrome — recetas, guías, mapas, documentos — ScreenWakeUp es más rápido: un toque y nada que configurar.</p>
   <h2>Preguntas frecuentes</h2>
   <h3>¿Funciona en iPad?</h3>
   <p>Sí, igual — Safari o Chrome en iPadOS. Perfecto para recetas, presentaciones y pantallas tipo kiosco.</p>
@@ -575,11 +601,12 @@ CONTENT["keep-screen-awake-iphone"]["es"] = dict(
       ('¿Qué versión de iOS necesito?', 'iOS y iPadOS 16.4 o posterior admiten la Screen Wake Lock API en Safari. En versiones anteriores usa un método alternativo, aunque es más fiable en 16.4+.'),
       ('¿Por qué la pantalla se atenúa al bloquear el teléfono o cambiar de app?', 'El bloqueo de pantalla solo funciona mientras la pestaña está abierta y visible. Si cambias de app o bloqueas el teléfono, iOS lo libera. Vuelve a la pestaña y se reactiva automáticamente.'),
       ('¿Cómo hacer que mi pantalla no se apague en el iPhone?', 'Abre screenwakeup.com en Safari y toca «Mantener pantalla activa». La pantalla queda encendida mientras la pestaña esté abierta y visible, sin cambiar el Bloqueo automático a «Nunca».'),
-      ('¿Cómo tener la pantalla encendida para un juego en el iPhone?', 'Si la guía o el contenido está en Safari, ScreenWakeUp mantiene la pantalla encendida. Si cambias a la app del juego, iOS libera el bloqueo (ninguna web puede evitarlo); en iPad usa pantalla dividida o ajusta temporalmente el Bloqueo automático.')],
+      ('¿Cómo tener la pantalla encendida para un juego en el iPhone?', 'Si la guía o el contenido está en Safari, ScreenWakeUp mantiene la pantalla encendida. Si cambias a la app del juego, iOS libera el bloqueo (ninguna web puede evitarlo); en iPad usa pantalla dividida o ajusta temporalmente el Bloqueo automático.'),
+      ('¿Cómo mantener la pantalla encendida dentro de una app o un juego?', 'Ninguna página web puede controlar otras apps. Para eso usa el Acceso Guiado de Apple: Ajustes > Accesibilidad > Acceso Guiado y triple clic en el botón lateral dentro de la app. Para contenido en Safari o Chrome, ScreenWakeUp lo hace con un toque y sin configuración.')],
 )
 CONTENT["keep-screen-awake-iphone"]["pt"] = dict(
  title='Como manter a tela do iPhone ligada — Grátis, sem app (iOS e iPad) | ScreenWakeUp',
- desc='Como deixar a tela do iPhone ligada, sem apagar? Abra uma página web grátis, toque uma vez e pronto — sem mudar o Bloqueio automático nem instalar apps. Safari e Chrome, iOS 16.4+. Ideal para receitas, leitura e jogos.',
+ desc='A tela do iPhone apaga sozinha? Mantenha-a ligada com um toque: página web grátis, sem app e sem mudar o Bloqueio automático. Safari e Chrome, iOS 16.4+. Para receitas, partituras, jogos e mapas.',
  keywords='manter tela iphone ligada, tela iphone não apaga, evitar bloqueio automatico iphone, ipad tela ativa, manter tela ios, tela iphone sempre ligada, como deixar a tela do iphone ligada, como deixar o iphone sem apagar a tela',
  ogtitle='Como manter a tela do iPhone ligada — Grátis, sem app',
  ogdesc='Mantenha a tela do seu iPhone ou iPad ligada pelo Safari. Sem app, sem mexer no Bloqueio automático. Grátis.',
@@ -602,6 +629,8 @@ CONTENT["keep-screen-awake-iphone"]["pt"] = dict(
     <li><strong>iOS / iPadOS 16.4 ou posterior</strong> para a Wake Lock API nativa no Safari.</li>
     <li>A aba precisa ficar <strong>aberta e visível</strong> — se você trocar de app ou bloquear o telefone, o iOS libera o bloqueio e o recupera ao voltar.</li>
   </ul>
+  <h2>E dentro de apps e jogos? Use o Acesso Guiado</h2>
+  <p>Honestamente: uma página web só mantém a tela ligada <strong>enquanto você a vê no navegador</strong>. Se precisa da tela sempre ligada dentro de outro app ou jogo, use o recurso nativo da Apple: <em>Ajustes &gt; Acessibilidade &gt; Acesso Guiado</em>, ative-o e pressione três vezes o botão lateral dentro do app. Para tudo o que acontece no Safari ou Chrome — receitas, guias, mapas, documentos — o ScreenWakeUp é mais rápido: um toque e nada para configurar.</p>
   <h2>Perguntas frequentes</h2>
   <h3>Funciona no iPad?</h3>
   <p>Sim, igual — Safari ou Chrome no iPadOS. Ótimo para receitas, apresentações e telas tipo quiosque.</p>
@@ -621,11 +650,12 @@ CONTENT["keep-screen-awake-iphone"]["pt"] = dict(
       ('Funciona também no iPad?', 'Sim. Funciona igual no iPadOS no Safari ou Chrome. Mantenha a aba aberta e visível.'),
       ('Qual versão do iOS preciso?', 'iOS e iPadOS 16.4 ou posterior suportam a Screen Wake Lock API no Safari. Em versões anteriores usa um método alternativo, embora seja mais confiável no 16.4+.'),
       ('Por que a tela ainda escurece quando bloqueio o telefone ou troco de app?', 'O bloqueio de tela só funciona enquanto a aba está aberta e visível. Se você trocar de app ou bloquear o telefone, o iOS o libera. Volte à aba e ele reativa automaticamente.'),
-      ('Como deixar a tela do iPhone sempre ligada?', 'Abra screenwakeup.com no Safari e toque em «Manter tela ativa». A tela fica ligada enquanto a aba estiver aberta e visível — sem mudar o Bloqueio automático para «Nunca».')],
+      ('Como deixar a tela do iPhone sempre ligada?', 'Abra screenwakeup.com no Safari e toque em «Manter tela ativa». A tela fica ligada enquanto a aba estiver aberta e visível — sem mudar o Bloqueio automático para «Nunca».'),
+      ('Como manter a tela ligada dentro de um app ou jogo?', 'Nenhuma página web pode controlar outros apps. Para isso use o Acesso Guiado da Apple: Ajustes > Acessibilidade > Acesso Guiado e clique triplo no botão lateral dentro do app. Para conteúdo no Safari ou Chrome, o ScreenWakeUp faz isso com um toque, sem configuração.')],
 )
 CONTENT["keep-screen-awake-iphone"]["fr"] = dict(
  title="Comment garder l'écran de l'iPhone allumé — Gratuit, sans appli (iOS et iPad) | ScreenWakeUp",
- desc="Comment laisser l'écran toujours allumé sur iPhone ? Ouvrez une page web gratuite, touchez une fois, c'est fait — sans changer le Verrouillage automatique ni installer d'appli. Safari et Chrome, iOS 16.4+.",
+ desc="L'écran de votre iPhone s'éteint tout seul ? Gardez-le allumé d'un geste : page web gratuite, sans appli et sans changer le Verrouillage automatique. Safari et Chrome, iOS 16.4+. Pour recettes, partitions, jeux et cartes.",
  keywords="garder écran iphone allumé, écran iphone ne s'éteint pas, éviter verrouillage automatique iphone, ipad écran allumé, garder écran ios, écran iphone toujours allumé, comment laisser l'écran toujours allumé iphone",
  ogtitle="Comment garder l'écran de l'iPhone allumé — Gratuit, sans appli",
  ogdesc="Gardez l'écran de votre iPhone ou iPad allumé depuis Safari. Sans appli, sans toucher au Verrouillage automatique. Gratuit.",
@@ -648,6 +678,8 @@ CONTENT["keep-screen-awake-iphone"]["fr"] = dict(
     <li><strong>iOS / iPadOS 16.4 ou ultérieur</strong> pour la Wake Lock API native dans Safari.</li>
     <li>L'onglet doit rester <strong>ouvert et visible</strong> — si vous changez d'appli ou verrouillez le téléphone, iOS libère le verrou et le réacquiert à votre retour.</li>
   </ul>
+  <h2>Et dans les applis et les jeux ? Utilisez l'Accès guidé</h2>
+  <p>Honnêtement : une page web ne peut garder l'écran allumé <strong>que pendant que vous la regardez dans le navigateur</strong>. S'il vous faut l'écran toujours allumé dans une autre appli ou un jeu, utilisez la fonction native d'Apple : <em>Réglages &gt; Accessibilité &gt; Accès guidé</em>, activez-la puis appuyez trois fois sur le bouton latéral dans l'appli. Pour tout ce qui se passe dans Safari ou Chrome — recettes, guides, cartes, documents — ScreenWakeUp est plus rapide : un geste et rien à configurer.</p>
   <h2>Questions fréquentes</h2>
   <h3>Fonctionne-t-il sur iPad ?</h3>
   <p>Oui, à l'identique — Safari ou Chrome sur iPadOS. Parfait pour les recettes, présentations et écrans de type kiosque.</p>
@@ -667,7 +699,8 @@ CONTENT["keep-screen-awake-iphone"]["fr"] = dict(
       ('Fonctionne-t-il aussi sur iPad ?', "Oui. Cela fonctionne de la même façon sur iPadOS dans Safari ou Chrome. Gardez l'onglet ouvert et visible."),
       ("Quelle version d'iOS faut-il ?", "iOS et iPadOS 16.4 ou ultérieur prennent en charge la Screen Wake Lock API dans Safari. Sur les versions plus anciennes, une méthode de secours est utilisée, mais c'est plus fiable sur 16.4+."),
       ("Pourquoi l'écran s'atténue-t-il quand je verrouille le téléphone ou change d'appli ?", "Le verrou d'écran ne fonctionne que tant que l'onglet est ouvert et visible. Si vous changez d'appli ou verrouillez le téléphone, iOS le libère. Revenez à l'onglet et il se réactive automatiquement."),
-      ("Comment laisser l'écran toujours allumé sur iPhone ?", "Ouvrez screenwakeup.com dans Safari et touchez « Garder l'écran éveillé ». L'écran reste allumé tant que l'onglet est ouvert et visible — sans changer le Verrouillage automatique.")],
+      ("Comment laisser l'écran toujours allumé sur iPhone ?", "Ouvrez screenwakeup.com dans Safari et touchez « Garder l'écran éveillé ». L'écran reste allumé tant que l'onglet est ouvert et visible — sans changer le Verrouillage automatique."),
+      ("Comment garder l'écran allumé dans une appli ou un jeu ?", "Aucune page web ne peut contrôler d'autres applis. Pour cela, utilisez l'Accès guidé d'Apple : Réglages > Accessibilité > Accès guidé, puis triple-clic sur le bouton latéral dans l'appli. Pour le contenu dans Safari ou Chrome, ScreenWakeUp le fait d'un geste, sans configuration.")],
 )
 CONTENT["keep-screen-awake-iphone"]["de"] = dict(
  title='iPhone-Bildschirm anlassen — Kostenlos, ohne App (iOS & iPad) | ScreenWakeUp',
@@ -694,6 +727,8 @@ CONTENT["keep-screen-awake-iphone"]["de"] = dict(
     <li><strong>iOS / iPadOS 16.4 oder neuer</strong> für die native Wake Lock API in Safari.</li>
     <li>Der Tab muss <strong>offen und sichtbar</strong> bleiben — wechseln Sie die App oder sperren Sie das Handy, gibt iOS die Sperre frei und holt sie bei der Rückkehr zurück.</li>
   </ul>
+  <h2>Und in Apps und Spielen? Nutzen Sie den geführten Zugriff</h2>
+  <p>Ehrlich gesagt: Eine Webseite kann den Bildschirm nur anlassen, <strong>solange Sie sie im Browser ansehen</strong>. Brauchen Sie den Bildschirm dauerhaft an in einer anderen App oder einem Spiel, nutzen Sie Apples native Funktion: <em>Einstellungen &gt; Bedienungshilfen &gt; Geführter Zugriff</em>, aktivieren und in der App dreimal die Seitentaste drücken. Für alles in Safari oder Chrome — Rezepte, Guides, Karten, Dokumente — ist ScreenWakeUp schneller: ein Tipp, nichts zu konfigurieren.</p>
   <h2>Häufige Fragen</h2>
   <h3>Funktioniert es auf dem iPad?</h3>
   <p>Ja, identisch — Safari oder Chrome unter iPadOS. Ideal für Rezepte, Präsentationen und Kiosk-Displays.</p>
@@ -710,7 +745,8 @@ CONTENT["keep-screen-awake-iphone"]["de"] = dict(
  faq=[('Wie lasse ich den iPhone-Bildschirm an, ohne die automatische Sperre zu ändern?', "Öffnen Sie screenwakeup.com in Safari und tippen Sie auf 'Bildschirm wach halten'. Es nutzt die Screen Wake Lock API (iOS 16.4+), um den Bildschirm anzulassen, solange der Tab offen ist — ohne Einstellungen > Anzeige & Helligkeit > Automatische Sperre zu ändern."),
       ('Funktioniert es auch auf dem iPad?', 'Ja. Es funktioniert genauso unter iPadOS in Safari oder Chrome. Lassen Sie den Tab offen und sichtbar.'),
       ('Welche iOS-Version brauche ich?', 'iOS und iPadOS 16.4 oder neuer unterstützen die Screen Wake Lock API in Safari. Auf älteren Versionen wird eine Ausweichmethode genutzt, am zuverlässigsten ist es ab 16.4.'),
-      ('Warum dimmt der Bildschirm trotzdem, wenn ich das Handy sperre oder die App wechsle?', 'Die Bildschirmsperre wirkt nur, solange der Tab offen und sichtbar ist. Wechseln Sie die App oder sperren das Handy, gibt iOS sie frei. Kehren Sie zum Tab zurück, aktiviert sie sich automatisch.')],
+      ('Warum dimmt der Bildschirm trotzdem, wenn ich das Handy sperre oder die App wechsle?', 'Die Bildschirmsperre wirkt nur, solange der Tab offen und sichtbar ist. Wechseln Sie die App oder sperren das Handy, gibt iOS sie frei. Kehren Sie zum Tab zurück, aktiviert sie sich automatisch.'),
+      ('Wie bleibt der Bildschirm in einer App oder einem Spiel an?', 'Keine Webseite kann andere Apps steuern. Nutzen Sie dafür Apples geführten Zugriff: Einstellungen > Bedienungshilfen > Geführter Zugriff, dann Dreifachklick auf die Seitentaste in der App. Für Inhalte in Safari oder Chrome erledigt ScreenWakeUp es mit einem Tipp, ohne Konfiguration.')],
 )
 CONTENT["keep-screen-awake-iphone"]["ja"] = dict(
  title='iPhone の画面をスリープさせない方法 — 無料・アプリ不要（iOS・iPad）| ScreenWakeUp',
@@ -737,6 +773,8 @@ CONTENT["keep-screen-awake-iphone"]["ja"] = dict(
     <li>Safari のネイティブ Wake Lock API には <strong>iOS / iPadOS 16.4 以降</strong>。</li>
     <li>タブは<strong>開いたまま表示</strong>しておく必要があります — 別アプリに切り替えたり端末をロックすると iOS がロックを解放し、戻ると再取得します。</li>
   </ul>
+  <h2>アプリやゲームの中では？「アクセスガイド」を使う</h2>
+  <p>正直に言うと、ウェブページが画面を点けたままにできるのは<strong>ブラウザで表示している間だけ</strong>です。他のアプリやゲームの中で画面を常時オンにしたい場合は、Apple 純正の機能を使ってください：<em>設定 &gt; アクセシビリティ &gt; アクセスガイド</em>をオンにし、アプリ内でサイドボタンを3回押します。Safari や Chrome で見るもの — レシピ・攻略・地図・資料 — なら ScreenWakeUp のほうが速い：ワンタップ、設定不要です。</p>
   <h2>よくある質問</h2>
   <h3>iPad でも使えますか？</h3>
   <p>はい、同じです — iPadOS の Safari か Chrome。レシピ・プレゼン・キオスク表示に最適です。</p>
@@ -753,11 +791,12 @@ CONTENT["keep-screen-awake-iphone"]["ja"] = dict(
  faq=[('自動ロックを変えずに iPhone の画面を点けたままにするには？', 'Safari で screenwakeup.com を開き、「画面をスリープさせない」をタップします。Screen Wake Lock API（iOS 16.4 以降）を使い、タブが開いている間は画面を点けたままにします。設定 > 画面表示と明るさ > 自動ロックを変える必要はありません。'),
       ('iPad でも使えますか？', 'はい。iPadOS の Safari か Chrome で同じように動作します。タブを開いたまま表示しておいてください。'),
       ('どの iOS バージョンが必要ですか？', 'iOS・iPadOS 16.4 以降が Safari の Screen Wake Lock API に対応しています。古いバージョンでは代替方式を使いますが、16.4 以降が最も安定します。'),
-      ('端末をロックしたりアプリを切り替えると画面が暗くなるのはなぜ？', 'ウェイクロックはタブが開いて表示されている間だけ有効です。別アプリに切り替えたり端末をロックすると iOS が解放します。タブに戻ると自動的に再有効化されます。')],
+      ('端末をロックしたりアプリを切り替えると画面が暗くなるのはなぜ？', 'ウェイクロックはタブが開いて表示されている間だけ有効です。別アプリに切り替えたり端末をロックすると iOS が解放します。タブに戻ると自動的に再有効化されます。'),
+      ('アプリやゲームの中で画面を点けたままにするには？', 'ウェブページは他のアプリを制御できません。その場合は Apple のアクセスガイドを使います：設定 > アクセシビリティ > アクセスガイドをオンにし、アプリ内でサイドボタンをトリプルクリック。Safari や Chrome のコンテンツなら ScreenWakeUp がワンタップ・設定不要で行います。')],
 )
 CONTENT["keep-screen-awake-iphone"]["ru"] = dict(
  title='Как не дать экрану iPhone гаснуть — Бесплатно, без приложения (iOS и iPad) | ScreenWakeUp',
- desc='Не дайте экрану iPhone или iPad выключаться — не меняя Автоблокировку и не устанавливая приложение. Бесплатный веб-инструмент для Safari и Chrome на iOS 16.4+.',
+ desc='Экран iPhone гаснет сам? Держите его включённым одним нажатием: бесплатная веб-страница, без приложения и без изменения Автоблокировки. Safari и Chrome, iOS 16.4+. Для рецептов, нот, игр и карт.',
  keywords='экран iphone не гаснет, держать экран iphone включённым, отключить автоблокировку iphone, ipad экран активен, держать экран ios, экран iphone всегда включён',
  ogtitle='Как не дать экрану iPhone гаснуть — Бесплатно, без приложения',
  ogdesc='Держите экран iPhone или iPad включённым из Safari. Без приложения, без изменения Автоблокировки. Бесплатно.',
@@ -780,6 +819,8 @@ CONTENT["keep-screen-awake-iphone"]["ru"] = dict(
     <li><strong>iOS / iPadOS 16.4 или новее</strong> для нативного Wake Lock API в Safari.</li>
     <li>Вкладка должна оставаться <strong>открытой и видимой</strong> — если переключиться на другое приложение или заблокировать телефон, iOS освобождает блокировку и восстанавливает её при возврате.</li>
   </ul>
+  <h2>А внутри приложений и игр? Используйте Гид-доступ</h2>
+  <p>Честно: веб-страница может держать экран включённым, <strong>только пока вы смотрите на неё в браузере</strong>. Если экран должен гореть внутри другого приложения или игры, используйте родную функцию Apple: <em>Настройки &gt; Универсальный доступ &gt; Гид-доступ</em>, включите его и трижды нажмите боковую кнопку в приложении. Для всего, что происходит в Safari или Chrome — рецепты, гайды, карты, документы — ScreenWakeUp быстрее: одно нажатие и никакой настройки.</p>
   <h2>Частые вопросы</h2>
   <h3>Работает ли на iPad?</h3>
   <p>Да, так же — Safari или Chrome на iPadOS. Отлично для рецептов, презентаций и экранов-витрин.</p>
@@ -796,7 +837,8 @@ CONTENT["keep-screen-awake-iphone"]["ru"] = dict(
  faq=[('Как держать экран iPhone включённым, не меняя Автоблокировку?', 'Откройте screenwakeup.com в Safari и нажмите «Держать экран активным». Он использует Screen Wake Lock API (iOS 16.4+), чтобы держать экран включённым, пока вкладка открыта, без изменения Настройки > Экран и яркость > Автоблокировка.'),
       ('Работает ли на iPad?', 'Да. Работает так же на iPadOS в Safari или Chrome. Держите вкладку открытой и на экране.'),
       ('Какая версия iOS нужна?', 'iOS и iPadOS 16.4 или новее поддерживают Screen Wake Lock API в Safari. На старых версиях используется запасной метод, но надёжнее всего на 16.4+.'),
-      ('Почему экран всё равно гаснет, когда я блокирую телефон или переключаю приложение?', 'Блокировка экрана действует, только пока вкладка открыта и видима. Если переключиться на другое приложение или заблокировать телефон, iOS освобождает её. Вернитесь на вкладку — она активируется снова.')],
+      ('Почему экран всё равно гаснет, когда я блокирую телефон или переключаю приложение?', 'Блокировка экрана действует, только пока вкладка открыта и видима. Если переключиться на другое приложение или заблокировать телефон, iOS освобождает её. Вернитесь на вкладку — она активируется снова.'),
+      ('Как держать экран включённым внутри приложения или игры?', 'Веб-страница не может управлять другими приложениями. Для этого используйте Гид-доступ Apple: Настройки > Универсальный доступ > Гид-доступ, затем тройное нажатие боковой кнопки в приложении. Для контента в Safari или Chrome ScreenWakeUp делает это одним нажатием, без настройки.')],
 )
 # ============================ prevent-zoom-idle ============================
 CONTENT["prevent-zoom-idle"]["es"] = dict(
