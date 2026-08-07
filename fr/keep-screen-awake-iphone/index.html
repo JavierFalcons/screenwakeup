@@ -105,6 +105,22 @@
           "@type": "Answer",
           "text": "Aucune page web ne peut contrôler d'autres applis. Pour cela, utilisez l'Accès guidé d'Apple : Réglages > Accessibilité > Accès guidé, puis triple-clic sur le bouton latéral dans l'appli. Pour le contenu dans Safari ou Chrome, ScreenWakeUp le fait d'un geste, sans configuration."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment empêcher l'écran de mon iPhone de s'éteindre ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Deux options. Côté système : Réglages > Luminosité et affichage > Verrouillage auto, puis choisissez une durée longue ou Jamais (pensez à revenir en arrière, car le téléphone reste déverrouillé). L'option rapide et temporaire : ouvrez screenwakeup.com dans Safari et touchez « Garder l'écran éveillé » ; l'écran reste allumé tant que l'onglet est ouvert et visible, et votre Verrouillage automatique habituel revient dès que vous le fermez."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Pourquoi le Verrouillage automatique de mon iPhone est-il grisé ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "C'est presque toujours le mode Économie d'énergie : tant qu'il est actif, iOS fixe le Verrouillage automatique à 30 secondes et bloque le réglage. Désactivez-le dans Réglages > Batterie. S'il reste grisé, c'est en général un profil de configuration ou MDM du travail ou de l'école, dans Réglages > Général > VPN et gestion de l'appareil."
+        }
       }
     ]
   },
@@ -200,8 +216,18 @@
     <li>Touchez <strong>Garder l'écran éveillé</strong> et laissez l'onglet Safari ouvert et visible.</li>
   </ol>
   <p>Astuce : ajoutez-le à l'écran d'accueil (Partager → Sur l'écran d'accueil) pour l'ouvrir comme une appli.</p>
-  <h2>Pourquoi ne pas juste changer le Verrouillage automatique ?</h2>
-  <p>Vous pouvez régler <em>Réglages &gt; Luminosité et affichage &gt; Verrouillage auto &gt; Jamais</em> — mais alors l'écran ne se verrouille <strong>jamais</strong>, vide la batterie et laisse le téléphone déverrouillé toute la journée. ScreenWakeUp garde l'écran allumé seulement quand vous en avez besoin ; à la fermeture de l'onglet, tout revient à la normale.</p>
+  <h2>Comment changer le Verrouillage automatique de l'iPhone, étape par étape</h2>
+  <p>Si vous préférez toucher au réglage système, voici le chemin exact :</p>
+  <ol>
+    <li>Ouvrez les <strong>Réglages</strong>.</li>
+    <li>Allez dans <strong>Luminosité et affichage</strong>.</li>
+    <li>Touchez <strong>Verrouillage auto</strong>.</li>
+    <li>Choisissez 30 secondes, 1, 2, 3, 4 ou 5 minutes — ou <strong>Jamais</strong>.</li>
+  </ol>
+  <p>Ça marche, mais ça se paie : avec <em>Jamais</em>, l'écran ne se verrouille <strong>plus du tout</strong>, la batterie s'use plus vite, le téléphone reste déverrouillé toute la journée et il faut ensuite penser à revenir en arrière. C'est la raison d'être de cette page : ScreenWakeUp garde l'écran allumé seulement le temps nécessaire et, dès que vous fermez l'onglet, votre Verrouillage automatique habituel reprend sans que vous ayez rien modifié.</p>
+  <h2>Le Verrouillage automatique est grisé ?</h2>
+  <p>Si l'option est grisée et intouchable, c'est presque toujours le <strong>mode Économie d'énergie</strong> : tant qu'il est actif, iOS fixe le Verrouillage automatique à 30 secondes et bloque le réglage. Désactivez-le dans <em>Réglages &gt; Batterie</em> et vous pourrez de nouveau le changer (il se coupe aussi tout seul au-dessus de 80 % de charge). S'il reste grisé, c'est en général un <strong>profil de configuration ou MDM</strong> du travail ou de l'école : vérifiez dans <em>Réglages &gt; Général &gt; VPN et gestion de l'appareil</em> ; là, c'est votre organisation qui décide.</p>
+  <p>Avertissement honnête : avec le mode Économie d'énergie actif, le navigateur peut aussi relâcher le verrou d'écran qu'utilise cette page. C'est une restriction d'iOS, pas un bug de notre côté — si l'écran s'éteint quand même, regardez du côté de la batterie.</p>
   <h2>Ce qu'il vous faut</h2>
   <ul>
     <li><strong>iOS / iPadOS 16.4 ou ultérieur</strong> pour la Wake Lock API native dans Safari.</li>

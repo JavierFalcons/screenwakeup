@@ -113,6 +113,22 @@
           "@type": "Answer",
           "text": "Ninguna página web puede controlar otras apps. Para eso usa el Acceso Guiado de Apple: Ajustes > Accesibilidad > Acceso Guiado y triple clic en el botón lateral dentro de la app. Para contenido en Safari o Chrome, ScreenWakeUp lo hace con un toque y sin configuración."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo puedo evitar que la pantalla de mi iPhone se apague?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tienes dos caminos. El del sistema: Ajustes > Pantalla y brillo > Bloqueo automático y elige un tiempo largo o Nunca (recuerda deshacerlo, porque deja el teléfono desbloqueado). El rápido y temporal: abre screenwakeup.com en Safari y toca «Mantener pantalla activa»; la pantalla no se apaga mientras la pestaña esté abierta y a la vista, y al cerrarla vuelve tu Bloqueo automático normal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué no puedo cambiar el Bloqueo automático de mi iPhone (aparece en gris)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Casi siempre es el Modo de bajo consumo: mientras está activo, iOS fija el Bloqueo automático en 30 segundos y desactiva el ajuste. Apágalo en Ajustes > Batería. Si sigue en gris, suele ser un perfil de configuración o MDM del trabajo o del centro de estudios, en Ajustes > General > VPN y gestión de dispositivos."
+        }
       }
     ]
   },
@@ -208,8 +224,18 @@
     <li>Toca <strong>Mantener pantalla activa</strong> y deja la pestaña de Safari abierta y a la vista.</li>
   </ol>
   <p>Truco: añádelo a la pantalla de inicio (Compartir → Añadir a pantalla de inicio) para abrirlo como una app.</p>
-  <h2>¿Por qué no cambiar el Bloqueo automático?</h2>
-  <p>Puedes poner <em>Ajustes &gt; Pantalla y brillo &gt; Bloqueo automático &gt; Nunca</em> — pero entonces la pantalla <strong>nunca</strong> se bloquea, gasta batería y deja el teléfono desbloqueado todo el día. ScreenWakeUp mantiene la pantalla encendida solo cuando lo necesitas; al cerrar la pestaña, todo vuelve a la normalidad.</p>
+  <h2>Cómo cambiar el Bloqueo automático del iPhone, paso a paso</h2>
+  <p>Si prefieres tocar el ajuste del sistema, este es el camino exacto:</p>
+  <ol>
+    <li>Abre <strong>Ajustes</strong>.</li>
+    <li>Entra en <strong>Pantalla y brillo</strong>.</li>
+    <li>Toca <strong>Bloqueo automático</strong>.</li>
+    <li>Elige 30 segundos, 1, 2, 3, 4 o 5 minutos — o <strong>Nunca</strong>.</li>
+  </ol>
+  <p>Funciona, pero tiene un precio: con <em>Nunca</em> la pantalla no se bloquea <strong>jamás</strong>, gasta más batería, deja el teléfono desbloqueado todo el día y luego hay que acordarse de deshacerlo. Por eso existe esta página: ScreenWakeUp mantiene la pantalla encendida solo mientras la necesitas y, al cerrar la pestaña, vuelve tu Bloqueo automático de siempre sin haber tocado nada.</p>
+  <h2>¿El Bloqueo automático te aparece en gris?</h2>
+  <p>Si la opción está atenuada y no te deja tocarla, casi siempre es el <strong>Modo de bajo consumo</strong>: mientras está activo, iOS fija el Bloqueo automático en 30 segundos y bloquea el ajuste. Desactívalo en <em>Ajustes &gt; Batería</em> y podrás cambiarlo otra vez (también se apaga solo al cargar por encima del 80%). Si sigue en gris, suele ser un <strong>perfil de configuración o MDM</strong> del trabajo o del centro de estudios: míralo en <em>Ajustes &gt; General &gt; VPN y gestión de dispositivos</em>; ahí manda tu organización y no hay truco que valga.</p>
+  <p>Aviso honesto: con el Modo de bajo consumo activo, el navegador también puede soltar el bloqueo de pantalla que usa esta página. Es una restricción de iOS, no un fallo nuestro — si ves que la pantalla se apaga igualmente, revisa la batería.</p>
   <h2>Qué necesitas</h2>
   <ul>
     <li><strong>iOS / iPadOS 16.4 o posterior</strong> para la Wake Lock API nativa en Safari.</li>

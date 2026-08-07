@@ -97,6 +97,22 @@
           "@type": "Answer",
           "text": "Keine Webseite kann andere Apps steuern. Nutzen Sie dafür Apples geführten Zugriff: Einstellungen > Bedienungshilfen > Geführter Zugriff, dann Dreifachklick auf die Seitentaste in der App. Für Inhalte in Safari oder Chrome erledigt ScreenWakeUp es mit einem Tipp, ohne Konfiguration."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie verhindere ich, dass sich der iPhone-Bildschirm ausschaltet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es gibt zwei Wege. Über das System: Einstellungen > Anzeige & Helligkeit > Automatische Sperre und eine lange Dauer oder Nie wählen (denken Sie daran, es zurückzustellen, denn das Handy bleibt entsperrt). Der schnelle, temporäre Weg: screenwakeup.com in Safari öffnen und auf «Bildschirm wach halten» tippen; der Bildschirm bleibt an, solange der Tab offen und sichtbar ist, und danach gilt wieder Ihre normale automatische Sperre."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Warum ist die automatische Sperre am iPhone ausgegraut?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fast immer wegen des Stromsparmodus: Solange er aktiv ist, setzt iOS die automatische Sperre auf 30 Sekunden und sperrt die Einstellung. Schalten Sie ihn unter Einstellungen > Batterie aus. Bleibt sie ausgegraut, steckt meist ein Konfigurations- oder MDM-Profil von Arbeit oder Schule dahinter, unter Einstellungen > Allgemein > VPN & Geräteverwaltung."
+        }
       }
     ]
   },
@@ -192,8 +208,18 @@
     <li>Tippen Sie auf <strong>Bildschirm wach halten</strong> und lassen Sie den Safari-Tab offen und sichtbar.</li>
   </ol>
   <p>Tipp: Zum Home-Bildschirm hinzufügen (Teilen → Zum Home-Bildschirm) und wie eine App öffnen.</p>
-  <h2>Warum nicht einfach die automatische Sperre ändern?</h2>
-  <p>Sie können <em>Einstellungen &gt; Anzeige & Helligkeit &gt; Automatische Sperre &gt; Nie</em> setzen — dann sperrt der Bildschirm aber <strong>nie</strong>, verbraucht Akku und lässt das Handy den ganzen Tag entsperrt. ScreenWakeUp hält den Bildschirm nur an, wenn Sie es brauchen; beim Schließen des Tabs ist alles wieder normal.</p>
+  <h2>Automatische Sperre am iPhone ändern — Schritt für Schritt</h2>
+  <p>Wenn Sie lieber die Systemeinstellung anfassen, geht es genau so:</p>
+  <ol>
+    <li>Öffnen Sie die <strong>Einstellungen</strong>.</li>
+    <li>Gehen Sie zu <strong>Anzeige &amp; Helligkeit</strong>.</li>
+    <li>Tippen Sie auf <strong>Automatische Sperre</strong>.</li>
+    <li>Wählen Sie 30 Sekunden, 1, 2, 3, 4 oder 5 Minuten — oder <strong>Nie</strong>.</li>
+  </ol>
+  <p>Das funktioniert, hat aber einen Preis: Mit <em>Nie</em> sperrt der Bildschirm <strong>überhaupt nicht mehr</strong>, der Akku leidet, das Handy bleibt den ganzen Tag entsperrt — und man muss daran denken, es wieder zurückzustellen. Genau dafür gibt es diese Seite: ScreenWakeUp hält den Bildschirm nur so lange an, wie Sie ihn brauchen; sobald Sie den Tab schließen, gilt wieder Ihre gewohnte automatische Sperre, ganz ohne Einstellungsänderung.</p>
+  <h2>Automatische Sperre ausgegraut?</h2>
+  <p>Lässt sich die Option nicht antippen, ist fast immer der <strong>Stromsparmodus</strong> schuld: Solange er aktiv ist, setzt iOS die automatische Sperre auf 30 Sekunden und sperrt die Einstellung. Schalten Sie ihn unter <em>Einstellungen &gt; Batterie</em> aus, dann können Sie sie wieder ändern (ab 80 % Ladung geht er ohnehin von selbst aus). Bleibt sie ausgegraut, steckt meist ein <strong>Konfigurations- oder MDM-Profil</strong> von Arbeit oder Schule dahinter: nachsehen unter <em>Einstellungen &gt; Allgemein &gt; VPN &amp; Geräteverwaltung</em> — dort entscheidet Ihre Organisation.</p>
+  <p>Ehrlicher Hinweis: Bei aktivem Stromsparmodus kann der Browser auch die Bildschirmsperre freigeben, die diese Seite nutzt. Das ist eine iOS-Einschränkung, kein Fehler von uns — geht der Bildschirm trotzdem aus, schauen Sie auf den Akku.</p>
   <h2>Was Sie brauchen</h2>
   <ul>
     <li><strong>iOS / iPadOS 16.4 oder neuer</strong> für die native Wake Lock API in Safari.</li>

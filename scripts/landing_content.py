@@ -570,8 +570,18 @@ CONTENT["keep-screen-awake-iphone"]["es"] = dict(
     <li>Toca <strong>Mantener pantalla activa</strong> y deja la pestaña de Safari abierta y a la vista.</li>
   </ol>
   <p>Truco: añádelo a la pantalla de inicio (Compartir → Añadir a pantalla de inicio) para abrirlo como una app.</p>
-  <h2>¿Por qué no cambiar el Bloqueo automático?</h2>
-  <p>Puedes poner <em>Ajustes &gt; Pantalla y brillo &gt; Bloqueo automático &gt; Nunca</em> — pero entonces la pantalla <strong>nunca</strong> se bloquea, gasta batería y deja el teléfono desbloqueado todo el día. ScreenWakeUp mantiene la pantalla encendida solo cuando lo necesitas; al cerrar la pestaña, todo vuelve a la normalidad.</p>
+  <h2>Cómo cambiar el Bloqueo automático del iPhone, paso a paso</h2>
+  <p>Si prefieres tocar el ajuste del sistema, este es el camino exacto:</p>
+  <ol>
+    <li>Abre <strong>Ajustes</strong>.</li>
+    <li>Entra en <strong>Pantalla y brillo</strong>.</li>
+    <li>Toca <strong>Bloqueo automático</strong>.</li>
+    <li>Elige 30 segundos, 1, 2, 3, 4 o 5 minutos — o <strong>Nunca</strong>.</li>
+  </ol>
+  <p>Funciona, pero tiene un precio: con <em>Nunca</em> la pantalla no se bloquea <strong>jamás</strong>, gasta más batería, deja el teléfono desbloqueado todo el día y luego hay que acordarse de deshacerlo. Por eso existe esta página: ScreenWakeUp mantiene la pantalla encendida solo mientras la necesitas y, al cerrar la pestaña, vuelve tu Bloqueo automático de siempre sin haber tocado nada.</p>
+  <h2>¿El Bloqueo automático te aparece en gris?</h2>
+  <p>Si la opción está atenuada y no te deja tocarla, casi siempre es el <strong>Modo de bajo consumo</strong>: mientras está activo, iOS fija el Bloqueo automático en 30 segundos y bloquea el ajuste. Desactívalo en <em>Ajustes &gt; Batería</em> y podrás cambiarlo otra vez (también se apaga solo al cargar por encima del 80%). Si sigue en gris, suele ser un <strong>perfil de configuración o MDM</strong> del trabajo o del centro de estudios: míralo en <em>Ajustes &gt; General &gt; VPN y gestión de dispositivos</em>; ahí manda tu organización y no hay truco que valga.</p>
+  <p>Aviso honesto: con el Modo de bajo consumo activo, el navegador también puede soltar el bloqueo de pantalla que usa esta página. Es una restricción de iOS, no un fallo nuestro — si ves que la pantalla se apaga igualmente, revisa la batería.</p>
   <h2>Qué necesitas</h2>
   <ul>
     <li><strong>iOS / iPadOS 16.4 o posterior</strong> para la Wake Lock API nativa en Safari.</li>
@@ -602,7 +612,9 @@ CONTENT["keep-screen-awake-iphone"]["es"] = dict(
       ('¿Por qué la pantalla se atenúa al bloquear el teléfono o cambiar de app?', 'El bloqueo de pantalla solo funciona mientras la pestaña está abierta y visible. Si cambias de app o bloqueas el teléfono, iOS lo libera. Vuelve a la pestaña y se reactiva automáticamente.'),
       ('¿Cómo hacer que mi pantalla no se apague en el iPhone?', 'Abre screenwakeup.com en Safari y toca «Mantener pantalla activa». La pantalla queda encendida mientras la pestaña esté abierta y visible, sin cambiar el Bloqueo automático a «Nunca».'),
       ('¿Cómo tener la pantalla encendida para un juego en el iPhone?', 'Si la guía o el contenido está en Safari, ScreenWakeUp mantiene la pantalla encendida. Si cambias a la app del juego, iOS libera el bloqueo (ninguna web puede evitarlo); en iPad usa pantalla dividida o ajusta temporalmente el Bloqueo automático.'),
-      ('¿Cómo mantener la pantalla encendida dentro de una app o un juego?', 'Ninguna página web puede controlar otras apps. Para eso usa el Acceso Guiado de Apple: Ajustes > Accesibilidad > Acceso Guiado y triple clic en el botón lateral dentro de la app. Para contenido en Safari o Chrome, ScreenWakeUp lo hace con un toque y sin configuración.')],
+      ('¿Cómo mantener la pantalla encendida dentro de una app o un juego?', 'Ninguna página web puede controlar otras apps. Para eso usa el Acceso Guiado de Apple: Ajustes > Accesibilidad > Acceso Guiado y triple clic en el botón lateral dentro de la app. Para contenido en Safari o Chrome, ScreenWakeUp lo hace con un toque y sin configuración.'),
+      ('¿Cómo puedo evitar que la pantalla de mi iPhone se apague?', 'Tienes dos caminos. El del sistema: Ajustes > Pantalla y brillo > Bloqueo automático y elige un tiempo largo o Nunca (recuerda deshacerlo, porque deja el teléfono desbloqueado). El rápido y temporal: abre screenwakeup.com en Safari y toca «Mantener pantalla activa»; la pantalla no se apaga mientras la pestaña esté abierta y a la vista, y al cerrarla vuelve tu Bloqueo automático normal.'),
+      ('¿Por qué no puedo cambiar el Bloqueo automático de mi iPhone (aparece en gris)?', 'Casi siempre es el Modo de bajo consumo: mientras está activo, iOS fija el Bloqueo automático en 30 segundos y desactiva el ajuste. Apágalo en Ajustes > Batería. Si sigue en gris, suele ser un perfil de configuración o MDM del trabajo o del centro de estudios, en Ajustes > General > VPN y gestión de dispositivos.')],
 )
 CONTENT["keep-screen-awake-iphone"]["pt"] = dict(
  title='Como manter a tela do iPhone ligada — Grátis, sem app (iOS e iPad) | ScreenWakeUp',
@@ -622,8 +634,18 @@ CONTENT["keep-screen-awake-iphone"]["pt"] = dict(
     <li>Toque em <strong>Manter tela ativa</strong> e deixe a aba do Safari aberta e visível.</li>
   </ol>
   <p>Dica: adicione à Tela de Início (Compartilhar → Adicionar à Tela de Início) para abrir como um app.</p>
-  <h2>Por que não mudar o Bloqueio automático?</h2>
-  <p>Você pode definir <em>Ajustes &gt; Tela e Brilho &gt; Bloqueio Automático &gt; Nunca</em> — mas aí a tela <strong>nunca</strong> bloqueia, gasta bateria e deixa o telefone desbloqueado o dia todo. O ScreenWakeUp mantém a tela ligada só quando você precisa; ao fechar a aba, tudo volta ao normal.</p>
+  <h2>Como mudar o Bloqueio automático do iPhone, passo a passo</h2>
+  <p>Se prefere mexer no ajuste do sistema, o caminho exato é este:</p>
+  <ol>
+    <li>Abra os <strong>Ajustes</strong>.</li>
+    <li>Entre em <strong>Tela e Brilho</strong>.</li>
+    <li>Toque em <strong>Bloqueio Automático</strong>.</li>
+    <li>Escolha 30 segundos, 1, 2, 3, 4 ou 5 minutos — ou <strong>Nunca</strong>.</li>
+  </ol>
+  <p>Funciona, mas tem preço: com <em>Nunca</em> a tela não bloqueia <strong>jamais</strong>, gasta mais bateria, deixa o telefone desbloqueado o dia inteiro e depois é preciso lembrar de desfazer. É por isso que esta página existe: o ScreenWakeUp mantém a tela ligada só enquanto você precisa e, ao fechar a aba, o seu Bloqueio automático de sempre volta sem você ter mexido em nada.</p>
+  <h2>O Bloqueio automático está cinza (desativado)?</h2>
+  <p>Se a opção está esmaecida e não deixa tocar, quase sempre é o <strong>Modo de Baixo Consumo</strong>: enquanto ele está ligado, o iOS fixa o Bloqueio automático em 30 segundos e trava o ajuste. Desligue-o em <em>Ajustes &gt; Bateria</em> e você poderá mudá-lo de novo (ele também se desliga sozinho ao carregar acima de 80%). Se continuar cinza, costuma ser um <strong>perfil de configuração ou MDM</strong> do trabalho ou da escola: veja em <em>Ajustes &gt; Geral &gt; VPN e Gerenciamento de Dispositivos</em>; ali quem manda é a sua organização.</p>
+  <p>Aviso honesto: com o Modo de Baixo Consumo ativo, o navegador também pode liberar o bloqueio de tela que esta página usa. É uma restrição do iOS, não uma falha nossa — se a tela apagar mesmo assim, confira a bateria.</p>
   <h2>O que você precisa</h2>
   <ul>
     <li><strong>iOS / iPadOS 16.4 ou posterior</strong> para a Wake Lock API nativa no Safari.</li>
@@ -651,7 +673,9 @@ CONTENT["keep-screen-awake-iphone"]["pt"] = dict(
       ('Qual versão do iOS preciso?', 'iOS e iPadOS 16.4 ou posterior suportam a Screen Wake Lock API no Safari. Em versões anteriores usa um método alternativo, embora seja mais confiável no 16.4+.'),
       ('Por que a tela ainda escurece quando bloqueio o telefone ou troco de app?', 'O bloqueio de tela só funciona enquanto a aba está aberta e visível. Se você trocar de app ou bloquear o telefone, o iOS o libera. Volte à aba e ele reativa automaticamente.'),
       ('Como deixar a tela do iPhone sempre ligada?', 'Abra screenwakeup.com no Safari e toque em «Manter tela ativa». A tela fica ligada enquanto a aba estiver aberta e visível — sem mudar o Bloqueio automático para «Nunca».'),
-      ('Como manter a tela ligada dentro de um app ou jogo?', 'Nenhuma página web pode controlar outros apps. Para isso use o Acesso Guiado da Apple: Ajustes > Acessibilidade > Acesso Guiado e clique triplo no botão lateral dentro do app. Para conteúdo no Safari ou Chrome, o ScreenWakeUp faz isso com um toque, sem configuração.')],
+      ('Como manter a tela ligada dentro de um app ou jogo?', 'Nenhuma página web pode controlar outros apps. Para isso use o Acesso Guiado da Apple: Ajustes > Acessibilidade > Acesso Guiado e clique triplo no botão lateral dentro do app. Para conteúdo no Safari ou Chrome, o ScreenWakeUp faz isso com um toque, sem configuração.'),
+      ('Como evitar que a tela do iPhone apague?', 'Há dois caminhos. Pelo sistema: Ajustes > Tela e Brilho > Bloqueio Automático e escolha um tempo longo ou Nunca (lembre de desfazer, porque deixa o telefone desbloqueado). O rápido e temporário: abra screenwakeup.com no Safari e toque em «Manter tela ativa»; a tela não apaga enquanto a aba estiver aberta e visível, e ao fechá-la volta o seu Bloqueio automático normal.'),
+      ('Por que não consigo mudar o Bloqueio automático do iPhone (está cinza)?', 'Quase sempre é o Modo de Baixo Consumo: enquanto está ligado, o iOS fixa o Bloqueio automático em 30 segundos e desativa o ajuste. Desligue em Ajustes > Bateria. Se continuar cinza, costuma ser um perfil de configuração ou MDM do trabalho ou da escola, em Ajustes > Geral > VPN e Gerenciamento de Dispositivos.')],
 )
 CONTENT["keep-screen-awake-iphone"]["fr"] = dict(
  title="Comment garder l'écran de l'iPhone allumé — Gratuit, sans appli (iOS et iPad) | ScreenWakeUp",
@@ -671,8 +695,18 @@ CONTENT["keep-screen-awake-iphone"]["fr"] = dict(
     <li>Touchez <strong>Garder l'écran éveillé</strong> et laissez l'onglet Safari ouvert et visible.</li>
   </ol>
   <p>Astuce : ajoutez-le à l'écran d'accueil (Partager → Sur l'écran d'accueil) pour l'ouvrir comme une appli.</p>
-  <h2>Pourquoi ne pas juste changer le Verrouillage automatique ?</h2>
-  <p>Vous pouvez régler <em>Réglages &gt; Luminosité et affichage &gt; Verrouillage auto &gt; Jamais</em> — mais alors l'écran ne se verrouille <strong>jamais</strong>, vide la batterie et laisse le téléphone déverrouillé toute la journée. ScreenWakeUp garde l'écran allumé seulement quand vous en avez besoin ; à la fermeture de l'onglet, tout revient à la normale.</p>
+  <h2>Comment changer le Verrouillage automatique de l'iPhone, étape par étape</h2>
+  <p>Si vous préférez toucher au réglage système, voici le chemin exact :</p>
+  <ol>
+    <li>Ouvrez les <strong>Réglages</strong>.</li>
+    <li>Allez dans <strong>Luminosité et affichage</strong>.</li>
+    <li>Touchez <strong>Verrouillage auto</strong>.</li>
+    <li>Choisissez 30 secondes, 1, 2, 3, 4 ou 5 minutes — ou <strong>Jamais</strong>.</li>
+  </ol>
+  <p>Ça marche, mais ça se paie : avec <em>Jamais</em>, l'écran ne se verrouille <strong>plus du tout</strong>, la batterie s'use plus vite, le téléphone reste déverrouillé toute la journée et il faut ensuite penser à revenir en arrière. C'est la raison d'être de cette page : ScreenWakeUp garde l'écran allumé seulement le temps nécessaire et, dès que vous fermez l'onglet, votre Verrouillage automatique habituel reprend sans que vous ayez rien modifié.</p>
+  <h2>Le Verrouillage automatique est grisé ?</h2>
+  <p>Si l'option est grisée et intouchable, c'est presque toujours le <strong>mode Économie d'énergie</strong> : tant qu'il est actif, iOS fixe le Verrouillage automatique à 30 secondes et bloque le réglage. Désactivez-le dans <em>Réglages &gt; Batterie</em> et vous pourrez de nouveau le changer (il se coupe aussi tout seul au-dessus de 80 % de charge). S'il reste grisé, c'est en général un <strong>profil de configuration ou MDM</strong> du travail ou de l'école : vérifiez dans <em>Réglages &gt; Général &gt; VPN et gestion de l'appareil</em> ; là, c'est votre organisation qui décide.</p>
+  <p>Avertissement honnête : avec le mode Économie d'énergie actif, le navigateur peut aussi relâcher le verrou d'écran qu'utilise cette page. C'est une restriction d'iOS, pas un bug de notre côté — si l'écran s'éteint quand même, regardez du côté de la batterie.</p>
   <h2>Ce qu'il vous faut</h2>
   <ul>
     <li><strong>iOS / iPadOS 16.4 ou ultérieur</strong> pour la Wake Lock API native dans Safari.</li>
@@ -700,7 +734,9 @@ CONTENT["keep-screen-awake-iphone"]["fr"] = dict(
       ("Quelle version d'iOS faut-il ?", "iOS et iPadOS 16.4 ou ultérieur prennent en charge la Screen Wake Lock API dans Safari. Sur les versions plus anciennes, une méthode de secours est utilisée, mais c'est plus fiable sur 16.4+."),
       ("Pourquoi l'écran s'atténue-t-il quand je verrouille le téléphone ou change d'appli ?", "Le verrou d'écran ne fonctionne que tant que l'onglet est ouvert et visible. Si vous changez d'appli ou verrouillez le téléphone, iOS le libère. Revenez à l'onglet et il se réactive automatiquement."),
       ("Comment laisser l'écran toujours allumé sur iPhone ?", "Ouvrez screenwakeup.com dans Safari et touchez « Garder l'écran éveillé ». L'écran reste allumé tant que l'onglet est ouvert et visible — sans changer le Verrouillage automatique."),
-      ("Comment garder l'écran allumé dans une appli ou un jeu ?", "Aucune page web ne peut contrôler d'autres applis. Pour cela, utilisez l'Accès guidé d'Apple : Réglages > Accessibilité > Accès guidé, puis triple-clic sur le bouton latéral dans l'appli. Pour le contenu dans Safari ou Chrome, ScreenWakeUp le fait d'un geste, sans configuration.")],
+      ("Comment garder l'écran allumé dans une appli ou un jeu ?", "Aucune page web ne peut contrôler d'autres applis. Pour cela, utilisez l'Accès guidé d'Apple : Réglages > Accessibilité > Accès guidé, puis triple-clic sur le bouton latéral dans l'appli. Pour le contenu dans Safari ou Chrome, ScreenWakeUp le fait d'un geste, sans configuration."),
+      ("Comment empêcher l'écran de mon iPhone de s'éteindre ?", "Deux options. Côté système : Réglages > Luminosité et affichage > Verrouillage auto, puis choisissez une durée longue ou Jamais (pensez à revenir en arrière, car le téléphone reste déverrouillé). L'option rapide et temporaire : ouvrez screenwakeup.com dans Safari et touchez « Garder l'écran éveillé » ; l'écran reste allumé tant que l'onglet est ouvert et visible, et votre Verrouillage automatique habituel revient dès que vous le fermez."),
+      ("Pourquoi le Verrouillage automatique de mon iPhone est-il grisé ?", "C'est presque toujours le mode Économie d'énergie : tant qu'il est actif, iOS fixe le Verrouillage automatique à 30 secondes et bloque le réglage. Désactivez-le dans Réglages > Batterie. S'il reste grisé, c'est en général un profil de configuration ou MDM du travail ou de l'école, dans Réglages > Général > VPN et gestion de l'appareil.")],
 )
 CONTENT["keep-screen-awake-iphone"]["de"] = dict(
  title='iPhone-Bildschirm anlassen — Kostenlos, ohne App (iOS & iPad) | ScreenWakeUp',
@@ -720,8 +756,18 @@ CONTENT["keep-screen-awake-iphone"]["de"] = dict(
     <li>Tippen Sie auf <strong>Bildschirm wach halten</strong> und lassen Sie den Safari-Tab offen und sichtbar.</li>
   </ol>
   <p>Tipp: Zum Home-Bildschirm hinzufügen (Teilen → Zum Home-Bildschirm) und wie eine App öffnen.</p>
-  <h2>Warum nicht einfach die automatische Sperre ändern?</h2>
-  <p>Sie können <em>Einstellungen &gt; Anzeige & Helligkeit &gt; Automatische Sperre &gt; Nie</em> setzen — dann sperrt der Bildschirm aber <strong>nie</strong>, verbraucht Akku und lässt das Handy den ganzen Tag entsperrt. ScreenWakeUp hält den Bildschirm nur an, wenn Sie es brauchen; beim Schließen des Tabs ist alles wieder normal.</p>
+  <h2>Automatische Sperre am iPhone ändern — Schritt für Schritt</h2>
+  <p>Wenn Sie lieber die Systemeinstellung anfassen, geht es genau so:</p>
+  <ol>
+    <li>Öffnen Sie die <strong>Einstellungen</strong>.</li>
+    <li>Gehen Sie zu <strong>Anzeige &amp; Helligkeit</strong>.</li>
+    <li>Tippen Sie auf <strong>Automatische Sperre</strong>.</li>
+    <li>Wählen Sie 30 Sekunden, 1, 2, 3, 4 oder 5 Minuten — oder <strong>Nie</strong>.</li>
+  </ol>
+  <p>Das funktioniert, hat aber einen Preis: Mit <em>Nie</em> sperrt der Bildschirm <strong>überhaupt nicht mehr</strong>, der Akku leidet, das Handy bleibt den ganzen Tag entsperrt — und man muss daran denken, es wieder zurückzustellen. Genau dafür gibt es diese Seite: ScreenWakeUp hält den Bildschirm nur so lange an, wie Sie ihn brauchen; sobald Sie den Tab schließen, gilt wieder Ihre gewohnte automatische Sperre, ganz ohne Einstellungsänderung.</p>
+  <h2>Automatische Sperre ausgegraut?</h2>
+  <p>Lässt sich die Option nicht antippen, ist fast immer der <strong>Stromsparmodus</strong> schuld: Solange er aktiv ist, setzt iOS die automatische Sperre auf 30 Sekunden und sperrt die Einstellung. Schalten Sie ihn unter <em>Einstellungen &gt; Batterie</em> aus, dann können Sie sie wieder ändern (ab 80 % Ladung geht er ohnehin von selbst aus). Bleibt sie ausgegraut, steckt meist ein <strong>Konfigurations- oder MDM-Profil</strong> von Arbeit oder Schule dahinter: nachsehen unter <em>Einstellungen &gt; Allgemein &gt; VPN &amp; Geräteverwaltung</em> — dort entscheidet Ihre Organisation.</p>
+  <p>Ehrlicher Hinweis: Bei aktivem Stromsparmodus kann der Browser auch die Bildschirmsperre freigeben, die diese Seite nutzt. Das ist eine iOS-Einschränkung, kein Fehler von uns — geht der Bildschirm trotzdem aus, schauen Sie auf den Akku.</p>
   <h2>Was Sie brauchen</h2>
   <ul>
     <li><strong>iOS / iPadOS 16.4 oder neuer</strong> für die native Wake Lock API in Safari.</li>
@@ -746,7 +792,9 @@ CONTENT["keep-screen-awake-iphone"]["de"] = dict(
       ('Funktioniert es auch auf dem iPad?', 'Ja. Es funktioniert genauso unter iPadOS in Safari oder Chrome. Lassen Sie den Tab offen und sichtbar.'),
       ('Welche iOS-Version brauche ich?', 'iOS und iPadOS 16.4 oder neuer unterstützen die Screen Wake Lock API in Safari. Auf älteren Versionen wird eine Ausweichmethode genutzt, am zuverlässigsten ist es ab 16.4.'),
       ('Warum dimmt der Bildschirm trotzdem, wenn ich das Handy sperre oder die App wechsle?', 'Die Bildschirmsperre wirkt nur, solange der Tab offen und sichtbar ist. Wechseln Sie die App oder sperren das Handy, gibt iOS sie frei. Kehren Sie zum Tab zurück, aktiviert sie sich automatisch.'),
-      ('Wie bleibt der Bildschirm in einer App oder einem Spiel an?', 'Keine Webseite kann andere Apps steuern. Nutzen Sie dafür Apples geführten Zugriff: Einstellungen > Bedienungshilfen > Geführter Zugriff, dann Dreifachklick auf die Seitentaste in der App. Für Inhalte in Safari oder Chrome erledigt ScreenWakeUp es mit einem Tipp, ohne Konfiguration.')],
+      ('Wie bleibt der Bildschirm in einer App oder einem Spiel an?', 'Keine Webseite kann andere Apps steuern. Nutzen Sie dafür Apples geführten Zugriff: Einstellungen > Bedienungshilfen > Geführter Zugriff, dann Dreifachklick auf die Seitentaste in der App. Für Inhalte in Safari oder Chrome erledigt ScreenWakeUp es mit einem Tipp, ohne Konfiguration.'),
+      ('Wie verhindere ich, dass sich der iPhone-Bildschirm ausschaltet?', 'Es gibt zwei Wege. Über das System: Einstellungen > Anzeige & Helligkeit > Automatische Sperre und eine lange Dauer oder Nie wählen (denken Sie daran, es zurückzustellen, denn das Handy bleibt entsperrt). Der schnelle, temporäre Weg: screenwakeup.com in Safari öffnen und auf «Bildschirm wach halten» tippen; der Bildschirm bleibt an, solange der Tab offen und sichtbar ist, und danach gilt wieder Ihre normale automatische Sperre.'),
+      ('Warum ist die automatische Sperre am iPhone ausgegraut?', 'Fast immer wegen des Stromsparmodus: Solange er aktiv ist, setzt iOS die automatische Sperre auf 30 Sekunden und sperrt die Einstellung. Schalten Sie ihn unter Einstellungen > Batterie aus. Bleibt sie ausgegraut, steckt meist ein Konfigurations- oder MDM-Profil von Arbeit oder Schule dahinter, unter Einstellungen > Allgemein > VPN & Geräteverwaltung.')],
 )
 CONTENT["keep-screen-awake-iphone"]["ja"] = dict(
  title='iPhone の画面をスリープさせない方法 — 無料・アプリ不要（iOS・iPad）| ScreenWakeUp',
@@ -766,8 +814,18 @@ CONTENT["keep-screen-awake-iphone"]["ja"] = dict(
     <li><strong>「画面をスリープさせない」</strong>をタップし、Safari のタブを開いたまま表示しておきます。</li>
   </ol>
   <p>ヒント：ホーム画面に追加（共有 → ホーム画面に追加）すると、アプリのように開けます。</p>
-  <h2>自動ロックを変えるだけではダメ？</h2>
-  <p><em>設定 &gt; 画面表示と明るさ &gt; 自動ロック &gt; なし</em>に設定もできますが、それだと画面が<strong>一切</strong>ロックされず、バッテリーを消費し、一日中ロック解除のままになります。ScreenWakeUp は必要なときだけ画面を点け、タブを閉じれば元に戻ります。</p>
+  <h2>iPhone の自動ロックを変更する手順</h2>
+  <p>システム設定を変えたい場合は、次の手順です。</p>
+  <ol>
+    <li><strong>設定</strong>を開きます。</li>
+    <li><strong>画面表示と明るさ</strong>に進みます。</li>
+    <li><strong>自動ロック</strong>をタップします。</li>
+    <li>30秒・1・2・3・4・5分、または<strong>なし</strong>を選びます。</li>
+  </ol>
+  <p>これで解決しますが、代償もあります。<em>なし</em>にすると画面が<strong>まったく</strong>ロックされず、バッテリーを余計に消費し、一日中ロック解除のままになり、後で戻すのを忘れがちです。このページはそのためにあります。ScreenWakeUp は必要な間だけ画面を点けたままにし、タブを閉じれば設定を一切いじらずにいつもの自動ロックへ戻ります。</p>
+  <h2>自動ロックがグレーアウトして変更できない？</h2>
+  <p>項目が薄くなってタップできないときは、ほぼ<strong>低電力モード</strong>が原因です。オンの間は iOS が自動ロックを30秒に固定し、設定を変更できなくします。<em>設定 &gt; バッテリー</em>でオフにすれば再び変更できます（80%以上まで充電すると自動的にオフになります）。それでもグレーのままなら、職場や学校の<strong>構成プロファイルや MDM</strong> であることが多いので、<em>設定 &gt; 一般 &gt; VPN とデバイス管理</em>を確認してください。そこは組織側の管理下です。</p>
+  <p>正直な注意：低電力モードがオンだと、ブラウザがこのページの使うスクリーンウェイクロックを解除することがあります。iOS 側の制限であり、当サイトの不具合ではありません。画面が消えてしまう場合はバッテリー設定を確認してください。</p>
   <h2>必要なもの</h2>
   <ul>
     <li>Safari のネイティブ Wake Lock API には <strong>iOS / iPadOS 16.4 以降</strong>。</li>
@@ -792,7 +850,9 @@ CONTENT["keep-screen-awake-iphone"]["ja"] = dict(
       ('iPad でも使えますか？', 'はい。iPadOS の Safari か Chrome で同じように動作します。タブを開いたまま表示しておいてください。'),
       ('どの iOS バージョンが必要ですか？', 'iOS・iPadOS 16.4 以降が Safari の Screen Wake Lock API に対応しています。古いバージョンでは代替方式を使いますが、16.4 以降が最も安定します。'),
       ('端末をロックしたりアプリを切り替えると画面が暗くなるのはなぜ？', 'ウェイクロックはタブが開いて表示されている間だけ有効です。別アプリに切り替えたり端末をロックすると iOS が解放します。タブに戻ると自動的に再有効化されます。'),
-      ('アプリやゲームの中で画面を点けたままにするには？', 'ウェブページは他のアプリを制御できません。その場合は Apple のアクセスガイドを使います：設定 > アクセシビリティ > アクセスガイドをオンにし、アプリ内でサイドボタンをトリプルクリック。Safari や Chrome のコンテンツなら ScreenWakeUp がワンタップ・設定不要で行います。')],
+      ('アプリやゲームの中で画面を点けたままにするには？', 'ウェブページは他のアプリを制御できません。その場合は Apple のアクセスガイドを使います：設定 > アクセシビリティ > アクセスガイドをオンにし、アプリ内でサイドボタンをトリプルクリック。Safari や Chrome のコンテンツなら ScreenWakeUp がワンタップ・設定不要で行います。'),
+      ('iPhone の画面が消えないようにするには？', '方法は2つあります。システム側：設定 > 画面表示と明るさ > 自動ロックで長い時間か「なし」を選びます（ロック解除のままになるので戻すのを忘れずに）。手軽で一時的な方法：Safari で screenwakeup.com を開き「画面をスリープさせない」をタップします。タブが開いて表示されている間は画面が消えず、閉じればいつもの自動ロックに戻ります。'),
+      ('iPhone の自動ロックがグレーで変更できないのはなぜ？', 'ほぼ低電力モードが原因です。オンの間、iOS は自動ロックを30秒に固定して設定を無効化します。設定 > バッテリーでオフにしてください。それでもグレーのままなら、職場や学校の構成プロファイル・MDM であることが多く、設定 > 一般 > VPN とデバイス管理で確認できます。')],
 )
 CONTENT["keep-screen-awake-iphone"]["ru"] = dict(
  title='Как не дать экрану iPhone гаснуть — Бесплатно, без приложения (iOS и iPad) | ScreenWakeUp',
@@ -812,8 +872,18 @@ CONTENT["keep-screen-awake-iphone"]["ru"] = dict(
     <li>Нажмите <strong>Держать экран активным</strong> и оставьте вкладку Safari открытой и на экране.</li>
   </ol>
   <p>Совет: добавьте на экран «Домой» (Поделиться → На экран «Домой»), чтобы открывать как приложение.</p>
-  <h2>Почему не просто изменить Автоблокировку?</h2>
-  <p>Можно поставить <em>Настройки &gt; Экран и яркость &gt; Автоблокировка &gt; Никогда</em> — но тогда экран <strong>никогда</strong> не блокируется, садит батарею и оставляет телефон разблокированным весь день. ScreenWakeUp держит экран включённым только когда нужно; закрыли вкладку — всё вернулось к норме.</p>
+  <h2>Как изменить Автоблокировку на iPhone: пошагово</h2>
+  <p>Если хотите поменять системную настройку, вот точный путь:</p>
+  <ol>
+    <li>Откройте <strong>Настройки</strong>.</li>
+    <li>Перейдите в <strong>Экран и яркость</strong>.</li>
+    <li>Нажмите <strong>Автоблокировка</strong>.</li>
+    <li>Выберите 30 секунд, 1, 2, 3, 4 или 5 минут — либо <strong>Никогда</strong>.</li>
+  </ol>
+  <p>Это работает, но есть цена: с вариантом <em>Никогда</em> экран не блокируется <strong>вообще</strong>, батарея садится быстрее, телефон весь день остаётся разблокированным, а потом нужно не забыть вернуть настройку. Именно поэтому существует эта страница: ScreenWakeUp держит экран включённым ровно столько, сколько нужно, и, как только вы закроете вкладку, возвращается ваша обычная Автоблокировка — вы ничего не меняли.</p>
+  <h2>Автоблокировка неактивна (серая)?</h2>
+  <p>Если пункт затенён и не нажимается, почти всегда виноват <strong>режим энергосбережения</strong>: пока он включён, iOS фиксирует Автоблокировку на 30 секундах и блокирует настройку. Выключите его в <em>Настройки &gt; Аккумулятор</em> — и снова сможете её менять (он также отключается сам при заряде выше 80%). Если пункт всё ещё серый, обычно дело в <strong>профиле конфигурации или MDM</strong> с работы или учёбы: проверьте <em>Настройки &gt; Основные &gt; VPN и управление устройством</em>; там решает ваша организация.</p>
+  <p>Честное предупреждение: при включённом энергосбережении браузер тоже может снять блокировку экрана, которой пользуется эта страница. Это ограничение iOS, а не наша ошибка — если экран всё равно гаснет, посмотрите на аккумулятор.</p>
   <h2>Что нужно</h2>
   <ul>
     <li><strong>iOS / iPadOS 16.4 или новее</strong> для нативного Wake Lock API в Safari.</li>
@@ -838,7 +908,9 @@ CONTENT["keep-screen-awake-iphone"]["ru"] = dict(
       ('Работает ли на iPad?', 'Да. Работает так же на iPadOS в Safari или Chrome. Держите вкладку открытой и на экране.'),
       ('Какая версия iOS нужна?', 'iOS и iPadOS 16.4 или новее поддерживают Screen Wake Lock API в Safari. На старых версиях используется запасной метод, но надёжнее всего на 16.4+.'),
       ('Почему экран всё равно гаснет, когда я блокирую телефон или переключаю приложение?', 'Блокировка экрана действует, только пока вкладка открыта и видима. Если переключиться на другое приложение или заблокировать телефон, iOS освобождает её. Вернитесь на вкладку — она активируется снова.'),
-      ('Как держать экран включённым внутри приложения или игры?', 'Веб-страница не может управлять другими приложениями. Для этого используйте Гид-доступ Apple: Настройки > Универсальный доступ > Гид-доступ, затем тройное нажатие боковой кнопки в приложении. Для контента в Safari или Chrome ScreenWakeUp делает это одним нажатием, без настройки.')],
+      ('Как держать экран включённым внутри приложения или игры?', 'Веб-страница не может управлять другими приложениями. Для этого используйте Гид-доступ Apple: Настройки > Универсальный доступ > Гид-доступ, затем тройное нажатие боковой кнопки в приложении. Для контента в Safari или Chrome ScreenWakeUp делает это одним нажатием, без настройки.'),
+      ('Как сделать, чтобы экран iPhone не гас?', 'Есть два пути. Системный: Настройки > Экран и яркость > Автоблокировка и выберите большой интервал или «Никогда» (не забудьте вернуть обратно — телефон остаётся разблокированным). Быстрый и временный: откройте screenwakeup.com в Safari и нажмите «Держать экран активным»; экран не погаснет, пока вкладка открыта и видима, а после закрытия вернётся обычная Автоблокировка.'),
+      ('Почему Автоблокировка на iPhone неактивна (серая)?', 'Почти всегда из-за режима энергосбережения: пока он включён, iOS фиксирует Автоблокировку на 30 секундах и блокирует настройку. Отключите его в Настройки > Аккумулятор. Если пункт всё ещё серый, обычно дело в профиле конфигурации или MDM с работы или учёбы — Настройки > Основные > VPN и управление устройством.')],
 )
 # ============================ prevent-zoom-idle ============================
 CONTENT["prevent-zoom-idle"]["es"] = dict(

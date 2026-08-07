@@ -74,6 +74,16 @@
           "@type": "Question",
           "name": "How do I keep the screen on inside another app or a game?",
           "acceptedAnswer": { "@type": "Answer", "text": "No web page can control other apps. For that, use Apple's Guided Access: Settings > Accessibility > Guided Access, then triple-click the side button inside the app. For content in Safari or Chrome, ScreenWakeUp does it with one tap and no setup." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I stop my iPhone screen from turning off?",
+          "acceptedAnswer": { "@type": "Answer", "text": "There are two routes. The system one: Settings > Display & Brightness > Auto-Lock, then pick a long duration or Never (remember to undo it, since it leaves the phone unlocked). The quick, temporary one: open screenwakeup.com in Safari and tap Keep Screen Awake — the screen stays on while the tab is open and visible, and your normal Auto-Lock returns as soon as you close it." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is Auto-Lock greyed out on my iPhone?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Almost always Low Power Mode: while it is on, iOS pins Auto-Lock to 30 seconds and disables the setting. Turn it off in Settings > Battery. If it is still greyed out, it is usually a configuration or MDM profile from work or school, under Settings > General > VPN & Device Management." }
         }
       ]
     },
@@ -162,8 +172,19 @@
   </ol>
   <p>Tip: add it to your Home Screen (Share → Add to Home Screen) so it opens like an app.</p>
 
-  <h2>Why not just change Auto-Lock?</h2>
-  <p>You can set <em>Settings &gt; Display &amp; Brightness &gt; Auto-Lock &gt; Never</em> — but then your screen <strong>never</strong> locks, draining the battery and leaving the phone unlocked all day. ScreenWakeUp keeps the screen on only while you need it, then everything goes back to normal the moment you close the tab. No settings to remember to undo.</p>
+  <h2>How to change iPhone Auto-Lock, step by step</h2>
+  <p>If you'd rather change the system setting itself, here is the exact path:</p>
+  <ol>
+    <li>Open <strong>Settings</strong>.</li>
+    <li>Go to <strong>Display &amp; Brightness</strong>.</li>
+    <li>Tap <strong>Auto-Lock</strong>.</li>
+    <li>Pick 30 seconds, 1, 2, 3, 4 or 5 minutes — or <strong>Never</strong>.</li>
+  </ol>
+  <p>It works, but it has a price: with <em>Never</em>, your screen <strong>stops locking altogether</strong>, the battery drains faster, the phone sits unlocked all day, and you have to remember to undo it. That is exactly why this page exists — ScreenWakeUp keeps the screen on only while you need it, and the moment you close the tab your usual Auto-Lock is back, with nothing to change and nothing to undo.</p>
+
+  <h2>Is Auto-Lock greyed out?</h2>
+  <p>If the option is dimmed and won't respond, it is almost always <strong>Low Power Mode</strong>: while it's on, iOS pins Auto-Lock to 30 seconds and locks the setting. Turn it off in <em>Settings &gt; Battery</em> and you can change it again (it also switches itself off once you charge above 80%). If it stays greyed out, it's usually a <strong>configuration or MDM profile</strong> from work or school — check <em>Settings &gt; General &gt; VPN &amp; Device Management</em>; that one is your organisation's call, and no trick gets around it.</p>
+  <p>Honest warning: with Low Power Mode on, the browser can also release the screen wake lock this page relies on. That's an iOS restriction, not a bug on our side — if the screen still goes dark, check your battery settings first.</p>
 
   <h2>What you need</h2>
   <ul>
@@ -175,6 +196,10 @@
   <p>Honest answer: a web page can only keep the screen on <strong>while you're looking at it in the browser</strong>. If you need the screen always on inside another app or a game, use Apple's built-in feature: <em>Settings &gt; Accessibility &gt; Guided Access</em>, turn it on, then triple-click the side button inside the app. For anything that happens in Safari or Chrome — recipes, guides, maps, documents — ScreenWakeUp is faster: one tap, nothing to set up.</p>
 
   <h2>Frequently asked questions</h2>
+  <h3>How do I stop my iPhone screen from turning off?</h3>
+  <p>Two routes. <strong>The system one:</strong> <em>Settings &gt; Display &amp; Brightness &gt; Auto-Lock</em>, then pick a long duration or Never — just remember to undo it, since it leaves the phone unlocked. <strong>The quick, temporary one:</strong> open screenwakeup.com in Safari and tap Keep Screen Awake; the screen stays on while the tab is open and visible, and your normal Auto-Lock returns the moment you close it.</p>
+  <h3>Why is Auto-Lock greyed out on my iPhone?</h3>
+  <p>Almost always Low Power Mode — while it's on, iOS pins Auto-Lock to 30 seconds and disables the setting. Turn it off in <em>Settings &gt; Battery</em>. If it stays greyed out, it's usually a configuration or MDM profile from work or school, under <em>Settings &gt; General &gt; VPN &amp; Device Management</em>.</p>
   <h3>How do I keep my iPhone screen on?</h3>
   <p>Open screenwakeup.com in Safari, pick a duration (or ∞) and tap <strong>Keep Screen Awake</strong>. The screen stays on until you stop it or close the tab — no app, no digging through Settings, and Auto-Lock goes back to normal the moment you're done.</p>
   <h3>Does it work on iPad?</h3>
