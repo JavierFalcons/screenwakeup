@@ -566,7 +566,6 @@
   <div class="topbar-inner">
     <a href="https://screenwakeup.com" class="logo">ScreenWakeUp <em>free tool</em></a>
     <div class="nav-controls">
-      <a class="nav-kofi" id="navKofi" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener">☕ <span id="navKofiTxt">Support</span></a>
       <!-- Language switcher -->
       <button class="pill" id="btnEN"  onclick="setLang('en')">EN</button>
       <button class="pill" id="btnES"  onclick="setLang('es')">ES</button>
@@ -1213,7 +1212,6 @@ const DONATE_I18N = {
 function applyDonateStrings(l){
   const d = DONATE_I18N[l] || DONATE_I18N.en;
   const set = (id, txt) => { const e = document.getElementById(id); if (e) e.textContent = txt; };
-  set('navKofiTxt', d.nav);
   set('cdH2', d.h2);
   set('cdP', d.p);
   set('cdKofi', d.btn);
@@ -1234,7 +1232,7 @@ function hideDonateToast(){
 }
 
 function maybeShowDonateToast(secs){
-  if (secs < 60) return;                                   // skip trivial test sessions
+  if (secs < 900) return;                                  // ask only after real delivered value (15+ min)
   const last = +(localStorage.getItem('ka-donate-toast') || 0);
   if (Date.now() - last < 6*3600*1000) return;             // at most once per 6h
   const d  = DONATE_I18N[lang] || DONATE_I18N.en;
@@ -1243,6 +1241,7 @@ function maybeShowDonateToast(secs){
   document.getElementById('donateToastTxt').innerHTML = d.toast.replace('{t}', '<b>' + fmtDur(secs) + '</b>');
   document.getElementById('donateToastCta').textContent = '☕ ' + d.toastBtn;
   el.classList.add('show');
+  track('donate_toast_shown', { session_sec: secs });
   localStorage.setItem('ka-donate-toast', String(Date.now()));
   clearTimeout(window._dtTimer);
   window._dtTimer = setTimeout(hideDonateToast, 13000);
@@ -1352,6 +1351,7 @@ function startSessionTimer() {
   clearInterval(sessionTickId);
   sessionTickId = setInterval(() => {
     const secs = Math.floor((Date.now() - sessionStart) / 1000);
+    if (secs >= 300 && window.__showFloatKofi) window.__showFloatKofi();
     const mins = Math.floor(secs / 60);
     const s    = secs % 60;
     const phrase = LANG[lang].sessionPhrase;
@@ -1611,7 +1611,7 @@ document.addEventListener('click', ()=>{
 function track(name, params){ try{ if(window.gtag) gtag('event', name, params || {}); }catch(e){} }
 
 /* GA4 custom event: donation clicks */
-['navKofi','donateToastCta'].forEach(function(id){ var el=document.getElementById(id); if(el) el.addEventListener('click', function(){ track('donate_click', { placement: id==='navKofi'?'header':'toast' }); }); });
+(function(){ var el=document.getElementById('donateToastCta'); if(el) el.addEventListener('click', function(){ track('donate_click', { placement: 'toast' }); }); var f=document.getElementById('footerSupport'); if(f) f.addEventListener('click', function(){ track('donate_click', { placement: 'footer' }); }); })();
 document.querySelectorAll('#cardDonateBlock .kofi-btn').forEach(function(el){ el.addEventListener('click', function(){ track('donate_click', { placement: 'block' }); }); });
 
 function shareApp() {
@@ -1681,10 +1681,10 @@ document.getElementById('feedbackForm').addEventListener('submit', async functio
 </script>
 
 <!-- Floating support button (C) -->
-<div class="float-kofi-wrap" id="floatKofi">
+<div class="float-kofi-wrap" id="floatKofi" style="display:none">
   <a class="float-kofi" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener" aria-label="Apóyanos">☕</a>
   <button class="fk-close" id="floatKofiClose" aria-label="Hide">&times;</button>
 </div>
-<script>(function(){var w=document.getElementById("floatKofi");if(!w)return;var a=w.querySelector(".float-kofi");if(a)a.addEventListener("click",function(){if(window.gtag)gtag("event","donate_click",{placement:"float"});});if(+(localStorage.getItem("ka-float-hide")||0)>Date.now()){w.style.display="none";return;}var c=document.getElementById("floatKofiClose");if(c)c.addEventListener("click",function(e){e.preventDefault();w.style.display="none";localStorage.setItem("ka-float-hide",String(Date.now()+7*864e5));});})();</script>
+<script>(function(){var w=document.getElementById("floatKofi");if(!w)return;var a=w.querySelector(".float-kofi");if(a)a.addEventListener("click",function(){if(window.gtag)gtag("event","donate_click",{placement:"float"});});var hidden=+(localStorage.getItem("ka-float-hide")||0)>Date.now();window.__showFloatKofi=function(){if(!hidden)w.style.display="";};var c=document.getElementById("floatKofiClose");if(c)c.addEventListener("click",function(e){e.preventDefault();w.style.display="none";hidden=true;localStorage.setItem("ka-float-hide",String(Date.now()+7*864e5));});})();</script>
 </body>
 </html>

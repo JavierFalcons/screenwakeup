@@ -298,7 +298,7 @@ function startTimer(){startTime=Date.now();if(durationMs>0){progWrap.classList.a
 tickId=setInterval(function(){var elapsed=Date.now()-startTime;if(durationMs>0){if(elapsed>=durationMs){deactivate(true);return;}timerTxt.textContent=fmt(durationMs-elapsed)+' '+T.timerLeft;}else{timerTxt.textContent=T.timerActive+' '+fmt(elapsed);}},1000);}
 function stopTimer(){clearInterval(tickId);timerTxt.textContent='';progWrap.classList.remove('vis');progBar.style.transition='none';progBar.style.transform='scaleX(1)';}
 function sessionEmoji(secs){var m=Math.floor(secs/60);if(m<5)return'\uD83D\uDD25';if(m<15)return'\uD83D\uDE80';if(m<30)return'\u26A1';if(m<60)return'\uD83C\uDFC6';return'\uD83D\uDC51';}
-function startSessionTimer(){sessionStart=Date.now();sessionClock.classList.remove('vis');clearInterval(sessionTickId);sessionTickId=setInterval(function(){var secs=Math.floor((Date.now()-sessionStart)/1000);var mins=Math.floor(secs/60);var s=secs%60;var timeStr;if(secs<60){timeStr=secs+'s';}else if(mins<60){timeStr=mins+' min '+(s>0?s+'s':'');}else{var h=Math.floor(mins/60),m2=mins%60;timeStr=h+'h '+(m2>0?m2+' min':'');}
+function startSessionTimer(){sessionStart=Date.now();sessionClock.classList.remove('vis');clearInterval(sessionTickId);sessionTickId=setInterval(function(){var secs=Math.floor((Date.now()-sessionStart)/1000);if(secs>=300&&window.__showFloatKofi)window.__showFloatKofi();var mins=Math.floor(secs/60);var s=secs%60;var timeStr;if(secs<60){timeStr=secs+'s';}else if(mins<60){timeStr=mins+' min '+(s>0?s+'s':'');}else{var h=Math.floor(mins/60),m2=mins%60;timeStr=h+'h '+(m2>0?m2+' min':'');}
 sessionClock.textContent=sessionEmoji(secs)+' '+timeStr.trim()+' \u00B7 '+T.sessionPhrase;if(!sessionClock.classList.contains('vis'))sessionClock.classList.add('vis');},1000);}
 function stopSessionTimer(){clearInterval(sessionTickId);sessionClock.classList.remove('vis');sessionClock.textContent='';}
 var sentinels=[];
@@ -351,7 +351,7 @@ if(pipBtn){if(pipSupported()){pipBtn.addEventListener('click',togglePiP);['point
 addEventListener('pagehide',function(){if(active)track('deactivate_wakelock',{session_sec:sessionStart?Math.floor((Date.now()-sessionStart)/1000):0,expired:false,closed_tab:true,lock_losses:lockLostCount,page:'/ru/'});});
 })();
 </script>
-<div class="float-kofi-wrap" id="floatKofi">
+<div class="float-kofi-wrap" id="floatKofi" style="display:none">
   <a class="float-kofi" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener" aria-label="Поддержать">☕</a>
   <button class="fk-close" id="floatKofiClose" aria-label="Hide">&times;</button>
 </div>
@@ -368,6 +368,6 @@ f.addEventListener('submit',function(e){
   .then(function(res){if(!res.ok)throw 0;btn.textContent=SENT;btn.style.background='#22c55e';btn.style.color='#fff';})
   .catch(function(){btn.disabled=false;btn.textContent=ERR;setTimeout(function(){btn.textContent=BTN;},4000);});
 });})();</script>
-<script>(function(){var w=document.getElementById("floatKofi");if(!w)return;if(+(localStorage.getItem("ka-float-hide")||0)>Date.now()){w.style.display="none";return;}var c=document.getElementById("floatKofiClose");if(c)c.addEventListener("click",function(e){e.preventDefault();w.style.display="none";localStorage.setItem("ka-float-hide",String(Date.now()+7*864e5));});})();</script>
+<script>(function(){var w=document.getElementById("floatKofi");if(!w)return;var a=w.querySelector(".float-kofi");if(a)a.addEventListener("click",function(){if(window.gtag)gtag("event","donate_click",{placement:"float",page:"/ru/"});});var hidden=+(localStorage.getItem("ka-float-hide")||0)>Date.now();window.__showFloatKofi=function(){if(!hidden)w.style.display="";};var c=document.getElementById("floatKofiClose");if(c)c.addEventListener("click",function(e){e.preventDefault();w.style.display="none";hidden=true;localStorage.setItem("ka-float-hide",String(Date.now()+7*864e5));});})();</script>
 </body>
 </html>
