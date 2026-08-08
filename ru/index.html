@@ -303,18 +303,21 @@ sessionClock.textContent=sessionEmoji(secs)+' '+timeStr.trim()+' \u00B7 '+T.sess
 function stopSessionTimer(){clearInterval(sessionTickId);sessionClock.classList.remove('vis');sessionClock.textContent='';}
 var sentinels=[];
 function watchRelease(s){s.addEventListener('release',function(){sentinels=sentinels.filter(function(x){return x!==s;});if(wakeLock===s)wakeLock=null;if(!active)return;if(document.visibilityState==='visible'){navigator.wakeLock.request('screen').then(function(w){wakeLock=w;sentinels.push(w);watchRelease(w);}).catch(function(){deactivate(false,true);});}});}
-function activate(){if(active)return;var p;if('wakeLock'in navigator){p=navigator.wakeLock.request('screen').then(function(w){if(!active){w.release().catch(function(){});return;}wakeLock=w;sentinels.push(w);watchRelease(w);cardStat.textContent=T.statusOn;}).catch(function(){if(active){videoFb=mkSilentVideo();cardStat.textContent=T.statusFb;}});}else{videoFb=mkSilentVideo();cardStat.textContent=T.statusFb;p=Promise.resolve();}
+function activate(){if(active)return;lockLostCount=0;hideLockCta();var p;if('wakeLock'in navigator){p=navigator.wakeLock.request('screen').then(function(w){if(!active){w.release().catch(function(){});return;}wakeLock=w;sentinels.push(w);watchRelease(w);cardStat.textContent=T.statusOn;}).catch(function(){if(active){videoFb=mkSilentVideo();cardStat.textContent=T.statusFb;}});}else{videoFb=mkSilentVideo();cardStat.textContent=T.statusFb;p=Promise.resolve();}
 active=true;dot.classList.add('active');cardTitle.textContent=T.cardOn;toggleBtn.textContent=T.btnOff;toggleBtn.classList.add('on');durBtns.forEach(function(b){b.disabled=true;});startTimer();startSessionTimer();track('activate_wakelock',{duration_min:selectedMin||0,page:'/ru/'});}
-function deactivate(expired,lost){active=false;var olds=sentinels;sentinels=[];wakeLock=null;olds.forEach(function(s){try{s.release().catch(function(){});}catch(e){}});if(videoFb){videoFb.pause();videoFb.remove();videoFb=null;}dot.classList.remove('active');cardTitle.textContent=T.cardOff;cardStat.textContent=expired?T.timerExpired:(lost?LOCK_LOST_VISIBLE:T.statusOff);toggleBtn.textContent=T.btnOn;toggleBtn.classList.remove('on');durBtns.forEach(function(b){b.disabled=false;});track('deactivate_wakelock',{session_sec:sessionStart?Math.floor((Date.now()-sessionStart)/1000):0,expired:!!expired,page:'/ru/'});if(lost)track('lock_lost_visible',{page:'/ru/'});stopTimer();stopSessionTimer();}
+function deactivate(expired,lost){active=false;hideLockCta();var olds=sentinels;sentinels=[];wakeLock=null;olds.forEach(function(s){try{s.release().catch(function(){});}catch(e){}});if(videoFb){videoFb.pause();videoFb.remove();videoFb=null;}dot.classList.remove('active');cardTitle.textContent=T.cardOff;cardStat.textContent=expired?T.timerExpired:(lost?LOCK_LOST_VISIBLE:T.statusOff);toggleBtn.textContent=T.btnOn;toggleBtn.classList.remove('on');durBtns.forEach(function(b){b.disabled=false;});track('deactivate_wakelock',{session_sec:sessionStart?Math.floor((Date.now()-sessionStart)/1000):0,expired:!!expired,lock_losses:lockLostCount,page:'/ru/'});if(lost)track('lock_lost_visible',{page:'/ru/'});stopTimer();stopSessionTimer();}
 toggleBtn.addEventListener('click',function(){active?deactivate(false):activate();});
 var hiddenWhileActive=false;
+var lockLostCount=0,lockCta=null;
+function showLockCta(){if(!pipSupported())return;if(document.pictureInPictureElement)return;if(pipVideo&&pipVideo.webkitPresentationMode==='picture-in-picture')return;if(!lockCta){lockCta=document.createElement('button');lockCta.style.cssText='display:none;margin:12px auto 0;padding:10px 18px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06251d;font-weight:700;border:0;border-radius:10px;font-size:14px;cursor:pointer;';['pointerdown','mouseenter','focus','touchstart'].forEach(function(ev){lockCta.addEventListener(ev,pipWarmup,{passive:true});});lockCta.addEventListener('click',function(){track('pip_open_from_lock_lost',{page:'/ru/'});hideLockCta();togglePiP();});cardStat.insertAdjacentElement('afterend',lockCta);}var pb=document.getElementById('pipBtn');lockCta.textContent=pb?pb.textContent.trim():'PiP';lockCta.style.display='block';}
+function hideLockCta(){if(lockCta)lockCta.style.display='none';}
 var LOCK_LOST='⚠️ Блокировка снялась, пока вкладка была скрыта. Работаете в другом приложении? Используйте плавающее мини-окно.';
 var LOCK_LOST_VISIBLE='⚠️ Система сняла блокировку (возможно, энергосбережение). Нажмите кнопку, чтобы включить её снова.';
 document.addEventListener('visibilitychange',function(){
 if(active&&document.visibilityState==='hidden')hiddenWhileActive=true;
 if(active&&document.visibilityState==='visible'){
 if('wakeLock'in navigator&&!wakeLock){navigator.wakeLock.request('screen').then(function(w){wakeLock=w;sentinels.push(w);watchRelease(w);}).catch(function(){});}
-if(hiddenWhileActive){hiddenWhileActive=false;cardStat.textContent=LOCK_LOST;track('lock_lost_hidden',{page:'/ru/'});setTimeout(function(){if(active)cardStat.textContent=T.statusOn;},8000);}
+if(hiddenWhileActive){hiddenWhileActive=false;lockLostCount++;if(lockLostCount<=2){cardStat.textContent=LOCK_LOST;track('lock_lost_hidden',{page:'/ru/',n:lockLostCount});setTimeout(function(){if(active)cardStat.textContent=T.statusOn;},8000);}if(lockLostCount>=2)showLockCta();}
 }
 });
 var pipVideo=null,pipTick=null,pipDraw=null;
@@ -340,12 +343,12 @@ var p;
 if(pipVideo.requestPictureInPicture){p=pipVideo.requestPictureInPicture();}
 else if(typeof pipVideo.webkitSetPresentationMode==='function'){p=new Promise(function(res,rej){var go=function(){if(!pipVideo)return rej(new Error('closed while entering PiP'));pipDraw();pipVideo.webkitSetPresentationMode('picture-in-picture');var n=0;(function chk(){if(!pipVideo)return rej(new Error('closed while entering PiP'));if(pipVideo.webkitPresentationMode==='picture-in-picture'){pipVideo.addEventListener('webkitpresentationmodechanged',function(){if(pipVideo&&pipVideo.webkitPresentationMode==='inline')pipCleanup();});return res();}if(++n>20)return rej(new Error('Safari did not open the PiP window'));setTimeout(chk,100);})();};if(pipVideo.readyState>=2){go();}else{var done=false,k=function(){if(done)return;done=true;go();};pipVideo.addEventListener('loadeddata',k,{once:true});setTimeout(k,1200);pipDraw();}});}
 else{throw new Error('NoPiPAPI');}
-p.then(function(){track('pip_enter',{page:'/ru/'});if(pipBtn){pipBtn.classList.add('pip-on');pipBtn.textContent='✕ Закрыть мини-окно';}}).catch(function(err){pipCleanup();track('pip_error',{page:'/ru/',reason:((err&&err.name)||'unknown')+((err&&err.message)?': '+String(err.message).slice(0,60):'')});});
+p.then(function(){track('pip_enter',{page:'/ru/'});hideLockCta();if(pipBtn){pipBtn.classList.add('pip-on');pipBtn.textContent='✕ Закрыть мини-окно';}}).catch(function(err){pipCleanup();track('pip_error',{page:'/ru/',reason:((err&&err.name)||'unknown')+((err&&err.message)?': '+String(err.message).slice(0,60):'')});});
 }catch(e){pipCleanup();track('pip_error',{page:'/ru/',reason:((e&&e.name)||'unknown')+((e&&e.message)?': '+String(e.message).slice(0,60):'')});}
 }
 var pipBtn=document.getElementById('pipBtn');
 if(pipBtn){if(pipSupported()){pipBtn.addEventListener('click',togglePiP);['pointerdown','mouseenter','focus','touchstart'].forEach(function(ev){pipBtn.addEventListener(ev,pipWarmup,{passive:true});});}else{pipBtn.style.display='none';}}
-addEventListener('pagehide',function(){if(active)track('deactivate_wakelock',{session_sec:sessionStart?Math.floor((Date.now()-sessionStart)/1000):0,expired:false,closed_tab:true,page:'/ru/'});});
+addEventListener('pagehide',function(){if(active)track('deactivate_wakelock',{session_sec:sessionStart?Math.floor((Date.now()-sessionStart)/1000):0,expired:false,closed_tab:true,lock_losses:lockLostCount,page:'/ru/'});});
 })();
 </script>
 <div class="float-kofi-wrap" id="floatKofi">
