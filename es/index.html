@@ -5,12 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mantener Pantalla Activa Gratis Online — Sin App, Sin Descarga | ScreenWakeUp</title>
-  <meta name="description" content="La página para que no se bloquee la pantalla: un clic y tu pantalla queda activa — 100% gratis online, sin descarga, sin app, sin cuenta. Con temporizadores y Pomodoro. Funciona en Windows, Mac, iPhone, Android, Chrome, Safari, Edge y Firefox.">
+  <meta name="description" content="La página para que no se bloquee la pantalla: un clic y tu pantalla queda activa — 100% gratis online, sin descarga, sin app, sin cuenta. Funciona en Windows, Mac, iPhone, Android, Chrome, Safari, Edge y Firefox.">
   <meta name="author" content="ScreenWakeUp">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://screenwakeup.com/es/">
   <link rel="icon" href="https://screenwakeup.com/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="https://screenwakeup.com/favicon.ico">
+  <link rel="apple-touch-icon" href="https://screenwakeup.com/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#5ee0c0">
 
   <!-- hreflang for international SEO -->
   <link rel="alternate" hreflang="en" href="https://screenwakeup.com/">
@@ -18,6 +20,8 @@
   <link rel="alternate" hreflang="pt" href="https://screenwakeup.com/pt/">
   <link rel="alternate" hreflang="fr" href="https://screenwakeup.com/fr/">
   <link rel="alternate" hreflang="de" href="https://screenwakeup.com/de/">
+  <link rel="alternate" hreflang="ja" href="https://screenwakeup.com/ja/">
+  <link rel="alternate" hreflang="ru" href="https://screenwakeup.com/ru/">
   <link rel="alternate" hreflang="x-default" href="https://screenwakeup.com/">
 
   <!-- Performance hints -->
@@ -659,7 +663,7 @@
 <div class="section reveal" id="secUses">
   <p class="section-tag" id="usesTag">Casos de uso</p>
   <h2 id="usesH2">¿Cuándo lo necesitas?</h2>
-  <p class="lead" id="usesLead">Miles de personas usan esta herramienta cada día en estas situaciones.</p>
+  <p class="lead" id="usesLead">Estas son las situaciones más habituales entre quienes lo usan cada día.</p>
   <div class="uses">
     <div class="use-card"><div class="use-icon">🖥️</div><div><h3 id="use1h">Presentaciones</h3><p id="use1p">Evita que la pantalla se apague a mitad de una presentación.</p></div></div>
     <div class="use-card"><div class="use-icon">⬇️</div><div><h3 id="use2h">Descargas largas</h3><p id="use2p">Mantén el equipo activo durante descargas grandes o copias de seguridad.</p></div></div>
@@ -761,6 +765,30 @@
 <footer>
   <p><strong>ScreenWakeUp.com</strong> — Herramienta gratuita para mantener la pantalla activa</p>
   <p id="footerP">Sin descarga · Sin cuenta · Gratis para siempre · Funciona en cualquier navegador</p>
+  <p style="margin-top:10px;font-size:13px">
+    <a href="https://screenwakeup.com/" hreflang="en" lang="en">Keep Screen Awake (EN)</a>
+    &nbsp;·&nbsp;
+    <a href="https://screenwakeup.com/es/" hreflang="es" lang="es">Mantener Pantalla Activa (ES)</a>
+    &nbsp;·&nbsp;
+    <a href="https://screenwakeup.com/pt/" hreflang="pt" lang="pt">Manter Tela Ativa (PT)</a>
+    &nbsp;·&nbsp;
+    <a href="https://screenwakeup.com/fr/" hreflang="fr" lang="fr">Garder Écran Allumé (FR)</a>
+    &nbsp;·&nbsp;
+    <a href="https://screenwakeup.com/de/" hreflang="de" lang="de">Bildschirm Wach Halten (DE)</a>
+    &nbsp;·&nbsp;
+    <a href="https://screenwakeup.com/ja/" hreflang="ja" lang="ja">画面をスリープさせない (JA)</a>
+    &nbsp;·&nbsp;
+    <a href="https://screenwakeup.com/ru/" hreflang="ru" lang="ru">Держать экран активным (RU)</a>
+  </p>
+  <p style="margin-top:10px;font-size:13px">
+    <a href="/es/prevent-teams-away/">Evitar Ausente en Teams</a>
+    &nbsp;·&nbsp;
+    <a href="/es/caffeine-alternative/">Alternativa gratis a Caffeine</a>
+    &nbsp;·&nbsp;
+    <a href="/es/keep-screen-awake-iphone/">Pantalla del iPhone siempre encendida</a>
+    &nbsp;·&nbsp;
+    <a href="/es/prevent-zoom-idle/">Mantener Zoom activo</a>
+  </p>
   <p style="margin-top:8px">
     <a href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener" id="footerSupport">Apoya el proyecto</a>
     &nbsp;·&nbsp; © 2026 ScreenWakeUp.com
@@ -783,7 +811,7 @@ const LANG = {
     cardOff: "Screen sleeping", cardOn: "Screen active",
     statusOff: "Press the button to keep your screen on",
     statusOn:  "Wake Lock active — screen will stay on",
-    statusFb:  "Compatibility mode active (silent video)",
+    statusFb: "Compatibility mode — this browser has no Wake Lock API, so the lock can't be confirmed. Check that the screen stays on for the first few minutes.",
     btnOn:  "Keep Screen Awake", btnOff: "Stop",
     cardHint: "Keep this tab visible — if you minimize the window or another app fully covers it, the browser releases the lock. Working in another app? Use the floating mini-window.",
     pipLabel: "Floating mini-window",pipLabelOn:"✕ Close mini-window",pipTitle:"Opens a small always-on-top clock that keeps your screen awake while you work in other apps",
@@ -796,7 +824,7 @@ const LANG = {
     step2h: "Choose a duration", step2p: "Select how long: 30 min, 1h, 2h, 4h, or indefinitely.",
     step3h: "Click and you're done", step3p: "Hit the button. Your screen stays awake. Stop whenever you want.",
     usesTag: "Use cases", usesH2: "When do you need it?",
-    usesLead: "Thousands of people use this tool every day for these exact situations.",
+    usesLead: "People use it every day for these exact situations — here are the most common.",
     use1h:"Presentations",use1p:"Stop your screen from going black mid-presentation.",
     use2h:"Long downloads",use2p:"Keep your computer awake during large file downloads or backups.",
     use3h:"Cooking recipes",use3p:"Keep the recipe visible without touching the screen with messy hands.",
@@ -819,7 +847,7 @@ const LANG = {
       ["How do I keep my screen awake on Chrome without an extension?","Go to screenwakeup.com in Chrome and click the button. No extension needed — it uses Chrome's built-in Wake Lock API."],
       ["Does this work on a Chromebook?","Yes. Open screenwakeup.com in Chrome on any Chromebook and activate it. It uses the native Wake Lock API supported by ChromeOS."],
       ["How do I prevent my computer from sleeping during a presentation?","Open screenwakeup.com in a browser tab before starting your presentation. Click 'Keep Screen Awake' — your screen will stay on for the whole session."],
-      ["Can I keep my screen awake for free?","Yes, screenwakeup.com is 100% free with no time limits. The free plan includes wake lock, timer (up to 4h), dark/light mode, and 5 languages."]
+      ["Can I keep my screen awake for free?","Yes — screenwakeup.com is 100% free, with no time limits and no paid tier: wake lock, time presets or any number of minutes, Pomodoro, fullscreen clock, floating mini-window, dark/light mode and 7 languages."]
     ],
     feedbackTag:"Feedback",feedbackH2:"Leave us a comment",feedbackLead:"Tell us what you think or how we can improve.",
     feedbackName:"Your name (optional)",feedbackMsg:"Your comment or suggestion...",feedbackBtn:"Send feedback →",feedbackSent:"✓ Thanks for your message!",feedbackErr:"✗ Couldn't send — please try again later",
@@ -842,7 +870,7 @@ const LANG = {
     cardHint: "Mantén esta pestaña visible: si minimizas la ventana o otra app la tapa por completo, el navegador libera el bloqueo. ¿Trabajas en otra app? Usa la mini ventana flotante.",
     pipLabel: "Mini ventana flotante",pipLabelOn:"✕ Cerrar mini ventana",pipTitle:"Abre un pequeño reloj siempre visible que mantiene la pantalla activa mientras trabajas en otras apps",
     lockLost: "⚠️ El bloqueo se desactivó mientras esta pestaña estaba oculta. Usa la mini ventana flotante cuando trabajes en otras apps.",lockLostVisible:"⚠️ El sistema desactivó el bloqueo (¿ahorro de batería?). Pulsa el botón para volver a activarlo.",
-    statusFb:  "Modo compatibilidad activo (vídeo silencioso)",
+    statusFb: "Modo compatibilidad: este navegador no tiene Wake Lock, así que no puedo confirmar el bloqueo. Comprueba que la pantalla siga encendida los primeros minutos.",
     btnOn: "Mantener pantalla activa", btnOff: "Detener",
     timerLeft: "restantes", timerActive: "Activo desde hace", sessionPhrase: "con tu pantalla encendida",
     timerExpired: "¡Tiempo agotado! Bloqueo de pantalla reactivado.",
@@ -852,7 +880,7 @@ const LANG = {
     step2h:"Elige la duración",step2p:"Selecciona cuánto tiempo: 30 min, 1h, 2h, 4h o indefinidamente.",
     step3h:"Pulsa y listo",step3p:"Dale al botón. Tu pantalla permanece activa. Detén cuando quieras.",
     usesTag:"Casos de uso",usesH2:"¿Cuándo lo necesitas?",
-    usesLead:"Miles de personas usan esta herramienta cada día en estas situaciones.",
+    usesLead:"Estas son las situaciones más habituales entre quienes lo usan cada día.",
     use1h:"Presentaciones",use1p:"Evita que la pantalla se apague a mitad de una presentación.",
     use2h:"Descargas largas",use2p:"Mantén el equipo activo durante descargas grandes o copias de seguridad.",
     use3h:"Recetas de cocina",use3p:"Consulta la receta sin tener que tocar la pantalla con las manos sucias.",
@@ -878,7 +906,7 @@ const LANG = {
       ["¿Cómo evito el estado Ausente en Microsoft Teams?","Abre screenwakeup.com y pulsa Mantener pantalla activa. Mantiene tu pantalla encendida y el equipo desbloqueado — y un equipo bloqueado o en reposo es la causa más común de que Teams te ponga en Ausente. Limitación honesta: ninguna web puede simular movimientos reales de ratón o teclado (el navegador lo bloquea por seguridad), así que tras una inactividad total prolongada Teams aún puede cambiar tu estado."],
       ["¿Cómo sigo activo en Slack sin mover el ratón?","Mantén tu equipo despierto con screenwakeup.com. Slack te muestra Activo mientras la máquina está encendida con Slack abierto — lo que te pone Ausente es el reposo o el bloqueo de pantalla. Ninguna herramienta de navegador puede falsificar actividad real del sistema; quien prometa lo contrario, exagera."],
       ["¿Cómo evito que Zoom me muestre como Ausente?","Activa screenwakeup.com antes de tu sesión. Evita el reposo y el bloqueo del sistema, que es lo que suele disparar el estado inactivo de Zoom. Una página web no puede simular actividad real a nivel del sistema, así que tras una inactividad total muy larga la app puede marcarte Ausente igualmente."],
-      ["¿Hay un temporizador Pomodoro gratis en línea?","Sí. Pulsa Pomodoro para un temporizador gratuito de 25/5 (trabajo y descanso) directamente en tu navegador, sin instalar ni registrarte."],
+      ["¿Hay un temporizador Pomodoro gratis en línea?","Sí, en la versión completa: abre screenwakeup.com/?lang=es y pulsa Pomodoro para un temporizador gratuito de 25/5 (trabajo y descanso), con reloj a pantalla completa y temporizador personalizado. Esta página es la versión sencilla, con el bloqueo de pantalla y los tiempos predefinidos."],
       ["¿Existe una alternativa gratuita a Caffeine en línea?","Sí: ScreenWakeUp hace lo mismo que Caffeine, Amphetamine o Caffeinate, pero en tu navegador y sin descargar nada."],
       ["¿Cómo mantengo la pantalla activa en Chrome sin una extensión?","Solo abre screenwakeup.com y pulsa el botón. Usa la Wake Lock API integrada de Chrome, así que no necesitas ninguna extensión ni descarga."],
       ["¿Puedo mantener la pantalla encendida durante un vídeo o un curso en línea?","Sí. Inicia la herramienta antes de darle a reproducir y tu pantalla no se atenuará ni se bloqueará mientras miras, aunque no toques el teclado."]],
@@ -903,7 +931,7 @@ const LANG = {
     cardHint:"Mantenha esta aba visível: se você minimizar a janela ou outro app cobri-la por completo, o navegador libera o bloqueio. Trabalhando em outro app? Use a mini janela flutuante.",
     pipLabel:"Mini janela flutuante",pipLabelOn:"✕ Fechar mini janela",pipTitle:"Abre um pequeno relógio sempre visível que mantém a tela ativa enquanto você trabalha em outros apps",
     lockLost:"⚠️ O bloqueio foi desativado enquanto esta aba estava oculta. Use a mini janela flutuante quando trabalhar em outros apps.",lockLostVisible:"⚠️ O sistema desativou o bloqueio (economia de bateria?). Toque no botão para reativá-lo.",
-    statusFb:"Modo compatibilidade ativo (vídeo silencioso)",
+    statusFb:"Modo compatibilidade: este navegador não tem Wake Lock, então não dá para confirmar o bloqueio. Confira se a tela continua ligada nos primeiros minutos.",
     btnOn:"Manter Tela Ativa",btnOff:"Parar",
     timerLeft:"restantes",timerActive:"Ativo há",sessionPhrase:"com sua tela ativa",
     timerExpired:"Tempo esgotado! Bloqueio de tela reativado.",
@@ -913,7 +941,7 @@ const LANG = {
     step2h:"Escolha a duração",step2p:"Selecione quanto tempo: 30 min, 1h, 2h, 4h ou indefinidamente.",
     step3h:"Clique e pronto",step3p:"Clique no botão. Sua tela permanece ativa. Pare quando quiser.",
     usesTag:"Casos de uso",usesH2:"Quando você precisa?",
-    usesLead:"Milhares de pessoas usam esta ferramenta todos os dias nessas situações.",
+    usesLead:"Estas são as situações mais comuns entre quem usa a ferramenta todos os dias.",
     use1h:"Apresentações",use1p:"Evite que a tela apague no meio de uma apresentação.",
     use2h:"Downloads longos",use2p:"Mantenha o computador ativo durante downloads grandes ou backups.",
     use3h:"Receitas de culinária",use3p:"Veja a receita sem precisar tocar na tela com as mãos sujas.",
@@ -954,7 +982,7 @@ const LANG = {
     cardHint:"Gardez cet onglet visible : si vous réduisez la fenêtre ou qu'une autre app la recouvre entièrement, le navigateur libère le verrou. Vous travaillez ailleurs ? Utilisez la mini-fenêtre flottante.",
     pipLabel:"Mini-fenêtre flottante",pipLabelOn:"✕ Fermer la mini-fenêtre",pipTitle:"Ouvre une petite horloge toujours visible qui garde l'écran allumé pendant que vous travaillez dans d'autres apps",
     lockLost:"⚠️ Le verrou s'est désactivé pendant que cet onglet était masqué. Utilisez la mini-fenêtre flottante quand vous travaillez dans d'autres apps.",lockLostVisible:"⚠️ Le système a désactivé le verrou (économie de batterie ?). Appuyez sur le bouton pour le réactiver.",
-    statusFb:"Mode compatibilité actif (vidéo silencieuse)",
+    statusFb:"Mode compatibilité : ce navigateur n'a pas de Wake Lock, le verrou ne peut donc pas être confirmé. Vérifiez que l'écran reste allumé les premières minutes.",
     btnOn:"Garder l'écran actif",btnOff:"Arrêter",
     timerLeft:"restantes",timerActive:"Actif depuis",sessionPhrase:"d'écran actif",
     timerExpired:"Temps écoulé ! Verrouillage de l'écran réactivé.",
@@ -964,7 +992,7 @@ const LANG = {
     step2h:"Choisissez la durée",step2p:"Sélectionnez combien de temps : 30 min, 1h, 2h, 4h ou indéfiniment.",
     step3h:"Cliquez et c'est tout",step3p:"Appuyez sur le bouton. Votre écran reste actif. Arrêtez quand vous voulez.",
     usesTag:"Cas d'utilisation",usesH2:"Quand en avez-vous besoin ?",
-    usesLead:"Des milliers de personnes utilisent cet outil chaque jour.",
+    usesLead:"Voici les situations les plus courantes chez ceux qui l'utilisent au quotidien.",
     use1h:"Présentations",use1p:"Empêchez votre écran de s'éteindre pendant une présentation.",
     use2h:"Téléchargements longs",use2p:"Gardez votre ordinateur actif pendant les grands téléchargements.",
     use3h:"Recettes de cuisine",use3p:"Consultez la recette sans toucher l'écran avec les mains sales.",
@@ -1005,7 +1033,7 @@ const LANG = {
     cardHint:"Halte diesen Tab sichtbar: Wird das Fenster minimiert oder komplett verdeckt, gibt der Browser die Sperre frei. Du arbeitest in einer anderen App? Nutze das schwebende Mini-Fenster.",
     pipLabel:"Schwebendes Mini-Fenster",pipLabelOn:"✕ Mini-Fenster schließen",pipTitle:"Öffnet eine kleine, immer sichtbare Uhr, die den Bildschirm wach hält, während du in anderen Apps arbeitest",
     lockLost:"⚠️ Die Sperre wurde aufgehoben, während dieser Tab verdeckt war. Nutze das schwebende Mini-Fenster, wenn du in anderen Apps arbeitest.",lockLostVisible:"⚠️ Das System hat die Sperre aufgehoben (Energiesparmodus?). Drücke den Knopf, um sie wieder zu aktivieren.",
-    statusFb:"Kompatibilitätsmodus aktiv (stilles Video)",
+    statusFb:"Kompatibilitätsmodus: dieser Browser hat kein Wake Lock, die Sperre lässt sich also nicht bestätigen. Prüfe in den ersten Minuten, ob der Bildschirm anbleibt.",
     btnOn:"Bildschirm wach halten",btnOff:"Stoppen",
     timerLeft:"verbleibend",timerActive:"Aktiv seit",sessionPhrase:"Bildschirm aktiv",
     timerExpired:"Zeit abgelaufen! Bildschirmsperre wieder aktiv.",
@@ -1015,7 +1043,7 @@ const LANG = {
     step2h:"Dauer wählen",step2p:"Wähle wie lange: 30 Min, 1h, 2h, 4h oder unbegrenzt.",
     step3h:"Klicken und fertig",step3p:"Klicke den Button. Dein Bildschirm bleibt an. Stoppe wann immer du willst.",
     usesTag:"Anwendungsfälle",usesH2:"Wann brauchst du das?",
-    usesLead:"Tausende Menschen nutzen dieses Tool täglich.",
+    usesLead:"Das sind die häufigsten Situationen, in denen das Tool täglich genutzt wird.",
     use1h:"Präsentationen",use1p:"Verhindere, dass der Bildschirm mitten in einer Präsentation schwarz wird.",
     use2h:"Lange Downloads",use2p:"Halte deinen Computer während großer Downloads oder Backups wach.",
     use3h:"Kochrezepte",use3p:"Rezept auf dem Bildschirm lesen, ohne ihn mit schmutzigen Händen zu berühren.",
@@ -1163,13 +1191,13 @@ function setLang(l) {
 
 /* Donations (propagated from index.html) */
 const DONATE_I18N = {
-  en: { nav:"Support", h2:"Enjoying ScreenWakeUp? Keep it free ☕", p:"No ads, no sign-up — just one button that works. If it saved your screen today, a $3 coffee keeps the site free and independent.", btn:"Buy us a coffee · $3", social:"Reader-funded — every coffee keeps ScreenWakeUp free & ad-free.", toast:"Your screen stayed on {t} 🎉 Enjoyed it? Buy us a coffee.", toastBtn:"Buy a coffee" },
-  es: { nav:"Apóyanos", h2:"¿Te sirve ScreenWakeUp? Mantenlo gratis ☕", p:"Sin anuncios, sin registro — solo un botón que funciona. Si hoy te salvó la pantalla, un café de 3 $ mantiene el sitio gratis e independiente.", btn:"Invítanos un café · 3 $", social:"Financiado por usuarios — cada café mantiene ScreenWakeUp gratis y sin anuncios.", toast:"Tu pantalla estuvo activa {t} 🎉 ¿Te sirvió? Invítanos un café.", toastBtn:"Invitar un café" },
-  pt: { nav:"Apoiar", h2:"Curtindo o ScreenWakeUp? Mantenha grátis ☕", p:"Sem anúncios, sem cadastro — só um botão que funciona. Se hoje salvou sua tela, um café de $3 mantém o site grátis e independente.", btn:"Pague um café · $3", social:"Financiado pelos usuários — cada café mantém o ScreenWakeUp grátis e sem anúncios.", toast:"Sua tela ficou ativa {t} 🎉 Gostou? Pague um café.", toastBtn:"Pagar um café" },
-  fr: { nav:"Soutenir", h2:"ScreenWakeUp vous plaît ? Gardez-le gratuit ☕", p:"Sans pub, sans inscription — juste un bouton qui marche. S'il a sauvé votre écran aujourd'hui, un café à 3 $ garde le site gratuit et indépendant.", btn:"Offrir un café · 3 $", social:"Financé par les lecteurs — chaque café garde ScreenWakeUp gratuit et sans pub.", toast:"Votre écran est resté allumé {t} 🎉 Ça vous a plu ? Offrez un café.", toastBtn:"Offrir un café" },
-  de: { nav:"Unterstützen", h2:"Gefällt dir ScreenWakeUp? Halt es kostenlos ☕", p:"Keine Werbung, keine Anmeldung — nur ein Knopf, der funktioniert. Wenn es heute deinen Bildschirm gerettet hat, hält ein 3-$-Kaffee die Seite frei und unabhängig.", btn:"Spendier einen Kaffee · 3 $", social:"Nutzerfinanziert — jeder Kaffee hält ScreenWakeUp kostenlos und werbefrei.", toast:"Dein Bildschirm blieb {t} an 🎉 Gefallen? Spendier einen Kaffee.", toastBtn:"Kaffee spendieren" },
-  ja: { nav:"支援", h2:"ScreenWakeUp は役に立ってますか？無料を維持 ☕", p:"広告なし・登録なし、押すだけ。今日あなたの画面を救えたなら、$3 のコーヒーがこのサイトを無料で独立に保ちます。", btn:"コーヒーを贈る · $3", social:"ユーザーの支援で運営 — コーヒー一杯が ScreenWakeUp を無料・広告なしに保ちます。", toast:"画面を {t} 点けたままにできました 🎉 役に立ったら、コーヒーを一杯。", toastBtn:"コーヒーを贈る" },
-  ru: { nav:"Поддержать", h2:"Нравится ScreenWakeUp? Сохраним бесплатным ☕", p:"Без рекламы, без регистрации — просто кнопка, которая работает. Если сегодня он спас ваш экран, кофе за $3 сохранит сайт бесплатным и независимым.", btn:"Купить кофе · $3", social:"На средства пользователей — каждый кофе сохраняет ScreenWakeUp бесплатным и без рекламы.", toast:"Ваш экран был включён {t} 🎉 Понравилось? Купите нам кофе.", toastBtn:"Купить кофе" },
+  en: { nav:"Support", h2:"Enjoying ScreenWakeUp? Keep it free ☕", p:"No ads, no sign-up — just one button that works. If it saved your screen today, a $3 coffee keeps the site free and independent.", btn:"Buy us a coffee · $3", social:"Built and paid for by one person. No ads, no investors, no data for sale.", toast:"Your screen stayed on {t} 🎉 Enjoyed it? Buy us a coffee.", toastBtn:"Buy a coffee" },
+  es: { nav:"Apóyanos", h2:"¿Te sirve ScreenWakeUp? Mantenlo gratis ☕", p:"Sin anuncios, sin registro — solo un botón que funciona. Si hoy te salvó la pantalla, un café de 3 $ mantiene el sitio gratis e independiente.", btn:"Invítanos un café · 3 $", social:"Lo hace y lo mantiene una sola persona. Sin anuncios, sin inversores, sin vender datos.", toast:"Tu pantalla estuvo activa {t} 🎉 ¿Te sirvió? Invítanos un café.", toastBtn:"Invitar un café" },
+  pt: { nav:"Apoiar", h2:"Curtindo o ScreenWakeUp? Mantenha grátis ☕", p:"Sem anúncios, sem cadastro — só um botão que funciona. Se hoje salvou sua tela, um café de $3 mantém o site grátis e independente.", btn:"Pague um café · $3", social:"Feito e mantido por uma só pessoa. Sem anúncios, sem investidores, sem venda de dados.", toast:"Sua tela ficou ativa {t} 🎉 Gostou? Pague um café.", toastBtn:"Pagar um café" },
+  fr: { nav:"Soutenir", h2:"ScreenWakeUp vous plaît ? Gardez-le gratuit ☕", p:"Sans pub, sans inscription — juste un bouton qui marche. S'il a sauvé votre écran aujourd'hui, un café à 3 $ garde le site gratuit et indépendant.", btn:"Offrir un café · 3 $", social:"Créé et entretenu par une seule personne. Sans pub, sans investisseurs, sans vente de données.", toast:"Votre écran est resté allumé {t} 🎉 Ça vous a plu ? Offrez un café.", toastBtn:"Offrir un café" },
+  de: { nav:"Unterstützen", h2:"Gefällt dir ScreenWakeUp? Halt es kostenlos ☕", p:"Keine Werbung, keine Anmeldung — nur ein Knopf, der funktioniert. Wenn es heute deinen Bildschirm gerettet hat, hält ein 3-$-Kaffee die Seite frei und unabhängig.", btn:"Spendier einen Kaffee · 3 $", social:"Von einer einzigen Person gebaut und bezahlt. Keine Werbung, keine Investoren, kein Datenverkauf.", toast:"Dein Bildschirm blieb {t} an 🎉 Gefallen? Spendier einen Kaffee.", toastBtn:"Kaffee spendieren" },
+  ja: { nav:"支援", h2:"ScreenWakeUp は役に立ってますか？無料を維持 ☕", p:"広告なし・登録なし、押すだけ。今日あなたの画面を救えたなら、$3 のコーヒーがこのサイトを無料で独立に保ちます。", btn:"コーヒーを贈る · $3", social:"ひとりで作り、ひとりで維持しています。広告なし、投資家なし、データ販売なし。", toast:"画面を {t} 点けたままにできました 🎉 役に立ったら、コーヒーを一杯。", toastBtn:"コーヒーを贈る" },
+  ru: { nav:"Поддержать", h2:"Нравится ScreenWakeUp? Сохраним бесплатным ☕", p:"Без рекламы, без регистрации — просто кнопка, которая работает. Если сегодня он спас ваш экран, кофе за $3 сохранит сайт бесплатным и независимым.", btn:"Купить кофе · $3", social:"Сделано и оплачивается одним человеком. Без рекламы, без инвесторов, без продажи данных.", toast:"Ваш экран был включён {t} 🎉 Понравилось? Купите нам кофе.", toastBtn:"Купить кофе" },
 };
 
 function applyDonateStrings(l){
@@ -1357,6 +1385,7 @@ function watchRelease(s){
 }
 async function activate() {
   if(activating || active) return;
+  if(selectedMin > 0 && 'Notification' in window && Notification.permission === 'default'){ try{ Notification.requestPermission(); }catch(e){} }   // only when a finite timer was chosen: that is the one case we notify
   activating = true;
   const t = LANG[lang];
   try {
@@ -1368,10 +1397,12 @@ async function activate() {
     } else {
       videoFb = mkSilentVideo();
       cardStat.textContent = t.statusFb;
+      track('fallback_video', { reason: 'no_api' });
     }
   } catch {
     videoFb = mkSilentVideo();
     cardStat.textContent = t.statusFb;
+    track('fallback_video', { reason: 'request_failed' });
   }
   activating = false;
   lockLostCount = 0;
@@ -1405,10 +1436,10 @@ function deactivate(expired=false, lost=false) {
   stopTimer();
   track('deactivate_wakelock', { session_sec: sessionStart ? Math.floor((Date.now()-sessionStart)/1000) : 0, expired: !!expired, lock_losses: lockLostCount });
   if(lost) track('lock_lost_visible');
-  maybeShowDonateToast(sessionStart ? Math.floor((Date.now()-sessionStart)/1000) : 0);
+  if(!lost) maybeShowDonateToast(sessionStart ? Math.floor((Date.now()-sessionStart)/1000) : 0);
   stopSessionTimer();
   if(expired && 'Notification' in window && Notification.permission==='granted'){
-    new Notification('KeepScreenAwake', { body: t.timerExpired });
+    new Notification('ScreenWakeUp', { body: t.timerExpired, icon: '/swu-icon.png' });
   }
 }
 
@@ -1562,11 +1593,6 @@ addEventListener('pagehide', ()=>{
   if(active) track('deactivate_wakelock', { session_sec: sessionStart ? Math.floor((Date.now()-sessionStart)/1000) : 0, expired: false, closed_tab: true, lock_losses: lockLostCount });
 });
 
-document.addEventListener('click', ()=>{
-  if('Notification' in window && Notification.permission==='default')
-    Notification.requestPermission();
-},{once:true});
-
 /* ────────────────────────────────────────────
    SHARE
 ──────────────────────────────────────────── */
@@ -1579,10 +1605,18 @@ document.querySelectorAll('#cardDonateBlock .kofi-btn').forEach(function(el){ el
 
 function shareApp() {
   track('share');
+  const shareUrl = 'https://screenwakeup.com/' + (lang && lang !== 'en' ? lang + '/' : '') + '?utm_source=share&utm_medium=' + (navigator.share ? 'native' : 'copy');
   if(navigator.share){
-    navigator.share({ title:'KeepScreenAwake', text:LANG[lang].heroSub, url:'https://screenwakeup.com' }).catch(()=>{});
+    navigator.share({ title:'ScreenWakeUp', text:LANG[lang].heroSub, url:shareUrl }).catch(()=>{});
   } else {
-    navigator.clipboard.writeText('https://screenwakeup.com').then(()=>alert('Link copied!')).catch(()=>{});
+    const copied = { en:'✓ Link copied', es:'✓ Enlace copiado', pt:'✓ Link copiado', fr:'✓ Lien copié', de:'✓ Link kopiert', ja:'✓ リンクをコピーしました', ru:'✓ Ссылка скопирована' };
+    navigator.clipboard.writeText(shareUrl).then(()=>{
+      const el = document.getElementById('cdShare');
+      if(!el) return;
+      const prev = el.textContent;
+      el.textContent = copied[lang] || copied.en;
+      setTimeout(()=>{ el.textContent = prev; }, 2500);
+    }).catch(()=>{});
   }
 }
 

@@ -16,6 +16,9 @@
   <link rel="alternate" hreflang="ru" href="https://screenwakeup.com/ru/">
   <link rel="alternate" hreflang="x-default" href="https://screenwakeup.com/">
   <link rel="icon" href="https://screenwakeup.com/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="https://screenwakeup.com/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#5ee0c0">
   <meta property="og:title" content="Держать экран активным бесплатно — ScreenWakeUp">
   <meta property="og:description" content="Бесплатный инструмент для предотвращения блокировки экрана. Без загрузки, без аккаунта. Предотвращает статус «Отсутствую» в Teams и Slack.">
   <meta property="og:url" content="https://screenwakeup.com/ru/">
@@ -52,14 +55,14 @@
       {
         "@type": "Question",
         "name": "Есть ли бесплатный онлайн-таймер Помодоро?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Да — в ScreenWakeUp есть встроенный таймер Помодоро. Нажмите 🍅 Помодоро. Запускает сессии по 25 минут с 5-минутными перерывами и воспроизводит звуковой сигнал по окончании." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Да, в полной версии: откройте screenwakeup.com/?lang=ru и нажмите 🍅 Помодоро — 25 минут работы и 5 минут отдыха со звуковым сигналом. Эта страница — простая версия: защита от блокировки и готовые интервалы." }
       }
     ]
   }
   </script>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    :root{--bg:#0c0e18;--bg2:#11141f;--surface:#181b2a;--accent:#5ee0c0;--text:#eef0f6;--muted:#8892a4;--border:rgba(255,255,255,0.06)}
+    :root{--bg:#0c0e18;--bg2:#11141f;--surface:#181b2a;--accent:#5ee0c0;--accent2:#3ecaa8;--text:#eef0f6;--muted:#8892a4;--border:rgba(255,255,255,0.06)}
     body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',sans-serif;line-height:1.7}
     header{background:var(--bg2);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
     .logo{text-decoration:none;color:var(--text);font-weight:800;font-size:17px}
@@ -88,8 +91,6 @@
     footer{text-align:center;padding:40px 24px;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}
     footer a{color:var(--muted);text-decoration:none;margin:0 8px}
     footer a:hover{color:var(--accent)}
-    .nav-kofi{display:inline-flex;align-items:center;gap:6px;background:#FF5E5B;color:#fff;font-size:13px;font-weight:700;padding:7px 14px;border-radius:18px;text-decoration:none;margin-right:10px;}
-  .nav-kofi:hover{opacity:.88;}
   /* Floating support button (C) */
   .float-kofi-wrap{position:fixed;right:18px;bottom:18px;z-index:9998;}
   .float-kofi{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:50%;background:#FF5E5B;color:#fff;font-size:24px;text-decoration:none;box-shadow:0 10px 28px rgba(0,0,0,.4);transition:transform .15s,opacity .2s;}
@@ -139,7 +140,6 @@
 <header>
   <a href="https://screenwakeup.com" class="logo">ScreenWakeUp <em>бесплатно</em></a>
   <nav>
-    <a class="nav-kofi" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener">☕ Поддержать</a>
     <a href="https://screenwakeup.com">EN</a>
     <a href="/es/">ES</a>
     <a href="/pt/">PT</a>
@@ -153,7 +153,7 @@
 <div class="hero">
   <div class="hero-tag">Бесплатно · Без загрузки · Без аккаунта</div>
   <h1>Удерживайте <span>экран активным</span><br>мгновенно</h1>
-  <p class="lead">Предотвратите переход экрана в спящий режим или блокировку. Работает на Windows, Mac, iPhone и Android — без установки. Teams, Slack и Zoom не покажут статус «Отсутствую».</p>
+  <p class="lead">Предотвратите переход экрана в спящий режим или блокировку. Работает на Windows, Mac, iPhone и Android — без установки. Устраняет главную причину статуса «Отсутствую» в Teams, Slack и Zoom — блокировку и сон экрана.</p>
   <div class="tool-card">
     <div class="pulse-wrap"><div class="dot" id="dot"></div><div class="ring"></div></div>
     <p id="cardTitle">Экран спит</p>
@@ -171,7 +171,7 @@
     <div class="prog-wrap" id="progWrap"><div class="prog-bar" id="progBar"></div></div>
     <div id="sessionClock"></div>
     <p id="cardHint">Держите эту вкладку видимой: если свернуть окно или полностью перекрыть его другим приложением, браузер снимет блокировку. Работаете в другом приложении? Используйте плавающее мини-окно.</p>
-    <a class="full-link" href="https://screenwakeup.com">Полная версия (помодоро, полноэкранные часы, свой таймер) →</a>
+    <a class="full-link" href="https://screenwakeup.com/?lang=ru">Полная версия (помодоро, полноэкранные часы, свой таймер) →</a>
   </div>
 </div>
 
@@ -191,23 +191,8 @@
     </div>
     <div class="feature-card">
       <div class="icon">🍅</div>
-      <h3>Таймер Помодоро</h3>
-      <p>25 минут работы и 5 минут отдыха. Звуковой сигнал по окончании. Экран остаётся включённым автоматически.</p>
-    </div>
-    <div class="feature-card">
-      <div class="icon">⛶</div>
-      <h3>Полноэкранные часы</h3>
-      <p>Большие цифровые часы на весь экран. Идеально для презентаций и информационных дисплеев.</p>
-    </div>
-    <div class="feature-card">
-      <div class="icon">⏱️</div>
-      <h3>Свой таймер</h3>
-      <p>Задайте любое количество минут (например, 47, 90, 180) для удержания экрана.</p>
-    </div>
-    <div class="feature-card">
-      <div class="icon">🔔</div>
-      <h3>Звуковое оповещение</h3>
-      <p>Мягкий звуковой сигнал по истечении времени — не пропустите момент.</p>
+      <h3>Больше в полной версии</h3>
+      <p>Таймер Помодоро, полноэкранные часы, свой таймер и звуковое оповещение доступны в <a href="https://screenwakeup.com/?lang=ru">полной версии</a> (интерфейс на русском, бесплатно, без регистрации). Эта страница — простая версия.</p>
     </div>
   </div>
 </div>
@@ -244,11 +229,11 @@
     </details>
     <details>
       <summary>Есть ли бесплатный онлайн-таймер Помодоро?</summary>
-      <p>Да — в ScreenWakeUp встроен таймер Помодоро. Нажмите 🍅 Помодоро. Запускает 25-минутные рабочие сессии с 5-минутными перерывами и звуковым сигналом.</p>
+      <p>Да, в полной версии: откройте screenwakeup.com/?lang=ru и нажмите 🍅 Помодоро — 25 минут работы и 5 минут отдыха со звуковым сигналом. Эта страница — простая версия: защита от блокировки и готовые интервалы.</p>
     </details>
     <details>
       <summary>Можно ли установить произвольный таймер?</summary>
-      <p>Да. Введите любое количество минут в поле кастомного таймера и нажмите «Свой». Экран останется включённым ровно столько времени.</p>
+      <p>На этой странице можно выбрать 30 минут, 1, 2 или 4 часа. Произвольное число минут задаётся в полной версии (screenwakeup.com/?lang=ru).</p>
     </details>
     <details>
       <summary>Это безопасно? Нужен ли аккаунт?</summary>
@@ -278,6 +263,15 @@
     <a href="/ru/">Русский</a>
   </p>
   <p style="margin-top:12px">
+    <a href="/ru/prevent-teams-away/">Teams всегда зелёный</a>
+    &nbsp;·&nbsp;
+    <a href="/ru/caffeine-alternative/">Бесплатная замена Caffeine</a>
+    &nbsp;·&nbsp;
+    <a href="/ru/keep-screen-awake-iphone/">Экран iPhone не гаснет</a>
+    &nbsp;·&nbsp;
+    <a href="/ru/prevent-zoom-idle/">Zoom остаётся активным</a>
+  </p>
+  <p style="margin-top:12px">
     <a href="/about/">О сайте</a>
     <a href="/privacy/">Конфиденциальность</a>
     <a href="/terms/">Условия</a>
@@ -287,7 +281,7 @@
 <!-- Floating support button (C) -->
 <script>
 (function(){
-var T={"cardOn": "Экран активен", "cardOff": "Экран спит", "statusOn": "Wake Lock активен — экран останется включённым", "statusOff": "Нажмите кнопку, чтобы держать экран включённым", "statusFb": "Режим совместимости активен (тихое видео)", "btnOn": "Держать экран активным", "btnOff": "Остановить", "timerLeft": "осталось", "timerActive": "Активно", "timerExpired": "Время вышло! Блокировка экрана снова включена.", "sessionPhrase": "экран активен"};
+var T={"cardOn": "Экран активен", "cardOff": "Экран спит", "statusOn": "Wake Lock активен — экран останется включённым", "statusOff": "Нажмите кнопку, чтобы держать экран включённым", "statusFb": "Режим совместимости: в этом браузере нет Wake Lock, поэтому блокировку нельзя подтвердить. Проверьте в первые минуты, что экран остаётся включённым.", "btnOn": "Держать экран активным", "btnOff": "Остановить", "timerLeft": "осталось", "timerActive": "Активно", "timerExpired": "Время вышло! Блокировка экрана снова включена.", "sessionPhrase": "экран активен"};
 function track(n,p){try{if(window.gtag)gtag('event',n,p||{});}catch(e){}}
 var active=false,wakeLock=null,videoFb=null,startTime=null,tickId=null,selectedMin=0,durationMs=0,sessionStart=null,sessionTickId=null;
 var dot=document.getElementById('dot'),cardTitle=document.getElementById('cardTitle'),cardStat=document.getElementById('cardStatus'),toggleBtn=document.getElementById('toggleBtn'),timerTxt=document.getElementById('timerTxt'),sessionClock=document.getElementById('sessionClock'),progWrap=document.getElementById('progWrap'),progBar=document.getElementById('progBar'),durBtns=document.querySelectorAll('.dur-btn');

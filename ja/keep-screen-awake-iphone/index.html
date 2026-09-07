@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iPhone の画面をスリープさせない方法 — 無料・アプリ不要（iOS・iPad）| ScreenWakeUp</title>
-  <meta name="description" content="iPhone や iPad の画面が消えないようにします — 自動ロックを変えず、アプリもインストールせずに。iOS 16.4 以降の Safari と Chrome で動く無料ウェブツール。">
+  <title>iPhone の画面をスリープさせない方法 — 無料・アプリ不要</title>
+  <meta name="description" content="iPhone や iPad の画面が消えないようにする無料ウェブツール。自動ロックを変えず、アプリも不要。iOS 16.4 以降の Safari と Chrome で動作。">
   <meta name="keywords" content="iphone 画面 消えない, iphone 画面 つけたまま, iphone 自動ロック 防ぐ, ipad 画面 つけたまま, ios 画面 スリープさせない, iphone 画面 常時表示">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://screenwakeup.com/ja/keep-screen-awake-iphone/">
@@ -232,6 +232,19 @@
   <p>はい、同じです — iPadOS の Safari か Chrome。レシピ・プレゼン・キオスク表示に最適です。</p>
   <h3>バッテリーを消費しますか？</h3>
   <p>どんな画面でも点けたままにすれば電力を使いますが、タブがアクティブな間だけです。閉じれば通常の自動ロックに戻るので、「なし」設定よりずっと安全です。</p>
+  <h3>自動ロックを変えずに iPhone の画面を点けたままにするには？</h3>
+  <p>Safari で screenwakeup.com を開き、「画面をスリープさせない」をタップします。Screen Wake Lock API（iOS 16.4 以降）を使い、タブが開いている間は画面を点けたままにします。設定 &gt; 画面表示と明るさ &gt; 自動ロックを変える必要はありません。</p>
+  <h3>どの iOS バージョンが必要ですか？</h3>
+  <p>iOS・iPadOS 16.4 以降が Safari の Screen Wake Lock API に対応しています。古いバージョンでは代替方式を使いますが、16.4 以降が最も安定します。</p>
+  <h3>端末をロックしたりアプリを切り替えると画面が暗くなるのはなぜ？</h3>
+  <p>ウェイクロックはタブが開いて表示されている間だけ有効です。別アプリに切り替えたり端末をロックすると iOS が解放します。タブに戻ると自動的に再有効化されます。</p>
+  <h3>アプリやゲームの中で画面を点けたままにするには？</h3>
+  <p>ウェブページは他のアプリを制御できません。その場合は Apple のアクセスガイドを使います：設定 &gt; アクセシビリティ &gt; アクセスガイドをオンにし、アプリ内でサイドボタンをトリプルクリック。Safari や Chrome のコンテンツなら ScreenWakeUp がワンタップ・設定不要で行います。</p>
+  <h3>iPhone の画面が消えないようにするには？</h3>
+  <p>方法は2つあります。システム側：設定 &gt; 画面表示と明るさ &gt; 自動ロックで長い時間か「なし」を選びます（ロック解除のままになるので戻すのを忘れずに）。手軽で一時的な方法：Safari で screenwakeup.com を開き「画面をスリープさせない」をタップします。タブが開いて表示されている間は画面が消えず、閉じればいつもの自動ロックに戻ります。</p>
+  <h3>iPhone の自動ロックがグレーで変更できないのはなぜ？</h3>
+  <p>ほぼ低電力モードが原因です。オンの間、iOS は自動ロックを30秒に固定して設定を無効化します。設定 &gt; バッテリーでオフにしてください。それでもグレーのままなら、職場や学校の構成プロファイル・MDM であることが多く、設定 &gt; 一般 &gt; VPN とデバイス管理で確認できます。</p>
+
 
   <a href="https://screenwakeup.com/ja/" class="cta">iPhone を点けたままに → ツールを開く</a>
 
@@ -245,7 +258,7 @@
 
 <footer>
   <p>
-    <a href="https://screenwakeup.com/ja/">ホーム</a>
+    <a href="https://screenwakeup.com/ja/">画面をスリープさせないサイト</a>
     <a href="/about/">概要</a>
     <a href="/privacy/">プライバシー</a>
     <a href="/terms/">利用規約</a>

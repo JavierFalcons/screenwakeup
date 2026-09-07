@@ -1,0 +1,2 @@
+# Cloudflare Pages redirects — short link people can type into a Teams chat
+/teams  /prevent-teams-away/?utm_source=teams&utm_medium=shortlink  302

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>画面をスリープさせない 無料オンラインツール — ScreenWakeUp</title>
-  <meta name="description" content="画面のスリープやロックを無料で防ぐブラウザツール。ダウンロード不要・アカウント不要。Windows、Mac、iPhone、Android対応。Teams・Slack・Zoomでも離席中にならない。">
+  <meta name="description" content="画面のスリープやロックを無料で防ぐブラウザツール。ダウンロード不要・アカウント不要。Windows、Mac、iPhone、Android対応。Teams・Slack・Zoomでも退席中にならない。">
   <meta name="keywords" content="画面スリープ防止, スクリーンセーバー無効, 画面ロック防止, Teams 離席中 防止, Slack アクティブ, ポモドーロタイマー, Wake Lock">
   <link rel="canonical" href="https://screenwakeup.com/ja/">
   <link rel="alternate" hreflang="en" href="https://screenwakeup.com/">
@@ -16,8 +16,11 @@
   <link rel="alternate" hreflang="ru" href="https://screenwakeup.com/ru/">
   <link rel="alternate" hreflang="x-default" href="https://screenwakeup.com/">
   <link rel="icon" href="https://screenwakeup.com/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="https://screenwakeup.com/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#5ee0c0">
   <meta property="og:title" content="画面をスリープさせない 無料ツール — ScreenWakeUp">
-  <meta property="og:description" content="ダウンロード不要・アカウント不要で画面スリープを防ぐ無料ブラウザツール。Teams/Slack/Zoomでの離席中表示も防止。">
+  <meta property="og:description" content="ダウンロード不要・アカウント不要で画面スリープを防ぐ無料ブラウザツール。Teams/Slack/Zoomでの退席中表示も防止。">
   <meta property="og:url" content="https://screenwakeup.com/ja/">
   <meta property="og:image" content="https://screenwakeup.com/og-image.png">
   <meta property="og:type" content="website">
@@ -46,20 +49,20 @@
       },
       {
         "@type": "Question",
-        "name": "Microsoft Teamsで離席中になるのを防ぐには？",
-        "acceptedAnswer": { "@type": "Answer", "text": "screenwakeup.com で「画面をスリープさせない」をクリック。画面が点いたままになり、Teamsが離席中と判定する最大の原因であるロックやスリープを防ぎます。正直な注意点：ウェブサイトは本物のマウスやキーボード入力をシミュレートできないため（ブラウザがセキュリティ上ブロック）、完全な無操作が長く続くとTeams側の判定でステータスが変わる場合があります。" }
+        "name": "Microsoft Teamsで退席中（離席中）になるのを防ぐには？",
+        "acceptedAnswer": { "@type": "Answer", "text": "screenwakeup.com で「画面をスリープさせない」をクリック。画面が点いたままになり、Teamsが退席中と判定する最大の原因であるロックやスリープを防ぎます。正直な注意点：ウェブサイトは本物のマウスやキーボード入力をシミュレートできないため（ブラウザがセキュリティ上ブロック）、完全な無操作が長く続くとTeams側の判定でステータスが変わる場合があります。" }
       },
       {
         "@type": "Question",
         "name": "無料のオンラインポモドーロタイマーはありますか？",
-        "acceptedAnswer": { "@type": "Answer", "text": "はい。ScreenWakeUp に内蔵ポモドーロタイマーがあります。🍅 ポモドーロをクリックすると25分作業・5分休憩サイクルが始まり、終了時にチャイムが鳴ります。" }
+        "acceptedAnswer": { "@type": "Answer", "text": "はい、全機能版にあります。screenwakeup.com/?lang=ja を開いて🍅 ポモドーロをクリックすると、25分作業・5分休憩のサイクルが始まり、終了時にチャイムが鳴ります。このページはシンプル版で、スリープ防止と時間プリセットに対応しています。" }
       }
     ]
   }
   </script>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    :root{--bg:#0c0e18;--bg2:#11141f;--surface:#181b2a;--accent:#5ee0c0;--text:#eef0f6;--muted:#8892a4;--border:rgba(255,255,255,0.06)}
+    :root{--bg:#0c0e18;--bg2:#11141f;--surface:#181b2a;--accent:#5ee0c0;--accent2:#3ecaa8;--text:#eef0f6;--muted:#8892a4;--border:rgba(255,255,255,0.06)}
     body{background:var(--bg);color:var(--text);font-family:-apple-system,'Hiragino Sans','Noto Sans JP','Yu Gothic',BlinkMacSystemFont,sans-serif;line-height:1.7}
     header{background:var(--bg2);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
     .logo{text-decoration:none;color:var(--text);font-weight:800;font-size:17px}
@@ -89,8 +92,6 @@
     footer a{color:var(--muted);text-decoration:none;margin:0 8px}
     footer a:hover{color:var(--accent)}
     .lang-links{margin-top:16px;font-size:12px}
-    .nav-kofi{display:inline-flex;align-items:center;gap:6px;background:#FF5E5B;color:#fff;font-size:13px;font-weight:700;padding:7px 14px;border-radius:18px;text-decoration:none;margin-right:10px;}
-  .nav-kofi:hover{opacity:.88;}
   /* Floating support button (C) */
   .float-kofi-wrap{position:fixed;right:18px;bottom:18px;z-index:9998;}
   .float-kofi{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:50%;background:#FF5E5B;color:#fff;font-size:24px;text-decoration:none;box-shadow:0 10px 28px rgba(0,0,0,.4);transition:transform .15s,opacity .2s;}
@@ -140,7 +141,6 @@
 <header>
   <a href="https://screenwakeup.com" class="logo">ScreenWakeUp <em>無料ツール</em></a>
   <nav>
-    <a class="nav-kofi" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener">☕ 支援</a>
     <a href="https://screenwakeup.com">EN</a>
     <a href="/es/">ES</a>
     <a href="/pt/">PT</a>
@@ -154,7 +154,7 @@
 <div class="hero">
   <div class="hero-tag">無料 · ダウンロード不要 · アカウント不要</div>
   <h1>画面を<span>スリープさせない</span><br>すぐに使える</h1>
-  <p class="lead">画面のスリープやロックを防ぎます。Windows、Mac、iPhone、Android対応 — インストール不要。Teams・Slack・Zoomでも離席中になりません。</p>
+  <p class="lead">画面のスリープやロックを防ぎます。Windows、Mac、iPhone、Android対応 — インストール不要。Teams・Slack・Zoomが退席中になる最大の原因（画面のロックとスリープ）を防ぎます。</p>
   <div class="tool-card">
     <div class="pulse-wrap"><div class="dot" id="dot"></div><div class="ring"></div></div>
     <p id="cardTitle">画面スリープ中</p>
@@ -172,7 +172,7 @@
     <div class="prog-wrap" id="progWrap"><div class="prog-bar" id="progBar"></div></div>
     <div id="sessionClock"></div>
     <p id="cardHint">このタブを見える状態に保ってください。ウィンドウを最小化したり他のアプリで完全に隠すと、ブラウザがロックを解除します。他のアプリで作業する場合はフローティングミニウィンドウをご利用ください。</p>
-    <a class="full-link" href="https://screenwakeup.com">全機能版（ポモドーロ・全画面時計・カスタムタイマー）→</a>
+    <a class="full-link" href="https://screenwakeup.com/?lang=ja">全機能版（ポモドーロ・全画面時計・カスタムタイマー）→</a>
   </div>
 </div>
 
@@ -188,27 +188,12 @@
     <div class="feature-card">
       <div class="icon">💬</div>
       <h3>Teams・Slack・Zoom でアクティブ維持</h3>
-      <p>画面を点けたまま、PCのロックとスリープを防止。ロックやスリープこそ Teams・Slack が離席中と判定する最大の原因です。偽の入力シミュレーションには頼りません。</p>
+      <p>画面を点けたまま、PCのロックとスリープを防止。ロックやスリープこそ Teams・Slack が退席中と判定する最大の原因です。偽の入力シミュレーションには頼りません。</p>
     </div>
     <div class="feature-card">
       <div class="icon">🍅</div>
-      <h3>ポモドーロタイマー</h3>
-      <p>25分作業・5分休憩のサイクル。終了時にチャイムが鳴り、画面は自動でオンのままです。</p>
-    </div>
-    <div class="feature-card">
-      <div class="icon">⛶</div>
-      <h3>全画面デジタル時計</h3>
-      <p>大きなデジタル時計とともに全画面表示。プレゼンや受付モニターに最適です。</p>
-    </div>
-    <div class="feature-card">
-      <div class="icon">⏱️</div>
-      <h3>カスタムタイマー</h3>
-      <p>任意の分数（例：47分、90分）を設定して画面をオンに保ちます。</p>
-    </div>
-    <div class="feature-card">
-      <div class="icon">🔔</div>
-      <h3>音声アラート</h3>
-      <p>タイマー終了時に優しいチャイムでお知らせ。</p>
+      <h3>全機能版でさらに便利に</h3>
+      <p>ポモドーロタイマー、全画面デジタル時計、カスタムタイマー、音声アラートは<a href="https://screenwakeup.com/?lang=ja">全機能版</a>で使えます（日本語表示・無料・登録不要）。このページはシンプル版です。</p>
     </div>
   </div>
 </div>
@@ -236,8 +221,8 @@
       <p>はい。Chrome、Edge、Firefox、Safari すべてで動作 — インストール不要です。</p>
     </details>
     <details>
-      <summary>Microsoft Teamsで離席中になるのを防ぐには？</summary>
-      <p>screenwakeup.com で「画面をスリープさせない」をクリック。画面が点いたままになり、Teamsが離席中と判定する最大の原因であるロックやスリープを防ぎます。正直な注意点：ウェブサイトは本物のマウスやキーボード入力をシミュレートできないため（ブラウザがセキュリティ上ブロック）、完全な無操作が長く続くとTeams側の判定でステータスが変わる場合があります。</p>
+      <summary>Microsoft Teamsで退席中（離席中）になるのを防ぐには？</summary>
+      <p>screenwakeup.com で「画面をスリープさせない」をクリック。画面が点いたままになり、Teamsが退席中と判定する最大の原因であるロックやスリープを防ぎます。正直な注意点：ウェブサイトは本物のマウスやキーボード入力をシミュレートできないため（ブラウザがセキュリティ上ブロック）、完全な無操作が長く続くとTeams側の判定でステータスが変わる場合があります。</p>
     </details>
     <details>
       <summary>Slackでアクティブ状態を維持するには？</summary>
@@ -245,11 +230,11 @@
     </details>
     <details>
       <summary>無料のオンラインポモドーロタイマーはありますか？</summary>
-      <p>はい。ScreenWakeUp に内蔵ポモドーロタイマーがあります。🍅 ポモドーロをクリックすると25分作業・5分休憩サイクルが始まり、終了時にチャイムが鳴ります。</p>
+      <p>はい、全機能版にあります。screenwakeup.com/?lang=ja を開いて🍅 ポモドーロをクリックすると、25分作業・5分休憩のサイクルが始まり、終了時にチャイムが鳴ります。このページはシンプル版で、スリープ防止と時間プリセットに対応しています。</p>
     </details>
     <details>
       <summary>タイマーを設定できますか？</summary>
-      <p>はい。30分、1時間、2時間、4時間から選択できます。またカスタムタイマーで任意の分数も設定可能です。</p>
+      <p>はい。このページでは30分、1時間、2時間、4時間から選べます。任意の分数は全機能版（screenwakeup.com/?lang=ja）のカスタムタイマーで設定できます。</p>
     </details>
     <details>
       <summary>安全ですか？アカウントは必要ですか？</summary>
@@ -279,6 +264,15 @@
     <a href="/ru/">Русский</a>
   </p>
   <p style="margin-top:12px">
+    <a href="/ja/prevent-teams-away/">Teams の退席中を防ぐ</a>
+    &nbsp;·&nbsp;
+    <a href="/ja/caffeine-alternative/">Caffeine の無料代替</a>
+    &nbsp;·&nbsp;
+    <a href="/ja/keep-screen-awake-iphone/">iPhone の画面をスリープさせない</a>
+    &nbsp;·&nbsp;
+    <a href="/ja/prevent-zoom-idle/">Zoom をアクティブに保つ</a>
+  </p>
+  <p style="margin-top:12px">
     <a href="/about/">About</a>
     <a href="/privacy/">Privacy</a>
     <a href="/terms/">Terms</a>
@@ -288,7 +282,7 @@
 <!-- Floating support button (C) -->
 <script>
 (function(){
-var T={"cardOn": "画面アクティブ", "cardOff": "画面スリープ中", "statusOn": "ウェイクロック有効 — 画面は点灯し続けます", "statusOff": "ボタンを押して画面をオンに保つ", "statusFb": "互換モード有効（サイレント動画）", "btnOn": "画面をスリープさせない", "btnOff": "停止", "timerLeft": "残り", "timerActive": "アクティブ経過", "timerExpired": "時間切れ！画面ロックが再び有効になりました。", "sessionPhrase": "画面オン中"};
+var T={"cardOn": "画面アクティブ", "cardOff": "画面スリープ中", "statusOn": "ウェイクロック有効 — 画面は点灯し続けます", "statusOff": "ボタンを押して画面をオンに保つ", "statusFb": "互換モード：このブラウザには Wake Lock がないため、ロックを確認できません。最初の数分間、画面が点いたままか確認してください。", "btnOn": "画面をスリープさせない", "btnOff": "停止", "timerLeft": "残り", "timerActive": "アクティブ経過", "timerExpired": "時間切れ！画面ロックが再び有効になりました。", "sessionPhrase": "画面オン中"};
 function track(n,p){try{if(window.gtag)gtag('event',n,p||{});}catch(e){}}
 var active=false,wakeLock=null,videoFb=null,startTime=null,tickId=null,selectedMin=0,durationMs=0,sessionStart=null,sessionTickId=null;
 var dot=document.getElementById('dot'),cardTitle=document.getElementById('cardTitle'),cardStat=document.getElementById('cardStatus'),toggleBtn=document.getElementById('toggleBtn'),timerTxt=document.getElementById('timerTxt'),sessionClock=document.getElementById('sessionClock'),progWrap=document.getElementById('progWrap'),progBar=document.getElementById('progBar'),durBtns=document.querySelectorAll('.dur-btn');
