@@ -10,8 +10,8 @@ CONTENT = {"prevent-teams-away": {}, "caffeine-alternative": {}, "keep-screen-aw
 
 # ============================ prevent-teams-away ============================
 CONTENT["prevent-teams-away"]["es"] = dict(
- title='Cómo evitar el estado Ausente en Teams (seguir en verde) — Gratis, sin instalar | ScreenWakeUp',
- desc='Por qué Teams te marca como Ausente y qué lo evita de verdad — la guía honesta. Mantén tu pantalla despierta y el equipo desbloqueado con una herramienta web gratis, sin descargas ni permisos de administrador. Funciona en Windows, Mac y Chromebook.',
+ title='Evitar el estado Ausente en Teams — gratis, sin instalar',
+ desc='Por qué Teams te pone en Ausente y qué lo evita de verdad: pantalla despierta y equipo desbloqueado desde el navegador. Gratis, sin instalar ni permisos.',
  keywords='evitar ausente teams, mantener teams activo, estado verde teams, teams ausente 5 minutos, seguir activo en teams, mover raton automatico',
  ogtitle='Cómo evitar el estado Ausente en Teams — la guía honesta',
  ogdesc='Por qué Teams te pone en Ausente y qué funciona de verdad: pantalla despierta y equipo desbloqueado. Herramienta web gratis, sin descargas ni permisos de administrador.',
@@ -57,8 +57,8 @@ CONTENT["prevent-teams-away"]["es"] = dict(
       ('¿ScreenWakeUp falsea el tiempo de inactividad o simula actividad?', 'No. Un navegador no puede mover el ratón ni pulsar teclas — cualquier web que prometa lo contrario te está engañando. ScreenWakeUp solo mantiene tu pantalla despierta, lo que evita el desencadenante más común del estado Ausente: el bloqueo del equipo.')],
 )
 CONTENT["prevent-teams-away"]["pt"] = dict(
- title='Como evitar o status Ausente no Teams (ficar verde) — Grátis, sem instalar | ScreenWakeUp',
- desc='Por que o Teams marca você como Ausente e o que realmente evita isso — o guia honesto. Mantenha sua tela acordada e o computador desbloqueado com uma ferramenta web grátis, sem download nem direitos de administrador. Funciona no Windows, Mac e Chromebook.',
+ title='Evitar o status Ausente no Teams — grátis, sem instalar',
+ desc='Por que o Teams marca você como Ausente e o que evita isso de verdade: tela acordada e computador desbloqueado pelo navegador. Grátis, sem instalar.',
  keywords='evitar ausente teams, manter teams ativo, status verde teams, teams ausente 5 minutos, ficar ativo no teams, mexer mouse automatico',
  ogtitle='Como evitar o status Ausente no Teams — o guia honesto',
  ogdesc='Por que o Teams coloca você em Ausente e o que funciona de verdade: tela acordada e computador desbloqueado. Ferramenta web grátis, sem download nem direitos de administrador.',
@@ -104,8 +104,8 @@ CONTENT["prevent-teams-away"]["pt"] = dict(
       ('O ScreenWakeUp falsifica o tempo de inatividade ou simula atividade?', 'Não. Um navegador não pode mover o mouse nem pressionar teclas — qualquer site que prometa o contrário está te enganando. O ScreenWakeUp só mantém sua tela acordada, o que evita o gatilho mais comum do status Ausente: o bloqueio do computador.')],
 )
 CONTENT["prevent-teams-away"]["fr"] = dict(
- title='Comment éviter le statut Absent sur Teams (rester vert) — Gratuit, sans installation | ScreenWakeUp',
- desc="Pourquoi Teams vous marque Absent et ce qui l'empêche vraiment — le guide honnête. Gardez votre écran allumé et votre machine déverrouillée avec un outil web gratuit, sans téléchargement ni droits administrateur. Fonctionne sur Windows, Mac et Chromebook.",
+ title='Éviter le statut Absent sur Teams — gratuit, sans app',
+ desc="Pourquoi Teams vous marque Absent et ce qui l'empêche vraiment : écran allumé et machine déverrouillée depuis le navigateur. Gratuit, sans installation.",
  keywords='éviter absent teams, garder teams actif, statut vert teams, teams absent 5 minutes, rester actif teams, bouger souris automatique',
  ogtitle='Comment éviter le statut Absent sur Teams — le guide honnête',
  ogdesc='Pourquoi Teams vous passe en Absent et ce qui marche vraiment : écran allumé et machine déverrouillée. Outil web gratuit, sans téléchargement ni droits administrateur.',
@@ -151,8 +151,8 @@ CONTENT["prevent-teams-away"]["fr"] = dict(
       ("ScreenWakeUp falsifie-t-il le temps d'inactivité ou simule-t-il une activité ?", "Non. Un navigateur ne peut ni bouger la souris ni frapper de touches — tout site qui promet le contraire vous trompe. ScreenWakeUp garde seulement votre écran éveillé, ce qui évite le déclencheur le plus courant du statut Absent : le verrouillage de la machine.")],
 )
 CONTENT["prevent-teams-away"]["de"] = dict(
- title='Teams-Status Abwesend verhindern (grün bleiben) — Kostenlos, ohne Installation | ScreenWakeUp',
- desc='Warum Teams Sie als Abwesend anzeigt und was wirklich dagegen hilft — der ehrliche Guide. Halten Sie Ihren Bildschirm wach und Ihren Rechner entsperrt mit einem kostenlosen Web-Tool, ohne Download oder Administratorrechte. Funktioniert unter Windows, Mac und Chromebook.',
+ title='Abwesend in Teams verhindern — kostenlos, ohne Installation',
+ desc='Warum Teams dich als Abwesend anzeigt und was wirklich hilft: Bildschirm wach und Rechner entsperrt, direkt im Browser. Kostenlos, ohne Download.',
  keywords='teams abwesend verhindern, teams aktiv halten, teams grüner status, teams abwesend nach 5 minuten, in teams aktiv bleiben, maus bewegen automatisch',
  ogtitle='Teams-Status Abwesend verhindern — der ehrliche Guide',
  ogdesc='Warum Teams Sie auf Abwesend setzt und was wirklich funktioniert: Bildschirm wach, Rechner entsperrt. Kostenloses Web-Tool, ohne Download oder Administratorrechte.',
@@ -198,8 +198,8 @@ CONTENT["prevent-teams-away"]["de"] = dict(
       ('Täuscht ScreenWakeUp Inaktivitätszeit vor oder simuliert es Aktivität?', 'Nein. Ein Browser kann weder die Maus bewegen noch Tasten drücken — jede Website, die das verspricht, täuscht Sie. ScreenWakeUp hält nur Ihren Bildschirm wach und verhindert so den häufigsten Auslöser des Abwesend-Status: die Sperrung des Rechners.')],
 )
 CONTENT["prevent-teams-away"]["ja"] = dict(
- title='Teams の「退席中」を防ぐ方法（オンライン表示を維持）— 無料・インストール不要 | ScreenWakeUp',
- desc='Teams が「退席中」にする本当の理由と、実際に効く対策 — 正直なガイド。無料のウェブツールで画面を点けたまま、ロックを防止。ダウンロードや管理者権限は不要。Windows・Mac・Chromebook で動作。',
+ title='Teams の「退席中」を防ぐ方法 — 無料・インストール不要',
+ desc='Teams が「退席中」になる本当の理由と効く対策。無料のウェブツールで画面を点けたままロックを防止。ダウンロード・管理者権限不要。',
  keywords='teams 退席中 防ぐ, teams アクティブ 維持, teams 緑 ステータス, teams 5分 退席中, teams アクティブのまま, マウス 自動 動かす',
  ogtitle='Teams の「退席中」を防ぐ方法 — 正直なガイド',
  ogdesc='Teams が退席中にする理由と、本当に効く対策：画面を点けたまま、PCをロックさせない。無料ウェブツール、ダウンロード・管理者権限不要。',
@@ -207,7 +207,7 @@ CONTENT["prevent-teams-away"]["ja"] = dict(
  h1='Teams の<span>「退席中」を防ぐ</span>方法',
  lead='正直なガイド：Teams が「退席中」になる本当の理由、ブラウザツールにできること・できないこと、そして確実に緑を維持する方法 — ダウンロードも管理者権限も不要。',
  body="""  <p>読み物や電話、別ウィンドウへの集中などで少し離れた途端に Teams が<strong>「退席中」</strong>に切り替わる——よくあることです。Teams は OS の<strong>アイドルタイマー</strong>を読み取り、マウスやキーボードの操作が約5分ない場合、または画面がロック・スリープした場合に、プレゼンスを「退席中」に変更します。</p>
-  <div class="box"><strong>正直な結論:</strong> ブラウザにできるのは、画面を点けたままにしてPCのロックとスリープを防ぐこと（離席中の最大の原因を排除）。本物のマウスやキーボード入力を偽装できるウェブサイトは存在しません。ScreenWakeUp は本当に効く部分だけを提供します。無料・ブラウザ内・インストール不要。</div>
+  <div class="box"><strong>正直な結論:</strong> ブラウザにできるのは、画面を点けたままにしてPCのロックとスリープを防ぐこと（退席中の最大の原因を排除）。本物のマウスやキーボード入力を偽装できるウェブサイトは存在しません。ScreenWakeUp は本当に効く部分だけを提供します。無料・ブラウザ内・インストール不要。</div>
   <h2>3ステップで Teams をアクティブに保つ</h2>
   <ol>
     <li><strong>ツールを開く。</strong> Chrome または Edge で別タブに <a class="inline" href="{HOME}">screenwakeup.com</a> を開きます。</li>
@@ -236,8 +236,8 @@ CONTENT["prevent-teams-away"]["ja"] = dict(
  howto=dict(name='Microsoft Teams の「退席中」を防ぐ方法',
             desc='マウスやシステム設定を変えずに、Microsoft Teams のステータスを緑（アクティブ）のまま維持します。',
             steps=[('ツールを開く', 'Chrome または Edge で別タブに screenwakeup.com を開きます。'),
-                   ('有効化する', '「画面をスリープさせない」をクリック。画面が点いたまま、PCはロックもスリープもしません — 離席中と判定される最大の原因を防ぎます。'),
-                   ('有効化', '「画面をスリープさせない」をクリックし、タブを開いたままにします。')]),
+                   ('有効化する', '「画面をスリープさせない」をクリック。画面が点いたまま、PCはロックもスリープもしません — 退席中と判定される最大の原因を防ぎます。'),
+                   ('他のアプリで作業する', '別のアプリで作業するときはフローティングミニウィンドウか全画面表示を使ってください。会議中などステータスを固定したいときは、Teams のアバター → ステータス → 「連絡可能」を手動で選び、期間を設定します。')]),
  faq=[('なぜ Teams は私を「退席中」と表示するのですか？', 'Microsoft Teams は、キーボードやマウスの操作が約5分間ない場合、またはコンピュータがロック・スリープした場合に「退席中」と表示します。OS のアイドルタイマーを読み取っています。'),
       ('マウスを動かさずに Teams のステータスを緑に保つには？', 'screenwakeup.com を開いて「画面をスリープさせない」をクリックします。PCがロック・スリープしなくなり、最も一般的な原因を防げます。正直な注意点：ウェブサイトはOSのアイドルタイマーをリセットできません（ブラウザが合成入力をブロックするため）。完全な無操作が数分続くと、アプリ側で退席中と表示される場合があります。'),
       ('Microsoft Teams の規約に違反しますか？', 'ScreenWakeUp は画面のスリープとロックを防ぐだけです（動画を見ているのと同じ効果）。偽の入力は一切送りません。Teams・アカウント・社内データにはアクセスしません。所属組織のポリシーに従ってください。'),
@@ -245,23 +245,23 @@ CONTENT["prevent-teams-away"]["ja"] = dict(
       ('ScreenWakeUp はアイドル時間を偽装したり操作をシミュレートしますか？', 'いいえ。ブラウザはマウスを動かすこともキーを押すこともできません — それができると謳うサイトはあなたを欺いています。ScreenWakeUp は画面を点けたままにするだけで、「退席中」の最も一般的な原因である PC のロックを防ぎます。')],
 )
 CONTENT["prevent-teams-away"]["ru"] = dict(
- title='Как сделать, чтобы Teams всегда был зелёным — Бесплатно, без установки | ScreenWakeUp',
- desc='Как сделать, чтобы Teams всегда был зелёным? Честный способ: держите экран включённым и компьютер разблокированным — именно блокировка и сон чаще всего дают «Нет на месте». Бесплатно, без установки и прав администратора. Windows, Mac, Chromebook.',
+ title='Teams всегда зелёный — бесплатно, без установки',
+ desc='Как сделать, чтобы Teams всегда был зелёным: держите экран включённым и компьютер разблокированным прямо из браузера. Бесплатно, без установки.',
  keywords='чтобы teams всегда был зелёным, teams зелёный статус, избежать нет на месте teams, держать teams активным, зелёный статус teams, teams нет на месте 5 минут, оставаться активным в teams, без имитации ввода',
  ogtitle='Чтобы Teams всегда был зелёным — честный способ, без установки',
- ogdesc='Почему Teams переводит вас в «Нет на месте» и что действительно работает: экран включён, компьютер разблокирован. Бесплатный веб-инструмент, без загрузок и прав администратора.',
+ ogdesc='Почему Teams переводит вас в «Отсутствую» и что действительно работает: экран включён, компьютер разблокирован. Бесплатный веб-инструмент, без загрузок и прав администратора.',
  tag='Microsoft Teams',
  h1='Как сделать, чтобы <span>Teams всегда был зелёным</span>',
- lead='Честное руководство: что на самом деле переводит Teams в «Нет на месте», что может (и чего не может) инструмент в браузере, и приём, который гарантирует зелёный статус — без загрузок и прав администратора.',
- body="""  <p>Если Teams переключает вас в <strong>«Нет на месте»</strong>, стоит вам отойти почитать, ответить на звонок или сосредоточиться на другом окне, — вы не одиноки. Teams считывает <strong>таймер бездействия</strong> вашей операционной системы: примерно через 5 минут без мыши и клавиатуры — или когда экран блокируется или засыпает — он меняет ваш статус на «Нет на месте».</p>
-  <div class="box"><strong>Честный ответ в одну строку:</strong> браузер может держать экран включённым, а компьютер — разблокированным (это устраняет самый частый триггер статуса «Нет на месте»), но ни один сайт не может имитировать настоящий ввод мыши или клавиатуры. ScreenWakeUp делает ту часть, которая действительно работает: бесплатно, в браузере, без установки.</div>
+ lead='Честное руководство: что на самом деле переводит Teams в «Отсутствую», что может (и чего не может) инструмент в браузере, и приём, который гарантирует зелёный статус — без загрузок и прав администратора.',
+ body="""  <p>Если Teams переключает вас в <strong>«Отсутствую»</strong>, стоит вам отойти почитать, ответить на звонок или сосредоточиться на другом окне, — вы не одиноки. Teams считывает <strong>таймер бездействия</strong> вашей операционной системы: примерно через 5 минут без мыши и клавиатуры — или когда экран блокируется или засыпает — он меняет ваш статус на «Отсутствую».</p>
+  <div class="box"><strong>Честный ответ в одну строку:</strong> браузер может держать экран включённым, а компьютер — разблокированным (это устраняет самый частый триггер статуса «Отсутствую»), но ни один сайт не может имитировать настоящий ввод мыши или клавиатуры. ScreenWakeUp делает ту часть, которая действительно работает: бесплатно, в браузере, без установки.</div>
   <h2>Держите Teams активным за 3 шага</h2>
   <ol>
     <li><strong>Откройте инструмент.</strong> Перейдите на <a class="inline" href="{HOME}">screenwakeup.com</a> в Chrome или Edge в отдельной вкладке.</li>
     <li><strong>Ничего настраивать не нужно.</strong> Флажков «анти-бездействие» нет: сайт не может имитировать настоящий системный ввод. Работаете в другом приложении? Используйте <strong>плавающее мини-окно</strong> (картинка-в-картинке).</li>
     <li><strong>Нажмите «Держать экран активным».</strong> Оставьте вкладку открытой и видимой. Статус остаётся зелёным, пока вкладка работает.</li>
   </ol>
-  <h2>Почему Teams показывает меня как «Нет на месте»?</h2>
+  <h2>Почему Teams показывает меня как «Отсутствую»?</h2>
   <p>Teams определяет ваш статус по <strong>времени бездействия системы</strong> и <strong>состоянию экрана</strong>. ScreenWakeUp полностью решает второе: пока он работает, экран никогда не блокируется и не засыпает. Первое недоступно <em>ни одному</em> сайту: браузеры сознательно не дают страницам генерировать настоящий системный ввод, поэтому JavaScript-«симуляторы мыши» двигают лишь виртуальный указатель внутри собственной страницы.</p>
   <h2>Почему не настольное приложение «двигатель мыши»?</h2>
   <ul>
@@ -276,26 +276,26 @@ CONTENT["prevent-teams-away"]["ru"] = dict(
   <h3>Работает ли без прав администратора?</h3>
   <p>Да. Это просто веб-страница, ничего устанавливать не нужно.</p>
   <h3>Работает ли со Slack и Zoom?</h3>
-  <p>Да — принцип тот же: Slack и Zoom тоже переводят вас в «Нет на месте», когда компьютер засыпает или блокируется, и ScreenWakeUp предотвращает именно это.</p>""",
+  <p>Да — принцип тот же: Slack и Zoom тоже переводят вас в «Отсутствую», когда компьютер засыпает или блокируется, и ScreenWakeUp предотвращает именно это.</p>""",
  cta='Оставайтесь зелёным в Teams → откройте бесплатный инструмент',
  related=[("Бесплатная замена Caffeine", "caffeine-alternative"), ("Держать экран iPhone активным", "keep-screen-awake-iphone")],
- bc_self='Избежать статуса «Нет на месте» в Teams',
- howto=dict(name='Как избежать статуса «Нет на месте» в Microsoft Teams',
+ bc_self='Избежать статуса «Отсутствую» в Teams',
+ howto=dict(name='Как избежать статуса «Отсутствую» в Microsoft Teams',
             desc='Сохраняйте статус Microsoft Teams зелёным и активным, не меняя мышь или настройки системы.',
             steps=[('Откройте инструмент', 'Откройте screenwakeup.com в Chrome или Edge в отдельной вкладке.'),
-                   ('Активируйте', 'Нажмите «Держать экран активным». Экран остаётся включённым, компьютер не блокируется и не засыпает — самый частый триггер статуса «Нет на месте».'),
-                   ('Включите', 'Нажмите «Держать экран активным» и оставьте вкладку открытой.')]),
- faq=[('Как сделать, чтобы Teams всегда был зелёным?', 'Откройте screenwakeup.com и нажмите «Держать экран активным»: экран не погаснет и компьютер не заблокируется — именно блокировка и сон чаще всего переводят Teams в «Нет на месте». Честно: сайт не может имитировать реальные нажатия клавиш; для полной гарантии выставьте статус вручную: аватар → статус → «Доступен».'),
-      ('Почему Teams показывает меня как «Нет на месте»?', 'Microsoft Teams помечает вас как «Нет на месте» примерно через 5 минут без активности клавиатуры или мыши, либо когда компьютер блокируется или засыпает. Он считывает таймер бездействия системы.'),
+                   ('Активируйте', 'Нажмите «Держать экран активным». Экран остаётся включённым, компьютер не блокируется и не засыпает — самый частый триггер статуса «Отсутствую».'),
+                   ('Работайте в других приложениях', 'Когда переключаетесь в другое приложение, используйте плавающее мини-окно или полноэкранный режим. Чтобы статус точно не менялся, задайте его вручную: аватар в Teams → статус → «Доступен» и укажите длительность.')]),
+ faq=[('Как сделать, чтобы Teams всегда был зелёным?', 'Откройте screenwakeup.com и нажмите «Держать экран активным»: экран не погаснет и компьютер не заблокируется — именно блокировка и сон чаще всего переводят Teams в «Отсутствую». Честно: сайт не может имитировать реальные нажатия клавиш; для полной гарантии выставьте статус вручную: аватар → статус → «Доступен».'),
+      ('Почему Teams показывает меня как «Отсутствую»?', 'Microsoft Teams помечает вас как «Отсутствую» примерно через 5 минут без активности клавиатуры или мыши, либо когда компьютер блокируется или засыпает. Он считывает таймер бездействия системы.'),
       ('Как сохранить статус Teams зелёным, не двигая мышью?', 'Откройте screenwakeup.com и нажмите «Держать экран активным»: компьютер не заблокируется и не заснёт — это самый частый триггер. Честно: ни один сайт не может сбросить системный таймер бездействия (браузер блокирует синтетический ввод из соображений безопасности), поэтому после нескольких минут полного бездействия приложение всё же может показать вас как отсутствующего.'),
       ('Это нарушает правила Microsoft Teams?', 'ScreenWakeUp лишь не даёт экрану заснуть или заблокироваться — тот же эффект, что и просмотр видео — и не отправляет никакого поддельного ввода. Он не обращается к Teams, вашему аккаунту или данным компании. Соблюдайте политику вашей организации.'),
       ('Работает ли без прав администратора?', 'Да. Он работает во вкладке браузера, без установки и прав администратора.'),
-      ('ScreenWakeUp подделывает время бездействия или имитирует активность?', 'Нет. Браузер не может двигать мышью или нажимать клавиши — любой сайт, обещающий обратное, вас обманывает. ScreenWakeUp лишь держит экран включённым, что устраняет самый частый триггер статуса «Нет на месте» — блокировку компьютера.')],
+      ('ScreenWakeUp подделывает время бездействия или имитирует активность?', 'Нет. Браузер не может двигать мышью или нажимать клавиши — любой сайт, обещающий обратное, вас обманывает. ScreenWakeUp лишь держит экран включённым, что устраняет самый частый триггер статуса «Отсутствую» — блокировку компьютера.')],
 )
 # ============================ caffeine-alternative ============================
 CONTENT["caffeine-alternative"]["es"] = dict(
- title='Alternativa gratis a Caffeine — Online, sin descargas (Mac y Windows) | ScreenWakeUp',
- desc='Alternativa gratuita y online a la app Caffeine. Mantén despierta la pantalla de tu Mac o Windows desde el navegador — sin descargas, sin instalar, sin cuenta. Funciona en cualquier sistema.',
+ title='Alternativa gratis a Caffeine, online y sin descargar',
+ desc='Alternativa online y gratuita a la app Caffeine: mantén despierta la pantalla de tu Mac o Windows desde el navegador, sin descargar ni crear cuenta.',
  keywords='alternativa caffeine, caffeine mac, caffeine windows, app caffeine gratis, mantener mac despierto online, amphetamine alternativa, caffeine online sin descargar',
  ogtitle='Alternativa gratis a Caffeine — Online, sin descargas',
  ogdesc='Mantén despierta la pantalla de tu Mac o Windows desde el navegador. Gratis, sin instalar, sin cuenta.',
@@ -337,8 +337,8 @@ CONTENT["caffeine-alternative"]["es"] = dict(
       ('¿Cuál es el equivalente de caffeinate en Windows?', 'Windows no incluye un comando como el caffeinate de macOS. Puedes instalar PowerToys Awake de Microsoft o, sin instalar nada, abrir screenwakeup.com: un clic en el navegador y la pantalla no se apaga, sin permisos de administrador.')],
 )
 CONTENT["caffeine-alternative"]["pt"] = dict(
- title='Alternativa grátis ao Caffeine — Online, sem download (Mac e Windows) | ScreenWakeUp',
- desc='Alternativa gratuita e online ao app Caffeine. Mantenha a tela do seu Mac ou Windows acordada pelo navegador — sem download, sem instalar, sem conta. Funciona em qualquer sistema.',
+ title='Alternativa grátis ao Caffeine, online e sem download',
+ desc='Alternativa online e gratuita ao app Caffeine: mantenha a tela do seu Mac ou Windows acordada pelo navegador, sem download, sem instalar e sem conta.',
  keywords='alternativa caffeine, caffeine mac, caffeine windows, app caffeine grátis, manter mac acordado online, amphetamine alternativa, caffeine online sem baixar',
  ogtitle='Alternativa grátis ao Caffeine — Online, sem download',
  ogdesc='Mantenha a tela do seu Mac ou Windows acordada pelo navegador. Grátis, sem instalar, sem conta.',
@@ -380,8 +380,8 @@ CONTENT["caffeine-alternative"]["pt"] = dict(
       ('Qual é o equivalente do caffeinate no Windows?', 'O Windows não inclui um comando como o caffeinate do macOS. Você pode instalar o PowerToys Awake da Microsoft ou, sem instalar nada, abrir screenwakeup.com: um clique no navegador e a tela não apaga, sem direitos de administrador.')],
 )
 CONTENT["caffeine-alternative"]["fr"] = dict(
- title='Alternative gratuite à Caffeine — En ligne, sans téléchargement (Mac et Windows) | ScreenWakeUp',
- desc="Alternative gratuite et en ligne à l'appli Caffeine. Gardez l'écran de votre Mac ou Windows allumé depuis le navigateur — sans téléchargement, sans installation, sans compte. Fonctionne sur tout système.",
+ title='Alternative gratuite à Caffeine — en ligne, sans installer',
+ desc="Alternative en ligne et gratuite à l'appli Caffeine : gardez l'écran de votre Mac ou PC Windows allumé depuis le navigateur, sans téléchargement ni compte.",
  keywords='alternative caffeine, caffeine mac, caffeine windows, appli caffeine gratuite, garder mac allumé en ligne, amphetamine alternative, caffeine en ligne sans télécharger',
  ogtitle='Alternative gratuite à Caffeine — En ligne, sans téléchargement',
  ogdesc="Gardez l'écran de votre Mac ou Windows allumé depuis le navigateur. Gratuit, sans installation, sans compte.",
@@ -423,8 +423,8 @@ CONTENT["caffeine-alternative"]["fr"] = dict(
       ("Quel est l'équivalent de caffeinate sous Windows ?", "Windows n'inclut pas de commande comme le caffeinate de macOS. Vous pouvez installer PowerToys Awake de Microsoft ou, sans rien installer, ouvrir screenwakeup.com : un clic dans le navigateur et l'écran ne s'éteint plus, sans droits administrateur.")],
 )
 CONTENT["caffeine-alternative"]["de"] = dict(
- title='Kostenlose Caffeine-Alternative — Online, ohne Download (Mac & Windows) | ScreenWakeUp',
- desc='Eine kostenlose Online-Alternative zur Caffeine-App. Halten Sie den Bildschirm Ihres Mac oder Windows-PCs über den Browser wach — ohne Download, ohne Installation, ohne Konto. Funktioniert auf jedem System.',
+ title='Kostenlose Caffeine-Alternative — online, ohne Download',
+ desc='Kostenlose Online-Alternative zur Caffeine-App: Bildschirm von Mac oder Windows-PC direkt im Browser wach halten, ohne Download, Installation oder Konto.',
  keywords='caffeine alternative, caffeine mac, caffeine windows, caffeine app kostenlos, mac wach halten online, amphetamine alternative, caffeine online ohne download',
  ogtitle='Kostenlose Caffeine-Alternative — Online, ohne Download',
  ogdesc='Halten Sie den Bildschirm Ihres Mac oder Windows-PCs über den Browser wach. Kostenlos, ohne Installation, ohne Konto.',
@@ -466,8 +466,8 @@ CONTENT["caffeine-alternative"]["de"] = dict(
       ('Was ist das caffeinate-Äquivalent für Windows?', 'Windows hat keinen Befehl wie das caffeinate von macOS. Sie können Microsofts PowerToys Awake installieren oder — ganz ohne Installation — screenwakeup.com öffnen: ein Klick im Browser und der Bildschirm bleibt an, ohne Administratorrechte.')],
 )
 CONTENT["caffeine-alternative"]["ja"] = dict(
- title='無料の Caffeine 代替ツール — オンライン・ダウンロード不要（Mac・Windows）| ScreenWakeUp',
- desc='Caffeine アプリの無料オンライン代替。Mac や Windows の画面をブラウザからスリープさせない — ダウンロード・インストール・アカウント不要。あらゆる OS で動作。',
+ title='Caffeine の無料代替 — オンライン・ダウンロード不要',
+ desc='Caffeine アプリの無料オンライン代替。Mac や Windows の画面をブラウザからスリープさせない。ダウンロード・インストール・アカウント不要。',
  keywords='caffeine 代替, caffeine mac, caffeine windows, caffeine 無料, mac スリープさせない オンライン, amphetamine 代替, caffeine オンライン',
  ogtitle='無料の Caffeine 代替ツール — オンライン・ダウンロード不要',
  ogdesc='Mac や Windows の画面をブラウザからスリープさせない。無料・インストール不要・アカウント不要。',
@@ -509,8 +509,8 @@ CONTENT["caffeine-alternative"]["ja"] = dict(
       ('Windows で caffeinate に相当するものは？', 'Windows には macOS の caffeinate のようなコマンドはありません。Microsoft の PowerToys Awake をインストールするか、何も入れずに screenwakeup.com を開くだけ：ブラウザでワンクリック、管理者権限も不要で画面が消えなくなります。')],
 )
 CONTENT["caffeine-alternative"]["ru"] = dict(
- title='Бесплатная замена Caffeine — Онлайн, без загрузки (Mac и Windows) | ScreenWakeUp',
- desc='Бесплатная онлайн-замена приложения Caffeine. Держите экран Mac или Windows активным прямо из браузера — без загрузки, без установки, без аккаунта. Работает на любой системе.',
+ title='Бесплатная замена Caffeine — онлайн, без загрузки',
+ desc='Бесплатная онлайн-замена приложения Caffeine: держите экран Mac или Windows активным прямо из браузера, без загрузки, установки и аккаунта.',
  keywords='замена caffeine, caffeine mac, caffeine windows, caffeine бесплатно, держать mac активным онлайн, amphetamine замена, caffeine онлайн без загрузки',
  ogtitle='Бесплатная замена Caffeine — Онлайн, без загрузки',
  ogdesc='Держите экран Mac или Windows активным прямо из браузера. Бесплатно, без установки, без аккаунта.',
@@ -541,9 +541,9 @@ CONTENT["caffeine-alternative"]["ru"] = dict(
   <h2>Аналог caffeinate для Windows</h2>
   <p>На macOS есть команда Терминала <code>caffeinate</code>; во Windows встроенного аналога нет. Обычные варианты — установить <strong>PowerToys Awake</strong> от Microsoft (отличный, но требует установки) или вручную менять план электропитания. ScreenWakeUp — это аналог без установки: откройте страницу, один клик — и экран Windows не гаснет. Идеально для корпоративных компьютеров, где нельзя ставить программы.</p>
   <h2>Больше, чем просто «caffeine»</h2>
-  <p>Это полноценный набор инструментов, поэтому вы также получаете <a class="inline" href="{HOME}">свой таймер, режим Pomodoro 25/5 и полноэкранные часы</a>, а ещё <a class="inline" href="/ru/prevent-teams-away/">руководство, как избежать статуса «Нет на месте» в Teams и Slack</a> — всё на одной бесплатной странице.</p>""",
+  <p>Это полноценный набор инструментов, поэтому вы также получаете <a class="inline" href="{HOME}">свой таймер, режим Pomodoro 25/5 и полноэкранные часы</a>, а ещё <a class="inline" href="/ru/prevent-teams-away/">руководство, как избежать статуса «Отсутствую» в Teams и Slack</a> — всё на одной бесплатной странице.</p>""",
  cta='Открыть бесплатную замену Caffeine →',
- related=[("Избежать статуса «Нет на месте» в Teams", "prevent-teams-away"), ("Держать экран iPhone активным", "keep-screen-awake-iphone")],
+ related=[("Избежать статуса «Отсутствую» в Teams", "prevent-teams-away"), ("Держать экран iPhone активным", "keep-screen-awake-iphone")],
  bc_self='Замена Caffeine',
  faq=[('Есть ли бесплатная онлайн-замена приложению Caffeine?', 'Да. ScreenWakeUp — бесплатная браузерная замена настольному приложению Caffeine. Ничего скачивать и устанавливать не нужно: откройте screenwakeup.com и нажмите кнопку. Он использует современный Screen Wake Lock API и работает на Mac, Windows, Linux и мобильных.'),
       ('Чем он отличается от настольного приложения Caffeine?', 'Caffeine — приложение, которое вы устанавливаете на macOS или Windows. ScreenWakeUp делает то же из вкладки — без установки, без прав администратора, и на любой системе, включая Chromebook и телефоны. Также добавляет свой таймер, Pomodoro, полноэкранные часы и плавающее мини-окно (картинка-в-картинке).'),
@@ -553,8 +553,8 @@ CONTENT["caffeine-alternative"]["ru"] = dict(
 )
 # ============================ keep-screen-awake-iphone ============================
 CONTENT["keep-screen-awake-iphone"]["es"] = dict(
- title='Cómo mantener la pantalla del iPhone encendida — Gratis, sin app (iOS y iPad) | ScreenWakeUp',
- desc='¿La pantalla del iPhone se apaga sola? Manténla encendida con un toque: página web gratis, sin app y sin cambiar el Bloqueo automático. Safari y Chrome, iOS 16.4+. Para recetas, partituras, juegos y mapas.',
+ title='Que no se apague la pantalla del iPhone — gratis, sin app',
+ desc='¿La pantalla del iPhone se apaga sola? Manténla encendida con un toque: página web gratis, sin app y sin cambiar el Bloqueo automático. iOS 16.4+.',
  keywords='mantener pantalla iphone encendida, pantalla iphone no se apaga, evitar bloqueo automatico iphone, ipad pantalla activa, mantener pantalla ios, pantalla iphone siempre encendida, como hacer que mi pantalla no se apague iphone, pantalla encendida para un juego iphone',
  ogtitle='Cómo mantener la pantalla del iPhone encendida — Gratis, sin app',
  ogdesc='Mantén encendida la pantalla de tu iPhone o iPad desde Safari. Sin app, sin tocar el Bloqueo automático. Gratis.',
@@ -617,8 +617,8 @@ CONTENT["keep-screen-awake-iphone"]["es"] = dict(
       ('¿Por qué no puedo cambiar el Bloqueo automático de mi iPhone (aparece en gris)?', 'Casi siempre es el Modo de bajo consumo: mientras está activo, iOS fija el Bloqueo automático en 30 segundos y desactiva el ajuste. Apágalo en Ajustes > Batería. Si sigue en gris, suele ser un perfil de configuración o MDM del trabajo o del centro de estudios, en Ajustes > General > VPN y gestión de dispositivos.')],
 )
 CONTENT["keep-screen-awake-iphone"]["pt"] = dict(
- title='Como manter a tela do iPhone ligada — Grátis, sem app (iOS e iPad) | ScreenWakeUp',
- desc='A tela do iPhone apaga sozinha? Mantenha-a ligada com um toque: página web grátis, sem app e sem mudar o Bloqueio automático. Safari e Chrome, iOS 16.4+. Para receitas, partituras, jogos e mapas.',
+ title='Não deixar a tela do iPhone apagar — grátis, sem app',
+ desc='A tela do iPhone apaga sozinha? Mantenha-a ligada com um toque: página web grátis, sem app e sem mudar o Bloqueio automático. Safari e Chrome, iOS 16.4+.',
  keywords='manter tela iphone ligada, tela iphone não apaga, evitar bloqueio automatico iphone, ipad tela ativa, manter tela ios, tela iphone sempre ligada, como deixar a tela do iphone ligada, como deixar o iphone sem apagar a tela',
  ogtitle='Como manter a tela do iPhone ligada — Grátis, sem app',
  ogdesc='Mantenha a tela do seu iPhone ou iPad ligada pelo Safari. Sem app, sem mexer no Bloqueio automático. Grátis.',
@@ -678,8 +678,8 @@ CONTENT["keep-screen-awake-iphone"]["pt"] = dict(
       ('Por que não consigo mudar o Bloqueio automático do iPhone (está cinza)?', 'Quase sempre é o Modo de Baixo Consumo: enquanto está ligado, o iOS fixa o Bloqueio automático em 30 segundos e desativa o ajuste. Desligue em Ajustes > Bateria. Se continuar cinza, costuma ser um perfil de configuração ou MDM do trabalho ou da escola, em Ajustes > Geral > VPN e Gerenciamento de Dispositivos.')],
 )
 CONTENT["keep-screen-awake-iphone"]["fr"] = dict(
- title="Comment garder l'écran de l'iPhone allumé — Gratuit, sans appli (iOS et iPad) | ScreenWakeUp",
- desc="L'écran de votre iPhone s'éteint tout seul ? Gardez-le allumé d'un geste : page web gratuite, sans appli et sans changer le Verrouillage automatique. Safari et Chrome, iOS 16.4+. Pour recettes, partitions, jeux et cartes.",
+ title="Garder l'écran de l'iPhone allumé — gratuit, sans appli",
+ desc="L'écran de l'iPhone s'éteint ? Gardez-le allumé d'un geste : page web gratuite, sans appli et sans toucher au Verrouillage automatique. iOS 16.4+.",
  keywords="garder écran iphone allumé, écran iphone ne s'éteint pas, éviter verrouillage automatique iphone, ipad écran allumé, garder écran ios, écran iphone toujours allumé, comment laisser l'écran toujours allumé iphone",
  ogtitle="Comment garder l'écran de l'iPhone allumé — Gratuit, sans appli",
  ogdesc="Gardez l'écran de votre iPhone ou iPad allumé depuis Safari. Sans appli, sans toucher au Verrouillage automatique. Gratuit.",
@@ -739,8 +739,8 @@ CONTENT["keep-screen-awake-iphone"]["fr"] = dict(
       ("Pourquoi le Verrouillage automatique de mon iPhone est-il grisé ?", "C'est presque toujours le mode Économie d'énergie : tant qu'il est actif, iOS fixe le Verrouillage automatique à 30 secondes et bloque le réglage. Désactivez-le dans Réglages > Batterie. S'il reste grisé, c'est en général un profil de configuration ou MDM du travail ou de l'école, dans Réglages > Général > VPN et gestion de l'appareil.")],
 )
 CONTENT["keep-screen-awake-iphone"]["de"] = dict(
- title='iPhone-Bildschirm anlassen — Kostenlos, ohne App (iOS & iPad) | ScreenWakeUp',
- desc='Verhindern Sie, dass sich der Bildschirm Ihres iPhones oder iPads ausschaltet — ohne die automatische Sperre zu ändern oder eine App zu installieren. Kostenloses Web-Tool für Safari und Chrome unter iOS 16.4+.',
+ title='iPhone-Bildschirm anlassen — kostenlos, ohne App',
+ desc='iPhone- oder iPad-Bildschirm anlassen, ohne die automatische Sperre zu ändern oder eine App zu installieren: kostenlose Webseite, iOS 16.4+.',
  keywords='iphone bildschirm anlassen, iphone bildschirm geht aus, automatische sperre iphone verhindern, ipad bildschirm an, bildschirm wach halten ios, iphone display immer an',
  ogtitle='iPhone-Bildschirm anlassen — Kostenlos, ohne App',
  ogdesc='Halten Sie den Bildschirm Ihres iPhones oder iPads über Safari an. Ohne App, ohne die automatische Sperre zu ändern. Kostenlos.',
@@ -797,8 +797,8 @@ CONTENT["keep-screen-awake-iphone"]["de"] = dict(
       ('Warum ist die automatische Sperre am iPhone ausgegraut?', 'Fast immer wegen des Stromsparmodus: Solange er aktiv ist, setzt iOS die automatische Sperre auf 30 Sekunden und sperrt die Einstellung. Schalten Sie ihn unter Einstellungen > Batterie aus. Bleibt sie ausgegraut, steckt meist ein Konfigurations- oder MDM-Profil von Arbeit oder Schule dahinter, unter Einstellungen > Allgemein > VPN & Geräteverwaltung.')],
 )
 CONTENT["keep-screen-awake-iphone"]["ja"] = dict(
- title='iPhone の画面をスリープさせない方法 — 無料・アプリ不要（iOS・iPad）| ScreenWakeUp',
- desc='iPhone や iPad の画面が消えないようにします — 自動ロックを変えず、アプリもインストールせずに。iOS 16.4 以降の Safari と Chrome で動く無料ウェブツール。',
+ title='iPhone の画面をスリープさせない方法 — 無料・アプリ不要',
+ desc='iPhone や iPad の画面が消えないようにする無料ウェブツール。自動ロックを変えず、アプリも不要。iOS 16.4 以降の Safari と Chrome で動作。',
  keywords='iphone 画面 消えない, iphone 画面 つけたまま, iphone 自動ロック 防ぐ, ipad 画面 つけたまま, ios 画面 スリープさせない, iphone 画面 常時表示',
  ogtitle='iPhone の画面をスリープさせない方法 — 無料・アプリ不要',
  ogdesc='iPhone や iPad の画面を Safari からつけたままに。アプリ不要、自動ロックも変更不要。無料。',
@@ -855,8 +855,8 @@ CONTENT["keep-screen-awake-iphone"]["ja"] = dict(
       ('iPhone の自動ロックがグレーで変更できないのはなぜ？', 'ほぼ低電力モードが原因です。オンの間、iOS は自動ロックを30秒に固定して設定を無効化します。設定 > バッテリーでオフにしてください。それでもグレーのままなら、職場や学校の構成プロファイル・MDM であることが多く、設定 > 一般 > VPN とデバイス管理で確認できます。')],
 )
 CONTENT["keep-screen-awake-iphone"]["ru"] = dict(
- title='Как не дать экрану iPhone гаснуть — Бесплатно, без приложения (iOS и iPad) | ScreenWakeUp',
- desc='Экран iPhone гаснет сам? Держите его включённым одним нажатием: бесплатная веб-страница, без приложения и без изменения Автоблокировки. Safari и Chrome, iOS 16.4+. Для рецептов, нот, игр и карт.',
+ title='Чтобы экран iPhone не гас — бесплатно, без приложения',
+ desc='Экран iPhone гаснет сам? Держите его включённым одним нажатием: бесплатная веб-страница без приложения и без изменения Автоблокировки. iOS 16.4+.',
  keywords='экран iphone не гаснет, держать экран iphone включённым, отключить автоблокировку iphone, ipad экран активен, держать экран ios, экран iphone всегда включён',
  ogtitle='Как не дать экрану iPhone гаснуть — Бесплатно, без приложения',
  ogdesc='Держите экран iPhone или iPad включённым из Safari. Без приложения, без изменения Автоблокировки. Бесплатно.',
@@ -897,7 +897,7 @@ CONTENT["keep-screen-awake-iphone"]["ru"] = dict(
   <h3>Сажает ли батарею?</h3>
   <p>Любой включённый экран расходует энергию, но только пока вкладка активна. Закроете её — вернётся обычная Автоблокировка, что намного безопаснее режима «Никогда».</p>""",
  cta='Держите iPhone включённым → откройте инструмент',
- related=[("Избежать статуса «Нет на месте» в Teams", "prevent-teams-away"), ("Бесплатная замена Caffeine", "caffeine-alternative")],
+ related=[("Избежать статуса «Отсутствую» в Teams", "prevent-teams-away"), ("Бесплатная замена Caffeine", "caffeine-alternative")],
  bc_self='Держать экран iPhone активным',
  howto=dict(name='Как не дать экрану iPhone гаснуть',
             desc='Держите экран iPhone или iPad включённым, не меняя Автоблокировку и не устанавливая приложение.',
@@ -914,8 +914,8 @@ CONTENT["keep-screen-awake-iphone"]["ru"] = dict(
 )
 # ============================ prevent-zoom-idle ============================
 CONTENT["prevent-zoom-idle"]["es"] = dict(
- title='Cómo mantener Zoom activo y evitar el estado inactivo — Gratis, sin instalar | ScreenWakeUp',
- desc='Por qué Zoom te marca como inactivo y qué lo evita de verdad — la guía honesta. Mantén tu pantalla despierta y el equipo desbloqueado con una herramienta web gratis, sin descargas ni permisos de administrador. Funciona en Windows, Mac y Chromebook.',
+ title='Mantener Zoom activo y evitar el estado inactivo — gratis',
+ desc='Por qué Zoom te marca como inactivo y qué lo evita de verdad: pantalla despierta y equipo desbloqueado desde el navegador. Gratis, sin instalar.',
  keywords='mantener zoom activo, evitar inactivo zoom, zoom me marca ausente, seguir activo en zoom, estado zoom, presencia zoom activa, mover raton automatico',
  ogtitle='Cómo mantener Zoom activo — la guía honesta',
  ogdesc='Por qué Zoom te pone inactivo y qué funciona de verdad: pantalla despierta y equipo desbloqueado. Herramienta web gratis, sin descargas ni permisos de administrador.',
@@ -960,8 +960,8 @@ CONTENT["prevent-zoom-idle"]["es"] = dict(
       ('¿Funciona sin permisos de administrador?', 'Sí. Se ejecuta en la pestaña del navegador, sin instalación ni permisos de administrador.')],
 )
 CONTENT["prevent-zoom-idle"]["pt"] = dict(
- title='Como manter o Zoom ativo e evitar o status inativo — Grátis, sem instalar | ScreenWakeUp',
- desc='Por que o Zoom marca você como inativo e o que realmente evita isso — o guia honesto. Mantenha sua tela acordada e o computador desbloqueado com uma ferramenta web grátis, sem download nem direitos de administrador. Funciona no Windows, Mac e Chromebook.',
+ title='Manter o Zoom ativo e evitar o status inativo — grátis',
+ desc='Por que o Zoom marca você como inativo e o que evita isso de verdade: tela acordada e computador desbloqueado pelo navegador. Grátis, sem instalar.',
  keywords='manter zoom ativo, evitar inativo zoom, zoom me mostra ausente, ficar ativo no zoom, status zoom, presenca zoom ativa, mexer mouse automatico',
  ogtitle='Como manter o Zoom ativo — o guia honesto',
  ogdesc='Por que o Zoom coloca você como inativo e o que funciona de verdade: tela acordada e computador desbloqueado. Ferramenta web grátis, sem download nem direitos de administrador.',
@@ -1006,8 +1006,8 @@ CONTENT["prevent-zoom-idle"]["pt"] = dict(
       ('Funciona sem direitos de administrador?', 'Sim. Roda na aba do navegador, sem instalação nem direitos de administrador.')],
 )
 CONTENT["prevent-zoom-idle"]["fr"] = dict(
- title='Comment garder Zoom actif et éviter le statut inactif — Gratuit, sans installation | ScreenWakeUp',
- desc="Pourquoi Zoom vous marque inactif et ce qui l'empêche vraiment — le guide honnête. Gardez votre écran allumé et votre machine déverrouillée avec un outil web gratuit, sans téléchargement ni droits d'administrateur. Fonctionne sur Windows, Mac et Chromebook.",
+ title='Garder Zoom actif, éviter le statut inactif — gratuit',
+ desc="Pourquoi Zoom vous marque inactif et ce qui l'empêche vraiment : écran allumé et machine déverrouillée depuis le navigateur. Gratuit, sans installation.",
  keywords="garder zoom actif, eviter inactif zoom, zoom m'affiche absent, rester actif sur zoom, statut zoom, presence zoom active, bouger souris automatique",
  ogtitle='Comment garder Zoom actif — le guide honnête',
  ogdesc="Pourquoi Zoom vous passe en inactif et ce qui marche vraiment : écran allumé et machine déverrouillée. Outil web gratuit, sans téléchargement ni droits d'administrateur.",
@@ -1052,8 +1052,8 @@ CONTENT["prevent-zoom-idle"]["fr"] = dict(
       ("Fonctionne-t-il sans droits d'administrateur ?", "Oui. Il s'exécute dans l'onglet du navigateur, sans installation ni droits d'administrateur.")],
 )
 CONTENT["prevent-zoom-idle"]["de"] = dict(
- title='So bleibt Zoom aktiv und der Inaktiv-Status verschwindet — Kostenlos, ohne Installation | ScreenWakeUp',
- desc='Warum Zoom dich als inaktiv anzeigt und was wirklich dagegen hilft — der ehrliche Guide. Halte deinen Bildschirm wach und deinen Rechner entsperrt mit einem kostenlosen Web-Tool, ohne Download und ohne Adminrechte. Funktioniert unter Windows, Mac und Chromebook.',
+ title='Zoom aktiv halten, Inaktiv-Status vermeiden — kostenlos',
+ desc='Warum Zoom dich als inaktiv anzeigt und was wirklich hilft: Bildschirm wach und Rechner entsperrt, direkt im Browser. Kostenlos, ohne Download.',
  keywords='zoom aktiv halten, zoom inaktiv verhindern, zoom zeigt mich abwesend, in zoom aktiv bleiben, zoom status, zoom praesenz aktiv, maus automatisch bewegen',
  ogtitle='So bleibt Zoom aktiv — der ehrliche Guide',
  ogdesc='Warum Zoom dich auf inaktiv setzt und was wirklich funktioniert: Bildschirm wach, Rechner entsperrt. Kostenloses Web-Tool, ohne Download und ohne Adminrechte.',
@@ -1098,8 +1098,8 @@ CONTENT["prevent-zoom-idle"]["de"] = dict(
       ('Funktioniert es ohne Adminrechte?', 'Ja. Es läuft im Browser-Tab, ohne Installation und ohne Adminrechte.')],
 )
 CONTENT["prevent-zoom-idle"]["ja"] = dict(
- title='Zoom をアクティブに保ち「退席中」を防ぐ方法 — 無料・インストール不要 | ScreenWakeUp',
- desc='Zoom が非アクティブにする本当の理由と、実際に効く対策 — 正直なガイド。無料のブラウザツールで画面を点けたまま、ロックを防止。ダウンロード不要・管理者権限不要。Windows・Mac・Chromebook で動作します。',
+ title='Zoom をアクティブに保つ方法 — 無料・インストール不要',
+ desc='Zoom が非アクティブにする本当の理由と効く対策。無料のブラウザツールで画面を点けたままロックを防止。ダウンロード・管理者権限不要。',
  keywords='zoom アクティブ, zoom 退席中 防ぐ, zoom 非アクティブ, zoom 在席 維持, マウス 自動 動かす, zoom ステータス',
  ogtitle='Zoom をアクティブに保つ方法 — 正直なガイド',
  ogdesc='Zoom が非アクティブにする理由と、本当に効く対策：画面を点けたまま、PCをロックさせない。無料ブラウザツール、ダウンロード不要。',
@@ -1112,7 +1112,7 @@ CONTENT["prevent-zoom-idle"]["ja"] = dict(
   <ol>
     <li><strong>ツールを開く。</strong> Chrome または Edge で別タブに <a class="inline" href="{HOME}">screenwakeup.com</a> を開きます。</li>
     <li><strong>設定は不要。</strong> 「アイドル防止」のチェックボックスはありません — ウェブサイトは本物のシステム入力をシミュレートできないからです。別のアプリで作業するなら<strong>フローティング・ミニウィンドウ</strong>（ピクチャ・イン・ピクチャ）をどうぞ。</li>
-    <li><strong>「画面を起きたままにする」を押す。</strong> タブを開いたまま表示しておきます。タブが動いている間、Zoom の在席状態はアクティブのままです。</li>
+    <li><strong>「画面をスリープさせない」を押す。</strong> タブを開いたまま表示しておきます。タブが動いている間、Zoom の在席状態はアクティブのままです。</li>
   </ol>
   <h2>なぜ Zoom は非アクティブと表示するの?</h2>
   <p>Zoom は<strong>システムのアイドル時間</strong>と<strong>画面の状態</strong>から在席を推定します。ScreenWakeUp は後者を完全に解決します：動作中は画面がロックもスリープもしません。前者はどんなウェブサイトにも手が届きません。ブラウザはページが本物のシステム入力を生成するのを意図的に防いでいるため、JavaScript の「マウスシミュレーター」は自分のページ内で仮想ポインタを動かすだけです。</p>
@@ -1136,16 +1136,16 @@ CONTENT["prevent-zoom-idle"]["ja"] = dict(
  howto=dict(name='Zoom をアクティブに保ち「退席中」を防ぐ方法',
             desc='マウスやシステム設定を変えずに Zoom の在席状態をアクティブに保ちます。',
             steps=[('ツールを開く', 'Chrome または Edge で別タブに screenwakeup.com を開きます。'),
-                   ('有効化する', '「画面をスリープさせない」をクリック。画面が点いたまま、PCはロックもスリープもしません — 離席中と判定される最大の原因を防ぎます。'),
-                   ('開始する', '「画面を起きたままにする」を押し、タブを開いたままにします。')]),
+                   ('有効化する', '「画面をスリープさせない」をクリック。画面が点いたまま、PCはロックもスリープもしません — 退席中と判定される最大の原因を防ぎます。'),
+                   ('他のアプリで作業する', '別のアプリで作業するときはフローティングミニウィンドウか全画面表示を使ってください。タブが見えている間、画面はロックもスリープもしません。')]),
  faq=[('なぜ Zoom は私を非アクティブ・退席中と表示するの?', 'Zoom は数分間キーボードやマウスの操作がない、またはPCがロック・スリープすると非アクティブと表示します。OS のアイドルタイマーを読み取っています。'),
       ('マウスを動かさずに Zoom のステータスをアクティブに保つには?', 'screenwakeup.com を開いて「画面をスリープさせない」をクリックします。PCがロック・スリープしなくなり、最も一般的な原因を防げます。正直な注意点：ウェブサイトはOSのアイドルタイマーをリセットできません（ブラウザが合成入力をブロックするため）。完全な無操作が数分続くと、アプリ側で退席中と表示される場合があります。'),
       ('Zoom の規約に違反しますか?', 'ScreenWakeUp は画面のスリープとロックを防ぐだけです（動画を見ているのと同じ効果）。偽の入力は一切送りません。Zoom・アカウント・会議データにはアクセスしません。所属組織のポリシーに従ってください。'),
       ('管理者権限なしで動きますか?', 'はい。ブラウザのタブ内で動作し、インストールも管理者権限も不要です。')],
 )
 CONTENT["prevent-zoom-idle"]["ru"] = dict(
- title='Как оставаться активным в Zoom и убрать статус «Неактивен» — Бесплатно, без установки | ScreenWakeUp',
- desc='Почему Zoom помечает вас неактивным и что действительно помогает — честное руководство. Держите экран включённым, а компьютер разблокированным с бесплатным веб-инструментом, без загрузки и прав администратора. Работает в Windows, Mac и Chromebook.',
+ title='Zoom остаётся активным, без «Неактивен» — бесплатно',
+ desc='Почему Zoom помечает вас неактивным и что помогает на самом деле: экран включён, компьютер разблокирован, прямо из браузера. Бесплатно, без установки.',
  keywords='zoom активность, zoom неактивен убрать, zoom показывает отошёл, оставаться активным в zoom, статус zoom, автодвижение мыши',
  ogtitle='Как оставаться активным в Zoom — честное руководство',
  ogdesc='Почему Zoom переводит вас в неактивные и что действительно работает: экран включён, компьютер разблокирован. Бесплатный веб-инструмент, без загрузки и прав администратора.',
@@ -1175,15 +1175,15 @@ CONTENT["prevent-zoom-idle"]["ru"] = dict(
   <h3>Работает без прав администратора?</h3>
   <p>Да. Это просто веб-страница, устанавливать нечего.</p>
   <h3>Работает ли с Teams и Slack?</h3>
-  <p>Да — принцип тот же: Teams и Slack тоже переводят вас в «Нет на месте», когда компьютер засыпает или блокируется, и ScreenWakeUp предотвращает именно это.</p>""",
+  <p>Да — принцип тот же: Teams и Slack тоже переводят вас в «Отсутствую», когда компьютер засыпает или блокируется, и ScreenWakeUp предотвращает именно это.</p>""",
  cta='Оставайтесь активным в Zoom → откройте бесплатный инструмент',
- related=[("Убрать статус «Нет на месте» в Teams", "prevent-teams-away"), ("Бесплатная замена Caffeine", "caffeine-alternative")],
+ related=[("Убрать статус «Отсутствую» в Teams", "prevent-teams-away"), ("Бесплатная замена Caffeine", "caffeine-alternative")],
  bc_self='Оставаться активным в Zoom',
  howto=dict(name='Как оставаться активным в Zoom и убрать статус «Неактивен»',
             desc='Держите присутствие в Zoom активным без изменения мыши и системных настроек.',
             steps=[('Откройте инструмент', 'Откройте screenwakeup.com в Chrome или Edge в отдельной вкладке.'),
-                   ('Активируйте', 'Нажмите «Держать экран активным». Экран остаётся включённым, компьютер не блокируется и не засыпает — самый частый триггер статуса «Нет на месте».'),
-                   ('Запустите', 'Нажмите «Держать экран активным» и оставьте вкладку открытой.')]),
+                   ('Активируйте', 'Нажмите «Держать экран активным». Экран остаётся включённым, компьютер не блокируется и не засыпает — самый частый триггер статуса «Отсутствую».'),
+                   ('Работайте в других приложениях', 'Когда переключаетесь в другое приложение, используйте плавающее мини-окно или полноэкранный режим: пока вкладка видна, экран не заблокируется и не заснёт.')]),
  faq=[('Почему Zoom показывает меня неактивным или отошедшим?', 'Zoom помечает вас как неактивного через несколько минут без активности клавиатуры или мыши, либо когда компьютер блокируется или засыпает. Он считывает таймер простоя операционной системы.'),
       ('Как держать статус в Zoom активным, не двигая мышь?', 'Откройте screenwakeup.com и нажмите «Держать экран активным»: компьютер не заблокируется и не заснёт — это самый частый триггер. Честно: ни один сайт не может сбросить системный таймер бездействия (браузер блокирует синтетический ввод из соображений безопасности), поэтому после нескольких минут полного бездействия приложение всё же может показать вас как отсутствующего.'),
       ('Это нарушает правила Zoom?', 'ScreenWakeUp лишь не даёт экрану заснуть или заблокироваться — тот же эффект, что и просмотр видео — и не отправляет никакого поддельного ввода. Он не обращается к Zoom, вашему аккаунту или данным встречи. Следуйте политикам вашей организации.'),

@@ -9,6 +9,7 @@ block (idempotent) and references them as x-default.
 
 Run from repo root:  python3 scripts/generate_landing_pages.py
 """
+import html, datetime, subprocess
 import json
 import os
 import re
@@ -71,17 +72,17 @@ FLOAT_TEMPLATE = '''<div class="float-kofi-wrap" id="floatKofi">
 <script>(function(){var w=document.getElementById("floatKofi");if(!w)return;if(+(localStorage.getItem("ka-float-hide")||0)>Date.now()){w.style.display="none";return;}var c=document.getElementById("floatKofiClose");if(c)c.addEventListener("click",function(e){e.preventDefault();w.style.display="none";localStorage.setItem("ka-float-hide",String(Date.now()+7*864e5));});})();</script>'''
 
 UI = {
- "es": {"free":"herramienta gratis","tool":"Herramienta","home":"Inicio","about":"Acerca de","privacy":"Privacidad","terms":"Términos","support":"Apoyar","tagline":"Gratis para siempre · Sin cuenta","related":"Guías relacionadas","allfeatures":"Todas las funciones →","faqh":"Preguntas frecuentes"},
- "pt": {"free":"ferramenta grátis","tool":"Ferramenta","home":"Início","about":"Sobre","privacy":"Privacidade","terms":"Termos","support":"Apoiar","tagline":"Grátis para sempre · Sem conta","related":"Guias relacionados","allfeatures":"Todos os recursos →","faqh":"Perguntas frequentes"},
- "fr": {"free":"outil gratuit","tool":"Outil","home":"Accueil","about":"À propos","privacy":"Confidentialité","terms":"Conditions","support":"Soutenir","tagline":"Gratuit pour toujours · Sans compte","related":"Guides associés","allfeatures":"Toutes les fonctions →","faqh":"Questions fréquentes"},
- "de": {"free":"kostenloses Tool","tool":"Tool","home":"Startseite","about":"Über uns","privacy":"Datenschutz","terms":"AGB","support":"Unterstützen","tagline":"Für immer kostenlos · Kein Konto","related":"Verwandte Anleitungen","allfeatures":"Alle Funktionen →","faqh":"Häufige Fragen"},
- "ja": {"free":"無料ツール","tool":"ツール","home":"ホーム","about":"概要","privacy":"プライバシー","terms":"利用規約","support":"支援する","tagline":"ずっと無料 · アカウント不要","related":"関連ガイド","allfeatures":"すべての機能 →","faqh":"よくある質問"},
- "ru": {"free":"бесплатный инструмент","tool":"Инструмент","home":"Главная","about":"О нас","privacy":"Конфиденциальность","terms":"Условия","support":"Поддержать","tagline":"Бесплатно навсегда · Без аккаунта","related":"Похожие руководства","allfeatures":"Все функции →","faqh":"Частые вопросы"},
+ "es": {"free":"herramienta gratis","tool":"Herramienta","home":"Inicio","about":"Acerca de","privacy":"Privacidad","terms":"Términos","support":"Apoyar","tagline":"Gratis para siempre · Sin cuenta","related":"Guías relacionadas","allfeatures":"Todas las funciones →","faqh":"Preguntas frecuentes","homeanchor":"Página para que no se bloquee la pantalla"},
+ "pt": {"free":"ferramenta grátis","tool":"Ferramenta","home":"Início","about":"Sobre","privacy":"Privacidade","terms":"Termos","support":"Apoiar","tagline":"Grátis para sempre · Sem conta","related":"Guias relacionados","allfeatures":"Todos os recursos →","faqh":"Perguntas frequentes","homeanchor":"Site para a tela não apagar"},
+ "fr": {"free":"outil gratuit","tool":"Outil","home":"Accueil","about":"À propos","privacy":"Confidentialité","terms":"Conditions","support":"Soutenir","tagline":"Gratuit pour toujours · Sans compte","related":"Guides associés","allfeatures":"Toutes les fonctions →","faqh":"Questions fréquentes","homeanchor":"Page pour garder l'écran allumé"},
+ "de": {"free":"kostenloses Tool","tool":"Tool","home":"Startseite","about":"Über uns","privacy":"Datenschutz","terms":"AGB","support":"Unterstützen","tagline":"Für immer kostenlos · Kein Konto","related":"Verwandte Anleitungen","allfeatures":"Alle Funktionen →","faqh":"Häufige Fragen","homeanchor":"Seite, die den Bildschirm wach hält"},
+ "ja": {"free":"無料ツール","tool":"ツール","home":"ホーム","about":"概要","privacy":"プライバシー","terms":"利用規約","support":"支援する","tagline":"ずっと無料 · アカウント不要","related":"関連ガイド","allfeatures":"すべての機能 →","faqh":"よくある質問","homeanchor":"画面をスリープさせないサイト"},
+ "ru": {"free":"бесплатный инструмент","tool":"Инструмент","home":"Главная","about":"О нас","privacy":"Конфиденциальность","terms":"Условия","support":"Поддержать","tagline":"Бесплатно навсегда · Без аккаунта","related":"Похожие руководства","allfeatures":"Все функции →","faqh":"Частые вопросы","homeanchor":"Сайт, чтобы экран не гас"},
 }
 
 # Localized nav label for each slug (used to build the header nav linking sibling guides)
 NAVLABEL = {
- "prevent-teams-away":      {"es":"Teams Ausente","pt":"Teams Ausente","fr":"Teams Absent","de":"Teams Abwesend","ja":"Teams 退席中","ru":"Teams «Нет на месте»"},
+ "prevent-teams-away":      {"es":"Teams Ausente","pt":"Teams Ausente","fr":"Teams Absent","de":"Teams Abwesend","ja":"Teams 退席中","ru":"Teams «Отсутствую»"},
  "caffeine-alternative":    {"es":"Alternativa a Caffeine","pt":"Alternativa ao Caffeine","fr":"Alternative à Caffeine","de":"Caffeine-Alternative","ja":"Caffeine 代替","ru":"Замена Caffeine"},
  "keep-screen-awake-iphone":{"es":"iPhone","pt":"iPhone","fr":"iPhone","de":"iPhone","ja":"iPhone","ru":"iPhone"},
  "prevent-zoom-idle":       {"es":"Zoom Activo","pt":"Zoom Ativo","fr":"Zoom Actif","de":"Zoom Aktiv","ja":"Zoom アクティブ","ru":"Активность в Zoom"},
@@ -115,6 +116,24 @@ def render(slug, lang):
     ui = UI[lang]
     home = home_for(lang)
     body = c["body"].replace("{HOME}", home)
+
+    # The FAQPage JSON-LD must mirror what the visitor can read: append any question the body does not show.
+    def _norm(t):
+        return re.sub(r"[^0-9a-zà-ÿа-яё一-龥ぁ-んァ-ン]+", "", html.unescape(t).lower())
+    shown = [_norm(h) for h in re.findall(r"<h3[^>]*>(.*?)</h3>", body, re.S)]
+    missing = [(q, a) for q, a in c["faq"] if _norm(q) not in shown]
+    if missing:
+        items = "".join(f"\n  <h3>{html.escape(q, quote=False)}</h3>\n  <p>{html.escape(a, quote=False)}</p>" for q, a in missing)
+        h2s = [m for m in re.finditer(r"<h2>([^<]*)</h2>", body)]
+        faq_h2 = next((m for m in h2s if _norm(ui["faqh"]) in _norm(m.group(1))), None)
+        if faq_h2 is None:
+            body = body.rstrip() + f"\n  <h2>{ui['faqh']}</h2>" + items + "\n"
+        else:
+            nxt = body.find("<h2", faq_h2.end())
+            if nxt == -1:
+                body = body.rstrip() + items + "\n"
+            else:
+                body = body[:nxt].rstrip() + items + "\n  " + body[nxt:]
 
     # JSON-LD: optional HowTo + FAQ + Breadcrumb
     blocks = []
@@ -207,7 +226,7 @@ def render(slug, lang):
 
 <footer>
   <p>
-    <a href="{home}">{ui['home']}</a>
+    <a href="{home}">{ui['homeanchor']}</a>
     <a href="/about/">{ui['about']}</a>
     <a href="/privacy/">{ui['privacy']}</a>
     <a href="/terms/">{ui['terms']}</a>
@@ -246,9 +265,20 @@ def ensure_english_hreflang():
         open(path, "w", encoding="utf-8").write(html)
 
 
+def lastmod_for(relpath):
+    """Fecha real: hoy si el archivo cambió en el árbol de trabajo (se commitea ahora), si no, la del último commit."""
+    today = datetime.date.today().isoformat()
+    try:
+        if subprocess.run(["git", "diff", "--quiet", "HEAD", "--", relpath], cwd=ROOT).returncode != 0:
+            return today
+        out = subprocess.run(["git", "log", "-1", "--format=%cs", "--", relpath], cwd=ROOT,
+                             capture_output=True, text=True).stdout.strip()
+        return out or today
+    except Exception:
+        return today
+
+
 def build_sitemap():
-    lastmod_home = "2026-06-23"
-    lastmod_land = "2026-06-25"
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
            '        xmlns:xhtml="http://www.w3.org/1999/xhtml">', '']
@@ -265,18 +295,18 @@ def build_sitemap():
 
     # Home + language homes
     for lang in ALL_LANGS:
-        out += ['  <url>', f'    <loc>{home_for(lang)}</loc>', f'    <lastmod>{lastmod_home}</lastmod>',
+        out += ['  <url>', f'    <loc>{home_for(lang)}</loc>', f'    <lastmod>{lastmod_for("index.html" if lang == "en" else f"{lang}/index.html")}</lastmod>',
                 '    <changefreq>monthly</changefreq>',
                 f'    <priority>{"1.0" if lang == "en" else "0.9"}</priority>', alts_home(), '  </url>', '']
     # Landing pages (all langs)
     for slug in SLUGS:
         for lang in ALL_LANGS:
-            out += ['  <url>', f'    <loc>{url_for(slug, lang)}</loc>', f'    <lastmod>{lastmod_land}</lastmod>',
+            out += ['  <url>', f'    <loc>{url_for(slug, lang)}</loc>', f'    <lastmod>{lastmod_for(f"{slug}/index.html" if lang == "en" else f"{lang}/{slug}/index.html")}</lastmod>',
                     '    <changefreq>monthly</changefreq>',
                     f'    <priority>{"0.8" if lang == "en" else "0.7"}</priority>', alts_land(slug), '  </url>', '']
     # Legal / about (no alternates)
     for slug, prio, freq in [("about", "0.5", "yearly"), ("privacy", "0.4", "yearly"), ("terms", "0.4", "yearly")]:
-        out += ['  <url>', f'    <loc>{BASE}/{slug}/</loc>', '    <lastmod>2026-06-23</lastmod>',
+        out += ['  <url>', f'    <loc>{BASE}/{slug}/</loc>', f'    <lastmod>{lastmod_for(f"{slug}/index.html")}</lastmod>',
                 f'    <changefreq>{freq}</changefreq>', f'    <priority>{prio}</priority>', '  </url>', '']
     out += ['</urlset>', '']
     open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write("\n".join(out))
