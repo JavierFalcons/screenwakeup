@@ -62,3 +62,14 @@ To add or change an app UI string: update **both** the `LANG` object in the root
 Static files — deploy by uploading the directory contents to any static host (Netlify, Vercel, GitHub Pages, etc.). Run the landing-page generator first if landing copy or the page set changed.
 
 Production is Cloudflare Pages deploying the repo root on every push to `main`, so tooling files (`CLAUDE.md`, `scripts/`, `.gitignore`) are served publicly too. `_headers` marks `/*.md` and `/scripts/*` as `noindex` and de-indexes the `*.pages.dev` mirror; keep those rules if the site is ever moved into a dedicated output folder (the proper fix, which needs the Pages build-output setting changed).
+
+## Working economically in this repo (token budget)
+
+The owner's token budget runs out fast on this project. Default to the cheap path:
+
+- **Work solo.** No multi-agent workflows, fan-outs or "verification swarms" unless the owner explicitly asks for agents in that message. One careful pass with scripts plus local checks is enough for a static site.
+- **Never read `index.html` or a `<lang>/index.html` whole** (150-170 KB each). `grep -n` the anchor, then read ±40 lines. Same for `scripts/landing_content.py` (180 KB).
+- **Edit with anchored scripts**, not by hand: exact-string replacements that abort unless the anchor matches exactly once, applied to every copy at the same time. Verify with `node --check` on the extracted `<script>` blocks and `json.loads` on every JSON-LD block, then `python3 scripts/generate_landing_pages.py` if landings changed.
+- **Analytics and Search Console:** extract only the table you need, never the full page text; report numbers in a short table with time-on-site included.
+- **Reports stay short.** The audit, roadmap and past readings live in the owner's memory notes and the published audit page; do not regenerate them.
+- **One task per session.** Long sessions re-pay their whole history on every turn; the memory notes carry the state between sessions.
