@@ -28,6 +28,15 @@ CONTENT["prevent-teams-away"]["es"] = dict(
   </ol>
   <h2>¿Por qué Teams me marca como Ausente?</h2>
   <p>Teams calcula tu presencia a partir del <strong>tiempo de inactividad del sistema</strong> y del <strong>estado de la pantalla</strong>. ScreenWakeUp resuelve por completo la segunda: mientras funciona, tu pantalla nunca se bloquea ni se suspende. La primera está fuera del alcance de <em>cualquier</em> web: los navegadores impiden que una página genere entrada real del sistema, así que los «simuladores de ratón» en JavaScript solo mueven un puntero virtual dentro de su propia página.</p>
+  <h2>¿Cuándo pasa Teams a inactivo?</h2>
+  <p>Microsoft Teams pasa a inactivo, y te muestra como <strong>Ausente</strong>, tras unos <strong>5 minutos</strong> sin actividad de teclado o ratón, y <strong>al instante</strong> cuando el equipo se bloquea, se suspende o arranca el salvapantallas. Ese disparador inmediato es el que casi todo el mundo sufre sin darse cuenta: te levantas, Windows bloquea la pantalla a los pocos minutos y Teams te pone en Ausente aunque ya estés de vuelta leyendo. Si evitas el bloqueo, evitas la causa más común.</p>
+
+  <h2>Cómo mantener Teams activo cuando no estás en el escritorio</h2>
+  <p>Dos gestos honestos cubren casi todos los casos. Primero, <strong>mantén el equipo despierto y desbloqueado</strong> con ScreenWakeUp: elimina por completo el disparador de bloqueo o suspensión, así que las pausas cortas, las llamadas y la lectura en otra ventana ya no te ponen en Ausente. Segundo, para reuniones o ausencias más largas, <strong>fija tu estado a mano</strong>: en Teams pulsa tu avatar → estado → <strong>Disponible</strong> y elige una duración. El estado manual tiene prioridad sobre el temporizador de inactividad: es la forma integrada y compatible con las normas de seguir en verde lejos del teclado.</p>
+
+  <h2>Un anti-AFK honesto para Teams</h2>
+  <p>¿Buscas un <strong>anti-AFK para Teams</strong>? La mayoría de resultados prometen pulsaciones de teclas simuladas desde una web, algo que los navegadores sencillamente no permiten. ScreenWakeUp es el anti-AFK que hace lo que un navegador <em>sí</em> puede hacer, y lo dice: mantiene la pantalla encendida y el equipo desbloqueado (el disparador número uno del Ausente), funciona sin instalar nada ni permisos de administrador y nunca toca Teams ni tus datos. Lo que no puede hacer, ni ninguna otra web, es falsear entrada real a nivel del sistema.</p>
+
   <h2>¿Por qué no una app de escritorio "mueve-ratón"?</h2>
   <ul>
     <li><strong>Sin instalación ni permisos de administrador</strong> — funciona en portátiles corporativos.</li>
@@ -75,6 +84,15 @@ CONTENT["prevent-teams-away"]["pt"] = dict(
   </ol>
   <h2>Por que o Teams me mostra como Ausente?</h2>
   <p>O Teams calcula sua presença a partir do <strong>tempo de inatividade do sistema</strong> e do <strong>estado da tela</strong>. O ScreenWakeUp resolve a segunda por completo: enquanto roda, sua tela nunca bloqueia nem suspende. A primeira está fora do alcance de <em>qualquer</em> site: os navegadores impedem que uma página gere entrada real do sistema, então os «simuladores de mouse» em JavaScript só movem um ponteiro virtual dentro da própria página.</p>
+  <h2>Quando o Teams fica inativo?</h2>
+  <p>O Microsoft Teams fica inativo, e mostra você como <strong>Ausente</strong>, após cerca de <strong>5 minutos</strong> sem atividade de teclado ou mouse, e <strong>imediatamente</strong> quando o computador bloqueia, entra em suspensão ou inicia o protetor de tela. Esse gatilho instantâneo é o que quase todo mundo sofre sem perceber: você se levanta, o Windows bloqueia a tela depois de alguns minutos e o Teams muda para Ausente mesmo que você já esteja de volta lendo. Evite o bloqueio e você evita a causa mais comum.</p>
+
+  <h2>Como manter o Teams ativo longe da mesa</h2>
+  <p>Dois gestos honestos cobrem quase todos os casos. Primeiro, <strong>mantenha o computador acordado e desbloqueado</strong> com o ScreenWakeUp: isso elimina por completo o gatilho de bloqueio ou suspensão, então pausas curtas, chamadas e leitura em outra janela deixam de colocar você em Ausente. Segundo, para reuniões ou períodos mais longos, <strong>defina seu status manualmente</strong>: no Teams clique no seu avatar → status → <strong>Disponível</strong> e escolha uma duração. O status manual tem prioridade sobre o temporizador de inatividade: é a forma nativa, e permitida pelas regras, de continuar verde longe do teclado.</p>
+
+  <h2>Um anti-AFK honesto para o Teams</h2>
+  <p>Procurando um <strong>anti-AFK para Teams</strong>? A maioria dos resultados promete teclas simuladas a partir de uma página web, algo que os navegadores simplesmente não permitem. O ScreenWakeUp é o anti-AFK que faz o que um navegador <em>pode</em> fazer, e diz isso: mantém a tela ligada e o computador desbloqueado (o gatilho número um do Ausente), funciona sem instalação nem direitos de administrador e nunca toca no Teams nem nos seus dados. O que ele não consegue, e nenhum outro site consegue, é falsificar entrada real no nível do sistema.</p>
+
   <h2>Por que não um app de desktop "mexe-mouse"?</h2>
   <ul>
     <li><strong>Sem instalação nem direitos de administrador</strong> — funciona em notebooks corporativos.</li>
@@ -122,6 +140,15 @@ CONTENT["prevent-teams-away"]["fr"] = dict(
   </ol>
   <h2>Pourquoi Teams m'affiche-t-il comme Absent ?</h2>
   <p>Teams calcule votre présence à partir du <strong>temps d'inactivité du système</strong> et de l'<strong>état de l'écran</strong>. ScreenWakeUp règle entièrement le second : tant qu'il tourne, votre écran ne se verrouille jamais et ne se met jamais en veille. Le premier est hors de portée de <em>tout</em> site web : les navigateurs empêchent une page de générer de vraies saisies système, donc les « simulateurs de souris » en JavaScript ne déplacent qu'un pointeur virtuel dans leur propre page.</p>
+  <h2>Quand Teams passe-t-il en inactif ?</h2>
+  <p>Microsoft Teams passe en inactif, et vous affiche comme <strong>Absent</strong>, après environ <strong>5 minutes</strong> sans activité du clavier ou de la souris, et <strong>immédiatement</strong> quand l'ordinateur se verrouille, se met en veille ou lance l'économiseur d'écran. Ce déclencheur instantané est celui que presque tout le monde subit sans s'en rendre compte : vous vous levez, Windows verrouille l'écran au bout de quelques minutes et Teams vous passe en Absent même si vous êtes déjà de retour en train de lire. Empêchez le verrouillage et vous supprimez la cause la plus fréquente.</p>
+
+  <h2>Comment garder Teams actif loin de votre bureau</h2>
+  <p>Deux gestes honnêtes couvrent presque tous les cas. D'abord, <strong>gardez votre machine allumée et déverrouillée</strong> avec ScreenWakeUp : cela supprime entièrement le déclencheur de verrouillage ou de veille, si bien que les courtes pauses, les appels et la lecture dans une autre fenêtre ne vous passent plus en Absent. Ensuite, pour les réunions ou les absences plus longues, <strong>définissez votre statut manuellement</strong> : dans Teams, cliquez sur votre avatar → statut → <strong>Disponible</strong> et choisissez une durée. Le statut manuel a priorité sur le minuteur d'inactivité : c'est le moyen intégré, et conforme aux règles, de rester vert loin du clavier.</p>
+
+  <h2>Un anti-AFK honnête pour Teams</h2>
+  <p>Vous cherchez un <strong>anti-AFK pour Teams</strong> ? La plupart des résultats promettent des frappes de touches simulées depuis une page web, ce que les navigateurs n'autorisent tout simplement pas. ScreenWakeUp est l'anti-AFK qui fait ce qu'un navigateur <em>peut</em> faire, et le dit : il garde votre écran allumé et votre ordinateur déverrouillé (le déclencheur numéro un du statut Absent), fonctionne sans installation ni droits administrateur et ne touche jamais à Teams ni à vos données. Ce qu'il ne peut pas faire, pas plus qu'aucun autre site, c'est simuler une vraie saisie au niveau du système.</p>
+
   <h2>Pourquoi pas une appli de bureau « anti-veille » ?</h2>
   <ul>
     <li><strong>Sans installation ni droits administrateur</strong> — fonctionne sur les ordinateurs d'entreprise verrouillés.</li>
@@ -152,7 +179,7 @@ CONTENT["prevent-teams-away"]["fr"] = dict(
 )
 CONTENT["prevent-teams-away"]["de"] = dict(
  title='Abwesend in Teams verhindern — kostenlos, ohne Installation',
- desc='Warum Teams dich als Abwesend anzeigt und was wirklich hilft: Bildschirm wach und Rechner entsperrt, direkt im Browser. Kostenlos, ohne Download.',
+ desc='Warum Teams Sie als Abwesend anzeigt und was wirklich hilft: Bildschirm wach und Rechner entsperrt, direkt im Browser. Kostenlos, ohne Download.',
  keywords='teams abwesend verhindern, teams aktiv halten, teams grüner status, teams abwesend nach 5 minuten, in teams aktiv bleiben, maus bewegen automatisch',
  ogtitle='Teams-Status Abwesend verhindern — der ehrliche Guide',
  ogdesc='Warum Teams Sie auf Abwesend setzt und was wirklich funktioniert: Bildschirm wach, Rechner entsperrt. Kostenloses Web-Tool, ohne Download oder Administratorrechte.',
@@ -169,6 +196,15 @@ CONTENT["prevent-teams-away"]["de"] = dict(
   </ol>
   <h2>Warum zeigt Teams mich als Abwesend?</h2>
   <p>Teams berechnet Ihre Präsenz aus der <strong>System-Inaktivitätszeit</strong> und dem <strong>Bildschirmzustand</strong>. ScreenWakeUp löst das zweite Signal vollständig: Solange es läuft, sperrt Ihr Bildschirm nie und geht nie in den Ruhezustand. Das erste Signal ist für <em>jede</em> Website unerreichbar: Browser verhindern bewusst, dass Seiten echte Systemeingaben erzeugen — JavaScript-„Maussimulatoren“ bewegen nur einen virtuellen Zeiger innerhalb der eigenen Seite.</p>
+  <h2>Wann wird Teams inaktiv?</h2>
+  <p>Microsoft Teams wird inaktiv, und zeigt Sie als <strong>Abwesend</strong>, nach etwa <strong>5 Minuten</strong> ohne Tastatur- oder Mauseingabe und <strong>sofort</strong>, wenn der Rechner gesperrt wird, in den Ruhezustand geht oder der Bildschirmschoner startet. Dieser sofortige Auslöser trifft fast alle, ohne dass sie es merken: Sie stehen auf, Windows sperrt den Bildschirm nach ein paar Minuten, und Teams stellt Sie auf Abwesend, selbst wenn Sie längst wieder am Platz sitzen und lesen. Verhindern Sie die Sperre, und Sie verhindern die häufigste Ursache.</p>
+
+  <h2>Teams aktiv halten, wenn Sie nicht am Schreibtisch sind</h2>
+  <p>Zwei ehrliche Schritte decken fast jeden Fall ab. Erstens: <strong>Halten Sie den Rechner wach und entsperrt</strong> mit ScreenWakeUp. Das entfernt den Auslöser Sperre/Ruhezustand komplett, sodass kurze Pausen, Anrufe und Lesen in einem anderen Fenster Sie nicht mehr auf Abwesend stellen. Zweitens, für Besprechungen oder längere Abwesenheiten: <strong>Setzen Sie Ihren Status manuell</strong>. Klicken Sie in Teams auf Ihren Avatar → Status → <strong>Verfügbar</strong> und wählen Sie eine Dauer. Der manuelle Status hat Vorrang vor dem Inaktivitäts-Timer: Das ist der eingebaute, regelkonforme Weg, fern der Tastatur grün zu bleiben.</p>
+
+  <h2>Ein ehrliches Anti-AFK für Teams</h2>
+  <p>Sie suchen ein <strong>Anti-AFK für Teams</strong>? Die meisten Treffer versprechen simulierte Tastendrücke aus einer Webseite heraus, was Browser schlicht nicht erlauben. ScreenWakeUp ist das Anti-AFK, das tut, was ein Browser <em>kann</em>, und das auch sagt: Es hält Ihren Bildschirm an und den Rechner entsperrt (Auslöser Nummer eins für Abwesend), läuft ohne Installation und ohne Adminrechte und rührt weder Teams noch Ihre Daten an. Was es nicht kann, und keine andere Website auch, ist echte Eingaben auf Systemebene vorzutäuschen.</p>
+
   <h2>Warum keine Desktop-"Maus-Wackler"-App?</h2>
   <ul>
     <li><strong>Ohne Installation oder Administratorrechte</strong> — funktioniert auf gesperrten Firmen-Laptops.</li>
@@ -216,6 +252,15 @@ CONTENT["prevent-teams-away"]["ja"] = dict(
   </ol>
   <h2>なぜ Teams は「退席中」と表示するのか</h2>
   <p>Teams はプレゼンスを<strong>システムのアイドル時間</strong>と<strong>画面の状態</strong>から判定します。ScreenWakeUp は後者を完全に解決します：動作中は画面がロックもスリープもしません。前者はどんなウェブサイトにも手が届きません。ブラウザはページが本物のシステム入力を生成するのを意図的に防いでいるため、JavaScript の「マウスシミュレーター」は自分のページ内で仮想ポインタを動かすだけです。</p>
+  <h2>Teams はいつ非アクティブになる？</h2>
+  <p>Microsoft Teams は、キーボードやマウスの操作が約<strong>5分間</strong>ないと非アクティブになり<strong>「退席中」</strong>と表示します。さらに、PCがロック・スリープしたりスクリーンセーバーが起動したりすると<strong>即座に</strong>切り替わります。この即時トリガーこそ、多くの人が気づかずに引っかかるものです。席を立つと数分で Windows が画面をロックし、戻って読んでいる最中でも Teams は退席中のまま。ロックを防げば、最も多い原因を防げます。</p>
+
+  <h2>席を離れても Teams をアクティブに保つ方法</h2>
+  <p>正直な方法は2つで、ほぼすべてのケースをカバーできます。まず、ScreenWakeUp で<strong>PCを起動したままロックさせない</strong>こと。ロックとスリープのトリガー自体がなくなるので、短い休憩や通話、別ウィンドウでの閲覧で退席中になることはなくなります。次に、会議や長めの離席には<strong>ステータスを手動で設定</strong>すること。Teams でアバター → ステータス → <strong>「連絡可能」</strong>を選び、期間を指定します。手動ステータスはアイドルタイマーより優先され、キーボードから離れても緑を保てる、Teams 標準でルールにも沿った方法です。</p>
+
+  <h2>正直な Teams アンチ AFK</h2>
+  <p><strong>Teams のアンチ AFK</strong>を探していますか？検索結果の多くは、ウェブページからキー入力をシミュレートすると謳っていますが、ブラウザはそれを許可していません。ScreenWakeUp は、ブラウザに<em>できること</em>だけを行い、それを正直に伝えるアンチ AFK です。画面を点けたままPCのロックを防ぎ（退席中の最大の原因）、インストールや管理者権限なしで動作し、Teams やあなたのデータには一切触れません。できないこと、そしてどのサイトにもできないことは、OSレベルで本物の入力を偽装することです。</p>
+
   <h2>デスクトップの「マウス揺らし」アプリではダメ？</h2>
   <ul>
     <li><strong>インストール・管理者権限が不要</strong> — ソフトを入れられない社用 PC でも動作。</li>
@@ -263,6 +308,15 @@ CONTENT["prevent-teams-away"]["ru"] = dict(
   </ol>
   <h2>Почему Teams показывает меня как «Отсутствую»?</h2>
   <p>Teams определяет ваш статус по <strong>времени бездействия системы</strong> и <strong>состоянию экрана</strong>. ScreenWakeUp полностью решает второе: пока он работает, экран никогда не блокируется и не засыпает. Первое недоступно <em>ни одному</em> сайту: браузеры сознательно не дают страницам генерировать настоящий системный ввод, поэтому JavaScript-«симуляторы мыши» двигают лишь виртуальный указатель внутри собственной страницы.</p>
+  <h2>Когда Teams становится неактивным?</h2>
+  <p>Microsoft Teams становится неактивным и показывает вас как <strong>«Отсутствую»</strong> примерно через <strong>5 минут</strong> без активности клавиатуры или мыши, а также <strong>мгновенно</strong>, когда компьютер блокируется, засыпает или запускает заставку. Именно этот мгновенный триггер срабатывает у большинства незаметно: вы отходите, Windows через несколько минут блокирует экран, и Teams переводит вас в «Отсутствую», даже если вы уже вернулись и читаете. Уберите блокировку — и вы уберёте самую частую причину.</p>
+
+  <h2>Как держать Teams активным, когда вы не за столом</h2>
+  <p>Два честных приёма закрывают почти все случаи. Во-первых, <strong>держите компьютер включённым и разблокированным</strong> с помощью ScreenWakeUp: это полностью убирает триггер блокировки и сна, так что короткие перерывы, звонки и чтение в другом окне больше не переводят вас в «Отсутствую». Во-вторых, для встреч и более долгих отлучек <strong>задайте статус вручную</strong>: в Teams нажмите на аватар → статус → <strong>«Доступен»</strong> и укажите длительность. Ручной статус имеет приоритет над таймером бездействия — это встроенный и допустимый правилами способ оставаться зелёным вдали от клавиатуры.</p>
+
+  <h2>Честный анти-AFK для Teams</h2>
+  <p>Ищете <strong>анти-AFK для Teams</strong>? Большинство результатов обещают имитацию нажатий клавиш прямо с веб-страницы — браузеры этого попросту не позволяют. ScreenWakeUp — это анти-AFK, который делает то, что браузер <em>может</em>, и честно об этом говорит: держит экран включённым, а компьютер разблокированным (главный триггер «Отсутствую»), работает без установки и прав администратора и никогда не трогает Teams и ваши данные. Чего он не может — как и любой другой сайт — так это подделать реальный ввод на уровне системы.</p>
+
   <h2>Почему не настольное приложение «двигатель мыши»?</h2>
   <ul>
     <li><strong>Без установки и прав администратора</strong> — работает на корпоративных ноутбуках.</li>
