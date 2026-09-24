@@ -391,15 +391,30 @@
   .support-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
   .support-section p { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
   .btn-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-  .kofi-btn {
+  .kofi-btn, .cd-kofi {
     display: inline-flex; align-items: center; gap: 8px;
     background: #FF5E5B; color: #fff;
     font-size: 14px; font-weight: 700; padding: 12px 24px;
     border-radius: 22px; text-decoration: none;
     transition: opacity .2s, transform .1s;
   }
-  .kofi-btn:hover { opacity: .88; }
-  .kofi-btn:active { transform: scale(.97); }
+  .kofi-btn:hover, .cd-kofi:hover { opacity: .88; }
+  .kofi-btn:active, .cd-kofi:active { transform: scale(.97); }
+  /* Donation ask v2: hidden until real value has been delivered (see ASK_CFG in the script) */
+  .card-donate { display: none; }
+  .card-donate.show { display: block; animation: cdIn .35s ease-out; }
+  @keyframes cdIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  .cd-hidden { display: none !important; }
+  .cd-amounts { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 0 0 12px; }
+  .cd-amt { background: var(--surface); border: 1px solid var(--border); color: var(--text); border-radius: 12px; padding: 10px 14px; min-width: 84px; font-size: 17px; font-weight: 700; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; font-family: inherit; }
+  .cd-amt small { font-size: 11px; font-weight: 500; color: var(--muted); }
+  .cd-amt.sel { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent) inset; }
+  .cd-custom { display: flex; justify-content: center; align-items: center; gap: 6px; margin: 0 0 12px; color: var(--muted); }
+  .cd-custom input { width: 90px; background: var(--surface); border: 1px solid var(--border); color: var(--text); border-radius: 10px; padding: 8px 10px; font-size: 16px; font-family: inherit; }
+  .cd-pay { max-width: 340px; margin: 0 auto 10px; }
+  .card-donate .cd-secure { color: var(--muted); font-size: 12px; margin: 6px auto 12px; }
+  .card-donate .cd-thanks { color: var(--accent); font-size: 15px; font-weight: 600; margin: 10px auto; }
+  .cd-actions { margin-top: 4px; }
   /* Header support button (B) */
   .nav-kofi { display:inline-flex; align-items:center; gap:6px; background:#FF5E5B; color:#fff; font-size:13px; font-weight:700; padding:7px 14px; border-radius:18px; text-decoration:none; margin-right:8px; transition:opacity .2s, transform .1s; white-space:nowrap; }
   .nav-kofi:hover { opacity:.88; }
@@ -608,18 +623,27 @@
     <div id="sessionClock"></div>
     <p id="cardHint">Mantén esta pestaña visible: si minimizas la ventana o otra app la tapa por completo, el navegador libera el bloqueo. ¿Trabajas en otra app? Usa la mini ventana flotante.</p>
   <div class="card-donate" id="cardDonateBlock">
-    <p class="section-tag" id="cdTag">PROYECTO INDEPENDIENTE</p>
-    <h2 id="cdH2">¿Te salvamos el día? Invítanos a un café ☕</h2>
-    <p id="cdP">Construimos ScreenWakeUp para que tu pantalla nunca interrumpa tu flujo de trabajo. Sin registros molestos, sin muros de pago y 100% al instante. Si esta herramienta te ha dado tranquilidad o te ha ahorrado un solo contratiempo hoy, considera apoyar nuestro trabajo. Un pequeño café en Ko-fi es el motor real que mantiene este sitio libre, independiente y vivo para ti.</p>
-    <div class="btn-group">
-      <a class="kofi-btn" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener">
-        ☕ <span id="cdKofi">¡Invítanos a un café!</span>
-      </a>
-      <button class="share-btn" onclick="shareApp()">
-        🔗 <span id="cdShare">Compartir</span>
-      </button>
+    <p class="section-tag" id="cdTag">INDEPENDENT PROJECT</p>
+    <h2 id="cdH2">Enjoying ScreenWakeUp? Keep it free ☕</h2>
+    <p id="cdP">ScreenWakeUp is built and paid for by one person. No ads, no accounts, no investors, and it will stay that way.</p>
+    <div class="cd-amounts" id="cdAmounts" role="group" aria-label="Tip amount">
+      <button type="button" class="cd-amt sel" data-usd="3">$3<small id="cdA1">1 coffee</small></button>
+      <button type="button" class="cd-amt" data-usd="9">$9<small id="cdA3">3 coffees</small></button>
+      <button type="button" class="cd-amt" data-usd="15">$15<small id="cdA5">5 coffees</small></button>
+      <button type="button" class="cd-amt" data-usd="other"><span id="cdOther">Other amount</span></button>
     </div>
-    <p class="donate-social" id="cdSocial"></p>
+    <div class="cd-custom cd-hidden" id="cdCustom"><span>$</span><input type="number" id="cdCustomInp" min="1" max="300" step="1" value="5" inputmode="numeric" aria-label="Amount in USD"></div>
+    <div class="cd-pay" id="cdPay">
+      <div id="paypalBtns"></div>
+      <a class="cd-kofi" id="cdKofiBtn" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener">☕ <span id="cdKofi">Tip via Ko-fi · $3</span></a>
+    </div>
+    <p class="cd-secure" id="cdSecure">Secure payment by PayPal or card. No account needed.</p>
+    <p class="cd-thanks cd-hidden" id="cdThanks"></p>
+    <div class="btn-group cd-actions">
+      <button type="button" class="share-btn" id="cdLater">Not today</button>
+      <button type="button" class="share-btn" onclick="shareApp()">🔗 <span id="cdShare">Share</span></button>
+    </div>
+    <p class="donate-social" id="cdSocial">Built and paid for by one person. No ads, no investors, no data for sale.</p>
   </div>
 </section>
 
@@ -1191,22 +1215,21 @@ function setLang(l) {
 
 /* Donations (propagated from index.html) */
 const DONATE_I18N = {
-  en: { nav:"Support", h2:"Enjoying ScreenWakeUp? Keep it free ☕", p:"No ads, no sign-up — just one button that works. If it saved your screen today, a $3 coffee keeps the site free and independent.", btn:"Buy us a coffee · $3", social:"Built and paid for by one person. No ads, no investors, no data for sale.", toast:"Your screen stayed on {t} 🎉 Enjoyed it? Buy us a coffee.", toastBtn:"Buy a coffee" },
-  es: { nav:"Apóyanos", h2:"¿Te sirve ScreenWakeUp? Mantenlo gratis ☕", p:"Sin anuncios, sin registro — solo un botón que funciona. Si hoy te salvó la pantalla, un café de 3 $ mantiene el sitio gratis e independiente.", btn:"Invítanos un café · 3 $", social:"Lo hace y lo mantiene una sola persona. Sin anuncios, sin inversores, sin vender datos.", toast:"Tu pantalla estuvo activa {t} 🎉 ¿Te sirvió? Invítanos un café.", toastBtn:"Invitar un café" },
-  pt: { nav:"Apoiar", h2:"Curtindo o ScreenWakeUp? Mantenha grátis ☕", p:"Sem anúncios, sem cadastro — só um botão que funciona. Se hoje salvou sua tela, um café de $3 mantém o site grátis e independente.", btn:"Pague um café · $3", social:"Feito e mantido por uma só pessoa. Sem anúncios, sem investidores, sem venda de dados.", toast:"Sua tela ficou ativa {t} 🎉 Gostou? Pague um café.", toastBtn:"Pagar um café" },
-  fr: { nav:"Soutenir", h2:"ScreenWakeUp vous plaît ? Gardez-le gratuit ☕", p:"Sans pub, sans inscription — juste un bouton qui marche. S'il a sauvé votre écran aujourd'hui, un café à 3 $ garde le site gratuit et indépendant.", btn:"Offrir un café · 3 $", social:"Créé et entretenu par une seule personne. Sans pub, sans investisseurs, sans vente de données.", toast:"Votre écran est resté allumé {t} 🎉 Ça vous a plu ? Offrez un café.", toastBtn:"Offrir un café" },
-  de: { nav:"Unterstützen", h2:"Gefällt dir ScreenWakeUp? Halt es kostenlos ☕", p:"Keine Werbung, keine Anmeldung — nur ein Knopf, der funktioniert. Wenn es heute deinen Bildschirm gerettet hat, hält ein 3-$-Kaffee die Seite frei und unabhängig.", btn:"Spendier einen Kaffee · 3 $", social:"Von einer einzigen Person gebaut und bezahlt. Keine Werbung, keine Investoren, kein Datenverkauf.", toast:"Dein Bildschirm blieb {t} an 🎉 Gefallen? Spendier einen Kaffee.", toastBtn:"Kaffee spendieren" },
-  ja: { nav:"支援", h2:"ScreenWakeUp は役に立ってますか？無料を維持 ☕", p:"広告なし・登録なし、押すだけ。今日あなたの画面を救えたなら、$3 のコーヒーがこのサイトを無料で独立に保ちます。", btn:"コーヒーを贈る · $3", social:"ひとりで作り、ひとりで維持しています。広告なし、投資家なし、データ販売なし。", toast:"画面を {t} 点けたままにできました 🎉 役に立ったら、コーヒーを一杯。", toastBtn:"コーヒーを贈る" },
-  ru: { nav:"Поддержать", h2:"Нравится ScreenWakeUp? Сохраним бесплатным ☕", p:"Без рекламы, без регистрации — просто кнопка, которая работает. Если сегодня он спас ваш экран, кофе за $3 сохранит сайт бесплатным и независимым.", btn:"Купить кофе · $3", social:"Сделано и оплачивается одним человеком. Без рекламы, без инвесторов, без продажи данных.", toast:"Ваш экран был включён {t} 🎉 Понравилось? Купите нам кофе.", toastBtn:"Купить кофе" },
+  en: { nav:"Support", h2Plain:"Enjoying ScreenWakeUp? Keep it free ☕", h2Today:"Your screen has been protected for {t} today", h2Total:"Your screen has been protected for {t} with this page", p:"ScreenWakeUp is built and paid for by one person — no ads, no accounts, no investors, and it will stay that way. This year's domain and hosting are already paid. Most people close this message, and that's fine. If it spared you a locked screen or a lost upload, a coffee helps keep it free for everyone.", a1:"1 coffee", a3:"3 coffees", a5:"5 coffees", other:"Other amount", later:"Not today", kofi:"Tip via Ko-fi · ${a}", secure:"Secure payment by PayPal or card. No account needed.", thanks:"Thank you! Your tip goes straight into keeping this free. ☕", social:"Built and paid for by one person. No ads, no investors, no data for sale." },
+  es: { nav:"Apóyanos", h2Plain:"¿Te sirve ScreenWakeUp? Mantenlo gratis ☕", h2Today:"Tu pantalla lleva {t} protegida hoy", h2Total:"Tu pantalla lleva {t} protegida con esta página", p:"ScreenWakeUp lo hace y lo paga una sola persona: sin anuncios, sin cuentas, sin inversores, y así seguirá. El dominio y el hosting de este año ya están pagados. La mayoría cierra este aviso, y no pasa nada. Si hoy te ahorró un bloqueo o una subida perdida, un café ayuda a que siga gratis para todos.", a1:"1 café", a3:"3 cafés", a5:"5 cafés", other:"Otra cantidad", later:"Hoy no", kofi:"Invitar por Ko-fi · {a} $", secure:"Pago seguro por PayPal o tarjeta. Sin cuenta.", thanks:"¡Gracias! Tu café va íntegro a mantener esto gratis. ☕", social:"Lo hace y lo mantiene una sola persona. Sin anuncios, sin inversores, sin vender datos." },
+  pt: { nav:"Apoiar", h2Plain:"Curtindo o ScreenWakeUp? Mantenha grátis ☕", h2Today:"Sua tela ficou protegida por {t} hoje", h2Total:"Sua tela ficou protegida por {t} com esta página", p:"O ScreenWakeUp é feito e pago por uma só pessoa: sem anúncios, sem contas, sem investidores, e vai continuar assim. O domínio e a hospedagem deste ano já estão pagos. A maioria fecha este aviso, e tudo bem. Se hoje ele evitou um bloqueio ou um upload perdido, um café ajuda a mantê-lo grátis para todos.", a1:"1 café", a3:"3 cafés", a5:"5 cafés", other:"Outro valor", later:"Hoje não", kofi:"Pagar um café via Ko-fi · ${a}", secure:"Pagamento seguro por PayPal ou cartão. Sem conta.", thanks:"Obrigado! Seu café vai inteiro para manter isto grátis. ☕", social:"Feito e mantido por uma só pessoa. Sem anúncios, sem investidores, sem venda de dados." },
+  fr: { nav:"Soutenir", h2Plain:"ScreenWakeUp vous plaît ? Gardez-le gratuit ☕", h2Today:"Votre écran est resté protégé {t} aujourd'hui", h2Total:"Votre écran est resté protégé {t} avec cette page", p:"ScreenWakeUp est créé et payé par une seule personne : sans pub, sans compte, sans investisseurs, et ça restera ainsi. Le domaine et l'hébergement de cette année sont déjà payés. La plupart des gens ferment ce message, et c'est très bien. S'il vous a évité un écran verrouillé ou un envoi perdu, un café aide à le garder gratuit pour tous.", a1:"1 café", a3:"3 cafés", a5:"5 cafés", other:"Autre montant", later:"Pas aujourd'hui", kofi:"Offrir un café via Ko-fi · {a} $", secure:"Paiement sécurisé par PayPal ou carte. Sans compte.", thanks:"Merci ! Votre café sert entièrement à garder ce site gratuit. ☕", social:"Créé et entretenu par une seule personne. Sans pub, sans investisseurs, sans vente de données." },
+  de: { nav:"Unterstützen", h2Plain:"Gefällt dir ScreenWakeUp? Halt es kostenlos ☕", h2Today:"Dein Bildschirm war heute {t} geschützt", h2Total:"Dein Bildschirm war mit dieser Seite {t} geschützt", p:"ScreenWakeUp wird von einer einzigen Person gebaut und bezahlt: keine Werbung, keine Konten, keine Investoren, und das bleibt so. Domain und Hosting für dieses Jahr sind schon bezahlt. Die meisten schließen diese Nachricht, und das ist völlig in Ordnung. Wenn sie dir heute einen gesperrten Bildschirm oder einen abgebrochenen Upload erspart hat, hilft ein Kaffee, sie für alle kostenlos zu halten.", a1:"1 Kaffee", a3:"3 Kaffee", a5:"5 Kaffee", other:"Anderer Betrag", later:"Heute nicht", kofi:"Kaffee über Ko-fi · {a} $", secure:"Sichere Zahlung per PayPal oder Karte. Ohne Konto.", thanks:"Danke! Dein Kaffee fließt komplett in den kostenlosen Betrieb. ☕", social:"Von einer einzigen Person gebaut und bezahlt. Keine Werbung, keine Investoren, kein Datenverkauf." },
+  ja: { nav:"支援", h2Plain:"ScreenWakeUp は役に立ってますか？無料を維持 ☕", h2Today:"今日は画面を {t} 守りました", h2Total:"このページで画面を {t} 守りました", p:"ScreenWakeUp はひとりで作り、ひとりで費用を負担しています。広告なし、アカウント不要、投資家なし。これからも変わりません。今年のドメインとホスティング代はすでに支払い済みです。多くの人はこの表示を閉じます。それで問題ありません。今日、画面ロックやアップロード失敗を防げたなら、コーヒー一杯が無料維持の助けになります。", a1:"コーヒー1杯", a3:"3杯", a5:"5杯", other:"その他の金額", later:"今日はしない", kofi:"Ko-fi で贈る · ${a}", secure:"PayPal またはカードで安全に支払い。アカウント不要。", thanks:"ありがとうございます！すべて無料維持のために使います。☕", social:"ひとりで作り、ひとりで維持しています。広告なし、投資家なし、データ販売なし。" },
+  ru: { nav:"Поддержать", h2Plain:"Нравится ScreenWakeUp? Сохраним бесплатным ☕", h2Today:"Сегодня экран был защищён {t}", h2Total:"С этой страницей экран был защищён {t}", p:"ScreenWakeUp делает и оплачивает один человек: без рекламы, без аккаунтов, без инвесторов — и так останется. Домен и хостинг на этот год уже оплачены. Большинство закрывает это сообщение, и это нормально. Если сегодня он уберёг вас от блокировки экрана или сорванной загрузки, один кофе помогает сохранить его бесплатным для всех.", a1:"1 кофе", a3:"3 кофе", a5:"5 кофе", other:"Другая сумма", later:"Не сегодня", kofi:"Кофе через Ko-fi · ${a}", secure:"Безопасная оплата через PayPal или картой. Без аккаунта.", thanks:"Спасибо! Ваш кофе целиком идёт на поддержку бесплатного сайта. ☕", social:"Сделано и оплачивается одним человеком. Без рекламы, без инвесторов, без продажи данных." },
 };
 
 function applyDonateStrings(l){
   const d = DONATE_I18N[l] || DONATE_I18N.en;
   const set = (id, txt) => { const e = document.getElementById(id); if (e) e.textContent = txt; };
-  set('cdH2', d.h2);
-  set('cdP', d.p);
-  set('cdKofi', d.btn);
-  set('cdSocial', d.social);
+  set('cdP', d.p); set('cdA1', d.a1); set('cdA3', d.a3); set('cdA5', d.a5); set('cdOther', d.other);
+  set('cdLater', d.later); set('cdSecure', d.secure); set('cdSocial', d.social);
+  if (window.__askReady) askRefresh();
 }
 
 function fmtDur(secs){
@@ -1342,7 +1365,7 @@ function startSessionTimer() {
   clearInterval(sessionTickId);
   sessionTickId = setInterval(() => {
     const secs = Math.floor((Date.now() - sessionStart) / 1000);
-    if (secs >= 300 && window.__showFloatKofi) window.__showFloatKofi();
+    onProtectedTick(secs);
     const mins = Math.floor(secs / 60);
     const s    = secs % 60;
     const phrase = LANG[lang].sessionPhrase;
@@ -1436,7 +1459,7 @@ function deactivate(expired=false, lost=false) {
   stopTimer();
   track('deactivate_wakelock', { session_sec: sessionStart ? Math.floor((Date.now()-sessionStart)/1000) : 0, expired: !!expired, lock_losses: lockLostCount });
   if(lost) track('lock_lost_visible');
-  if(!lost) maybeShowDonateToast(sessionStart ? Math.floor((Date.now()-sessionStart)/1000) : 0);
+  if(!lost) maybeShowAsk(expired ? 'expired' : 'stop', sessionStart ? Math.floor((Date.now()-sessionStart)/1000) : 0);
   stopSessionTimer();
   if(expired && 'Notification' in window && Notification.permission==='granted'){
     new Notification('ScreenWakeUp', { body: t.timerExpired, icon: '/swu-icon.png' });
@@ -1598,6 +1621,114 @@ addEventListener('pagehide', ()=>{
 ──────────────────────────────────────────── */
 /* GA4 custom event helper — tracks in-app actions GA4 can't auto-detect */
 function track(name, params){ try{ if(window.gtag) gtag('event', name, params || {}); }catch(e){} }
+
+/* ────────────────────────────────────────────
+   DONATION ASK v2 — one panel inside the card, shown only after real value.
+   Evidence: ask after value (Falk 2007), low default + few options (Goswami & Urminsky 2016; Wikimedia tests),
+   at most 2 exposures (Wikimedia 2016-17), fixed costs already covered (Gneezy et al. 2014).
+   Payment: PayPal buttons rendered in-page when ASK_CFG.paypalClientId is set; Ko-fi link otherwise.
+──────────────────────────────────────────── */
+const ASK_CFG = { paypalClientId: '', currency: 'USD', presets: [3, 9, 15], showAfterSec: 12 * 60, minStopSec: 10 * 60, maxShows: 2, windowDays: 7, snoozeDays: 5, thanksDays: 30 };
+const askEl = document.getElementById('cardDonateBlock');
+let askState = {};
+try { askState = JSON.parse(localStorage.getItem('ka-ask') || '{}') || {}; } catch (e) { askState = {}; }
+function askSave(){ try { localStorage.setItem('ka-ask', JSON.stringify(askState)); } catch (e) {} }
+let askAmount = ASK_CFG.presets[0], askShownThisSession = false, paypalRendered = false, paypalLoading = false;
+function askDayKey(){ return new Date().toISOString().slice(0, 10); }
+function protectedToday(){ return (askState.days && askState.days[askDayKey()]) || 0; }
+function onProtectedTick(secs){
+  if (secs > 0 && secs % 30 === 0) {                       // value actually delivered: 30 s of protected screen
+    const k = askDayKey();
+    askState.days = askState.days || {};
+    askState.days[k] = (askState.days[k] || 0) + 30;
+    askState.total = (askState.total || 0) + 30;
+    Object.keys(askState.days).sort().slice(0, -8).forEach(x => delete askState.days[x]);
+    askSave();
+  }
+  if (secs >= ASK_CFG.showAfterSec) maybeShowAsk('12min', secs);
+}
+function askAllowed(){
+  const now = Date.now();
+  if ((askState.snoozeUntil || 0) > now || (askState.thanksUntil || 0) > now) return false;
+  askState.shows = (askState.shows || []).filter(t => now - t < ASK_CFG.windowDays * 864e5);
+  return askState.shows.length < ASK_CFG.maxShows;
+}
+function maybeShowAsk(trigger, secs){
+  if (!askEl || askShownThisSession) return;
+  askShownThisSession = true;                              // one decision per session, whatever the outcome
+  if (trigger !== '12min' && trigger !== 'return' && (secs || 0) < ASK_CFG.minStopSec) return;
+  if (!askAllowed()) return;
+  askState.shows.push(Date.now()); askSave();
+  askRefresh();
+  askEl.classList.add('show');
+  track('ask_shown', { trigger: trigger, session_sec: secs || 0, total_sec: askState.total || 0 });
+  loadPayPal();
+}
+function askRefresh(){
+  if (!askEl) return;
+  const d = DONATE_I18N[lang] || DONATE_I18N.en;
+  const set = (id, txt) => { const e = document.getElementById(id); if (e) e.textContent = txt; };
+  const today = protectedToday(), total = askState.total || 0;
+  set('cdH2', today >= 60 ? d.h2Today.replace('{t}', fmtDur(today)) : total >= 60 ? d.h2Total.replace('{t}', fmtDur(total)) : d.h2Plain);
+  set('cdKofi', d.kofi.replace('{a}', askAmount));
+}
+function loadPayPal(){
+  if (!ASK_CFG.paypalClientId || paypalRendered || paypalLoading) return;
+  paypalLoading = true;
+  const s = document.createElement('script');
+  s.src = 'https://www.paypal.com/sdk/js?client-id=' + encodeURIComponent(ASK_CFG.paypalClientId) + '&currency=' + ASK_CFG.currency + '&intent=capture&components=buttons&enable-funding=card&disable-funding=paylater,credit,venmo';
+  s.onload = renderPayPal; s.onerror = function(){ paypalLoading = false; };
+  document.head.appendChild(s);
+}
+function renderPayPal(){
+  if (!window.paypal || paypalRendered) return;
+  const host = document.getElementById('paypalBtns'); if (!host) return;
+  paypalRendered = true;
+  window.paypal.Buttons({
+    style: { layout: 'vertical', shape: 'rect', height: 44, label: 'paypal' },
+    onClick: function(){ track('donate_click', { placement: 'panel', provider: 'paypal', amount: askAmount }); },
+    createOrder: function(data, actions){
+      return actions.order.create({
+        purchase_units: [{ amount: { value: askAmount.toFixed(2), currency_code: ASK_CFG.currency }, description: 'ScreenWakeUp tip' }],
+        application_context: { shipping_preference: 'NO_SHIPPING' }
+      });
+    },
+    onApprove: function(data, actions){
+      return actions.order.capture().then(function(){
+        track('donate_success', { placement: 'panel', provider: 'paypal', amount: askAmount });
+        askState.thanksUntil = Date.now() + ASK_CFG.thanksDays * 864e5; askSave();
+        const d = DONATE_I18N[lang] || DONATE_I18N.en;
+        const th = document.getElementById('cdThanks'); if (th) { th.textContent = d.thanks; th.classList.remove('cd-hidden'); }
+        ['cdAmounts', 'cdCustom', 'cdPay', 'cdSecure', 'cdLater'].forEach(function(id){ const e = document.getElementById(id); if (e) e.classList.add('cd-hidden'); });
+      });
+    },
+    onError: function(){ const k = document.getElementById('cdKofiBtn'); if (k) k.classList.remove('cd-hidden'); }
+  }).render('#paypalBtns').then(function(){ const k = document.getElementById('cdKofiBtn'); if (k) k.classList.add('cd-hidden'); });
+}
+if (askEl) {
+  askEl.querySelectorAll('.cd-amt').forEach(function(b){
+    b.addEventListener('click', function(){
+      askEl.querySelectorAll('.cd-amt').forEach(function(x){ x.classList.remove('sel'); });
+      b.classList.add('sel');
+      const cust = document.getElementById('cdCustom'), inp = document.getElementById('cdCustomInp');
+      if (b.dataset.usd === 'other') { cust.classList.remove('cd-hidden'); askAmount = Math.max(1, Math.round(+inp.value) || 5); inp.focus(); }
+      else { cust.classList.add('cd-hidden'); askAmount = +b.dataset.usd; }
+      askRefresh();
+    });
+  });
+  const inp = document.getElementById('cdCustomInp');
+  if (inp) inp.addEventListener('input', function(){ askAmount = Math.min(300, Math.max(1, Math.round(+inp.value) || 1)); askRefresh(); });
+  const later = document.getElementById('cdLater');
+  if (later) later.addEventListener('click', function(){ askEl.classList.remove('show'); askState.snoozeUntil = Date.now() + ASK_CFG.snoozeDays * 864e5; askSave(); track('ask_dismiss', { amount: askAmount }); });
+  const kofi = document.getElementById('cdKofiBtn');
+  if (kofi) kofi.addEventListener('click', function(){ track('donate_click', { placement: 'panel', provider: 'kofi', amount: askAmount }); });
+  window.__askReady = true;
+  askRefresh();
+  // Returning visitor who already got ≥12 min of value on another day: ask once, within the same 2-per-week limit.
+  const lastShow = (askState.shows || []).slice(-1)[0] || 0;
+  if ((askState.total || 0) >= ASK_CFG.showAfterSec && Date.now() - lastShow > 864e5) maybeShowAsk('return', 0);
+  if (/[?&]ask=1\b/.test(location.search)) { askRefresh(); askEl.classList.add('show'); loadPayPal(); }   // QA preview
+}
 
 /* GA4 custom event: donation clicks */
 (function(){ var el=document.getElementById('donateToastCta'); if(el) el.addEventListener('click', function(){ track('donate_click', { placement: 'toast' }); }); var f=document.getElementById('footerSupport'); if(f) f.addEventListener('click', function(){ track('donate_click', { placement: 'footer' }); }); })();
