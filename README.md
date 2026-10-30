@@ -27,4 +27,4 @@ Static HTML, no build step for the app itself. `index.html` is the English app; 
 
 ## Support
 
-If it saved your screen, you can [leave a tip](https://ko-fi.com/screenwakeup). It is built and paid for by one person and will stay free.
+If it saved your screen, you can [donate](https://screenwakeup.com/#support). It is built and paid for by one person and will stay free.

@@ -66,7 +66,7 @@ DONATE_CSS = """    .nav-kofi{display:inline-flex;align-items:center;gap:6px;bac
 
 # Floating support button block (literal braces — kept out of the f-string template)
 FLOAT_TEMPLATE = '''<div class="float-kofi-wrap" id="floatKofi">
-  <a class="float-kofi" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener" aria-label="{SUP}">☕</a>
+  <a class="float-kofi" href="{SUPURL}" target="_blank" rel="noopener" aria-label="{SUP}">☕</a>
   <button class="fk-close" id="floatKofiClose" aria-label="Hide">&times;</button>
 </div>
 <script>(function(){var w=document.getElementById("floatKofi");if(!w)return;if(+(localStorage.getItem("ka-float-hide")||0)>Date.now()){w.style.display="none";return;}var c=document.getElementById("floatKofiClose");if(c)c.addEventListener("click",function(e){e.preventDefault();w.style.display="none";localStorage.setItem("ka-float-hide",String(Date.now()+7*864e5));});})();</script>'''
@@ -115,6 +115,7 @@ def render(slug, lang):
     c = CONTENT[slug][lang]
     ui = UI[lang]
     home = home_for(lang)
+    support_url = f"{home}#support" if lang in ("es", "pt", "fr", "de") else f"{BASE}/?lang={lang}#support"   # the donation panel lives on the app pages
     body = c["body"].replace("{HOME}", home)
 
     # The FAQPage JSON-LD must mirror what the visitor can read: append any question the body does not show.
@@ -167,7 +168,7 @@ def render(slug, lang):
     related = "".join(f'    <a href="/{lang}/{rs}/">{rl}</a>\n' for rl, rs in c["related"])
     related += f'    <a href="{home}">{ui["allfeatures"]}</a>'
 
-    float_html = FLOAT_TEMPLATE.replace("{SUP}", ui["support"])
+    float_html = FLOAT_TEMPLATE.replace("{SUP}", ui["support"]).replace("{SUPURL}", support_url)
 
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
@@ -205,7 +206,7 @@ def render(slug, lang):
 <header>
   <a href="{home}" class="logo">ScreenWakeUp <em>{ui['free']}</em></a>
   <nav>
-    <a class="nav-kofi" href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener">☕ {ui['support']}</a>
+    <a class="nav-kofi" href="{support_url}">☕ {ui['support']}</a>
 {nav}  </nav>
 </header>
 
@@ -230,7 +231,7 @@ def render(slug, lang):
     <a href="/about/">{ui['about']}</a>
     <a href="/privacy/">{ui['privacy']}</a>
     <a href="/terms/">{ui['terms']}</a>
-    <a href="https://ko-fi.com/screenwakeup" target="_blank" rel="noopener">{ui['support']}</a>
+    <a href="{support_url}">{ui['support']}</a>
   </p>
   <p style="margin-top:12px">© 2026 ScreenWakeUp.com · {ui['tagline']}</p>
 </footer>
