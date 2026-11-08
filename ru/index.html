@@ -306,6 +306,52 @@ body.help-open { overflow:hidden; }
   #pipBtn { margin-top:16px !important; }
   .pip-caption { display:none !important; }
 }
+#toggleBtn:not(.on) ~ #timerTxt, #toggleBtn:not(.on) ~ #progWrap, #toggleBtn:not(.on) ~ #cardHint, .timer-txt:empty { display:none !important; }
+#cardHint { margin-top:10px !important; font-size:12.5px !important; line-height:1.45 !important; }
+@media (max-height:820px) and (min-width:601px) {
+  .hero { padding-top:16px !important; padding-bottom:14px !important; }
+  .hero-tag, .hero-sub, .hero .lead { display:none !important; }
+  .hero h1 { font-size:34px !important; margin-bottom:14px !important; }
+  #cardStatus, .pip-caption { display:none !important; }
+  .tool-card { padding-top:16px !important; padding-bottom:16px !important; }
+  #toggleBtn { width:136px !important; height:136px !important; margin-top:12px !important; font-size:13px !important; }
+  #toggleBtn::before { width:40px !important; height:40px !important; }
+  #pipBtn { margin-top:14px !important; min-height:44px !important; }
+  .card-donate { bottom:16px !important; }
+}
+@media (max-height:640px) and (min-width:601px) {
+  .hero h1 { font-size:28px !important; margin-bottom:10px !important; }
+  .custom-row { display:none !important; }
+  #cardTitle { font-size:17px !important; }
+}
+</style>
+<style id="swu-fit-v3">
+/* Responsive to window HEIGHT: the tool card always fits; the support box is always visible */
+.hero h1 { font-size:clamp(22px, min(4.2vw, 5.2vh), 44px) !important; }
+#toggleBtn { width:clamp(100px, 19vh, 164px) !important; height:clamp(100px, 19vh, 164px) !important; margin-top:clamp(8px, 2vh, 16px) !important; }
+#toggleBtn::before { width:clamp(30px, 5.5vh, 48px) !important; height:clamp(30px, 5.5vh, 48px) !important; }
+#pipBtn { margin-top:clamp(10px, 2vh, 18px) !important; }
+@media (max-height:900px) { .hero-tag { display:none !important; } }
+@media (max-height:780px) { .hero-sub, .hero .lead, #cardStatus, .pip-caption { display:none !important; } .hero h1 { margin-bottom:12px !important; } }
+@media (max-height:640px) { .custom-row { display:none !important; } .dur-btn { min-height:34px !important; padding:6px 10px !important; } #pipBtn { min-height:42px !important; } .tool-extra-btn { min-height:36px !important; } }
+
+/* Below 1360px wide: the support box becomes a slim bar fixed to the bottom, always visible */
+@media (max-width:1359px) {
+  body { padding-bottom:84px; }
+  .card-donate { position:fixed !important; left:10px; right:10px; bottom:10px; z-index:90; max-width:640px; margin:0 auto !important;
+    display:flex !important; align-items:center; gap:12px; padding:10px 10px 10px 16px !important; border-radius:20px !important;
+    background:var(--surface) !important; box-shadow:0 12px 32px rgba(27,31,59,.18) !important; text-align:left !important; }
+  .card-donate > * { display:none !important; }
+  .card-donate #cdCustom, .card-donate #cdP, .card-donate .cd-secure, .card-donate .donate-social, .card-donate .cd-thanks { display:none !important; }
+  .card-donate { bottom:calc(10px + env(safe-area-inset-bottom)) !important; }
+  .card-donate > h2#cdH2, .card-donate > .cd-pay { display:block !important; }
+  .card-donate > h2#cdH2 { flex:1 1 auto; min-width:0; font-size:14px !important; line-height:1.3 !important; margin:0 !important; text-align:left; }
+  .card-donate .cd-pay { flex:none; margin:0 !important; }
+  .card-donate .cd-kofi { min-height:46px !important; padding:0 18px !important; font-size:14px !important; white-space:nowrap; }
+  body:has(#cardDonateBlock) .float-kofi-wrap { display:none !important; }
+}
+#toggleBtn { font-size:clamp(11px, 1.9vh, 14px) !important; }
+@media (min-width:1360px) { .card-donate { max-height:calc(100vh - 48px); overflow:auto; } }
 </style>
 </head>
 <body>
