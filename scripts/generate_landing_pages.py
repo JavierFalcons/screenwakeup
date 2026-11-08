@@ -191,7 +191,7 @@ def render(slug, lang):
   <meta property="og:url" content="{url_for(slug, lang)}">
   <meta property="og:title" content="{c['ogtitle']}">
   <meta property="og:description" content="{c['ogdesc']}">
-  <meta property="og:image" content="https://screenwakeup.com/og-image.png">
+  <meta property="og:image" content="https://screenwakeup.com/og-image.png?v=2">
   <meta property="og:site_name" content="ScreenWakeUp">
 
   <script type="application/ld+json">

@@ -37,7 +37,7 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="Manter Tela Ativa — Ferramenta Gratuita Online">
   <meta property="og:description" content="Evite que sua tela adormeça. Sem instalar nada. Um clique e tela ativa — grátis para sempre.">
-  <meta property="og:image" content="https://screenwakeup.com/og-image.png">
+  <meta property="og:image" content="https://screenwakeup.com/og-image.png?v=2">
   <meta property="og:site_name" content="ScreenWakeUp">
 
   <!-- Twitter Card -->
@@ -45,7 +45,7 @@
   <meta name="twitter:site" content="@ScreenWakeUp">
   <meta name="twitter:title" content="Manter Tela Ativa — Ferramenta Gratuita Online">
   <meta name="twitter:description" content="Evite que sua tela adormeça. Sem instalar nada. Grátis para sempre.">
-  <meta name="twitter:image" content="https://screenwakeup.com/og-image.png">
+  <meta name="twitter:image" content="https://screenwakeup.com/og-image.png?v=2">
 
   <!-- Schema: FAQPage + HowTo -->
   <script type="application/ld+json">
@@ -851,6 +851,7 @@ body.swu-on .pip-card #pipBtn:not(.pip-on) { display:inline-flex !important; }
 }
 </style>
 <style id="swu-v10">
+.swu-col { transform-origin:50% 0; min-width:0; }
 /* Donation: compact white card beside the tool on desktop, never on top of it */
 @media (min-width:900px) {
   .hero { display:grid !important; grid-template-columns:minmax(0,560px) 360px; column-gap:36px; justify-content:center; align-items:start; }
@@ -869,6 +870,7 @@ body.swu-on .pip-card #pipBtn:not(.pip-on) { display:inline-flex !important; }
   .hero > .card-donate .donate-social { flex:1 1 100%; text-align:center; margin:2px 0 0 !important; font-size:13px !important; }
   .hero > .card-donate .cd-thanks { flex:1 1 100%; }
   body { padding-bottom:0 !important; }
+  #sessionClock, #cardHint { display:none !important; }
   .swu-tabs { width:100%; max-width:380px; box-sizing:border-box; justify-self:center; }
   .hero > .card-donate .cd-kofi { padding:0 14px !important; font-size:13.5px !important; }
 }
@@ -2317,6 +2319,39 @@ togglePiP = function(){
 };
 var tb = document.getElementById('toggleBtn');
 if(tb) new MutationObserver(function(){ setTimeout(render, 30); }).observe(tb, { attributes:true, attributeFilter:['class'] });
+})();
+</script>
+<script id="swu-v11-js">
+/* Keep the whole tool card on screen: open at the top and, if the window is
+   too short, scale the tool column (never the donation card) to fit. */
+(function(){
+var hero = document.querySelector('.hero'), card = document.querySelector('.tool-card');
+if(!hero || !card) return;
+try{ if('scrollRestoration' in history && !location.hash) history.scrollRestoration = 'manual'; }catch(_){}
+var col = document.createElement('div'); col.className = 'swu-col';
+Array.prototype.slice.call(hero.children).forEach(function(el){ if(el.id !== 'cardDonateBlock') col.appendChild(el); });
+hero.insertBefore(col, hero.firstChild);
+var raf = 0;
+function fit(){
+  raf = 0;
+  col.style.transform = ''; col.style.marginBottom = '';
+  var bar = document.getElementById('cardDonateBlock'), reserve = 12;
+  if(bar && getComputedStyle(bar).position === 'fixed') reserve += bar.getBoundingClientRect().height + 10;
+  var top = col.getBoundingClientRect().top + scrollY, bottom = card.getBoundingClientRect().bottom + scrollY;
+  var avail = innerHeight - top - reserve, need = bottom - top;
+  if(need > avail && avail > 0){
+    var s = Math.max(0.5, avail / need);
+    col.style.transform = 'scale(' + s.toFixed(3) + ')';
+    col.style.marginBottom = (-(col.offsetHeight * (1 - s))).toFixed(0) + 'px';
+  }
+}
+function req(){ if(!raf) raf = requestAnimationFrame(fit); }
+addEventListener('resize', req);
+addEventListener('load', function(){ if(!location.hash) scrollTo(0, 0); req(); });
+addEventListener('pageshow', function(){ if(!location.hash) scrollTo(0, 0); req(); });
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(req);
+new MutationObserver(req).observe(card, { attributes:true, childList:true, subtree:true });
+req();
 })();
 </script>
 </body>
