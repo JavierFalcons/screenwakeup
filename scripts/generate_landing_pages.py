@@ -20,6 +20,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SLUGS = ["prevent-teams-away", "caffeine-alternative", "keep-screen-awake-iphone", "prevent-zoom-idle"]
 ALL_LANGS = ["en", "es", "pt", "fr", "de", "ja", "ru"]
 GEN_LANGS = ["es", "pt", "fr", "de", "ja", "ru"]
+# App home pages also exist in these languages (no translated landing pages yet)
+HOME_LANGS = ALL_LANGS + ["it", "ko", "zh"]
 
 STYLE = """    *{box-sizing:border-box;margin:0;padding:0}
     :root{--bg:#0c0e18;--bg2:#11141f;--surface:#181b2a;--accent:#5ee0c0;--text:#eef0f6;--muted:#8892a4;--border:rgba(255,255,255,0.06)}
@@ -285,7 +287,7 @@ def build_sitemap():
            '        xmlns:xhtml="http://www.w3.org/1999/xhtml">', '']
 
     def alts_home():
-        a = [f'    <xhtml:link rel="alternate" hreflang="{l}" href="{home_for(l)}"/>' for l in ALL_LANGS]
+        a = [f'    <xhtml:link rel="alternate" hreflang="{l}" href="{home_for(l)}"/>' for l in HOME_LANGS]
         a.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{home_for("en")}"/>')
         return "\n".join(a)
 
@@ -295,7 +297,7 @@ def build_sitemap():
         return "\n".join(a)
 
     # Home + language homes
-    for lang in ALL_LANGS:
+    for lang in HOME_LANGS:
         out += ['  <url>', f'    <loc>{home_for(lang)}</loc>', f'    <lastmod>{lastmod_for("index.html" if lang == "en" else f"{lang}/index.html")}</lastmod>',
                 '    <changefreq>monthly</changefreq>',
                 f'    <priority>{"1.0" if lang == "en" else "0.9"}</priority>', alts_home(), '  </url>', '']

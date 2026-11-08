@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tenere lo schermo acceso — Strumento online gratuito | ScreenWakeUp</title>
+  <meta name="description" content="Strumento gratuito nel browser che impedisce allo schermo di andare in standby o bloccarsi. Nessun download, nessun account. Windows, Mac, iPhone e Android. Evita lo stato Assente in Teams, Slack e Zoom causato dal blocco dello schermo.">
+  <meta name="keywords" content="schermo sempre acceso, evitare standby schermo, impedire blocco schermo, Teams assente, Slack attivo, timer pomodoro, Wake Lock">
+  <link rel="canonical" href="https://screenwakeup.com/it/">
+  <link rel="alternate" hreflang="en" href="https://screenwakeup.com/">
+  <link rel="alternate" hreflang="es" href="https://screenwakeup.com/es/">
+  <link rel="alternate" hreflang="pt" href="https://screenwakeup.com/pt/">
+  <link rel="alternate" hreflang="fr" href="https://screenwakeup.com/fr/">
+  <link rel="alternate" hreflang="de" href="https://screenwakeup.com/de/">
+  <link rel="alternate" hreflang="ja" href="https://screenwakeup.com/ja/">
+  <link rel="alternate" hreflang="ru" href="https://screenwakeup.com/ru/">
+  <link rel="alternate" hreflang="it" href="https://screenwakeup.com/it/">
+  <link rel="alternate" hreflang="ko" href="https://screenwakeup.com/ko/">
+  <link rel="alternate" hreflang="zh" href="https://screenwakeup.com/zh/">
+  <link rel="alternate" hreflang="x-default" href="https://screenwakeup.com/">
+  <link rel="icon" href="/favicon.ico?v=2" sizes="any">
+  <link rel="icon" href="/icon-192.png?v=2" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="https://screenwakeup.com/apple-touch-icon.png?v=2">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#1E2A78">
+  <meta property="og:title" content="Tieni lo schermo acceso — Strumento gratuito | ScreenWakeUp">
+  <meta property="og:description" content="Strumento gratuito nel browser che tiene acceso lo schermo, senza download né account. Evita lo stato Assente dovuto al blocco dello schermo.">
+  <meta property="og:url" content="https://screenwakeup.com/it/">
+  <meta property="og:image" content="https://screenwakeup.com/og-image.png">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ScreenWakeUp",
+    "url": "https://screenwakeup.com/it/",
+    "description": "Strumento gratuito nel browser che impedisce allo schermo di andare in standby o bloccarsi. Nessun download, nessun account.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Windows, macOS, iOS, Android, ChromeOS",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "inLanguage": "it"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Come tengo acceso lo schermo senza cambiare le impostazioni di alimentazione?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Apri screenwakeup.com e clicca «Tieni lo schermo acceso». Usa la Wake Lock API e non modifica le impostazioni di sistema." }
+      },
+      {
+        "@type": "Question",
+        "name": "Come evito lo stato Assente in Microsoft Teams?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Su screenwakeup.com clicca «Tieni lo schermo acceso». Lo schermo resta acceso e il computer non si blocca — il blocco e lo standby sono il motivo più comune per cui Teams ti mette Assente. Limite onesto: nessun sito può simulare veri input di mouse o tastiera (i browser lo bloccano per sicurezza), quindi dopo una lunga inattività totale Teams può comunque cambiare il tuo stato." }
+      },
+      {
+        "@type": "Question",
+        "name": "Esiste un timer Pomodoro online gratuito?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sì, nella versione completa. Apri screenwakeup.com/?lang=it e clicca 🍅 Pomodoro: parte un ciclo di 25 minuti di lavoro e 5 di pausa, con un suono alla fine. Questa pagina è la versione semplice, con schermo acceso e durate predefinite." }
+      }
+    ]
+  }
+  </script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0c0e18;--bg2:#11141f;--surface:#181b2a;--accent:#5ee0c0;--accent2:#3ecaa8;--text:#eef0f6;--muted:#8892a4;--border:rgba(255,255,255,0.06)}
+    body{background:var(--bg);color:var(--text);font-family:-apple-system,'Hiragino Sans','Noto Sans JP','Yu Gothic',BlinkMacSystemFont,sans-serif;line-height:1.7}
+    header{background:var(--bg2);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .logo{text-decoration:none;color:var(--text);font-weight:800;font-size:17px}
+    .logo em{color:var(--accent);font-style:normal;font-size:11px;font-weight:600;margin-left:6px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-size:14px;white-space:nowrap;display:inline-block}
+    nav a:hover{color:var(--accent)}
+    .hero{max-width:860px;margin:0 auto;padding:72px 24px 48px;text-align:center}
+    .hero-tag{display:inline-block;background:rgba(94,224,192,.12);color:var(--accent);border:1px solid rgba(94,224,192,.25);border-radius:20px;padding:4px 14px;font-size:12px;font-weight:600;letter-spacing:.05em;margin-bottom:20px}
+    h1{font-size:clamp(32px,6vw,56px);font-weight:800;line-height:1.1;letter-spacing:-.5px;margin-bottom:20px}
+    h1 span{color:var(--accent)}
+    .lead{font-size:clamp(15px,2.5vw,18px);color:var(--muted);max-width:600px;margin:0 auto 36px}
+    .cta-btn{display:inline-block;background:var(--accent);color:#0c0e18;font-weight:800;font-size:18px;padding:16px 40px;border-radius:12px;text-decoration:none;transition:opacity .2s}
+    .cta-btn:hover{opacity:.85}
+    .section{max-width:900px;margin:0 auto;padding:60px 24px}
+    h2{font-size:clamp(24px,4vw,36px);font-weight:800;margin-bottom:12px;letter-spacing:-.3px}
+    .section-tag{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:32px}
+    .feature-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px}
+    .feature-card .icon{font-size:28px;margin-bottom:12px}
+    .feature-card h3{font-size:15px;font-weight:700;margin-bottom:6px}
+    .feature-card p{font-size:13px;color:var(--muted);line-height:1.6}
+    .faq details{border-bottom:1px solid var(--border);padding:16px 0}
+    .faq summary{font-weight:600;cursor:pointer;list-style:none;font-size:15px}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq p{color:var(--muted);font-size:14px;margin-top:10px;line-height:1.7}
+    footer{text-align:center;padding:40px 24px;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}
+    footer a{color:var(--muted);text-decoration:none;margin:0 8px}
+    footer a:hover{color:var(--accent)}
+    .lang-links{margin-top:16px;font-size:12px}
+  /* Floating support button (C) */
+  .float-kofi-wrap{position:fixed;right:18px;bottom:18px;z-index:9998;}
+  .float-kofi{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:50%;background:#FF5E5B;color:#fff;font-size:24px;text-decoration:none;box-shadow:0 10px 28px rgba(0,0,0,.4);transition:transform .15s,opacity .2s;}
+  .float-kofi:hover{transform:scale(1.07);}
+  .fk-close{position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;border:none;background:var(--surface2,#1f2338);color:var(--muted,#8892a4);font-size:13px;line-height:1;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.4);}
+  .fk-close:hover{color:var(--text,#eef0f6);}
+  @media (max-width:560px){ .float-kofi-wrap{right:14px;bottom:14px;} .float-kofi{width:48px;height:48px;font-size:21px;} }
+    /* Embedded wake-lock tool */
+    .tool-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:32px 28px;max-width:480px;margin:0 auto;box-shadow:0 18px 48px rgba(0,0,0,.35);text-align:center}
+    .pulse-wrap{position:relative;width:14px;height:14px;margin:0 auto 14px}
+    .dot{position:absolute;inset:0;border-radius:50%;background:var(--muted);transition:background .3s}
+    .dot.active{background:var(--accent)}
+    .dot.active+.ring{position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--accent);opacity:0;animation:swupulse 1.8s ease-out infinite}
+    @keyframes swupulse{0%{transform:scale(.6);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+    #cardTitle{font-weight:800;font-size:20px;margin-bottom:4px}
+    #cardStatus{color:var(--muted);font-size:14px;margin-bottom:18px}
+    .dur-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+    .dur-btn{background:var(--bg2);color:var(--muted);border:1px solid var(--border);border-radius:18px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer}
+    .dur-btn.sel{background:var(--accent);color:#0c0e18;border-color:var(--accent)}
+    .dur-btn:disabled{opacity:.5;cursor:default}
+    #toggleBtn{width:100%;background:var(--accent);color:#0c0e18;border:none;border-radius:12px;padding:16px;font-size:17px;font-weight:800;cursor:pointer;transition:opacity .2s}
+    #toggleBtn:hover{opacity:.88}
+    #toggleBtn.on{background:#e0655e;color:#fff}
+    .timer-txt{margin-top:12px;font-size:14px;color:var(--muted);min-height:18px}
+    .prog-wrap{height:4px;background:var(--bg2);border-radius:2px;margin-top:10px;overflow:hidden;opacity:0;transition:opacity .3s}
+    .prog-wrap.vis{opacity:1}
+    .prog-bar{height:100%;background:var(--accent);transform-origin:left;transform:scaleX(1)}
+    #sessionClock{margin-top:10px;font-size:13px;color:var(--accent);opacity:0;transition:opacity .3s;min-height:16px}
+    #sessionClock.vis{opacity:1}
+    #cardHint{margin-top:16px;font-size:12px;color:var(--muted);line-height:1.6}
+    .full-link{display:inline-block;margin-top:12px;font-size:13px;color:var(--accent);text-decoration:none}
+    .full-link:hover{text-decoration:underline}
+    #pipBtn{width:100%;margin-top:10px;background:var(--bg2,#11141f);color:var(--text,#eef0f6);border:1px solid var(--border);border-radius:12px;padding:12px;font-size:14px;font-weight:600;cursor:pointer;transition:border-color .2s,color .2s}
+    #pipBtn.pip-on{border-color:var(--accent);color:var(--accent)}
+    #pipBtn:hover{border-color:var(--accent);color:var(--accent)}
+    .feedback-form{display:flex;flex-direction:column;gap:12px;max-width:560px;margin:24px auto 0}
+    .feedback-form input,.feedback-form textarea{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px 14px;color:var(--text);font-size:15px;font-family:inherit}
+    .feedback-form textarea{min-height:110px;resize:vertical}
+    .feedback-form button{background:var(--accent);color:#0c0e18;border:none;border-radius:12px;padding:14px;font-size:15px;font-weight:800;cursor:pointer}
+    .feedback-form button:disabled{opacity:.85;cursor:default}
+</style>
+
+  <!-- Google Analytics 4 -->
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WKJ8R82KQZ');(function(){var d=0;function l(){if(d)return;d=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-WKJ8R82KQZ';document.head.appendChild(s);}if(document.readyState==='complete'){setTimeout(l,0);}else{addEventListener('load',function(){setTimeout(l,0);});}setTimeout(l,3500);})();</script>
+<style id="swu-redesign-2026">
+/* ═══ 2026 redesign: Helvetica, warm neutral + indigo (trust) + amber (support) + green (awake) ═══ */
+:root, [data-theme="light"] {
+  --bg:#F7F5F0; --bg2:#EFEBE2; --surface:#FFFFFF; --surface2:#ECE8DE;
+  --accent:#1E2A78; --accent2:#141C55; --danger:#C2410C;
+  --text:#1B1F3B; --muted:#4A4F6A; --border:rgba(27,31,59,.10);
+  --glow:0 0 0 transparent; --card-shadow:0 1px 2px rgba(27,31,59,.06),0 18px 44px rgba(27,31,59,.08);
+  --awake:#0E9F62; --awake-text:#0B7A4B; --support:#FFB547; --r:20px;
+}
+[data-theme="dark"] {
+  --bg:#0F1330; --bg2:#141936; --surface:#1A2047; --surface2:#232A58;
+  --accent:#8C9BFF; --accent2:#B3BDFF; --danger:#FF8A65;
+  --text:#EEF0FA; --muted:#AEB4D4; --border:rgba(255,255,255,.10);
+  --glow:0 0 0 transparent; --card-shadow:0 18px 44px rgba(0,0,0,.45);
+  --awake:#3DD68F; --awake-text:#7FE3B5; --support:#FFB547; --r:20px;
+}
+body { font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; }
+h1,h2,h3 { letter-spacing:-.03em; }
+a { color:var(--accent); }
+
+/* Header */
+header { background:color-mix(in srgb,var(--bg) 92%,transparent) !important; border-bottom:1px solid var(--border); }
+.logo { color:var(--accent) !important; font-weight:700; letter-spacing:-.02em; }
+.logo em { color:var(--muted); }
+.pill, header nav a { border-radius:999px; font-weight:600; }
+.pill.lang-active, .dur-btn.sel, .price-btn.primary, .price-badge, .feedback-form button { color:#fff !important; }
+[data-theme="dark"] .pill.lang-active, [data-theme="dark"] .dur-btn.sel { color:#0F1330 !important; }
+
+/* Hero */
+.hero { background:none !important; padding-top:44px; }
+.hero-tag { background:var(--surface2) !important; color:var(--muted) !important; letter-spacing:.02em; text-transform:none; font-size:13px; font-weight:600; }
+.hero h1 { font-weight:700; letter-spacing:-.045em; color:var(--accent); }
+.hero h1 span { color:inherit; }
+.hero-sub, .hero .lead { color:var(--muted); }
+
+/* Tool card */
+.tool-card { border-radius:28px !important; border:1px solid var(--border) !important; box-shadow:var(--card-shadow) !important; background:var(--surface) !important; }
+.dot.active { background:var(--awake) !important; box-shadow:0 0 14px var(--awake) !important; }
+.ring { border-color:var(--awake) !important; }
+#cardTitle { font-weight:700; letter-spacing:-.02em; }
+.dur-row { background:var(--surface2); border-radius:14px; padding:4px; gap:4px !important; display:inline-flex !important; box-shadow:inset 0 1px 2px rgba(27,31,59,.08); }
+.dur-btn { background:transparent !important; border:none !important; border-radius:10px !important; padding:9px 14px !important; font-size:14px !important; color:var(--muted) !important; min-height:40px; }
+.dur-btn.sel { background:var(--surface) !important; color:var(--accent) !important; box-shadow:0 1px 3px rgba(27,31,59,.15); }
+[data-theme="dark"] .dur-btn.sel { background:var(--accent) !important; }
+
+/* The power button */
+#toggleBtn {
+  width:196px !important; height:196px; margin:12px auto 8px; display:flex !important; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+  border-radius:50% !important; padding:0 22px !important; font-size:15px !important; line-height:1.25; color:#fff !important; border:none !important;
+  background:radial-gradient(circle at 35% 28%,#4A58C8 0%,#1E2A78 60%,#141C55 100%) !important;
+  box-shadow:0 0 0 14px var(--surface2),inset 0 2px 0 rgba(255,255,255,.25),0 18px 40px rgba(30,42,120,.40) !important;
+  transition:transform .15s, box-shadow .25s, background .25s;
+}
+#toggleBtn::before {
+  content:""; width:58px; height:58px; flex:none; background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M12 3.5v8'/%3E%3Cpath d='M6.6 6.9a7.6 7.6 0 1 0 10.8 0'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M12 3.5v8'/%3E%3Cpath d='M6.6 6.9a7.6 7.6 0 1 0 10.8 0'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+#toggleBtn:hover { opacity:1 !important; transform:translateY(-1px); }
+#toggleBtn:active { transform:scale(.97); }
+#toggleBtn.on {
+  background:radial-gradient(circle at 35% 28%,#3DD68F 0%,#0E9F62 55%,#087347 100%) !important;
+  box-shadow:0 0 0 14px rgba(14,159,98,.14),0 0 70px rgba(14,159,98,.35),inset 0 2px 0 rgba(255,255,255,.35) !important;
+}
+
+/* Floating window: promoted right under the power button */
+#pipBtn {
+  display:flex; align-items:center; justify-content:center; gap:10px; width:100%; max-width:380px; min-height:52px; margin:22px auto 6px !important;
+  border-radius:999px !important; border:2px solid var(--accent) !important; background:var(--surface) !important; color:var(--accent) !important;
+  font-size:15px !important; font-weight:700 !important; padding:0 22px !important; cursor:pointer; box-shadow:none !important;
+}
+#pipBtn::before {
+  content:""; width:20px; height:20px; flex:none; background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='16' rx='3'/%3E%3Crect x='11.5' y='11.5' width='7' height='6' rx='1.5' fill='black'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='16' rx='3'/%3E%3Crect x='11.5' y='11.5' width='7' height='6' rx='1.5' fill='black'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+#pipBtn:hover, #pipBtn.pip-on { background:var(--accent) !important; color:#fff !important; }
+[data-theme="dark"] #pipBtn:hover, [data-theme="dark"] #pipBtn.pip-on { color:#0F1330 !important; }
+.pip-caption { color:var(--muted) !important; font-size:13px !important; max-width:380px; margin:0 auto 6px !important; }
+
+/* Secondary tools: small, quiet */
+.tool-extras { gap:8px !important; justify-content:center; margin-top:14px !important; }
+.tool-extra-btn { border-radius:999px !important; background:transparent !important; border:1px solid var(--border) !important; color:var(--muted) !important; font-size:13px !important; font-weight:600 !important; min-height:40px; padding:0 14px !important; }
+.tool-extra-btn:hover, .tool-extra-btn.active { color:var(--accent) !important; border-color:var(--accent) !important; }
+.custom-row input, .custom-row button { border-radius:999px !important; }
+#sessionClock { background:rgba(14,159,98,.10) !important; border-color:rgba(14,159,98,.28) !important; color:var(--awake-text) !important; }
+.prog-bar { background:var(--awake) !important; }
+#cardHint { color:var(--muted); }
+
+/* Support card — always visible, pay what you want */
+.card-donate { margin-top:28px !important; padding:22px !important; border-radius:22px !important; background:var(--bg) !important; border:1px solid var(--border) !important; text-align:center; }
+.card-donate .section-tag, #cdAmounts, .cd-actions { display:none !important; }
+.card-donate h2 { font-size:19px !important; font-weight:700 !important; color:var(--accent); margin-bottom:6px !important; }
+.card-donate > p#cdP { font-size:15px !important; line-height:1.5 !important; margin-bottom:14px !important; color:var(--muted) !important; }
+#cdCustom { display:flex !important; align-items:center; gap:6px; max-width:300px; margin:0 auto 10px; height:50px; padding:0 18px; border-radius:999px; border:1.5px solid var(--border); background:var(--surface); }
+#cdCustom span { font-weight:700; color:var(--accent); }
+#cdCustomInp { flex:1; min-width:0; border:none !important; outline:none; background:transparent !important; font:600 16px "Helvetica Neue",Helvetica,Arial,sans-serif; color:var(--text); box-shadow:none !important; }
+.cd-kofi { display:inline-flex !important; align-items:center; justify-content:center; min-height:52px; padding:0 34px !important; border-radius:999px !important; background:var(--support) !important; color:#1B1F3B !important; font-weight:700 !important; font-size:16px !important; border:none !important; text-decoration:none; box-shadow:0 8px 20px rgba(255,181,71,.30) !important; }
+.card-donate .cd-secure { margin:10px auto 0 !important; }
+.donate-social { color:var(--muted) !important; font-size:13px !important; margin-top:6px !important; }
+.float-kofi { background:var(--support) !important; color:#1B1F3B !important; }
+
+#toggleBtn { margin-top:26px !important; }
+.custom-row { margin-bottom:6px; }
+@media (min-width:1360px) {
+  .card-donate { position:fixed; right:24px; bottom:24px; width:280px; z-index:90; margin:0 !important; background:var(--surface) !important; box-shadow:0 20px 50px rgba(27,31,59,.18) !important; }
+  .card-donate h2 { font-size:17px !important; }
+  .card-donate > p#cdP { font-size:14px !important; }
+  .card-donate .cd-secure { display:none; }
+  .float-kofi-wrap { display:none !important; }
+}
+
+/* Sections below the fold */
+.section h2, .section-title { color:var(--accent); font-weight:700; letter-spacing:-.035em; }
+.section-tag { color:var(--muted) !important; }
+.stats-bar, .feature-card, .use-card, .faq-item, .compat-item, .why-col, .price-card { border-radius:20px !important; }
+footer { color:var(--muted); }
+</style>
+<style id="swu-help-2026">
+.help-btn { font-weight:800 !important; font-size:15px !important; min-width:36px; min-height:32px; display:inline-flex; align-items:center; justify-content:center; border-radius:999px; border:1.5px solid var(--accent) !important; color:var(--accent) !important; background:var(--surface) !important; cursor:pointer; padding:0 12px; }
+.help-btn:hover { background:var(--accent) !important; color:#fff !important; }
+.help-panel { display:none; position:fixed; inset:0; z-index:300; background:var(--bg); overflow-y:auto; -webkit-overflow-scrolling:touch; padding:0 0 80px; }
+.help-panel.open { display:block; }
+.help-top { position:sticky; top:0; z-index:2; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 20px; background:var(--bg); border-bottom:1px solid var(--border); }
+.help-top strong { color:var(--accent); font-size:17px; letter-spacing:-.02em; }
+.help-close { min-width:44px; height:44px; padding:0 16px; border-radius:999px; border:1.5px solid var(--border); background:var(--surface); color:var(--text); font:600 14px "Helvetica Neue",Helvetica,Arial,sans-serif; cursor:pointer; }
+.help-panel .reveal { opacity:1 !important; transform:none !important; }
+body.help-open { overflow:hidden; }
+.use-icon, .compat-icon, .feature-card .icon, .section .icon { display:none !important; }
+/* Feedback right under the tool */
+#secFeedback, .feedback-top { max-width:560px; margin:8px auto 40px !important; padding:22px 24px !important; border-radius:22px; background:var(--surface); border:1px solid var(--border); text-align:left; opacity:1 !important; transform:none !important; }
+#secFeedback .section-tag, .feedback-top .section-tag, #feedbackLead { display:none; }
+#secFeedback h2, .feedback-top h2 { font-size:17px !important; margin:0 0 10px !important; color:var(--accent); text-align:left; }
+#feedbackForm { display:flex !important; flex-direction:row !important; flex-wrap:wrap; gap:8px !important; }
+#feedbackForm input[name="name"] { display:none; }
+#feedbackForm textarea { flex:1 1 260px; min-height:48px !important; height:48px; resize:none; border-radius:14px !important; padding:13px 16px !important; }
+#feedbackForm button { flex:none; min-height:48px; border-radius:999px !important; padding:0 22px !important; background:var(--accent) !important; color:#fff !important; }
+</style>
+<style id="swu-fit-2026">
+/* Fit the whole tool card in the first screen (desktop Safari + iPhone) */
+.hero { padding:26px 20px 22px !important; }
+.hero-tag { margin-bottom:10px !important; }
+.hero h1 { font-size:clamp(28px,3.6vw,44px) !important; line-height:1.08 !important; margin-bottom:8px !important; }
+.hero-sub, .hero .lead { margin:0 auto 20px !important; font-size:15px !important; line-height:1.5 !important; }
+.tool-card { padding:22px 24px 20px !important; }
+.pulse-wrap { display:none !important; }
+#cardTitle { margin-bottom:2px !important; font-size:19px !important; }
+#cardStatus { margin-bottom:12px !important; font-size:14px !important; }
+.dur-row { margin-bottom:8px !important; }
+.custom-row { margin:0 auto 2px !important; }
+#toggleBtn { width:164px !important; height:164px !important; margin:16px auto 4px !important; font-size:14px !important; gap:8px !important; }
+#toggleBtn:not(.on) { box-shadow:0 0 0 10px var(--surface2),inset 0 2px 0 rgba(255,255,255,.25),0 14px 32px rgba(30,42,120,.38) !important; }
+#toggleBtn::before { width:48px !important; height:48px !important; }
+#pipBtn { margin:18px auto 4px !important; min-height:48px !important; }
+.pip-caption { margin:0 auto 2px !important; font-size:12.5px !important; line-height:1.4 !important; }
+.tool-extras { margin-top:10px !important; }
+@media (max-width:600px) {
+  .hero { padding:14px 14px 14px !important; }
+  .hero-tag { display:none !important; }
+  .hero h1 { font-size:27px !important; }
+  .hero-sub, .hero .lead { font-size:14px !important; margin-bottom:12px !important; }
+  .tool-card { padding:16px 14px 16px !important; border-radius:22px !important; }
+  #cardTitle { font-size:17px !important; }
+  #cardStatus { display:none !important; }
+  .dur-btn { padding:8px 9px !important; min-height:38px !important; }
+  #toggleBtn { width:140px !important; height:140px !important; margin-top:14px !important; font-size:13px !important; }
+  #toggleBtn::before { width:42px !important; height:42px !important; }
+  #pipBtn { margin-top:16px !important; }
+  .pip-caption { display:none !important; }
+}
+#toggleBtn:not(.on) ~ #timerTxt, #toggleBtn:not(.on) ~ #progWrap, #toggleBtn:not(.on) ~ #cardHint, .timer-txt:empty { display:none !important; }
+#cardHint { margin-top:10px !important; font-size:12.5px !important; line-height:1.45 !important; }
+@media (max-height:820px) and (min-width:601px) {
+  .hero { padding-top:16px !important; padding-bottom:14px !important; }
+  .hero-tag, .hero-sub, .hero .lead { display:none !important; }
+  .hero h1 { font-size:34px !important; margin-bottom:14px !important; }
+  #cardStatus, .pip-caption { display:none !important; }
+  .tool-card { padding-top:16px !important; padding-bottom:16px !important; }
+  #toggleBtn { width:136px !important; height:136px !important; margin-top:12px !important; font-size:13px !important; }
+  #toggleBtn::before { width:40px !important; height:40px !important; }
+  #pipBtn { margin-top:14px !important; min-height:44px !important; }
+  .card-donate { bottom:16px !important; }
+}
+@media (max-height:640px) and (min-width:601px) {
+  .hero h1 { font-size:28px !important; margin-bottom:10px !important; }
+  .custom-row { display:none !important; }
+  #cardTitle { font-size:17px !important; }
+}
+</style>
+<style id="swu-fit-v3">
+/* Responsive to window HEIGHT: the tool card always fits; the support box is always visible */
+.hero h1 { font-size:clamp(22px, min(4.2vw, 5.2vh), 44px) !important; }
+#toggleBtn { width:clamp(100px, 19vh, 164px) !important; height:clamp(100px, 19vh, 164px) !important; margin-top:clamp(8px, 2vh, 16px) !important; }
+#toggleBtn::before { width:clamp(30px, 5.5vh, 48px) !important; height:clamp(30px, 5.5vh, 48px) !important; }
+#pipBtn { margin-top:clamp(10px, 2vh, 18px) !important; }
+@media (max-height:900px) { .hero-tag { display:none !important; } }
+@media (max-height:780px) { .hero-sub, .hero .lead, #cardStatus, .pip-caption { display:none !important; } .hero h1 { margin-bottom:12px !important; } }
+@media (max-height:640px) { .custom-row { display:none !important; } .dur-btn { min-height:34px !important; padding:6px 10px !important; } #pipBtn { min-height:42px !important; } .tool-extra-btn { min-height:36px !important; } }
+
+/* Below 1360px wide: the support box becomes a slim bar fixed to the bottom, always visible */
+@media (max-width:1359px) {
+  body { padding-bottom:84px; }
+  .card-donate { position:fixed !important; left:10px; right:10px; bottom:10px; z-index:90; max-width:640px; margin:0 auto !important;
+    display:flex !important; align-items:center; gap:12px; padding:10px 10px 10px 16px !important; border-radius:20px !important;
+    background:var(--surface) !important; box-shadow:0 12px 32px rgba(27,31,59,.18) !important; text-align:left !important; }
+  .card-donate > * { display:none !important; }
+  .card-donate #cdCustom, .card-donate #cdP, .card-donate .cd-secure, .card-donate .donate-social, .card-donate .cd-thanks { display:none !important; }
+  .card-donate { bottom:calc(10px + env(safe-area-inset-bottom)) !important; }
+  .card-donate > h2#cdH2, .card-donate > .cd-pay { display:block !important; }
+  .card-donate > h2#cdH2 { flex:1 1 auto; min-width:0; font-size:14px !important; line-height:1.3 !important; margin:0 !important; text-align:left; }
+  .card-donate .cd-pay { flex:none; margin:0 !important; }
+  .card-donate .cd-kofi { min-height:46px !important; padding:0 18px !important; font-size:14px !important; white-space:nowrap; }
+  body:has(#cardDonateBlock) .float-kofi-wrap { display:none !important; }
+}
+#toggleBtn { font-size:clamp(11px, 1.9vh, 14px) !important; }
+@media (min-width:1360px) { .card-donate { max-height:calc(100vh - 48px); overflow:auto; } }
+</style>
+</head>
+<body>
+<header>
+  <a href="https://screenwakeup.com" class="logo">ScreenWakeUp <em>strumento gratuito</em></a>
+  <nav>
+    <a href="https://screenwakeup.com/">EN</a>
+    <a href="/es/">ES</a>
+    <a href="/pt/">PT</a>
+    <a href="/fr/">FR</a>
+    <a href="/de/">DE</a>
+    <a href="/ja/">日本語</a>
+    <a href="/ru/">RU</a>
+    <a href="/it/" style="color:var(--accent)">IT</a>
+    <a href="/ko/">한국어</a>
+    <a href="/zh/">中文</a>
+    <button type="button" class="pill help-btn" id="helpBtn" aria-label="Aiuto e FAQ" title="Aiuto e FAQ">?</button>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-tag">Gratis · Nessun download · Nessun account</div>
+  <h1>Tieni lo <span>schermo acceso</span><br>all'istante</h1>
+  <p class="lead">Impedisce allo schermo di andare in standby o bloccarsi. Windows, Mac, iPhone e Android — senza installare nulla. Evita la causa più comune dello stato Assente in Teams, Slack e Zoom: il blocco e lo standby dello schermo.</p>
+  <div class="tool-card">
+    <div class="pulse-wrap"><div class="dot" id="dot"></div><div class="ring"></div></div>
+    <p id="cardTitle">Schermo in standby</p>
+    <p id="cardStatus">Premi il pulsante per tenere acceso lo schermo</p>
+    <div class="dur-row">
+      <button class="dur-btn sel" data-min="0">&#8734;</button>
+      <button class="dur-btn" data-min="30">30 min</button>
+      <button class="dur-btn" data-min="60">1 h</button>
+      <button class="dur-btn" data-min="120">2 h</button>
+      <button class="dur-btn" data-min="240">4 h</button>
+    </div>
+    <button id="toggleBtn">Tieni lo schermo acceso</button>
+    <button id="pipBtn" title="Apre un piccolo orologio sempre in primo piano che tiene acceso lo schermo mentre lavori in altre app">Mini-finestra fluttuante</button>
+    <div class="timer-txt" id="timerTxt"></div>
+    <div class="prog-wrap" id="progWrap"><div class="prog-bar" id="progBar"></div></div>
+    <div id="sessionClock"></div>
+    <p id="cardHint">Tieni questa scheda visibile: se riduci a icona la finestra o un'altra app la copre del tutto, il browser rilascia il blocco. Lavori in un'altra app? Usa la mini-finestra fluttuante.</p>
+    <a class="full-link" href="https://screenwakeup.com/?lang=it">Versione completa (Pomodoro, orologio a schermo intero, timer personalizzato) →</a>
+  </div>
+</div>
+
+<div class="section feedback-top">
+  <p class="section-tag">Feedback</p>
+  <h2>Dicci cosa ne pensi</h2>
+  <form class="feedback-form" id="feedbackForm">
+    <input type="text" name="name" placeholder="Il tuo nome (facoltativo)" autocomplete="off">
+    <textarea name="message" placeholder="Il tuo commento o suggerimento..." required></textarea>
+    <button type="submit" id="feedbackBtn">Invia →</button>
+  </form>
+</div>
+
+<div id="help" class="help-panel" role="dialog" aria-label="Aiuto e FAQ">
+<div class="help-top"><strong>Aiuto e FAQ</strong><button type="button" class="help-close" id="helpClose">Chiudi ✕</button></div>
+<div class="section">
+  <p class="section-tag">Funzioni principali</p>
+  <h2>Cosa puoi fare con ScreenWakeUp</h2>
+  <div class="features">
+    <div class="feature-card">
+      <div class="icon">🖥️</div>
+      <h3>Schermo sempre acceso</h3>
+      <p>Usa la Wake Lock API per tenere acceso lo schermo senza cambiare le impostazioni di sistema.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">💬</div>
+      <h3>Teams, Slack e Zoom senza blocco schermo</h3>
+      <p>Tiene lo schermo acceso e impedisce blocco e standby del computer, la causa più comune dello stato Assente in Teams e Slack. Senza finti input simulati.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🍅</div>
+      <h3>Ancora di più nella versione completa</h3>
+      <p>Timer Pomodoro, orologio digitale a schermo intero, timer personalizzato e avviso sonoro sono nella <a href="https://screenwakeup.com/?lang=it">versione completa</a> (in italiano, gratis, senza registrazione). Questa pagina è la versione semplice.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <p class="section-tag">La risposta semplice</p>
+  <h2>Un sito che tiene sveglio il computer</h2>
+  <p class="lead">Niente app, niente estensioni, niente impostazioni di alimentazione — screenwakeup.com è un sito che tiene sveglio il computer per tutto il tempo che ti serve. Apri la pagina, premi un pulsante e lo schermo resta acceso finché non lo fermi. È la “caffeina” online per qualsiasi dispositivo con un browser.</p>
+</div>
+
+<div class="section">
+  <p class="section-tag">FAQ</p>
+  <h2>Domande frequenti</h2>
+  <div class="faq" style="margin-top:24px">
+    <details>
+      <summary>Come tengo acceso lo schermo senza cambiare le impostazioni di alimentazione?</summary>
+      <p>Apri screenwakeup.com e clicca «Tieni lo schermo acceso». Usa la Wake Lock API e non modifica le impostazioni di sistema.</p>
+    </details>
+    <details>
+      <summary>Funziona su iPhone e Android?</summary>
+      <p>Sì. Funziona su Safari per iOS e Chrome per Android. Tieni la scheda del browser aperta e visibile.</p>
+    </details>
+    <details>
+      <summary>Funziona su Mac e Windows?</summary>
+      <p>Sì. Funziona con Chrome, Edge, Firefox e Safari — senza installare nulla.</p>
+    </details>
+    <details>
+      <summary>Come evito lo stato Assente in Microsoft Teams?</summary>
+      <p>Su screenwakeup.com clicca «Tieni lo schermo acceso». Lo schermo resta acceso e il computer non si blocca — il blocco e lo standby sono il motivo più comune per cui Teams ti mette Assente. Limite onesto: nessun sito può simulare veri input di mouse o tastiera (i browser lo bloccano per sicurezza), quindi dopo una lunga inattività totale Teams può comunque cambiare il tuo stato.</p>
+    </details>
+    <details>
+      <summary>Come resto attivo su Slack?</summary>
+      <p>Tieni il computer sveglio con screenwakeup.com: sono lo standby e il blocco dello schermo a mandarti in Assente. Limite onesto: Slack segna Assente anche dopo un periodo senza usare mouse o tastiera, e nessun sito può simulare veri tasti — chi lo promette esagera.</p>
+    </details>
+    <details>
+      <summary>Esiste un timer Pomodoro online gratuito?</summary>
+      <p>Sì, nella versione completa. Apri screenwakeup.com/?lang=it e clicca 🍅 Pomodoro: parte un ciclo di 25 minuti di lavoro e 5 di pausa, con un suono alla fine. Questa pagina è la versione semplice, con schermo acceso e durate predefinite.</p>
+    </details>
+    <details>
+      <summary>Posso impostare un timer?</summary>
+      <p>Sì. Qui puoi scegliere 30 min, 1 h, 2 h o 4 h. Per un numero di minuti qualsiasi usa il timer personalizzato della versione completa (screenwakeup.com/?lang=it).</p>
+    </details>
+    <details>
+      <summary>È sicuro? Devo creare un account?</summary>
+      <p>Sicuro al 100%. Nessun account, nessuna registrazione. Funziona interamente nel browser.</p>
+    </details>
+  </div>
+</div>
+
+
+</div>
+<footer>
+  <p>
+    <a href="https://screenwakeup.com/">Home (EN)</a>
+    <a href="/es/">Español</a>
+    <a href="/pt/">Português</a>
+    <a href="/fr/">Français</a>
+    <a href="/de/">Deutsch</a>
+    <a href="/ja/">日本語</a>
+    <a href="/ru/">Русский</a>
+    <a href="/it/">Italiano</a>
+    <a href="/ko/">한국어</a>
+    <a href="/zh/">中文</a>
+  </p>
+  <p style="margin-top:12px">
+    <a href="/prevent-teams-away/">Evitare lo stato Assente in Teams</a>
+    &nbsp;·&nbsp;
+    <a href="/caffeine-alternative/">Alternativa gratuita a Caffeine</a>
+    &nbsp;·&nbsp;
+    <a href="/keep-screen-awake-iphone/">Tenere acceso lo schermo di iPhone</a>
+    &nbsp;·&nbsp;
+    <a href="/prevent-zoom-idle/">Restare attivo su Zoom</a>
+  </p>
+  <p style="margin-top:12px">
+    <a href="/about/">About</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+  </p>
+  <p style="margin-top:12px">© 2026 ScreenWakeUp.com · Nessun download · Nessun account · Gratis per sempre</p>
+</footer>
+<!-- Floating support button (C) -->
+<script>
+(function(){
+var T={"cardOn": "Schermo attivo", "cardOff": "Schermo in standby", "statusOn": "Wake Lock attivo — lo schermo resterà acceso", "statusOff": "Premi il pulsante per tenere acceso lo schermo", "statusFb": "Modalità compatibilità — questo browser non ha la Wake Lock API, quindi il blocco non può essere confermato. Controlla che lo schermo resti acceso nei primi minuti.", "btnOn": "Tieni lo schermo acceso", "btnOff": "Stop", "timerLeft": "rimanenti", "timerActive": "Attivo da", "timerExpired": "Tempo scaduto! Il blocco dello schermo è di nuovo attivo.", "sessionPhrase": "schermo acceso"};
+function track(n,p){try{if(window.gtag)gtag('event',n,p||{});}catch(e){}}
+var active=false,wakeLock=null,videoFb=null,startTime=null,tickId=null,selectedMin=0,durationMs=0,sessionStart=null,sessionTickId=null;
+var dot=document.getElementById('dot'),cardTitle=document.getElementById('cardTitle'),cardStat=document.getElementById('cardStatus'),toggleBtn=document.getElementById('toggleBtn'),timerTxt=document.getElementById('timerTxt'),sessionClock=document.getElementById('sessionClock'),progWrap=document.getElementById('progWrap'),progBar=document.getElementById('progBar'),durBtns=document.querySelectorAll('.dur-btn');
+function fmt(ms){var s=Math.floor(ms/1000);var h=String(Math.floor(s/3600)).padStart(2,'0');var m=String(Math.floor((s%3600)/60)).padStart(2,'0');var sec=String(s%60).padStart(2,'0');return h+':'+m+':'+sec;}
+durBtns.forEach(function(b){b.addEventListener('click',function(){if(active)return;durBtns.forEach(function(x){x.classList.remove('sel');});b.classList.add('sel');selectedMin=parseInt(b.dataset.min);durationMs=selectedMin*60000;});});
+function mkSilentVideo(){var v=document.createElement('video');v.setAttribute('playsinline','');v.muted=true;v.loop=true;v.style.cssText='position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;top:0;left:0;';var c=document.createElement('canvas');c.width=2;c.height=2;c.getContext('2d').fillRect(0,0,2,2);if(c.captureStream)v.srcObject=c.captureStream(1);document.body.appendChild(v);v.play().catch(function(){});return v;}
+function startTimer(){startTime=Date.now();if(durationMs>0){progWrap.classList.add('vis');progBar.style.transition='none';progBar.style.transform='scaleX(1)';requestAnimationFrame(function(){requestAnimationFrame(function(){progBar.style.transition='transform '+(durationMs/1000)+'s linear';progBar.style.transform='scaleX(0)';});});}
+tickId=setInterval(function(){var elapsed=Date.now()-startTime;if(durationMs>0){if(elapsed>=durationMs){deactivate(true);return;}timerTxt.textContent=fmt(durationMs-elapsed)+' '+T.timerLeft;}else{timerTxt.textContent=T.timerActive+' '+fmt(elapsed);}},1000);}
+function stopTimer(){clearInterval(tickId);timerTxt.textContent='';progWrap.classList.remove('vis');progBar.style.transition='none';progBar.style.transform='scaleX(1)';}
+function sessionEmoji(secs){var m=Math.floor(secs/60);if(m<5)return'\uD83D\uDD25';if(m<15)return'\uD83D\uDE80';if(m<30)return'\u26A1';if(m<60)return'\uD83C\uDFC6';return'\uD83D\uDC51';}
+function startSessionTimer(){sessionStart=Date.now();sessionClock.classList.remove('vis');clearInterval(sessionTickId);sessionTickId=setInterval(function(){var secs=Math.floor((Date.now()-sessionStart)/1000);if(secs>=300&&window.__showFloatKofi)window.__showFloatKofi();var mins=Math.floor(secs/60);var s=secs%60;var timeStr;if(secs<60){timeStr=secs+'s';}else if(mins<60){timeStr=mins+' min '+(s>0?s+'s':'');}else{var h=Math.floor(mins/60),m2=mins%60;timeStr=h+'h '+(m2>0?m2+' min':'');}
+sessionClock.textContent=sessionEmoji(secs)+' '+timeStr.trim()+' \u00B7 '+T.sessionPhrase;if(!sessionClock.classList.contains('vis'))sessionClock.classList.add('vis');},1000);}
+function stopSessionTimer(){clearInterval(sessionTickId);sessionClock.classList.remove('vis');sessionClock.textContent='';}
+var sentinels=[];
+function watchRelease(s){s.addEventListener('release',function(){sentinels=sentinels.filter(function(x){return x!==s;});if(wakeLock===s)wakeLock=null;if(!active)return;if(document.visibilityState==='visible'){navigator.wakeLock.request('screen').then(function(w){wakeLock=w;sentinels.push(w);watchRelease(w);}).catch(function(){deactivate(false,true);});}});}
+function activate(){if(active)return;lockLostCount=0;hideLockCta();var p;if('wakeLock'in navigator){p=navigator.wakeLock.request('screen').then(function(w){if(!active){w.release().catch(function(){});return;}wakeLock=w;sentinels.push(w);watchRelease(w);cardStat.textContent=T.statusOn;}).catch(function(){if(active){videoFb=mkSilentVideo();cardStat.textContent=T.statusFb;}});}else{videoFb=mkSilentVideo();cardStat.textContent=T.statusFb;p=Promise.resolve();}
+active=true;dot.classList.add('active');cardTitle.textContent=T.cardOn;toggleBtn.textContent=T.btnOff;toggleBtn.classList.add('on');durBtns.forEach(function(b){b.disabled=true;});startTimer();startSessionTimer();track('activate_wakelock',{duration_min:selectedMin||0,page:'/it/'});}
+function deactivate(expired,lost){active=false;hideLockCta();var olds=sentinels;sentinels=[];wakeLock=null;olds.forEach(function(s){try{s.release().catch(function(){});}catch(e){}});if(videoFb){videoFb.pause();videoFb.remove();videoFb=null;}dot.classList.remove('active');cardTitle.textContent=T.cardOff;cardStat.textContent=expired?T.timerExpired:(lost?LOCK_LOST_VISIBLE:T.statusOff);toggleBtn.textContent=T.btnOn;toggleBtn.classList.remove('on');durBtns.forEach(function(b){b.disabled=false;});track('deactivate_wakelock',{session_sec:sessionStart?Math.floor((Date.now()-sessionStart)/1000):0,expired:!!expired,lock_losses:lockLostCount,page:'/it/'});if(lost)track('lock_lost_visible',{page:'/it/'});stopTimer();stopSessionTimer();}
+toggleBtn.addEventListener('click',function(){active?deactivate(false):activate();});
+var hiddenWhileActive=false;
+var lockLostCount=0,lockCta=null;
+function showLockCta(){if(!pipSupported())return;if(document.pictureInPictureElement)return;if(pipVideo&&pipVideo.webkitPresentationMode==='picture-in-picture')return;if(!lockCta){lockCta=document.createElement('button');lockCta.style.cssText='display:none;margin:12px auto 0;padding:10px 18px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06251d;font-weight:700;border:0;border-radius:10px;font-size:14px;cursor:pointer;';['pointerdown','mouseenter','focus','touchstart'].forEach(function(ev){lockCta.addEventListener(ev,pipWarmup,{passive:true});});lockCta.addEventListener('click',function(){track('pip_open_from_lock_lost',{page:'/it/'});hideLockCta();togglePiP();});cardStat.insertAdjacentElement('afterend',lockCta);}var pb=document.getElementById('pipBtn');lockCta.textContent=pb?pb.textContent.trim():'PiP';lockCta.style.display='block';}
+function hideLockCta(){if(lockCta)lockCta.style.display='none';}
+var LOCK_LOST='⚠️ Il blocco si è disattivato mentre la scheda era nascosta. Usa la mini-finestra fluttuante quando lavori in altre app.';
+var LOCK_LOST_VISIBLE='⚠️ Il sistema ha disattivato il blocco (risparmio energetico?). Premi il pulsante per riattivarlo.';
+document.addEventListener('visibilitychange',function(){
+if(active&&document.visibilityState==='hidden')hiddenWhileActive=true;
+if(active&&document.visibilityState==='visible'){
+if('wakeLock'in navigator&&!wakeLock){navigator.wakeLock.request('screen').then(function(w){wakeLock=w;sentinels.push(w);watchRelease(w);}).catch(function(){});}
+if(hiddenWhileActive){hiddenWhileActive=false;lockLostCount++;if(lockLostCount<=2){cardStat.textContent=LOCK_LOST;track('lock_lost_hidden',{page:'/it/',n:lockLostCount});setTimeout(function(){if(active)cardStat.textContent=T.statusOn;},8000);}if(lockLostCount>=2)showLockCta();}
+}
+});
+var pipVideo=null,pipTick=null,pipDraw=null;
+function pipSupported(){if(!HTMLCanvasElement.prototype.captureStream)return false;var v=HTMLVideoElement.prototype;return !!(document.pictureInPictureEnabled&&v.requestPictureInPicture)||typeof v.webkitSetPresentationMode==='function';}
+function pipCleanup(){clearInterval(pipTick);if(pipVideo){pipVideo.pause();pipVideo.srcObject=null;pipVideo.remove();pipVideo=null;}if(pipBtn){pipBtn.classList.remove('pip-on');pipBtn.textContent='Mini-finestra fluttuante';}}
+function pipWarmup(){
+if(pipVideo)return;
+var c=document.createElement('canvas');c.width=480;c.height=270;var x=c.getContext('2d');
+pipDraw=function(){x.fillStyle='#11141f';x.fillRect(0,0,480,270);x.textAlign='center';x.fillStyle='#5ee0c0';var tt=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',second:'2-digit'});x.font='700 84px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';var tw=x.measureText(tt).width;if(tw>440)x.font='700 '+Math.max(28,Math.floor(84*440/tw))+'px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';x.fillText(tt,240,132);x.fillStyle='#8892a4';x.font='600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';x.fillText('screenwakeup.com',240,208);};
+pipDraw();
+pipVideo=document.createElement('video');pipVideo.muted=true;pipVideo.setAttribute('playsinline','');pipVideo.srcObject=c.captureStream(1);pipVideo.style.cssText='position:fixed;right:0;bottom:0;width:480px;height:270px;opacity:0;pointer-events:none;z-index:-1;';
+document.body.appendChild(pipVideo);
+pipVideo.play().catch(function(){});
+pipTick=setInterval(pipDraw,1000);
+pipVideo.addEventListener('leavepictureinpicture',pipCleanup);
+}
+function togglePiP(){
+if(document.pictureInPictureElement){document.exitPictureInPicture().catch(function(){});return;}
+if(pipVideo&&pipVideo.webkitPresentationMode==='picture-in-picture'){pipVideo.webkitSetPresentationMode('inline');return;}
+try{
+pipWarmup();
+var p;
+if(pipVideo.requestPictureInPicture){p=pipVideo.requestPictureInPicture();}
+else if(typeof pipVideo.webkitSetPresentationMode==='function'){p=new Promise(function(res,rej){var go=function(){if(!pipVideo)return rej(new Error('closed while entering PiP'));pipDraw();pipVideo.webkitSetPresentationMode('picture-in-picture');var n=0;(function chk(){if(!pipVideo)return rej(new Error('closed while entering PiP'));if(pipVideo.webkitPresentationMode==='picture-in-picture'){pipVideo.addEventListener('webkitpresentationmodechanged',function(){if(pipVideo&&pipVideo.webkitPresentationMode==='inline')pipCleanup();});return res();}if(++n>20)return rej(new Error('Safari did not open the PiP window'));setTimeout(chk,100);})();};if(pipVideo.readyState>=2){go();}else{var done=false,k=function(){if(done)return;done=true;go();};pipVideo.addEventListener('loadeddata',k,{once:true});setTimeout(k,1200);pipDraw();}});}
+else{throw new Error('NoPiPAPI');}
+p.then(function(){track('pip_enter',{page:'/it/'});hideLockCta();if(pipBtn){pipBtn.classList.add('pip-on');pipBtn.textContent='✕ Chiudi mini-finestra';}}).catch(function(err){pipCleanup();track('pip_error',{page:'/it/',reason:((err&&err.name)||'unknown')+((err&&err.message)?': '+String(err.message).slice(0,60):'')});});
+}catch(e){pipCleanup();track('pip_error',{page:'/it/',reason:((e&&e.name)||'unknown')+((e&&e.message)?': '+String(e.message).slice(0,60):'')});}
+}
+var pipBtn=document.getElementById('pipBtn');
+if(pipBtn){if(pipSupported()){pipBtn.addEventListener('click',togglePiP);['pointerdown','mouseenter','focus','touchstart'].forEach(function(ev){pipBtn.addEventListener(ev,pipWarmup,{passive:true});});}else{pipBtn.style.display='none';}}
+addEventListener('pagehide',function(){if(active)track('deactivate_wakelock',{session_sec:sessionStart?Math.floor((Date.now()-sessionStart)/1000):0,expired:false,closed_tab:true,lock_losses:lockLostCount,page:'/it/'});});
+})();
+</script>
+<div class="float-kofi-wrap" id="floatKofi" style="display:none">
+  <a class="float-kofi" href="https://screenwakeup.com/?lang=it#support" target="_blank" rel="noopener" aria-label="Sostieni">☕</a>
+  <button class="fk-close" id="floatKofiClose" aria-label="Hide">&times;</button>
+</div>
+<script>(function(){var f=document.getElementById('feedbackForm');if(!f)return;
+var btn=document.getElementById('feedbackBtn');
+var BTN='Invia →',SENT='✓ Grazie per il messaggio!',ERR='✗ Invio non riuscito — riprova più tardi';
+f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var fd=new FormData(f);
+  var name=(fd.get('name')||'Anonymous');
+  var message=(fd.get('message')||'');
+  btn.disabled=true;btn.textContent='...';
+  fetch('https://formspree.io/f/xlgqdzqj',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name:name,message:message,_subject:'ScreenWakeUp Feedback'})})
+  .then(function(res){if(!res.ok)throw 0;btn.textContent=SENT;btn.style.background='#22c55e';btn.style.color='#fff';})
+  .catch(function(){btn.disabled=false;btn.textContent=ERR;setTimeout(function(){btn.textContent=BTN;},4000);});
+});})();</script>
+<script>(function(){var w=document.getElementById("floatKofi");if(!w)return;var a=w.querySelector(".float-kofi");if(a)a.addEventListener("click",function(){if(window.gtag)gtag("event","donate_click",{placement:"float",page:"/it/"});});var hidden=+(localStorage.getItem("ka-float-hide")||0)>Date.now();window.__showFloatKofi=function(){if(!hidden)w.style.display="";};var c=document.getElementById("floatKofiClose");if(c)c.addEventListener("click",function(e){e.preventDefault();w.style.display="none";hidden=true;localStorage.setItem("ka-float-hide",String(Date.now()+7*864e5));});})();</script>
+<script>(function(){var p=document.getElementById('help'),b=document.getElementById('helpBtn'),c=document.getElementById('helpClose');if(!p||!b)return;
+function op(){p.classList.add('open');document.body.classList.add('help-open');p.scrollTop=0;if(window.gtag)gtag('event','help_open');}
+function cl(){p.classList.remove('open');document.body.classList.remove('help-open');}
+b.addEventListener('click',op);if(c)c.addEventListener('click',cl);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')cl();});
+p.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(a&&!p.querySelector(a.getAttribute('href')))cl();});
+if(/^#(faq|help|sec)/i.test(location.hash))op();window.addEventListener('hashchange',function(){if(/^#(faq|help|sec)/i.test(location.hash))op();});})();</script>
+</body>
+</html>

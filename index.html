@@ -27,6 +27,9 @@
   <link rel="alternate" hreflang="de" href="https://screenwakeup.com/de/">
   <link rel="alternate" hreflang="ja" href="https://screenwakeup.com/ja/">
   <link rel="alternate" hreflang="ru" href="https://screenwakeup.com/ru/">
+  <link rel="alternate" hreflang="it" href="https://screenwakeup.com/it/">
+  <link rel="alternate" hreflang="ko" href="https://screenwakeup.com/ko/">
+  <link rel="alternate" hreflang="zh" href="https://screenwakeup.com/zh/">
   <link rel="alternate" hreflang="x-default" href="https://screenwakeup.com/">
 
   <!-- Performance hints -->
@@ -59,7 +62,7 @@
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Windows, macOS, iOS, Android, Linux, ChromeOS",
       "browserRequirements": "Requires Chrome 84+, Edge 84+, Safari 16.4+, Opera 70+, or Firefox",
-      "featureList": "Screen Wake Lock, Custom Timer, Pomodoro Timer, Floating mini-window (Picture-in-Picture), Fullscreen Clock, Audio Alert, Dark/Light mode, 7 languages, PWA installable, No download, No account",
+      "featureList": "Screen Wake Lock, Custom Timer, Pomodoro Timer, Floating mini-window (Picture-in-Picture), Fullscreen Clock, Audio Alert, Dark/Light mode, 10 languages, PWA installable, No download, No account",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "name": "Free" },
       "inLanguage": "en",
       "author": { "@type": "Organization", "name": "ScreenWakeUp", "url": "https://screenwakeup.com" }
@@ -90,7 +93,7 @@
         { "@type": "Question", "name": "How do I keep my screen awake on Chrome without an extension?", "acceptedAnswer": { "@type": "Answer", "text": "Go to screenwakeup.com in Chrome and click the button. No extension needed — it uses Chrome's built-in Wake Lock API." } },
         { "@type": "Question", "name": "Does this work on a Chromebook?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open screenwakeup.com in Chrome on any Chromebook and activate it. It uses the native Wake Lock API supported by ChromeOS." } },
         { "@type": "Question", "name": "How do I prevent my computer from sleeping during a presentation?", "acceptedAnswer": { "@type": "Answer", "text": "Open screenwakeup.com in a browser tab before starting your presentation. Click 'Keep Screen Awake' — your screen will stay on for the whole session." } },
-        { "@type": "Question", "name": "Can I keep my screen awake for free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — screenwakeup.com is 100% free, with no time limits and no paid tier: wake lock, time presets or any number of minutes, Pomodoro, fullscreen clock, floating mini-window, dark/light mode and 7 languages." } },
+        { "@type": "Question", "name": "Can I keep my screen awake for free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — screenwakeup.com is 100% free, with no time limits and no paid tier: wake lock, time presets or any number of minutes, Pomodoro, fullscreen clock, floating mini-window, dark/light mode and 10 languages." } },
         { "@type": "Question", "name": "How do I keep my computer awake during a WeTransfer upload?", "acceptedAnswer": { "@type": "Answer", "text": "Open screenwakeup.com in a browser tab before starting your WeTransfer upload. Click 'Keep Screen Awake' and your computer will stay awake until the transfer is complete — no interruptions." } },
         { "@type": "Question", "name": "How do I prevent my screen from sleeping during a Google Drive or Dropbox upload?", "acceptedAnswer": { "@type": "Answer", "text": "Go to screenwakeup.com, activate wake lock, then start your upload. Your screen stays on for the entire transfer — works with Google Drive, Dropbox, OneDrive, and any other service." } },
         { "@type": "Question", "name": "How do I prevent Away status in Microsoft Teams?", "acceptedAnswer": { "@type": "Answer", "text": "Open screenwakeup.com and click Keep Screen Awake. It keeps your screen on and your computer unlocked — and a locked or sleeping computer is the most common reason Teams switches you to Away. Honest limitation: no website can simulate real mouse or keyboard input (browsers block that for security), so after long full inactivity Teams' own idle timer can still change your status." } },
@@ -635,7 +638,7 @@
   #fsStatus { font-size:14px; color:rgba(94,224,192,.6); margin-top:24px; letter-spacing:1px; text-transform:uppercase; }
   #fsExit { position:fixed; top:20px; right:24px; font-size:13px; color:#8892a4; padding:8px 16px; border:1px solid rgba(255,255,255,.12); border-radius:8px; background:#181b2a; }
 </style>
-<script>document.documentElement.className+=" js";try{var q=(location.search.match(/[?&]lang=(en|es|pt|fr|de|ja|ru)\b/)||[])[1];localStorage.setItem("ka-lang",q||"en");}catch(e){}</script>
+<script>document.documentElement.className+=" js";try{var q=(location.search.match(/[?&]lang=(en|es|pt|fr|de|ja|ru|it|ko|zh)\b/)||[])[1];localStorage.setItem("ka-lang",q||"en");}catch(e){}</script>
 <style id="swu-redesign-2026">
 /* ═══ 2026 redesign: Helvetica, warm neutral + indigo (trust) + amber (support) + green (awake) ═══ */
 :root, [data-theme="light"] {
@@ -868,6 +871,9 @@ body.help-open { overflow:hidden; }
       <button class="pill" id="btnDE"  onclick="setLang('de')">DE</button>
       <button class="pill" id="btnJA"  onclick="setLang('ja')">日本語</button>
       <button class="pill" id="btnRU"  onclick="setLang('ru')">RU</button>
+      <button class="pill" id="btnIT"  onclick="setLang('it')">IT</button>
+      <button class="pill" id="btnKO"  onclick="setLang('ko')">한국어</button>
+      <button class="pill" id="btnZH"  onclick="setLang('zh')">中文</button>
       <button type="button" class="pill help-btn" id="helpBtn" aria-label="Help & FAQ" title="Help & FAQ">?</button>
       <button class="pill" id="themeBtn" onclick="toggleTheme()">☀️</button>
     </div>
@@ -1096,7 +1102,7 @@ body.help-open { overflow:hidden; }
     <details><summary>How do I keep my screen awake on Chrome without an extension?</summary><p>Go to screenwakeup.com in Chrome and click the button. No extension needed — it uses Chrome's built-in Wake Lock API.</p></details>
     <details><summary>Does this work on a Chromebook?</summary><p>Yes. Open screenwakeup.com in Chrome on any Chromebook and activate it. It uses the native Wake Lock API supported by ChromeOS.</p></details>
     <details><summary>How do I prevent my computer from sleeping during a presentation?</summary><p>Open screenwakeup.com in a browser tab before starting your presentation. Click 'Keep Screen Awake' — your screen will stay on for the whole session.</p></details>
-    <details><summary>Can I keep my screen awake for free?</summary><p>Yes — screenwakeup.com is 100% free, with no time limits and no paid tier: wake lock, time presets or any number of minutes, Pomodoro, fullscreen clock, floating mini-window, dark/light mode and 7 languages.</p></details>
+    <details><summary>Can I keep my screen awake for free?</summary><p>Yes — screenwakeup.com is 100% free, with no time limits and no paid tier: wake lock, time presets or any number of minutes, Pomodoro, fullscreen clock, floating mini-window, dark/light mode and 10 languages.</p></details>
     <details><summary>How do I keep my computer awake during a WeTransfer upload?</summary><p>Open screenwakeup.com in a browser tab before starting your WeTransfer upload. Click 'Keep Screen Awake' and your computer will stay awake until the transfer is complete — no interruptions.</p></details>
     <details><summary>How do I prevent my screen from sleeping during a Google Drive or Dropbox upload?</summary><p>Go to screenwakeup.com, activate wake lock, then start your upload. Your screen stays on for the entire transfer — works with Google Drive, Dropbox, OneDrive, and any other service.</p></details>
     <details><summary>How do I prevent Away status in Microsoft Teams?</summary><p>Open screenwakeup.com and click Keep Screen Awake. It keeps your screen on and your computer unlocked — and a locked or sleeping computer is the most common reason Teams switches you to Away. Honest limitation: no website can simulate real mouse or keyboard input (browsers block that for security), so after long full inactivity Teams' own idle timer can still change your status.</p></details>
@@ -1134,6 +1140,12 @@ body.help-open { overflow:hidden; }
     <a href="https://screenwakeup.com/de/" hreflang="de" lang="de">Bildschirm Wach Halten (DE)</a>
     <a href="https://screenwakeup.com/ja/" hreflang="ja" lang="ja">画面をスリープさせない (JA)</a>
     <a href="https://screenwakeup.com/ru/" hreflang="ru" lang="ru">Держать экран активным (RU)</a>
+    &nbsp;·&nbsp;
+    <a href="https://screenwakeup.com/it/" hreflang="it" lang="it">Tenere lo Schermo Acceso (IT)</a>
+    &nbsp;·&nbsp;
+    <a href="https://screenwakeup.com/ko/" hreflang="ko" lang="ko">화면 꺼짐 방지 (KO)</a>
+    &nbsp;·&nbsp;
+    <a href="https://screenwakeup.com/zh/" hreflang="zh" lang="zh">屏幕常亮 (ZH)</a>
   </p>
   <p style="margin-top:10px;font-size:13px">
     <a href="/prevent-teams-away/">Prevent Teams Away status</a>
@@ -1213,7 +1225,7 @@ const LANG = {
       ["How do I keep my screen awake on Chrome without an extension?","Go to screenwakeup.com in Chrome and click the button. No extension needed — it uses Chrome's built-in Wake Lock API."],
       ["Does this work on a Chromebook?","Yes. Open screenwakeup.com in Chrome on any Chromebook and activate it. It uses the native Wake Lock API supported by ChromeOS."],
       ["How do I prevent my computer from sleeping during a presentation?","Open screenwakeup.com in a browser tab before starting your presentation. Click 'Keep Screen Awake' — your screen will stay on for the whole session."],
-      ["Can I keep my screen awake for free?","Yes — screenwakeup.com is 100% free, with no time limits and no paid tier: wake lock, time presets or any number of minutes, Pomodoro, fullscreen clock, floating mini-window, dark/light mode and 7 languages."],
+      ["Can I keep my screen awake for free?","Yes — screenwakeup.com is 100% free, with no time limits and no paid tier: wake lock, time presets or any number of minutes, Pomodoro, fullscreen clock, floating mini-window, dark/light mode and 10 languages."],
       ["How do I keep my computer awake during a WeTransfer upload?","Open screenwakeup.com in a browser tab before starting your WeTransfer upload. Click 'Keep Screen Awake' and your computer will stay awake until the transfer is complete — no interruptions."],
       ["How do I prevent my screen from sleeping during a Google Drive or Dropbox upload?","Go to screenwakeup.com, activate wake lock, then start your upload. Your screen stays on for the entire transfer — works with Google Drive, Dropbox, OneDrive, and any other service."],
       ["How do I prevent Away status in Microsoft Teams?","Open screenwakeup.com and click Keep Screen Awake. It keeps your screen on and your computer unlocked — and a locked or sleeping computer is the most common reason Teams switches you to Away. Honest limitation: no website can simulate real mouse or keyboard input (browsers block that for security), so after long full inactivity Teams' own idle timer can still change your status."],
@@ -1640,6 +1652,321 @@ const LANG = {
     pomodoroLabel:"Помодоро",fsLabel:"Полный экран",audioLabel:"Звуковое оповещение",
     pomodoroWork:"🍅 Работа",pomodoroBreak:"☕ Перерыв",pomodoroSession:"Сессия",
     pomodoroStop:"Остановить Помодоро"
+  },
+  it: {
+    heroTag:"Gratis · Nessun download · Nessun account",
+    heroH1:`Tieni lo <span>schermo acceso</span><br>all'istante`,
+    heroSub:"Impedisci allo schermo di andare in standby o bloccarsi. Funziona su Windows, Mac, iPhone e Android — senza installare nulla.",
+    cardOff:"Schermo in standby",
+    cardOn:"Schermo attivo",
+    statusOff:"Premi il pulsante per tenere acceso lo schermo",
+    statusOn:"Wake Lock attivo — lo schermo resterà acceso",
+    statusFb:"Modalità compatibilità — questo browser non ha la Wake Lock API, quindi il blocco non può essere confermato. Controlla che lo schermo resti acceso nei primi minuti.",
+    btnOn:"Tieni lo schermo acceso",
+    btnOff:"Stop",
+    cardHint:"Tieni questa scheda visibile: se riduci a icona la finestra o un'altra app la copre del tutto, il browser rilascia il blocco. Lavori in un'altra app? Usa la mini-finestra fluttuante o lo schermo intero.",
+    pipLabel:"Mini-finestra fluttuante",
+    pipLabelOn:"✕ Chiudi mini-finestra",
+    pipTitle:"Apre un piccolo orologio sempre in primo piano che tiene acceso lo schermo mentre lavori in altre app",
+    lockLost:"⚠️ Il blocco si è disattivato mentre questa scheda era nascosta. Usa la mini-finestra fluttuante o lo schermo intero quando lavori in altre app.",
+    lockLostVisible:"⚠️ Il sistema ha disattivato il blocco (risparmio energetico?). Premi il pulsante per riattivarlo.",
+    timerLeft:"rimanenti",
+    timerActive:"Attivo da",
+    sessionPhrase:"schermo acceso",
+    timerExpired:"Tempo scaduto! Il blocco dello schermo è di nuovo attivo.",
+    howTag:"Come funziona",
+    howH2:"Tre passi. Zero installazioni.",
+    howLead:"Usiamo la Wake Lock API nativa del browser — la stessa tecnologia di Google Maps e dei servizi di streaming video.",
+    step1h:"Apri lo strumento",
+    step1p:"Vai su screenwakeup.com con qualsiasi browser moderno. Nessun download né account.",
+    step2h:"Scegli la durata",
+    step2p:"Scegli quanto: 30 min, 1 h, 2 h, 4 h o senza limite.",
+    step3h:"Clicca e hai finito",
+    step3p:"Premi il pulsante. Lo schermo resta acceso. Fermalo quando vuoi.",
+    usesTag:"Casi d'uso",
+    usesH2:"Quando ti serve?",
+    usesLead:"Le persone lo usano ogni giorno proprio in queste situazioni — ecco le più comuni.",
+    use1h:"Presentazioni",
+    use1p:"Evita che lo schermo diventi nero a metà presentazione.",
+    use2h:"Download lunghi",
+    use2p:"Tieni il computer sveglio durante download di file grandi o backup.",
+    use3h:"Ricette in cucina",
+    use3p:"Tieni la ricetta visibile senza toccare lo schermo con le mani sporche.",
+    use4h:"Leggere articoli",
+    use4p:"Leggi articoli lunghi senza che lo schermo si scurisca ogni 30 secondi.",
+    use5h:"Streaming e musica",
+    use5p:"Tieni il display acceso mentre ascolti audio o guardi contenuti.",
+    use6h:"Lavoro da remoto",
+    use6p:"Evita il blocco dello schermo durante le videochiamate o mentre aspetti una risposta.",
+    use7h:"Trasferimenti di file",
+    use7p:"Tieni il computer sveglio durante upload e download su WeTransfer, Google Drive, Dropbox, OneDrive e simili, così il trasferimento non si interrompe.",
+    use8h:"Stato Assente in Teams e Slack",
+    use8p:"Il motivo più comune per cui Teams, Slack e Zoom ti segnano Assente è il computer bloccato o in standby. ScreenWakeUp tiene lo schermo acceso e il computer sbloccato — senza finti movimenti del mouse.",
+    use9h:"Timer Pomodoro",
+    use9p:"Timer Pomodoro integrato: sessioni di concentrazione da 25 minuti e pause da 5 — lo schermo resta acceso in automatico.",
+    compatTag:"Compatibilità",
+    compatH2:"Funziona ovunque",
+    compatLead:"Qualunque dispositivo o browser tu usi, sei coperto.",
+    webTag:"La risposta semplice",
+    webH2:"Un sito che tiene sveglio il computer",
+    webLead:"Niente app, niente estensioni, niente impostazioni di risparmio energetico — screenwakeup.com è un sito che tiene sveglio il computer per tutto il tempo che ti serve. Apri la pagina, premi un pulsante e lo schermo resta acceso finché non lo fermi. È la “caffeina” online per qualsiasi dispositivo con un browser.",
+    faqTag:"FAQ",
+    faqH2:"Domande frequenti",
+    faqLead:"Tutto quello che c'è da sapere per tenere acceso lo schermo.",
+    faqs:[["Come tengo acceso lo schermo senza cambiare le impostazioni di alimentazione?", "Apri screenwakeup.com nel browser e clicca «Tieni lo schermo acceso». Usa la Wake Lock API, quindi lo schermo resta acceso senza toccare le impostazioni di sistema."], ["Funziona su iPhone e Android?", "Sì. Funziona su Safari per iOS e Chrome per Android. Tieni la scheda del browser aperta e visibile."], ["Funziona su Mac e Windows?", "Sì, funziona su qualsiasi sistema operativo con Chrome, Edge, Firefox e Safari — senza download né installazione."], ["È sicuro? Devo creare un account?", "Sicuro al 100%. Nessun account, nessuna registrazione. Funziona interamente nel tuo browser."], ["Perché lo schermo si blocca quando cambio scheda?", "La Wake Lock API richiede che la scheda sia visibile. Lo strumento riattiva il blocco automaticamente quando torni sulla scheda."], ["Posso impostare un timer?", "Sì. Scegli 30 min, 1 h, 2 h o 4 h. Alla fine del timer il blocco dello schermo si riattiva automaticamente."], ["Come evito lo stato Assente in Microsoft Teams?", "Apri screenwakeup.com e clicca «Tieni lo schermo acceso». Mantiene lo schermo acceso e il computer sbloccato — e un computer bloccato o in standby è il motivo più comune per cui Teams ti mette Assente. Limite onesto: nessun sito può simulare veri input di mouse o tastiera (i browser lo bloccano per sicurezza), quindi dopo una lunga inattività totale il timer di Teams può comunque cambiare il tuo stato."], ["Esiste un timer Pomodoro online gratuito?", "Sì — ScreenWakeUp ha un timer Pomodoro integrato. Clicca 🍅 Pomodoro: sessioni di lavoro da 25 minuti con pause da 5, schermo sempre acceso e un leggero suono alla fine di ogni sessione."]],
+    feedbackTag:"Feedback",
+    feedbackH2:"Lasciaci un commento",
+    feedbackLead:"Dicci cosa ne pensi o come possiamo migliorare.",
+    feedbackName:"Il tuo nome (facoltativo)",
+    feedbackMsg:"Il tuo commento o suggerimento...",
+    feedbackBtn:"Invia feedback →",
+    feedbackSent:"✓ Grazie per il messaggio!",
+    feedbackErr:"✗ Invio non riuscito — riprova più tardi",
+    supportTag:"PROGETTO INDIPENDENTE",
+    supportH2:"Ti abbiamo salvato la giornata? Offrici un caffè ☕",
+    supportP:"Abbiamo creato ScreenWakeUp perché lo schermo non interrompa mai il tuo lavoro. Nessuna registrazione, nessun paywall. Se questo strumento ti ha aiutato anche solo una volta oggi, valuta di sostenerci.",
+    kofiTxt:"Offrici un caffè!",
+    shareTxt:"Condividi lo strumento",
+    cardKofi:"☕ Offrici un caffè",
+    footerP:"Nessun download · Nessun account · Gratis per sempre · Funziona in qualsiasi browser",
+    footerSupport:"Sostieni il progetto",
+    whyTag:"Strumento web vs app desktop",
+    whyH2:"Perché non scaricare semplicemente un'app?",
+    whyLead:"Non dovresti installare software, dare permessi di amministratore o fidarti di un .exe sconosciuto solo per tenere acceso lo schermo.",
+    whyProH:"✦ ScreenWakeUp (browser)",
+    whyConH:"App desktop / estensioni",
+    whyPro1:"Funziona in 2 secondi — senza installare",
+    whyPro2:"Nessun permesso di amministratore",
+    whyPro3:"Funziona su qualsiasi dispositivo o sistema",
+    whyPro4:"Niente salvato sul tuo computer",
+    whyPro5:"Sempre aggiornato in automatico",
+    whyPro6:"Gratis al 100%, senza abbonamento",
+    whyCon1:"Richiede download e installazione",
+    whyCon2:"Spesso servono i permessi di amministratore",
+    whyCon3:"Legate a una piattaforma (solo Mac, ecc.)",
+    whyCon4:"Girano in background e consumano risorse",
+    whyCon5:"Aggiornamenti manuali",
+    whyCon6:"Molte costano 2–10 $ al mese",
+    durLabels:{"0": "∞", "30": "30 min", "60": "1 h", "120": "2 h", "240": "4 h"},
+    customBtn:"Personalizzato",
+    customPlaceholder:"min",
+    pomodoroLabel:"Pomodoro",
+    fsLabel:"Schermo intero",
+    audioLabel:"Avviso sonoro",
+    pomodoroWork:"🍅 Lavoro",
+    pomodoroBreak:"☕ Pausa",
+    pomodoroSession:"Sessione",
+    pomodoroStop:"Ferma Pomodoro"
+  },
+  ko: {
+    heroTag:"무료 · 다운로드 없음 · 계정 없음",
+    heroH1:`<span>화면 꺼짐 방지</span><br>바로 시작`,
+    heroSub:"화면이 꺼지거나 잠기지 않게 해 줍니다. Windows, Mac, iPhone, Android에서 작동하며 설치가 필요 없습니다.",
+    cardOff:"화면 절전 중",
+    cardOn:"화면 켜짐",
+    statusOff:"버튼을 눌러 화면을 켜 두세요",
+    statusOn:"Wake Lock 활성화 — 화면이 계속 켜져 있습니다",
+    statusFb:"호환 모드 — 이 브라우저는 Wake Lock API를 지원하지 않아 잠금을 확인할 수 없습니다. 처음 몇 분 동안 화면이 켜져 있는지 확인해 주세요.",
+    btnOn:"화면 켜두기",
+    btnOff:"중지",
+    cardHint:"이 탭을 보이는 상태로 두세요. 창을 최소화하거나 다른 앱이 완전히 가리면 브라우저가 잠금을 해제합니다. 다른 앱에서 작업하나요? 플로팅 미니 창이나 전체 화면을 사용하세요.",
+    pipLabel:"플로팅 미니 창",
+    pipLabelOn:"✕ 미니 창 닫기",
+    pipTitle:"항상 위에 표시되는 작은 시계를 열어 다른 앱에서 작업하는 동안에도 화면을 켜 둡니다",
+    lockLost:"⚠️ 이 탭이 가려진 동안 잠금이 해제되었습니다. 다른 앱에서 작업할 때는 플로팅 미니 창이나 전체 화면을 사용하세요.",
+    lockLostVisible:"⚠️ 시스템이 잠금을 해제했습니다(배터리 절약 모드?). 버튼을 눌러 다시 켜세요.",
+    timerLeft:"남음",
+    timerActive:"켜진 시간",
+    sessionPhrase:"화면 켜두는 중",
+    timerExpired:"시간이 다 됐습니다! 화면 잠금이 다시 활성화되었습니다.",
+    howTag:"사용 방법",
+    howH2:"3단계. 설치 없음.",
+    howLead:"브라우저의 기본 Wake Lock API를 사용합니다 — Google 지도와 동영상 스트리밍 서비스가 쓰는 것과 같은 기술입니다.",
+    step1h:"도구 열기",
+    step1p:"최신 브라우저에서 screenwakeup.com에 접속하세요. 다운로드나 계정이 필요 없습니다.",
+    step2h:"시간 선택",
+    step2p:"30분, 1시간, 2시간, 4시간 또는 무제한 중에서 고르세요.",
+    step3h:"클릭하면 끝",
+    step3p:"버튼을 누르면 화면이 계속 켜져 있습니다. 언제든 멈출 수 있습니다.",
+    usesTag:"사용 사례",
+    usesH2:"언제 필요할까요?",
+    usesLead:"많은 사람들이 매일 이런 상황에서 사용합니다. 가장 흔한 경우를 모았습니다.",
+    use1h:"프레젠테이션",
+    use1p:"발표 도중 화면이 꺼지는 것을 막아 줍니다.",
+    use2h:"긴 다운로드",
+    use2p:"큰 파일을 내려받거나 백업하는 동안 컴퓨터를 깨어 있게 합니다.",
+    use3h:"요리 레시피",
+    use3p:"손이 더러워도 화면을 만지지 않고 레시피를 계속 볼 수 있습니다.",
+    use4h:"긴 글 읽기",
+    use4p:"30초마다 화면이 어두워지지 않고 긴 글을 읽을 수 있습니다.",
+    use5h:"스트리밍과 음악",
+    use5p:"오디오를 듣거나 콘텐츠를 보는 동안 화면을 켜 둡니다.",
+    use6h:"재택근무",
+    use6p:"화상 회의 중이나 답장을 기다리는 동안 화면 잠금을 막아 줍니다.",
+    use7h:"파일 전송",
+    use7p:"WeTransfer, Google Drive, Dropbox, OneDrive 등에서 업로드·다운로드하는 동안 컴퓨터를 깨어 있게 해 전송이 끊기지 않게 합니다.",
+    use8h:"Teams·Slack 자리 비움 대책",
+    use8p:"Teams, Slack, Zoom이 '자리 비움'으로 바뀌는 가장 흔한 이유는 컴퓨터 잠금과 절전입니다. ScreenWakeUp은 화면을 켜 두고 잠금을 막아 줍니다 — 가짜 마우스 움직임 없이.",
+    use9h:"뽀모도로 타이머",
+    use9p:"내장 뽀모도로 타이머로 25분 집중과 5분 휴식을 반복하세요 — 화면은 자동으로 켜져 있습니다.",
+    compatTag:"호환성",
+    compatH2:"어디서나 작동",
+    compatLead:"어떤 기기나 브라우저를 쓰든 문제없습니다.",
+    webTag:"간단한 해답",
+    webH2:"컴퓨터를 깨어 있게 하는 웹사이트",
+    webLead:"앱도, 확장 프로그램도, 전원 설정 변경도 필요 없습니다. screenwakeup.com은 필요한 만큼 컴퓨터를 깨어 있게 하는 웹사이트입니다. 페이지를 열고 버튼 하나만 누르면 멈출 때까지 화면이 켜져 있습니다. 브라우저만 있으면 어떤 기기에서도 쓸 수 있는 온라인 '카페인'입니다.",
+    faqTag:"FAQ",
+    faqH2:"자주 묻는 질문",
+    faqLead:"화면을 켜 두는 데 필요한 모든 것.",
+    faqs:[["전원 설정을 바꾸지 않고 화면을 켜 두려면?", "브라우저에서 screenwakeup.com을 열고 '화면 켜두기'를 클릭하세요. Wake Lock API를 사용하므로 시스템 설정을 건드리지 않고 화면이 켜져 있습니다."], ["iPhone과 Android에서도 되나요?", "네. iOS Safari와 Android Chrome에서 작동합니다. 브라우저 탭을 열어 두고 보이게 해 주세요."], ["Mac과 Windows에서도 되나요?", "네. Chrome, Edge, Firefox, Safari를 쓰는 모든 운영체제에서 작동하며 다운로드나 설치가 필요 없습니다."], ["안전한가요? 계정이 필요한가요?", "100% 안전합니다. 계정도 가입도 필요 없습니다. 모든 것이 브라우저 안에서 실행됩니다."], ["탭을 바꾸면 왜 화면이 잠기나요?", "Wake Lock API는 탭이 보이는 상태여야 합니다. 탭으로 돌아오면 도구가 자동으로 잠금을 다시 켭니다."], ["타이머를 설정할 수 있나요?", "네. 30분, 1시간, 2시간, 4시간 중에서 고르세요. 타이머가 끝나면 화면 잠금이 자동으로 다시 활성화됩니다."], ["Microsoft Teams에서 자리 비움을 막으려면?", "screenwakeup.com을 열고 '화면 켜두기'를 클릭하세요. 화면을 켜 두고 컴퓨터가 잠기지 않게 합니다 — 컴퓨터 잠금이나 절전은 Teams가 자리 비움으로 바꾸는 가장 흔한 이유입니다. 솔직한 한계: 어떤 웹사이트도 실제 마우스나 키보드 입력을 흉내 낼 수 없으므로(브라우저가 보안상 차단), 오랫동안 아무 조작도 없으면 Teams 자체 타이머가 상태를 바꿀 수 있습니다."], ["무료 온라인 뽀모도로 타이머가 있나요?", "네. ScreenWakeUp에는 뽀모도로 타이머가 내장되어 있습니다. 🍅 뽀모도로를 클릭하면 25분 작업과 5분 휴식이 반복되고, 화면은 계속 켜져 있으며 세션이 끝날 때 부드러운 알림음이 울립니다."]],
+    feedbackTag:"피드백",
+    feedbackH2:"의견을 남겨 주세요",
+    feedbackLead:"생각이나 개선할 점을 알려 주세요.",
+    feedbackName:"이름(선택)",
+    feedbackMsg:"의견이나 제안...",
+    feedbackBtn:"보내기 →",
+    feedbackSent:"✓ 메시지 감사합니다!",
+    feedbackErr:"✗ 보내지 못했습니다 — 잠시 후 다시 시도해 주세요",
+    supportTag:"독립 프로젝트",
+    supportH2:"도움이 되셨나요? 커피 한 잔 사 주세요 ☕",
+    supportP:"화면이 작업을 방해하지 않도록 ScreenWakeUp을 만들었습니다. 가입도 유료 벽도 없습니다. 오늘 조금이라도 도움이 되셨다면 후원을 고려해 주세요.",
+    kofiTxt:"커피 사 주기!",
+    shareTxt:"이 도구 공유하기",
+    cardKofi:"☕ 커피 사 주기",
+    footerP:"다운로드 없음 · 계정 없음 · 영원히 무료 · 모든 브라우저에서 작동",
+    footerSupport:"프로젝트 후원하기",
+    whyTag:"브라우저 도구 vs 데스크톱 앱",
+    whyH2:"그냥 앱을 받으면 안 되나요?",
+    whyLead:"화면을 켜 두려고 소프트웨어를 설치하거나, 관리자 권한을 주거나, 낯선 .exe를 믿을 필요는 없습니다.",
+    whyProH:"✦ ScreenWakeUp (브라우저)",
+    whyConH:"데스크톱 앱 / 확장 프로그램",
+    whyPro1:"2초면 작동 — 설치 없음",
+    whyPro2:"관리자 권한 불필요",
+    whyPro3:"모든 기기와 OS에서 작동",
+    whyPro4:"컴퓨터에 아무것도 저장하지 않음",
+    whyPro5:"항상 자동으로 최신 상태",
+    whyPro6:"100% 무료, 구독 없음",
+    whyCon1:"다운로드와 설치 필요",
+    whyCon2:"관리자 권한이 필요한 경우가 많음",
+    whyCon3:"특정 플랫폼 전용(Mac 전용 등)",
+    whyCon4:"백그라운드에서 실행되며 자원 사용",
+    whyCon5:"수동 업데이트 필요",
+    whyCon6:"상당수가 월 2~10달러",
+    durLabels:{"0": "∞", "30": "30분", "60": "1시간", "120": "2시간", "240": "4시간"},
+    customBtn:"직접 설정",
+    customPlaceholder:"분",
+    pomodoroLabel:"뽀모도로",
+    fsLabel:"전체 화면",
+    audioLabel:"알림음",
+    pomodoroWork:"🍅 작업",
+    pomodoroBreak:"☕ 휴식",
+    pomodoroSession:"세션",
+    pomodoroStop:"뽀모도로 중지"
+  },
+  zh: {
+    heroTag:"免费 · 无需下载 · 无需注册",
+    heroH1:`让<span>屏幕保持常亮</span><br>即开即用`,
+    heroSub:"防止屏幕休眠或锁屏。支持 Windows、Mac、iPhone 和 Android，无需安装。",
+    cardOff:"屏幕休眠中",
+    cardOn:"屏幕常亮中",
+    statusOff:"按下按钮，让屏幕保持常亮",
+    statusOn:"Wake Lock 已开启 — 屏幕将保持常亮",
+    statusFb:"兼容模式 — 此浏览器不支持 Wake Lock API，无法确认锁定状态。请在最初几分钟留意屏幕是否保持常亮。",
+    btnOn:"保持屏幕常亮",
+    btnOff:"停止",
+    cardHint:"请让此标签页保持可见：如果最小化窗口或被其他应用完全遮挡，浏览器会解除锁定。要在其他应用中工作？请使用悬浮小窗或全屏。",
+    pipLabel:"悬浮小窗",
+    pipLabelOn:"✕ 关闭小窗",
+    pipTitle:"打开一个始终置顶的小时钟，在你使用其他应用时让屏幕保持常亮",
+    lockLost:"⚠️ 标签页被隐藏时锁定已关闭。在其他应用中工作时，请使用悬浮小窗或全屏。",
+    lockLostVisible:"⚠️ 系统关闭了锁定（可能是省电模式）。请按按钮重新开启。",
+    timerLeft:"剩余",
+    timerActive:"已常亮",
+    sessionPhrase:"保持屏幕常亮",
+    timerExpired:"时间到！屏幕锁定已恢复。",
+    howTag:"使用方法",
+    howH2:"三步完成，无需安装。",
+    howLead:"我们使用浏览器原生的 Wake Lock API —— 与 Google 地图和视频流媒体服务相同的技术。",
+    step1h:"打开工具",
+    step1p:"用任意现代浏览器访问 screenwakeup.com，无需下载或注册。",
+    step2h:"选择时长",
+    step2p:"选择时长：30 分钟、1 小时、2 小时、4 小时或不限时。",
+    step3h:"点击即可",
+    step3p:"按下按钮，屏幕就会保持常亮，随时可以停止。",
+    usesTag:"使用场景",
+    usesH2:"什么时候需要它？",
+    usesLead:"每天都有人在这些场景中使用它 —— 以下是最常见的几种。",
+    use1h:"演示汇报",
+    use1p:"防止演示进行到一半屏幕变黑。",
+    use2h:"长时间下载",
+    use2p:"下载大文件或备份时，让电脑保持唤醒。",
+    use3h:"看菜谱做饭",
+    use3p:"手上沾满面粉也不用碰屏幕，菜谱一直可见。",
+    use4h:"阅读长文",
+    use4p:"阅读长文章时，屏幕不会每 30 秒变暗一次。",
+    use5h:"流媒体与音乐",
+    use5p:"听音频或看内容时保持屏幕常亮。",
+    use6h:"远程办公",
+    use6p:"视频通话或等待回复时防止锁屏。",
+    use7h:"文件传输",
+    use7p:"在 WeTransfer、Google Drive、Dropbox、OneDrive 等上传或下载时让电脑保持唤醒，传输不会中断。",
+    use8h:"Teams、Slack 显示离开",
+    use8p:"Teams、Slack 和 Zoom 显示“离开”最常见的原因是电脑锁屏或休眠。ScreenWakeUp 让屏幕保持常亮、防止锁屏 —— 不用模拟鼠标移动。",
+    use9h:"番茄钟",
+    use9p:"内置番茄钟：25 分钟专注、5 分钟休息循环，屏幕自动保持常亮。",
+    compatTag:"兼容性",
+    compatH2:"随处可用",
+    compatLead:"无论你使用什么设备或浏览器，都能正常使用。",
+    webTag:"最简单的答案",
+    webH2:"一个让电脑保持唤醒的网站",
+    webLead:"无需应用、无需扩展、无需修改电源设置 —— screenwakeup.com 是一个让电脑按你需要的时间保持唤醒的网站。打开页面、按一下按钮，屏幕就会一直亮着，直到你停止。它就是任何有浏览器的设备都能用的在线“咖啡因”。",
+    faqTag:"常见问题",
+    faqH2:"常见问题",
+    faqLead:"关于让屏幕保持常亮，你需要知道的一切。",
+    faqs:[["如何在不修改电源设置的情况下让屏幕常亮？", "在浏览器中打开 screenwakeup.com，点击“保持屏幕常亮”。它使用 Wake Lock API，无需更改系统设置即可让屏幕常亮。"], ["iPhone 和 Android 能用吗？", "可以。支持 iOS Safari 和 Android Chrome。请保持浏览器标签页打开并可见。"], ["Mac 和 Windows 能用吗？", "可以，在 Chrome、Edge、Firefox 和 Safari 中都能使用，适用于任何操作系统，无需下载或安装。"], ["安全吗？需要注册账号吗？", "100% 安全。无需账号，无需注册，完全在你的浏览器中运行。"], ["为什么切换标签页后屏幕会锁定？", "Wake Lock API 要求标签页处于可见状态。回到该标签页时，工具会自动重新开启锁定。"], ["可以设置定时吗？", "可以。选择 30 分钟、1 小时、2 小时或 4 小时。计时结束后屏幕锁定会自动恢复。"], ["如何防止 Microsoft Teams 显示“离开”？", "打开 screenwakeup.com 并点击“保持屏幕常亮”。它让屏幕常亮、电脑不锁屏 —— 而锁屏或休眠正是 Teams 将你切换为“离开”的最常见原因。坦白说明：任何网站都无法模拟真实的鼠标或键盘输入（浏览器出于安全会阻止），所以长时间完全无操作后，Teams 自己的计时器仍可能更改你的状态。"], ["有免费的在线番茄钟吗？", "有。ScreenWakeUp 内置番茄钟。点击 🍅 番茄钟，即可开始 25 分钟工作、5 分钟休息的循环，屏幕自动保持常亮，每个阶段结束时会播放轻柔的提示音。"]],
+    feedbackTag:"反馈",
+    feedbackH2:"给我们留言",
+    feedbackLead:"告诉我们你的想法或改进建议。",
+    feedbackName:"你的名字（可选）",
+    feedbackMsg:"你的意见或建议……",
+    feedbackBtn:"发送反馈 →",
+    feedbackSent:"✓ 感谢你的留言！",
+    feedbackErr:"✗ 发送失败 —— 请稍后再试",
+    supportTag:"独立项目",
+    supportH2:"帮到你了吗？请我们喝杯咖啡 ☕",
+    supportP:"我们做 ScreenWakeUp，是为了让屏幕不再打断你的工作。无需注册，没有付费墙。如果它今天帮到了你，欢迎支持我们。",
+    kofiTxt:"请我们喝咖啡！",
+    shareTxt:"分享这个工具",
+    cardKofi:"☕ 请我们喝咖啡",
+    footerP:"无需下载 · 无需注册 · 永久免费 · 任何浏览器都能用",
+    footerSupport:"支持这个项目",
+    whyTag:"浏览器工具 vs 桌面应用",
+    whyH2:"为什么不直接下载一个应用？",
+    whyLead:"只是为了让屏幕常亮，不应该需要安装软件、授予管理员权限，或信任来路不明的 .exe。",
+    whyProH:"✦ ScreenWakeUp（浏览器）",
+    whyConH:"桌面应用 / 扩展",
+    whyPro1:"2 秒即用 —— 无需安装",
+    whyPro2:"无需管理员权限",
+    whyPro3:"任何设备、任何系统都能用",
+    whyPro4:"不在电脑上存储任何东西",
+    whyPro5:"始终自动保持最新",
+    whyPro6:"100% 免费，无需订阅",
+    whyCon1:"需要下载和安装",
+    whyCon2:"常常需要管理员权限",
+    whyCon3:"仅限特定平台（如仅 Mac）",
+    whyCon4:"在后台运行，占用资源",
+    whyCon5:"需要手动更新",
+    whyCon6:"很多每月收费 2–10 美元",
+    durLabels:{"0": "∞", "30": "30 分钟", "60": "1 小时", "120": "2 小时", "240": "4 小时"},
+    customBtn:"自定义",
+    customPlaceholder:"分钟",
+    pomodoroLabel:"番茄钟",
+    fsLabel:"全屏",
+    audioLabel:"声音提醒",
+    pomodoroWork:"🍅 工作",
+    pomodoroBreak:"☕ 休息",
+    pomodoroSession:"阶段",
+    pomodoroStop:"停止番茄钟"
   }
 };
 
@@ -1668,7 +1995,7 @@ function setLang(l) {
   localStorage.setItem('ka-lang', l);
 
   // Update lang pill highlights
-  ['en','es','pt','fr','de','ja','ru'].forEach(x => {
+  ['en','es','pt','fr','de','ja','ru','it','ko','zh'].forEach(x => {
     const btn = document.getElementById('btn'+x.toUpperCase());
     if (btn) btn.classList.toggle('lang-active', x === l);
   });
@@ -1793,6 +2120,9 @@ const DONATE_I18N = {
   de: { nav:"Unterstützen", h2Plain:"Hallo, ich bin Javier. Ich halte das hier am Laufen.", h2Today:"Hallo, ich bin Javier. Ich halte das hier am Laufen.", h2Total:"Hallo, ich bin Javier. Ich halte das hier am Laufen.", p:"Unabhängig, privat und mit Liebe gemacht. Wenn es dir hilft, hilf mit, es am Laufen zu halten.", a1:"1 Kaffee", a3:"3 Kaffee", a5:"5 Kaffee", other:"Anderer Betrag", later:"Heute nicht", pay:"Mit PayPal spenden · {a} $", kofi:"Mit PayPal spenden · {a} $", secure:"PayPal oder jede Karte. Ohne Konto.", thanks:"Danke! Deine Spende fließt komplett in den kostenlosen Betrieb. ☕", social:"Jeder Betrag hält es kostenlos.", any:"Beliebiger Betrag", payAny:"Mit PayPal spenden" },
   ja: { nav:"支援", h2Plain:"こんにちは、Javierです。このサイトを運営しています。", h2Today:"こんにちは、Javierです。このサイトを運営しています。", h2Total:"こんにちは、Javierです。このサイトを運営しています。", p:"独立、プライバシー重視、心を込めて作っています。役に立ったら、続けられるよう応援してください。", a1:"コーヒー1杯", a3:"3杯", a5:"5杯", other:"その他の金額", later:"今日はしない", pay:"PayPal で寄付 · ${a}", kofi:"PayPal で寄付 · ${a}", secure:"PayPal または各種カード。アカウント不要。", thanks:"ありがとうございます！寄付はすべて無料維持のために使います。☕", social:"金額は自由です。無料のまま続けられます。", any:"金額は自由", payAny:"PayPal で寄付" },
   ru: { nav:"Поддержать", h2Plain:"Привет, я Хавьер. Я поддерживаю этот сайт.", h2Today:"Привет, я Хавьер. Я поддерживаю этот сайт.", h2Total:"Привет, я Хавьер. Я поддерживаю этот сайт.", p:"Независимый, приватный и сделанный с любовью. Если он вам помогает, помогите ему работать дальше.", a1:"1 кофе", a3:"3 кофе", a5:"5 кофе", other:"Другая сумма", later:"Не сегодня", pay:"Пожертвовать через PayPal · ${a}", kofi:"Пожертвовать через PayPal · ${a}", secure:"PayPal или любая карта. Без аккаунта.", thanks:"Спасибо! Ваше пожертвование целиком идёт на поддержку бесплатного сайта. ☕", social:"Любая сумма сохраняет его бесплатным.", any:"Любая сумма", payAny:"Пожертвовать через PayPal" },
+  it: { nav:"Sostieni", h2Plain:"Ciao, sono Javier. Sono io a tenerlo attivo.", h2Today:"Ciao, sono Javier. Sono io a tenerlo attivo.", h2Total:"Ciao, sono Javier. Sono io a tenerlo attivo.", p:"Indipendente, privato e fatto con amore. Se ti aiuta, aiutalo ad andare avanti.", a1:"1 caffè", a3:"3 caffè", a5:"5 caffè", other:"Altro importo", later:"Non oggi", pay:"Dona con PayPal · {a} $", kofi:"Dona con PayPal · {a} $", secure:"PayPal o qualsiasi carta. Senza account.", thanks:"Grazie! La tua donazione va tutta a mantenerlo gratis. ☕", social:"Qualsiasi importo lo mantiene gratis.", any:"Importo libero", payAny:"Dona con PayPal" },
+  ko: { nav:"후원", h2Plain:"안녕하세요, Javier입니다. 이 사이트를 운영하고 있어요.", h2Today:"안녕하세요, Javier입니다. 이 사이트를 운영하고 있어요.", h2Total:"안녕하세요, Javier입니다. 이 사이트를 운영하고 있어요.", p:"독립적이고, 개인정보를 지키며, 정성껏 만들었습니다. 도움이 되었다면 계속 운영될 수 있게 도와주세요.", a1:"커피 1잔", a3:"커피 3잔", a5:"커피 5잔", other:"다른 금액", later:"오늘은 괜찮아요", pay:"PayPal로 후원 · ${a}", kofi:"PayPal로 후원 · ${a}", secure:"PayPal 또는 모든 카드. 계정 필요 없음.", thanks:"감사합니다! 후원금은 모두 무료 운영에 쓰입니다. ☕", social:"어떤 금액이든 무료로 유지하는 힘이 됩니다.", any:"원하는 금액", payAny:"PayPal로 후원" },
+  zh: { nav:"支持", h2Plain:"你好，我是 Javier，这个网站由我维护。", h2Today:"你好，我是 Javier，这个网站由我维护。", h2Total:"你好，我是 Javier，这个网站由我维护。", p:"独立、注重隐私、用心打造。如果它帮到了你，请帮助它继续运行。", a1:"1 杯咖啡", a3:"3 杯咖啡", a5:"5 杯咖啡", other:"其他金额", later:"今天先不了", pay:"通过 PayPal 捐助 · ${a}", kofi:"通过 PayPal 捐助 · ${a}", secure:"PayPal 或任意银行卡，无需注册。", thanks:"谢谢！你的捐助将全部用于让它保持免费。☕", social:"任何金额都能让它保持免费。", any:"任意金额", payAny:"通过 PayPal 捐助" },
 };
 
 function applyDonateStrings(l){
@@ -2230,7 +2560,7 @@ function shareApp() {
   if(navigator.share){
     navigator.share({ title:'ScreenWakeUp', text:LANG[lang].heroSub, url:shareUrl }).catch(()=>{});
   } else {
-    const copied = { en:'✓ Link copied', es:'✓ Enlace copiado', pt:'✓ Link copiado', fr:'✓ Lien copié', de:'✓ Link kopiert', ja:'✓ リンクをコピーしました', ru:'✓ Ссылка скопирована' };
+    const copied = { en:'✓ Link copied', es:'✓ Enlace copiado', pt:'✓ Link copiado', fr:'✓ Lien copié', de:'✓ Link kopiert', ja:'✓ リンクをコピーしました', ru:'✓ Ссылка скопирована', it:'✓ Link copiato', ko:'✓ 링크가 복사되었습니다', zh:'✓ 链接已复制' };
     navigator.clipboard.writeText(shareUrl).then(()=>{
       const el = document.getElementById('cdShare');
       if(!el) return;
