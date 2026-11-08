@@ -941,6 +941,7 @@ body.swu-on .pip-card { border:2px solid var(--accent); box-shadow:0 10px 28px r
 }
 </style>
 <style id="swu-v7">
+.swu-col { transform-origin:50% 0; min-width:0; }
 /* Donation box in brand indigo */
 .card-donate { background:#1E2A78 !important; border:1px solid #1E2A78 !important; color:#fff !important; box-shadow:0 16px 40px rgba(30,42,120,.28) !important; }
 [data-theme="dark"] .card-donate { background:#2A3594 !important; border-color:rgba(255,255,255,.12) !important; }
@@ -953,6 +954,33 @@ body.swu-on .pip-card { border:2px solid var(--accent); box-shadow:0 10px 28px r
 .card-donate #cdCustomInp::placeholder { color:rgba(255,255,255,.62) !important; }
 .card-donate .cd-kofi { background:#FFB547 !important; color:#1B1F3B !important; }
 .card-donate a:not(.cd-kofi) { color:#FFB547 !important; }
+</style>
+<style id="swu-v8">
+/* Floating window card: icon | text | checkbox, like Option I */
+.pip-card { flex-wrap:nowrap; }
+.pip-card .pip-act { flex-direction:column; align-items:flex-end; gap:6px; }
+.pip-card #pipCaption { display:block !important; }
+@media (max-height:640px) { .pip-card #pipCaption { display:none !important; } }
+.pip-card #pipBtn { display:none !important; }
+.tool-card #cardStatus { display:block !important; }
+@media (max-height:560px) { .tool-card #cardStatus { display:none !important; } }
+.pip-card .pip-txt strong { white-space:nowrap; }
+body.swu-on .pip-card #pipBtn:not(.pip-on) { display:inline-flex !important; }
+/* Secondary buttons with icons */
+#fsBtn::before, #audioBtn::before { content:""; width:15px; height:15px; margin-right:7px; flex:none; background:currentColor; display:inline-block; vertical-align:-2px; }
+#fsBtn::before { -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5'/%3E%3C/svg%3E") center/contain no-repeat; mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5'/%3E%3C/svg%3E") center/contain no-repeat; }
+#audioBtn::before { -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8'/%3E%3Cpath d='M10 20a2 2 0 0 0 4 0'/%3E%3C/svg%3E") center/contain no-repeat; mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8'/%3E%3Cpath d='M10 20a2 2 0 0 0 4 0'/%3E%3C/svg%3E") center/contain no-repeat; }
+.tool-extra-btn { display:inline-flex !important; align-items:center; }
+/* Mobile, like Option I mobile */
+@media (max-width:700px) {
+  .pip-card { display:none !important; }
+  .nav-controls { overflow:visible !important; flex-wrap:wrap; justify-content:flex-end; }
+  .nav-controls .pill[id^="btn"]:not(.lang-active) { display:none !important; }
+  .nav-controls.swu-langs-open .pill[id^="btn"] { display:inline-flex !important; }
+  .nav-controls .pill.lang-active::after { content:" ▾"; font-size:10px; }
+  .tool-extras { width:100%; }
+  #fsBtn { flex:1 1 100%; justify-content:center; min-height:48px !important; }
+}
 </style>
 </head>
 <body>
@@ -2557,27 +2585,35 @@ function pipSupported(){
    hover/focus and let the click do nothing but request the PiP window. */
 function pipWarmup(){
   if(pipVideo) return;
-  const c = document.createElement('canvas'); c.width = 480; c.height = 270;
+  const W = 480, H = 120;
+  const c = document.createElement('canvas'); c.width = W; c.height = H;
   const x = c.getContext('2d');
+  const F = '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif';
+  const fmt = (ms) => { const s = Math.max(0, Math.round(ms / 1000)), h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), ss = s % 60;
+    return (h ? h + ':' + String(m).padStart(2, '0') : String(m).padStart(2, '0')) + ':' + String(ss).padStart(2, '0'); };
   pipDraw = () => {
-    x.fillStyle = '#1E2A78'; x.fillRect(0, 0, 480, 270);
-    x.textAlign = 'center';
-    x.fillStyle = '#FFFFFF';
-    const t = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', second:'2-digit'});
-    x.font = '700 84px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
-    const tw = x.measureText(t).width;
-    if(tw > 440) x.font = '700 ' + Math.max(28, Math.floor(84 * 440 / tw)) + 'px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
-    x.fillText(t, 240, 132);
-    x.fillStyle = '#B9BCE6';
-    x.font = '600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
-    x.fillText('screenwakeup.com', 240, 208);
+    const on = !!active;
+    x.fillStyle = '#1E2A78'; x.fillRect(0, 0, W, H);
+    x.beginPath(); x.arc(44, H / 2, 10, 0, Math.PI * 2); x.fillStyle = on ? '#34C759' : 'rgba(255,255,255,0.35)'; x.fill();
+    if(on){ x.beginPath(); x.arc(44, H / 2, 17, 0, Math.PI * 2); x.strokeStyle = 'rgba(52,199,89,0.35)'; x.lineWidth = 6; x.stroke(); }
+    const txt = on ? (durationMs > 0 && startTime ? fmt(startTime + durationMs - Date.now()) : fmt(Date.now() - (startTime || Date.now()))) : 'Off';
+    x.fillStyle = '#FFFFFF'; x.textAlign = 'left'; x.textBaseline = 'middle';
+    x.font = '700 54px ' + F; x.fillText(txt, 78, H / 2 + 2);
+    const cx = W - 62, cy = H / 2, r = 40;
+    const g = x.createRadialGradient(cx - 12, cy - 14, 4, cx, cy, r);
+    if(on){ g.addColorStop(0, '#7BEFA6'); g.addColorStop(0.55, '#34C759'); g.addColorStop(1, '#1F9D46'); }
+    else { g.addColorStop(0, '#4A58C8'); g.addColorStop(0.6, '#2B3690'); g.addColorStop(1, '#1A2263'); }
+    x.beginPath(); x.arc(cx, cy, r, 0, Math.PI * 2); x.fillStyle = g; x.fill();
+    x.strokeStyle = '#FFFFFF'; x.lineWidth = 5; x.lineCap = 'round';
+    x.beginPath(); x.moveTo(cx, cy - 20); x.lineTo(cx, cy - 2); x.stroke();
+    x.beginPath(); x.arc(cx, cy + 2, 17, -Math.PI * 0.32, Math.PI * 1.32); x.stroke();
   };
   pipDraw();
   pipVideo = document.createElement('video');
   pipVideo.muted = true; pipVideo.setAttribute('playsinline', '');
   pipVideo.srcObject = c.captureStream(1);
-  // Real 480x270 box (Safari sizes the PiP window from the element); hidden by opacity only.
-  pipVideo.style.cssText = 'position:fixed;right:0;bottom:0;width:480px;height:270px;opacity:0;pointer-events:none;z-index:-1;';
+  // Real 480x120 box (Safari sizes the PiP window from the element); hidden by opacity only.
+  pipVideo.style.cssText = 'position:fixed;right:0;bottom:0;width:480px;height:120px;opacity:0;pointer-events:none;z-index:-1;';
   document.body.appendChild(pipVideo);
   pipVideo.play().catch(()=>{});
   pipTick = setInterval(pipDraw, 1000);
@@ -3055,24 +3091,65 @@ applyV4();
 <script id="swu-v5-js">
 (function(){
 var hero = document.querySelector('.hero'), card = document.querySelector('.tool-card');
-if(!hero || !card || !('zoom' in document.body.style)) return;
+if(!hero || !card) return;
+try{ if('scrollRestoration' in history && !location.hash) history.scrollRestoration = 'manual'; }catch(_){}
+/* Wrap the tool column (everything but the donation box) so it can be scaled on its own */
+var col = document.createElement('div'); col.className = 'swu-col';
+Array.prototype.slice.call(hero.children).forEach(function(el){ if(el.id !== 'cardDonateBlock') col.appendChild(el); });
+hero.insertBefore(col, hero.firstChild);
 var raf = 0;
 function fit(){
   raf = 0;
-  hero.style.zoom = '';
+  col.style.transform = ''; col.style.marginBottom = '';
   var bar = document.getElementById('cardDonateBlock'), reserve = 14;
   if(bar && getComputedStyle(bar).position === 'fixed') reserve += bar.getBoundingClientRect().height + 10;
-  var top = hero.getBoundingClientRect().top + scrollY, bottom = card.getBoundingClientRect().bottom + scrollY;
+  var top = col.getBoundingClientRect().top + scrollY, bottom = card.getBoundingClientRect().bottom + scrollY;
   var avail = innerHeight - top - reserve, need = bottom - top;
-  var s = need > avail ? Math.max(0.5, avail / need) : 1;
-  if(s < 1) hero.style.zoom = s.toFixed(3);
+  if(need > avail){
+    var s = Math.max(0.5, avail / need);
+    col.style.transform = 'scale(' + s.toFixed(3) + ')';
+    col.style.marginBottom = (-(col.offsetHeight * (1 - s))).toFixed(0) + 'px';
+  }
 }
 function req(){ if(!raf) raf = requestAnimationFrame(fit); }
 addEventListener('resize', req);
-addEventListener('load', req);
+addEventListener('load', function(){ if(!location.hash) scrollTo(0, 0); req(); });
 if(document.fonts && document.fonts.ready) document.fonts.ready.then(req);
-new MutationObserver(req).observe(card, { attributes:true, childList:true, subtree:true, characterData:true });
+new MutationObserver(req).observe(card, { attributes:true, childList:true, subtree:true });
 req();
+})();
+</script>
+<script id="swu-v8-js">
+(function(){
+var V8 = {"en": {"tap": "Tap to keep your screen on", "on": "On — your screen won't sleep", "until": "Stays on until {t}", "stop": "Stays on until you stop it", "fs": "Fullscreen clock", "chime": "Chime when time's up"}, "es": {"tap": "Toca para mantener la pantalla encendida", "on": "Encendida — tu pantalla no se apagará", "until": "Encendida hasta las {t}", "stop": "Encendida hasta que la detengas", "fs": "Reloj a pantalla completa", "chime": "Aviso sonoro al terminar"}, "pt": {"tap": "Toque para manter a tela ligada", "on": "Ligada — sua tela não vai apagar", "until": "Ligada até {t}", "stop": "Ligada até você parar", "fs": "Relógio em tela cheia", "chime": "Aviso sonoro ao terminar"}, "fr": {"tap": "Touchez pour garder l'écran allumé", "on": "Allumé — votre écran ne se mettra pas en veille", "until": "Allumé jusqu'à {t}", "stop": "Allumé jusqu'à ce que vous l'arrêtiez", "fs": "Horloge plein écran", "chime": "Son à la fin"}, "de": {"tap": "Tippen, um den Bildschirm anzulassen", "on": "An — dein Bildschirm geht nicht aus", "until": "An bis {t}", "stop": "An, bis du stoppst", "fs": "Vollbild-Uhr", "chime": "Ton am Ende"}, "ja": {"tap": "タップして画面をオンに保つ", "on": "オン — 画面はスリープしません", "until": "{t} までオン", "stop": "停止するまでオン", "fs": "全画面時計", "chime": "終了時にチャイム"}, "ru": {"tap": "Нажмите, чтобы экран не гас", "on": "Включено — экран не погаснет", "until": "Включено до {t}", "stop": "Включено, пока вы не остановите", "fs": "Часы на весь экран", "chime": "Звук по окончании"}, "it": {"tap": "Tocca per tenere acceso lo schermo", "on": "Acceso — lo schermo non si spegnerà", "until": "Acceso fino alle {t}", "stop": "Acceso finché non lo fermi", "fs": "Orologio a schermo intero", "chime": "Suono alla fine"}, "ko": {"tap": "탭해서 화면을 켜 두세요", "on": "켜짐 — 화면이 꺼지지 않습니다", "until": "{t}까지 켜짐", "stop": "멈출 때까지 켜짐", "fs": "전체 화면 시계", "chime": "끝나면 알림음"}, "zh": {"tap": "点按让屏幕保持常亮", "on": "已开启 — 屏幕不会休眠", "until": "常亮至 {t}", "stop": "常亮直到你停止", "fs": "全屏时钟", "chime": "结束时提示音"}};
+function v(){ return V8[lang] || V8.en; }
+Object.keys(LANG).forEach(function(l){ var t = V8[l]; if(!t) return; LANG[l].cardOff = t.tap; LANG[l].cardOn = t.on; LANG[l].fsLabel = t.fs; LANG[l].audioLabel = t.chime; });
+var tb = document.getElementById('toggleBtn'), st = document.getElementById('cardStatus');
+function untilText(){
+  if(durationMs > 0 && startTime){ var d = new Date(startTime + durationMs); return v().until.replace('{t}', d.toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' })); }
+  return v().stop;
+}
+function sync(){
+  var on = tb && tb.classList.contains('on');
+  if(on && st && !/⚠️/.test(st.textContent)) st.textContent = untilText();
+  try{ if('mediaSession' in navigator) navigator.mediaSession.playbackState = on ? 'playing' : 'paused'; }catch(_){}
+}
+if(tb) new MutationObserver(sync).observe(tb, { attributes:true, attributeFilter:['class'] });
+var _sl = setLang; setLang = function(l){ _sl(l); sync(); };
+setLang(lang);
+/* The floating window's play/pause control works as its power button */
+try{ if('mediaSession' in navigator){
+  navigator.mediaSession.setActionHandler('pause', function(){ if(active) deactivate(); try{ if(document.pictureInPictureElement) document.exitPictureInPicture(); }catch(_){} track('pip_power_off'); });
+  navigator.mediaSession.setActionHandler('play', function(){ if(!active) activate(); });
+} }catch(_){}
+/* Mobile: one language pill that opens the full list */
+var nav = document.querySelector('.nav-controls');
+if(nav) nav.addEventListener('click', function(e){
+  var b = e.target.closest && e.target.closest('.pill[id^="btn"]');
+  if(!b || innerWidth > 700) return;
+  if(b.classList.contains('lang-active') && !nav.classList.contains('swu-langs-open')){ nav.classList.add('swu-langs-open'); }
+  else nav.classList.remove('swu-langs-open');
+}, true);
 })();
 </script>
 </body>
