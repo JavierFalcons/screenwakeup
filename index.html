@@ -753,6 +753,26 @@ header { background:color-mix(in srgb,var(--bg) 92%,transparent) !important; bor
 .stats-bar, .feature-card, .use-card, .faq-item, .compat-item, .why-col, .price-card { border-radius:20px !important; }
 footer { color:var(--muted); }
 </style>
+<style id="swu-help-2026">
+.help-btn { font-weight:800 !important; font-size:15px !important; min-width:36px; min-height:32px; display:inline-flex; align-items:center; justify-content:center; border-radius:999px; border:1.5px solid var(--accent) !important; color:var(--accent) !important; background:var(--surface) !important; cursor:pointer; padding:0 12px; }
+.help-btn:hover { background:var(--accent) !important; color:#fff !important; }
+.help-panel { display:none; position:fixed; inset:0; z-index:300; background:var(--bg); overflow-y:auto; -webkit-overflow-scrolling:touch; padding:0 0 80px; }
+.help-panel.open { display:block; }
+.help-top { position:sticky; top:0; z-index:2; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 20px; background:var(--bg); border-bottom:1px solid var(--border); }
+.help-top strong { color:var(--accent); font-size:17px; letter-spacing:-.02em; }
+.help-close { min-width:44px; height:44px; padding:0 16px; border-radius:999px; border:1.5px solid var(--border); background:var(--surface); color:var(--text); font:600 14px "Helvetica Neue",Helvetica,Arial,sans-serif; cursor:pointer; }
+.help-panel .reveal { opacity:1 !important; transform:none !important; }
+body.help-open { overflow:hidden; }
+.use-icon, .compat-icon, .feature-card .icon, .section .icon { display:none !important; }
+/* Feedback right under the tool */
+#secFeedback, .feedback-top { max-width:560px; margin:8px auto 40px !important; padding:22px 24px !important; border-radius:22px; background:var(--surface); border:1px solid var(--border); text-align:left; opacity:1 !important; transform:none !important; }
+#secFeedback .section-tag, .feedback-top .section-tag, #feedbackLead { display:none; }
+#secFeedback h2, .feedback-top h2 { font-size:17px !important; margin:0 0 10px !important; color:var(--accent); text-align:left; }
+#feedbackForm { display:flex !important; flex-direction:row !important; flex-wrap:wrap; gap:8px !important; }
+#feedbackForm input[name="name"] { display:none; }
+#feedbackForm textarea { flex:1 1 260px; min-height:48px !important; height:48px; resize:none; border-radius:14px !important; padding:13px 16px !important; }
+#feedbackForm button { flex:none; min-height:48px; border-radius:999px !important; padding:0 22px !important; background:var(--accent) !important; color:#fff !important; }
+</style>
 </head>
 <body>
 
@@ -769,6 +789,7 @@ footer { color:var(--muted); }
       <button class="pill" id="btnDE"  onclick="setLang('de')">DE</button>
       <button class="pill" id="btnJA"  onclick="setLang('ja')">日本語</button>
       <button class="pill" id="btnRU"  onclick="setLang('ru')">RU</button>
+      <button type="button" class="pill help-btn" id="helpBtn" aria-label="Help & FAQ" title="Help & FAQ">?</button>
       <button class="pill" id="themeBtn" onclick="toggleTheme()">☀️</button>
     </div>
   </div>
@@ -852,6 +873,22 @@ footer { color:var(--muted); }
   </div>
 </section>
 
+<!-- ═══════════════════════════════ FEEDBACK ═══════════════════════════════ -->
+<div class="section reveal feedback-section" id="secFeedback">
+  <p class="section-tag" id="feedbackTag">Feedback</p>
+  <h2 id="feedbackH2">Leave us a comment</h2>
+  <p class="lead" id="feedbackLead">Tell us what you think or how we can improve.</p>
+  <form class="feedback-form" name="feedback" method="POST" id="feedbackForm">
+    <input type="text" name="name" id="feedbackNameInput" placeholder="Your name (optional)" autocomplete="off">
+    <textarea name="message" id="feedbackMsgInput" placeholder="Your comment or suggestion..." required></textarea>
+    
+    <button type="submit" id="feedbackBtn">Send feedback →</button>
+  </form>
+  <p class="feedback-sent" id="feedbackSent">✓ Thanks for your message!</p>
+</div>
+
+<div id="help" class="help-panel" role="dialog" aria-label="Help & FAQ">
+<div class="help-top"><strong>Help & FAQ</strong><button type="button" class="help-close" id="helpClose">Close ✕</button></div>
 <!-- ═══════════════════════════════ STATS BAR ═══════════════════════════════ -->
 <div class="stats-bar">
   <div class="stat-item"><div class="stat-num">$0</div><div class="stat-label">Free forever</div></div>
@@ -975,20 +1012,8 @@ footer { color:var(--muted); }
 
 <hr class="divider">
 
-<!-- ═══════════════════════════════ FEEDBACK ═══════════════════════════════ -->
-<div class="section reveal feedback-section" id="secFeedback">
-  <p class="section-tag" id="feedbackTag">Feedback</p>
-  <h2 id="feedbackH2">Leave us a comment</h2>
-  <p class="lead" id="feedbackLead">Tell us what you think or how we can improve.</p>
-  <form class="feedback-form" name="feedback" method="POST" id="feedbackForm">
-    <input type="text" name="name" id="feedbackNameInput" placeholder="Your name (optional)" autocomplete="off">
-    <textarea name="message" id="feedbackMsgInput" placeholder="Your comment or suggestion..." required></textarea>
-    
-    <button type="submit" id="feedbackBtn">Send feedback →</button>
-  </form>
-  <p class="feedback-sent" id="feedbackSent">✓ Thanks for your message!</p>
-</div>
 
+</div>
 </main>
 
 <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
@@ -2432,5 +2457,12 @@ document.querySelectorAll('#cardDonateBlock .kofi-btn').forEach(function(el){
 </div>
 <script>(function(){var w=document.getElementById("floatKofi");if(!w)return;var a=w.querySelector(".float-kofi");if(a)a.addEventListener("click",function(){if(window.gtag)gtag("event","donate_click",{placement:"float"});});var hidden=+(localStorage.getItem("ka-float-hide")||0)>Date.now();window.__showFloatKofi=function(){if(!hidden)w.style.display="";};var c=document.getElementById("floatKofiClose");if(c)c.addEventListener("click",function(e){e.preventDefault();w.style.display="none";hidden=true;localStorage.setItem("ka-float-hide",String(Date.now()+7*864e5));});})();</script>
 
+<script>(function(){var p=document.getElementById('help'),b=document.getElementById('helpBtn'),c=document.getElementById('helpClose');if(!p||!b)return;
+function op(){p.classList.add('open');document.body.classList.add('help-open');p.scrollTop=0;if(window.gtag)gtag('event','help_open');}
+function cl(){p.classList.remove('open');document.body.classList.remove('help-open');}
+b.addEventListener('click',op);if(c)c.addEventListener('click',cl);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')cl();});
+p.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(a&&!p.querySelector(a.getAttribute('href')))cl();});
+if(/^#(faq|help|sec)/i.test(location.hash))op();})();</script>
 </body>
 </html>
