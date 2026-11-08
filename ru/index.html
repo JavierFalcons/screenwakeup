@@ -274,6 +274,39 @@ body.help-open { overflow:hidden; }
 #feedbackForm textarea { flex:1 1 260px; min-height:48px !important; height:48px; resize:none; border-radius:14px !important; padding:13px 16px !important; }
 #feedbackForm button { flex:none; min-height:48px; border-radius:999px !important; padding:0 22px !important; background:var(--accent) !important; color:#fff !important; }
 </style>
+<style id="swu-fit-2026">
+/* Fit the whole tool card in the first screen (desktop Safari + iPhone) */
+.hero { padding:26px 20px 22px !important; }
+.hero-tag { margin-bottom:10px !important; }
+.hero h1 { font-size:clamp(28px,3.6vw,44px) !important; line-height:1.08 !important; margin-bottom:8px !important; }
+.hero-sub, .hero .lead { margin:0 auto 20px !important; font-size:15px !important; line-height:1.5 !important; }
+.tool-card { padding:22px 24px 20px !important; }
+.pulse-wrap { display:none !important; }
+#cardTitle { margin-bottom:2px !important; font-size:19px !important; }
+#cardStatus { margin-bottom:12px !important; font-size:14px !important; }
+.dur-row { margin-bottom:8px !important; }
+.custom-row { margin:0 auto 2px !important; }
+#toggleBtn { width:164px !important; height:164px !important; margin:16px auto 4px !important; font-size:14px !important; gap:8px !important; }
+#toggleBtn:not(.on) { box-shadow:0 0 0 10px var(--surface2),inset 0 2px 0 rgba(255,255,255,.25),0 14px 32px rgba(30,42,120,.38) !important; }
+#toggleBtn::before { width:48px !important; height:48px !important; }
+#pipBtn { margin:18px auto 4px !important; min-height:48px !important; }
+.pip-caption { margin:0 auto 2px !important; font-size:12.5px !important; line-height:1.4 !important; }
+.tool-extras { margin-top:10px !important; }
+@media (max-width:600px) {
+  .hero { padding:14px 14px 14px !important; }
+  .hero-tag { display:none !important; }
+  .hero h1 { font-size:27px !important; }
+  .hero-sub, .hero .lead { font-size:14px !important; margin-bottom:12px !important; }
+  .tool-card { padding:16px 14px 16px !important; border-radius:22px !important; }
+  #cardTitle { font-size:17px !important; }
+  #cardStatus { display:none !important; }
+  .dur-btn { padding:8px 9px !important; min-height:38px !important; }
+  #toggleBtn { width:140px !important; height:140px !important; margin-top:14px !important; font-size:13px !important; }
+  #toggleBtn::before { width:42px !important; height:42px !important; }
+  #pipBtn { margin-top:16px !important; }
+  .pip-caption { display:none !important; }
+}
+</style>
 </head>
 <body>
 <header>
