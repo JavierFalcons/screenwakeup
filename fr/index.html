@@ -9,9 +9,9 @@
   <meta name="author" content="ScreenWakeUp">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://screenwakeup.com/fr/">
-  <link rel="icon" href="/favicon.ico?v=2" sizes="any">
-  <link rel="icon" href="/icon-192.png?v=2" type="image/png" sizes="192x192">
-  <link rel="apple-touch-icon" href="https://screenwakeup.com/apple-touch-icon.png?v=2">
+  <link rel="icon" href="/favicon.ico?v=3" sizes="any">
+  <link rel="icon" href="/icon-192.png?v=3" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="https://screenwakeup.com/apple-touch-icon.png?v=3">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#1E2A78">
 
@@ -574,14 +574,14 @@
   --accent:#1E2A78; --accent2:#141C55; --danger:#C2410C;
   --text:#1B1F3B; --muted:#4A4F6A; --border:rgba(27,31,59,.10);
   --glow:0 0 0 transparent; --card-shadow:0 1px 2px rgba(27,31,59,.06),0 18px 44px rgba(27,31,59,.08);
-  --awake:#0E9F62; --awake-text:#0B7A4B; --support:#FFB547; --r:20px;
+  --awake:#34C759; --awake-text:#1B7F3A; --support:#FFB547; --r:20px;
 }
 [data-theme="dark"] {
   --bg:#0F1330; --bg2:#141936; --surface:#1A2047; --surface2:#232A58;
   --accent:#8C9BFF; --accent2:#B3BDFF; --danger:#FF8A65;
   --text:#EEF0FA; --muted:#AEB4D4; --border:rgba(255,255,255,.10);
   --glow:0 0 0 transparent; --card-shadow:0 18px 44px rgba(0,0,0,.45);
-  --awake:#3DD68F; --awake-text:#7FE3B5; --support:#FFB547; --r:20px;
+  --awake:#7BEFA6; --awake-text:#7FE3B5; --support:#FFB547; --r:20px;
 }
 body { font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; }
 h1,h2,h3 { letter-spacing:-.03em; }
@@ -628,8 +628,8 @@ header { background:color-mix(in srgb,var(--bg) 92%,transparent) !important; bor
 #toggleBtn:hover { opacity:1 !important; transform:translateY(-1px); }
 #toggleBtn:active { transform:scale(.97); }
 #toggleBtn.on {
-  background:radial-gradient(circle at 35% 28%,#3DD68F 0%,#0E9F62 55%,#087347 100%) !important;
-  box-shadow:0 0 0 14px rgba(14,159,98,.14),0 0 70px rgba(14,159,98,.35),inset 0 2px 0 rgba(255,255,255,.35) !important;
+  background:radial-gradient(circle at 35% 28%,#7BEFA6 0%,#34C759 55%,#1F9D46 100%) !important;
+  box-shadow:0 0 0 14px rgba(52,199,89,.14),0 0 70px rgba(52,199,89,.35),inset 0 2px 0 rgba(255,255,255,.35) !important;
 }
 
 /* Floating window: promoted right under the power button */
@@ -652,7 +652,7 @@ header { background:color-mix(in srgb,var(--bg) 92%,transparent) !important; bor
 .tool-extra-btn { border-radius:999px !important; background:transparent !important; border:1px solid var(--border) !important; color:var(--muted) !important; font-size:13px !important; font-weight:600 !important; min-height:40px; padding:0 14px !important; }
 .tool-extra-btn:hover, .tool-extra-btn.active { color:var(--accent) !important; border-color:var(--accent) !important; }
 .custom-row input, .custom-row button { border-radius:999px !important; }
-#sessionClock { background:rgba(14,159,98,.10) !important; border-color:rgba(14,159,98,.28) !important; color:var(--awake-text) !important; }
+#sessionClock { background:rgba(52,199,89,.10) !important; border-color:rgba(52,199,89,.28) !important; color:var(--awake-text) !important; }
 .prog-bar { background:var(--awake) !important; }
 #cardHint { color:var(--muted); }
 
@@ -783,13 +783,56 @@ body.help-open { overflow:hidden; }
 #toggleBtn { font-size:clamp(11px, 1.9vh, 14px) !important; }
 @media (min-width:1360px) { .card-donate { max-height:calc(100vh - 48px); overflow:auto; } }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&text=screnwakup.&display=swap" rel="stylesheet">
+<style id="swu-v4">
+.logo.swu-wm, a.swu-wm { font-family:Unbounded,"Helvetica Neue",Helvetica,Arial,sans-serif !important; font-weight:700 !important; font-size:20px !important; letter-spacing:-0.03em !important; line-height:1 !important; color:#1E2A78 !important; text-decoration:none !important; white-space:nowrap; }
+.swu-wm b { font-weight:500; color:#6B73B0; }
+.swu-wm i { font-style:normal; color:#FFB547; }
+[data-theme="dark"] .swu-wm { color:#C9CFFF !important; }
+[data-theme="dark"] .swu-wm b { color:#8C93C9; }
+
+/* Option I: power button with icon only, label below */
+#toggleBtn { font-size:0 !important; gap:0 !important; }
+#toggleBtn::before { width:64px !important; height:64px !important; }
+.hero-tag { display:none !important; }
+#cardTitle { order:0; margin:14px 0 2px !important; font-size:20px !important; font-weight:700 !important; letter-spacing:-0.02em; color:var(--accent); }
+#toggleBtn.on ~ #cardTitle { color:var(--awake-text) !important; }
+#cardStatus { margin:0 0 14px !important; font-size:14px !important; color:var(--muted) !important; }
+body.swu-on #heroH1, body.swu-on .hero h1 { color:var(--awake-text) !important; }
+.tool-card .pulse-wrap { display:none !important; }
+/* Mode tabs */
+.swu-tabs { display:grid; grid-template-columns:1fr 1fr; gap:4px; padding:4px; margin:0 auto 18px; max-width:380px; border-radius:999px; background:var(--surface2); }
+.swu-tabs button { min-height:42px; border:none; border-radius:999px; background:transparent; color:var(--muted); font:700 14px "Helvetica Neue",Helvetica,Arial,sans-serif; cursor:pointer; padding:0 10px; }
+.swu-tabs button[aria-selected="true"] { background:var(--accent); color:#fff; }
+[data-theme="dark"] .swu-tabs button[aria-selected="true"] { color:#0F1330; }
+body.swu-focus .dur-row, body.swu-focus .custom-row, #pomodoroBtn { display:none !important; }
+/* Floating window card */
+.pip-card { display:flex; align-items:center; gap:14px; flex-wrap:wrap; max-width:560px; margin:16px auto 6px; padding:14px 16px; border-radius:20px; background:var(--surface); border:1px solid var(--border); text-align:left; box-sizing:border-box; }
+body.swu-on .pip-card { border:2px solid var(--accent); box-shadow:0 10px 28px rgba(30,42,120,.12); }
+.pip-card .pip-ic { width:44px; height:44px; flex:none; border-radius:12px; background:rgba(30,42,120,.08); position:relative; }
+.pip-card .pip-ic::after { content:""; position:absolute; inset:11px; background:var(--accent);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='16' rx='3'/%3E%3Crect x='11.5' y='11.5' width='7' height='6' rx='1.5' fill='black'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='16' rx='3'/%3E%3Crect x='11.5' y='11.5' width='7' height='6' rx='1.5' fill='black'/%3E%3C/svg%3E") center/contain no-repeat; }
+.pip-card .pip-txt { flex:1 1 220px; min-width:0; display:flex; flex-direction:column; gap:2px; }
+.pip-card .pip-txt strong { font-size:15px; color:var(--text); }
+.pip-card #pipCaption { display:block !important; margin:0 !important; max-width:none !important; font-size:13px !important; line-height:1.4 !important; color:var(--muted) !important; text-align:left; }
+.pip-card .pip-act { display:flex; align-items:center; gap:12px; flex:none; flex-wrap:wrap; }
+.pip-card .pip-auto { display:flex; align-items:center; gap:8px; min-height:40px; font-size:13px; font-weight:600; color:var(--accent); cursor:pointer; }
+.pip-card .pip-auto input { width:20px; height:20px; accent-color:var(--accent); margin:0; }
+.pip-card #pipBtn { width:auto !important; max-width:none !important; min-height:40px !important; margin:0 !important; padding:0 16px !important; font-size:13px !important; border-width:1.5px !important; }
+.pip-card #pipBtn::before { width:16px !important; height:16px !important; }
+@media (max-height:780px) { .pip-card #pipCaption { display:none !important; } .swu-tabs { margin-bottom:10px; } }
+@media (max-width:520px) { .pip-card .pip-act { width:100%; justify-content:space-between; } }
+/* Donation card sits top-right on wide screens */
+@media (min-width:1360px) { .card-donate { top:88px !important; bottom:auto !important; } }
+</style>
 </head>
 <body>
 
 <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
 <header>
   <div class="topbar-inner">
-    <a href="https://screenwakeup.com" class="logo">ScreenWakeUp <em>free tool</em></a>
+    <a href="https://screenwakeup.com" class="logo swu-wm" aria-label="ScreenWakeUp"><b>screen</b>wakeup<i>.</i></a>
     <div class="nav-controls">
       <!-- Language switcher -->
       <button class="pill" id="btnEN"  onclick="setLang('en')">EN</button>
@@ -814,6 +857,7 @@ body.help-open { overflow:hidden; }
 <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
 <section class="hero" aria-label="Tool">
   <div class="hero-tag" id="heroTag">Free · No download · No account</div>
+  <div class="swu-tabs" role="tablist" aria-label="Mode"><button type="button" role="tab" id="tabAwake" aria-selected="true">Garder allumé</button><button type="button" role="tab" id="tabFocus" aria-selected="false">Minuteur de concentration</button></div>
   <h1 id="heroH1">Keep Your <span>Screen Awake</span><br>Instantly</h1>
   <p class="hero-sub" id="heroSub">Prevent your screen from sleeping or locking. Works on Windows, Mac, iPhone and Android — no install needed.</p>
 
@@ -822,6 +866,7 @@ body.help-open { overflow:hidden; }
       <div class="dot" id="dot"></div>
       <div class="ring"></div>
     </div>
+    <button id="toggleBtn">Garder l'écran actif</button>
     <p id="cardTitle">Screen sleeping</p>
     <p  id="cardStatus">Press the button to keep your screen on</p>
 
@@ -833,9 +878,7 @@ body.help-open { overflow:hidden; }
       <button class="dur-btn"     data-min="240">4 h</button>
     </div>
 
-    <button id="toggleBtn">Garder l'écran actif</button>
-      <button id="pipBtn" onclick="togglePiP()" title="Ouvre une petite horloge toujours visible qui garde l'écran allumé pendant que vous travaillez dans d'autres apps"><span id="pipLabel">Mini-fenêtre flottante</span></button>
-    <p class="pip-caption" id="pipCaption">Ouvre une petite horloge toujours visible qui garde l'écran allumé pendant que vous travaillez dans d'autres apps</p>
+    <div class="pip-card" id="pipCard"><span class="pip-ic" aria-hidden="true"></span><div class="pip-txt"><strong id="pipCardTitle">Fenêtre flottante (recommandée)</strong><span class="pip-caption" id="pipCaption">Ouvre une petite horloge toujours visible qui garde l'écran allumé pendant que vous travaillez dans d'autres apps</span></div><div class="pip-act"><label class="pip-auto"><input type="checkbox" id="pipAuto" checked><span id="pipAutoTxt">Ouvrir automatiquement</span></label><button id="pipBtn" onclick="togglePiP()" title="Ouvre une petite horloge toujours visible qui garde l'écran allumé pendant que vous travaillez dans d'autres apps"><span id="pipLabel">Mini-fenêtre flottante</span></button></div></div>
 
     <div class="tool-extras">
     </div>
@@ -1778,15 +1821,15 @@ function pipWarmup(){
   const c = document.createElement('canvas'); c.width = 480; c.height = 270;
   const x = c.getContext('2d');
   pipDraw = () => {
-    x.fillStyle = '#11141f'; x.fillRect(0, 0, 480, 270);
+    x.fillStyle = '#1E2A78'; x.fillRect(0, 0, 480, 270);
     x.textAlign = 'center';
-    x.fillStyle = '#5ee0c0';
+    x.fillStyle = '#FFFFFF';
     const t = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', second:'2-digit'});
     x.font = '700 84px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
     const tw = x.measureText(t).width;
     if(tw > 440) x.font = '700 ' + Math.max(28, Math.floor(84 * 440 / tw)) + 'px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
     x.fillText(t, 240, 132);
-    x.fillStyle = '#8892a4';
+    x.fillStyle = '#B9BCE6';
     x.font = '600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
     x.fillText('screenwakeup.com', 240, 208);
   };
@@ -2078,5 +2121,60 @@ b.addEventListener('click',op);if(c)c.addEventListener('click',cl);
 document.addEventListener('keydown',function(e){if(e.key==='Escape')cl();});
 p.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(a&&!p.querySelector(a.getAttribute('href')))cl();});
 if(/^#(faq|help|sec)/i.test(location.hash))op();window.addEventListener('hashchange',function(){if(/^#(faq|help|sec)/i.test(location.hash))op();});})();</script>
+<script id="swu-v4-js">
+(function(){
+var V4 = {"en": {"tabAwake": "Keep awake", "tabFocus": "Focus timer", "pipCardTitle": "Floating window (recommended)", "pipAuto": "Open automatically", "allSet": "You're all set."}, "es": {"tabAwake": "Mantener activa", "tabFocus": "Temporizador de enfoque", "pipCardTitle": "Ventana flotante (recomendada)", "pipAuto": "Abrir automáticamente", "allSet": "Todo listo."}, "pt": {"tabAwake": "Manter ativa", "tabFocus": "Timer de foco", "pipCardTitle": "Janela flutuante (recomendada)", "pipAuto": "Abrir automaticamente", "allSet": "Tudo pronto."}, "fr": {"tabAwake": "Garder allumé", "tabFocus": "Minuteur de concentration", "pipCardTitle": "Fenêtre flottante (recommandée)", "pipAuto": "Ouvrir automatiquement", "allSet": "C'est parti."}, "de": {"tabAwake": "Wach halten", "tabFocus": "Fokus-Timer", "pipCardTitle": "Schwebendes Fenster (empfohlen)", "pipAuto": "Automatisch öffnen", "allSet": "Alles bereit."}, "ja": {"tabAwake": "スリープ防止", "tabFocus": "集中タイマー", "pipCardTitle": "フローティングウィンドウ（おすすめ）", "pipAuto": "自動で開く", "allSet": "準備完了。"}, "ru": {"tabAwake": "Не гасить экран", "tabFocus": "Таймер фокуса", "pipCardTitle": "Плавающее окно (рекомендуем)", "pipAuto": "Открывать автоматически", "allSet": "Всё готово."}, "it": {"tabAwake": "Schermo acceso", "tabFocus": "Timer focus", "pipCardTitle": "Finestra fluttuante (consigliata)", "pipAuto": "Apri automaticamente", "allSet": "Tutto pronto."}, "ko": {"tabAwake": "화면 켜두기", "tabFocus": "집중 타이머", "pipCardTitle": "플로팅 창(추천)", "pipAuto": "자동으로 열기", "allSet": "준비 완료."}, "zh": {"tabAwake": "保持常亮", "tabFocus": "专注计时", "pipCardTitle": "悬浮小窗（推荐）", "pipAuto": "自动打开", "allSet": "一切就绪。"}};
+var tb = document.getElementById('toggleBtn'); if(!tb) return;
+var h1 = document.getElementById('heroH1');
+var tA = document.getElementById('tabAwake'), tF = document.getElementById('tabFocus');
+var auto = document.getElementById('pipAuto'), card = document.getElementById('pipCard');
+var mode = 'awake', autoOpened = false;
+function v(){ return V4[lang] || V4.en; }
+function applyV4(){
+  var t = v();
+  if(tA) tA.textContent = t.tabAwake; if(tF) tF.textContent = t.tabFocus;
+  var ct = document.getElementById('pipCardTitle'); if(ct) ct.textContent = t.pipCardTitle;
+  var at = document.getElementById('pipAutoTxt'); if(at) at.textContent = t.pipAuto;
+  syncOn();
+}
+function syncOn(){
+  var on = tb.classList.contains('on');
+  document.body.classList.toggle('swu-on', on);
+  if(h1){ if(on) h1.textContent = v().allSet; else if(LANG[lang]) h1.innerHTML = LANG[lang].heroH1; }
+  if(!on && autoOpened){ autoOpened = false; try{ if(document.pictureInPictureElement) document.exitPictureInPicture(); }catch(_){} }
+}
+new MutationObserver(syncOn).observe(tb, { attributes:true, attributeFilter:['class'] });
+var _sl = setLang; setLang = function(l){ _sl(l); applyV4(); };
+function setMode(m){
+  if(m === mode) return;
+  if(typeof pomActive !== 'undefined' && pomActive) stopPomodoro();
+  if(active) deactivate();
+  mode = m;
+  document.body.classList.toggle('swu-focus', m === 'focus');
+  if(tA) tA.setAttribute('aria-selected', m === 'awake'); if(tF) tF.setAttribute('aria-selected', m === 'focus');
+  track('mode_' + m);
+}
+if(tA) tA.addEventListener('click', function(){ setMode('awake'); });
+if(tF) tF.addEventListener('click', function(){ setMode('focus'); });
+var pipOk = typeof pipSupported === 'function' && pipSupported();
+if(card && !pipOk) card.style.display = 'none';
+if(auto){
+  try{ var s = localStorage.getItem('swu-pip-auto'); if(s !== null) auto.checked = s === '1'; }catch(_){}
+  auto.addEventListener('change', function(){ try{ localStorage.setItem('swu-pip-auto', auto.checked ? '1' : '0'); }catch(_){} track('pip_auto_' + (auto.checked ? 'on' : 'off')); });
+}
+if(pipOk) ['pointerdown','mouseenter','focus','touchstart'].forEach(function(ev){
+  tb.addEventListener(ev, function(){ if(auto && auto.checked && !active) pipWarmup(); }, { passive:true });
+});
+tb.addEventListener('click', function(e){
+  var turningOn = !active;
+  if(turningOn && pipOk && auto && auto.checked && !document.pictureInPictureElement){ autoOpened = true; try{ togglePiP(); }catch(_){} track('pip_auto_open'); }
+  if(mode === 'focus'){
+    e.stopImmediatePropagation();
+    if(pomActive){ stopPomodoro(); if(active) deactivate(); } else startPomodoro();
+  }
+}, true);
+applyV4();
+})();
+</script>
 </body>
 </html>

@@ -183,8 +183,9 @@ def render(slug, lang):
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="{url_for(slug, lang)}">
 {hreflang_head(slug)}
-  <link rel="icon" href="https://screenwakeup.com/favicon.ico" type="image/x-icon">
-  <meta name="theme-color" content="#5ee0c0">
+  <link rel="icon" href="/favicon.ico?v=3" sizes="any">
+  <link rel="icon" href="/icon-192.png?v=3" type="image/png" sizes="192x192">
+  <meta name="theme-color" content="#1E2A78">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="{url_for(slug, lang)}">
@@ -203,10 +204,18 @@ def render(slug, lang):
 {STYLE}
 {DONATE_CSS}
   </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&text=screnwakup.&display=swap" rel="stylesheet">
+  <style id="swu-v4">
+.logo.swu-wm, a.swu-wm {{ font-family:Unbounded,"Helvetica Neue",Helvetica,Arial,sans-serif !important; font-weight:700 !important; font-size:20px !important; letter-spacing:-0.03em !important; line-height:1 !important; color:#1E2A78 !important; text-decoration:none !important; white-space:nowrap; }}
+.swu-wm b {{ font-weight:500; color:#6B73B0; }}
+.swu-wm i {{ font-style:normal; color:#FFB547; }}
+[data-theme="dark"] .swu-wm {{ color:#C9CFFF !important; }}
+[data-theme="dark"] .swu-wm b {{ color:#8C93C9; }}
+</style>
 </head>
 <body>
 <header>
-  <a href="{home}" class="logo">ScreenWakeUp <em>{ui['free']}</em></a>
+  <a href="{home}" class="logo swu-wm" aria-label="ScreenWakeUp"><b>screen</b>wakeup<i>.</i></a>
   <nav>
     <a class="nav-kofi" href="{support_url}">☕ {ui['support']}</a>
 {nav}  </nav>

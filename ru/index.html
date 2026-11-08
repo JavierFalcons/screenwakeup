@@ -18,9 +18,9 @@
   <link rel="alternate" hreflang="ko" href="https://screenwakeup.com/ko/">
   <link rel="alternate" hreflang="zh" href="https://screenwakeup.com/zh/">
   <link rel="alternate" hreflang="x-default" href="https://screenwakeup.com/">
-  <link rel="icon" href="/favicon.ico?v=2" sizes="any">
-  <link rel="icon" href="/icon-192.png?v=2" type="image/png" sizes="192x192">
-  <link rel="apple-touch-icon" href="https://screenwakeup.com/apple-touch-icon.png?v=2">
+  <link rel="icon" href="/favicon.ico?v=3" sizes="any">
+  <link rel="icon" href="/icon-192.png?v=3" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="https://screenwakeup.com/apple-touch-icon.png?v=3">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#1E2A78">
   <meta property="og:title" content="Держать экран активным бесплатно — ScreenWakeUp">
@@ -146,14 +146,14 @@
   --accent:#1E2A78; --accent2:#141C55; --danger:#C2410C;
   --text:#1B1F3B; --muted:#4A4F6A; --border:rgba(27,31,59,.10);
   --glow:0 0 0 transparent; --card-shadow:0 1px 2px rgba(27,31,59,.06),0 18px 44px rgba(27,31,59,.08);
-  --awake:#0E9F62; --awake-text:#0B7A4B; --support:#FFB547; --r:20px;
+  --awake:#34C759; --awake-text:#1B7F3A; --support:#FFB547; --r:20px;
 }
 [data-theme="dark"] {
   --bg:#0F1330; --bg2:#141936; --surface:#1A2047; --surface2:#232A58;
   --accent:#8C9BFF; --accent2:#B3BDFF; --danger:#FF8A65;
   --text:#EEF0FA; --muted:#AEB4D4; --border:rgba(255,255,255,.10);
   --glow:0 0 0 transparent; --card-shadow:0 18px 44px rgba(0,0,0,.45);
-  --awake:#3DD68F; --awake-text:#7FE3B5; --support:#FFB547; --r:20px;
+  --awake:#7BEFA6; --awake-text:#7FE3B5; --support:#FFB547; --r:20px;
 }
 body { font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; }
 h1,h2,h3 { letter-spacing:-.03em; }
@@ -200,8 +200,8 @@ header { background:color-mix(in srgb,var(--bg) 92%,transparent) !important; bor
 #toggleBtn:hover { opacity:1 !important; transform:translateY(-1px); }
 #toggleBtn:active { transform:scale(.97); }
 #toggleBtn.on {
-  background:radial-gradient(circle at 35% 28%,#3DD68F 0%,#0E9F62 55%,#087347 100%) !important;
-  box-shadow:0 0 0 14px rgba(14,159,98,.14),0 0 70px rgba(14,159,98,.35),inset 0 2px 0 rgba(255,255,255,.35) !important;
+  background:radial-gradient(circle at 35% 28%,#7BEFA6 0%,#34C759 55%,#1F9D46 100%) !important;
+  box-shadow:0 0 0 14px rgba(52,199,89,.14),0 0 70px rgba(52,199,89,.35),inset 0 2px 0 rgba(255,255,255,.35) !important;
 }
 
 /* Floating window: promoted right under the power button */
@@ -224,7 +224,7 @@ header { background:color-mix(in srgb,var(--bg) 92%,transparent) !important; bor
 .tool-extra-btn { border-radius:999px !important; background:transparent !important; border:1px solid var(--border) !important; color:var(--muted) !important; font-size:13px !important; font-weight:600 !important; min-height:40px; padding:0 14px !important; }
 .tool-extra-btn:hover, .tool-extra-btn.active { color:var(--accent) !important; border-color:var(--accent) !important; }
 .custom-row input, .custom-row button { border-radius:999px !important; }
-#sessionClock { background:rgba(14,159,98,.10) !important; border-color:rgba(14,159,98,.28) !important; color:var(--awake-text) !important; }
+#sessionClock { background:rgba(52,199,89,.10) !important; border-color:rgba(52,199,89,.28) !important; color:var(--awake-text) !important; }
 .prog-bar { background:var(--awake) !important; }
 #cardHint { color:var(--muted); }
 
@@ -356,10 +356,25 @@ body.help-open { overflow:hidden; }
 #toggleBtn { font-size:clamp(11px, 1.9vh, 14px) !important; }
 @media (min-width:1360px) { .card-donate { max-height:calc(100vh - 48px); overflow:auto; } }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&text=screnwakup.&display=swap" rel="stylesheet">
+<style id="swu-v4">
+.logo.swu-wm, a.swu-wm { font-family:Unbounded,"Helvetica Neue",Helvetica,Arial,sans-serif !important; font-weight:700 !important; font-size:20px !important; letter-spacing:-0.03em !important; line-height:1 !important; color:#1E2A78 !important; text-decoration:none !important; white-space:nowrap; }
+.swu-wm b { font-weight:500; color:#6B73B0; }
+.swu-wm i { font-style:normal; color:#FFB547; }
+[data-theme="dark"] .swu-wm { color:#C9CFFF !important; }
+[data-theme="dark"] .swu-wm b { color:#8C93C9; }
+
+#toggleBtn { font-size:0 !important; gap:0 !important; }
+#toggleBtn::before { width:64px !important; height:64px !important; }
+#cardTitle { margin:14px 0 2px !important; font-size:20px !important; font-weight:700 !important; color:var(--accent); }
+#toggleBtn.on ~ #cardTitle { color:var(--awake-text) !important; }
+#cardStatus { margin:0 0 14px !important; }
+.tool-card .pulse-wrap { display:none !important; }
+</style>
 </head>
 <body>
 <header>
-  <a href="https://screenwakeup.com" class="logo">ScreenWakeUp <em>бесплатно</em></a>
+  <a href="https://screenwakeup.com" class="logo swu-wm" aria-label="ScreenWakeUp"><b>screen</b>wakeup<i>.</i></a>
   <nav>
     <a href="https://screenwakeup.com">EN</a>
     <a href="/es/">ES</a>
@@ -381,6 +396,7 @@ body.help-open { overflow:hidden; }
   <p class="lead">Предотвратите переход экрана в спящий режим или блокировку. Работает на Windows, Mac, iPhone и Android — без установки. Устраняет главную причину статуса «Отсутствую» в Teams, Slack и Zoom — блокировку и сон экрана.</p>
   <div class="tool-card">
     <div class="pulse-wrap"><div class="dot" id="dot"></div><div class="ring"></div></div>
+    <button id="toggleBtn">Держать экран активным</button>
     <p id="cardTitle">Экран спит</p>
     <p id="cardStatus">Нажмите кнопку, чтобы держать экран включённым</p>
     <div class="dur-row">
@@ -390,7 +406,6 @@ body.help-open { overflow:hidden; }
       <button class="dur-btn" data-min="120">2 ч</button>
       <button class="dur-btn" data-min="240">4 ч</button>
     </div>
-    <button id="toggleBtn">Держать экран активным</button>
     <button id="pipBtn" title="Открывает небольшие часы поверх всех окон, которые не дают экрану погаснуть, пока вы работаете в других приложениях">Плавающее мини-окно</button>
     <div class="timer-txt" id="timerTxt"></div>
     <div class="prog-wrap" id="progWrap"><div class="prog-bar" id="progBar"></div></div>
@@ -552,7 +567,7 @@ function pipCleanup(){clearInterval(pipTick);if(pipVideo){pipVideo.pause();pipVi
 function pipWarmup(){
 if(pipVideo)return;
 var c=document.createElement('canvas');c.width=480;c.height=270;var x=c.getContext('2d');
-pipDraw=function(){x.fillStyle='#11141f';x.fillRect(0,0,480,270);x.textAlign='center';x.fillStyle='#5ee0c0';var tt=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',second:'2-digit'});x.font='700 84px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';var tw=x.measureText(tt).width;if(tw>440)x.font='700 '+Math.max(28,Math.floor(84*440/tw))+'px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';x.fillText(tt,240,132);x.fillStyle='#8892a4';x.font='600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';x.fillText('screenwakeup.com',240,208);};
+pipDraw=function(){x.fillStyle='#1E2A78';x.fillRect(0,0,480,270);x.textAlign='center';x.fillStyle='#FFFFFF';var tt=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',second:'2-digit'});x.font='700 84px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';var tw=x.measureText(tt).width;if(tw>440)x.font='700 '+Math.max(28,Math.floor(84*440/tw))+'px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';x.fillText(tt,240,132);x.fillStyle='#B9BCE6';x.font='600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';x.fillText('screenwakeup.com',240,208);};
 pipDraw();
 pipVideo=document.createElement('video');pipVideo.muted=true;pipVideo.setAttribute('playsinline','');pipVideo.srcObject=c.captureStream(1);pipVideo.style.cssText='position:fixed;right:0;bottom:0;width:480px;height:270px;opacity:0;pointer-events:none;z-index:-1;';
 document.body.appendChild(pipVideo);
