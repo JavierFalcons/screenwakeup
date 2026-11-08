@@ -512,6 +512,6 @@ function cl(){p.classList.remove('open');document.body.classList.remove('help-op
 b.addEventListener('click',op);if(c)c.addEventListener('click',cl);
 document.addEventListener('keydown',function(e){if(e.key==='Escape')cl();});
 p.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(a&&!p.querySelector(a.getAttribute('href')))cl();});
-if(/^#(faq|help|sec)/i.test(location.hash))op();})();</script>
+if(/^#(faq|help|sec)/i.test(location.hash))op();window.addEventListener('hashchange',function(){if(/^#(faq|help|sec)/i.test(location.hash))op();});})();</script>
 </body>
 </html>
