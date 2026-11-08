@@ -183,8 +183,8 @@ def render(slug, lang):
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="{url_for(slug, lang)}">
 {hreflang_head(slug)}
-  <link rel="icon" href="/favicon.ico?v=3" sizes="any">
-  <link rel="icon" href="/icon-192.png?v=3" type="image/png" sizes="192x192">
+  <link rel="icon" href="/favicon.ico?v=4" sizes="any">
+  <link rel="icon" href="/icon-192.png?v=4" type="image/png" sizes="192x192">
   <meta name="theme-color" content="#1E2A78">
 
   <meta property="og:type" content="article">
