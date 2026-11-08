@@ -1931,7 +1931,7 @@ function pipWarmup(){
   pipVideo.muted = true; pipVideo.setAttribute('playsinline', '');
   pipVideo.srcObject = c.captureStream(1);
   // Real 480x120 box (Safari sizes the PiP window from the element); hidden by opacity only.
-  pipVideo.style.cssText = 'position:fixed;right:0;bottom:0;width:480px;height:120px;opacity:0;pointer-events:none;z-index:-1;';
+  pipVideo.style.cssText = 'position:fixed;right:0;bottom:0;width:240px;height:60px;opacity:0;pointer-events:none;z-index:-1;';
   document.body.appendChild(pipVideo);
   pipVideo.play().catch(()=>{});
   pipTick = setInterval(pipDraw, 1000);
@@ -2260,7 +2260,7 @@ if(pipOk) ['pointerdown','mouseenter','focus','touchstart'].forEach(function(ev)
 });
 tb.addEventListener('click', function(e){
   var turningOn = !active;
-  if(turningOn && pipOk && auto && auto.checked && !document.pictureInPictureElement){ autoOpened = true; try{ togglePiP(); }catch(_){} track('pip_auto_open'); }
+  if(turningOn && pipOk && auto && auto.checked && !document.pictureInPictureElement && !(window.documentPictureInPicture && documentPictureInPicture.window)){ autoOpened = true; try{ togglePiP(); }catch(_){} track('pip_auto_open'); }
   if(mode === 'focus'){
     e.stopImmediatePropagation();
     if(pomActive){ stopPomodoro(); if(active) deactivate(); } else startPomodoro();
@@ -2331,6 +2331,52 @@ if(nav) nav.addEventListener('click', function(e){
   if(b.classList.contains('lang-active') && !nav.classList.contains('swu-langs-open')){ nav.classList.add('swu-langs-open'); }
   else nav.classList.remove('swu-langs-open');
 }, true);
+})();
+</script>
+<script id="swu-v9-js">
+/* Small ChatGPT-style floating bar via Document Picture-in-Picture (Chrome/Edge).
+   Safari and Firefox keep the video-based mini window. */
+(function(){
+if(!('documentPictureInPicture' in window)) return;
+var orig = togglePiP, dpw = null, tick = null, wl = null;
+var PWR = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M12 3.5v8"/><path d="M6.6 6.9a7.6 7.6 0 1 0 10.8 0"/></svg>';
+var CSS = 'html,body{margin:0;height:100%;background:#1E2A78;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;-webkit-user-select:none;user-select:none}'
+ + '.bar{height:100%;display:flex;align-items:center;gap:10px;padding:0 8px 0 14px;box-sizing:border-box;color:#fff}'
+ + '.dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.35);flex:none;transition:background .2s,box-shadow .2s}'
+ + '.on .dot{background:#34C759;box-shadow:0 0 0 4px rgba(52,199,89,.28)}'
+ + '.t{flex:1;font-weight:700;font-size:20px;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap}'
+ + '.pw{width:38px;height:38px;border-radius:50%;border:none;flex:none;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;'
+ + 'background:radial-gradient(circle at 35% 28%,#4A58C8 0%,#2B3690 60%,#1A2263 100%);box-shadow:0 0 0 2px rgba(255,255,255,.18)}'
+ + '.on .pw{background:radial-gradient(circle at 35% 28%,#7BEFA6 0%,#34C759 55%,#1F9D46 100%);box-shadow:0 0 0 3px rgba(52,199,89,.28),0 0 12px rgba(52,199,89,.45)}';
+function fmt(ms){ var s = Math.max(0, Math.round(ms/1000)), h = Math.floor(s/3600), m = Math.floor(s%3600/60), x = s%60;
+  return (h ? h + ':' + String(m).padStart(2,'0') : String(m).padStart(2,'0')) + ':' + String(x).padStart(2,'0'); }
+function lockIn(w){ if(wl) return; try{ w.navigator.wakeLock.request('screen').then(function(l){ wl = l; l.addEventListener('release', function(){ if(wl === l) wl = null; }); }).catch(function(){}); }catch(_){} }
+function unlock(){ if(wl){ try{ wl.release(); }catch(_){} wl = null; } }
+function render(){
+  if(!dpw) return;
+  var d = dpw.document, bar = d.querySelector('.bar'), t = d.querySelector('.t'); if(!bar) return;
+  bar.classList.toggle('on', !!active);
+  t.textContent = active ? (durationMs > 0 && startTime ? fmt(startTime + durationMs - Date.now()) : fmt(Date.now() - (startTime || Date.now()))) : 'Off';
+  if(active) lockIn(dpw); else unlock();
+}
+function close(){ if(dpw){ try{ dpw.close(); }catch(_){} } }
+togglePiP = function(){
+  if(dpw){ close(); return; }
+  try{
+    documentPictureInPicture.requestWindow({ width:240, height:56 }).then(function(w){
+      dpw = w;
+      var st = w.document.createElement('style'); st.textContent = CSS; w.document.head.appendChild(st);
+      w.document.title = 'ScreenWakeUp';
+      w.document.body.innerHTML = '<div class="bar"><span class="dot"></span><span class="t">Off</span><button class="pw" type="button" aria-label="Power">' + PWR + '</button></div>';
+      w.document.querySelector('.pw').addEventListener('click', function(){ if(active){ deactivate(); track('pip_power_off'); } else { activate(); track('pip_power_on'); } setTimeout(render, 50); });
+      w.addEventListener('pagehide', function(){ clearInterval(tick); tick = null; unlock(); dpw = null; setPipUi(false); });
+      render(); tick = setInterval(render, 1000);
+      setPipUi(true); track('pip_enter', { mode:'document' });
+    }).catch(function(err){ track('pip_error', { reason:'doc:' + ((err && err.name) || 'unknown') }); orig(); });
+  }catch(e){ orig(); }
+};
+var tb = document.getElementById('toggleBtn');
+if(tb) new MutationObserver(function(){ setTimeout(render, 30); }).observe(tb, { attributes:true, attributeFilter:['class'] });
 })();
 </script>
 </body>
