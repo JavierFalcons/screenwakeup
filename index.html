@@ -2573,35 +2573,38 @@ function pipSupported(){
    hover/focus and let the click do nothing but request the PiP window. */
 function pipWarmup(){
   if(pipVideo) return;
-  const W = 480, H = 120;
+  /* 2:1 instead of 4:1: macOS (Tahoe) gives PiP windows a minimum height, so a
+     narrower ratio is what makes the floating window smaller on screen. */
+  const W = 480, H = 240;
   const c = document.createElement('canvas'); c.width = W; c.height = H;
   const x = c.getContext('2d');
   const F = '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif';
   const fmt = (ms) => { const s = Math.max(0, Math.round(ms / 1000)), h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), ss = s % 60;
     return (h ? h + ':' + String(m).padStart(2, '0') : String(m).padStart(2, '0')) + ':' + String(ss).padStart(2, '0'); };
   pipDraw = () => {
-    const on = !!active;
+    const on = !!active, cy = H / 2;
     x.fillStyle = '#1E2A78'; x.fillRect(0, 0, W, H);
-    x.beginPath(); x.arc(44, H / 2, 10, 0, Math.PI * 2); x.fillStyle = on ? '#34C759' : 'rgba(255,255,255,0.35)'; x.fill();
-    if(on){ x.beginPath(); x.arc(44, H / 2, 17, 0, Math.PI * 2); x.strokeStyle = 'rgba(52,199,89,0.35)'; x.lineWidth = 6; x.stroke(); }
+    x.beginPath(); x.arc(48, cy, 13, 0, Math.PI * 2); x.fillStyle = on ? '#34C759' : 'rgba(255,255,255,0.35)'; x.fill();
+    if(on){ x.beginPath(); x.arc(48, cy, 22, 0, Math.PI * 2); x.strokeStyle = 'rgba(52,199,89,0.35)'; x.lineWidth = 8; x.stroke(); }
     const txt = on ? (durationMs > 0 && startTime ? fmt(startTime + durationMs - Date.now()) : fmt(Date.now() - (startTime || Date.now()))) : 'Off';
     x.fillStyle = '#FFFFFF'; x.textAlign = 'left'; x.textBaseline = 'middle';
-    x.font = '700 54px ' + F; x.fillText(txt, 78, H / 2 + 2);
-    const cx = W - 62, cy = H / 2, r = 40;
-    const g = x.createRadialGradient(cx - 12, cy - 14, 4, cx, cy, r);
+    let fs = 78; x.font = '700 ' + fs + 'px ' + F;
+    while(x.measureText(txt).width > 236 && fs > 40){ fs -= 4; x.font = '700 ' + fs + 'px ' + F; }
+    x.fillText(txt, 88, cy + 3);
+    const cx = W - 84, r = 62;
+    const g = x.createRadialGradient(cx - 18, cy - 22, 6, cx, cy, r);
     if(on){ g.addColorStop(0, '#7BEFA6'); g.addColorStop(0.55, '#34C759'); g.addColorStop(1, '#1F9D46'); }
     else { g.addColorStop(0, '#4A58C8'); g.addColorStop(0.6, '#2B3690'); g.addColorStop(1, '#1A2263'); }
     x.beginPath(); x.arc(cx, cy, r, 0, Math.PI * 2); x.fillStyle = g; x.fill();
-    x.strokeStyle = '#FFFFFF'; x.lineWidth = 5; x.lineCap = 'round';
-    x.beginPath(); x.moveTo(cx, cy - 20); x.lineTo(cx, cy - 2); x.stroke();
-    x.beginPath(); x.arc(cx, cy + 2, 17, -Math.PI * 0.32, Math.PI * 1.32); x.stroke();
+    x.strokeStyle = '#FFFFFF'; x.lineWidth = 8; x.lineCap = 'round';
+    x.beginPath(); x.moveTo(cx, cy - 31); x.lineTo(cx, cy - 3); x.stroke();
+    x.beginPath(); x.arc(cx, cy + 3, 26, -Math.PI * 0.32, Math.PI * 1.32); x.stroke();
   };
   pipDraw();
   pipVideo = document.createElement('video');
   pipVideo.muted = true; pipVideo.setAttribute('playsinline', '');
   pipVideo.srcObject = c.captureStream(1);
-  // Real 480x120 box (Safari sizes the PiP window from the element); hidden by opacity only.
-  pipVideo.style.cssText = 'position:fixed;right:0;bottom:0;width:240px;height:60px;opacity:0;pointer-events:none;z-index:-1;';
+  pipVideo.style.cssText = 'position:fixed;right:0;bottom:0;width:240px;height:120px;opacity:0;pointer-events:none;z-index:-1;';
   document.body.appendChild(pipVideo);
   pipVideo.play().catch(()=>{});
   pipTick = setInterval(pipDraw, 1000);
