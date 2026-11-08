@@ -766,7 +766,7 @@ body.help-open { overflow:hidden; }
 @media (max-height:640px) { .custom-row { display:none !important; } .dur-btn { min-height:34px !important; padding:6px 10px !important; } #pipBtn { min-height:42px !important; } .tool-extra-btn { min-height:36px !important; } }
 
 /* Below 1360px wide: the support box becomes a slim bar fixed to the bottom, always visible */
-@media (max-width:1359px) {
+@media (max-width:899px) {
   body { padding-bottom:84px; }
   .card-donate { position:fixed !important; left:10px; right:10px; bottom:10px; z-index:90; max-width:640px; margin:0 auto !important;
     display:flex !important; align-items:center; gap:12px; padding:10px 10px 10px 16px !important; border-radius:20px !important;
@@ -833,7 +833,6 @@ body.swu-on .pip-card { border:2px solid var(--accent); box-shadow:0 10px 28px r
 .pip-card #pipBtn { display:none !important; }
 .tool-card #cardStatus { display:block !important; }
 @media (max-height:560px) { .tool-card #cardStatus { display:none !important; } }
-.pip-card .pip-txt strong { white-space:nowrap; }
 body.swu-on .pip-card #pipBtn:not(.pip-on) { display:inline-flex !important; }
 /* Secondary buttons with icons */
 #fsBtn::before, #audioBtn::before { content:""; width:15px; height:15px; margin-right:7px; flex:none; background:currentColor; display:inline-block; vertical-align:-2px; }
@@ -849,6 +848,34 @@ body.swu-on .pip-card #pipBtn:not(.pip-on) { display:inline-flex !important; }
   .nav-controls .pill.lang-active::after { content:" ▾"; font-size:10px; }
   .tool-extras { width:100%; }
   #fsBtn { flex:1 1 100%; justify-content:center; min-height:48px !important; }
+}
+</style>
+<style id="swu-v10">
+/* Donation: compact white card beside the tool on desktop, never on top of it */
+@media (min-width:900px) {
+  .hero { display:grid !important; grid-template-columns:minmax(0,560px) 360px; column-gap:36px; justify-content:center; align-items:start; }
+  .hero > * { grid-column:1; }
+  .hero > .card-donate { grid-column:2 !important; grid-row:1 / span 12; position:sticky !important; top:84px !important; bottom:auto !important; left:auto !important; right:auto !important;
+    width:auto !important; max-width:none !important; max-height:none !important; overflow:visible !important; margin:0 !important; z-index:1 !important;
+    display:flex !important; flex-wrap:wrap; align-items:center; gap:10px; padding:20px 20px 16px !important; text-align:left !important; border-radius:22px !important;
+    background:var(--surface) !important; border:1px solid var(--border) !important; box-shadow:0 20px 50px rgba(27,31,59,.14) !important; }
+  .hero > .card-donate > .section-tag, .hero > .card-donate #cdAmounts, .hero > .card-donate .cd-actions, .hero > .card-donate .cd-secure { display:none !important; }
+  .hero > .card-donate > h2#cdH2 { flex:1 1 100%; font-size:17px !important; line-height:1.3 !important; margin:0 !important; text-align:left; }
+  .hero > .card-donate > p#cdP { flex:1 1 100%; font-size:14px !important; line-height:1.5 !important; margin:-2px 0 4px !important; text-align:left; }
+  .hero > .card-donate #cdCustom { flex:1 1 130px; min-width:0; height:48px !important; margin:0 !important; max-width:none !important; padding:0 14px !important; gap:4px !important; }
+  .hero > .card-donate #cdCustomInp { font-size:15px !important; padding:0 !important; width:100% !important; }
+  .hero > .card-donate .cd-pay { flex:none; margin:0 !important; }
+  .hero > .card-donate .cd-kofi { min-height:48px !important; padding:0 16px !important; font-size:14px !important; white-space:nowrap; }
+  .hero > .card-donate .donate-social { flex:1 1 100%; text-align:center; margin:2px 0 0 !important; font-size:13px !important; }
+  .hero > .card-donate .cd-thanks { flex:1 1 100%; }
+  body { padding-bottom:0 !important; }
+  .swu-tabs { width:100%; max-width:380px; box-sizing:border-box; justify-self:center; }
+  .hero > .card-donate .cd-kofi { padding:0 14px !important; font-size:13.5px !important; }
+}
+/* Phones and small windows: slim bar with the donation message */
+@media (max-width:899px) {
+  .card-donate > h2#cdH2 { display:none !important; }
+  .card-donate > p#cdP { display:block !important; flex:1 1 auto; min-width:0; font-size:13px !important; line-height:1.35 !important; margin:0 !important; text-align:left; color:var(--text) !important; }
 }
 </style>
 </head>
@@ -912,6 +939,7 @@ body.swu-on .pip-card #pipBtn:not(.pip-on) { display:inline-flex !important; }
     <div class="prog-wrap" id="progWrap"><div class="prog-bar" id="progBar"></div></div>
     <div id="sessionClock"></div>
     <p id="cardHint">Halte diesen Tab sichtbar: Wird das Fenster minimiert oder komplett verdeckt, gibt der Browser die Sperre frei. Du arbeitest in einer anderen App? Nutze das schwebende Mini-Fenster.</p>
+  </div>
   <div id="support"></div>
   <div class="card-donate" id="cardDonateBlock">
     <p class="section-tag" id="cdTag">INDEPENDENT PROJECT</p>
