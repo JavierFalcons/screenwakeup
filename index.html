@@ -743,7 +743,7 @@ header { background:color-mix(in srgb,var(--bg) 92%,transparent) !important; bor
 
 #toggleBtn { margin-top:26px !important; }
 .custom-row { margin-bottom:6px; }
-@media (min-width:1360px) {
+@media (min-width:900px) {
   .card-donate { position:fixed; right:24px; bottom:24px; width:280px; z-index:90; margin:0 !important; background:var(--surface) !important; box-shadow:0 20px 50px rgba(27,31,59,.18) !important; }
   .card-donate h2 { font-size:17px !important; }
   .card-donate > p#cdP { font-size:14px !important; }
@@ -838,7 +838,7 @@ body.help-open { overflow:hidden; }
 @media (max-height:640px) { .custom-row { display:none !important; } .dur-btn { min-height:34px !important; padding:6px 10px !important; } #pipBtn { min-height:42px !important; } .tool-extra-btn { min-height:36px !important; } }
 
 /* Below 1360px wide: the support box becomes a slim bar fixed to the bottom, always visible */
-@media (max-width:1359px) {
+@media (max-width:899px) {
   body { padding-bottom:84px; }
   .card-donate { position:fixed !important; left:10px; right:10px; bottom:10px; z-index:90; max-width:640px; margin:0 auto !important;
     display:flex !important; align-items:center; gap:12px; padding:10px 10px 10px 16px !important; border-radius:20px !important;
@@ -853,7 +853,7 @@ body.help-open { overflow:hidden; }
   body:has(#cardDonateBlock) .float-kofi-wrap { display:none !important; }
 }
 #toggleBtn { font-size:clamp(11px, 1.9vh, 14px) !important; }
-@media (min-width:1360px) { .card-donate { max-height:calc(100vh - 48px); overflow:auto; } }
+@media (min-width:900px) { .card-donate { max-height:calc(100vh - 48px); overflow:auto; } }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&text=screnwakup.&display=swap" rel="stylesheet">
 <style id="swu-v4">
@@ -896,7 +896,49 @@ body.swu-on .pip-card { border:2px solid var(--accent); box-shadow:0 10px 28px r
 @media (max-height:780px) { .pip-card #pipCaption { display:none !important; } .swu-tabs { margin-bottom:10px; } }
 @media (max-width:520px) { .pip-card .pip-act { width:100%; justify-content:space-between; } }
 /* Donation card sits top-right on wide screens */
-@media (min-width:1360px) { .card-donate { top:88px !important; bottom:auto !important; } }
+@media (min-width:900px) { .card-donate { top:88px !important; bottom:auto !important; } }
+</style>
+<style id="swu-v5">
+/* Tool card and donation box side by side, never overlapping */
+@media (min-width:900px) {
+  .hero { display:grid !important; grid-template-columns:minmax(0,600px) 300px; column-gap:40px; justify-content:center; align-items:start; }
+  .hero > * { grid-column:1; }
+  .hero > .card-donate { grid-column:2 !important; grid-row:1 / span 12; position:sticky !important; top:84px !important; bottom:auto !important; left:auto !important; right:auto !important;
+    width:auto !important; max-width:none !important; margin:0 !important; z-index:1 !important; }
+  .hero > .card-donate > .section-tag, .hero > .card-donate #cdAmounts, .hero > .card-donate .cd-actions { display:none !important; }
+  body { padding-bottom:0 !important; }
+  #sessionClock, #cardHint { display:none !important; }
+  .hero-sub { display:none !important; }
+}
+/* Compact vertical rhythm so the whole card fits the window */
+.hero h1, #heroH1 { font-size:clamp(26px, 5vh, 52px) !important; line-height:1.05 !important; margin:0 0 clamp(8px,1.6vh,18px) !important; }
+.swu-tabs { margin-bottom:clamp(8px,1.6vh,18px) !important; }
+.dur-row, .custom-row { vertical-align:middle; }
+.custom-row { display:inline-flex !important; margin:0 0 0 6px !important; }
+#cardTitle { margin-top:clamp(6px,1.2vh,14px) !important; }
+@media (max-height:900px) { .pip-card #pipCaption { display:none !important; } }
+@media (max-width:520px) { .custom-row { margin:8px 0 0 !important; } }
+</style>
+<style id="swu-v6">
+/* Option I look: no box around the tool, compact donation card */
+.tool-card { background:transparent !important; border:none !important; box-shadow:none !important; padding-left:0 !important; padding-right:0 !important; padding-top:4px !important; }
+[data-theme="dark"] .tool-card { background:transparent !important; }
+.swu-tabs { width:100%; box-sizing:border-box; justify-self:center; }
+.hero-sub { display:none !important; }
+@media (min-width:900px) {
+  .hero { grid-template-columns:minmax(0,600px) 360px !important; }
+  .hero > .card-donate { display:flex !important; flex-wrap:wrap; align-items:center; gap:10px; padding:18px 18px 14px !important; text-align:left !important; border-radius:20px !important; }
+  .hero > .card-donate > h2#cdH2 { flex:1 1 100%; font-size:16px !important; line-height:1.3 !important; margin:0 !important; text-align:left; }
+  .hero > .card-donate > p#cdP { flex:1 1 100%; font-size:13px !important; line-height:1.45 !important; margin:-4px 0 4px !important; text-align:left; }
+  .hero > .card-donate #cdCustom { flex:1 1 120px; min-width:0; height:46px !important; margin:0 !important; max-width:none !important; }
+  .hero > .card-donate .cd-pay { flex:none; margin:0 !important; }
+  .hero > .card-donate #cdCustom { padding:0 12px !important; gap:4px !important; }
+  .hero > .card-donate #cdCustomInp { font-size:15px !important; padding:0 !important; width:100% !important; }
+  .hero > .card-donate .cd-kofi { min-height:46px !important; padding:0 14px !important; font-size:13.5px !important; white-space:nowrap; box-shadow:none !important; }
+  .hero > .card-donate .cd-secure { display:none !important; }
+  .hero > .card-donate .donate-social { flex:1 1 100%; text-align:center; margin:2px 0 0 !important; font-size:12px !important; }
+  .hero > .card-donate .cd-thanks { flex:1 1 100%; }
+}
 </style>
 </head>
 <body>
@@ -975,6 +1017,7 @@ body.swu-on .pip-card { border:2px solid var(--accent); box-shadow:0 10px 28px r
     <div class="prog-wrap" id="progWrap"><div class="prog-bar" id="progBar"></div></div>
     <div id="sessionClock"></div>
     <p id="cardHint">Keep this tab visible — if you minimize the window or another app fully covers it, the browser releases the lock. Working in another app? Use the floating mini-window or Fullscreen.</p>
+  </div>
   <div id="support"></div>
   <div class="card-donate" id="cardDonateBlock">
     <p class="section-tag" id="cdTag">INDEPENDENT PROJECT</p>
@@ -2993,6 +3036,29 @@ tb.addEventListener('click', function(e){
   }
 }, true);
 applyV4();
+})();
+</script>
+<script id="swu-v5-js">
+(function(){
+var hero = document.querySelector('.hero'), card = document.querySelector('.tool-card');
+if(!hero || !card || !('zoom' in document.body.style)) return;
+var raf = 0;
+function fit(){
+  raf = 0;
+  hero.style.zoom = '';
+  var bar = document.getElementById('cardDonateBlock'), reserve = 14;
+  if(bar && getComputedStyle(bar).position === 'fixed') reserve += bar.getBoundingClientRect().height + 10;
+  var top = hero.getBoundingClientRect().top + scrollY, bottom = card.getBoundingClientRect().bottom + scrollY;
+  var avail = innerHeight - top - reserve, need = bottom - top;
+  var s = need > avail ? Math.max(0.5, avail / need) : 1;
+  if(s < 1) hero.style.zoom = s.toFixed(3);
+}
+function req(){ if(!raf) raf = requestAnimationFrame(fit); }
+addEventListener('resize', req);
+addEventListener('load', req);
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(req);
+new MutationObserver(req).observe(card, { attributes:true, childList:true, subtree:true, characterData:true });
+req();
 })();
 </script>
 </body>
